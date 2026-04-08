@@ -1,6 +1,8 @@
-# Les Bases de R
+---
+title: "Les Bases de R"
+---
 
-## 1. Raccourcis et Commandes Essentielles
+## Raccourcis et Commandes Essentielles
 
 | Commande | Description |
 |----------|-------------|
@@ -10,9 +12,10 @@
 | `getwd()` | Afficher le repertoire de travail actuel |
 | `setwd("chemin")` | Definir le repertoire de travail |
 
-## 2. Types de Variables
+## Types de Variables
 
 ```r
+
 # Numerique
 a <- 100
 
@@ -23,17 +26,21 @@ c <- "chien"
 e <- TRUE
 ```
 
-## 3. Structures de Donnees
+## Structures de Donnees
 
 ### Vecteurs
+
 Variables a plusieurs elements, creees avec `c()` :
+
 ```r
 v1 <- c(1, 2, 3)
 v2 <- c("chat", "chien", "oiseau")
 ```
 
 ### Matrices
+
 Tableaux contenant des donnees de **meme type** :
+
 ```r
 m <- matrix(1:9, nrow = 3, ncol = 3)
 # Extraction : matrice[ligne, colonne]
@@ -41,7 +48,9 @@ m[3, 2]  # 2e element de la 3e ligne
 ```
 
 ### Data Frames
+
 Tableaux pouvant contenir des donnees de **differents types** (le plus courant en sciences sociales).
+
 - **Ligne** = unite statistique (ex: la personne)
 - **Colonne** = variable
 
@@ -55,7 +64,7 @@ df <- data.frame(
 df$age
 ```
 
-## 4. Fonctions d'Exploration Rapide
+## Fonctions d'Exploration Rapide
 
 | Fonction | Description |
 |----------|-------------|

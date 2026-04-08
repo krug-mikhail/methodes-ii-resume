@@ -1,8 +1,10 @@
-# Visualisation avec ggplot2
+---
+title: "Visualisation avec ggplot2"
+---
 
 `ggplot2` utilise une "Grammar of Graphics" pour creer des graphiques en superposant des couches (layers) avec le signe `+`.
 
-## 1. Structure de base
+## Structure de base
 
 ```r
 ggplot(data = mon_df, mapping = aes(x = var_x, y = var_y, color = var_c)) +
@@ -10,21 +12,26 @@ ggplot(data = mon_df, mapping = aes(x = var_x, y = var_y, color = var_c)) +
 ```
 
 Les 3 elements essentiels :
+
 1. **`ggplot(data = ...)`** : Le jeu de donnees
 2. **`aes()`** : L'aesthetique (quelles variables sur quels axes, couleurs, etc.)
 3. **`geom_XXX()`** : Le type de graphique
 
-## 2. Les Principaux Geoms
+## Les Principaux Geoms
 
 ### `geom_point()` - Nuage de points (Scatter plot)
+
 Relation entre deux variables continues.
+
 ```r
 ggplot(diamonds, aes(x = carat, y = price, color = cut)) +
   geom_point()
 ```
 
 ### `geom_bar()` - Diagramme a barres
+
 Compter les frequences d'une variable categorielle.
+
 ```r
 ggplot(diamonds, aes(x = cut)) +
   geom_bar()
@@ -35,20 +42,24 @@ ggplot(diamonds, aes(x = cut, fill = clarity)) +
 ```
 
 ### `geom_histogram()` - Histogramme
+
 Distribution d'une variable numerique.
+
 ```r
 ggplot(diamonds, aes(x = price)) +
   geom_histogram(binwidth = 500)
 ```
 
 ### `geom_boxplot()` - Boite a moustaches
+
 Comparer les distributions entre groupes.
+
 ```r
 ggplot(diamonds, aes(x = cut, y = price)) +
   geom_boxplot()
 ```
 
-## 3. Personnalisation (Labels)
+## Personnalisation (Labels)
 
 ```r
 ggplot(df, aes(x = var_x, y = var_y)) +
@@ -62,7 +73,7 @@ ggplot(df, aes(x = var_x, y = var_y)) +
   )
 ```
 
-## 4. Recap Rapide : Quel Geom Choisir ?
+## Recap Rapide : Quel Geom Choisir ?
 
 | Objectif | Geom | Variables |
 |----------|------|-----------|

@@ -1,0 +1,278 @@
+[
+  {
+    "objectID": "02_Bases_R.html",
+    "href": "02_Bases_R.html",
+    "title": "Les Bases de R",
+    "section": "",
+    "text": "Commande\nDescription\n\n\n\n\n&lt;-\nOperateur d’affectation (assigner une valeur)\n\n\n#\nCommentaire (ignore par R)\n\n\nclass(x)\nVerifier le type d’un objet\n\n\ngetwd()\nAfficher le repertoire de travail actuel\n\n\nsetwd(\"chemin\")\nDefinir le repertoire de travail",
+    "crumbs": [
+      "Accueil",
+      "Resume du cours",
+      "Les Bases de R"
+    ]
+  },
+  {
+    "objectID": "02_Bases_R.html#raccourcis-et-commandes-essentielles",
+    "href": "02_Bases_R.html#raccourcis-et-commandes-essentielles",
+    "title": "Les Bases de R",
+    "section": "",
+    "text": "Commande\nDescription\n\n\n\n\n&lt;-\nOperateur d’affectation (assigner une valeur)\n\n\n#\nCommentaire (ignore par R)\n\n\nclass(x)\nVerifier le type d’un objet\n\n\ngetwd()\nAfficher le repertoire de travail actuel\n\n\nsetwd(\"chemin\")\nDefinir le repertoire de travail",
+    "crumbs": [
+      "Accueil",
+      "Resume du cours",
+      "Les Bases de R"
+    ]
+  },
+  {
+    "objectID": "02_Bases_R.html#types-de-variables",
+    "href": "02_Bases_R.html#types-de-variables",
+    "title": "Les Bases de R",
+    "section": "2 Types de Variables",
+    "text": "2 Types de Variables\n\n# Numerique\na &lt;- 100\n\n# Textuelle (chaine de caracteres) - toujours avec des guillemets\nc &lt;- \"chien\"\n\n# Logique\ne &lt;- TRUE",
+    "crumbs": [
+      "Accueil",
+      "Resume du cours",
+      "Les Bases de R"
+    ]
+  },
+  {
+    "objectID": "02_Bases_R.html#structures-de-donnees",
+    "href": "02_Bases_R.html#structures-de-donnees",
+    "title": "Les Bases de R",
+    "section": "3 Structures de Donnees",
+    "text": "3 Structures de Donnees\n\n3.1 Vecteurs\nVariables a plusieurs elements, creees avec c() :\nv1 &lt;- c(1, 2, 3)\nv2 &lt;- c(\"chat\", \"chien\", \"oiseau\")\n\n\n3.2 Matrices\nTableaux contenant des donnees de meme type :\nm &lt;- matrix(1:9, nrow = 3, ncol = 3)\n# Extraction : matrice[ligne, colonne]\nm[3, 2]  # 2e element de la 3e ligne\n\n\n3.3 Data Frames\nTableaux pouvant contenir des donnees de differents types (le plus courant en sciences sociales).\n\nLigne = unite statistique (ex: la personne)\nColonne = variable\n\ndf &lt;- data.frame(\n  nom = c(\"Sid\", \"Manny\", \"Diego\"),\n  age = c(30, 40, 35)\n)\n\n# Extraction d'une colonne avec $\ndf$age",
+    "crumbs": [
+      "Accueil",
+      "Resume du cours",
+      "Les Bases de R"
+    ]
+  },
+  {
+    "objectID": "02_Bases_R.html#fonctions-dexploration-rapide",
+    "href": "02_Bases_R.html#fonctions-dexploration-rapide",
+    "title": "Les Bases de R",
+    "section": "4 Fonctions d’Exploration Rapide",
+    "text": "4 Fonctions d’Exploration Rapide\n\n\n\nFonction\nDescription\n\n\n\n\ndim(df)\nNombre de lignes et colonnes\n\n\nhead(df)\n6 premieres lignes\n\n\nstr(df)\nStructure du jeu de donnees\n\n\nsummary(df)\nResume statistique (moyenne, mediane, min, max)\n\n\nnrow(df)\nNombre de lignes\n\n\nncol(df)\nNombre de colonnes\n\n\nnames(df)\nNoms des colonnes",
+    "crumbs": [
+      "Accueil",
+      "Resume du cours",
+      "Les Bases de R"
+    ]
+  },
+  {
+    "objectID": "04_Visualisation_Ggplot2.html",
+    "href": "04_Visualisation_Ggplot2.html",
+    "title": "Visualisation avec ggplot2",
+    "section": "",
+    "text": "ggplot2 utilise une “Grammar of Graphics” pour creer des graphiques en superposant des couches (layers) avec le signe +.",
+    "crumbs": [
+      "Accueil",
+      "Resume du cours",
+      "Visualisation avec ggplot2"
+    ]
+  },
+  {
+    "objectID": "04_Visualisation_Ggplot2.html#structure-de-base",
+    "href": "04_Visualisation_Ggplot2.html#structure-de-base",
+    "title": "Visualisation avec ggplot2",
+    "section": "1 Structure de base",
+    "text": "1 Structure de base\nggplot(data = mon_df, mapping = aes(x = var_x, y = var_y, color = var_c)) +\n  geom_XXX()\nLes 3 elements essentiels :\n\nggplot(data = ...) : Le jeu de donnees\naes() : L’aesthetique (quelles variables sur quels axes, couleurs, etc.)\ngeom_XXX() : Le type de graphique",
+    "crumbs": [
+      "Accueil",
+      "Resume du cours",
+      "Visualisation avec ggplot2"
+    ]
+  },
+  {
+    "objectID": "04_Visualisation_Ggplot2.html#les-principaux-geoms",
+    "href": "04_Visualisation_Ggplot2.html#les-principaux-geoms",
+    "title": "Visualisation avec ggplot2",
+    "section": "2 Les Principaux Geoms",
+    "text": "2 Les Principaux Geoms\n\n2.1 geom_point() - Nuage de points (Scatter plot)\nRelation entre deux variables continues.\nggplot(diamonds, aes(x = carat, y = price, color = cut)) +\n  geom_point()\n\n\n2.2 geom_bar() - Diagramme a barres\nCompter les frequences d’une variable categorielle.\nggplot(diamonds, aes(x = cut)) +\n  geom_bar()\n\n# Avec remplissage par une autre variable\nggplot(diamonds, aes(x = cut, fill = clarity)) +\n  geom_bar(position = \"dodge\")  # Barres cote a cote\n\n\n2.3 geom_histogram() - Histogramme\nDistribution d’une variable numerique.\nggplot(diamonds, aes(x = price)) +\n  geom_histogram(binwidth = 500)\n\n\n2.4 geom_boxplot() - Boite a moustaches\nComparer les distributions entre groupes.\nggplot(diamonds, aes(x = cut, y = price)) +\n  geom_boxplot()",
+    "crumbs": [
+      "Accueil",
+      "Resume du cours",
+      "Visualisation avec ggplot2"
+    ]
+  },
+  {
+    "objectID": "04_Visualisation_Ggplot2.html#personnalisation-labels",
+    "href": "04_Visualisation_Ggplot2.html#personnalisation-labels",
+    "title": "Visualisation avec ggplot2",
+    "section": "3 Personnalisation (Labels)",
+    "text": "3 Personnalisation (Labels)\nggplot(df, aes(x = var_x, y = var_y)) +\n  geom_point() +\n  labs(\n    title = \"Titre principal\",\n    subtitle = \"Sous-titre\",\n    x = \"Nom de l'axe X\",\n    y = \"Nom de l'axe Y\",\n    color = \"Titre de la legende couleur\"\n  )",
+    "crumbs": [
+      "Accueil",
+      "Resume du cours",
+      "Visualisation avec ggplot2"
+    ]
+  },
+  {
+    "objectID": "04_Visualisation_Ggplot2.html#recap-rapide-quel-geom-choisir",
+    "href": "04_Visualisation_Ggplot2.html#recap-rapide-quel-geom-choisir",
+    "title": "Visualisation avec ggplot2",
+    "section": "4 Recap Rapide : Quel Geom Choisir ?",
+    "text": "4 Recap Rapide : Quel Geom Choisir ?\n\n\n\n\n\n\n\n\nObjectif\nGeom\nVariables\n\n\n\n\nRelation entre 2 variables continues\ngeom_point()\nx = continue, y = continue\n\n\nDistribution d’une variable numerique\ngeom_histogram()\nx = continue\n\n\nFrequences d’une variable categorielle\ngeom_bar()\nx = categorielle\n\n\nComparer distributions entre groupes\ngeom_boxplot()\nx = categorielle, y = continue\n\n\nTendance / evolution\ngeom_line()\nx = continue/date, y = continue",
+    "crumbs": [
+      "Accueil",
+      "Resume du cours",
+      "Visualisation avec ggplot2"
+    ]
+  },
+  {
+    "objectID": "03_Manipulation_Dplyr.html",
+    "href": "03_Manipulation_Dplyr.html",
+    "title": "Manipulation de Donnees (Tidyverse / dplyr)",
+    "section": "",
+    "text": "Le paquet dplyr (inclus dans le tidyverse) permet de nettoyer et manipuler les Data Frames.",
+    "crumbs": [
+      "Accueil",
+      "Resume du cours",
+      "Manipulation de Donnees (Tidyverse / dplyr)"
+    ]
+  },
+  {
+    "objectID": "03_Manipulation_Dplyr.html#importation",
+    "href": "03_Manipulation_Dplyr.html#importation",
+    "title": "Manipulation de Donnees (Tidyverse / dplyr)",
+    "section": "1 Importation",
+    "text": "1 Importation\nlibrary(tidyverse)\nsetwd(\"/chemin/vers/dossier\")\ndf &lt;- read_csv(\"fichier.csv\")\n\n\n\n\n\n\nImportant\n\n\n\nNe jamais ouvrir les CSV dans Excel avant R pour eviter de casser le format.",
+    "crumbs": [
+      "Accueil",
+      "Resume du cours",
+      "Manipulation de Donnees (Tidyverse / dplyr)"
+    ]
+  },
+  {
+    "objectID": "03_Manipulation_Dplyr.html#loperateur-pipe-ou",
+    "href": "03_Manipulation_Dplyr.html#loperateur-pipe-ou",
+    "title": "Manipulation de Donnees (Tidyverse / dplyr)",
+    "section": "2 L’Operateur Pipe %>% (ou |>)",
+    "text": "2 L’Operateur Pipe %&gt;% (ou |&gt;)\nIl permet d’enchainer les operations (se lit “et ensuite”).\nRaccourci clavier : Ctrl + Shift + M (Windows) ou Cmd + Shift + M (Mac)\n# Sans pipe\nfilter(select(df, nom, age), age &gt; 30)\n\n# Avec pipe (plus lisible)\ndf %&gt;%\n  select(nom, age) %&gt;%\n  filter(age &gt; 30)",
+    "crumbs": [
+      "Accueil",
+      "Resume du cours",
+      "Manipulation de Donnees (Tidyverse / dplyr)"
+    ]
+  },
+  {
+    "objectID": "03_Manipulation_Dplyr.html#les-verbes-de-dplyr",
+    "href": "03_Manipulation_Dplyr.html#les-verbes-de-dplyr",
+    "title": "Manipulation de Donnees (Tidyverse / dplyr)",
+    "section": "3 Les Verbes de dplyr",
+    "text": "3 Les Verbes de dplyr\n\n3.1 select() - Selectionner des colonnes\ndf %&gt;% select(nom, age)\ndf %&gt;% select(-colonne_a_exclure)\n\n\n3.2 filter() - Filtrer des lignes\ndf %&gt;% filter(mpg &gt;= 25)\ndf %&gt;% filter(cyl == 4 & mpg &gt; 20)\ndf %&gt;% filter(cyl == 4 | cyl == 6)\nOperateurs de comparaison :\n\n\n\nOperateur\nSignification\n\n\n\n\n==\nEgal a\n\n\n!=\nDifferent de\n\n\n&gt;, &lt;\nSuperieur, inferieur\n\n\n&gt;=, &lt;=\nSuperieur ou egal, inferieur ou egal\n\n\n&\nET logique\n\n\n\\|\nOU logique\n\n\n\n\n\n3.3 mutate() - Creer ou modifier une colonne\ndf %&gt;% mutate(ratio = mpg / wt)\ndf %&gt;% mutate(categorie = ifelse(mpg &gt; 20, \"econome\", \"gourmand\"))\n\n\n3.4 arrange() - Trier les lignes\ndf %&gt;% arrange(mpg)        # Croissant\ndf %&gt;% arrange(desc(mpg))  # Decroissant\n\n\n3.5 group_by() + summarize() - Resumer par groupe\ndf %&gt;%\n  group_by(cyl) %&gt;%\n  summarize(\n    moyenne_mpg = mean(mpg),\n    mediane_mpg = median(mpg),\n    nb_obs = n()\n  )\n\n\n3.6 count() - Compter les observations\ndf %&gt;% count(cyl)\ndf %&gt;% count(cyl, sort = TRUE)  # Trie par frequence decroissante",
+    "crumbs": [
+      "Accueil",
+      "Resume du cours",
+      "Manipulation de Donnees (Tidyverse / dplyr)"
+    ]
+  },
+  {
+    "objectID": "03_Manipulation_Dplyr.html#statistiques-descriptives-utiles",
+    "href": "03_Manipulation_Dplyr.html#statistiques-descriptives-utiles",
+    "title": "Manipulation de Donnees (Tidyverse / dplyr)",
+    "section": "4 Statistiques Descriptives Utiles",
+    "text": "4 Statistiques Descriptives Utiles\n\n\n\nFonction\nDescription\n\n\n\n\nmean(x)\nMoyenne\n\n\nmedian(x)\nMediane\n\n\nsd(x)\nEcart-type\n\n\nmin(x), max(x)\nMinimum, Maximum\n\n\nsum(x)\nSomme\n\n\nn()\nNombre d’observations (dans summarize)\n\n\nn_distinct(x)\nNombre de valeurs uniques",
+    "crumbs": [
+      "Accueil",
+      "Resume du cours",
+      "Manipulation de Donnees (Tidyverse / dplyr)"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Methodes II & R - Resume",
+    "section": "",
+    "text": "Bienvenue sur le resume de revision pour le cours Exercices Methodes II. Ce guide est optimise pour la recherche rapide pendant l’examen.",
+    "crumbs": [
+      "Accueil",
+      "Resume du cours",
+      "Methodes II & R - Resume"
+    ]
+  },
+  {
+    "objectID": "index.html#navigation",
+    "href": "index.html#navigation",
+    "title": "Methodes II & R - Resume",
+    "section": "1 Navigation",
+    "text": "1 Navigation\n\nTheorie & Enquete - Questions de recherche, hypotheses, operationnalisation et niveaux de mesure\nLes Bases de R - Types de variables, vecteurs, matrices, data frames et fonctions de base\nManipulation de donnees (dplyr) - Importer (CSV), filtrer, selectionner, muter et resumer\nVisualisation (ggplot2) - Nuages de points, histogrammes, diagrammes a barres",
+    "crumbs": [
+      "Accueil",
+      "Resume du cours",
+      "Methodes II & R - Resume"
+    ]
+  },
+  {
+    "objectID": "index.html#astuces-pour-lexamen",
+    "href": "index.html#astuces-pour-lexamen",
+    "title": "Methodes II & R - Resume",
+    "section": "2 Astuces pour l’examen",
+    "text": "2 Astuces pour l’examen\n\nUtilisez Ctrl+F / Cmd+F pour chercher une commande specifique\nChargez vos paquets (library(tidyverse)) au debut de votre session\nL’operateur d’affectation est &lt;-",
+    "crumbs": [
+      "Accueil",
+      "Resume du cours",
+      "Methodes II & R - Resume"
+    ]
+  },
+  {
+    "objectID": "01_Theorie_Enquete.html",
+    "href": "01_Theorie_Enquete.html",
+    "title": "Theorie : Enquete et Questionnaire",
+    "section": "",
+    "text": "Une question de recherche scientifique doit etre :\n\nClaire : Eviter la confusion et le vague ; bien delimiter la recherche\nFaisable : Rester realiste par rapport aux ressources (personnelles, materielles, temps)\nPertinente : Viser a mieux comprendre le phenomene plutot que de le decrire ; eviter les previsions et les jugements moraux",
+    "crumbs": [
+      "Accueil",
+      "Resume du cours",
+      "Theorie : Enquete et Questionnaire"
+    ]
+  },
+  {
+    "objectID": "01_Theorie_Enquete.html#la-question-de-recherche-rq",
+    "href": "01_Theorie_Enquete.html#la-question-de-recherche-rq",
+    "title": "Theorie : Enquete et Questionnaire",
+    "section": "",
+    "text": "Une question de recherche scientifique doit etre :\n\nClaire : Eviter la confusion et le vague ; bien delimiter la recherche\nFaisable : Rester realiste par rapport aux ressources (personnelles, materielles, temps)\nPertinente : Viser a mieux comprendre le phenomene plutot que de le decrire ; eviter les previsions et les jugements moraux",
+    "crumbs": [
+      "Accueil",
+      "Resume du cours",
+      "Theorie : Enquete et Questionnaire"
+    ]
+  },
+  {
+    "objectID": "01_Theorie_Enquete.html#operationnalisation",
+    "href": "01_Theorie_Enquete.html#operationnalisation",
+    "title": "Theorie : Enquete et Questionnaire",
+    "section": "2 Operationnalisation",
+    "text": "2 Operationnalisation\nC’est le processus qui consiste a rendre un concept abstrait (ex: Social Media Literacy) mesurable a l’aide de variables concretes et de questions specifiques.",
+    "crumbs": [
+      "Accueil",
+      "Resume du cours",
+      "Theorie : Enquete et Questionnaire"
+    ]
+  },
+  {
+    "objectID": "01_Theorie_Enquete.html#niveaux-de-mesure-des-variables",
+    "href": "01_Theorie_Enquete.html#niveaux-de-mesure-des-variables",
+    "title": "Theorie : Enquete et Questionnaire",
+    "section": "3 Niveaux de Mesure des Variables",
+    "text": "3 Niveaux de Mesure des Variables\nLes variables peuvent etre classees selon 4 types essentiels :\n\n\n\n\n\n\n\n\nType\nExemple\nProprietes\n\n\n\n\nNominale\nGenre, Profession\nCategories sans ordre\n\n\nOrdinale\nFrequence de publication (“jamais” a “tous les jours”)\nCategories avec ordre\n\n\nContinue\nTemperature en degres\nValeurs numeriques continues\n\n\nDiscrete\nNombre de followers\nValeurs numeriques entieres",
+    "crumbs": [
+      "Accueil",
+      "Resume du cours",
+      "Theorie : Enquete et Questionnaire"
+    ]
+  },
+  {
+    "objectID": "01_Theorie_Enquete.html#types-de-questions",
+    "href": "01_Theorie_Enquete.html#types-de-questions",
+    "title": "Theorie : Enquete et Questionnaire",
+    "section": "4 Types de Questions",
+    "text": "4 Types de Questions\nDans un questionnaire, on retrouve principalement :\n\nQuestions categorielles : A choix multiple\nQuestions d’intensite : Echelles mesurant une frequence ou un degre d’accord (ex: “Combien de fois…”, Echelle de 1 a 5)",
+    "crumbs": [
+      "Accueil",
+      "Resume du cours",
+      "Theorie : Enquete et Questionnaire"
+    ]
+  }
+]

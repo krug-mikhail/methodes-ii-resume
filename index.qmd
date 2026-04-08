@@ -1,0 +1,19 @@
+---
+title: "Methodes II & R - Resume"
+subtitle: "SP 2026"
+---
+
+Bienvenue sur le resume de revision pour le cours Exercices Methodes II. Ce guide est optimise pour la recherche rapide pendant l'examen.
+
+## Navigation
+
+- [Theorie & Enquete](01_Theorie_Enquete.qmd) - Questions de recherche, hypotheses, operationnalisation et niveaux de mesure
+- [Les Bases de R](02_Bases_R.qmd) - Types de variables, vecteurs, matrices, data frames et fonctions de base
+- [Manipulation de donnees (dplyr)](03_Manipulation_Dplyr.qmd) - Importer (CSV), filtrer, selectionner, muter et resumer
+- [Visualisation (ggplot2)](04_Visualisation_Ggplot2.qmd) - Nuages de points, histogrammes, diagrammes a barres
+
+## Astuces pour l'examen
+
+- Utilisez `Ctrl+F` / `Cmd+F` pour chercher une commande specifique
+- Chargez vos paquets (`library(tidyverse)`) au debut de votre session
+- L'operateur d'affectation est `<-`

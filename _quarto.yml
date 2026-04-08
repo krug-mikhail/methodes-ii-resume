@@ -1,0 +1,41 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Methodes II & R"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Accueil
+      - href: 01_Theorie_Enquete.qmd
+        text: Theorie
+      - href: 02_Bases_R.qmd
+        text: Bases de R
+      - href: 03_Manipulation_Dplyr.qmd
+        text: dplyr
+      - href: 04_Visualisation_Ggplot2.qmd
+        text: ggplot2
+  sidebar:
+    style: docked
+    search: true
+    contents:
+      - section: "Resume du cours"
+        contents:
+          - index.qmd
+          - 01_Theorie_Enquete.qmd
+          - 02_Bases_R.qmd
+          - 03_Manipulation_Dplyr.qmd
+          - 04_Visualisation_Ggplot2.qmd
+
+execute:
+  enabled: false
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    code-copy: true
+    code-overflow: wrap
