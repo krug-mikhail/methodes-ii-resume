@@ -1,0 +1,95 @@
+# Manipulation de Donnees (Tidyverse / dplyr)
+
+Le paquet `dplyr` (inclus dans le `tidyverse`) permet de nettoyer et manipuler les Data Frames.
+
+## 1. Importation
+
+```r
+library(tidyverse)
+setwd("/chemin/vers/dossier")
+df <- read_csv("fichier.csv")
+```
+
+> **Important :** Ne jamais ouvrir les CSV dans Excel avant R pour eviter de casser le format.
+
+## 2. L'Operateur Pipe `%>%` (ou `|>`)
+
+Il permet d'enchainer les operations (se lit "et ensuite").
+
+**Raccourci clavier :** `Ctrl + Shift + M` (Windows) ou `Cmd + Shift + M` (Mac)
+
+```r
+# Sans pipe
+filter(select(df, nom, age), age > 30)
+
+# Avec pipe (plus lisible)
+df %>%
+  select(nom, age) %>%
+  filter(age > 30)
+```
+
+## 3. Les Verbes de dplyr
+
+### `select()` - Selectionner des colonnes
+```r
+df %>% select(nom, age)
+df %>% select(-colonne_a_exclure)
+```
+
+### `filter()` - Filtrer des lignes
+```r
+df %>% filter(mpg >= 25)
+df %>% filter(cyl == 4 & mpg > 20)
+df %>% filter(cyl == 4 | cyl == 6)
+```
+
+**Operateurs de comparaison :**
+| Operateur | Signification |
+|-----------|---------------|
+| `==` | Egal a |
+| `!=` | Different de |
+| `>`, `<` | Superieur, inferieur |
+| `>=`, `<=` | Superieur ou egal, inferieur ou egal |
+| `&` | ET logique |
+| `\|` | OU logique |
+
+### `mutate()` - Creer ou modifier une colonne
+```r
+df %>% mutate(ratio = mpg / wt)
+df %>% mutate(categorie = ifelse(mpg > 20, "econome", "gourmand"))
+```
+
+### `arrange()` - Trier les lignes
+```r
+df %>% arrange(mpg)        # Croissant
+df %>% arrange(desc(mpg))  # Decroissant
+```
+
+### `group_by()` + `summarize()` - Resumer par groupe
+```r
+df %>%
+  group_by(cyl) %>%
+  summarize(
+    moyenne_mpg = mean(mpg),
+    mediane_mpg = median(mpg),
+    nb_obs = n()
+  )
+```
+
+### `count()` - Compter les observations
+```r
+df %>% count(cyl)
+df %>% count(cyl, sort = TRUE)  # Trie par frequence decroissante
+```
+
+## 4. Statistiques Descriptives Utiles
+
+| Fonction | Description |
+|----------|-------------|
+| `mean(x)` | Moyenne |
+| `median(x)` | Mediane |
+| `sd(x)` | Ecart-type |
+| `min(x)`, `max(x)` | Minimum, Maximum |
+| `sum(x)` | Somme |
+| `n()` | Nombre d'observations (dans summarize) |
+| `n_distinct(x)` | Nombre de valeurs uniques |

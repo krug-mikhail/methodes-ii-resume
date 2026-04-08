@@ -1,0 +1,68 @@
+# Les Bases de R
+
+## 1. Raccourcis et Commandes Essentielles
+
+| Commande | Description |
+|----------|-------------|
+| `<-` | Operateur d'affectation (assigner une valeur) |
+| `#` | Commentaire (ignore par R) |
+| `class(x)` | Verifier le type d'un objet |
+| `getwd()` | Afficher le repertoire de travail actuel |
+| `setwd("chemin")` | Definir le repertoire de travail |
+
+## 2. Types de Variables
+
+```r
+# Numerique
+a <- 100
+
+# Textuelle (chaine de caracteres) - toujours avec des guillemets
+c <- "chien"
+
+# Logique
+e <- TRUE
+```
+
+## 3. Structures de Donnees
+
+### Vecteurs
+Variables a plusieurs elements, creees avec `c()` :
+```r
+v1 <- c(1, 2, 3)
+v2 <- c("chat", "chien", "oiseau")
+```
+
+### Matrices
+Tableaux contenant des donnees de **meme type** :
+```r
+m <- matrix(1:9, nrow = 3, ncol = 3)
+# Extraction : matrice[ligne, colonne]
+m[3, 2]  # 2e element de la 3e ligne
+```
+
+### Data Frames
+Tableaux pouvant contenir des donnees de **differents types** (le plus courant en sciences sociales).
+- **Ligne** = unite statistique (ex: la personne)
+- **Colonne** = variable
+
+```r
+df <- data.frame(
+  nom = c("Sid", "Manny", "Diego"),
+  age = c(30, 40, 35)
+)
+
+# Extraction d'une colonne avec $
+df$age
+```
+
+## 4. Fonctions d'Exploration Rapide
+
+| Fonction | Description |
+|----------|-------------|
+| `dim(df)` | Nombre de lignes et colonnes |
+| `head(df)` | 6 premieres lignes |
+| `str(df)` | Structure du jeu de donnees |
+| `summary(df)` | Resume statistique (moyenne, mediane, min, max) |
+| `nrow(df)` | Nombre de lignes |
+| `ncol(df)` | Nombre de colonnes |
+| `names(df)` | Noms des colonnes |
