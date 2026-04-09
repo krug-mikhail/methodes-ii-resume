@@ -1,6 +1,8 @@
 ---
-title: "Theorie : Enquete et Questionnaire"
+title: "Module 1 : Methodologie et Enquete"
 ---
+
+Ce module pose les fondations epistemologiques, conceptuelles et methodologiques indispensables avant toute interaction avec un logiciel d'analyse.
 
 ## La Question de Recherche (RQ)
 
@@ -10,24 +12,79 @@ Une question de recherche scientifique doit etre :
 - **Faisable :** Rester realiste par rapport aux ressources (personnelles, materielles, temps)
 - **Pertinente :** Viser a mieux comprendre le phenomene plutot que de le decrire ; eviter les previsions et les jugements moraux
 
+### Clarte des Construits
+
+La recherche scientifique procede par l'evaluation d'hypotheses derivees de theories preexistantes. La pierre angulaire reside dans la **definition stricte des construits theoriques**. Les ambiguites conceptuelles compromettent fondamentalement la validite des conclusions empiriques.
+
+Il est imperatif de proceder a une revue systematique de la litterature pour identifier les variations dans la maniere dont un concept est defini par differents auteurs.
+
 ## Operationnalisation
 
 C'est le processus qui consiste a rendre un concept abstrait (ex: *Social Media Literacy*) mesurable a l'aide de variables concretes et de questions specifiques.
 
-## Niveaux de Mesure des Variables
+**Exemple :** Le construit "engagement politique en ligne" peut etre operationnalise via :
 
-Les variables peuvent etre classees selon 4 types essentiels :
+- Somme des publications (`IGPosts`)
+- Somme des mentions "J'aime" (`IGLikes`)
+- Moyenne des commentaires par publication (`IGCommentsPPost`)
 
-| Type | Exemple | Proprietes |
-|------|---------|------------|
-| **Nominale** | Genre, Profession | Categories sans ordre |
-| **Ordinale** | Frequence de publication ("jamais" a "tous les jours") | Categories avec ordre |
-| **Continue** | Temperature en degres | Valeurs numeriques continues |
-| **Discrete** | Nombre de followers | Valeurs numeriques entieres |
+## Hypotheses Statistiques
 
-## Types de Questions
+L'evaluation empirique se structure autour de la formulation d'hypotheses binaires :
 
-Dans un questionnaire, on retrouve principalement :
+| Hypothese | Definition | Exemple |
+|-----------|-----------|---------|
+| **$H_0$ (Nulle)** | Absence d'effet, de difference ou de relation | $\mu_1 = \mu_2$ ou $\rho = 0$ |
+| **$H_1$ (Alternative)** | Existence d'un effet ou d'une relation | $\mu_1 \neq \mu_2$ ou $\rho \neq 0$ |
 
-- **Questions categorielles :** A choix multiple
-- **Questions d'intensite :** Echelles mesurant une frequence ou un degre d'accord (ex: "Combien de fois...", Echelle de 1 a 5)
+### Erreurs de test
+
+| Erreur | Nom | Description | Seuil |
+|--------|-----|-------------|-------|
+| **Type I ($\alpha$)** | Faux positif | Rejeter $H_0$ alors qu'elle est vraie | Convention : $\alpha = 0.05$ |
+| **Type II ($\beta$)** | Faux negatif | Ne pas rejeter $H_0$ alors que $H_1$ est vraie | Puissance = $1 - \beta$ |
+
+::: {.callout-warning}
+## Interpretation de la P-Value
+
+Ne **jamais** definir la p-value comme "la probabilite que $H_0$ soit vraie".
+
+La p-value = probabilite d'obtenir une statistique de test au moins aussi extreme que celle observee, **en supposant que $H_0$ est vraie**.
+
+- p > $\alpha$ : manque de preuves pour rejeter $H_0$ (pas une preuve de $H_0$)
+- p < $\alpha$ : on rejette $H_0$ en faveur de $H_1$
+:::
+
+## Echelles de Mesure (Niveaux de Stevens)
+
+La nature de la variable dicte la famille de tests statistiques applicables. Les niveaux sont **hierarchiques et cumulatifs** :
+
+| Niveau | Definition | Proprietes | Exemples | Statistiques applicables |
+|--------|-----------|------------|----------|-------------------------|
+| **Nominale** | Categories mutuellement exclusives, sans ordre | $=$ ou $\neq$ | Sexe, Religion, Parti politique | Mode, Frequences, Test $\chi^2$ |
+| **Ordinale** | Categories avec hierarchie/ordre | $<, >$ (intervalles non constants) | Niveau d'education, Echelle de Likert stricte | Mediane, Centiles, Spearman, Mann-Whitney |
+| **Intervalle** | Ordre + distances constantes et mesurables | $+, -$ (zero arbitraire) | Temperature (C/F), Scores QI | Moyenne, Ecart-type, Pearson, ANOVA |
+| **Ratio** | Intervalle + zero absolu significatif | $\times, \div$ | Age, Revenu, IGPosts, Temps de reaction | Coefficient de variation, Moyenne geometrique |
+
+::: {.callout-note}
+## Traitement des Echelles de Likert
+
+Mathematiquement, une echelle de Likert (1-5) est **ordinale**. Mais en pratique, sous reserve de normalite et symetrie, on les traite souvent comme des echelles d'**intervalle** pour permettre moyennes et regressions lineaires.
+:::
+
+## Types de Questions d'Enquete
+
+| Type | Description | Nature des donnees |
+|------|-------------|-------------------|
+| **Questions ouvertes** | Texte libre | Donnees non structurees (codage necessaire) |
+| **Questions fermees** | Choix unique/multiple | Donnees nominales |
+| **Echelles de Likert** | Degre d'accord (1-5) | Ordinales (traitees comme intervalle) |
+| **Differenciateur semantique** | Continuum entre 2 adjectifs bipolaires | Ordinales/Intervalle |
+
+## Biais Cognitifs d'Enquete
+
+| Biais | Description | Consequence |
+|-------|-------------|-------------|
+| **Desirabilite sociale** | Le repondant altere ses reponses pour paraitre socialement acceptable | Surestimation des comportements "positifs" |
+| **Acquiescement** | Tendance a repondre "Oui" / "D'accord" automatiquement | Corrélation artificielle positive |
+| **Effet de Halo** | Perception globale contamine l'evaluation d'attributs specifiques | Correlation artificielle entre variables distinctes |

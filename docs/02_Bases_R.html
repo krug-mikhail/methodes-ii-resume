@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Les Bases de R – Methodes II &amp; R</title>
+<title>Module 2 : Fondations de R et Architecture – Methodes II &amp; R</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -157,7 +157,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Resume du cours</a></li><li class="breadcrumb-item"><a href="./02_Bases_R.html">Les Bases de R</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Resume du cours</a></li><li class="breadcrumb-item"><a href="./02_Bases_R.html">Module 2 : Fondations de R et Architecture</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -189,31 +189,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Methodes II &amp; R - Resume</span></a>
+ <span class="menu-text">Methodes II - Analyse de Donnees et Statistiques sous R</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01_Theorie_Enquete.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Theorie : Enquete et Questionnaire</span></a>
+ <span class="menu-text">Module 1 : Methodologie et Enquete</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./02_Bases_R.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Les Bases de R</span></a>
+ <span class="menu-text">Module 2 : Fondations de R et Architecture</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./03_Manipulation_Dplyr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Manipulation de Donnees (Tidyverse / dplyr)</span></a>
+ <span class="menu-text">Module 3 : Tidyverse &amp; dplyr (Manipulation Avancee)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./04_Visualisation_Ggplot2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Visualisation avec ggplot2</span></a>
+ <span class="menu-text">Module 4 : Visualisation Avancee avec ggplot2</span></a>
   </div>
 </li>
       </ul>
@@ -228,24 +228,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#raccourcis-et-commandes-essentielles" id="toc-raccourcis-et-commandes-essentielles" class="nav-link active" data-scroll-target="#raccourcis-et-commandes-essentielles"><span class="header-section-number">1</span> Raccourcis et Commandes Essentielles</a></li>
-  <li><a href="#types-de-variables" id="toc-types-de-variables" class="nav-link" data-scroll-target="#types-de-variables"><span class="header-section-number">2</span> Types de Variables</a></li>
-  <li><a href="#structures-de-donnees" id="toc-structures-de-donnees" class="nav-link" data-scroll-target="#structures-de-donnees"><span class="header-section-number">3</span> Structures de Donnees</a>
+  <li><a href="#lenvironnement-rstudio" id="toc-lenvironnement-rstudio" class="nav-link active" data-scroll-target="#lenvironnement-rstudio"><span class="header-section-number">1</span> L’Environnement RStudio</a></li>
+  <li><a href="#raccourcis-de-productivite" id="toc-raccourcis-de-productivite" class="nav-link" data-scroll-target="#raccourcis-de-productivite"><span class="header-section-number">2</span> Raccourcis de Productivite</a></li>
+  <li><a href="#types-de-variables-vecteurs-atomiques" id="toc-types-de-variables-vecteurs-atomiques" class="nav-link" data-scroll-target="#types-de-variables-vecteurs-atomiques"><span class="header-section-number">3</span> Types de Variables (Vecteurs Atomiques)</a></li>
+  <li><a href="#coercition-implicite" id="toc-coercition-implicite" class="nav-link" data-scroll-target="#coercition-implicite"><span class="header-section-number">4</span> Coercition Implicite</a></li>
+  <li><a href="#structures-de-donnees" id="toc-structures-de-donnees" class="nav-link" data-scroll-target="#structures-de-donnees"><span class="header-section-number">5</span> Structures de Donnees</a>
   <ul class="collapse">
-  <li><a href="#vecteurs" id="toc-vecteurs" class="nav-link" data-scroll-target="#vecteurs"><span class="header-section-number">3.1</span> Vecteurs</a></li>
-  <li><a href="#matrices" id="toc-matrices" class="nav-link" data-scroll-target="#matrices"><span class="header-section-number">3.2</span> Matrices</a></li>
-  <li><a href="#data-frames" id="toc-data-frames" class="nav-link" data-scroll-target="#data-frames"><span class="header-section-number">3.3</span> Data Frames</a></li>
+  <li><a href="#vecteurs" id="toc-vecteurs" class="nav-link" data-scroll-target="#vecteurs"><span class="header-section-number">5.1</span> Vecteurs</a></li>
+  <li><a href="#matrices" id="toc-matrices" class="nav-link" data-scroll-target="#matrices"><span class="header-section-number">5.2</span> Matrices</a></li>
+  <li><a href="#facteurs-factors" id="toc-facteurs-factors" class="nav-link" data-scroll-target="#facteurs-factors"><span class="header-section-number">5.3</span> Facteurs (Factors)</a></li>
+  <li><a href="#listes" id="toc-listes" class="nav-link" data-scroll-target="#listes"><span class="header-section-number">5.4</span> Listes</a></li>
+  <li><a href="#data-frames" id="toc-data-frames" class="nav-link" data-scroll-target="#data-frames"><span class="header-section-number">5.5</span> Data Frames</a></li>
   </ul></li>
-  <li><a href="#fonctions-dexploration-rapide" id="toc-fonctions-dexploration-rapide" class="nav-link" data-scroll-target="#fonctions-dexploration-rapide"><span class="header-section-number">4</span> Fonctions d’Exploration Rapide</a></li>
+  <li><a href="#fonctions-dexploration" id="toc-fonctions-dexploration" class="nav-link" data-scroll-target="#fonctions-dexploration"><span class="header-section-number">6</span> Fonctions d’Exploration</a></li>
+  <li><a href="#fonctions-utilisateur-user-defined-functions" id="toc-fonctions-utilisateur-user-defined-functions" class="nav-link" data-scroll-target="#fonctions-utilisateur-user-defined-functions"><span class="header-section-number">7</span> Fonctions Utilisateur (User-Defined Functions)</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Resume du cours</a></li><li class="breadcrumb-item"><a href="./02_Bases_R.html">Les Bases de R</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Resume du cours</a></li><li class="breadcrumb-item"><a href="./02_Bases_R.html">Module 2 : Fondations de R et Architecture</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Les Bases de R</h1>
+<h1 class="title">Module 2 : Fondations de R et Architecture</h1>
 </div>
 
 
@@ -262,85 +267,211 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="raccourcis-et-commandes-essentielles" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="raccourcis-et-commandes-essentielles"><span class="header-section-number">1</span> Raccourcis et Commandes Essentielles</h2>
+<p>R est un environnement de programmation open-source concu pour le calcul statistique et la visualisation de donnees. Contrairement aux logiciels GUI, R exige la redaction de scripts, garantissant la <strong>reproductibilite</strong> de la recherche.</p>
+<section id="lenvironnement-rstudio" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="lenvironnement-rstudio"><span class="header-section-number">1</span> L’Environnement RStudio</h2>
+<p>RStudio se divise en <strong>4 quadrants</strong> :</p>
+<ol type="1">
+<li><strong>Editeur de code source</strong> : redaction et sauvegarde des scripts</li>
+<li><strong>Console</strong> : execution du code en temps reel</li>
+<li><strong>Environnement</strong> : inventaire des objets en memoire</li>
+<li><strong>Panneau utilitaire</strong> : fichiers, visualisations, packages, aide</li>
+</ol>
+</section>
+<section id="raccourcis-de-productivite" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="raccourcis-de-productivite"><span class="header-section-number">2</span> Raccourcis de Productivite</h2>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 33%">
+<col style="width: 16%">
+<col style="width: 30%">
+</colgroup>
 <thead>
 <tr class="header">
-<th>Commande</th>
+<th>Action</th>
+<th>Windows/Linux</th>
+<th>macOS</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>&lt;-</code></td>
-<td>Operateur d’affectation (assigner une valeur)</td>
+<td>Assignation <code>&lt;-</code></td>
+<td><code>Alt + -</code></td>
+<td><code>Option + -</code></td>
+<td>Insere l’operateur d’assignation avec espaces</td>
 </tr>
 <tr class="even">
-<td><code>#</code></td>
-<td>Commentaire (ignore par R)</td>
+<td>Executer le code</td>
+<td><code>Ctrl + Enter</code></td>
+<td><code>Cmd + Return</code></td>
+<td>Execute la ligne ou le bloc selectionne</td>
 </tr>
 <tr class="odd">
-<td><code>class(x)</code></td>
-<td>Verifier le type d’un objet</td>
+<td>Pipe <code>%&gt;%</code></td>
+<td><code>Ctrl + Shift + M</code></td>
+<td><code>Cmd + Shift + M</code></td>
+<td>Insere l’operateur pipe</td>
 </tr>
 <tr class="even">
-<td><code>getwd()</code></td>
-<td>Afficher le repertoire de travail actuel</td>
+<td>Redemarrer session</td>
+<td><code>Ctrl + Shift + F10</code></td>
+<td><code>Cmd + Shift + F10</code></td>
+<td>Vide la memoire, detache les packages</td>
 </tr>
 <tr class="odd">
-<td><code>setwd("chemin")</code></td>
-<td>Definir le repertoire de travail</td>
+<td>Commentaire en bloc</td>
+<td><code>Ctrl + Shift + C</code></td>
+<td><code>Cmd + Shift + C</code></td>
+<td>Commente/decommente une selection</td>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="types-de-variables" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="types-de-variables"><span class="header-section-number">2</span> Types de Variables</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Numerique</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">100</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Textuelle (chaine de caracteres) - toujours avec des guillemets</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="st">"chien"</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Logique</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>e <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="structures-de-donnees" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="structures-de-donnees"><span class="header-section-number">3</span> Structures de Donnees</h2>
-<section id="vecteurs" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="vecteurs"><span class="header-section-number">3.1</span> Vecteurs</h3>
-<p>Variables a plusieurs elements, creees avec <code>c()</code> :</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>v1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>v2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"chat"</span>, <span class="st">"chien"</span>, <span class="st">"oiseau"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="matrices" class="level3" data-number="3.2">
-<h3 data-number="3.2" class="anchored" data-anchor-id="matrices"><span class="header-section-number">3.2</span> Matrices</h3>
-<p>Tableaux contenant des donnees de <strong>meme type</strong> :</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>, <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">ncol =</span> <span class="dv">3</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Extraction : matrice[ligne, colonne]</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>m[<span class="dv">3</span>, <span class="dv">2</span>]  <span class="co"># 2e element de la 3e ligne</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="data-frames" class="level3" data-number="3.3">
-<h3 data-number="3.3" class="anchored" data-anchor-id="data-frames"><span class="header-section-number">3.3</span> Data Frames</h3>
-<p>Tableaux pouvant contenir des donnees de <strong>differents types</strong> (le plus courant en sciences sociales).</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span><code>&lt;-</code> vs <code>=</code>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
-<li><strong>Ligne</strong> = unite statistique (ex: la personne)</li>
+<li><code>&lt;-</code> : assignation globale (standard obligatoire)</li>
+<li><code>=</code> : reserve aux arguments dans les fonctions (ex: <code>mean(x, na.rm = TRUE)</code>)</li>
+</ul>
+<p>Ne jamais utiliser <code>=</code> pour l’assignation globale (conflits de portee lexicale).</p>
+</div>
+</div>
+</section>
+<section id="types-de-variables-vecteurs-atomiques" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="types-de-variables-vecteurs-atomiques"><span class="header-section-number">3</span> Types de Variables (Vecteurs Atomiques)</h2>
+<p>En R, meme un nombre unique est un <strong>vecteur de longueur 1</strong>.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 46%">
+<col style="width: 32%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+<th>Exemple</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>logical</code></td>
+<td>Booleen</td>
+<td><code>TRUE</code>, <code>FALSE</code>, <code>NA</code></td>
+</tr>
+<tr class="even">
+<td><code>integer</code></td>
+<td>Entier strict</td>
+<td><code>42L</code> (suffixe L obligatoire)</td>
+</tr>
+<tr class="odd">
+<td><code>numeric</code> / <code>double</code></td>
+<td>Reel a virgule flottante</td>
+<td><code>3.14</code> (defaut de R)</td>
+</tr>
+<tr class="even">
+<td><code>character</code></td>
+<td>Texte</td>
+<td><code>"chien"</code> (avec guillemets)</td>
+</tr>
+</tbody>
+</table>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Verification du type</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="dv">42</span>L)      <span class="co"># "integer"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="fl">3.14</span>)     <span class="co"># "numeric"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="st">"texte"</span>)  <span class="co"># "character"</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="cn">TRUE</span>)     <span class="co"># "logical"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="coercition-implicite" class="level2 callout-danger" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="coercition-implicite"><span class="header-section-number">4</span> Coercition Implicite</h2>
+<p>Un vecteur atomique doit etre <strong>strictement homogene</strong>. Si on melange les types, R convertit silencieusement selon la hierarchie :</p>
+<p><code>logical</code> → <code>integer</code> → <code>numeric</code> → <code>character</code></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="dv">5</span>, <span class="st">"Pomme"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Resultat : c("TRUE", "5", "Pomme") — tout devient character !</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Toute operation mathematique sur <code>"5"</code> echouera ensuite.</p>
+</section>
+<section id="structures-de-donnees" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="structures-de-donnees"><span class="header-section-number">5</span> Structures de Donnees</h2>
+<section id="vecteurs" class="level3" data-number="5.1">
+<h3 data-number="5.1" class="anchored" data-anchor-id="vecteurs"><span class="header-section-number">5.1</span> Vecteurs</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creation avec c()</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>v1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>v2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"chat"</span>, <span class="st">"chien"</span>, <span class="st">"oiseau"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Sequences</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>seq_1 <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">100</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>seq_2 <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">1</span>, <span class="at">by =</span> <span class="fl">0.1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="matrices" class="level3" data-number="5.2">
+<h3 data-number="5.2" class="anchored" data-anchor-id="matrices"><span class="header-section-number">5.2</span> Matrices</h3>
+<p>Structures 2D <strong>strictement homogenes</strong> (un seul type). Remplissage par colonnes par defaut.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>, <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">ncol =</span> <span class="dv">3</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>, <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">ncol =</span> <span class="dv">3</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)  <span class="co"># Remplissage par lignes</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Extraction : matrice[ligne, colonne]</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>m[<span class="dv">3</span>, <span class="dv">2</span>]   <span class="co"># Element ligne 3, colonne 2</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>m[<span class="dv">1</span>, ]    <span class="co"># Toute la ligne 1</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>m[, <span class="dv">2</span>]    <span class="co"># Toute la colonne 2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="facteurs-factors" class="level3" data-number="5.3">
+<h3 data-number="5.3" class="anchored" data-anchor-id="facteurs-factors"><span class="header-section-number">5.3</span> Facteurs (Factors)</h3>
+<p>Vecteurs entiers avec attribut “niveaux” (levels). Socle des variables nominales/ordinales dans les regressions.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Conversion en facteur ordonne</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>niveaux_education <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Secondaire"</span>, <span class="st">"Primaire"</span>, <span class="st">"Tertiaire"</span>, <span class="st">"Primaire"</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>facteur_education <span class="ot">&lt;-</span> <span class="fu">factor</span>(niveaux_education,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>                            <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Primaire"</span>, <span class="st">"Secondaire"</span>, <span class="st">"Tertiaire"</span>),</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>                            <span class="at">ordered =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="listes" class="level3" data-number="5.4">
+<h3 data-number="5.4" class="anchored" data-anchor-id="listes"><span class="header-section-number">5.4</span> Listes</h3>
+<p>Vecteurs <strong>heterogenes</strong> : peuvent contenir nombres, texte, matrices, autres listes, modeles statistiques.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>ma_liste <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">nom =</span> <span class="st">"Analyse"</span>,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">valeurs =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>),</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">matrice =</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">2</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>ma_liste<span class="sc">$</span>nom          <span class="co"># Acces par nom</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>ma_liste[[<span class="dv">2</span>]]         <span class="co"># Acces par index</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="data-frames" class="level3" data-number="5.5">
+<h3 data-number="5.5" class="anchored" data-anchor-id="data-frames"><span class="header-section-number">5.5</span> Data Frames</h3>
+<p>L’objet central de la Data Science en R. C’est une <strong>liste de colonnes de meme longueur</strong> pouvant contenir des types differents.</p>
+<ul>
+<li><strong>Ligne</strong> = unite statistique (observation/personne)</li>
 <li><strong>Colonne</strong> = variable</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">nom =</span> <span class="fu">c</span>(<span class="st">"Sid"</span>, <span class="st">"Manny"</span>, <span class="st">"Diego"</span>),</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">age =</span> <span class="fu">c</span>(<span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">35</span>)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Extraction d'une colonne avec $</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>age</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">nom =</span> <span class="fu">c</span>(<span class="st">"Sid"</span>, <span class="st">"Manny"</span>, <span class="st">"Diego"</span>),</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">age =</span> <span class="fu">c</span>(<span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">35</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Extraction d'une colonne avec $</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>age</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Creation avec data.frame()</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>entreprise_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">id_filiale =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">actifs_fixes =</span> <span class="fu">c</span>(<span class="dv">50000</span>, <span class="dv">75000</span>, <span class="dv">42000</span>, <span class="cn">NA</span>, <span class="dv">90000</span>),</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">passifs =</span> <span class="fu">c</span>(<span class="dv">20000</span>, <span class="dv">30000</span>, <span class="dv">15000</span>, <span class="dv">40000</span>, <span class="dv">45000</span>)</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
-<section id="fonctions-dexploration-rapide" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="fonctions-dexploration-rapide"><span class="header-section-number">4</span> Fonctions d’Exploration Rapide</h2>
+<section id="fonctions-dexploration" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="fonctions-dexploration"><span class="header-section-number">6</span> Fonctions d’Exploration</h2>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 43%">
+<col style="width: 56%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Fonction</th>
@@ -349,20 +480,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>dim(df)</code></td>
-<td>Nombre de lignes et colonnes</td>
-</tr>
-<tr class="even">
-<td><code>head(df)</code></td>
-<td>6 premieres lignes</td>
-</tr>
-<tr class="odd">
 <td><code>str(df)</code></td>
-<td>Structure du jeu de donnees</td>
+<td>Structure interne : types, nb observations, apercu des valeurs</td>
 </tr>
 <tr class="even">
 <td><code>summary(df)</code></td>
-<td>Resume statistique (moyenne, mediane, min, max)</td>
+<td>Statistiques descriptives (Min, Q1, Mediane, Moyenne, Q3, Max, NA)</td>
+</tr>
+<tr class="odd">
+<td><code>head(df, n)</code></td>
+<td>Premieres n lignes (defaut = 6)</td>
+</tr>
+<tr class="even">
+<td><code>dim(df)</code></td>
+<td>Vecteur <code>[nb_lignes, nb_colonnes]</code></td>
 </tr>
 <tr class="odd">
 <td><code>nrow(df)</code></td>
@@ -376,8 +507,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td><code>names(df)</code></td>
 <td>Noms des colonnes</td>
 </tr>
+<tr class="even">
+<td><code>class(x)</code></td>
+<td>Type d’un objet</td>
+</tr>
+<tr class="odd">
+<td><code>is.na(x)</code></td>
+<td>Masque booleen des valeurs manquantes</td>
+</tr>
+<tr class="even">
+<td><code>sum(is.na(x))</code></td>
+<td>Comptage total des NA</td>
+</tr>
 </tbody>
 </table>
+</section>
+<section id="fonctions-utilisateur-user-defined-functions" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="fonctions-utilisateur-user-defined-functions"><span class="header-section-number">7</span> Fonctions Utilisateur (User-Defined Functions)</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Definition</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>calculer_ratio <span class="ot">&lt;-</span> <span class="cf">function</span>(actifs, passifs) {</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">any</span>(<span class="fu">is.na</span>(actifs)) <span class="sc">|</span> <span class="fu">any</span>(<span class="fu">is.na</span>(passifs))) {</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">warning</span>(<span class="st">"Valeurs manquantes detectees."</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  ratio <span class="ot">&lt;-</span> actifs <span class="sc">/</span> passifs</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(ratio)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Application</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>entreprise_df<span class="sc">$</span>ratio_solv <span class="ot">&lt;-</span> <span class="fu">calculer_ratio</span>(entreprise_df<span class="sc">$</span>actifs_fixes,</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>                                            entreprise_df<span class="sc">$</span>passifs)</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(entreprise_df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
 </section>

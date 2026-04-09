@@ -1,19 +1,25 @@
 ---
-title: "Methodes II & R - Resume"
-subtitle: "SP 2026"
+title: "Methodes II - Analyse de Donnees et Statistiques sous R"
+subtitle: "Fiche de Revision Exhaustive - SP 2026"
 ---
 
-Bienvenue sur le resume de revision pour le cours Exercices Methodes II. Ce guide est optimise pour la recherche rapide pendant l'examen.
+## Introduction
+
+L'analyse quantitative des donnees en sciences sociales, economiques et naturelles requiert une maitrise des fondations theoriques et des outils informatiques. Ce document constitue la synthese exhaustive du cursus "Methodes II", integrant la theorie, les exercices et les scripts R.
 
 ## Navigation
 
-- [Theorie & Enquete](01_Theorie_Enquete.qmd) - Questions de recherche, hypotheses, operationnalisation et niveaux de mesure
-- [Les Bases de R](02_Bases_R.qmd) - Types de variables, vecteurs, matrices, data frames et fonctions de base
-- [Manipulation de donnees (dplyr)](03_Manipulation_Dplyr.qmd) - Importer (CSV), filtrer, selectionner, muter et resumer
-- [Visualisation (ggplot2)](04_Visualisation_Ggplot2.qmd) - Nuages de points, histogrammes, diagrammes a barres
+| Module | Contenu |
+|--------|---------|
+| [Module 1 : Methodologie](01_Theorie_Enquete.qmd) | Questions de recherche, hypotheses, operationnalisation, echelles de mesure, biais |
+| [Module 2 : Bases de R](02_Bases_R.qmd) | RStudio, types de variables, vecteurs, matrices, data frames, fonctions |
+| [Module 3 : Tidyverse / dplyr](03_Manipulation_Dplyr.qmd) | Importation CSV, pipe, select, filter, mutate, group_by, summarize |
+| [Module 4 : ggplot2](04_Visualisation_Ggplot2.qmd) | Grammaire graphique, geom_point, geom_bar, geom_histogram, geom_boxplot |
 
 ## Astuces pour l'examen
 
-- Utilisez `Ctrl+F` / `Cmd+F` pour chercher une commande specifique
+- `Ctrl+F` / `Cmd+F` pour chercher une commande specifique
+- `Ctrl+K` / `Cmd+K` pour la barre de recherche du site
 - Chargez vos paquets (`library(tidyverse)`) au debut de votre session
-- L'operateur d'affectation est `<-`
+- L'operateur d'affectation est `<-` (jamais `=` pour l'assignation globale)
+- Ne jamais ouvrir un CSV dans Excel avant de l'importer dans R

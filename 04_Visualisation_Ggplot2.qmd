@@ -1,62 +1,170 @@
 ---
-title: "Visualisation avec ggplot2"
+title: "Module 4 : Visualisation Avancee avec ggplot2"
 ---
 
-`ggplot2` utilise une "Grammar of Graphics" pour creer des graphiques en superposant des couches (layers) avec le signe `+`.
+`ggplot2` est l'implementation de "The Grammar of Graphics" (Leland Wilkinson). Il procede par **addition sequentielle de calques (layers)** superposes, liant les donnees a une representation spatiale.
 
-## Structure de base
+## Concepts Fondamentaux
+
+Tout graphique necessite **3 composants obligatoires** :
+
+| Composant | Fonction | Role |
+|-----------|----------|------|
+| **Donnees** | `ggplot(data = ...)` | Le data frame source |
+| **Esthetiques** | `aes(x, y, color, fill, size)` | Mappage variable → attribut visuel |
+| **Geometries** | `geom_*()` | L'objet visuel dessine (point, barre, ligne) |
+
+Et des composants **optionnels** :
+
+| Composant | Fonction | Role |
+|-----------|----------|------|
+| **Facettes** | `facet_wrap()`, `facet_grid()` | Sous-graphiques par categorie |
+| **Themes** | `theme_minimal()`, `theme_bw()` | Style visuel (grilles, polices) |
+| **Labels** | `labs()` | Titres, legendes, annotations |
 
 ```r
+# Structure de base
 ggplot(data = mon_df, mapping = aes(x = var_x, y = var_y, color = var_c)) +
   geom_XXX()
 ```
 
-Les 3 elements essentiels :
+::: {.callout-danger}
+## Mapping vs Setting (Erreur fatale courante)
 
-1. **`ggplot(data = ...)`** : Le jeu de donnees
-2. **`aes()`** : L'aesthetique (quelles variables sur quels axes, couleurs, etc.)
-3. **`geom_XXX()`** : Le type de graphique
+- **Dans `aes()`** : la couleur est dictee par une **variable des donnees**
+  - `aes(color = Species)` → couleurs automatiques par espece
+- **Hors `aes()`** : la couleur est un **choix stylistique fixe**
+  - `geom_point(color = "lightblue")` → tous les points en bleu
+
+Si on ecrit `aes(color = "lightblue")`, R traite "lightblue" comme une variable categorielle a une modalite → graphique probablement rouge avec legende aberrante !
+:::
 
 ## Les Principaux Geoms
 
 ### `geom_point()` - Nuage de points (Scatter plot)
 
-Relation entre deux variables continues.
+**Usage :** Relation entre **2 variables continues**.
 
 ```r
-ggplot(diamonds, aes(x = carat, y = price, color = cut)) +
-  geom_point()
+ggplot(data = mtcars, aes(x = disp, y = mpg, color = as.factor(cyl), size = wt)) +
+  geom_point(alpha = 0.8) +
+  labs(
+    title = "Covariance entre Cylindree et Efficience Energetique",
+    subtitle = "Le poids du vehicule modere la consommation",
+    x = "Cylindree Moteur (cu.in.)",
+    y = "Rendement (Miles par Gallon)",
+    color = "Cylindres",
+    size = "Poids (Tonnes US)"
+  ) +
+  theme_minimal()
 ```
 
-### `geom_bar()` - Diagramme a barres
+**Le probleme de l'Overplotting :**
 
-Compter les frequences d'une variable categorielle.
+Quand les donnees sont massives, les points se superposent et masquent la distribution.
+
+| Solution | Code | Effet |
+|----------|------|-------|
+| Transparence | `geom_point(alpha = 0.2)` | 5 points superposes = pixel opaque |
+| Bruit aleatoire | `geom_jitter()` | Deplace legerement chaque point |
+
+### `geom_bar()` et `geom_col()` - Diagrammes a barres
+
+| Fonction | Statistique | Usage |
+|----------|------------|-------|
+| `geom_bar()` | `stat = "count"` (automatique) | Fournir X seulement, R compte les frequences |
+| `geom_col()` | `stat = "identity"` | Fournir X et Y (valeur deja calculee) |
 
 ```r
+# geom_bar : comptage automatique
 ggplot(diamonds, aes(x = cut)) +
   geom_bar()
 
 # Avec remplissage par une autre variable
 ggplot(diamonds, aes(x = cut, fill = clarity)) +
-  geom_bar(position = "dodge")  # Barres cote a cote
+  geom_bar(position = "dodge", color = "black", linewidth = 0.2) +
+  labs(
+    title = "Analyse des Tailles de Diamants",
+    x = "Niveau de Taille",
+    y = "Denombrement",
+    fill = "Indice de Purete"
+  ) +
+  theme_bw()
 ```
+
+**Positions pour barres empilees/paralleles :**
+
+| Position | Effet |
+|----------|-------|
+| `position = "stack"` | Empilees (defaut) |
+| `position = "dodge"` | Cote a cote |
+| `position = "fill"` | Empilees normalisees a 100% |
 
 ### `geom_histogram()` - Histogramme
 
-Distribution d'une variable numerique.
+**Usage :** Distribution d'une **variable continue**. L'aire de chaque bac est proportionnelle a la frequence relative.
 
 ```r
-ggplot(diamonds, aes(x = price)) +
-  geom_histogram(binwidth = 500)
+ggplot(iris, aes(x = Sepal.Length)) +
+  geom_histogram(binwidth = 0.2, fill = "darkblue", color = "white") +
+  facet_wrap(~ Species) +
+  labs(
+    title = "Densite des Longueurs de Sepales (par Espece)",
+    x = "Longueur (cm)",
+    y = "Frequence"
+  )
 ```
 
-### `geom_boxplot()` - Boite a moustaches
+::: {.callout-warning}
+## Le parametre `binwidth`
 
-Comparer les distributions entre groupes.
+Le reglage du `binwidth` (largeur de l'intervalle) est crucial :
+
+- **Trop large** : masque la bimodalite (sous-ajustement)
+- **Trop fin** : capte le bruit aleatoire, "dents de scie" (sur-ajustement)
+
+Tester plusieurs valeurs pour trouver le bon equilibre.
+:::
+
+### `geom_boxplot()` - Boite a moustaches (Tukey)
+
+**Usage :** Comparer les distributions entre **groupes**. Diagnostic base sur les quantiles.
+
+**Anatomie du boxplot :**
+
+| Element | Description |
+|---------|-------------|
+| **Corps de la boite** | Du $Q_1$ (25e centile) au $Q_3$ (75e centile) |
+| **IQR** | $Q_3 - Q_1$ = ecart interquartile (50% centraux) |
+| **Ligne mediane** | 50e centile (mediane). Si asymetrique → distribution biaisee |
+| **Moustaches** | Jusqu'a l'observation la plus distante, max $1.5 \times IQR$ |
+| **Points (outliers)** | Au-dela des moustaches (~0.7% dans une loi normale) |
 
 ```r
 ggplot(diamonds, aes(x = cut, y = price)) +
   geom_boxplot()
+```
+
+**Exemple avance avec transformation log et personnalisation des outliers :**
+
+```r
+ggplot(igposts, aes(x = Content_Type, y = IGLikesPPost, fill = Content_Type)) +
+  geom_boxplot(
+    outlier.color = "darkred",
+    outlier.shape = 8,       # Asterisque pour les outliers
+    outlier.size = 2.5,
+    notch = FALSE            # notch = TRUE pour IC 95% de la mediane
+  ) +
+  scale_y_log10() +          # Echelle logarithmique pour longue queue
+  labs(
+    title = "Dispersion de l'Efficacite des Publications (Likes/Post)",
+    subtitle = "Echelle log. Points rouges = deviations virales.",
+    x = "Categorie de Publication",
+    y = "Likes Moyens (Echelle Log10)"
+  ) +
+  scale_fill_viridis_d(option = "cividis") +
+  theme_minimal() +
+  theme(legend.position = "none")
 ```
 
 ## Personnalisation (Labels)
@@ -67,18 +175,50 @@ ggplot(df, aes(x = var_x, y = var_y)) +
   labs(
     title = "Titre principal",
     subtitle = "Sous-titre",
-    x = "Nom de l'axe X",
-    y = "Nom de l'axe Y",
-    color = "Titre de la legende couleur"
+    x = "Nom de l'axe X (unite)",
+    y = "Nom de l'axe Y (unite)",
+    color = "Titre legende couleur",
+    caption = "Source : Dataset XYZ"    # Note de bas de page
   )
 ```
 
-## Recap Rapide : Quel Geom Choisir ?
+## Facettes : Sous-graphiques par categorie
+
+```r
+# Grille de sous-graphiques par espece
+ggplot(iris, aes(x = Sepal.Length)) +
+  geom_histogram(binwidth = 0.2) +
+  facet_wrap(~ Species)
+```
+
+## Normes d'Accessibilite et d'Integrite
+
+### Daltonisme (~8% des hommes)
+
+Ne jamais baser une information sur une opposition **rouge/vert** seule. Utiliser les palettes `viridis` :
+
+```r
++ scale_color_viridis_d()   # Variables discretes
++ scale_color_viridis_c()   # Variables continues
+```
+
+### Axe Y et zero
+
+Pour `geom_bar()` / `geom_col()`, l'axe Y **doit inclure le zero**. Tronquer l'axe amplifie artificiellement les differences (manipulation visuelle). Si les donnees sont loin de zero, utiliser `geom_point()` a la place.
+
+### Variable `shape`
+
+- `shape` est **reserve aux variables nominales** (pas continues)
+- Maximum **6 formes distinctes** discriminables par le cerveau humain
+- Variable continue dans `aes(shape = ...)` → **erreur/crash**
+
+## Recap : Quel Geom Choisir ?
 
 | Objectif | Geom | Variables |
 |----------|------|-----------|
-| Relation entre 2 variables continues | `geom_point()` | x = continue, y = continue |
-| Distribution d'une variable numerique | `geom_histogram()` | x = continue |
-| Frequences d'une variable categorielle | `geom_bar()` | x = categorielle |
+| Relation entre 2 var. continues | `geom_point()` | x = continue, y = continue |
+| Distribution d'une var. numerique | `geom_histogram()` | x = continue |
+| Frequences d'une var. categorielle | `geom_bar()` | x = categorielle |
 | Comparer distributions entre groupes | `geom_boxplot()` | x = categorielle, y = continue |
 | Tendance / evolution | `geom_line()` | x = continue/date, y = continue |
+| Valeurs pre-calculees en barres | `geom_col()` | x = categorielle, y = valeur |

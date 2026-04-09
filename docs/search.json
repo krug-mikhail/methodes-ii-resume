@@ -2,277 +2,397 @@
   {
     "objectID": "02_Bases_R.html",
     "href": "02_Bases_R.html",
-    "title": "Les Bases de R",
+    "title": "Module 2 : Fondations de R et Architecture",
     "section": "",
-    "text": "Commande\nDescription\n\n\n\n\n&lt;-\nOperateur d’affectation (assigner une valeur)\n\n\n#\nCommentaire (ignore par R)\n\n\nclass(x)\nVerifier le type d’un objet\n\n\ngetwd()\nAfficher le repertoire de travail actuel\n\n\nsetwd(\"chemin\")\nDefinir le repertoire de travail",
+    "text": "R est un environnement de programmation open-source concu pour le calcul statistique et la visualisation de donnees. Contrairement aux logiciels GUI, R exige la redaction de scripts, garantissant la reproductibilite de la recherche.",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Les Bases de R"
+      "Module 2 : Fondations de R et Architecture"
     ]
   },
   {
-    "objectID": "02_Bases_R.html#raccourcis-et-commandes-essentielles",
-    "href": "02_Bases_R.html#raccourcis-et-commandes-essentielles",
-    "title": "Les Bases de R",
-    "section": "",
-    "text": "Commande\nDescription\n\n\n\n\n&lt;-\nOperateur d’affectation (assigner une valeur)\n\n\n#\nCommentaire (ignore par R)\n\n\nclass(x)\nVerifier le type d’un objet\n\n\ngetwd()\nAfficher le repertoire de travail actuel\n\n\nsetwd(\"chemin\")\nDefinir le repertoire de travail",
+    "objectID": "02_Bases_R.html#lenvironnement-rstudio",
+    "href": "02_Bases_R.html#lenvironnement-rstudio",
+    "title": "Module 2 : Fondations de R et Architecture",
+    "section": "1 L’Environnement RStudio",
+    "text": "1 L’Environnement RStudio\nRStudio se divise en 4 quadrants :\n\nEditeur de code source : redaction et sauvegarde des scripts\nConsole : execution du code en temps reel\nEnvironnement : inventaire des objets en memoire\nPanneau utilitaire : fichiers, visualisations, packages, aide",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Les Bases de R"
+      "Module 2 : Fondations de R et Architecture"
     ]
   },
   {
-    "objectID": "02_Bases_R.html#types-de-variables",
-    "href": "02_Bases_R.html#types-de-variables",
-    "title": "Les Bases de R",
-    "section": "2 Types de Variables",
-    "text": "2 Types de Variables\n\n# Numerique\na &lt;- 100\n\n# Textuelle (chaine de caracteres) - toujours avec des guillemets\nc &lt;- \"chien\"\n\n# Logique\ne &lt;- TRUE",
+    "objectID": "02_Bases_R.html#raccourcis-de-productivite",
+    "href": "02_Bases_R.html#raccourcis-de-productivite",
+    "title": "Module 2 : Fondations de R et Architecture",
+    "section": "2 Raccourcis de Productivite",
+    "text": "2 Raccourcis de Productivite\n\n\n\n\n\n\n\n\n\nAction\nWindows/Linux\nmacOS\nDescription\n\n\n\n\nAssignation &lt;-\nAlt + -\nOption + -\nInsere l’operateur d’assignation avec espaces\n\n\nExecuter le code\nCtrl + Enter\nCmd + Return\nExecute la ligne ou le bloc selectionne\n\n\nPipe %&gt;%\nCtrl + Shift + M\nCmd + Shift + M\nInsere l’operateur pipe\n\n\nRedemarrer session\nCtrl + Shift + F10\nCmd + Shift + F10\nVide la memoire, detache les packages\n\n\nCommentaire en bloc\nCtrl + Shift + C\nCmd + Shift + C\nCommente/decommente une selection\n\n\n\n\n\n\n\n\n\nWarning&lt;- vs =\n\n\n\n\n&lt;- : assignation globale (standard obligatoire)\n= : reserve aux arguments dans les fonctions (ex: mean(x, na.rm = TRUE))\n\nNe jamais utiliser = pour l’assignation globale (conflits de portee lexicale).",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Les Bases de R"
+      "Module 2 : Fondations de R et Architecture"
+    ]
+  },
+  {
+    "objectID": "02_Bases_R.html#types-de-variables-vecteurs-atomiques",
+    "href": "02_Bases_R.html#types-de-variables-vecteurs-atomiques",
+    "title": "Module 2 : Fondations de R et Architecture",
+    "section": "3 Types de Variables (Vecteurs Atomiques)",
+    "text": "3 Types de Variables (Vecteurs Atomiques)\nEn R, meme un nombre unique est un vecteur de longueur 1.\n\n\n\n\n\n\n\n\nType\nDescription\nExemple\n\n\n\n\nlogical\nBooleen\nTRUE, FALSE, NA\n\n\ninteger\nEntier strict\n42L (suffixe L obligatoire)\n\n\nnumeric / double\nReel a virgule flottante\n3.14 (defaut de R)\n\n\ncharacter\nTexte\n\"chien\" (avec guillemets)\n\n\n\n# Verification du type\nclass(42L)      # \"integer\"\nclass(3.14)     # \"numeric\"\nclass(\"texte\")  # \"character\"\nclass(TRUE)     # \"logical\"",
+    "crumbs": [
+      "Accueil",
+      "Resume du cours",
+      "Module 2 : Fondations de R et Architecture"
+    ]
+  },
+  {
+    "objectID": "02_Bases_R.html#coercition-implicite",
+    "href": "02_Bases_R.html#coercition-implicite",
+    "title": "Module 2 : Fondations de R et Architecture",
+    "section": "4 Coercition Implicite",
+    "text": "4 Coercition Implicite\nUn vecteur atomique doit etre strictement homogene. Si on melange les types, R convertit silencieusement selon la hierarchie :\nlogical → integer → numeric → character\nc(TRUE, 5, \"Pomme\")\n# Resultat : c(\"TRUE\", \"5\", \"Pomme\") — tout devient character !\nToute operation mathematique sur \"5\" echouera ensuite.",
+    "crumbs": [
+      "Accueil",
+      "Resume du cours",
+      "Module 2 : Fondations de R et Architecture"
     ]
   },
   {
     "objectID": "02_Bases_R.html#structures-de-donnees",
     "href": "02_Bases_R.html#structures-de-donnees",
-    "title": "Les Bases de R",
-    "section": "3 Structures de Donnees",
-    "text": "3 Structures de Donnees\n\n3.1 Vecteurs\nVariables a plusieurs elements, creees avec c() :\nv1 &lt;- c(1, 2, 3)\nv2 &lt;- c(\"chat\", \"chien\", \"oiseau\")\n\n\n3.2 Matrices\nTableaux contenant des donnees de meme type :\nm &lt;- matrix(1:9, nrow = 3, ncol = 3)\n# Extraction : matrice[ligne, colonne]\nm[3, 2]  # 2e element de la 3e ligne\n\n\n3.3 Data Frames\nTableaux pouvant contenir des donnees de differents types (le plus courant en sciences sociales).\n\nLigne = unite statistique (ex: la personne)\nColonne = variable\n\ndf &lt;- data.frame(\n  nom = c(\"Sid\", \"Manny\", \"Diego\"),\n  age = c(30, 40, 35)\n)\n\n# Extraction d'une colonne avec $\ndf$age",
+    "title": "Module 2 : Fondations de R et Architecture",
+    "section": "5 Structures de Donnees",
+    "text": "5 Structures de Donnees\n\n5.1 Vecteurs\n# Creation avec c()\nv1 &lt;- c(1, 2, 3)\nv2 &lt;- c(\"chat\", \"chien\", \"oiseau\")\n\n# Sequences\nseq_1 &lt;- 1:100\nseq_2 &lt;- seq(from = 0, to = 1, by = 0.1)\n\n\n5.2 Matrices\nStructures 2D strictement homogenes (un seul type). Remplissage par colonnes par defaut.\nm &lt;- matrix(1:9, nrow = 3, ncol = 3)\nm &lt;- matrix(1:9, nrow = 3, ncol = 3, byrow = TRUE)  # Remplissage par lignes\n\n# Extraction : matrice[ligne, colonne]\nm[3, 2]   # Element ligne 3, colonne 2\nm[1, ]    # Toute la ligne 1\nm[, 2]    # Toute la colonne 2\n\n\n5.3 Facteurs (Factors)\nVecteurs entiers avec attribut “niveaux” (levels). Socle des variables nominales/ordinales dans les regressions.\n# Conversion en facteur ordonne\nniveaux_education &lt;- c(\"Secondaire\", \"Primaire\", \"Tertiaire\", \"Primaire\")\nfacteur_education &lt;- factor(niveaux_education,\n                            levels = c(\"Primaire\", \"Secondaire\", \"Tertiaire\"),\n                            ordered = TRUE)\n\n\n5.4 Listes\nVecteurs heterogenes : peuvent contenir nombres, texte, matrices, autres listes, modeles statistiques.\nma_liste &lt;- list(\n  nom = \"Analyse\",\n  valeurs = c(1, 2, 3),\n  matrice = matrix(1:4, 2, 2)\n)\nma_liste$nom          # Acces par nom\nma_liste[[2]]         # Acces par index\n\n\n5.5 Data Frames\nL’objet central de la Data Science en R. C’est une liste de colonnes de meme longueur pouvant contenir des types differents.\n\nLigne = unite statistique (observation/personne)\nColonne = variable\n\ndf &lt;- data.frame(\n  nom = c(\"Sid\", \"Manny\", \"Diego\"),\n  age = c(30, 40, 35)\n)\n\n# Extraction d'une colonne avec $\ndf$age\n\n# Creation avec data.frame()\nentreprise_df &lt;- data.frame(\n  id_filiale = 1:5,\n  actifs_fixes = c(50000, 75000, 42000, NA, 90000),\n  passifs = c(20000, 30000, 15000, 40000, 45000)\n)",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Les Bases de R"
+      "Module 2 : Fondations de R et Architecture"
     ]
   },
   {
-    "objectID": "02_Bases_R.html#fonctions-dexploration-rapide",
-    "href": "02_Bases_R.html#fonctions-dexploration-rapide",
-    "title": "Les Bases de R",
-    "section": "4 Fonctions d’Exploration Rapide",
-    "text": "4 Fonctions d’Exploration Rapide\n\n\n\nFonction\nDescription\n\n\n\n\ndim(df)\nNombre de lignes et colonnes\n\n\nhead(df)\n6 premieres lignes\n\n\nstr(df)\nStructure du jeu de donnees\n\n\nsummary(df)\nResume statistique (moyenne, mediane, min, max)\n\n\nnrow(df)\nNombre de lignes\n\n\nncol(df)\nNombre de colonnes\n\n\nnames(df)\nNoms des colonnes",
+    "objectID": "02_Bases_R.html#fonctions-dexploration",
+    "href": "02_Bases_R.html#fonctions-dexploration",
+    "title": "Module 2 : Fondations de R et Architecture",
+    "section": "6 Fonctions d’Exploration",
+    "text": "6 Fonctions d’Exploration\n\n\n\n\n\n\n\nFonction\nDescription\n\n\n\n\nstr(df)\nStructure interne : types, nb observations, apercu des valeurs\n\n\nsummary(df)\nStatistiques descriptives (Min, Q1, Mediane, Moyenne, Q3, Max, NA)\n\n\nhead(df, n)\nPremieres n lignes (defaut = 6)\n\n\ndim(df)\nVecteur [nb_lignes, nb_colonnes]\n\n\nnrow(df)\nNombre de lignes\n\n\nncol(df)\nNombre de colonnes\n\n\nnames(df)\nNoms des colonnes\n\n\nclass(x)\nType d’un objet\n\n\nis.na(x)\nMasque booleen des valeurs manquantes\n\n\nsum(is.na(x))\nComptage total des NA",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Les Bases de R"
+      "Module 2 : Fondations de R et Architecture"
+    ]
+  },
+  {
+    "objectID": "02_Bases_R.html#fonctions-utilisateur-user-defined-functions",
+    "href": "02_Bases_R.html#fonctions-utilisateur-user-defined-functions",
+    "title": "Module 2 : Fondations de R et Architecture",
+    "section": "7 Fonctions Utilisateur (User-Defined Functions)",
+    "text": "7 Fonctions Utilisateur (User-Defined Functions)\n# Definition\ncalculer_ratio &lt;- function(actifs, passifs) {\n  if (any(is.na(actifs)) | any(is.na(passifs))) {\n    warning(\"Valeurs manquantes detectees.\")\n  }\n  ratio &lt;- actifs / passifs\n  return(ratio)\n}\n\n# Application\nentreprise_df$ratio_solv &lt;- calculer_ratio(entreprise_df$actifs_fixes,\n                                            entreprise_df$passifs)\nstr(entreprise_df)",
+    "crumbs": [
+      "Accueil",
+      "Resume du cours",
+      "Module 2 : Fondations de R et Architecture"
     ]
   },
   {
     "objectID": "04_Visualisation_Ggplot2.html",
     "href": "04_Visualisation_Ggplot2.html",
-    "title": "Visualisation avec ggplot2",
+    "title": "Module 4 : Visualisation Avancee avec ggplot2",
     "section": "",
-    "text": "ggplot2 utilise une “Grammar of Graphics” pour creer des graphiques en superposant des couches (layers) avec le signe +.",
+    "text": "ggplot2 est l’implementation de “The Grammar of Graphics” (Leland Wilkinson). Il procede par addition sequentielle de calques (layers) superposes, liant les donnees a une representation spatiale.",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Visualisation avec ggplot2"
+      "Module 4 : Visualisation Avancee avec ggplot2"
     ]
   },
   {
-    "objectID": "04_Visualisation_Ggplot2.html#structure-de-base",
-    "href": "04_Visualisation_Ggplot2.html#structure-de-base",
-    "title": "Visualisation avec ggplot2",
-    "section": "1 Structure de base",
-    "text": "1 Structure de base\nggplot(data = mon_df, mapping = aes(x = var_x, y = var_y, color = var_c)) +\n  geom_XXX()\nLes 3 elements essentiels :\n\nggplot(data = ...) : Le jeu de donnees\naes() : L’aesthetique (quelles variables sur quels axes, couleurs, etc.)\ngeom_XXX() : Le type de graphique",
+    "objectID": "04_Visualisation_Ggplot2.html#concepts-fondamentaux",
+    "href": "04_Visualisation_Ggplot2.html#concepts-fondamentaux",
+    "title": "Module 4 : Visualisation Avancee avec ggplot2",
+    "section": "1 Concepts Fondamentaux",
+    "text": "1 Concepts Fondamentaux\nTout graphique necessite 3 composants obligatoires :\n\n\n\n\n\n\n\n\nComposant\nFonction\nRole\n\n\n\n\nDonnees\nggplot(data = ...)\nLe data frame source\n\n\nEsthetiques\naes(x, y, color, fill, size)\nMappage variable → attribut visuel\n\n\nGeometries\ngeom_*()\nL’objet visuel dessine (point, barre, ligne)\n\n\n\nEt des composants optionnels :\n\n\n\n\n\n\n\n\nComposant\nFonction\nRole\n\n\n\n\nFacettes\nfacet_wrap(), facet_grid()\nSous-graphiques par categorie\n\n\nThemes\ntheme_minimal(), theme_bw()\nStyle visuel (grilles, polices)\n\n\nLabels\nlabs()\nTitres, legendes, annotations\n\n\n\n# Structure de base\nggplot(data = mon_df, mapping = aes(x = var_x, y = var_y, color = var_c)) +\n  geom_XXX()",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Visualisation avec ggplot2"
+      "Module 4 : Visualisation Avancee avec ggplot2"
+    ]
+  },
+  {
+    "objectID": "04_Visualisation_Ggplot2.html#mapping-vs-setting-erreur-fatale-courante",
+    "href": "04_Visualisation_Ggplot2.html#mapping-vs-setting-erreur-fatale-courante",
+    "title": "Module 4 : Visualisation Avancee avec ggplot2",
+    "section": "2 Mapping vs Setting (Erreur fatale courante)",
+    "text": "2 Mapping vs Setting (Erreur fatale courante)\n\nDans aes() : la couleur est dictee par une variable des donnees\n\naes(color = Species) → couleurs automatiques par espece\n\nHors aes() : la couleur est un choix stylistique fixe\n\ngeom_point(color = \"lightblue\") → tous les points en bleu\n\n\nSi on ecrit aes(color = \"lightblue\"), R traite “lightblue” comme une variable categorielle a une modalite → graphique probablement rouge avec legende aberrante !",
+    "crumbs": [
+      "Accueil",
+      "Resume du cours",
+      "Module 4 : Visualisation Avancee avec ggplot2"
     ]
   },
   {
     "objectID": "04_Visualisation_Ggplot2.html#les-principaux-geoms",
     "href": "04_Visualisation_Ggplot2.html#les-principaux-geoms",
-    "title": "Visualisation avec ggplot2",
-    "section": "2 Les Principaux Geoms",
-    "text": "2 Les Principaux Geoms\n\n2.1 geom_point() - Nuage de points (Scatter plot)\nRelation entre deux variables continues.\nggplot(diamonds, aes(x = carat, y = price, color = cut)) +\n  geom_point()\n\n\n2.2 geom_bar() - Diagramme a barres\nCompter les frequences d’une variable categorielle.\nggplot(diamonds, aes(x = cut)) +\n  geom_bar()\n\n# Avec remplissage par une autre variable\nggplot(diamonds, aes(x = cut, fill = clarity)) +\n  geom_bar(position = \"dodge\")  # Barres cote a cote\n\n\n2.3 geom_histogram() - Histogramme\nDistribution d’une variable numerique.\nggplot(diamonds, aes(x = price)) +\n  geom_histogram(binwidth = 500)\n\n\n2.4 geom_boxplot() - Boite a moustaches\nComparer les distributions entre groupes.\nggplot(diamonds, aes(x = cut, y = price)) +\n  geom_boxplot()",
+    "title": "Module 4 : Visualisation Avancee avec ggplot2",
+    "section": "3 Les Principaux Geoms",
+    "text": "3 Les Principaux Geoms\n\n3.1 geom_point() - Nuage de points (Scatter plot)\nUsage : Relation entre 2 variables continues.\nggplot(data = mtcars, aes(x = disp, y = mpg, color = as.factor(cyl), size = wt)) +\n  geom_point(alpha = 0.8) +\n  labs(\n    title = \"Covariance entre Cylindree et Efficience Energetique\",\n    subtitle = \"Le poids du vehicule modere la consommation\",\n    x = \"Cylindree Moteur (cu.in.)\",\n    y = \"Rendement (Miles par Gallon)\",\n    color = \"Cylindres\",\n    size = \"Poids (Tonnes US)\"\n  ) +\n  theme_minimal()\nLe probleme de l’Overplotting :\nQuand les donnees sont massives, les points se superposent et masquent la distribution.\n\n\n\n\n\n\n\n\nSolution\nCode\nEffet\n\n\n\n\nTransparence\ngeom_point(alpha = 0.2)\n5 points superposes = pixel opaque\n\n\nBruit aleatoire\ngeom_jitter()\nDeplace legerement chaque point\n\n\n\n\n\n3.2 geom_bar() et geom_col() - Diagrammes a barres\n\n\n\n\n\n\n\n\nFonction\nStatistique\nUsage\n\n\n\n\ngeom_bar()\nstat = \"count\" (automatique)\nFournir X seulement, R compte les frequences\n\n\ngeom_col()\nstat = \"identity\"\nFournir X et Y (valeur deja calculee)\n\n\n\n# geom_bar : comptage automatique\nggplot(diamonds, aes(x = cut)) +\n  geom_bar()\n\n# Avec remplissage par une autre variable\nggplot(diamonds, aes(x = cut, fill = clarity)) +\n  geom_bar(position = \"dodge\", color = \"black\", linewidth = 0.2) +\n  labs(\n    title = \"Analyse des Tailles de Diamants\",\n    x = \"Niveau de Taille\",\n    y = \"Denombrement\",\n    fill = \"Indice de Purete\"\n  ) +\n  theme_bw()\nPositions pour barres empilees/paralleles :\n\n\n\nPosition\nEffet\n\n\n\n\nposition = \"stack\"\nEmpilees (defaut)\n\n\nposition = \"dodge\"\nCote a cote\n\n\nposition = \"fill\"\nEmpilees normalisees a 100%\n\n\n\n\n\n3.3 geom_histogram() - Histogramme\nUsage : Distribution d’une variable continue. L’aire de chaque bac est proportionnelle a la frequence relative.\nggplot(iris, aes(x = Sepal.Length)) +\n  geom_histogram(binwidth = 0.2, fill = \"darkblue\", color = \"white\") +\n  facet_wrap(~ Species) +\n  labs(\n    title = \"Densite des Longueurs de Sepales (par Espece)\",\n    x = \"Longueur (cm)\",\n    y = \"Frequence\"\n  )\n\n\n\n\n\n\nWarningLe parametre binwidth\n\n\n\nLe reglage du binwidth (largeur de l’intervalle) est crucial :\n\nTrop large : masque la bimodalite (sous-ajustement)\nTrop fin : capte le bruit aleatoire, “dents de scie” (sur-ajustement)\n\nTester plusieurs valeurs pour trouver le bon equilibre.\n\n\n\n\n3.4 geom_boxplot() - Boite a moustaches (Tukey)\nUsage : Comparer les distributions entre groupes. Diagnostic base sur les quantiles.\nAnatomie du boxplot :\n\n\n\n\n\n\n\nElement\nDescription\n\n\n\n\nCorps de la boite\nDu \\(Q_1\\) (25e centile) au \\(Q_3\\) (75e centile)\n\n\nIQR\n\\(Q_3 - Q_1\\) = ecart interquartile (50% centraux)\n\n\nLigne mediane\n50e centile (mediane). Si asymetrique → distribution biaisee\n\n\nMoustaches\nJusqu’a l’observation la plus distante, max \\(1.5 \\times IQR\\)\n\n\nPoints (outliers)\nAu-dela des moustaches (~0.7% dans une loi normale)\n\n\n\nggplot(diamonds, aes(x = cut, y = price)) +\n  geom_boxplot()\nExemple avance avec transformation log et personnalisation des outliers :\nggplot(igposts, aes(x = Content_Type, y = IGLikesPPost, fill = Content_Type)) +\n  geom_boxplot(\n    outlier.color = \"darkred\",\n    outlier.shape = 8,       # Asterisque pour les outliers\n    outlier.size = 2.5,\n    notch = FALSE            # notch = TRUE pour IC 95% de la mediane\n  ) +\n  scale_y_log10() +          # Echelle logarithmique pour longue queue\n  labs(\n    title = \"Dispersion de l'Efficacite des Publications (Likes/Post)\",\n    subtitle = \"Echelle log. Points rouges = deviations virales.\",\n    x = \"Categorie de Publication\",\n    y = \"Likes Moyens (Echelle Log10)\"\n  ) +\n  scale_fill_viridis_d(option = \"cividis\") +\n  theme_minimal() +\n  theme(legend.position = \"none\")",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Visualisation avec ggplot2"
+      "Module 4 : Visualisation Avancee avec ggplot2"
     ]
   },
   {
     "objectID": "04_Visualisation_Ggplot2.html#personnalisation-labels",
     "href": "04_Visualisation_Ggplot2.html#personnalisation-labels",
-    "title": "Visualisation avec ggplot2",
-    "section": "3 Personnalisation (Labels)",
-    "text": "3 Personnalisation (Labels)\nggplot(df, aes(x = var_x, y = var_y)) +\n  geom_point() +\n  labs(\n    title = \"Titre principal\",\n    subtitle = \"Sous-titre\",\n    x = \"Nom de l'axe X\",\n    y = \"Nom de l'axe Y\",\n    color = \"Titre de la legende couleur\"\n  )",
+    "title": "Module 4 : Visualisation Avancee avec ggplot2",
+    "section": "4 Personnalisation (Labels)",
+    "text": "4 Personnalisation (Labels)\nggplot(df, aes(x = var_x, y = var_y)) +\n  geom_point() +\n  labs(\n    title = \"Titre principal\",\n    subtitle = \"Sous-titre\",\n    x = \"Nom de l'axe X (unite)\",\n    y = \"Nom de l'axe Y (unite)\",\n    color = \"Titre legende couleur\",\n    caption = \"Source : Dataset XYZ\"    # Note de bas de page\n  )",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Visualisation avec ggplot2"
+      "Module 4 : Visualisation Avancee avec ggplot2"
     ]
   },
   {
-    "objectID": "04_Visualisation_Ggplot2.html#recap-rapide-quel-geom-choisir",
-    "href": "04_Visualisation_Ggplot2.html#recap-rapide-quel-geom-choisir",
-    "title": "Visualisation avec ggplot2",
-    "section": "4 Recap Rapide : Quel Geom Choisir ?",
-    "text": "4 Recap Rapide : Quel Geom Choisir ?\n\n\n\n\n\n\n\n\nObjectif\nGeom\nVariables\n\n\n\n\nRelation entre 2 variables continues\ngeom_point()\nx = continue, y = continue\n\n\nDistribution d’une variable numerique\ngeom_histogram()\nx = continue\n\n\nFrequences d’une variable categorielle\ngeom_bar()\nx = categorielle\n\n\nComparer distributions entre groupes\ngeom_boxplot()\nx = categorielle, y = continue\n\n\nTendance / evolution\ngeom_line()\nx = continue/date, y = continue",
+    "objectID": "04_Visualisation_Ggplot2.html#facettes-sous-graphiques-par-categorie",
+    "href": "04_Visualisation_Ggplot2.html#facettes-sous-graphiques-par-categorie",
+    "title": "Module 4 : Visualisation Avancee avec ggplot2",
+    "section": "5 Facettes : Sous-graphiques par categorie",
+    "text": "5 Facettes : Sous-graphiques par categorie\n# Grille de sous-graphiques par espece\nggplot(iris, aes(x = Sepal.Length)) +\n  geom_histogram(binwidth = 0.2) +\n  facet_wrap(~ Species)",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Visualisation avec ggplot2"
+      "Module 4 : Visualisation Avancee avec ggplot2"
+    ]
+  },
+  {
+    "objectID": "04_Visualisation_Ggplot2.html#normes-daccessibilite-et-dintegrite",
+    "href": "04_Visualisation_Ggplot2.html#normes-daccessibilite-et-dintegrite",
+    "title": "Module 4 : Visualisation Avancee avec ggplot2",
+    "section": "6 Normes d’Accessibilite et d’Integrite",
+    "text": "6 Normes d’Accessibilite et d’Integrite\n\n6.1 Daltonisme (~8% des hommes)\nNe jamais baser une information sur une opposition rouge/vert seule. Utiliser les palettes viridis :\n+ scale_color_viridis_d()   # Variables discretes\n+ scale_color_viridis_c()   # Variables continues\n\n\n6.2 Axe Y et zero\nPour geom_bar() / geom_col(), l’axe Y doit inclure le zero. Tronquer l’axe amplifie artificiellement les differences (manipulation visuelle). Si les donnees sont loin de zero, utiliser geom_point() a la place.\n\n\n6.3 Variable shape\n\nshape est reserve aux variables nominales (pas continues)\nMaximum 6 formes distinctes discriminables par le cerveau humain\nVariable continue dans aes(shape = ...) → erreur/crash",
+    "crumbs": [
+      "Accueil",
+      "Resume du cours",
+      "Module 4 : Visualisation Avancee avec ggplot2"
+    ]
+  },
+  {
+    "objectID": "04_Visualisation_Ggplot2.html#recap-quel-geom-choisir",
+    "href": "04_Visualisation_Ggplot2.html#recap-quel-geom-choisir",
+    "title": "Module 4 : Visualisation Avancee avec ggplot2",
+    "section": "7 Recap : Quel Geom Choisir ?",
+    "text": "7 Recap : Quel Geom Choisir ?\n\n\n\n\n\n\n\n\nObjectif\nGeom\nVariables\n\n\n\n\nRelation entre 2 var. continues\ngeom_point()\nx = continue, y = continue\n\n\nDistribution d’une var. numerique\ngeom_histogram()\nx = continue\n\n\nFrequences d’une var. categorielle\ngeom_bar()\nx = categorielle\n\n\nComparer distributions entre groupes\ngeom_boxplot()\nx = categorielle, y = continue\n\n\nTendance / evolution\ngeom_line()\nx = continue/date, y = continue\n\n\nValeurs pre-calculees en barres\ngeom_col()\nx = categorielle, y = valeur",
+    "crumbs": [
+      "Accueil",
+      "Resume du cours",
+      "Module 4 : Visualisation Avancee avec ggplot2"
     ]
   },
   {
     "objectID": "03_Manipulation_Dplyr.html",
     "href": "03_Manipulation_Dplyr.html",
-    "title": "Manipulation de Donnees (Tidyverse / dplyr)",
+    "title": "Module 3 : Tidyverse & dplyr (Manipulation Avancee)",
     "section": "",
-    "text": "Le paquet dplyr (inclus dans le tidyverse) permet de nettoyer et manipuler les Data Frames.",
+    "text": "Le Tidyverse est une philosophie et une grammaire coherente pour l’analyse de donnees. L’axiome central repose sur le concept de “Tidy Data” :",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Manipulation de Donnees (Tidyverse / dplyr)"
+      "Module 3 : Tidyverse & dplyr (Manipulation Avancee)"
     ]
   },
   {
-    "objectID": "03_Manipulation_Dplyr.html#importation",
-    "href": "03_Manipulation_Dplyr.html#importation",
-    "title": "Manipulation de Donnees (Tidyverse / dplyr)",
-    "section": "1 Importation",
-    "text": "1 Importation\nlibrary(tidyverse)\nsetwd(\"/chemin/vers/dossier\")\ndf &lt;- read_csv(\"fichier.csv\")\n\n\n\n\n\n\nImportant\n\n\n\nNe jamais ouvrir les CSV dans Excel avant R pour eviter de casser le format.",
+    "objectID": "03_Manipulation_Dplyr.html#importation-securisee-readr",
+    "href": "03_Manipulation_Dplyr.html#importation-securisee-readr",
+    "title": "Module 3 : Tidyverse & dplyr (Manipulation Avancee)",
+    "section": "1 Importation Securisee (readr)",
+    "text": "1 Importation Securisee (readr)\nLe package readr fournit read_csv(), superieur aux fonctions de base.\nlibrary(tidyverse)\nsetwd(\"/chemin/vers/dossier\")\ndf &lt;- read_csv(\"fichier.csv\")",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Manipulation de Donnees (Tidyverse / dplyr)"
+      "Module 3 : Tidyverse & dplyr (Manipulation Avancee)"
+    ]
+  },
+  {
+    "objectID": "03_Manipulation_Dplyr.html#ne-jamais-ouvrir-un-csv-dans-excel-avant-r",
+    "href": "03_Manipulation_Dplyr.html#ne-jamais-ouvrir-un-csv-dans-excel-avant-r",
+    "title": "Module 3 : Tidyverse & dplyr (Manipulation Avancee)",
+    "section": "2 Ne Jamais Ouvrir un CSV dans Excel Avant R",
+    "text": "2 Ne Jamais Ouvrir un CSV dans Excel Avant R\nExcel applique des heuristiques de formatage invisibles et destructrices :\n\nCorruption UTF-8 : accents et symboles speciaux detruits\nConversion en dates : identifiants comme “MAR1” convertis en “1er Mars”\nRemplacement des separateurs : virgules remplacees par points-virgules selon les parametres regionaux\n\nLa donnee doit demeurer inviolee : importation directement par code R.",
+    "crumbs": [
+      "Accueil",
+      "Resume du cours",
+      "Module 3 : Tidyverse & dplyr (Manipulation Avancee)"
     ]
   },
   {
     "objectID": "03_Manipulation_Dplyr.html#loperateur-pipe-ou",
     "href": "03_Manipulation_Dplyr.html#loperateur-pipe-ou",
-    "title": "Manipulation de Donnees (Tidyverse / dplyr)",
-    "section": "2 L’Operateur Pipe %>% (ou |>)",
-    "text": "2 L’Operateur Pipe %&gt;% (ou |&gt;)\nIl permet d’enchainer les operations (se lit “et ensuite”).\nRaccourci clavier : Ctrl + Shift + M (Windows) ou Cmd + Shift + M (Mac)\n# Sans pipe\nfilter(select(df, nom, age), age &gt; 30)\n\n# Avec pipe (plus lisible)\ndf %&gt;%\n  select(nom, age) %&gt;%\n  filter(age &gt; 30)",
+    "title": "Module 3 : Tidyverse & dplyr (Manipulation Avancee)",
+    "section": "3 L’Operateur Pipe %>% (ou |>)",
+    "text": "3 L’Operateur Pipe %&gt;% (ou |&gt;)\nLe pipe extrait l’objet a gauche et l’injecte comme premier argument de la fonction a droite.\nRaccourci : Ctrl + Shift + M (Windows) / Cmd + Shift + M (Mac)\n# Sans pipe (lecture de l'interieur vers l'exterieur)\nfilter(select(df, nom, age), age &gt; 30)\n\n# Avec pipe (lecture lineaire gauche a droite)\ndf %&gt;%\n  select(nom, age) %&gt;%\n  filter(age &gt; 30)",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Manipulation de Donnees (Tidyverse / dplyr)"
+      "Module 3 : Tidyverse & dplyr (Manipulation Avancee)"
     ]
   },
   {
     "objectID": "03_Manipulation_Dplyr.html#les-verbes-de-dplyr",
     "href": "03_Manipulation_Dplyr.html#les-verbes-de-dplyr",
-    "title": "Manipulation de Donnees (Tidyverse / dplyr)",
-    "section": "3 Les Verbes de dplyr",
-    "text": "3 Les Verbes de dplyr\n\n3.1 select() - Selectionner des colonnes\ndf %&gt;% select(nom, age)\ndf %&gt;% select(-colonne_a_exclure)\n\n\n3.2 filter() - Filtrer des lignes\ndf %&gt;% filter(mpg &gt;= 25)\ndf %&gt;% filter(cyl == 4 & mpg &gt; 20)\ndf %&gt;% filter(cyl == 4 | cyl == 6)\nOperateurs de comparaison :\n\n\n\nOperateur\nSignification\n\n\n\n\n==\nEgal a\n\n\n!=\nDifferent de\n\n\n&gt;, &lt;\nSuperieur, inferieur\n\n\n&gt;=, &lt;=\nSuperieur ou egal, inferieur ou egal\n\n\n&\nET logique\n\n\n\\|\nOU logique\n\n\n\n\n\n3.3 mutate() - Creer ou modifier une colonne\ndf %&gt;% mutate(ratio = mpg / wt)\ndf %&gt;% mutate(categorie = ifelse(mpg &gt; 20, \"econome\", \"gourmand\"))\n\n\n3.4 arrange() - Trier les lignes\ndf %&gt;% arrange(mpg)        # Croissant\ndf %&gt;% arrange(desc(mpg))  # Decroissant\n\n\n3.5 group_by() + summarize() - Resumer par groupe\ndf %&gt;%\n  group_by(cyl) %&gt;%\n  summarize(\n    moyenne_mpg = mean(mpg),\n    mediane_mpg = median(mpg),\n    nb_obs = n()\n  )\n\n\n3.6 count() - Compter les observations\ndf %&gt;% count(cyl)\ndf %&gt;% count(cyl, sort = TRUE)  # Trie par frequence decroissante",
+    "title": "Module 3 : Tidyverse & dplyr (Manipulation Avancee)",
+    "section": "4 Les Verbes de dplyr",
+    "text": "4 Les Verbes de dplyr\nChaque verbe prend un data frame en entree et retourne un data frame modifie.\n\n4.1 select() - Projection des colonnes\ndf %&gt;% select(nom, age)\ndf %&gt;% select(-colonne_a_exclure)   # Exclusion avec -\nAssistants de selection dynamiques :\n\n\n\n\n\n\n\n\nHelper\nDescription\nExemple\n\n\n\n\nstarts_with(\"x\")\nColonnes commencant par “x”\nselect(starts_with(\"IG\"))\n\n\nends_with(\"x\")\nColonnes finissant par “x”\nselect(ends_with(\"Post\"))\n\n\ncontains(\"x\")\nColonnes contenant “x”\nselect(contains(\"Like\"))\n\n\n\n# Exemple avec mtcars\nmtcars %&gt;%\n  select(mpg, cyl, starts_with(\"c\")) %&gt;%\n  select(-cyl)  # Exclusion chirurgicale\n\n\n4.2 filter() - Filtrage conditionnel des lignes\nLes lignes TRUE sont preservees, FALSE et NA sont purgees.\ndf %&gt;% filter(mpg &gt;= 25)\ndf %&gt;% filter(cyl == 4 & mpg &gt; 20)\ndf %&gt;% filter(cyl == 4 | cyl == 6)\ndf %&gt;% filter(cut %in% c(\"Ideal\", \"Premium\"))\ndf %&gt;% filter(!is.na(price))   # Exclure les NA\nOperateurs logiques :\n\n\n\nOperateur\nSignification\nAttention\n\n\n\n\n==\nEgal a\nPrudence sur les decimaux (virgule flottante)\n\n\n!=\nDifferent de\n\n\n\n&gt;, &lt;\nSuperieur, inferieur\n\n\n\n&gt;=, &lt;=\nSuperieur ou egal, inferieur ou egal\n\n\n\n&\nET logique (intersection)\n\n\n\n\\|\nOU logique (union)\n\n\n\n%in%\nAppartenance a un vecteur\nx %in% c(\"A\", \"B\")\n\n\n!\nNegation\n!is.na(x)\n\n\n\n# Exemple avec diamonds\ndiamants_premium &lt;- diamonds %&gt;%\n  filter(carat &gt;= 1.5 & cut %in% c(\"Ideal\", \"Premium\")) %&gt;%\n  filter(!is.na(price))\n\n\n4.3 mutate() - Creer ou modifier des colonnes\nAjoute des colonnes tout en preservant le nombre de lignes.\ndf %&gt;% mutate(ratio = mpg / wt)\ndf %&gt;% mutate(categorie = ifelse(mpg &gt; 20, \"econome\", \"gourmand\"))\nVectorisation conditionnelle avec case_when() :\ndf %&gt;%\n  mutate(\n    temp_fahrenheit = (temperature_anomaly * 9/5) + 32,\n    carbon_risk_ratio = co2_level / 280,\n\n    climate_status = case_when(\n      carbon_risk_ratio &lt; 1.0                              ~ \"Periode Stable\",\n      carbon_risk_ratio &gt;= 1.0 & carbon_risk_ratio &lt; 1.5   ~ \"Hausse Moderee\",\n      carbon_risk_ratio &gt;= 1.5                              ~ \"Dereglement Severe\",\n      TRUE                                                  ~ \"Indetermine\"  # clause else\n    )\n  )\n\n\n4.4 arrange() - Tri des lignes\ndf %&gt;% arrange(mpg)          # Croissant (defaut)\ndf %&gt;% arrange(desc(mpg))    # Decroissant\ndf %&gt;% arrange(desc(temperature_anomaly), year)  # Tri multiple\n\n\n4.5 group_by() + summarize() - Agregation (Split-Apply-Combine)\nLe paradigme en 3 phases :\n\nSplit (group_by()) : fragmente les donnees par modalites\nApply (summarize()) : calcule les metriques par groupe\nCombine : recoud les resultats en un nouveau data frame\n\ndf %&gt;%\n  group_by(cyl) %&gt;%\n  summarize(\n    moyenne_mpg = mean(mpg, na.rm = TRUE),\n    mediane_mpg = median(mpg, na.rm = TRUE),\n    ecart_type  = sd(mpg, na.rm = TRUE),\n    nb_obs      = n()\n  ) %&gt;%\n  ungroup()  # Toujours retirer le groupement apres !\nExemple complet avec donnees d’engagement politique (igposts) :\nanalyse_efficacite &lt;- igposts %&gt;%\n  group_by(Political_Party) %&gt;%\n  summarize(\n    nombre_candidats             = n(),\n    volume_moyen_posts           = mean(IGPosts, na.rm = TRUE),\n    total_likes                  = sum(IGLikes, na.rm = TRUE),\n    ecart_type_likes             = sd(IGLikes, na.rm = TRUE),\n    efficacite_likes_par_post    = mean(IGLikesPPost, na.rm = TRUE),\n    efficacite_comments_par_post = mean(IGCommentsPPost, na.rm = TRUE)\n  ) %&gt;%\n  ungroup() %&gt;%\n  arrange(desc(efficacite_likes_par_post))\n\n\n4.6 count() - Denombrement frequentiel\nRaccourci pour group_by(variable) %&gt;% summarize(n = n()).\ndf %&gt;% count(cyl)\ndf %&gt;% count(cyl, sort = TRUE)  # Tri decroissant automatique\n\n# Equivalent long\ndf %&gt;% group_by(cyl) %&gt;% summarize(n = n())",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Manipulation de Donnees (Tidyverse / dplyr)"
+      "Module 3 : Tidyverse & dplyr (Manipulation Avancee)"
     ]
   },
   {
-    "objectID": "03_Manipulation_Dplyr.html#statistiques-descriptives-utiles",
-    "href": "03_Manipulation_Dplyr.html#statistiques-descriptives-utiles",
-    "title": "Manipulation de Donnees (Tidyverse / dplyr)",
-    "section": "4 Statistiques Descriptives Utiles",
-    "text": "4 Statistiques Descriptives Utiles\n\n\n\nFonction\nDescription\n\n\n\n\nmean(x)\nMoyenne\n\n\nmedian(x)\nMediane\n\n\nsd(x)\nEcart-type\n\n\nmin(x), max(x)\nMinimum, Maximum\n\n\nsum(x)\nSomme\n\n\nn()\nNombre d’observations (dans summarize)\n\n\nn_distinct(x)\nNombre de valeurs uniques",
+    "objectID": "03_Manipulation_Dplyr.html#statistiques-descriptives---recap",
+    "href": "03_Manipulation_Dplyr.html#statistiques-descriptives---recap",
+    "title": "Module 3 : Tidyverse & dplyr (Manipulation Avancee)",
+    "section": "5 Statistiques Descriptives - Recap",
+    "text": "5 Statistiques Descriptives - Recap\n\n\n\nFonction\nDescription\nArgument NA\n\n\n\n\nmean(x)\nMoyenne\nna.rm = TRUE\n\n\nmedian(x)\nMediane\nna.rm = TRUE\n\n\nsd(x)\nEcart-type\nna.rm = TRUE\n\n\nmin(x), max(x)\nMinimum, Maximum\nna.rm = TRUE\n\n\nsum(x)\nSomme\nna.rm = TRUE\n\n\nn()\nNombre d’observations (dans summarize)\n-\n\n\nn_distinct(x)\nNombre de valeurs uniques\n-\n\n\n\n\n\n\n\n\n\nTipna.rm = TRUE\n\n\n\nToujours ajouter na.rm = TRUE dans les fonctions statistiques (mean, sd, median…) pour ignorer les valeurs manquantes. Sans cela, le resultat sera NA si une seule valeur manque.",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Manipulation de Donnees (Tidyverse / dplyr)"
+      "Module 3 : Tidyverse & dplyr (Manipulation Avancee)"
     ]
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Methodes II & R - Resume",
+    "title": "Methodes II - Analyse de Donnees et Statistiques sous R",
     "section": "",
-    "text": "Bienvenue sur le resume de revision pour le cours Exercices Methodes II. Ce guide est optimise pour la recherche rapide pendant l’examen.",
+    "text": "L’analyse quantitative des donnees en sciences sociales, economiques et naturelles requiert une maitrise des fondations theoriques et des outils informatiques. Ce document constitue la synthese exhaustive du cursus “Methodes II”, integrant la theorie, les exercices et les scripts R.",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Methodes II & R - Resume"
+      "Methodes II - Analyse de Donnees et Statistiques sous R"
+    ]
+  },
+  {
+    "objectID": "index.html#introduction",
+    "href": "index.html#introduction",
+    "title": "Methodes II - Analyse de Donnees et Statistiques sous R",
+    "section": "",
+    "text": "L’analyse quantitative des donnees en sciences sociales, economiques et naturelles requiert une maitrise des fondations theoriques et des outils informatiques. Ce document constitue la synthese exhaustive du cursus “Methodes II”, integrant la theorie, les exercices et les scripts R.",
+    "crumbs": [
+      "Accueil",
+      "Resume du cours",
+      "Methodes II - Analyse de Donnees et Statistiques sous R"
     ]
   },
   {
     "objectID": "index.html#navigation",
     "href": "index.html#navigation",
-    "title": "Methodes II & R - Resume",
-    "section": "1 Navigation",
-    "text": "1 Navigation\n\nTheorie & Enquete - Questions de recherche, hypotheses, operationnalisation et niveaux de mesure\nLes Bases de R - Types de variables, vecteurs, matrices, data frames et fonctions de base\nManipulation de donnees (dplyr) - Importer (CSV), filtrer, selectionner, muter et resumer\nVisualisation (ggplot2) - Nuages de points, histogrammes, diagrammes a barres",
+    "title": "Methodes II - Analyse de Donnees et Statistiques sous R",
+    "section": "2 Navigation",
+    "text": "2 Navigation\n\n\n\nModule\nContenu\n\n\n\n\nModule 1 : Methodologie\nQuestions de recherche, hypotheses, operationnalisation, echelles de mesure, biais\n\n\nModule 2 : Bases de R\nRStudio, types de variables, vecteurs, matrices, data frames, fonctions\n\n\nModule 3 : Tidyverse / dplyr\nImportation CSV, pipe, select, filter, mutate, group_by, summarize\n\n\nModule 4 : ggplot2\nGrammaire graphique, geom_point, geom_bar, geom_histogram, geom_boxplot",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Methodes II & R - Resume"
+      "Methodes II - Analyse de Donnees et Statistiques sous R"
     ]
   },
   {
     "objectID": "index.html#astuces-pour-lexamen",
     "href": "index.html#astuces-pour-lexamen",
-    "title": "Methodes II & R - Resume",
-    "section": "2 Astuces pour l’examen",
-    "text": "2 Astuces pour l’examen\n\nUtilisez Ctrl+F / Cmd+F pour chercher une commande specifique\nChargez vos paquets (library(tidyverse)) au debut de votre session\nL’operateur d’affectation est &lt;-",
+    "title": "Methodes II - Analyse de Donnees et Statistiques sous R",
+    "section": "3 Astuces pour l’examen",
+    "text": "3 Astuces pour l’examen\n\nCtrl+F / Cmd+F pour chercher une commande specifique\nCtrl+K / Cmd+K pour la barre de recherche du site\nChargez vos paquets (library(tidyverse)) au debut de votre session\nL’operateur d’affectation est &lt;- (jamais = pour l’assignation globale)\nNe jamais ouvrir un CSV dans Excel avant de l’importer dans R",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Methodes II & R - Resume"
+      "Methodes II - Analyse de Donnees et Statistiques sous R"
     ]
   },
   {
     "objectID": "01_Theorie_Enquete.html",
     "href": "01_Theorie_Enquete.html",
-    "title": "Theorie : Enquete et Questionnaire",
+    "title": "Module 1 : Methodologie et Enquete",
     "section": "",
-    "text": "Une question de recherche scientifique doit etre :\n\nClaire : Eviter la confusion et le vague ; bien delimiter la recherche\nFaisable : Rester realiste par rapport aux ressources (personnelles, materielles, temps)\nPertinente : Viser a mieux comprendre le phenomene plutot que de le decrire ; eviter les previsions et les jugements moraux",
+    "text": "Ce module pose les fondations epistemologiques, conceptuelles et methodologiques indispensables avant toute interaction avec un logiciel d’analyse.",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Theorie : Enquete et Questionnaire"
+      "Module 1 : Methodologie et Enquete"
     ]
   },
   {
     "objectID": "01_Theorie_Enquete.html#la-question-de-recherche-rq",
     "href": "01_Theorie_Enquete.html#la-question-de-recherche-rq",
-    "title": "Theorie : Enquete et Questionnaire",
-    "section": "",
-    "text": "Une question de recherche scientifique doit etre :\n\nClaire : Eviter la confusion et le vague ; bien delimiter la recherche\nFaisable : Rester realiste par rapport aux ressources (personnelles, materielles, temps)\nPertinente : Viser a mieux comprendre le phenomene plutot que de le decrire ; eviter les previsions et les jugements moraux",
+    "title": "Module 1 : Methodologie et Enquete",
+    "section": "1 La Question de Recherche (RQ)",
+    "text": "1 La Question de Recherche (RQ)\nUne question de recherche scientifique doit etre :\n\nClaire : Eviter la confusion et le vague ; bien delimiter la recherche\nFaisable : Rester realiste par rapport aux ressources (personnelles, materielles, temps)\nPertinente : Viser a mieux comprendre le phenomene plutot que de le decrire ; eviter les previsions et les jugements moraux\n\n\n1.1 Clarte des Construits\nLa recherche scientifique procede par l’evaluation d’hypotheses derivees de theories preexistantes. La pierre angulaire reside dans la definition stricte des construits theoriques. Les ambiguites conceptuelles compromettent fondamentalement la validite des conclusions empiriques.\nIl est imperatif de proceder a une revue systematique de la litterature pour identifier les variations dans la maniere dont un concept est defini par differents auteurs.",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Theorie : Enquete et Questionnaire"
+      "Module 1 : Methodologie et Enquete"
     ]
   },
   {
     "objectID": "01_Theorie_Enquete.html#operationnalisation",
     "href": "01_Theorie_Enquete.html#operationnalisation",
-    "title": "Theorie : Enquete et Questionnaire",
+    "title": "Module 1 : Methodologie et Enquete",
     "section": "2 Operationnalisation",
-    "text": "2 Operationnalisation\nC’est le processus qui consiste a rendre un concept abstrait (ex: Social Media Literacy) mesurable a l’aide de variables concretes et de questions specifiques.",
+    "text": "2 Operationnalisation\nC’est le processus qui consiste a rendre un concept abstrait (ex: Social Media Literacy) mesurable a l’aide de variables concretes et de questions specifiques.\nExemple : Le construit “engagement politique en ligne” peut etre operationnalise via :\n\nSomme des publications (IGPosts)\nSomme des mentions “J’aime” (IGLikes)\nMoyenne des commentaires par publication (IGCommentsPPost)",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Theorie : Enquete et Questionnaire"
+      "Module 1 : Methodologie et Enquete"
     ]
   },
   {
-    "objectID": "01_Theorie_Enquete.html#niveaux-de-mesure-des-variables",
-    "href": "01_Theorie_Enquete.html#niveaux-de-mesure-des-variables",
-    "title": "Theorie : Enquete et Questionnaire",
-    "section": "3 Niveaux de Mesure des Variables",
-    "text": "3 Niveaux de Mesure des Variables\nLes variables peuvent etre classees selon 4 types essentiels :\n\n\n\n\n\n\n\n\nType\nExemple\nProprietes\n\n\n\n\nNominale\nGenre, Profession\nCategories sans ordre\n\n\nOrdinale\nFrequence de publication (“jamais” a “tous les jours”)\nCategories avec ordre\n\n\nContinue\nTemperature en degres\nValeurs numeriques continues\n\n\nDiscrete\nNombre de followers\nValeurs numeriques entieres",
+    "objectID": "01_Theorie_Enquete.html#hypotheses-statistiques",
+    "href": "01_Theorie_Enquete.html#hypotheses-statistiques",
+    "title": "Module 1 : Methodologie et Enquete",
+    "section": "3 Hypotheses Statistiques",
+    "text": "3 Hypotheses Statistiques\nL’evaluation empirique se structure autour de la formulation d’hypotheses binaires :\n\n\n\n\n\n\n\n\nHypothese\nDefinition\nExemple\n\n\n\n\n\\(H_0\\) (Nulle)\nAbsence d’effet, de difference ou de relation\n\\(\\mu_1 = \\mu_2\\) ou \\(\\rho = 0\\)\n\n\n\\(H_1\\) (Alternative)\nExistence d’un effet ou d’une relation\n\\(\\mu_1 \\neq \\mu_2\\) ou \\(\\rho \\neq 0\\)\n\n\n\n\n3.1 Erreurs de test\n\n\n\n\n\n\n\n\n\nErreur\nNom\nDescription\nSeuil\n\n\n\n\nType I (\\(\\alpha\\))\nFaux positif\nRejeter \\(H_0\\) alors qu’elle est vraie\nConvention : \\(\\alpha = 0.05\\)\n\n\nType II (\\(\\beta\\))\nFaux negatif\nNe pas rejeter \\(H_0\\) alors que \\(H_1\\) est vraie\nPuissance = \\(1 - \\beta\\)\n\n\n\n\n\n\n\n\n\nWarningInterpretation de la P-Value\n\n\n\nNe jamais definir la p-value comme “la probabilite que \\(H_0\\) soit vraie”.\nLa p-value = probabilite d’obtenir une statistique de test au moins aussi extreme que celle observee, en supposant que \\(H_0\\) est vraie.\n\np &gt; \\(\\alpha\\) : manque de preuves pour rejeter \\(H_0\\) (pas une preuve de \\(H_0\\))\np &lt; \\(\\alpha\\) : on rejette \\(H_0\\) en faveur de \\(H_1\\)",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Theorie : Enquete et Questionnaire"
+      "Module 1 : Methodologie et Enquete"
     ]
   },
   {
-    "objectID": "01_Theorie_Enquete.html#types-de-questions",
-    "href": "01_Theorie_Enquete.html#types-de-questions",
-    "title": "Theorie : Enquete et Questionnaire",
-    "section": "4 Types de Questions",
-    "text": "4 Types de Questions\nDans un questionnaire, on retrouve principalement :\n\nQuestions categorielles : A choix multiple\nQuestions d’intensite : Echelles mesurant une frequence ou un degre d’accord (ex: “Combien de fois…”, Echelle de 1 a 5)",
+    "objectID": "01_Theorie_Enquete.html#echelles-de-mesure-niveaux-de-stevens",
+    "href": "01_Theorie_Enquete.html#echelles-de-mesure-niveaux-de-stevens",
+    "title": "Module 1 : Methodologie et Enquete",
+    "section": "4 Echelles de Mesure (Niveaux de Stevens)",
+    "text": "4 Echelles de Mesure (Niveaux de Stevens)\nLa nature de la variable dicte la famille de tests statistiques applicables. Les niveaux sont hierarchiques et cumulatifs :\n\n\n\n\n\n\n\n\n\n\nNiveau\nDefinition\nProprietes\nExemples\nStatistiques applicables\n\n\n\n\nNominale\nCategories mutuellement exclusives, sans ordre\n\\(=\\) ou \\(\\neq\\)\nSexe, Religion, Parti politique\nMode, Frequences, Test \\(\\chi^2\\)\n\n\nOrdinale\nCategories avec hierarchie/ordre\n\\(&lt;, &gt;\\) (intervalles non constants)\nNiveau d’education, Echelle de Likert stricte\nMediane, Centiles, Spearman, Mann-Whitney\n\n\nIntervalle\nOrdre + distances constantes et mesurables\n\\(+, -\\) (zero arbitraire)\nTemperature (C/F), Scores QI\nMoyenne, Ecart-type, Pearson, ANOVA\n\n\nRatio\nIntervalle + zero absolu significatif\n\\(\\times, \\div\\)\nAge, Revenu, IGPosts, Temps de reaction\nCoefficient de variation, Moyenne geometrique\n\n\n\n\n\n\n\n\n\nNoteTraitement des Echelles de Likert\n\n\n\nMathematiquement, une echelle de Likert (1-5) est ordinale. Mais en pratique, sous reserve de normalite et symetrie, on les traite souvent comme des echelles d’intervalle pour permettre moyennes et regressions lineaires.",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Theorie : Enquete et Questionnaire"
+      "Module 1 : Methodologie et Enquete"
+    ]
+  },
+  {
+    "objectID": "01_Theorie_Enquete.html#types-de-questions-denquete",
+    "href": "01_Theorie_Enquete.html#types-de-questions-denquete",
+    "title": "Module 1 : Methodologie et Enquete",
+    "section": "5 Types de Questions d’Enquete",
+    "text": "5 Types de Questions d’Enquete\n\n\n\n\n\n\n\n\nType\nDescription\nNature des donnees\n\n\n\n\nQuestions ouvertes\nTexte libre\nDonnees non structurees (codage necessaire)\n\n\nQuestions fermees\nChoix unique/multiple\nDonnees nominales\n\n\nEchelles de Likert\nDegre d’accord (1-5)\nOrdinales (traitees comme intervalle)\n\n\nDifferenciateur semantique\nContinuum entre 2 adjectifs bipolaires\nOrdinales/Intervalle",
+    "crumbs": [
+      "Accueil",
+      "Resume du cours",
+      "Module 1 : Methodologie et Enquete"
+    ]
+  },
+  {
+    "objectID": "01_Theorie_Enquete.html#biais-cognitifs-denquete",
+    "href": "01_Theorie_Enquete.html#biais-cognitifs-denquete",
+    "title": "Module 1 : Methodologie et Enquete",
+    "section": "6 Biais Cognitifs d’Enquete",
+    "text": "6 Biais Cognitifs d’Enquete\n\n\n\n\n\n\n\n\nBiais\nDescription\nConsequence\n\n\n\n\nDesirabilite sociale\nLe repondant altere ses reponses pour paraitre socialement acceptable\nSurestimation des comportements “positifs”\n\n\nAcquiescement\nTendance a repondre “Oui” / “D’accord” automatiquement\nCorrélation artificielle positive\n\n\nEffet de Halo\nPerception globale contamine l’evaluation d’attributs specifiques\nCorrelation artificielle entre variables distinctes",
+    "crumbs": [
+      "Accueil",
+      "Resume du cours",
+      "Module 1 : Methodologie et Enquete"
     ]
   }
 ]

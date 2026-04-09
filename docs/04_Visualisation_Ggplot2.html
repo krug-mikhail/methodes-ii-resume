@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Visualisation avec ggplot2 – Methodes II &amp; R</title>
+<title>Module 4 : Visualisation Avancee avec ggplot2 – Methodes II &amp; R</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -106,6 +106,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -157,7 +186,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Resume du cours</a></li><li class="breadcrumb-item"><a href="./04_Visualisation_Ggplot2.html">Visualisation avec ggplot2</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Resume du cours</a></li><li class="breadcrumb-item"><a href="./04_Visualisation_Ggplot2.html">Module 4 : Visualisation Avancee avec ggplot2</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -189,31 +218,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Methodes II &amp; R - Resume</span></a>
+ <span class="menu-text">Methodes II - Analyse de Donnees et Statistiques sous R</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01_Theorie_Enquete.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Theorie : Enquete et Questionnaire</span></a>
+ <span class="menu-text">Module 1 : Methodologie et Enquete</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./02_Bases_R.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Les Bases de R</span></a>
+ <span class="menu-text">Module 2 : Fondations de R et Architecture</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./03_Manipulation_Dplyr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Manipulation de Donnees (Tidyverse / dplyr)</span></a>
+ <span class="menu-text">Module 3 : Tidyverse &amp; dplyr (Manipulation Avancee)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./04_Visualisation_Ggplot2.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Visualisation avec ggplot2</span></a>
+ <span class="menu-text">Module 4 : Visualisation Avancee avec ggplot2</span></a>
   </div>
 </li>
       </ul>
@@ -228,25 +257,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#structure-de-base" id="toc-structure-de-base" class="nav-link active" data-scroll-target="#structure-de-base"><span class="header-section-number">1</span> Structure de base</a></li>
-  <li><a href="#les-principaux-geoms" id="toc-les-principaux-geoms" class="nav-link" data-scroll-target="#les-principaux-geoms"><span class="header-section-number">2</span> Les Principaux Geoms</a>
+  <li><a href="#concepts-fondamentaux" id="toc-concepts-fondamentaux" class="nav-link active" data-scroll-target="#concepts-fondamentaux"><span class="header-section-number">1</span> Concepts Fondamentaux</a></li>
+  <li><a href="#mapping-vs-setting-erreur-fatale-courante" id="toc-mapping-vs-setting-erreur-fatale-courante" class="nav-link" data-scroll-target="#mapping-vs-setting-erreur-fatale-courante"><span class="header-section-number">2</span> Mapping vs Setting (Erreur fatale courante)</a></li>
+  <li><a href="#les-principaux-geoms" id="toc-les-principaux-geoms" class="nav-link" data-scroll-target="#les-principaux-geoms"><span class="header-section-number">3</span> Les Principaux Geoms</a>
   <ul class="collapse">
-  <li><a href="#geom_point---nuage-de-points-scatter-plot" id="toc-geom_point---nuage-de-points-scatter-plot" class="nav-link" data-scroll-target="#geom_point---nuage-de-points-scatter-plot"><span class="header-section-number">2.1</span> <code>geom_point()</code> - Nuage de points (Scatter plot)</a></li>
-  <li><a href="#geom_bar---diagramme-a-barres" id="toc-geom_bar---diagramme-a-barres" class="nav-link" data-scroll-target="#geom_bar---diagramme-a-barres"><span class="header-section-number">2.2</span> <code>geom_bar()</code> - Diagramme a barres</a></li>
-  <li><a href="#geom_histogram---histogramme" id="toc-geom_histogram---histogramme" class="nav-link" data-scroll-target="#geom_histogram---histogramme"><span class="header-section-number">2.3</span> <code>geom_histogram()</code> - Histogramme</a></li>
-  <li><a href="#geom_boxplot---boite-a-moustaches" id="toc-geom_boxplot---boite-a-moustaches" class="nav-link" data-scroll-target="#geom_boxplot---boite-a-moustaches"><span class="header-section-number">2.4</span> <code>geom_boxplot()</code> - Boite a moustaches</a></li>
+  <li><a href="#geom_point---nuage-de-points-scatter-plot" id="toc-geom_point---nuage-de-points-scatter-plot" class="nav-link" data-scroll-target="#geom_point---nuage-de-points-scatter-plot"><span class="header-section-number">3.1</span> <code>geom_point()</code> - Nuage de points (Scatter plot)</a></li>
+  <li><a href="#geom_bar-et-geom_col---diagrammes-a-barres" id="toc-geom_bar-et-geom_col---diagrammes-a-barres" class="nav-link" data-scroll-target="#geom_bar-et-geom_col---diagrammes-a-barres"><span class="header-section-number">3.2</span> <code>geom_bar()</code> et <code>geom_col()</code> - Diagrammes a barres</a></li>
+  <li><a href="#geom_histogram---histogramme" id="toc-geom_histogram---histogramme" class="nav-link" data-scroll-target="#geom_histogram---histogramme"><span class="header-section-number">3.3</span> <code>geom_histogram()</code> - Histogramme</a></li>
+  <li><a href="#geom_boxplot---boite-a-moustaches-tukey" id="toc-geom_boxplot---boite-a-moustaches-tukey" class="nav-link" data-scroll-target="#geom_boxplot---boite-a-moustaches-tukey"><span class="header-section-number">3.4</span> <code>geom_boxplot()</code> - Boite a moustaches (Tukey)</a></li>
   </ul></li>
-  <li><a href="#personnalisation-labels" id="toc-personnalisation-labels" class="nav-link" data-scroll-target="#personnalisation-labels"><span class="header-section-number">3</span> Personnalisation (Labels)</a></li>
-  <li><a href="#recap-rapide-quel-geom-choisir" id="toc-recap-rapide-quel-geom-choisir" class="nav-link" data-scroll-target="#recap-rapide-quel-geom-choisir"><span class="header-section-number">4</span> Recap Rapide : Quel Geom Choisir ?</a></li>
+  <li><a href="#personnalisation-labels" id="toc-personnalisation-labels" class="nav-link" data-scroll-target="#personnalisation-labels"><span class="header-section-number">4</span> Personnalisation (Labels)</a></li>
+  <li><a href="#facettes-sous-graphiques-par-categorie" id="toc-facettes-sous-graphiques-par-categorie" class="nav-link" data-scroll-target="#facettes-sous-graphiques-par-categorie"><span class="header-section-number">5</span> Facettes : Sous-graphiques par categorie</a></li>
+  <li><a href="#normes-daccessibilite-et-dintegrite" id="toc-normes-daccessibilite-et-dintegrite" class="nav-link" data-scroll-target="#normes-daccessibilite-et-dintegrite"><span class="header-section-number">6</span> Normes d’Accessibilite et d’Integrite</a>
+  <ul class="collapse">
+  <li><a href="#daltonisme-8-des-hommes" id="toc-daltonisme-8-des-hommes" class="nav-link" data-scroll-target="#daltonisme-8-des-hommes"><span class="header-section-number">6.1</span> Daltonisme (~8% des hommes)</a></li>
+  <li><a href="#axe-y-et-zero" id="toc-axe-y-et-zero" class="nav-link" data-scroll-target="#axe-y-et-zero"><span class="header-section-number">6.2</span> Axe Y et zero</a></li>
+  <li><a href="#variable-shape" id="toc-variable-shape" class="nav-link" data-scroll-target="#variable-shape"><span class="header-section-number">6.3</span> Variable <code>shape</code></a></li>
+  </ul></li>
+  <li><a href="#recap-quel-geom-choisir" id="toc-recap-quel-geom-choisir" class="nav-link" data-scroll-target="#recap-quel-geom-choisir"><span class="header-section-number">7</span> Recap : Quel Geom Choisir ?</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Resume du cours</a></li><li class="breadcrumb-item"><a href="./04_Visualisation_Ggplot2.html">Visualisation avec ggplot2</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Resume du cours</a></li><li class="breadcrumb-item"><a href="./04_Visualisation_Ggplot2.html">Module 4 : Visualisation Avancee avec ggplot2</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Visualisation avec ggplot2</h1>
+<h1 class="title">Module 4 : Visualisation Avancee avec ggplot2</h1>
 </div>
 
 
@@ -263,63 +300,335 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p><code>ggplot2</code> utilise une “Grammar of Graphics” pour creer des graphiques en superposant des couches (layers) avec le signe <code>+</code>.</p>
-<section id="structure-de-base" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="structure-de-base"><span class="header-section-number">1</span> Structure de base</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mon_df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> var_x, <span class="at">y =</span> var_y, <span class="at">color =</span> var_c)) <span class="sc">+</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_XXX</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Les 3 elements essentiels :</p>
-<ol type="1">
-<li><strong><code>ggplot(data = ...)</code></strong> : Le jeu de donnees</li>
-<li><strong><code>aes()</code></strong> : L’aesthetique (quelles variables sur quels axes, couleurs, etc.)</li>
-<li><strong><code>geom_XXX()</code></strong> : Le type de graphique</li>
-</ol>
+<p><code>ggplot2</code> est l’implementation de “The Grammar of Graphics” (Leland Wilkinson). Il procede par <strong>addition sequentielle de calques (layers)</strong> superposes, liant les donnees a une representation spatiale.</p>
+<section id="concepts-fondamentaux" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="concepts-fondamentaux"><span class="header-section-number">1</span> Concepts Fondamentaux</h2>
+<p>Tout graphique necessite <strong>3 composants obligatoires</strong> :</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 37%">
+<col style="width: 22%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Composant</th>
+<th>Fonction</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Donnees</strong></td>
+<td><code>ggplot(data = ...)</code></td>
+<td>Le data frame source</td>
+</tr>
+<tr class="even">
+<td><strong>Esthetiques</strong></td>
+<td><code>aes(x, y, color, fill, size)</code></td>
+<td>Mappage variable → attribut visuel</td>
+</tr>
+<tr class="odd">
+<td><strong>Geometries</strong></td>
+<td><code>geom_*()</code></td>
+<td>L’objet visuel dessine (point, barre, ligne)</td>
+</tr>
+</tbody>
+</table>
+<p>Et des composants <strong>optionnels</strong> :</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 37%">
+<col style="width: 22%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Composant</th>
+<th>Fonction</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Facettes</strong></td>
+<td><code>facet_wrap()</code>, <code>facet_grid()</code></td>
+<td>Sous-graphiques par categorie</td>
+</tr>
+<tr class="even">
+<td><strong>Themes</strong></td>
+<td><code>theme_minimal()</code>, <code>theme_bw()</code></td>
+<td>Style visuel (grilles, polices)</td>
+</tr>
+<tr class="odd">
+<td><strong>Labels</strong></td>
+<td><code>labs()</code></td>
+<td>Titres, legendes, annotations</td>
+</tr>
+</tbody>
+</table>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Structure de base</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mon_df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> var_x, <span class="at">y =</span> var_y, <span class="at">color =</span> var_c)) <span class="sc">+</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_XXX</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="les-principaux-geoms" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="les-principaux-geoms"><span class="header-section-number">2</span> Les Principaux Geoms</h2>
-<section id="geom_point---nuage-de-points-scatter-plot" class="level3" data-number="2.1">
-<h3 data-number="2.1" class="anchored" data-anchor-id="geom_point---nuage-de-points-scatter-plot"><span class="header-section-number">2.1</span> <code>geom_point()</code> - Nuage de points (Scatter plot)</h3>
-<p>Relation entre deux variables continues.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> carat, <span class="at">y =</span> price, <span class="at">color =</span> cut)) <span class="sc">+</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="mapping-vs-setting-erreur-fatale-courante" class="level2 callout-danger" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="mapping-vs-setting-erreur-fatale-courante"><span class="header-section-number">2</span> Mapping vs Setting (Erreur fatale courante)</h2>
+<ul>
+<li><strong>Dans <code>aes()</code></strong> : la couleur est dictee par une <strong>variable des donnees</strong>
+<ul>
+<li><code>aes(color = Species)</code> → couleurs automatiques par espece</li>
+</ul></li>
+<li><strong>Hors <code>aes()</code></strong> : la couleur est un <strong>choix stylistique fixe</strong>
+<ul>
+<li><code>geom_point(color = "lightblue")</code> → tous les points en bleu</li>
+</ul></li>
+</ul>
+<p>Si on ecrit <code>aes(color = "lightblue")</code>, R traite “lightblue” comme une variable categorielle a une modalite → graphique probablement rouge avec legende aberrante !</p>
 </section>
-<section id="geom_bar---diagramme-a-barres" class="level3" data-number="2.2">
-<h3 data-number="2.2" class="anchored" data-anchor-id="geom_bar---diagramme-a-barres"><span class="header-section-number">2.2</span> <code>geom_bar()</code> - Diagramme a barres</h3>
-<p>Compter les frequences d’une variable categorielle.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> cut)) <span class="sc">+</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Avec remplissage par une autre variable</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> cut, <span class="at">fill =</span> clarity)) <span class="sc">+</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"dodge"</span>)  <span class="co"># Barres cote a cote</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="les-principaux-geoms" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="les-principaux-geoms"><span class="header-section-number">3</span> Les Principaux Geoms</h2>
+<section id="geom_point---nuage-de-points-scatter-plot" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="geom_point---nuage-de-points-scatter-plot"><span class="header-section-number">3.1</span> <code>geom_point()</code> - Nuage de points (Scatter plot)</h3>
+<p><strong>Usage :</strong> Relation entre <strong>2 variables continues</strong>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mtcars, <span class="fu">aes</span>(<span class="at">x =</span> disp, <span class="at">y =</span> mpg, <span class="at">color =</span> <span class="fu">as.factor</span>(cyl), <span class="at">size =</span> wt)) <span class="sc">+</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Covariance entre Cylindree et Efficience Energetique"</span>,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Le poids du vehicule modere la consommation"</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Cylindree Moteur (cu.in.)"</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Rendement (Miles par Gallon)"</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Cylindres"</span>,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="st">"Poids (Tonnes US)"</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Le probleme de l’Overplotting :</strong></p>
+<p>Quand les donnees sont massives, les points se superposent et masquent la distribution.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 43%">
+<col style="width: 26%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Solution</th>
+<th>Code</th>
+<th>Effet</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Transparence</td>
+<td><code>geom_point(alpha = 0.2)</code></td>
+<td>5 points superposes = pixel opaque</td>
+</tr>
+<tr class="even">
+<td>Bruit aleatoire</td>
+<td><code>geom_jitter()</code></td>
+<td>Deplace legerement chaque point</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="geom_histogram---histogramme" class="level3" data-number="2.3">
-<h3 data-number="2.3" class="anchored" data-anchor-id="geom_histogram---histogramme"><span class="header-section-number">2.3</span> <code>geom_histogram()</code> - Histogramme</h3>
-<p>Distribution d’une variable numerique.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> price)) <span class="sc">+</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">500</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="geom_bar-et-geom_col---diagrammes-a-barres" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="geom_bar-et-geom_col---diagrammes-a-barres"><span class="header-section-number">3.2</span> <code>geom_bar()</code> et <code>geom_col()</code> - Diagrammes a barres</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 41%">
+<col style="width: 24%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Fonction</th>
+<th>Statistique</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>geom_bar()</code></td>
+<td><code>stat = "count"</code> (automatique)</td>
+<td>Fournir X seulement, R compte les frequences</td>
+</tr>
+<tr class="even">
+<td><code>geom_col()</code></td>
+<td><code>stat = "identity"</code></td>
+<td>Fournir X et Y (valeur deja calculee)</td>
+</tr>
+</tbody>
+</table>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># geom_bar : comptage automatique</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> cut)) <span class="sc">+</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Avec remplissage par une autre variable</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> cut, <span class="at">fill =</span> clarity)) <span class="sc">+</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">linewidth =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Analyse des Tailles de Diamants"</span>,</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Niveau de Taille"</span>,</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Denombrement"</span>,</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"Indice de Purete"</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Positions pour barres empilees/paralleles :</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Position</th>
+<th>Effet</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>position = "stack"</code></td>
+<td>Empilees (defaut)</td>
+</tr>
+<tr class="even">
+<td><code>position = "dodge"</code></td>
+<td>Cote a cote</td>
+</tr>
+<tr class="odd">
+<td><code>position = "fill"</code></td>
+<td>Empilees normalisees a 100%</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="geom_boxplot---boite-a-moustaches" class="level3" data-number="2.4">
-<h3 data-number="2.4" class="anchored" data-anchor-id="geom_boxplot---boite-a-moustaches"><span class="header-section-number">2.4</span> <code>geom_boxplot()</code> - Boite a moustaches</h3>
-<p>Comparer les distributions entre groupes.</p>
+<section id="geom_histogram---histogramme" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="geom_histogram---histogramme"><span class="header-section-number">3.3</span> <code>geom_histogram()</code> - Histogramme</h3>
+<p><strong>Usage :</strong> Distribution d’une <strong>variable continue</strong>. L’aire de chaque bac est proportionnelle a la frequence relative.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length)) <span class="sc">+</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.2</span>, <span class="at">fill =</span> <span class="st">"darkblue"</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Species) <span class="sc">+</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Densite des Longueurs de Sepales (par Espece)"</span>,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Longueur (cm)"</span>,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Frequence"</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Le parametre <code>binwidth</code>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Le reglage du <code>binwidth</code> (largeur de l’intervalle) est crucial :</p>
+<ul>
+<li><strong>Trop large</strong> : masque la bimodalite (sous-ajustement)</li>
+<li><strong>Trop fin</strong> : capte le bruit aleatoire, “dents de scie” (sur-ajustement)</li>
+</ul>
+<p>Tester plusieurs valeurs pour trouver le bon equilibre.</p>
+</div>
+</div>
+</section>
+<section id="geom_boxplot---boite-a-moustaches-tukey" class="level3" data-number="3.4">
+<h3 data-number="3.4" class="anchored" data-anchor-id="geom_boxplot---boite-a-moustaches-tukey"><span class="header-section-number">3.4</span> <code>geom_boxplot()</code> - Boite a moustaches (Tukey)</h3>
+<p><strong>Usage :</strong> Comparer les distributions entre <strong>groupes</strong>. Diagnostic base sur les quantiles.</p>
+<p><strong>Anatomie du boxplot :</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 59%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Element</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Corps de la boite</strong></td>
+<td>Du <span class="math inline">\(Q_1\)</span> (25e centile) au <span class="math inline">\(Q_3\)</span> (75e centile)</td>
+</tr>
+<tr class="even">
+<td><strong>IQR</strong></td>
+<td><span class="math inline">\(Q_3 - Q_1\)</span> = ecart interquartile (50% centraux)</td>
+</tr>
+<tr class="odd">
+<td><strong>Ligne mediane</strong></td>
+<td>50e centile (mediane). Si asymetrique → distribution biaisee</td>
+</tr>
+<tr class="even">
+<td><strong>Moustaches</strong></td>
+<td>Jusqu’a l’observation la plus distante, max <span class="math inline">\(1.5 \times IQR\)</span></td>
+</tr>
+<tr class="odd">
+<td><strong>Points (outliers)</strong></td>
+<td>Au-dela des moustaches (~0.7% dans une loi normale)</td>
+</tr>
+</tbody>
+</table>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> cut, <span class="at">y =</span> price)) <span class="sc">+</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Exemple avance avec transformation log et personnalisation des outliers :</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(igposts, <span class="fu">aes</span>(<span class="at">x =</span> Content_Type, <span class="at">y =</span> IGLikesPPost, <span class="at">fill =</span> Content_Type)) <span class="sc">+</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">outlier.color =</span> <span class="st">"darkred"</span>,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">outlier.shape =</span> <span class="dv">8</span>,       <span class="co"># Asterisque pour les outliers</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">outlier.size =</span> <span class="fl">2.5</span>,</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">notch =</span> <span class="cn">FALSE</span>            <span class="co"># notch = TRUE pour IC 95% de la mediane</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_log10</span>() <span class="sc">+</span>          <span class="co"># Echelle logarithmique pour longue queue</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Dispersion de l'Efficacite des Publications (Likes/Post)"</span>,</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Echelle log. Points rouges = deviations virales."</span>,</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Categorie de Publication"</span>,</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Likes Moyens (Echelle Log10)"</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_d</span>(<span class="at">option =</span> <span class="st">"cividis"</span>) <span class="sc">+</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
-<section id="personnalisation-labels" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="personnalisation-labels"><span class="header-section-number">3</span> Personnalisation (Labels)</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> var_x, <span class="at">y =</span> var_y)) <span class="sc">+</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Titre principal"</span>,</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Sous-titre"</span>,</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Nom de l'axe X"</span>,</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Nom de l'axe Y"</span>,</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Titre de la legende couleur"</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="personnalisation-labels" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="personnalisation-labels"><span class="header-section-number">4</span> Personnalisation (Labels)</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> var_x, <span class="at">y =</span> var_y)) <span class="sc">+</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Titre principal"</span>,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Sous-titre"</span>,</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Nom de l'axe X (unite)"</span>,</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Nom de l'axe Y (unite)"</span>,</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Titre legende couleur"</span>,</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Source : Dataset XYZ"</span>    <span class="co"># Note de bas de page</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="recap-rapide-quel-geom-choisir" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="recap-rapide-quel-geom-choisir"><span class="header-section-number">4</span> Recap Rapide : Quel Geom Choisir ?</h2>
+<section id="facettes-sous-graphiques-par-categorie" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="facettes-sous-graphiques-par-categorie"><span class="header-section-number">5</span> Facettes : Sous-graphiques par categorie</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Grille de sous-graphiques par espece</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length)) <span class="sc">+</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Species)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="normes-daccessibilite-et-dintegrite" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="normes-daccessibilite-et-dintegrite"><span class="header-section-number">6</span> Normes d’Accessibilite et d’Integrite</h2>
+<section id="daltonisme-8-des-hommes" class="level3" data-number="6.1">
+<h3 data-number="6.1" class="anchored" data-anchor-id="daltonisme-8-des-hommes"><span class="header-section-number">6.1</span> Daltonisme (~8% des hommes)</h3>
+<p>Ne jamais baser une information sur une opposition <strong>rouge/vert</strong> seule. Utiliser les palettes <code>viridis</code> :</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span> <span class="fu">scale_color_viridis_d</span>()   <span class="co"># Variables discretes</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span> <span class="fu">scale_color_viridis_c</span>()   <span class="co"># Variables continues</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="axe-y-et-zero" class="level3" data-number="6.2">
+<h3 data-number="6.2" class="anchored" data-anchor-id="axe-y-et-zero"><span class="header-section-number">6.2</span> Axe Y et zero</h3>
+<p>Pour <code>geom_bar()</code> / <code>geom_col()</code>, l’axe Y <strong>doit inclure le zero</strong>. Tronquer l’axe amplifie artificiellement les differences (manipulation visuelle). Si les donnees sont loin de zero, utiliser <code>geom_point()</code> a la place.</p>
+</section>
+<section id="variable-shape" class="level3" data-number="6.3">
+<h3 data-number="6.3" class="anchored" data-anchor-id="variable-shape"><span class="header-section-number">6.3</span> Variable <code>shape</code></h3>
+<ul>
+<li><code>shape</code> est <strong>reserve aux variables nominales</strong> (pas continues)</li>
+<li>Maximum <strong>6 formes distinctes</strong> discriminables par le cerveau humain</li>
+<li>Variable continue dans <code>aes(shape = ...)</code> → <strong>erreur/crash</strong></li>
+</ul>
+</section>
+</section>
+<section id="recap-quel-geom-choisir" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="recap-quel-geom-choisir"><span class="header-section-number">7</span> Recap : Quel Geom Choisir ?</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 37%">
@@ -335,17 +644,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td>Relation entre 2 variables continues</td>
+<td>Relation entre 2 var. continues</td>
 <td><code>geom_point()</code></td>
 <td>x = continue, y = continue</td>
 </tr>
 <tr class="even">
-<td>Distribution d’une variable numerique</td>
+<td>Distribution d’une var. numerique</td>
 <td><code>geom_histogram()</code></td>
 <td>x = continue</td>
 </tr>
 <tr class="odd">
-<td>Frequences d’une variable categorielle</td>
+<td>Frequences d’une var. categorielle</td>
 <td><code>geom_bar()</code></td>
 <td>x = categorielle</td>
 </tr>
@@ -358,6 +667,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>Tendance / evolution</td>
 <td><code>geom_line()</code></td>
 <td>x = continue/date, y = continue</td>
+</tr>
+<tr class="even">
+<td>Valeurs pre-calculees en barres</td>
+<td><code>geom_col()</code></td>
+<td>x = categorielle, y = valeur</td>
 </tr>
 </tbody>
 </table>

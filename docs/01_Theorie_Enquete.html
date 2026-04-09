@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Theorie : Enquete et Questionnaire – Methodes II &amp; R</title>
+<title>Module 1 : Methodologie et Enquete – Methodes II &amp; R</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -71,6 +71,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -122,7 +151,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Resume du cours</a></li><li class="breadcrumb-item"><a href="./01_Theorie_Enquete.html">Theorie : Enquete et Questionnaire</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Resume du cours</a></li><li class="breadcrumb-item"><a href="./01_Theorie_Enquete.html">Module 1 : Methodologie et Enquete</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -154,31 +183,31 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Methodes II &amp; R - Resume</span></a>
+ <span class="menu-text">Methodes II - Analyse de Donnees et Statistiques sous R</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01_Theorie_Enquete.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Theorie : Enquete et Questionnaire</span></a>
+ <span class="menu-text">Module 1 : Methodologie et Enquete</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./02_Bases_R.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Les Bases de R</span></a>
+ <span class="menu-text">Module 2 : Fondations de R et Architecture</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./03_Manipulation_Dplyr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Manipulation de Donnees (Tidyverse / dplyr)</span></a>
+ <span class="menu-text">Module 3 : Tidyverse &amp; dplyr (Manipulation Avancee)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./04_Visualisation_Ggplot2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Visualisation avec ggplot2</span></a>
+ <span class="menu-text">Module 4 : Visualisation Avancee avec ggplot2</span></a>
   </div>
 </li>
       </ul>
@@ -193,19 +222,27 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#la-question-de-recherche-rq" id="toc-la-question-de-recherche-rq" class="nav-link active" data-scroll-target="#la-question-de-recherche-rq"><span class="header-section-number">1</span> La Question de Recherche (RQ)</a></li>
+  <li><a href="#la-question-de-recherche-rq" id="toc-la-question-de-recherche-rq" class="nav-link active" data-scroll-target="#la-question-de-recherche-rq"><span class="header-section-number">1</span> La Question de Recherche (RQ)</a>
+  <ul class="collapse">
+  <li><a href="#clarte-des-construits" id="toc-clarte-des-construits" class="nav-link" data-scroll-target="#clarte-des-construits"><span class="header-section-number">1.1</span> Clarte des Construits</a></li>
+  </ul></li>
   <li><a href="#operationnalisation" id="toc-operationnalisation" class="nav-link" data-scroll-target="#operationnalisation"><span class="header-section-number">2</span> Operationnalisation</a></li>
-  <li><a href="#niveaux-de-mesure-des-variables" id="toc-niveaux-de-mesure-des-variables" class="nav-link" data-scroll-target="#niveaux-de-mesure-des-variables"><span class="header-section-number">3</span> Niveaux de Mesure des Variables</a></li>
-  <li><a href="#types-de-questions" id="toc-types-de-questions" class="nav-link" data-scroll-target="#types-de-questions"><span class="header-section-number">4</span> Types de Questions</a></li>
+  <li><a href="#hypotheses-statistiques" id="toc-hypotheses-statistiques" class="nav-link" data-scroll-target="#hypotheses-statistiques"><span class="header-section-number">3</span> Hypotheses Statistiques</a>
+  <ul class="collapse">
+  <li><a href="#erreurs-de-test" id="toc-erreurs-de-test" class="nav-link" data-scroll-target="#erreurs-de-test"><span class="header-section-number">3.1</span> Erreurs de test</a></li>
+  </ul></li>
+  <li><a href="#echelles-de-mesure-niveaux-de-stevens" id="toc-echelles-de-mesure-niveaux-de-stevens" class="nav-link" data-scroll-target="#echelles-de-mesure-niveaux-de-stevens"><span class="header-section-number">4</span> Echelles de Mesure (Niveaux de Stevens)</a></li>
+  <li><a href="#types-de-questions-denquete" id="toc-types-de-questions-denquete" class="nav-link" data-scroll-target="#types-de-questions-denquete"><span class="header-section-number">5</span> Types de Questions d’Enquete</a></li>
+  <li><a href="#biais-cognitifs-denquete" id="toc-biais-cognitifs-denquete" class="nav-link" data-scroll-target="#biais-cognitifs-denquete"><span class="header-section-number">6</span> Biais Cognitifs d’Enquete</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Resume du cours</a></li><li class="breadcrumb-item"><a href="./01_Theorie_Enquete.html">Theorie : Enquete et Questionnaire</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Resume du cours</a></li><li class="breadcrumb-item"><a href="./01_Theorie_Enquete.html">Module 1 : Methodologie et Enquete</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Theorie : Enquete et Questionnaire</h1>
+<h1 class="title">Module 1 : Methodologie et Enquete</h1>
 </div>
 
 
@@ -222,6 +259,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>Ce module pose les fondations epistemologiques, conceptuelles et methodologiques indispensables avant toute interaction avec un logiciel d’analyse.</p>
 <section id="la-question-de-recherche-rq" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="la-question-de-recherche-rq"><span class="header-section-number">1</span> La Question de Recherche (RQ)</h2>
 <p>Une question de recherche scientifique doit etre :</p>
@@ -230,58 +268,240 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Faisable :</strong> Rester realiste par rapport aux ressources (personnelles, materielles, temps)</li>
 <li><strong>Pertinente :</strong> Viser a mieux comprendre le phenomene plutot que de le decrire ; eviter les previsions et les jugements moraux</li>
 </ul>
+<section id="clarte-des-construits" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="clarte-des-construits"><span class="header-section-number">1.1</span> Clarte des Construits</h3>
+<p>La recherche scientifique procede par l’evaluation d’hypotheses derivees de theories preexistantes. La pierre angulaire reside dans la <strong>definition stricte des construits theoriques</strong>. Les ambiguites conceptuelles compromettent fondamentalement la validite des conclusions empiriques.</p>
+<p>Il est imperatif de proceder a une revue systematique de la litterature pour identifier les variations dans la maniere dont un concept est defini par differents auteurs.</p>
+</section>
 </section>
 <section id="operationnalisation" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="operationnalisation"><span class="header-section-number">2</span> Operationnalisation</h2>
 <p>C’est le processus qui consiste a rendre un concept abstrait (ex: <em>Social Media Literacy</em>) mesurable a l’aide de variables concretes et de questions specifiques.</p>
+<p><strong>Exemple :</strong> Le construit “engagement politique en ligne” peut etre operationnalise via :</p>
+<ul>
+<li>Somme des publications (<code>IGPosts</code>)</li>
+<li>Somme des mentions “J’aime” (<code>IGLikes</code>)</li>
+<li>Moyenne des commentaires par publication (<code>IGCommentsPPost</code>)</li>
+</ul>
 </section>
-<section id="niveaux-de-mesure-des-variables" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="niveaux-de-mesure-des-variables"><span class="header-section-number">3</span> Niveaux de Mesure des Variables</h2>
-<p>Les variables peuvent etre classees selon 4 types essentiels :</p>
+<section id="hypotheses-statistiques" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="hypotheses-statistiques"><span class="header-section-number">3</span> Hypotheses Statistiques</h2>
+<p>L’evaluation empirique se structure autour de la formulation d’hypotheses binaires :</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 22%">
-<col style="width: 33%">
-<col style="width: 44%">
+<col style="width: 35%">
+<col style="width: 35%">
+<col style="width: 29%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Type</th>
+<th>Hypothese</th>
+<th>Definition</th>
 <th>Exemple</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong><span class="math inline">\(H_0\)</span> (Nulle)</strong></td>
+<td>Absence d’effet, de difference ou de relation</td>
+<td><span class="math inline">\(\mu_1 = \mu_2\)</span> ou <span class="math inline">\(\rho = 0\)</span></td>
+</tr>
+<tr class="even">
+<td><strong><span class="math inline">\(H_1\)</span> (Alternative)</strong></td>
+<td>Existence d’un effet ou d’une relation</td>
+<td><span class="math inline">\(\mu_1 \neq \mu_2\)</span> ou <span class="math inline">\(\rho \neq 0\)</span></td>
+</tr>
+</tbody>
+</table>
+<section id="erreurs-de-test" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="erreurs-de-test"><span class="header-section-number">3.1</span> Erreurs de test</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 15%">
+<col style="width: 39%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Erreur</th>
+<th>Nom</th>
+<th>Description</th>
+<th>Seuil</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Type I (<span class="math inline">\(\alpha\)</span>)</strong></td>
+<td>Faux positif</td>
+<td>Rejeter <span class="math inline">\(H_0\)</span> alors qu’elle est vraie</td>
+<td>Convention : <span class="math inline">\(\alpha = 0.05\)</span></td>
+</tr>
+<tr class="even">
+<td><strong>Type II (<span class="math inline">\(\beta\)</span>)</strong></td>
+<td>Faux negatif</td>
+<td>Ne pas rejeter <span class="math inline">\(H_0\)</span> alors que <span class="math inline">\(H_1\)</span> est vraie</td>
+<td>Puissance = <span class="math inline">\(1 - \beta\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Interpretation de la P-Value
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Ne <strong>jamais</strong> definir la p-value comme “la probabilite que <span class="math inline">\(H_0\)</span> soit vraie”.</p>
+<p>La p-value = probabilite d’obtenir une statistique de test au moins aussi extreme que celle observee, <strong>en supposant que <span class="math inline">\(H_0\)</span> est vraie</strong>.</p>
+<ul>
+<li>p &gt; <span class="math inline">\(\alpha\)</span> : manque de preuves pour rejeter <span class="math inline">\(H_0\)</span> (pas une preuve de <span class="math inline">\(H_0\)</span>)</li>
+<li>p &lt; <span class="math inline">\(\alpha\)</span> : on rejette <span class="math inline">\(H_0\)</span> en faveur de <span class="math inline">\(H_1\)</span></li>
+</ul>
+</div>
+</div>
+</section>
+</section>
+<section id="echelles-de-mesure-niveaux-de-stevens" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="echelles-de-mesure-niveaux-de-stevens"><span class="header-section-number">4</span> Echelles de Mesure (Niveaux de Stevens)</h2>
+<p>La nature de la variable dicte la famille de tests statistiques applicables. Les niveaux sont <strong>hierarchiques et cumulatifs</strong> :</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 16%">
+<col style="width: 18%">
+<col style="width: 15%">
+<col style="width: 37%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Niveau</th>
+<th>Definition</th>
 <th>Proprietes</th>
+<th>Exemples</th>
+<th>Statistiques applicables</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><strong>Nominale</strong></td>
-<td>Genre, Profession</td>
-<td>Categories sans ordre</td>
+<td>Categories mutuellement exclusives, sans ordre</td>
+<td><span class="math inline">\(=\)</span> ou <span class="math inline">\(\neq\)</span></td>
+<td>Sexe, Religion, Parti politique</td>
+<td>Mode, Frequences, Test <span class="math inline">\(\chi^2\)</span></td>
 </tr>
 <tr class="even">
 <td><strong>Ordinale</strong></td>
-<td>Frequence de publication (“jamais” a “tous les jours”)</td>
-<td>Categories avec ordre</td>
+<td>Categories avec hierarchie/ordre</td>
+<td><span class="math inline">\(&lt;, &gt;\)</span> (intervalles non constants)</td>
+<td>Niveau d’education, Echelle de Likert stricte</td>
+<td>Mediane, Centiles, Spearman, Mann-Whitney</td>
 </tr>
 <tr class="odd">
-<td><strong>Continue</strong></td>
-<td>Temperature en degres</td>
-<td>Valeurs numeriques continues</td>
+<td><strong>Intervalle</strong></td>
+<td>Ordre + distances constantes et mesurables</td>
+<td><span class="math inline">\(+, -\)</span> (zero arbitraire)</td>
+<td>Temperature (C/F), Scores QI</td>
+<td>Moyenne, Ecart-type, Pearson, ANOVA</td>
 </tr>
 <tr class="even">
-<td><strong>Discrete</strong></td>
-<td>Nombre de followers</td>
-<td>Valeurs numeriques entieres</td>
+<td><strong>Ratio</strong></td>
+<td>Intervalle + zero absolu significatif</td>
+<td><span class="math inline">\(\times, \div\)</span></td>
+<td>Age, Revenu, IGPosts, Temps de reaction</td>
+<td>Coefficient de variation, Moyenne geometrique</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Traitement des Echelles de Likert
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Mathematiquement, une echelle de Likert (1-5) est <strong>ordinale</strong>. Mais en pratique, sous reserve de normalite et symetrie, on les traite souvent comme des echelles d’<strong>intervalle</strong> pour permettre moyennes et regressions lineaires.</p>
+</div>
+</div>
+</section>
+<section id="types-de-questions-denquete" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="types-de-questions-denquete"><span class="header-section-number">5</span> Types de Questions d’Enquete</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 34%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+<th>Nature des donnees</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Questions ouvertes</strong></td>
+<td>Texte libre</td>
+<td>Donnees non structurees (codage necessaire)</td>
+</tr>
+<tr class="even">
+<td><strong>Questions fermees</strong></td>
+<td>Choix unique/multiple</td>
+<td>Donnees nominales</td>
+</tr>
+<tr class="odd">
+<td><strong>Echelles de Likert</strong></td>
+<td>Degre d’accord (1-5)</td>
+<td>Ordinales (traitees comme intervalle)</td>
+</tr>
+<tr class="even">
+<td><strong>Differenciateur semantique</strong></td>
+<td>Continuum entre 2 adjectifs bipolaires</td>
+<td>Ordinales/Intervalle</td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="types-de-questions" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="types-de-questions"><span class="header-section-number">4</span> Types de Questions</h2>
-<p>Dans un questionnaire, on retrouve principalement :</p>
-<ul>
-<li><strong>Questions categorielles :</strong> A choix multiple</li>
-<li><strong>Questions d’intensite :</strong> Echelles mesurant une frequence ou un degre d’accord (ex: “Combien de fois…”, Echelle de 1 a 5)</li>
-</ul>
+<section id="biais-cognitifs-denquete" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="biais-cognitifs-denquete"><span class="header-section-number">6</span> Biais Cognitifs d’Enquete</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 39%">
+<col style="width: 39%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Biais</th>
+<th>Description</th>
+<th>Consequence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Desirabilite sociale</strong></td>
+<td>Le repondant altere ses reponses pour paraitre socialement acceptable</td>
+<td>Surestimation des comportements “positifs”</td>
+</tr>
+<tr class="even">
+<td><strong>Acquiescement</strong></td>
+<td>Tendance a repondre “Oui” / “D’accord” automatiquement</td>
+<td>Corrélation artificielle positive</td>
+</tr>
+<tr class="odd">
+<td><strong>Effet de Halo</strong></td>
+<td>Perception globale contamine l’evaluation d’attributs specifiques</td>
+<td>Correlation artificielle entre variables distinctes</td>
+</tr>
+</tbody>
+</table>
 
 
 </section>

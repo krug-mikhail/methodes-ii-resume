@@ -1,57 +1,130 @@
 ---
-title: "Les Bases de R"
+title: "Module 2 : Fondations de R et Architecture"
 ---
 
-## Raccourcis et Commandes Essentielles
+R est un environnement de programmation open-source concu pour le calcul statistique et la visualisation de donnees. Contrairement aux logiciels GUI, R exige la redaction de scripts, garantissant la **reproductibilite** de la recherche.
 
-| Commande | Description |
-|----------|-------------|
-| `<-` | Operateur d'affectation (assigner une valeur) |
-| `#` | Commentaire (ignore par R) |
-| `class(x)` | Verifier le type d'un objet |
-| `getwd()` | Afficher le repertoire de travail actuel |
-| `setwd("chemin")` | Definir le repertoire de travail |
+## L'Environnement RStudio
 
-## Types de Variables
+RStudio se divise en **4 quadrants** :
+
+1. **Editeur de code source** : redaction et sauvegarde des scripts
+2. **Console** : execution du code en temps reel
+3. **Environnement** : inventaire des objets en memoire
+4. **Panneau utilitaire** : fichiers, visualisations, packages, aide
+
+## Raccourcis de Productivite
+
+| Action | Windows/Linux | macOS | Description |
+|--------|--------------|-------|-------------|
+| Assignation `<-` | `Alt + -` | `Option + -` | Insere l'operateur d'assignation avec espaces |
+| Executer le code | `Ctrl + Enter` | `Cmd + Return` | Execute la ligne ou le bloc selectionne |
+| Pipe `%>%` | `Ctrl + Shift + M` | `Cmd + Shift + M` | Insere l'operateur pipe |
+| Redemarrer session | `Ctrl + Shift + F10` | `Cmd + Shift + F10` | Vide la memoire, detache les packages |
+| Commentaire en bloc | `Ctrl + Shift + C` | `Cmd + Shift + C` | Commente/decommente une selection |
+
+::: {.callout-warning}
+## `<-` vs `=`
+
+- `<-` : assignation globale (standard obligatoire)
+- `=` : reserve aux arguments dans les fonctions (ex: `mean(x, na.rm = TRUE)`)
+
+Ne jamais utiliser `=` pour l'assignation globale (conflits de portee lexicale).
+:::
+
+## Types de Variables (Vecteurs Atomiques)
+
+En R, meme un nombre unique est un **vecteur de longueur 1**.
+
+| Type | Description | Exemple |
+|------|-------------|---------|
+| `logical` | Booleen | `TRUE`, `FALSE`, `NA` |
+| `integer` | Entier strict | `42L` (suffixe L obligatoire) |
+| `numeric` / `double` | Reel a virgule flottante | `3.14` (defaut de R) |
+| `character` | Texte | `"chien"` (avec guillemets) |
 
 ```r
-
-# Numerique
-a <- 100
-
-# Textuelle (chaine de caracteres) - toujours avec des guillemets
-c <- "chien"
-
-# Logique
-e <- TRUE
+# Verification du type
+class(42L)      # "integer"
+class(3.14)     # "numeric"
+class("texte")  # "character"
+class(TRUE)     # "logical"
 ```
+
+::: {.callout-danger}
+## Coercition Implicite
+
+Un vecteur atomique doit etre **strictement homogene**. Si on melange les types, R convertit silencieusement selon la hierarchie :
+
+`logical` → `integer` → `numeric` → `character`
+
+```r
+c(TRUE, 5, "Pomme")
+# Resultat : c("TRUE", "5", "Pomme") — tout devient character !
+```
+
+Toute operation mathematique sur `"5"` echouera ensuite.
+:::
 
 ## Structures de Donnees
 
 ### Vecteurs
 
-Variables a plusieurs elements, creees avec `c()` :
-
 ```r
+# Creation avec c()
 v1 <- c(1, 2, 3)
 v2 <- c("chat", "chien", "oiseau")
+
+# Sequences
+seq_1 <- 1:100
+seq_2 <- seq(from = 0, to = 1, by = 0.1)
 ```
 
 ### Matrices
 
-Tableaux contenant des donnees de **meme type** :
+Structures 2D **strictement homogenes** (un seul type). Remplissage par colonnes par defaut.
 
 ```r
 m <- matrix(1:9, nrow = 3, ncol = 3)
+m <- matrix(1:9, nrow = 3, ncol = 3, byrow = TRUE)  # Remplissage par lignes
+
 # Extraction : matrice[ligne, colonne]
-m[3, 2]  # 2e element de la 3e ligne
+m[3, 2]   # Element ligne 3, colonne 2
+m[1, ]    # Toute la ligne 1
+m[, 2]    # Toute la colonne 2
+```
+
+### Facteurs (Factors)
+
+Vecteurs entiers avec attribut "niveaux" (levels). Socle des variables nominales/ordinales dans les regressions.
+
+```r
+# Conversion en facteur ordonne
+niveaux_education <- c("Secondaire", "Primaire", "Tertiaire", "Primaire")
+facteur_education <- factor(niveaux_education,
+                            levels = c("Primaire", "Secondaire", "Tertiaire"),
+                            ordered = TRUE)
+```
+
+### Listes
+
+Vecteurs **heterogenes** : peuvent contenir nombres, texte, matrices, autres listes, modeles statistiques.
+
+```r
+ma_liste <- list(
+  nom = "Analyse",
+  valeurs = c(1, 2, 3),
+  matrice = matrix(1:4, 2, 2)
+)
+ma_liste$nom          # Acces par nom
+ma_liste[[2]]         # Acces par index
 ```
 
 ### Data Frames
 
-Tableaux pouvant contenir des donnees de **differents types** (le plus courant en sciences sociales).
+L'objet central de la Data Science en R. C'est une **liste de colonnes de meme longueur** pouvant contenir des types differents.
 
-- **Ligne** = unite statistique (ex: la personne)
+- **Ligne** = unite statistique (observation/personne)
 - **Colonne** = variable
 
 ```r
@@ -62,16 +135,44 @@ df <- data.frame(
 
 # Extraction d'une colonne avec $
 df$age
+
+# Creation avec data.frame()
+entreprise_df <- data.frame(
+  id_filiale = 1:5,
+  actifs_fixes = c(50000, 75000, 42000, NA, 90000),
+  passifs = c(20000, 30000, 15000, 40000, 45000)
+)
 ```
 
-## Fonctions d'Exploration Rapide
+## Fonctions d'Exploration
 
 | Fonction | Description |
 |----------|-------------|
-| `dim(df)` | Nombre de lignes et colonnes |
-| `head(df)` | 6 premieres lignes |
-| `str(df)` | Structure du jeu de donnees |
-| `summary(df)` | Resume statistique (moyenne, mediane, min, max) |
+| `str(df)` | Structure interne : types, nb observations, apercu des valeurs |
+| `summary(df)` | Statistiques descriptives (Min, Q1, Mediane, Moyenne, Q3, Max, NA) |
+| `head(df, n)` | Premieres n lignes (defaut = 6) |
+| `dim(df)` | Vecteur `[nb_lignes, nb_colonnes]` |
 | `nrow(df)` | Nombre de lignes |
 | `ncol(df)` | Nombre de colonnes |
 | `names(df)` | Noms des colonnes |
+| `class(x)` | Type d'un objet |
+| `is.na(x)` | Masque booleen des valeurs manquantes |
+| `sum(is.na(x))` | Comptage total des NA |
+
+## Fonctions Utilisateur (User-Defined Functions)
+
+```r
+# Definition
+calculer_ratio <- function(actifs, passifs) {
+  if (any(is.na(actifs)) | any(is.na(passifs))) {
+    warning("Valeurs manquantes detectees.")
+  }
+  ratio <- actifs / passifs
+  return(ratio)
+}
+
+# Application
+entreprise_df$ratio_solv <- calculer_ratio(entreprise_df$actifs_fixes,
+                                            entreprise_df$passifs)
+str(entreprise_df)
+```

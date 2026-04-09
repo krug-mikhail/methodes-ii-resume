@@ -1,10 +1,16 @@
 ---
-title: "Manipulation de Donnees (Tidyverse / dplyr)"
+title: "Module 3 : Tidyverse & dplyr (Manipulation Avancee)"
 ---
 
-Le paquet `dplyr` (inclus dans le `tidyverse`) permet de nettoyer et manipuler les Data Frames.
+Le Tidyverse est une philosophie et une grammaire coherente pour l'analyse de donnees. L'axiome central repose sur le concept de **"Tidy Data"** :
 
-## Importation
+- Chaque **variable** possede sa propre **colonne**
+- Chaque **observation** possede sa propre **ligne**
+- Chaque type d'unite d'observation constitue une **table** distincte
+
+## Importation Securisee (readr)
+
+Le package `readr` fournit `read_csv()`, superieur aux fonctions de base.
 
 ```r
 library(tidyverse)
@@ -12,21 +18,29 @@ setwd("/chemin/vers/dossier")
 df <- read_csv("fichier.csv")
 ```
 
-::: {.callout-important}
-Ne jamais ouvrir les CSV dans Excel avant R pour eviter de casser le format.
+::: {.callout-danger}
+## Ne Jamais Ouvrir un CSV dans Excel Avant R
+
+Excel applique des heuristiques de formatage **invisibles et destructrices** :
+
+- **Corruption UTF-8** : accents et symboles speciaux detruits
+- **Conversion en dates** : identifiants comme "MAR1" convertis en "1er Mars"
+- **Remplacement des separateurs** : virgules remplacees par points-virgules selon les parametres regionaux
+
+La donnee doit demeurer inviolee : importation directement par code R.
 :::
 
 ## L'Operateur Pipe `%>%` (ou `|>`)
 
-Il permet d'enchainer les operations (se lit "et ensuite").
+Le pipe extrait l'objet a gauche et l'injecte comme **premier argument** de la fonction a droite.
 
-**Raccourci clavier :** `Ctrl + Shift + M` (Windows) ou `Cmd + Shift + M` (Mac)
+**Raccourci :** `Ctrl + Shift + M` (Windows) / `Cmd + Shift + M` (Mac)
 
 ```r
-# Sans pipe
+# Sans pipe (lecture de l'interieur vers l'exterieur)
 filter(select(df, nom, age), age > 30)
 
-# Avec pipe (plus lisible)
+# Avec pipe (lecture lineaire gauche a droite)
 df %>%
   select(nom, age) %>%
   filter(age > 30)
@@ -34,73 +48,159 @@ df %>%
 
 ## Les Verbes de dplyr
 
-### `select()` - Selectionner des colonnes
+Chaque verbe prend un data frame en entree et retourne un data frame modifie.
+
+### `select()` - Projection des colonnes
 
 ```r
 df %>% select(nom, age)
-df %>% select(-colonne_a_exclure)
+df %>% select(-colonne_a_exclure)   # Exclusion avec -
 ```
 
-### `filter()` - Filtrer des lignes
+**Assistants de selection dynamiques :**
+
+| Helper | Description | Exemple |
+|--------|-------------|---------|
+| `starts_with("x")` | Colonnes commencant par "x" | `select(starts_with("IG"))` |
+| `ends_with("x")` | Colonnes finissant par "x" | `select(ends_with("Post"))` |
+| `contains("x")` | Colonnes contenant "x" | `select(contains("Like"))` |
+
+```r
+# Exemple avec mtcars
+mtcars %>%
+  select(mpg, cyl, starts_with("c")) %>%
+  select(-cyl)  # Exclusion chirurgicale
+```
+
+### `filter()` - Filtrage conditionnel des lignes
+
+Les lignes `TRUE` sont preservees, `FALSE` et `NA` sont purgees.
 
 ```r
 df %>% filter(mpg >= 25)
 df %>% filter(cyl == 4 & mpg > 20)
 df %>% filter(cyl == 4 | cyl == 6)
+df %>% filter(cut %in% c("Ideal", "Premium"))
+df %>% filter(!is.na(price))   # Exclure les NA
 ```
 
-**Operateurs de comparaison :**
+**Operateurs logiques :**
 
-| Operateur | Signification |
-|-----------|---------------|
-| `==` | Egal a |
-| `!=` | Different de |
-| `>`, `<` | Superieur, inferieur |
-| `>=`, `<=` | Superieur ou egal, inferieur ou egal |
-| `&` | ET logique |
-| `\|` | OU logique |
+| Operateur | Signification | Attention |
+|-----------|---------------|-----------|
+| `==` | Egal a | Prudence sur les decimaux (virgule flottante) |
+| `!=` | Different de | |
+| `>`, `<` | Superieur, inferieur | |
+| `>=`, `<=` | Superieur ou egal, inferieur ou egal | |
+| `&` | ET logique (intersection) | |
+| `\|` | OU logique (union) | |
+| `%in%` | Appartenance a un vecteur | `x %in% c("A", "B")` |
+| `!` | Negation | `!is.na(x)` |
 
-### `mutate()` - Creer ou modifier une colonne
+```r
+# Exemple avec diamonds
+diamants_premium <- diamonds %>%
+  filter(carat >= 1.5 & cut %in% c("Ideal", "Premium")) %>%
+  filter(!is.na(price))
+```
+
+### `mutate()` - Creer ou modifier des colonnes
+
+Ajoute des colonnes tout en **preservant le nombre de lignes**.
 
 ```r
 df %>% mutate(ratio = mpg / wt)
 df %>% mutate(categorie = ifelse(mpg > 20, "econome", "gourmand"))
 ```
 
-### `arrange()` - Trier les lignes
+**Vectorisation conditionnelle avec `case_when()` :**
 
 ```r
-df %>% arrange(mpg)        # Croissant
-df %>% arrange(desc(mpg))  # Decroissant
+df %>%
+  mutate(
+    temp_fahrenheit = (temperature_anomaly * 9/5) + 32,
+    carbon_risk_ratio = co2_level / 280,
+
+    climate_status = case_when(
+      carbon_risk_ratio < 1.0                              ~ "Periode Stable",
+      carbon_risk_ratio >= 1.0 & carbon_risk_ratio < 1.5   ~ "Hausse Moderee",
+      carbon_risk_ratio >= 1.5                              ~ "Dereglement Severe",
+      TRUE                                                  ~ "Indetermine"  # clause else
+    )
+  )
 ```
 
-### `group_by()` + `summarize()` - Resumer par groupe
+### `arrange()` - Tri des lignes
+
+```r
+df %>% arrange(mpg)          # Croissant (defaut)
+df %>% arrange(desc(mpg))    # Decroissant
+df %>% arrange(desc(temperature_anomaly), year)  # Tri multiple
+```
+
+### `group_by()` + `summarize()` - Agregation (Split-Apply-Combine)
+
+Le paradigme en 3 phases :
+
+1. **Split** (`group_by()`) : fragmente les donnees par modalites
+2. **Apply** (`summarize()`) : calcule les metriques par groupe
+3. **Combine** : recoud les resultats en un nouveau data frame
 
 ```r
 df %>%
   group_by(cyl) %>%
   summarize(
-    moyenne_mpg = mean(mpg),
-    mediane_mpg = median(mpg),
-    nb_obs = n()
-  )
+    moyenne_mpg = mean(mpg, na.rm = TRUE),
+    mediane_mpg = median(mpg, na.rm = TRUE),
+    ecart_type  = sd(mpg, na.rm = TRUE),
+    nb_obs      = n()
+  ) %>%
+  ungroup()  # Toujours retirer le groupement apres !
 ```
 
-### `count()` - Compter les observations
+**Exemple complet avec donnees d'engagement politique (igposts) :**
+
+```r
+analyse_efficacite <- igposts %>%
+  group_by(Political_Party) %>%
+  summarize(
+    nombre_candidats             = n(),
+    volume_moyen_posts           = mean(IGPosts, na.rm = TRUE),
+    total_likes                  = sum(IGLikes, na.rm = TRUE),
+    ecart_type_likes             = sd(IGLikes, na.rm = TRUE),
+    efficacite_likes_par_post    = mean(IGLikesPPost, na.rm = TRUE),
+    efficacite_comments_par_post = mean(IGCommentsPPost, na.rm = TRUE)
+  ) %>%
+  ungroup() %>%
+  arrange(desc(efficacite_likes_par_post))
+```
+
+### `count()` - Denombrement frequentiel
+
+Raccourci pour `group_by(variable) %>% summarize(n = n())`.
 
 ```r
 df %>% count(cyl)
-df %>% count(cyl, sort = TRUE)  # Trie par frequence decroissante
+df %>% count(cyl, sort = TRUE)  # Tri decroissant automatique
+
+# Equivalent long
+df %>% group_by(cyl) %>% summarize(n = n())
 ```
 
-## Statistiques Descriptives Utiles
+## Statistiques Descriptives - Recap
 
-| Fonction | Description |
-|----------|-------------|
-| `mean(x)` | Moyenne |
-| `median(x)` | Mediane |
-| `sd(x)` | Ecart-type |
-| `min(x)`, `max(x)` | Minimum, Maximum |
-| `sum(x)` | Somme |
-| `n()` | Nombre d'observations (dans summarize) |
-| `n_distinct(x)` | Nombre de valeurs uniques |
+| Fonction | Description | Argument NA |
+|----------|-------------|-------------|
+| `mean(x)` | Moyenne | `na.rm = TRUE` |
+| `median(x)` | Mediane | `na.rm = TRUE` |
+| `sd(x)` | Ecart-type | `na.rm = TRUE` |
+| `min(x)`, `max(x)` | Minimum, Maximum | `na.rm = TRUE` |
+| `sum(x)` | Somme | `na.rm = TRUE` |
+| `n()` | Nombre d'observations (dans summarize) | - |
+| `n_distinct(x)` | Nombre de valeurs uniques | - |
+
+::: {.callout-tip}
+## `na.rm = TRUE`
+
+Toujours ajouter `na.rm = TRUE` dans les fonctions statistiques (`mean`, `sd`, `median`...) pour ignorer les valeurs manquantes. Sans cela, le resultat sera `NA` si une seule valeur manque.
+:::
