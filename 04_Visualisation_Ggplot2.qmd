@@ -6,12 +6,23 @@ title: "Module 4 : Visualisation Avancee avec ggplot2"
 
 ## Concepts Fondamentaux
 
+::: {.callout-tip collapse="true"}
+## En simple
+ggplot2, c'est comme **construire un dessin couche par couche**, exactement comme des calques dans Photoshop ou des transparents qu'on superpose :
+
+1. **Calque 1 -- la toile** : tu dis a R quelles donnees utiliser et quels axes (`ggplot(data, aes(...))`)
+2. **Calque 2 -- les formes** : tu choisis comment dessiner (des points ? des barres ? des lignes ?) (`geom_*()`)
+3. **Calques optionnels** : tu ajoutes des titres, tu changes les couleurs, tu divises en sous-graphiques...
+
+Chaque calque s'ajoute avec un `+`. C'est comme empiler des feuilles transparentes les unes sur les autres pour obtenir le dessin final.
+:::
+
 Tout graphique necessite **3 composants obligatoires** :
 
 | Composant | Fonction | Role |
 |-----------|----------|------|
 | **Donnees** | `ggplot(data = ...)` | Le data frame source |
-| **Esthetiques** | `aes(x, y, color, fill, size)` | Mappage variable → attribut visuel |
+| **Esthetiques** | `aes(x, y, color, fill, size)` | Mappage variable -> attribut visuel |
 | **Geometries** | `geom_*()` | L'objet visuel dessine (point, barre, ligne) |
 
 Et des composants **optionnels** :
@@ -23,40 +34,86 @@ Et des composants **optionnels** :
 | **Labels** | `labs()` | Titres, legendes, annotations |
 
 ```r
-# Structure de base
+# Structure de base -- toujours le meme squelette
 ggplot(data = mon_df, mapping = aes(x = var_x, y = var_y, color = var_c)) +
   geom_XXX()
+# 1. ggplot() : on pose la toile avec les donnees et les axes
+# 2. +        : on ajoute un calque
+# 3. geom_XXX : on choisit la forme (points, barres, lignes...)
 ```
+
+### Mapping vs Setting (Erreur fatale courante)
+
+::: {.callout-tip collapse="true"}
+## En simple
+C'est LA source d'erreur numero 1 pour les debutants. La difference :
+
+- **Mapping (dans `aes()`)** : la couleur **depend des donnees**. Exemple : "colorie chaque point selon l'espece de la fleur". R choisit les couleurs automatiquement.
+- **Setting (hors `aes()`)** : la couleur est **fixe pour tout le monde**. Exemple : "tous les points en bleu, point final".
+
+**Analogie** : Imagine que tu distribues des maillots a une equipe de sport.
+
+- Mapping = chaque joueur recoit un maillot d'une couleur differente selon son poste (gardien = jaune, defenseur = bleu, attaquant = rouge).
+- Setting = tout le monde recoit un maillot bleu, sans distinction.
+:::
 
 ::: {.callout-danger}
 ## Mapping vs Setting (Erreur fatale courante)
 
 - **Dans `aes()`** : la couleur est dictee par une **variable des donnees**
-  - `aes(color = Species)` → couleurs automatiques par espece
+  - `aes(color = Species)` -> couleurs automatiques par espece
 - **Hors `aes()`** : la couleur est un **choix stylistique fixe**
-  - `geom_point(color = "lightblue")` → tous les points en bleu
+  - `geom_point(color = "lightblue")` -> tous les points en bleu
 
-Si on ecrit `aes(color = "lightblue")`, R traite "lightblue" comme une variable categorielle a une modalite → graphique probablement rouge avec legende aberrante !
+Si on ecrit `aes(color = "lightblue")`, R traite "lightblue" comme une variable categorielle a une modalite -> graphique probablement rouge avec legende aberrante !
 :::
+
+```r
+# CORRECT -- Mapping : la couleur depend de la variable "Species"
+ggplot(iris, aes(x = Sepal.Length, y = Petal.Length, color = Species)) +
+  geom_point()
+# Resultat : 3 couleurs differentes, une par espece, legende automatique
+
+# CORRECT -- Setting : tous les points en bleu clair
+ggplot(iris, aes(x = Sepal.Length, y = Petal.Length)) +
+  geom_point(color = "lightblue")
+# Resultat : tous les points sont bleu clair, pas de legende
+
+# ERREUR CLASSIQUE -- mettre "lightblue" dans aes()
+ggplot(iris, aes(x = Sepal.Length, y = Petal.Length, color = "lightblue")) +
+  geom_point()
+# Resultat bizarre : tous les points ROUGES avec une legende "lightblue" !
+```
 
 ## Les Principaux Geoms
 
 ### `geom_point()` - Nuage de points (Scatter plot)
 
+::: {.callout-tip collapse="true"}
+## En simple
+**Quand l'utiliser ?** Quand tu veux voir si deux mesures numeriques sont liees. Par exemple :
+
+- "Est-ce que les etudiants qui etudient plus d'heures ont de meilleures notes ?"
+- "Est-ce que les voitures plus lourdes consomment plus d'essence ?"
+- "Est-ce que le prix d'un appartement augmente avec sa surface ?"
+
+Chaque point sur le graphique represente une observation (un etudiant, une voiture, un appartement). Sa position horizontale = une variable, sa position verticale = l'autre variable. Si les points forment une tendance (montante, descendante), il y a une relation.
+:::
+
 **Usage :** Relation entre **2 variables continues**.
 
 ```r
 ggplot(data = mtcars, aes(x = disp, y = mpg, color = as.factor(cyl), size = wt)) +
-  geom_point(alpha = 0.8) +
+  geom_point(alpha = 0.8) +          # alpha = transparence (0 = invisible, 1 = opaque)
   labs(
     title = "Covariance entre Cylindree et Efficience Energetique",
     subtitle = "Le poids du vehicule modere la consommation",
-    x = "Cylindree Moteur (cu.in.)",
-    y = "Rendement (Miles par Gallon)",
-    color = "Cylindres",
-    size = "Poids (Tonnes US)"
+    x = "Cylindree Moteur (cu.in.)",      # nom de l'axe X
+    y = "Rendement (Miles par Gallon)",     # nom de l'axe Y
+    color = "Cylindres",                    # titre de la legende couleur
+    size = "Poids (1000 lbs)"               # titre de la legende taille
   ) +
-  theme_minimal()
+  theme_minimal()                     # theme epure
 ```
 
 **Le probleme de l'Overplotting :**
@@ -70,17 +127,30 @@ Quand les donnees sont massives, les points se superposent et masquent la distri
 
 ### `geom_bar()` et `geom_col()` - Diagrammes a barres
 
+::: {.callout-tip collapse="true"}
+## En simple
+**Quand l'utiliser ?** Quand tu veux compter ou comparer des categories. Par exemple :
+
+- "Combien d'etudiants dans chaque branche ?" -> `geom_bar()` (R compte pour toi)
+- "Quel est le chiffre d'affaires de chaque succursale ?" -> `geom_col()` (tu fournis les valeurs)
+
+La difference cle :
+
+- `geom_bar()` : tu donnes juste X (les categories), R **compte automatiquement** combien il y en a
+- `geom_col()` : tu donnes X et Y, R dessine les barres a la **hauteur que TU as fournie**
+:::
+
 | Fonction | Statistique | Usage |
 |----------|------------|-------|
 | `geom_bar()` | `stat = "count"` (automatique) | Fournir X seulement, R compte les frequences |
 | `geom_col()` | `stat = "identity"` | Fournir X et Y (valeur deja calculee) |
 
 ```r
-# geom_bar : comptage automatique
+# geom_bar : R compte automatiquement les diamants par categorie de coupe
 ggplot(diamonds, aes(x = cut)) +
   geom_bar()
 
-# Avec remplissage par une autre variable
+# Avec remplissage par une autre variable (clarte)
 ggplot(diamonds, aes(x = cut, fill = clarity)) +
   geom_bar(position = "dodge", color = "black", linewidth = 0.2) +
   labs(
@@ -102,14 +172,25 @@ ggplot(diamonds, aes(x = cut, fill = clarity)) +
 
 ### `geom_histogram()` - Histogramme
 
-**Usage :** Distribution d'une **variable continue**. L'aire de chaque bac est proportionnelle a la frequence relative.
+::: {.callout-tip collapse="true"}
+## En simple
+**Quand l'utiliser ?** Quand tu veux voir **comment se repartissent** les valeurs d'une mesure numerique. Par exemple :
+
+- "La plupart des etudiants ont-ils des notes entre 4 et 5, ou c'est plus disperse ?"
+- "Les salaires sont-ils concentres autour de 5000 CHF ou tres etales ?"
+- "Les temps de reponse au questionnaire sont-ils groupes ou eparpilles ?"
+
+L'histogramme decoupe les valeurs en "bacs" (intervalles) et montre combien d'observations tombent dans chaque bac. C'est une "photo" de la distribution.
+:::
+
+**Usage :** Distribution d'une **variable continue**. Par defaut, la hauteur de chaque bac represente le nombre d'observations (frequence absolue).
 
 ```r
 ggplot(iris, aes(x = Sepal.Length)) +
   geom_histogram(binwidth = 0.2, fill = "darkblue", color = "white") +
-  facet_wrap(~ Species) +
+  facet_wrap(~ Species) +      # Un sous-graphique par espece
   labs(
-    title = "Densite des Longueurs de Sepales (par Espece)",
+    title = "Distribution des Longueurs de Sepales (par Espece)",
     x = "Longueur (cm)",
     y = "Frequence"
   )
@@ -128,6 +209,17 @@ Tester plusieurs valeurs pour trouver le bon equilibre.
 
 ### `geom_boxplot()` - Boite a moustaches (Tukey)
 
+::: {.callout-tip collapse="true"}
+## En simple
+**Quand l'utiliser ?** Quand tu veux **comparer la distribution d'une mesure entre plusieurs groupes**. Par exemple :
+
+- "Les notes sont-elles meilleures en Psycho ou en Droit ?"
+- "Les salaires sont-ils plus variables dans le secteur prive que dans le public ?"
+- "Y a-t-il des valeurs aberrantes (outliers) dans mes donnees ?"
+
+Le boxplot est un resume visuel ultra-compact : en un coup d'oeil, tu vois la mediane (le milieu), l'etendue des donnees, et les valeurs extremes. C'est comme un "bulletin meteo" de tes donnees : il te dit ou se situe le gros des observations et s'il y a des cas exceptionnels.
+:::
+
 **Usage :** Comparer les distributions entre **groupes**. Diagnostic base sur les quantiles.
 
 **Anatomie du boxplot :**
@@ -136,11 +228,12 @@ Tester plusieurs valeurs pour trouver le bon equilibre.
 |---------|-------------|
 | **Corps de la boite** | Du $Q_1$ (25e centile) au $Q_3$ (75e centile) |
 | **IQR** | $Q_3 - Q_1$ = ecart interquartile (50% centraux) |
-| **Ligne mediane** | 50e centile (mediane). Si asymetrique → distribution biaisee |
+| **Ligne mediane** | 50e centile (mediane). Si asymetrique -> distribution biaisee |
 | **Moustaches** | Jusqu'a l'observation la plus distante, max $1.5 \times IQR$ |
 | **Points (outliers)** | Au-dela des moustaches (~0.7% dans une loi normale) |
 
 ```r
+# Boxplot simple : comparer le prix des diamants selon leur coupe
 ggplot(diamonds, aes(x = cut, y = price)) +
   geom_boxplot()
 ```
@@ -150,45 +243,81 @@ ggplot(diamonds, aes(x = cut, y = price)) +
 ```r
 ggplot(igposts, aes(x = Content_Type, y = IGLikesPPost, fill = Content_Type)) +
   geom_boxplot(
-    outlier.color = "darkred",
-    outlier.shape = 8,       # Asterisque pour les outliers
-    outlier.size = 2.5,
-    notch = FALSE            # notch = TRUE pour IC 95% de la mediane
+    outlier.color = "darkred",   # Couleur des points aberrants
+    outlier.shape = 8,           # Forme asterisque pour les outliers
+    outlier.size = 2.5,          # Taille des outliers
+    notch = FALSE                # notch = TRUE pour IC 95% de la mediane
   ) +
-  scale_y_log10() +          # Echelle logarithmique pour longue queue
+  scale_y_log10() +              # Echelle logarithmique pour longue queue
   labs(
     title = "Dispersion de l'Efficacite des Publications (Likes/Post)",
     subtitle = "Echelle log. Points rouges = deviations virales.",
     x = "Categorie de Publication",
-    y = "Likes Moyens (Echelle Log10)"
+    y = "Likes par Post (Echelle Log10)"
   ) +
-  scale_fill_viridis_d(option = "cividis") +
+  scale_fill_viridis_d(option = "cividis") +  # Palette accessible daltoniens
   theme_minimal() +
-  theme(legend.position = "none")
+  theme(legend.position = "none")              # Pas de legende (redondante ici)
+```
+
+### `geom_line()` - Ligne (Tendance / Evolution)
+
+::: {.callout-tip collapse="true"}
+## En simple
+**Quand l'utiliser ?** Quand tu veux montrer une **evolution dans le temps** ou une **tendance**. Par exemple :
+
+- "Comment le PIB a-t-il evolue entre 2000 et 2020 ?"
+- "Le nombre d'inscriptions augmente-t-il chaque annee ?"
+- "Comment la temperature a-t-elle change au fil des mois ?"
+
+Les points sont relies par des lignes, ce qui permet de voir la direction generale (monte, descend, stagne).
+:::
+
+```r
+# Exemple : evolution des temperatures sur plusieurs annees
+ggplot(donnees_climat, aes(x = annee, y = temperature_moyenne)) +
+  geom_line(color = "steelblue", linewidth = 1) +  # Ligne bleue epaisse
+  geom_point(size = 2) +                            # Points a chaque annee
+  labs(
+    title = "Evolution de la Temperature Moyenne",
+    x = "Annee",
+    y = "Temperature (C)"
+  ) +
+  theme_minimal()
 ```
 
 ## Personnalisation (Labels)
+
+::: {.callout-tip collapse="true"}
+## En simple
+`labs()` c'est la fonction "etiquettes" : elle permet de donner un titre, un sous-titre, de renommer les axes, et d'ajouter une source en bas du graphique. C'est ce qui rend un graphique **lisible et professionnel** au lieu d'avoir des noms de variables techniques.
+:::
 
 ```r
 ggplot(df, aes(x = var_x, y = var_y)) +
   geom_point() +
   labs(
-    title = "Titre principal",
-    subtitle = "Sous-titre",
-    x = "Nom de l'axe X (unite)",
-    y = "Nom de l'axe Y (unite)",
-    color = "Titre legende couleur",
-    caption = "Source : Dataset XYZ"    # Note de bas de page
+    title = "Titre principal",                 # Le gros titre
+    subtitle = "Sous-titre",                   # Precision sous le titre
+    x = "Nom de l'axe X (unite)",             # Nom lisible pour l'axe X
+    y = "Nom de l'axe Y (unite)",             # Nom lisible pour l'axe Y
+    color = "Titre legende couleur",           # Titre de la legende
+    caption = "Source : Dataset XYZ"           # Note en bas a droite
   )
 ```
 
 ## Facettes : Sous-graphiques par categorie
 
+::: {.callout-tip collapse="true"}
+## En simple
+Les facettes, c'est comme **decouper un graphique en petites vignettes**, une par categorie. Au lieu d'avoir toutes les especes de fleurs sur un seul graphique (ce qui peut etre confus), tu obtiens un mini-graphique par espece, cote a cote. Ca permet de comparer facilement.
+:::
+
 ```r
 # Grille de sous-graphiques par espece
 ggplot(iris, aes(x = Sepal.Length)) +
   geom_histogram(binwidth = 0.2) +
-  facet_wrap(~ Species)
+  facet_wrap(~ Species)     # Un histogramme par espece, cote a cote
 ```
 
 ## Normes d'Accessibilite et d'Integrite
@@ -210,9 +339,21 @@ Pour `geom_bar()` / `geom_col()`, l'axe Y **doit inclure le zero**. Tronquer l'a
 
 - `shape` est **reserve aux variables nominales** (pas continues)
 - Maximum **6 formes distinctes** discriminables par le cerveau humain
-- Variable continue dans `aes(shape = ...)` → **erreur/crash**
+- Variable continue dans `aes(shape = ...)` -> **erreur/crash**
 
 ## Recap : Quel Geom Choisir ?
+
+::: {.callout-tip collapse="true"}
+## En simple
+Le choix du geom depend de ta **question** et du **type de tes variables** :
+
+- Tu as 2 nombres et tu veux voir le lien ? -> **points** (`geom_point`)
+- Tu veux voir comment une mesure se distribue ? -> **histogramme** (`geom_histogram`)
+- Tu veux compter des categories ? -> **barres** (`geom_bar`)
+- Tu veux comparer des groupes ? -> **boxplot** (`geom_boxplot`)
+- Tu veux montrer une evolution ? -> **ligne** (`geom_line`)
+- Tu as des valeurs deja calculees a montrer en barres ? -> **colonnes** (`geom_col`)
+:::
 
 | Objectif | Geom | Variables |
 |----------|------|-----------|

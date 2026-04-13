@@ -1,0 +1,1844 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Glossaire - Dictionnaire des Termes – Methodes II &amp; R</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-0441d281c0042f78ca5e6da214781463.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Methodes II &amp; R</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
+<span class="menu-text">Accueil</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./01_Theorie_Enquete.html"> 
+<span class="menu-text">Theorie</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./02_Bases_R.html"> 
+<span class="menu-text">Bases de R</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./03_Manipulation_Dplyr.html"> 
+<span class="menu-text">dplyr</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./04_Visualisation_Ggplot2.html"> 
+<span class="menu-text">ggplot2</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./glossaire.html"> 
+<span class="menu-text">Glossaire</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Resume du cours</a></li><li class="breadcrumb-item"><a href="./glossaire.html">Glossaire - Dictionnaire des Termes</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Resume du cours</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Methodes II - Analyse de Donnees et Statistiques sous R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_Theorie_Enquete.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Module 1 : Methodologie et Enquete</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02_Bases_R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Module 2 : Fondations de R et Architecture</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03_Manipulation_Dplyr.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Module 3 : Tidyverse &amp; dplyr (Manipulation Avancee)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04_Visualisation_Ggplot2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Module 4 : Visualisation Avancee avec ggplot2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./glossaire.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Glossaire - Dictionnaire des Termes</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#a" id="toc-a" class="nav-link active" data-scroll-target="#a"><span class="header-section-number">1</span> A</a></li>
+  <li><a href="#b" id="toc-b" class="nav-link" data-scroll-target="#b"><span class="header-section-number">2</span> B</a></li>
+  <li><a href="#c" id="toc-c" class="nav-link" data-scroll-target="#c"><span class="header-section-number">3</span> C</a></li>
+  <li><a href="#d" id="toc-d" class="nav-link" data-scroll-target="#d"><span class="header-section-number">4</span> D</a></li>
+  <li><a href="#e" id="toc-e" class="nav-link" data-scroll-target="#e"><span class="header-section-number">5</span> E</a></li>
+  <li><a href="#f" id="toc-f" class="nav-link" data-scroll-target="#f"><span class="header-section-number">6</span> F</a></li>
+  <li><a href="#g" id="toc-g" class="nav-link" data-scroll-target="#g"><span class="header-section-number">7</span> G</a></li>
+  <li><a href="#h" id="toc-h" class="nav-link" data-scroll-target="#h"><span class="header-section-number">8</span> H</a></li>
+  <li><a href="#i" id="toc-i" class="nav-link" data-scroll-target="#i"><span class="header-section-number">9</span> I</a></li>
+  <li><a href="#l" id="toc-l" class="nav-link" data-scroll-target="#l"><span class="header-section-number">10</span> L</a></li>
+  <li><a href="#m" id="toc-m" class="nav-link" data-scroll-target="#m"><span class="header-section-number">11</span> M</a></li>
+  <li><a href="#n" id="toc-n" class="nav-link" data-scroll-target="#n"><span class="header-section-number">12</span> N</a></li>
+  <li><a href="#o" id="toc-o" class="nav-link" data-scroll-target="#o"><span class="header-section-number">13</span> O</a></li>
+  <li><a href="#p" id="toc-p" class="nav-link" data-scroll-target="#p"><span class="header-section-number">14</span> P</a></li>
+  <li><a href="#q" id="toc-q" class="nav-link" data-scroll-target="#q"><span class="header-section-number">15</span> Q</a></li>
+  <li><a href="#r" id="toc-r" class="nav-link" data-scroll-target="#r"><span class="header-section-number">16</span> R</a></li>
+  <li><a href="#s" id="toc-s" class="nav-link" data-scroll-target="#s"><span class="header-section-number">17</span> S</a></li>
+  <li><a href="#t" id="toc-t" class="nav-link" data-scroll-target="#t"><span class="header-section-number">18</span> T</a></li>
+  <li><a href="#u" id="toc-u" class="nav-link" data-scroll-target="#u"><span class="header-section-number">19</span> U</a></li>
+  <li><a href="#v" id="toc-v" class="nav-link" data-scroll-target="#v"><span class="header-section-number">20</span> V</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Resume du cours</a></li><li class="breadcrumb-item"><a href="./glossaire.html">Glossaire - Dictionnaire des Termes</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Glossaire - Dictionnaire des Termes</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Ce glossaire explique <strong>en langage simple</strong> tous les termes techniques utilises dans les 4 modules du cours. Cliquez sur un terme pour derouler son explication.</p>
+<section id="a" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="a"><span class="header-section-number">1</span> A</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Argument
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Un argument, c’est une information supplementaire qu’on donne a une fonction pour qu’elle sache quoi faire ou comment le faire. C’est comme un reglage ou une option.</p>
+<p><strong>Exemple du quotidien :</strong> Quand tu commandes un cafe, “cafe” c’est la fonction, mais “avec du lait”, “sans sucre”, “taille grande” sont les arguments. En R : <code>mean(x, na.rm = TRUE)</code> – ici <code>x</code> et <code>na.rm = TRUE</code> sont les arguments donnes a la fonction <code>mean</code>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Assignation / Operateur d’assignation (<code>&lt;-</code>)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Assigner, c’est donner un nom a quelque chose pour le retrouver plus tard. L’operateur <code>&lt;-</code> est la fleche qui dit “range cette valeur dans cette boite portant ce nom”.</p>
+<p><strong>Exemple du quotidien :</strong> C’est comme coller une etiquette sur un bocal. Tu ecris “biscuits” sur le bocal et tu mets les biscuits dedans. En R : <code>age &lt;- 25</code> signifie “range 25 dans la boite appelee age”.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span><code>aes()</code> (Esthetiques / Aesthetics)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> C’est la partie du code graphique qui dit “quelle colonne de mon tableau correspond a quel aspect visuel du graphique” (position X, position Y, couleur, taille…).</p>
+<p><strong>Exemple du quotidien :</strong> Imagine que tu fais un plan de table pour un diner. <code>aes()</code> c’est la regle qui dit : “la colonne ‘nom’ determine l’etiquette, la colonne ‘equipe’ determine la couleur du carton”. Chaque variable du tableau est reliee a un element visuel.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span><code>arrange()</code> (Tri)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Une fonction dplyr qui trie les lignes d’un tableau dans un ordre precis (croissant ou decroissant).</p>
+<p><strong>Exemple du quotidien :</strong> C’est comme trier une pile de copies d’examen par note, de la plus basse a la plus haute (ou l’inverse avec <code>desc()</code>).</p>
+</div>
+</div>
+</div>
+</section>
+<section id="b" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="b"><span class="header-section-number">2</span> B</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Binwidth (Largeur d’intervalle)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Dans un histogramme, le binwidth c’est la taille de chaque “bac” qui regroupe les donnees. Un bac large regroupe beaucoup de valeurs ensemble, un bac fin les separe davantage.</p>
+<p><strong>Exemple du quotidien :</strong> Imagine que tu classes des eleves par taille. Si ton binwidth est 10 cm (ex: 150-160, 160-170…), tu as peu de groupes. Si c’est 1 cm (150-151, 151-152…), tu en as beaucoup. Trop large, tu perds les details. Trop fin, tu vois trop de bruit.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Biais cognitif (d’enquete)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Une erreur systematique dans les reponses d’un questionnaire, causee par la psychologie humaine et non par le hasard. Les gens ne repondent pas toujours honnetement ou objectivement.</p>
+<p><strong>Exemple du quotidien :</strong> Si on te demande “Combien de fois par semaine fais-tu du sport ?”, tu as tendance a gonfler le chiffre pour paraitre en forme (biais de desirabilite sociale). Le biais d’acquiescement, c’est dire “oui” a tout par reflexe.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Boxplot (Boite a moustaches)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Un type de graphique qui resume une distribution en montrant les quartiles, la mediane et les valeurs extremes dans un schema compact en forme de boite.</p>
+<p><strong>Exemple du quotidien :</strong> C’est comme un bulletin meteo qui te dit : “la temperature la plus basse etait 5, la plus haute 28, la moitie du temps c’etait entre 12 et 20, et la temperature typique etait 16”. Tout ca dans un seul dessin.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="c" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="c"><span class="header-section-number">3</span> C</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span><code>case_when()</code> (Conditions multiples)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Une fonction qui permet de creer des categories en enchainant plusieurs conditions “si… alors…”. C’est comme un <code>ifelse()</code> mais pour plus de 2 cas.</p>
+<p><strong>Exemple du quotidien :</strong> C’est comme un barreme de notation : si la note est &gt;= 90, c’est “Excellent” ; si &gt;= 70, c’est “Bien” ; si &gt;= 50, c’est “Suffisant” ; sinon, c’est “Insuffisant”.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Coercition implicite
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> C’est quand R transforme automatiquement et silencieusement le type de tes donnees pour que tout soit du meme type dans un vecteur. Tu ne le demandes pas, R le fait tout seul, et ca peut causer des surprises.</p>
+<p><strong>Exemple du quotidien :</strong> Imagine une boite de rangement qui n’accepte qu’un seul type d’objet. Si tu mets des pommes et un livre dedans, la boite transforme tout en livres (le type le plus general). En R : <code>c(TRUE, 5, "Pomme")</code> devient <code>c("TRUE", "5", "Pomme")</code> – tout est converti en texte, et le chiffre 5 ne peut plus servir pour des calculs.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Console
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> C’est la zone de RStudio ou tu peux taper du code et voir le resultat immediatement. C’est comme un brouillon interactif.</p>
+<p><strong>Exemple du quotidien :</strong> C’est comme la calculatrice de ton telephone : tu tapes un calcul, tu appuies sur Entree, et le resultat s’affiche tout de suite. Mais rien n’est sauvegarde – si tu fermes, c’est perdu.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Construit theorique
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Un concept abstrait qu’on utilise dans la recherche mais qu’on ne peut pas mesurer directement. Il faut le transformer en quelque chose de concret pour pouvoir l’etudier.</p>
+<p><strong>Exemple du quotidien :</strong> “L’intelligence” est un construit – on ne peut pas la peser ou la mesurer avec une regle. On doit la transformer en questions de test (QI) pour pouvoir la quantifier.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span><code>count()</code> (Denombrement)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Une fonction raccourci qui compte combien de fois chaque categorie apparait dans une colonne.</p>
+<p><strong>Exemple du quotidien :</strong> C’est comme compter combien d’eleves il y a dans chaque classe : 3A = 25 eleves, 3B = 22 eleves, 3C = 27 eleves.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>CSV (Comma-Separated Values)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Un format de fichier tres simple pour stocker des tableaux. Chaque ligne est une ligne du tableau, et les colonnes sont separees par des virgules (ou des points-virgules).</p>
+<p><strong>Exemple du quotidien :</strong> Imagine un tableau ecrit dans un fichier texte brut, ou au lieu de colonnes visuelles, on separe les informations par des virgules : “Nom,Age,Ville” puis “Alice,25,Geneve”. C’est lisible par n’importe quel logiciel.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="d" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="d"><span class="header-section-number">4</span> D</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Data Frame (Tableau de donnees)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> C’est l’objet le plus important en R pour stocker des donnees. C’est un tableau avec des lignes (observations) et des colonnes (variables), ou chaque colonne peut contenir un type de donnee different.</p>
+<p><strong>Exemple du quotidien :</strong> C’est exactement comme un tableau Excel : chaque ligne represente une personne (ou un produit, une observation…) et chaque colonne une information (nom, age, ville…). La difference : en R, ce tableau vit dans le code.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span><code>desc()</code> (Ordre decroissant)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Une fonction utilisee avec <code>arrange()</code> pour trier du plus grand au plus petit au lieu du plus petit au plus grand.</p>
+<p><strong>Exemple du quotidien :</strong> C’est la difference entre classer les eleves du premier au dernier (croissant) ou du dernier au premier (decroissant avec <code>desc()</code>).</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Differenciation semantique
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Un type de question d’enquete ou la personne se positionne sur un curseur entre deux mots opposes (ex: “Laid” a gauche, “Beau” a droite).</p>
+<p><strong>Exemple du quotidien :</strong> C’est comme un curseur de volume mais pour une opinion. A gauche “Pas du tout satisfait”, a droite “Tres satisfait”, et tu places ton curseur ou tu veux entre les deux.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="e" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="e"><span class="header-section-number">5</span> E</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Echelle de Likert
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Un format de question d’enquete ou on demande le degre d’accord sur une echelle, typiquement de 1 a 5 (ou 1 a 7), allant de “Pas du tout d’accord” a “Tout a fait d’accord”.</p>
+<p><strong>Exemple du quotidien :</strong> Quand un site te demande “Evaluez votre experience de 1 a 5 etoiles”, c’est le meme principe. Chaque etoile represente un niveau de satisfaction.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Echelle de mesure (Niveaux de Stevens)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> C’est une classification qui dit de quel “type” est une variable, ce qui determine quels calculs on peut faire dessus. Il y a 4 niveaux : nominale, ordinale, intervalle et ratio.</p>
+<p><strong>Exemple du quotidien :</strong> Les numeros de maillot de foot (nominale : juste des etiquettes) vs.&nbsp;le classement d’une course (ordinale : un ordre) vs.&nbsp;la temperature en Celsius (intervalle : des ecarts reguliers) vs.&nbsp;le poids en kg (ratio : un vrai zero existe).</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Environnement (Environment)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> C’est le panneau de RStudio qui montre tout ce que R a en memoire a un instant donne : les variables, les tableaux, les fonctions que tu as crees. C’est l’inventaire de tes objets.</p>
+<p><strong>Exemple du quotidien :</strong> C’est comme le plan de travail de ta cuisine : tu vois tous les ingredients et ustensiles que tu as sortis et prepares. Si un objet n’est pas sur le plan de travail (dans l’environnement), R ne le connait pas.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Erreur de Type I (Faux positif)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> C’est quand on conclut qu’il y a un effet alors qu’en realite il n’y en a pas. On “voit” quelque chose qui n’existe pas.</p>
+<p><strong>Exemple du quotidien :</strong> C’est comme un detecteur de fumee qui sonne alors qu’il n’y a pas de feu – il a detecte un faux signal. En statistique, on fixe le seuil alpha (souvent 5%) pour limiter ce risque.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Erreur de Type II (Faux negatif)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> C’est quand on conclut qu’il n’y a pas d’effet alors qu’en realite il y en a un. On “rate” quelque chose qui existe.</p>
+<p><strong>Exemple du quotidien :</strong> C’est comme un detecteur de fumee qui ne sonne pas alors qu’il y a vraiment de la fumee – il a rate un vrai signal.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="f" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="f"><span class="header-section-number">6</span> F</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Facette (Facet)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> C’est une technique de ggplot2 qui divise un graphique en plusieurs petits graphiques identiques, un pour chaque categorie d’une variable. Ca permet de comparer facilement.</p>
+<p><strong>Exemple du quotidien :</strong> Imagine un professeur qui fait le meme graphique de notes pour chaque classe separement, cote a cote : une grille avec “Classe 3A” a gauche, “Classe 3B” au milieu, “Classe 3C” a droite. Meme format, donnees differentes.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Facteur (Factor)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> C’est un type special de variable en R pour representer des categories, avec un ensemble fixe de valeurs possibles (appelees “niveaux” ou “levels”). C’est utile pour les variables nominales et ordinales.</p>
+<p><strong>Exemple du quotidien :</strong> C’est comme un menu deroulant sur un formulaire en ligne : les reponses possibles sont fixees a l’avance (ex: “Primaire”, “Secondaire”, “Tertiaire”). Si tu ecris autre chose, ca ne marche pas. Un facteur ordonne, c’est quand l’ordre compte (Primaire &lt; Secondaire &lt; Tertiaire).</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span><code>filter()</code> (Filtrage)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Une fonction dplyr qui garde uniquement les lignes d’un tableau qui remplissent une condition, et supprime les autres.</p>
+<p><strong>Exemple du quotidien :</strong> C’est comme un tamis a farine : seules les particules assez fines passent, le reste est elimine. <code>filter(age &gt; 18)</code> ne garde que les personnes majeures.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Fonction (Function)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Une fonction, c’est une “machine” qui prend des ingredients (arguments), fait un traitement, et donne un resultat. En R, on utilise des fonctions pre-existantes ou on cree les siennes.</p>
+<p><strong>Exemple du quotidien :</strong> Un grille-pain est une fonction : tu mets du pain (argument), il le grille (traitement), et il te donne du pain grille (resultat). En R : <code>mean(c(10, 20, 30))</code> donne <code>20</code> – la fonction <code>mean</code> prend des nombres et calcule la moyenne.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="g" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="g"><span class="header-section-number">7</span> G</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Geometrie (geom)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Dans ggplot2, un “geom” c’est le type de forme visuelle qu’on dessine sur le graphique : des points, des barres, des lignes, des boites… Chaque <code>geom_*()</code> produit un type de graphique different.</p>
+<p><strong>Exemple du quotidien :</strong> C’est comme choisir le type de graphique dans Excel : “camembert”, “barres”, “nuage de points”… Sauf qu’en ggplot2, on choisit le geom : <code>geom_point()</code> pour des points, <code>geom_bar()</code> pour des barres, <code>geom_histogram()</code> pour un histogramme.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span><code>group_by()</code> + <code>summarize()</code> (Agregation)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-27" class="callout-27-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> <code>group_by()</code> separe le tableau en sous-groupes selon une variable, puis <code>summarize()</code> calcule un resume (moyenne, somme, etc.) pour chaque groupe. C’est le paradigme “Split-Apply-Combine”.</p>
+<p><strong>Exemple du quotidien :</strong> Imagine que tu veux connaitre le salaire moyen par departement dans une entreprise. Tu separes les employes par departement (<code>group_by</code>), tu calcules la moyenne de chaque groupe (<code>summarize</code>), et tu obtiens un tableau avec un departement par ligne et sa moyenne.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="h" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="h"><span class="header-section-number">8</span> H</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Histogramme (<code>geom_histogram()</code>)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-28" class="callout-28-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Un type de graphique en barres qui montre comment les valeurs d’une variable numerique se repartissent. Chaque barre represente un intervalle de valeurs et sa hauteur indique combien d’observations tombent dedans.</p>
+<p><strong>Exemple du quotidien :</strong> Imagine que tu mesures la taille de 100 personnes. L’histogramme te montre : “15 personnes mesurent entre 160 et 165 cm, 30 entre 165 et 170 cm, etc.” Tu vois tout de suite ou se concentre la majorite.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Homogene
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-29" class="callout-29-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Qui contient un seul et meme type de donnees. En R, un vecteur atomique ou une matrice doit etre homogene : tout doit etre du meme type (que des nombres, OU que du texte, etc.).</p>
+<p><strong>Exemple du quotidien :</strong> Un tiroir range “homogene” ne contient que des chaussettes. Si tu mets un t-shirt dedans, le tiroir te force a tout transformer en un seul type (c’est la coercition implicite). Contrairement a une liste qui est heterogene et accepte tout.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Hypothese nulle (<span class="math inline">\(H_0\)</span>) / Hypothese alternative (<span class="math inline">\(H_1\)</span>)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-30" class="callout-30-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> L’hypothese nulle (<span class="math inline">\(H_0\)</span>) dit “il ne se passe rien de special, pas de difference, pas d’effet”. L’hypothese alternative (<span class="math inline">\(H_1\)</span>) dit “il y a bien un effet ou une difference”. Le but d’un test statistique est de voir si on peut rejeter <span class="math inline">\(H_0\)</span>.</p>
+<p><strong>Exemple du quotidien :</strong> Tu testes un nouveau medicament. <span class="math inline">\(H_0\)</span> : “le medicament n’a aucun effet” (les malades guerissent autant avec ou sans). <span class="math inline">\(H_1\)</span> : “le medicament a un effet”. On fait le test et si les resultats sont trop improbables sous <span class="math inline">\(H_0\)</span>, on la rejette.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="i" class="level2" data-number="9">
+<h2 data-number="9" class="anchored" data-anchor-id="i"><span class="header-section-number">9</span> I</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>IQR (Ecart interquartile / Interquartile Range)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-31" class="callout-31-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> C’est la difference entre le 3e quartile (Q3, 75%) et le 1er quartile (Q1, 25%). Ca represente l’etendue des 50% centraux des donnees, en ignorant les extremes.</p>
+<p><strong>Exemple du quotidien :</strong> Si tu classes les salaires d’une entreprise du plus bas au plus haut, l’IQR c’est la fourchette dans laquelle se trouvent les 50% du milieu. Ca evite d’etre trompe par le patron qui gagne 10x plus que tout le monde.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="l" class="level2" data-number="10">
+<h2 data-number="10" class="anchored" data-anchor-id="l"><span class="header-section-number">10</span> L</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span><code>labs()</code> (Labels / Etiquettes)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-32" class="callout-32-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Une fonction ggplot2 qui permet d’ajouter ou modifier les titres, sous-titres, noms des axes et legendes d’un graphique.</p>
+<p><strong>Exemple du quotidien :</strong> C’est comme ajouter un titre et des legendes a un graphique fait a la main sur une feuille. Sans <code>labs()</code>, les axes s’appellent juste par le nom brut de la colonne, ce qui n’est pas tres lisible.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-33-contents" aria-controls="callout-33" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Liste (List)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-33" class="callout-33-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Une structure de donnees en R qui peut contenir des elements de types differents : des nombres, du texte, des tableaux, d’autres listes… C’est le “fourre-tout” de R.</p>
+<p><strong>Exemple du quotidien :</strong> C’est comme un sac a dos : tu peux y mettre un livre, un sandwich, des cles et un telephone – des objets completement differents. Contrairement a un vecteur (qui serait un sac de billes : uniquement des billes).</p>
+</div>
+</div>
+</div>
+</section>
+<section id="m" class="level2" data-number="11">
+<h2 data-number="11" class="anchored" data-anchor-id="m"><span class="header-section-number">11</span> M</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Mapping vs Setting (dans ggplot2)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-34" class="callout-34-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> “Mapping” (dans <code>aes()</code>) signifie que l’apparence du graphique depend d’une variable des donnees. “Setting” (hors <code>aes()</code>) signifie qu’on fixe l’apparence de maniere constante pour tous les points.</p>
+<p><strong>Exemple du quotidien :</strong> Mapping : “les garcons portent un maillot bleu et les filles un maillot rouge” (la couleur depend d’une variable). Setting : “tout le monde porte un maillot vert” (couleur fixe). Si tu ecris <code>aes(color = "bleu")</code>, R pense que “bleu” est une categorie de donnees, pas une couleur !</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-35-contents" aria-controls="callout-35" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Matrice (Matrix)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-35" class="callout-35-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Un tableau a 2 dimensions (lignes et colonnes) ou toutes les valeurs doivent etre du meme type. C’est comme un vecteur mais en 2D.</p>
+<p><strong>Exemple du quotidien :</strong> Pense a une grille de sudoku : toutes les cases contiennent des chiffres (homogene), et chaque case est identifiee par sa ligne et sa colonne. En R : <code>m[3, 2]</code> = la case a la ligne 3, colonne 2.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-36-contents" aria-controls="callout-36" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Mediane
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-36" class="callout-36-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> La valeur du milieu quand on range toutes les donnees en ordre. 50% des valeurs sont en dessous, 50% sont au dessus.</p>
+<p><strong>Exemple du quotidien :</strong> Si 5 personnes gagnent 2000, 2500, 3000, 3500 et 50000 CHF, la mediane est 3000. La moyenne serait 12200, completement faussee par la personne a 50000. La mediane resiste mieux aux valeurs extremes.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-37-contents" aria-controls="callout-37" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span><code>mutate()</code> (Creer/Modifier des colonnes)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-37" class="callout-37-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Une fonction dplyr qui ajoute de nouvelles colonnes a un tableau (ou modifie des colonnes existantes) en faisant des calculs, sans changer le nombre de lignes.</p>
+<p><strong>Exemple du quotidien :</strong> Tu as un tableau d’eleves avec les notes de math et de francais. Avec <code>mutate()</code>, tu ajoutes une colonne “moyenne” qui est <code>(math + francais) / 2</code>. Le nombre d’eleves ne change pas, mais tu as une info en plus.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="n" class="level2" data-number="12">
+<h2 data-number="12" class="anchored" data-anchor-id="n"><span class="header-section-number">12</span> N</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-38-contents" aria-controls="callout-38" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>NA (Valeur manquante / Not Available)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-38" class="callout-38-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> <code>NA</code> signifie “cette donnee est absente ou inconnue”. Ce n’est pas zero, ce n’est pas du vide – c’est “on ne sait pas”. En R, les NA contaminent les calculs : la moyenne d’un vecteur contenant un NA sera NA (sauf si on ajoute <code>na.rm = TRUE</code>).</p>
+<p><strong>Exemple du quotidien :</strong> Dans un sondage, si quelqu’un n’a pas repondu a la question sur son age, on met NA. Ce n’est pas qu’il a 0 ans, c’est qu’on ne connait pas son age.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-39-contents" aria-controls="callout-39" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span><code>na.rm = TRUE</code>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-39" class="callout-39-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Un argument qu’on ajoute aux fonctions statistiques (<code>mean</code>, <code>sd</code>, <code>median</code>…) pour dire a R “ignore les valeurs manquantes (NA) et calcule quand meme avec le reste”.</p>
+<p><strong>Exemple du quotidien :</strong> Si tu fais la moyenne des notes d’une classe et qu’un eleve etait absent (NA), <code>na.rm = TRUE</code> dit “calcule la moyenne sans cet eleve”. Sans cet argument, R refuse de calculer et repond NA.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="o" class="level2" data-number="13">
+<h2 data-number="13" class="anchored" data-anchor-id="o"><span class="header-section-number">13</span> O</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-40-contents" aria-controls="callout-40" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Operateur
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-40" class="callout-40-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Un symbole qui fait une operation. Les operateurs mathematiques (<code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>) font des calculs, les operateurs logiques (<code>==</code>, <code>!=</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&amp;</code>, <code>|</code>) font des comparaisons, et l’operateur d’assignation (<code>&lt;-</code>) range des valeurs.</p>
+<p><strong>Exemple du quotidien :</strong> Les operateurs sont comme les signes sur une calculatrice (+, -, x, :). En R, on en a en plus pour comparer (== signifie “est-ce egal ?”) et pour combiner des conditions (&amp; signifie “ET”, | signifie “OU”).</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-41-contents" aria-controls="callout-41" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Operateur <code>%in%</code> (Appartenance)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-41" class="callout-41-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Un operateur qui verifie si une valeur fait partie d’une liste de valeurs. Il retourne TRUE ou FALSE.</p>
+<p><strong>Exemple du quotidien :</strong> C’est comme verifier si ton nom est sur la liste des invites a une fete. <code>"Alice" %in% c("Bob", "Alice", "Eve")</code> retourne TRUE parce qu’Alice est bien dans la liste.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-42-contents" aria-controls="callout-42" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Operationnalisation
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-42" class="callout-42-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> C’est le processus qui consiste a transformer un concept abstrait et vague en quelque chose de concret et mesurable, a l’aide de variables et de questions precises.</p>
+<p><strong>Exemple du quotidien :</strong> Le concept “bonheur” est abstrait. Pour l’operationnaliser, on pourrait le mesurer par : le nombre de sourires par jour, une note de 1 a 10 donnee par la personne, ou un questionnaire de 20 questions. On transforme l’abstrait en mesurable.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-43-contents" aria-controls="callout-43" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Outlier (Valeur aberrante)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-43" class="callout-43-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Une observation qui est tres eloignee de toutes les autres. Sur un boxplot, c’est un point affiche au-dela des moustaches.</p>
+<p><strong>Exemple du quotidien :</strong> Si dans ta classe tout le monde a entre 50 et 90 a un examen, et qu’une personne a 2, c’est un outlier. Ca peut etre une erreur de saisie ou un cas vraiment extreme.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-44-contents" aria-controls="callout-44" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Overplotting (Superposition)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-44" class="callout-44-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Quand il y a trop de points sur un graphique et qu’ils se superposent au point qu’on ne distingue plus rien. Le graphique devient une tache noire inutile.</p>
+<p><strong>Exemple du quotidien :</strong> Imagine une photo de foule prise de loin : on ne distingue plus les individus, tout se melange. Les solutions : rendre les points transparents (<code>alpha</code>) ou les disperser legerement (<code>geom_jitter()</code>).</p>
+</div>
+</div>
+</div>
+</section>
+<section id="p" class="level2" data-number="14">
+<h2 data-number="14" class="anchored" data-anchor-id="p"><span class="header-section-number">14</span> P</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-45-contents" aria-controls="callout-45" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Package / Paquet (Library)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-45" class="callout-45-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Un package, c’est une extension qu’on installe pour ajouter des fonctionnalites a R. R de base fait des choses simples ; les packages ajoutent des outils specialises.</p>
+<p><strong>Exemple du quotidien :</strong> C’est comme une application sur ton telephone. Le telephone de base fait des appels et des SMS, mais tu installes des apps pour faire plus : Instagram, Google Maps, etc. En R, tu installes des packages avec <code>install.packages()</code> et tu les actives avec <code>library()</code>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-46-contents" aria-controls="callout-46" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Pipe (<code>%&gt;%</code> ou <code>|&gt;</code>)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-46" class="callout-46-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Le pipe prend le resultat de ce qui est a gauche et l’envoie comme premier ingredient dans la fonction a droite. Ca permet d’enchainer les operations de facon lisible, comme une recette etape par etape.</p>
+<p><strong>Exemple du quotidien :</strong> Au lieu de dire “mets dans l’assiette(decoupe(lave(la salade)))” (illisible, de l’interieur vers l’exterieur), le pipe permet d’ecrire : “prends la salade PUIS lave-la PUIS decoupe-la PUIS mets-la dans l’assiette”. Lecture de gauche a droite, beaucoup plus naturelle.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-47-contents" aria-controls="callout-47" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>P-value (Valeur-p)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-47" class="callout-47-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> La p-value mesure a quel point les resultats observes seraient improbables SI l’hypothese nulle etait vraie. Plus elle est petite, plus il est raisonnable de rejeter <span class="math inline">\(H_0\)</span>. Attention : ce n’est PAS la probabilite que <span class="math inline">\(H_0\)</span> soit vraie.</p>
+<p><strong>Exemple du quotidien :</strong> Tu lances une piece 100 fois et obtiens 90 fois face. La p-value te dit : “si la piece etait equilibree (<span class="math inline">\(H_0\)</span>), la probabilite d’obtenir un resultat aussi extreme est quasi nulle”. Donc tu rejettes l’idee que la piece est equilibree. Seuil habituel : si p &lt; 0.05, on rejette <span class="math inline">\(H_0\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-48-contents" aria-controls="callout-48" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Position (dodge, stack, fill)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-48" class="callout-48-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Dans un diagramme a barres, la position determine comment les sous-categories sont affichees : empilees les unes sur les autres (<code>stack</code>), cote a cote (<code>dodge</code>), ou normalisees a 100% (<code>fill</code>).</p>
+<p><strong>Exemple du quotidien :</strong> Imagine des barres representant les ventes par magasin, colorees par type de produit. <code>stack</code> : une seule barre par magasin, les produits empiles. <code>dodge</code> : des barres separees cote a cote. <code>fill</code> : tout ramene en pourcentage pour comparer les proportions.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="q" class="level2" data-number="15">
+<h2 data-number="15" class="anchored" data-anchor-id="q"><span class="header-section-number">15</span> Q</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-49-contents" aria-controls="callout-49" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Quartile (Q1, Q2, Q3)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-49" class="callout-49-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Les quartiles divisent les donnees triees en 4 parts egales. Q1 = 25% des donnees en dessous, Q2 = la mediane (50%), Q3 = 75% des donnees en dessous.</p>
+<p><strong>Exemple du quotidien :</strong> Imagine 100 eleves ranges par note. Q1 c’est la note du 25e eleve (un quart), Q2 c’est la note du 50e (la moitie), Q3 c’est la note du 75e (trois quarts). Ca permet de voir ou se situent la majorite des eleves.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-50-contents" aria-controls="callout-50" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Question de recherche (RQ)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-50" class="callout-50-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> La question centrale a laquelle une etude scientifique cherche a repondre. Elle doit etre claire, faisable et pertinente.</p>
+<p><strong>Exemple du quotidien :</strong> Bonne RQ : “L’utilisation des reseaux sociaux est-elle liee au bien-etre des adolescents ?” Mauvaise RQ : “Les reseaux sociaux, c’est bien ou c’est mal ?” (jugement moral, pas scientifique).</p>
+</div>
+</div>
+</div>
+</section>
+<section id="r" class="level2" data-number="16">
+<h2 data-number="16" class="anchored" data-anchor-id="r"><span class="header-section-number">16</span> R</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-51-contents" aria-controls="callout-51" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span><code>read_csv()</code> (Importation de fichiers)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-51" class="callout-51-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Une fonction du package <code>readr</code> (Tidyverse) qui lit un fichier CSV et le transforme en tableau (data frame) dans R.</p>
+<p><strong>Exemple du quotidien :</strong> C’est comme ouvrir un fichier Excel, sauf qu’au lieu de double-cliquer sur le fichier, tu donnes l’instruction par code : <code>df &lt;- read_csv("mon_fichier.csv")</code>. L’avantage : c’est reproductible et ne corrompt pas les donnees (contrairement a Excel).</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-52-contents" aria-controls="callout-52" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Reproductibilite
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-52" class="callout-52-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Le fait que n’importe qui puisse relancer exactement la meme analyse et obtenir les memes resultats. En utilisant du code R plutot que des clics de souris, on garantit la reproductibilite.</p>
+<p><strong>Exemple du quotidien :</strong> C’est comme une recette de cuisine ecrite vs.&nbsp;“j’ai fait au feeling”. Si la recette est ecrite (= le script R), n’importe qui peut reproduire le plat exactement. Si c’est “au feeling” (= des clics dans un logiciel), personne ne peut verifier ni reproduire.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="s" class="level2" data-number="17">
+<h2 data-number="17" class="anchored" data-anchor-id="s"><span class="header-section-number">17</span> S</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-53-contents" aria-controls="callout-53" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Script
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-53" class="callout-53-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Un fichier texte (extension <code>.R</code>) qui contient du code R sauvegarde. Contrairement a la console (ou le code est perdu), le script garde tout en memoire et permet de relancer l’analyse plus tard.</p>
+<p><strong>Exemple du quotidien :</strong> La console c’est comme parler a voix haute (les mots disparaissent). Le script c’est comme ecrire une lettre (les mots sont sauvegardes). Tu peux relire, modifier et partager ton script.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-54-contents" aria-controls="callout-54" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span><code>select()</code> (Selection de colonnes)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-54" class="callout-54-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Une fonction dplyr qui choisit quelles colonnes garder (ou exclure) dans un tableau.</p>
+<p><strong>Exemple du quotidien :</strong> Tu as un tableau avec 50 colonnes mais tu n’as besoin que du nom et de l’age. <code>select(nom, age)</code> ne garde que ces 2 colonnes. <code>select(-adresse)</code> enleve seulement la colonne adresse.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-55-contents" aria-controls="callout-55" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span><code>str()</code> / <code>summary()</code> (Exploration)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-55" class="callout-55-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Deux fonctions pour examiner rapidement un tableau. <code>str()</code> montre la structure interne (types, apercu). <code>summary()</code> donne les statistiques descriptives (min, max, moyenne, mediane…).</p>
+<p><strong>Exemple du quotidien :</strong> <code>str()</code> c’est comme ouvrir le capot d’une voiture pour voir le moteur. <code>summary()</code> c’est comme lire le tableau de bord : vitesse moyenne, kilometres parcourus, niveau d’essence…</p>
+</div>
+</div>
+</div>
+</section>
+<section id="t" class="level2" data-number="18">
+<h2 data-number="18" class="anchored" data-anchor-id="t"><span class="header-section-number">18</span> T</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-56-contents" aria-controls="callout-56" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Theme (dans ggplot2)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-56" class="callout-56-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Un theme controle l’apparence generale du graphique : couleur de fond, style des grilles, polices, etc. Ca ne change pas les donnees, juste l’habillage visuel.</p>
+<p><strong>Exemple du quotidien :</strong> C’est comme choisir le cadre et le fond pour une photo. La photo reste la meme, mais <code>theme_minimal()</code> donne un look epure, <code>theme_bw()</code> un look noir et blanc, etc.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-57-contents" aria-controls="callout-57" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Tibble
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-57" class="callout-57-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Une version modernisee du data frame dans le Tidyverse. C’est pratiquement la meme chose qu’un data frame, mais avec un affichage plus propre et des comportements plus previsibles.</p>
+<p><strong>Exemple du quotidien :</strong> C’est comme la difference entre un vieux telephone et un smartphone : ils font la meme chose (appeler), mais le nouveau est plus agreable a utiliser et evite certains pieges de l’ancien.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-58-contents" aria-controls="callout-58" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Tidy Data (Donnees bien rangees)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-58" class="callout-58-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Un format standard de tableau ou chaque variable a sa propre colonne, chaque observation a sa propre ligne, et chaque type d’observation forme une table distincte. C’est le format ideal pour l’analyse.</p>
+<p><strong>Exemple du quotidien :</strong> Un carnet d’adresses bien range : une ligne par personne, une colonne pour le nom, une pour le telephone, une pour l’email. Pas de personnes sur plusieurs lignes, pas de numeros de telephone melanges avec les emails dans une meme colonne.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-59-contents" aria-controls="callout-59" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Tidyverse
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-59" class="callout-59-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Un ensemble de packages R qui partagent une philosophie commune et une “grammaire” coherente pour manipuler, transformer et visualiser les donnees. Ca inclut dplyr, ggplot2, readr, et d’autres.</p>
+<p><strong>Exemple du quotidien :</strong> C’est comme une boite a outils complete et bien organisee (marteau, tournevis, cle…) ou tous les outils viennent du meme fabricant et s’emboitent bien ensemble. On charge tout d’un coup avec <code>library(tidyverse)</code>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="u" class="level2" data-number="19">
+<h2 data-number="19" class="anchored" data-anchor-id="u"><span class="header-section-number">19</span> U</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-60-contents" aria-controls="callout-60" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span><code>ungroup()</code> (Retirer le groupement)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-60" class="callout-60-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Apres avoir utilise <code>group_by()</code>, il faut appeler <code>ungroup()</code> pour dire a R “c’est fini, arrete de traiter les donnees par groupes”. Oublier ca peut causer des bugs subtils.</p>
+<p><strong>Exemple du quotidien :</strong> C’est comme enlever un filtre sur Instagram. Tu avais filtre “mes photos de vacances”, maintenant tu veux revoir toutes tes photos. <code>ungroup()</code> enleve le filtre de groupement.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="v" class="level2" data-number="20">
+<h2 data-number="20" class="anchored" data-anchor-id="v"><span class="header-section-number">20</span> V</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-61-contents" aria-controls="callout-61" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Variable (types : nominale, ordinale, continue, discrete)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-61" class="callout-61-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Une variable c’est une caracteristique qu’on mesure ou observe. Elle peut etre de differents types :</p>
+<ul>
+<li><strong>Nominale</strong> : des categories sans ordre (couleur des yeux, parti politique)</li>
+<li><strong>Ordinale</strong> : des categories avec un ordre (niveau d’education : primaire &lt; secondaire &lt; tertiaire)</li>
+<li><strong>Continue</strong> : des valeurs numeriques qui peuvent prendre n’importe quelle valeur dans un intervalle (taille : 1.75 m)</li>
+<li><strong>Discrete</strong> : des valeurs numeriques qui ne prennent que des nombres entiers (nombre d’enfants : 0, 1, 2, 3)</li>
+</ul>
+<p><strong>Exemple du quotidien :</strong> Sur un formulaire d’inscription : “Sexe” = nominale, “Satisfaction (1 a 5)” = ordinale, “Poids en kg” = continue, “Nombre de freres et soeurs” = discrete.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-62-contents" aria-controls="callout-62" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Vecteur / Vecteur atomique
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-62" class="callout-62-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> La brique de base de R. C’est une suite ordonnee de valeurs du meme type. Meme un simple nombre comme <code>42</code> est en realite un vecteur de longueur 1 en R.</p>
+<p><strong>Exemple du quotidien :</strong> C’est comme un collier de perles : toutes les perles sont enfilees dans l’ordre, et elles doivent etre du meme type (toutes rondes, ou toutes carrees). En R : <code>c(10, 20, 30)</code> est un vecteur de 3 nombres. <code>c("chat", "chien")</code> est un vecteur de 2 textes.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-63-contents" aria-controls="callout-63" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Vectorisation
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-63" class="callout-63-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Le fait que R applique automatiquement une operation a chaque element d’un vecteur, sans qu’on ait besoin d’ecrire une boucle. C’est une des grandes forces de R.</p>
+<p><strong>Exemple du quotidien :</strong> Au lieu de dire “prends le 1er prix et ajoute 10%, puis le 2e prix et ajoute 10%, puis le 3e…” tu dis juste “ajoute 10% a tous les prix”. En R : <code>prix * 1.10</code> multiplie chaque element du vecteur par 1.10 d’un coup.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-64-contents" aria-controls="callout-64" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Viridis (Palette de couleurs)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-64" class="callout-64-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Une famille de palettes de couleurs concue pour etre lisible par les personnes daltoniennes et en impression noir et blanc.</p>
+<p><strong>Exemple du quotidien :</strong> Au lieu d’utiliser rouge et vert (que 8% des hommes ne distinguent pas), viridis utilise des degrades de jaune-vert-violet qui restent distinguables pour tout le monde.</p>
+</div>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

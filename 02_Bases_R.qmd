@@ -6,6 +6,11 @@ R est un environnement de programmation open-source concu pour le calcul statist
 
 ## L'Environnement RStudio
 
+::: {.callout-tip collapse="true"}
+## En simple
+RStudio, c'est comme un atelier de bricolage bien organise. Tu as ton etabli (l'editeur de code), un ecran de controle (la console), un rangement ou tu vois tout ce que tu as fabrique (l'environnement), et des tiroirs avec tes outils (aide, fichiers, graphiques). Chaque zone a son role, et ensemble elles te permettent de travailler efficacement.
+:::
+
 RStudio se divise en **4 quadrants** :
 
 1. **Editeur de code source** : redaction et sauvegarde des scripts
@@ -23,6 +28,26 @@ RStudio se divise en **4 quadrants** :
 | Redemarrer session | `Ctrl + Shift + F10` | `Cmd + Shift + F10` | Vide la memoire, detache les packages |
 | Commentaire en bloc | `Ctrl + Shift + C` | `Cmd + Shift + C` | Commente/decommente une selection |
 
+### L'assignation `<-`
+
+::: {.callout-tip collapse="true"}
+## En simple
+**Un operateur**, c'est un symbole qui fait une action. Par exemple, `+` additionne, `-` soustrait. La fleche `<-` est l'operateur d'**assignation** : elle permet de **donner un nom a une valeur** pour la reutiliser plus tard.
+
+Imagine que tu colles une etiquette sur une boite. Tu ecris `mon_age <- 25` et ca veut dire : "colle l'etiquette `mon_age` sur la boite qui contient 25". Apres, chaque fois que tu dis `mon_age`, R sait que tu parles de 25.
+:::
+
+```r
+# On colle l'etiquette "mon_age" sur la valeur 25
+mon_age <- 25
+
+# Maintenant on peut utiliser "mon_age" dans des calculs
+mon_age + 5    # Resultat : 30
+
+# On peut aussi changer la valeur dans la boite
+mon_age <- 26  # Maintenant mon_age vaut 26
+```
+
 ::: {.callout-warning}
 ## `<-` vs `=`
 
@@ -34,6 +59,13 @@ Ne jamais utiliser `=` pour l'assignation globale (conflits de portee lexicale).
 
 ## Types de Variables (Vecteurs Atomiques)
 
+::: {.callout-tip collapse="true"}
+## En simple
+En R, meme un seul nombre est stocke dans un "vecteur" -- pense a un train avec un seul wagon. Un vecteur, c'est juste une suite ordonnee de valeurs.
+
+Les **types**, c'est comme les rayons d'un supermarche : il y a le rayon des nombres entiers, le rayon des nombres a virgule, le rayon du texte, et le rayon vrai/faux. Chaque valeur appartient a un rayon precis.
+:::
+
 En R, meme un nombre unique est un **vecteur de longueur 1**.
 
 | Type | Description | Exemple |
@@ -44,23 +76,32 @@ En R, meme un nombre unique est un **vecteur de longueur 1**.
 | `character` | Texte | `"chien"` (avec guillemets) |
 
 ```r
-# Verification du type
-class(42L)      # "integer"
-class(3.14)     # "numeric"
-class("texte")  # "character"
-class(TRUE)     # "logical"
+# Verification du type de chaque valeur
+class(42L)      # "integer"  -- nombre entier (le L force le type entier)
+class(3.14)     # "numeric"  -- nombre a virgule
+class("texte")  # "character" -- du texte (toujours entre guillemets)
+class(TRUE)     # "logical"  -- vrai ou faux
 ```
+
+### Coercition Implicite (le melange interdit)
+
+::: {.callout-tip collapse="true"}
+## En simple
+Imagine une boite ou tu ne peux mettre **QUE des pommes OU QUE des oranges**, jamais les deux. Un vecteur en R, c'est pareil : il ne peut contenir qu'un seul type de donnees. Si tu essaies de melanger des nombres et du texte dans le meme vecteur, R va tout transformer en texte sans te prevenir. C'est comme si tu melangeais des pommes et des oranges et que la boite transformait tout en oranges automatiquement.
+:::
 
 ::: {.callout-danger}
 ## Coercition Implicite
 
 Un vecteur atomique doit etre **strictement homogene**. Si on melange les types, R convertit silencieusement selon la hierarchie :
 
-`logical` → `integer` → `numeric` → `character`
+`logical` -> `integer` -> `numeric` -> `character`
 
 ```r
+# On melange un booleen, un nombre et du texte dans le meme vecteur
 c(TRUE, 5, "Pomme")
-# Resultat : c("TRUE", "5", "Pomme") — tout devient character !
+# Resultat : c("TRUE", "5", "Pomme") -- tout devient character !
+# Maintenant "5" est du TEXTE, pas un nombre. Tu ne peux plus calculer avec.
 ```
 
 Toute operation mathematique sur `"5"` echouera ensuite.
@@ -70,57 +111,108 @@ Toute operation mathematique sur `"5"` echouera ensuite.
 
 ### Vecteurs
 
-```r
-# Creation avec c()
-v1 <- c(1, 2, 3)
-v2 <- c("chat", "chien", "oiseau")
+::: {.callout-tip collapse="true"}
+## En simple
+Un vecteur, c'est une **liste de valeurs du meme type**, comme un collier de perles. Toutes les perles sont enfilees dans l'ordre, et elles sont toutes du meme materiau. Pour creer un vecteur, on utilise la fonction `c()` (comme "combiner" ou "concatener").
+:::
 
-# Sequences
-seq_1 <- 1:100
-seq_2 <- seq(from = 0, to = 1, by = 0.1)
+```r
+# Creation d'un vecteur de nombres avec c() -- "c" veut dire "combiner"
+v1 <- c(1, 2, 3)           # Un vecteur avec 3 nombres
+
+# Creation d'un vecteur de texte
+v2 <- c("chat", "chien", "oiseau")  # Un vecteur avec 3 mots
+
+# Sequences rapides : creer une suite de nombres
+seq_1 <- 1:100                        # Les nombres de 1 a 100
+seq_2 <- seq(from = 0, to = 1, by = 0.1)  # De 0 a 1, par pas de 0.1
+
+# Acceder a un element par sa position (R commence a 1, pas 0)
+v2[1]   # "chat"   -- le premier element
+v2[3]   # "oiseau" -- le troisieme element
 ```
 
 ### Matrices
 
+::: {.callout-tip collapse="true"}
+## En simple
+Une matrice, c'est un **tableau rectangulaire** ou toutes les cases contiennent le meme type de donnees (que des nombres, ou que du texte). Pense a une grille de sudoku : des lignes, des colonnes, et que des chiffres dedans.
+:::
+
 Structures 2D **strictement homogenes** (un seul type). Remplissage par colonnes par defaut.
 
 ```r
+# Creer une matrice 3x3 avec les nombres de 1 a 9
 m <- matrix(1:9, nrow = 3, ncol = 3)
-m <- matrix(1:9, nrow = 3, ncol = 3, byrow = TRUE)  # Remplissage par lignes
+# Par defaut, R remplit colonne par colonne :
+#      [,1] [,2] [,3]
+# [1,]    1    4    7
+# [2,]    2    5    8
+# [3,]    3    6    9
+
+# Pour remplir ligne par ligne, ajouter byrow = TRUE
+m <- matrix(1:9, nrow = 3, ncol = 3, byrow = TRUE)
 
 # Extraction : matrice[ligne, colonne]
-m[3, 2]   # Element ligne 3, colonne 2
-m[1, ]    # Toute la ligne 1
-m[, 2]    # Toute la colonne 2
+m[3, 2]   # L'element a la ligne 3, colonne 2
+m[1, ]    # Toute la ligne 1 (on laisse "colonne" vide)
+m[, 2]    # Toute la colonne 2 (on laisse "ligne" vide)
 ```
 
 ### Facteurs (Factors)
 
+::: {.callout-tip collapse="true"}
+## En simple
+Un facteur, c'est une variable qui ne peut prendre que certaines valeurs predefinies, appelees "niveaux". Pense a un formulaire avec un menu deroulant : tu ne peux choisir que parmi les options proposees (Primaire, Secondaire, Tertiaire). En plus, les niveaux peuvent etre ordonnes (Primaire < Secondaire < Tertiaire).
+:::
+
 Vecteurs entiers avec attribut "niveaux" (levels). Socle des variables nominales/ordinales dans les regressions.
 
 ```r
-# Conversion en facteur ordonne
+# On a des niveaux d'education en vrac
 niveaux_education <- c("Secondaire", "Primaire", "Tertiaire", "Primaire")
-facteur_education <- factor(niveaux_education,
-                            levels = c("Primaire", "Secondaire", "Tertiaire"),
-                            ordered = TRUE)
+
+# On les transforme en facteur ordonne
+facteur_education <- factor(
+  niveaux_education,                                    # les donnees brutes
+  levels = c("Primaire", "Secondaire", "Tertiaire"),    # l'ordre des niveaux
+  ordered = TRUE                                        # c'est un ordre !
+)
+# Resultat : Primaire < Secondaire < Tertiaire
+# R sait maintenant que Tertiaire > Primaire
 ```
 
 ### Listes
 
+::: {.callout-tip collapse="true"}
+## En simple
+Si un vecteur est un collier de perles identiques, une liste c'est un **sac a dos** : tu peux y mettre n'importe quoi -- un livre, une bouteille, un cahier, un autre sac. Chaque element peut etre de type different et meme de taille differente.
+:::
+
 Vecteurs **heterogenes** : peuvent contenir nombres, texte, matrices, autres listes, modeles statistiques.
 
 ```r
+# Creer une liste avec des elements de types differents
 ma_liste <- list(
-  nom = "Analyse",
-  valeurs = c(1, 2, 3),
-  matrice = matrix(1:4, 2, 2)
+  nom = "Analyse",           # un texte
+  valeurs = c(1, 2, 3),     # un vecteur de nombres
+  matrice = matrix(1:4, 2, 2)  # une matrice 2x2
 )
-ma_liste$nom          # Acces par nom
-ma_liste[[2]]         # Acces par index
+
+# Acceder aux elements de la liste
+ma_liste$nom          # "Analyse"  -- acces par le nom avec $
+ma_liste[[2]]         # c(1, 2, 3) -- acces par la position avec [[ ]]
+ma_liste[["valeurs"]] # c(1, 2, 3) -- acces par le nom avec [[ ]]
 ```
 
 ### Data Frames
+
+::: {.callout-tip collapse="true"}
+## En simple
+Un Data Frame, c'est exactement comme un **tableau Excel** : des lignes et des colonnes. Chaque colonne a un nom (comme "Nom", "Age", "Note") et contient un type de donnees (la colonne "Nom" contient du texte, la colonne "Age" contient des nombres). Chaque ligne represente une personne, un produit, une observation -- bref, un "cas".
+
+La grande difference avec une matrice : dans un Data Frame, chaque colonne peut avoir un type different (texte dans une colonne, nombres dans une autre). C'est LA structure que tu utiliseras 90% du temps en Data Science.
+:::
 
 L'objet central de la Data Science en R. C'est une **liste de colonnes de meme longueur** pouvant contenir des types differents.
 
@@ -128,23 +220,49 @@ L'objet central de la Data Science en R. C'est une **liste de colonnes de meme l
 - **Colonne** = variable
 
 ```r
+# Creer un Data Frame -- comme creer un tableau Excel
 df <- data.frame(
-  nom = c("Sid", "Manny", "Diego"),
-  age = c(30, 40, 35)
+  nom = c("Sid", "Manny", "Diego"),  # colonne "nom" (texte)
+  age = c(30, 40, 35)                # colonne "age" (nombres)
 )
+# Resultat :
+#     nom age
+# 1   Sid  30
+# 2 Manny  40
+# 3 Diego  35
 
-# Extraction d'une colonne avec $
-df$age
+# Extraire une colonne avec le signe $
+df$age        # Donne : 30 40 35
 
-# Creation avec data.frame()
+# Extraire une ligne avec les crochets
+df[1, ]       # Toute la ligne 1 (Sid, 30)
+
+# Extraire une cellule precise
+df[2, "nom"]  # "Manny" (ligne 2, colonne "nom")
+```
+
+```r
+# Exemple plus complet : donnees d'entreprise
 entreprise_df <- data.frame(
-  id_filiale = 1:5,
-  actifs_fixes = c(50000, 75000, 42000, NA, 90000),
-  passifs = c(20000, 30000, 15000, 40000, 45000)
+  id_filiale = 1:5,                                    # identifiant de 1 a 5
+  actifs_fixes = c(50000, 75000, 42000, NA, 90000),    # NA = valeur manquante
+  passifs = c(20000, 30000, 15000, 40000, 45000)       # dettes
 )
+# Resultat :
+#   id_filiale actifs_fixes passifs
+# 1          1        50000   20000
+# 2          2        75000   30000
+# 3          3        42000   15000
+# 4          4           NA   40000   <-- pas de donnee pour les actifs !
+# 5          5        90000   45000
 ```
 
 ## Fonctions d'Exploration
+
+::: {.callout-tip collapse="true"}
+## En simple
+Quand tu recois un nouveau jeu de donnees, la premiere chose a faire c'est l'**explorer** : combien de lignes ? Combien de colonnes ? Quels types de donnees ? Y a-t-il des valeurs manquantes ? Ces fonctions sont comme des "radiographies" de ton tableau -- elles te montrent ce qu'il contient sans le modifier.
+:::
 
 | Fonction | Description |
 |----------|-------------|
@@ -159,20 +277,70 @@ entreprise_df <- data.frame(
 | `is.na(x)` | Masque booleen des valeurs manquantes |
 | `sum(is.na(x))` | Comptage total des NA |
 
+```r
+# Exemple pratique : explorer notre data frame d'entreprise
+
+str(entreprise_df)       # Montre la structure : 5 obs., 3 variables, les types
+summary(entreprise_df)   # Stats de chaque colonne (min, max, moyenne, NA)
+head(entreprise_df, 3)   # Les 3 premieres lignes
+dim(entreprise_df)       # c(5, 3) -- 5 lignes, 3 colonnes
+nrow(entreprise_df)      # 5 lignes
+ncol(entreprise_df)      # 3 colonnes
+names(entreprise_df)     # "id_filiale" "actifs_fixes" "passifs"
+
+# Verifier les valeurs manquantes
+is.na(entreprise_df$actifs_fixes)  # FALSE FALSE FALSE TRUE FALSE
+sum(is.na(entreprise_df$actifs_fixes))  # 1 valeur manquante
+```
+
 ## Fonctions Utilisateur (User-Defined Functions)
 
+::: {.callout-tip collapse="true"}
+## En simple
+Une fonction, c'est comme une **machine a cafe**. Tu mets des ingredients dedans (eau + cafe), elle fait son travail a l'interieur, et elle te sort un resultat (ton cafe). En R, tu peux creer tes propres machines :
+
+- Les **arguments** = ce que tu mets dans la machine (les ingredients)
+- Le **corps** = ce que la machine fait (les instructions)
+- Le **return** = ce que la machine te rend (le resultat)
+
+L'avantage : une fois que ta machine est construite, tu peux l'utiliser autant de fois que tu veux sans refaire tout le travail a chaque fois.
+:::
+
 ```r
-# Definition
+# On construit notre propre "machine" qui calcule un ratio
 calculer_ratio <- function(actifs, passifs) {
+  # 1. Verification : est-ce qu'il y a des valeurs manquantes ?
   if (any(is.na(actifs)) | any(is.na(passifs))) {
-    warning("Valeurs manquantes detectees.")
+    warning("Valeurs manquantes detectees.")  # Alerte si NA
   }
+  # 2. Calcul du ratio
   ratio <- actifs / passifs
+  # 3. On retourne le resultat
   return(ratio)
 }
 
-# Application
-entreprise_df$ratio_solv <- calculer_ratio(entreprise_df$actifs_fixes,
-                                            entreprise_df$passifs)
-str(entreprise_df)
+# Maintenant on utilise notre machine sur nos donnees
+entreprise_df$ratio_solv <- calculer_ratio(
+  entreprise_df$actifs_fixes,   # argument 1 : les actifs
+  entreprise_df$passifs          # argument 2 : les passifs
+)
+# Resultat : une nouvelle colonne "ratio_solv" ajoutee au data frame
+# 2.5, 2.5, 2.8, NA, 2.0
+
+str(entreprise_df)  # Verification : on voit bien la nouvelle colonne
+```
+
+```r
+# Exemple plus simple : une fonction qui calcule la TVA
+calculer_prix_ttc <- function(prix_ht, taux_tva = 0.077) {
+  # taux_tva a une valeur par defaut de 7.7% (TVA suisse)
+  prix_ttc <- prix_ht * (1 + taux_tva)  # on ajoute la TVA au prix
+  return(prix_ttc)                        # on retourne le resultat
+}
+
+# Utilisation avec la TVA par defaut (7.7%)
+calculer_prix_ttc(100)         # Resultat : 107.7
+
+# Utilisation avec une TVA differente (20%)
+calculer_prix_ttc(100, 0.20)   # Resultat : 120
 ```

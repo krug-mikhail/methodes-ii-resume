@@ -1,0 +1,498 @@
+---
+title: "Glossaire - Dictionnaire des Termes"
+---
+
+Ce glossaire explique **en langage simple** tous les termes techniques utilises dans les 4 modules du cours. Cliquez sur un terme pour derouler son explication.
+
+## A
+
+::: {.callout-note collapse="true"}
+## Argument
+**En simple :** Un argument, c'est une information supplementaire qu'on donne a une fonction pour qu'elle sache quoi faire ou comment le faire. C'est comme un reglage ou une option.
+
+**Exemple du quotidien :** Quand tu commandes un cafe, "cafe" c'est la fonction, mais "avec du lait", "sans sucre", "taille grande" sont les arguments. En R : `mean(x, na.rm = TRUE)` -- ici `x` et `na.rm = TRUE` sont les arguments donnes a la fonction `mean`.
+:::
+
+::: {.callout-note collapse="true"}
+## Assignation / Operateur d'assignation (`<-`)
+**En simple :** Assigner, c'est donner un nom a quelque chose pour le retrouver plus tard. L'operateur `<-` est la fleche qui dit "range cette valeur dans cette boite portant ce nom".
+
+**Exemple du quotidien :** C'est comme coller une etiquette sur un bocal. Tu ecris "biscuits" sur le bocal et tu mets les biscuits dedans. En R : `age <- 25` signifie "range 25 dans la boite appelee age".
+:::
+
+::: {.callout-note collapse="true"}
+## `aes()` (Esthetiques / Aesthetics)
+**En simple :** C'est la partie du code graphique qui dit "quelle colonne de mon tableau correspond a quel aspect visuel du graphique" (position X, position Y, couleur, taille...).
+
+**Exemple du quotidien :** Imagine que tu fais un plan de table pour un diner. `aes()` c'est la regle qui dit : "la colonne 'nom' determine l'etiquette, la colonne 'equipe' determine la couleur du carton". Chaque variable du tableau est reliee a un element visuel.
+:::
+
+::: {.callout-note collapse="true"}
+## `arrange()` (Tri)
+**En simple :** Une fonction dplyr qui trie les lignes d'un tableau dans un ordre precis (croissant ou decroissant).
+
+**Exemple du quotidien :** C'est comme trier une pile de copies d'examen par note, de la plus basse a la plus haute (ou l'inverse avec `desc()`).
+:::
+
+## B
+
+::: {.callout-note collapse="true"}
+## Binwidth (Largeur d'intervalle)
+**En simple :** Dans un histogramme, le binwidth c'est la taille de chaque "bac" qui regroupe les donnees. Un bac large regroupe beaucoup de valeurs ensemble, un bac fin les separe davantage.
+
+**Exemple du quotidien :** Imagine que tu classes des eleves par taille. Si ton binwidth est 10 cm (ex: 150-160, 160-170...), tu as peu de groupes. Si c'est 1 cm (150-151, 151-152...), tu en as beaucoup. Trop large, tu perds les details. Trop fin, tu vois trop de bruit.
+:::
+
+::: {.callout-note collapse="true"}
+## Biais cognitif (d'enquete)
+**En simple :** Une erreur systematique dans les reponses d'un questionnaire, causee par la psychologie humaine et non par le hasard. Les gens ne repondent pas toujours honnetement ou objectivement.
+
+**Exemple du quotidien :** Si on te demande "Combien de fois par semaine fais-tu du sport ?", tu as tendance a gonfler le chiffre pour paraitre en forme (biais de desirabilite sociale). Le biais d'acquiescement, c'est dire "oui" a tout par reflexe.
+:::
+
+::: {.callout-note collapse="true"}
+## Boxplot (Boite a moustaches)
+**En simple :** Un type de graphique qui resume une distribution en montrant les quartiles, la mediane et les valeurs extremes dans un schema compact en forme de boite.
+
+**Exemple du quotidien :** C'est comme un bulletin meteo qui te dit : "la temperature la plus basse etait 5, la plus haute 28, la moitie du temps c'etait entre 12 et 20, et la temperature typique etait 16". Tout ca dans un seul dessin.
+:::
+
+## C
+
+::: {.callout-note collapse="true"}
+## `case_when()` (Conditions multiples)
+**En simple :** Une fonction qui permet de creer des categories en enchainant plusieurs conditions "si... alors...". C'est comme un `ifelse()` mais pour plus de 2 cas.
+
+**Exemple du quotidien :** C'est comme un barreme de notation : si la note est >= 90, c'est "Excellent" ; si >= 70, c'est "Bien" ; si >= 50, c'est "Suffisant" ; sinon, c'est "Insuffisant".
+:::
+
+::: {.callout-note collapse="true"}
+## Coercition implicite
+**En simple :** C'est quand R transforme automatiquement et silencieusement le type de tes donnees pour que tout soit du meme type dans un vecteur. Tu ne le demandes pas, R le fait tout seul, et ca peut causer des surprises.
+
+**Exemple du quotidien :** Imagine une boite de rangement qui n'accepte qu'un seul type d'objet. Si tu mets des pommes et un livre dedans, la boite transforme tout en livres (le type le plus general). En R : `c(TRUE, 5, "Pomme")` devient `c("TRUE", "5", "Pomme")` -- tout est converti en texte, et le chiffre 5 ne peut plus servir pour des calculs.
+:::
+
+::: {.callout-note collapse="true"}
+## Console
+**En simple :** C'est la zone de RStudio ou tu peux taper du code et voir le resultat immediatement. C'est comme un brouillon interactif.
+
+**Exemple du quotidien :** C'est comme la calculatrice de ton telephone : tu tapes un calcul, tu appuies sur Entree, et le resultat s'affiche tout de suite. Mais rien n'est sauvegarde -- si tu fermes, c'est perdu.
+:::
+
+::: {.callout-note collapse="true"}
+## Construit theorique
+**En simple :** Un concept abstrait qu'on utilise dans la recherche mais qu'on ne peut pas mesurer directement. Il faut le transformer en quelque chose de concret pour pouvoir l'etudier.
+
+**Exemple du quotidien :** "L'intelligence" est un construit -- on ne peut pas la peser ou la mesurer avec une regle. On doit la transformer en questions de test (QI) pour pouvoir la quantifier.
+:::
+
+::: {.callout-note collapse="true"}
+## `count()` (Denombrement)
+**En simple :** Une fonction raccourci qui compte combien de fois chaque categorie apparait dans une colonne.
+
+**Exemple du quotidien :** C'est comme compter combien d'eleves il y a dans chaque classe : 3A = 25 eleves, 3B = 22 eleves, 3C = 27 eleves.
+:::
+
+::: {.callout-note collapse="true"}
+## CSV (Comma-Separated Values)
+**En simple :** Un format de fichier tres simple pour stocker des tableaux. Chaque ligne est une ligne du tableau, et les colonnes sont separees par des virgules (ou des points-virgules).
+
+**Exemple du quotidien :** Imagine un tableau ecrit dans un fichier texte brut, ou au lieu de colonnes visuelles, on separe les informations par des virgules : "Nom,Age,Ville" puis "Alice,25,Geneve". C'est lisible par n'importe quel logiciel.
+:::
+
+## D
+
+::: {.callout-note collapse="true"}
+## Data Frame (Tableau de donnees)
+**En simple :** C'est l'objet le plus important en R pour stocker des donnees. C'est un tableau avec des lignes (observations) et des colonnes (variables), ou chaque colonne peut contenir un type de donnee different.
+
+**Exemple du quotidien :** C'est exactement comme un tableau Excel : chaque ligne represente une personne (ou un produit, une observation...) et chaque colonne une information (nom, age, ville...). La difference : en R, ce tableau vit dans le code.
+:::
+
+::: {.callout-note collapse="true"}
+## `desc()` (Ordre decroissant)
+**En simple :** Une fonction utilisee avec `arrange()` pour trier du plus grand au plus petit au lieu du plus petit au plus grand.
+
+**Exemple du quotidien :** C'est la difference entre classer les eleves du premier au dernier (croissant) ou du dernier au premier (decroissant avec `desc()`).
+:::
+
+::: {.callout-note collapse="true"}
+## Differenciation semantique
+**En simple :** Un type de question d'enquete ou la personne se positionne sur un curseur entre deux mots opposes (ex: "Laid" a gauche, "Beau" a droite).
+
+**Exemple du quotidien :** C'est comme un curseur de volume mais pour une opinion. A gauche "Pas du tout satisfait", a droite "Tres satisfait", et tu places ton curseur ou tu veux entre les deux.
+:::
+
+## E
+
+::: {.callout-note collapse="true"}
+## Echelle de Likert
+**En simple :** Un format de question d'enquete ou on demande le degre d'accord sur une echelle, typiquement de 1 a 5 (ou 1 a 7), allant de "Pas du tout d'accord" a "Tout a fait d'accord".
+
+**Exemple du quotidien :** Quand un site te demande "Evaluez votre experience de 1 a 5 etoiles", c'est le meme principe. Chaque etoile represente un niveau de satisfaction.
+:::
+
+::: {.callout-note collapse="true"}
+## Echelle de mesure (Niveaux de Stevens)
+**En simple :** C'est une classification qui dit de quel "type" est une variable, ce qui determine quels calculs on peut faire dessus. Il y a 4 niveaux : nominale, ordinale, intervalle et ratio.
+
+**Exemple du quotidien :** Les numeros de maillot de foot (nominale : juste des etiquettes) vs. le classement d'une course (ordinale : un ordre) vs. la temperature en Celsius (intervalle : des ecarts reguliers) vs. le poids en kg (ratio : un vrai zero existe).
+:::
+
+::: {.callout-note collapse="true"}
+## Environnement (Environment)
+**En simple :** C'est le panneau de RStudio qui montre tout ce que R a en memoire a un instant donne : les variables, les tableaux, les fonctions que tu as crees. C'est l'inventaire de tes objets.
+
+**Exemple du quotidien :** C'est comme le plan de travail de ta cuisine : tu vois tous les ingredients et ustensiles que tu as sortis et prepares. Si un objet n'est pas sur le plan de travail (dans l'environnement), R ne le connait pas.
+:::
+
+::: {.callout-note collapse="true"}
+## Erreur de Type I (Faux positif)
+**En simple :** C'est quand on conclut qu'il y a un effet alors qu'en realite il n'y en a pas. On "voit" quelque chose qui n'existe pas.
+
+**Exemple du quotidien :** C'est comme un detecteur de fumee qui sonne alors qu'il n'y a pas de feu -- il a detecte un faux signal. En statistique, on fixe le seuil alpha (souvent 5%) pour limiter ce risque.
+:::
+
+::: {.callout-note collapse="true"}
+## Erreur de Type II (Faux negatif)
+**En simple :** C'est quand on conclut qu'il n'y a pas d'effet alors qu'en realite il y en a un. On "rate" quelque chose qui existe.
+
+**Exemple du quotidien :** C'est comme un detecteur de fumee qui ne sonne pas alors qu'il y a vraiment de la fumee -- il a rate un vrai signal.
+:::
+
+## F
+
+::: {.callout-note collapse="true"}
+## Facette (Facet)
+**En simple :** C'est une technique de ggplot2 qui divise un graphique en plusieurs petits graphiques identiques, un pour chaque categorie d'une variable. Ca permet de comparer facilement.
+
+**Exemple du quotidien :** Imagine un professeur qui fait le meme graphique de notes pour chaque classe separement, cote a cote : une grille avec "Classe 3A" a gauche, "Classe 3B" au milieu, "Classe 3C" a droite. Meme format, donnees differentes.
+:::
+
+::: {.callout-note collapse="true"}
+## Facteur (Factor)
+**En simple :** C'est un type special de variable en R pour representer des categories, avec un ensemble fixe de valeurs possibles (appelees "niveaux" ou "levels"). C'est utile pour les variables nominales et ordinales.
+
+**Exemple du quotidien :** C'est comme un menu deroulant sur un formulaire en ligne : les reponses possibles sont fixees a l'avance (ex: "Primaire", "Secondaire", "Tertiaire"). Si tu ecris autre chose, ca ne marche pas. Un facteur ordonne, c'est quand l'ordre compte (Primaire < Secondaire < Tertiaire).
+:::
+
+::: {.callout-note collapse="true"}
+## `filter()` (Filtrage)
+**En simple :** Une fonction dplyr qui garde uniquement les lignes d'un tableau qui remplissent une condition, et supprime les autres.
+
+**Exemple du quotidien :** C'est comme un tamis a farine : seules les particules assez fines passent, le reste est elimine. `filter(age > 18)` ne garde que les personnes majeures.
+:::
+
+::: {.callout-note collapse="true"}
+## Fonction (Function)
+**En simple :** Une fonction, c'est une "machine" qui prend des ingredients (arguments), fait un traitement, et donne un resultat. En R, on utilise des fonctions pre-existantes ou on cree les siennes.
+
+**Exemple du quotidien :** Un grille-pain est une fonction : tu mets du pain (argument), il le grille (traitement), et il te donne du pain grille (resultat). En R : `mean(c(10, 20, 30))` donne `20` -- la fonction `mean` prend des nombres et calcule la moyenne.
+:::
+
+## G
+
+::: {.callout-note collapse="true"}
+## Geometrie (geom)
+**En simple :** Dans ggplot2, un "geom" c'est le type de forme visuelle qu'on dessine sur le graphique : des points, des barres, des lignes, des boites... Chaque `geom_*()` produit un type de graphique different.
+
+**Exemple du quotidien :** C'est comme choisir le type de graphique dans Excel : "camembert", "barres", "nuage de points"... Sauf qu'en ggplot2, on choisit le geom : `geom_point()` pour des points, `geom_bar()` pour des barres, `geom_histogram()` pour un histogramme.
+:::
+
+::: {.callout-note collapse="true"}
+## `group_by()` + `summarize()` (Agregation)
+**En simple :** `group_by()` separe le tableau en sous-groupes selon une variable, puis `summarize()` calcule un resume (moyenne, somme, etc.) pour chaque groupe. C'est le paradigme "Split-Apply-Combine".
+
+**Exemple du quotidien :** Imagine que tu veux connaitre le salaire moyen par departement dans une entreprise. Tu separes les employes par departement (`group_by`), tu calcules la moyenne de chaque groupe (`summarize`), et tu obtiens un tableau avec un departement par ligne et sa moyenne.
+:::
+
+## H
+
+::: {.callout-note collapse="true"}
+## Histogramme (`geom_histogram()`)
+**En simple :** Un type de graphique en barres qui montre comment les valeurs d'une variable numerique se repartissent. Chaque barre represente un intervalle de valeurs et sa hauteur indique combien d'observations tombent dedans.
+
+**Exemple du quotidien :** Imagine que tu mesures la taille de 100 personnes. L'histogramme te montre : "15 personnes mesurent entre 160 et 165 cm, 30 entre 165 et 170 cm, etc." Tu vois tout de suite ou se concentre la majorite.
+:::
+
+::: {.callout-note collapse="true"}
+## Homogene
+**En simple :** Qui contient un seul et meme type de donnees. En R, un vecteur atomique ou une matrice doit etre homogene : tout doit etre du meme type (que des nombres, OU que du texte, etc.).
+
+**Exemple du quotidien :** Un tiroir range "homogene" ne contient que des chaussettes. Si tu mets un t-shirt dedans, le tiroir te force a tout transformer en un seul type (c'est la coercition implicite). Contrairement a une liste qui est heterogene et accepte tout.
+:::
+
+::: {.callout-note collapse="true"}
+## Hypothese nulle ($H_0$) / Hypothese alternative ($H_1$)
+**En simple :** L'hypothese nulle ($H_0$) dit "il ne se passe rien de special, pas de difference, pas d'effet". L'hypothese alternative ($H_1$) dit "il y a bien un effet ou une difference". Le but d'un test statistique est de voir si on peut rejeter $H_0$.
+
+**Exemple du quotidien :** Tu testes un nouveau medicament. $H_0$ : "le medicament n'a aucun effet" (les malades guerissent autant avec ou sans). $H_1$ : "le medicament a un effet". On fait le test et si les resultats sont trop improbables sous $H_0$, on la rejette.
+:::
+
+## I
+
+::: {.callout-note collapse="true"}
+## IQR (Ecart interquartile / Interquartile Range)
+**En simple :** C'est la difference entre le 3e quartile (Q3, 75%) et le 1er quartile (Q1, 25%). Ca represente l'etendue des 50% centraux des donnees, en ignorant les extremes.
+
+**Exemple du quotidien :** Si tu classes les salaires d'une entreprise du plus bas au plus haut, l'IQR c'est la fourchette dans laquelle se trouvent les 50% du milieu. Ca evite d'etre trompe par le patron qui gagne 10x plus que tout le monde.
+:::
+
+## L
+
+::: {.callout-note collapse="true"}
+## `labs()` (Labels / Etiquettes)
+**En simple :** Une fonction ggplot2 qui permet d'ajouter ou modifier les titres, sous-titres, noms des axes et legendes d'un graphique.
+
+**Exemple du quotidien :** C'est comme ajouter un titre et des legendes a un graphique fait a la main sur une feuille. Sans `labs()`, les axes s'appellent juste par le nom brut de la colonne, ce qui n'est pas tres lisible.
+:::
+
+::: {.callout-note collapse="true"}
+## Liste (List)
+**En simple :** Une structure de donnees en R qui peut contenir des elements de types differents : des nombres, du texte, des tableaux, d'autres listes... C'est le "fourre-tout" de R.
+
+**Exemple du quotidien :** C'est comme un sac a dos : tu peux y mettre un livre, un sandwich, des cles et un telephone -- des objets completement differents. Contrairement a un vecteur (qui serait un sac de billes : uniquement des billes).
+:::
+
+## M
+
+::: {.callout-note collapse="true"}
+## Mapping vs Setting (dans ggplot2)
+**En simple :** "Mapping" (dans `aes()`) signifie que l'apparence du graphique depend d'une variable des donnees. "Setting" (hors `aes()`) signifie qu'on fixe l'apparence de maniere constante pour tous les points.
+
+**Exemple du quotidien :** Mapping : "les garcons portent un maillot bleu et les filles un maillot rouge" (la couleur depend d'une variable). Setting : "tout le monde porte un maillot vert" (couleur fixe). Si tu ecris `aes(color = "bleu")`, R pense que "bleu" est une categorie de donnees, pas une couleur !
+:::
+
+::: {.callout-note collapse="true"}
+## Matrice (Matrix)
+**En simple :** Un tableau a 2 dimensions (lignes et colonnes) ou toutes les valeurs doivent etre du meme type. C'est comme un vecteur mais en 2D.
+
+**Exemple du quotidien :** Pense a une grille de sudoku : toutes les cases contiennent des chiffres (homogene), et chaque case est identifiee par sa ligne et sa colonne. En R : `m[3, 2]` = la case a la ligne 3, colonne 2.
+:::
+
+::: {.callout-note collapse="true"}
+## Mediane
+**En simple :** La valeur du milieu quand on range toutes les donnees en ordre. 50% des valeurs sont en dessous, 50% sont au dessus.
+
+**Exemple du quotidien :** Si 5 personnes gagnent 2000, 2500, 3000, 3500 et 50000 CHF, la mediane est 3000. La moyenne serait 12200, completement faussee par la personne a 50000. La mediane resiste mieux aux valeurs extremes.
+:::
+
+::: {.callout-note collapse="true"}
+## `mutate()` (Creer/Modifier des colonnes)
+**En simple :** Une fonction dplyr qui ajoute de nouvelles colonnes a un tableau (ou modifie des colonnes existantes) en faisant des calculs, sans changer le nombre de lignes.
+
+**Exemple du quotidien :** Tu as un tableau d'eleves avec les notes de math et de francais. Avec `mutate()`, tu ajoutes une colonne "moyenne" qui est `(math + francais) / 2`. Le nombre d'eleves ne change pas, mais tu as une info en plus.
+:::
+
+## N
+
+::: {.callout-note collapse="true"}
+## NA (Valeur manquante / Not Available)
+**En simple :** `NA` signifie "cette donnee est absente ou inconnue". Ce n'est pas zero, ce n'est pas du vide -- c'est "on ne sait pas". En R, les NA contaminent les calculs : la moyenne d'un vecteur contenant un NA sera NA (sauf si on ajoute `na.rm = TRUE`).
+
+**Exemple du quotidien :** Dans un sondage, si quelqu'un n'a pas repondu a la question sur son age, on met NA. Ce n'est pas qu'il a 0 ans, c'est qu'on ne connait pas son age.
+:::
+
+::: {.callout-note collapse="true"}
+## `na.rm = TRUE`
+**En simple :** Un argument qu'on ajoute aux fonctions statistiques (`mean`, `sd`, `median`...) pour dire a R "ignore les valeurs manquantes (NA) et calcule quand meme avec le reste".
+
+**Exemple du quotidien :** Si tu fais la moyenne des notes d'une classe et qu'un eleve etait absent (NA), `na.rm = TRUE` dit "calcule la moyenne sans cet eleve". Sans cet argument, R refuse de calculer et repond NA.
+:::
+
+## O
+
+::: {.callout-note collapse="true"}
+## Operateur
+**En simple :** Un symbole qui fait une operation. Les operateurs mathematiques (`+`, `-`, `*`, `/`) font des calculs, les operateurs logiques (`==`, `!=`, `>`, `<`, `&`, `|`) font des comparaisons, et l'operateur d'assignation (`<-`) range des valeurs.
+
+**Exemple du quotidien :** Les operateurs sont comme les signes sur une calculatrice (+, -, x, :). En R, on en a en plus pour comparer (== signifie "est-ce egal ?") et pour combiner des conditions (& signifie "ET", | signifie "OU").
+:::
+
+::: {.callout-note collapse="true"}
+## Operateur `%in%` (Appartenance)
+**En simple :** Un operateur qui verifie si une valeur fait partie d'une liste de valeurs. Il retourne TRUE ou FALSE.
+
+**Exemple du quotidien :** C'est comme verifier si ton nom est sur la liste des invites a une fete. `"Alice" %in% c("Bob", "Alice", "Eve")` retourne TRUE parce qu'Alice est bien dans la liste.
+:::
+
+::: {.callout-note collapse="true"}
+## Operationnalisation
+**En simple :** C'est le processus qui consiste a transformer un concept abstrait et vague en quelque chose de concret et mesurable, a l'aide de variables et de questions precises.
+
+**Exemple du quotidien :** Le concept "bonheur" est abstrait. Pour l'operationnaliser, on pourrait le mesurer par : le nombre de sourires par jour, une note de 1 a 10 donnee par la personne, ou un questionnaire de 20 questions. On transforme l'abstrait en mesurable.
+:::
+
+::: {.callout-note collapse="true"}
+## Outlier (Valeur aberrante)
+**En simple :** Une observation qui est tres eloignee de toutes les autres. Sur un boxplot, c'est un point affiche au-dela des moustaches.
+
+**Exemple du quotidien :** Si dans ta classe tout le monde a entre 50 et 90 a un examen, et qu'une personne a 2, c'est un outlier. Ca peut etre une erreur de saisie ou un cas vraiment extreme.
+:::
+
+::: {.callout-note collapse="true"}
+## Overplotting (Superposition)
+**En simple :** Quand il y a trop de points sur un graphique et qu'ils se superposent au point qu'on ne distingue plus rien. Le graphique devient une tache noire inutile.
+
+**Exemple du quotidien :** Imagine une photo de foule prise de loin : on ne distingue plus les individus, tout se melange. Les solutions : rendre les points transparents (`alpha`) ou les disperser legerement (`geom_jitter()`).
+:::
+
+## P
+
+::: {.callout-note collapse="true"}
+## Package / Paquet (Library)
+**En simple :** Un package, c'est une extension qu'on installe pour ajouter des fonctionnalites a R. R de base fait des choses simples ; les packages ajoutent des outils specialises.
+
+**Exemple du quotidien :** C'est comme une application sur ton telephone. Le telephone de base fait des appels et des SMS, mais tu installes des apps pour faire plus : Instagram, Google Maps, etc. En R, tu installes des packages avec `install.packages()` et tu les actives avec `library()`.
+:::
+
+::: {.callout-note collapse="true"}
+## Pipe (`%>%` ou `|>`)
+**En simple :** Le pipe prend le resultat de ce qui est a gauche et l'envoie comme premier ingredient dans la fonction a droite. Ca permet d'enchainer les operations de facon lisible, comme une recette etape par etape.
+
+**Exemple du quotidien :** Au lieu de dire "mets dans l'assiette(decoupe(lave(la salade)))" (illisible, de l'interieur vers l'exterieur), le pipe permet d'ecrire : "prends la salade PUIS lave-la PUIS decoupe-la PUIS mets-la dans l'assiette". Lecture de gauche a droite, beaucoup plus naturelle.
+:::
+
+::: {.callout-note collapse="true"}
+## P-value (Valeur-p)
+**En simple :** La p-value mesure a quel point les resultats observes seraient improbables SI l'hypothese nulle etait vraie. Plus elle est petite, plus il est raisonnable de rejeter $H_0$. Attention : ce n'est PAS la probabilite que $H_0$ soit vraie.
+
+**Exemple du quotidien :** Tu lances une piece 100 fois et obtiens 90 fois face. La p-value te dit : "si la piece etait equilibree ($H_0$), la probabilite d'obtenir un resultat aussi extreme est quasi nulle". Donc tu rejettes l'idee que la piece est equilibree. Seuil habituel : si p < 0.05, on rejette $H_0$.
+:::
+
+::: {.callout-note collapse="true"}
+## Position (dodge, stack, fill)
+**En simple :** Dans un diagramme a barres, la position determine comment les sous-categories sont affichees : empilees les unes sur les autres (`stack`), cote a cote (`dodge`), ou normalisees a 100% (`fill`).
+
+**Exemple du quotidien :** Imagine des barres representant les ventes par magasin, colorees par type de produit. `stack` : une seule barre par magasin, les produits empiles. `dodge` : des barres separees cote a cote. `fill` : tout ramene en pourcentage pour comparer les proportions.
+:::
+
+## Q
+
+::: {.callout-note collapse="true"}
+## Quartile (Q1, Q2, Q3)
+**En simple :** Les quartiles divisent les donnees triees en 4 parts egales. Q1 = 25% des donnees en dessous, Q2 = la mediane (50%), Q3 = 75% des donnees en dessous.
+
+**Exemple du quotidien :** Imagine 100 eleves ranges par note. Q1 c'est la note du 25e eleve (un quart), Q2 c'est la note du 50e (la moitie), Q3 c'est la note du 75e (trois quarts). Ca permet de voir ou se situent la majorite des eleves.
+:::
+
+::: {.callout-note collapse="true"}
+## Question de recherche (RQ)
+**En simple :** La question centrale a laquelle une etude scientifique cherche a repondre. Elle doit etre claire, faisable et pertinente.
+
+**Exemple du quotidien :** Bonne RQ : "L'utilisation des reseaux sociaux est-elle liee au bien-etre des adolescents ?" Mauvaise RQ : "Les reseaux sociaux, c'est bien ou c'est mal ?" (jugement moral, pas scientifique).
+:::
+
+## R
+
+::: {.callout-note collapse="true"}
+## `read_csv()` (Importation de fichiers)
+**En simple :** Une fonction du package `readr` (Tidyverse) qui lit un fichier CSV et le transforme en tableau (data frame) dans R.
+
+**Exemple du quotidien :** C'est comme ouvrir un fichier Excel, sauf qu'au lieu de double-cliquer sur le fichier, tu donnes l'instruction par code : `df <- read_csv("mon_fichier.csv")`. L'avantage : c'est reproductible et ne corrompt pas les donnees (contrairement a Excel).
+:::
+
+::: {.callout-note collapse="true"}
+## Reproductibilite
+**En simple :** Le fait que n'importe qui puisse relancer exactement la meme analyse et obtenir les memes resultats. En utilisant du code R plutot que des clics de souris, on garantit la reproductibilite.
+
+**Exemple du quotidien :** C'est comme une recette de cuisine ecrite vs. "j'ai fait au feeling". Si la recette est ecrite (= le script R), n'importe qui peut reproduire le plat exactement. Si c'est "au feeling" (= des clics dans un logiciel), personne ne peut verifier ni reproduire.
+:::
+
+## S
+
+::: {.callout-note collapse="true"}
+## Script
+**En simple :** Un fichier texte (extension `.R`) qui contient du code R sauvegarde. Contrairement a la console (ou le code est perdu), le script garde tout en memoire et permet de relancer l'analyse plus tard.
+
+**Exemple du quotidien :** La console c'est comme parler a voix haute (les mots disparaissent). Le script c'est comme ecrire une lettre (les mots sont sauvegardes). Tu peux relire, modifier et partager ton script.
+:::
+
+::: {.callout-note collapse="true"}
+## `select()` (Selection de colonnes)
+**En simple :** Une fonction dplyr qui choisit quelles colonnes garder (ou exclure) dans un tableau.
+
+**Exemple du quotidien :** Tu as un tableau avec 50 colonnes mais tu n'as besoin que du nom et de l'age. `select(nom, age)` ne garde que ces 2 colonnes. `select(-adresse)` enleve seulement la colonne adresse.
+:::
+
+::: {.callout-note collapse="true"}
+## `str()` / `summary()` (Exploration)
+**En simple :** Deux fonctions pour examiner rapidement un tableau. `str()` montre la structure interne (types, apercu). `summary()` donne les statistiques descriptives (min, max, moyenne, mediane...).
+
+**Exemple du quotidien :** `str()` c'est comme ouvrir le capot d'une voiture pour voir le moteur. `summary()` c'est comme lire le tableau de bord : vitesse moyenne, kilometres parcourus, niveau d'essence...
+:::
+
+## T
+
+::: {.callout-note collapse="true"}
+## Theme (dans ggplot2)
+**En simple :** Un theme controle l'apparence generale du graphique : couleur de fond, style des grilles, polices, etc. Ca ne change pas les donnees, juste l'habillage visuel.
+
+**Exemple du quotidien :** C'est comme choisir le cadre et le fond pour une photo. La photo reste la meme, mais `theme_minimal()` donne un look epure, `theme_bw()` un look noir et blanc, etc.
+:::
+
+::: {.callout-note collapse="true"}
+## Tibble
+**En simple :** Une version modernisee du data frame dans le Tidyverse. C'est pratiquement la meme chose qu'un data frame, mais avec un affichage plus propre et des comportements plus previsibles.
+
+**Exemple du quotidien :** C'est comme la difference entre un vieux telephone et un smartphone : ils font la meme chose (appeler), mais le nouveau est plus agreable a utiliser et evite certains pieges de l'ancien.
+:::
+
+::: {.callout-note collapse="true"}
+## Tidy Data (Donnees bien rangees)
+**En simple :** Un format standard de tableau ou chaque variable a sa propre colonne, chaque observation a sa propre ligne, et chaque type d'observation forme une table distincte. C'est le format ideal pour l'analyse.
+
+**Exemple du quotidien :** Un carnet d'adresses bien range : une ligne par personne, une colonne pour le nom, une pour le telephone, une pour l'email. Pas de personnes sur plusieurs lignes, pas de numeros de telephone melanges avec les emails dans une meme colonne.
+:::
+
+::: {.callout-note collapse="true"}
+## Tidyverse
+**En simple :** Un ensemble de packages R qui partagent une philosophie commune et une "grammaire" coherente pour manipuler, transformer et visualiser les donnees. Ca inclut dplyr, ggplot2, readr, et d'autres.
+
+**Exemple du quotidien :** C'est comme une boite a outils complete et bien organisee (marteau, tournevis, cle...) ou tous les outils viennent du meme fabricant et s'emboitent bien ensemble. On charge tout d'un coup avec `library(tidyverse)`.
+:::
+
+## U
+
+::: {.callout-note collapse="true"}
+## `ungroup()` (Retirer le groupement)
+**En simple :** Apres avoir utilise `group_by()`, il faut appeler `ungroup()` pour dire a R "c'est fini, arrete de traiter les donnees par groupes". Oublier ca peut causer des bugs subtils.
+
+**Exemple du quotidien :** C'est comme enlever un filtre sur Instagram. Tu avais filtre "mes photos de vacances", maintenant tu veux revoir toutes tes photos. `ungroup()` enleve le filtre de groupement.
+:::
+
+## V
+
+::: {.callout-note collapse="true"}
+## Variable (types : nominale, ordinale, continue, discrete)
+**En simple :** Une variable c'est une caracteristique qu'on mesure ou observe. Elle peut etre de differents types :
+
+- **Nominale** : des categories sans ordre (couleur des yeux, parti politique)
+- **Ordinale** : des categories avec un ordre (niveau d'education : primaire < secondaire < tertiaire)
+- **Continue** : des valeurs numeriques qui peuvent prendre n'importe quelle valeur dans un intervalle (taille : 1.75 m)
+- **Discrete** : des valeurs numeriques qui ne prennent que des nombres entiers (nombre d'enfants : 0, 1, 2, 3)
+
+**Exemple du quotidien :** Sur un formulaire d'inscription : "Sexe" = nominale, "Satisfaction (1 a 5)" = ordinale, "Poids en kg" = continue, "Nombre de freres et soeurs" = discrete.
+:::
+
+::: {.callout-note collapse="true"}
+## Vecteur / Vecteur atomique
+**En simple :** La brique de base de R. C'est une suite ordonnee de valeurs du meme type. Meme un simple nombre comme `42` est en realite un vecteur de longueur 1 en R.
+
+**Exemple du quotidien :** C'est comme un collier de perles : toutes les perles sont enfilees dans l'ordre, et elles doivent etre du meme type (toutes rondes, ou toutes carrees). En R : `c(10, 20, 30)` est un vecteur de 3 nombres. `c("chat", "chien")` est un vecteur de 2 textes.
+:::
+
+::: {.callout-note collapse="true"}
+## Vectorisation
+**En simple :** Le fait que R applique automatiquement une operation a chaque element d'un vecteur, sans qu'on ait besoin d'ecrire une boucle. C'est une des grandes forces de R.
+
+**Exemple du quotidien :** Au lieu de dire "prends le 1er prix et ajoute 10%, puis le 2e prix et ajoute 10%, puis le 3e..." tu dis juste "ajoute 10% a tous les prix". En R : `prix * 1.10` multiplie chaque element du vecteur par 1.10 d'un coup.
+:::
+
+::: {.callout-note collapse="true"}
+## Viridis (Palette de couleurs)
+**En simple :** Une famille de palettes de couleurs concue pour etre lisible par les personnes daltoniennes et en impression noir et blanc.
+
+**Exemple du quotidien :** Au lieu d'utiliser rouge et vert (que 8% des hommes ne distinguent pas), viridis utilise des degrades de jaune-vert-violet qui restent distinguables pour tout le monde.
+:::

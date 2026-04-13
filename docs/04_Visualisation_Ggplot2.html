@@ -175,6 +175,10 @@ window.Quarto = {
     <a class="nav-link" href="./04_Visualisation_Ggplot2.html"> 
 <span class="menu-text">ggplot2</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./glossaire.html"> 
+<span class="menu-text">Glossaire</span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -245,6 +249,12 @@ window.Quarto = {
  <span class="menu-text">Module 4 : Visualisation Avancee avec ggplot2</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./glossaire.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Glossaire - Dictionnaire des Termes</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -257,14 +267,18 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#concepts-fondamentaux" id="toc-concepts-fondamentaux" class="nav-link active" data-scroll-target="#concepts-fondamentaux"><span class="header-section-number">1</span> Concepts Fondamentaux</a></li>
-  <li><a href="#mapping-vs-setting-erreur-fatale-courante" id="toc-mapping-vs-setting-erreur-fatale-courante" class="nav-link" data-scroll-target="#mapping-vs-setting-erreur-fatale-courante"><span class="header-section-number">2</span> Mapping vs Setting (Erreur fatale courante)</a></li>
+  <li><a href="#concepts-fondamentaux" id="toc-concepts-fondamentaux" class="nav-link active" data-scroll-target="#concepts-fondamentaux"><span class="header-section-number">1</span> Concepts Fondamentaux</a>
+  <ul class="collapse">
+  <li><a href="#mapping-vs-setting-erreur-fatale-courante" id="toc-mapping-vs-setting-erreur-fatale-courante" class="nav-link" data-scroll-target="#mapping-vs-setting-erreur-fatale-courante"><span class="header-section-number">1.1</span> Mapping vs Setting (Erreur fatale courante)</a></li>
+  </ul></li>
+  <li><a href="#mapping-vs-setting-erreur-fatale-courante-1" id="toc-mapping-vs-setting-erreur-fatale-courante-1" class="nav-link" data-scroll-target="#mapping-vs-setting-erreur-fatale-courante-1"><span class="header-section-number">2</span> Mapping vs Setting (Erreur fatale courante)</a></li>
   <li><a href="#les-principaux-geoms" id="toc-les-principaux-geoms" class="nav-link" data-scroll-target="#les-principaux-geoms"><span class="header-section-number">3</span> Les Principaux Geoms</a>
   <ul class="collapse">
   <li><a href="#geom_point---nuage-de-points-scatter-plot" id="toc-geom_point---nuage-de-points-scatter-plot" class="nav-link" data-scroll-target="#geom_point---nuage-de-points-scatter-plot"><span class="header-section-number">3.1</span> <code>geom_point()</code> - Nuage de points (Scatter plot)</a></li>
   <li><a href="#geom_bar-et-geom_col---diagrammes-a-barres" id="toc-geom_bar-et-geom_col---diagrammes-a-barres" class="nav-link" data-scroll-target="#geom_bar-et-geom_col---diagrammes-a-barres"><span class="header-section-number">3.2</span> <code>geom_bar()</code> et <code>geom_col()</code> - Diagrammes a barres</a></li>
   <li><a href="#geom_histogram---histogramme" id="toc-geom_histogram---histogramme" class="nav-link" data-scroll-target="#geom_histogram---histogramme"><span class="header-section-number">3.3</span> <code>geom_histogram()</code> - Histogramme</a></li>
   <li><a href="#geom_boxplot---boite-a-moustaches-tukey" id="toc-geom_boxplot---boite-a-moustaches-tukey" class="nav-link" data-scroll-target="#geom_boxplot---boite-a-moustaches-tukey"><span class="header-section-number">3.4</span> <code>geom_boxplot()</code> - Boite a moustaches (Tukey)</a></li>
+  <li><a href="#geom_line---ligne-tendance-evolution" id="toc-geom_line---ligne-tendance-evolution" class="nav-link" data-scroll-target="#geom_line---ligne-tendance-evolution"><span class="header-section-number">3.5</span> <code>geom_line()</code> - Ligne (Tendance / Evolution)</a></li>
   </ul></li>
   <li><a href="#personnalisation-labels" id="toc-personnalisation-labels" class="nav-link" data-scroll-target="#personnalisation-labels"><span class="header-section-number">4</span> Personnalisation (Labels)</a></li>
   <li><a href="#facettes-sous-graphiques-par-categorie" id="toc-facettes-sous-graphiques-par-categorie" class="nav-link" data-scroll-target="#facettes-sous-graphiques-par-categorie"><span class="header-section-number">5</span> Facettes : Sous-graphiques par categorie</a></li>
@@ -303,6 +317,28 @@ window.Quarto = {
 <p><code>ggplot2</code> est l’implementation de “The Grammar of Graphics” (Leland Wilkinson). Il procede par <strong>addition sequentielle de calques (layers)</strong> superposes, liant les donnees a une representation spatiale.</p>
 <section id="concepts-fondamentaux" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="concepts-fondamentaux"><span class="header-section-number">1</span> Concepts Fondamentaux</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>En simple
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>ggplot2, c’est comme <strong>construire un dessin couche par couche</strong>, exactement comme des calques dans Photoshop ou des transparents qu’on superpose :</p>
+<ol type="1">
+<li><strong>Calque 1 – la toile</strong> : tu dis a R quelles donnees utiliser et quels axes (<code>ggplot(data, aes(...))</code>)</li>
+<li><strong>Calque 2 – les formes</strong> : tu choisis comment dessiner (des points ? des barres ? des lignes ?) (<code>geom_*()</code>)</li>
+<li><strong>Calques optionnels</strong> : tu ajoutes des titres, tu changes les couleurs, tu divises en sous-graphiques…</li>
+</ol>
+<p>Chaque calque s’ajoute avec un <code>+</code>. C’est comme empiler des feuilles transparentes les unes sur les autres pour obtenir le dessin final.</p>
+</div>
+</div>
+</div>
 <p>Tout graphique necessite <strong>3 composants obligatoires</strong> :</p>
 <table class="caption-top table">
 <colgroup>
@@ -326,7 +362,7 @@ window.Quarto = {
 <tr class="even">
 <td><strong>Esthetiques</strong></td>
 <td><code>aes(x, y, color, fill, size)</code></td>
-<td>Mappage variable → attribut visuel</td>
+<td>Mappage variable -&gt; attribut visuel</td>
 </tr>
 <tr class="odd">
 <td><strong>Geometries</strong></td>
@@ -367,40 +403,107 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Structure de base</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Structure de base -- toujours le meme squelette</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mon_df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> var_x, <span class="at">y =</span> var_y, <span class="at">color =</span> var_c)) <span class="sc">+</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_XXX</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_XXX</span>()</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. ggplot() : on pose la toile avec les donnees et les axes</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. +        : on ajoute un calque</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. geom_XXX : on choisit la forme (points, barres, lignes...)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="mapping-vs-setting-erreur-fatale-courante" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="mapping-vs-setting-erreur-fatale-courante"><span class="header-section-number">1.1</span> Mapping vs Setting (Erreur fatale courante)</h3>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>En simple
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>C’est LA source d’erreur numero 1 pour les debutants. La difference :</p>
+<ul>
+<li><strong>Mapping (dans <code>aes()</code>)</strong> : la couleur <strong>depend des donnees</strong>. Exemple : “colorie chaque point selon l’espece de la fleur”. R choisit les couleurs automatiquement.</li>
+<li><strong>Setting (hors <code>aes()</code>)</strong> : la couleur est <strong>fixe pour tout le monde</strong>. Exemple : “tous les points en bleu, point final”.</li>
+</ul>
+<p><strong>Analogie</strong> : Imagine que tu distribues des maillots a une equipe de sport.</p>
+<ul>
+<li>Mapping = chaque joueur recoit un maillot d’une couleur differente selon son poste (gardien = jaune, defenseur = bleu, attaquant = rouge).</li>
+<li>Setting = tout le monde recoit un maillot bleu, sans distinction.</li>
+</ul>
+</div>
+</div>
+</div>
 </section>
-<section id="mapping-vs-setting-erreur-fatale-courante" class="level2 callout-danger" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="mapping-vs-setting-erreur-fatale-courante"><span class="header-section-number">2</span> Mapping vs Setting (Erreur fatale courante)</h2>
+</section>
+<section id="mapping-vs-setting-erreur-fatale-courante-1" class="level2 callout-danger" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="mapping-vs-setting-erreur-fatale-courante-1"><span class="header-section-number">2</span> Mapping vs Setting (Erreur fatale courante)</h2>
 <ul>
 <li><strong>Dans <code>aes()</code></strong> : la couleur est dictee par une <strong>variable des donnees</strong>
 <ul>
-<li><code>aes(color = Species)</code> → couleurs automatiques par espece</li>
+<li><code>aes(color = Species)</code> -&gt; couleurs automatiques par espece</li>
 </ul></li>
 <li><strong>Hors <code>aes()</code></strong> : la couleur est un <strong>choix stylistique fixe</strong>
 <ul>
-<li><code>geom_point(color = "lightblue")</code> → tous les points en bleu</li>
+<li><code>geom_point(color = "lightblue")</code> -&gt; tous les points en bleu</li>
 </ul></li>
 </ul>
-<p>Si on ecrit <code>aes(color = "lightblue")</code>, R traite “lightblue” comme une variable categorielle a une modalite → graphique probablement rouge avec legende aberrante !</p>
+<p>Si on ecrit <code>aes(color = "lightblue")</code>, R traite “lightblue” comme une variable categorielle a une modalite -&gt; graphique probablement rouge avec legende aberrante !</p>
 </section>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># CORRECT -- Mapping : la couleur depend de la variable "Species"</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length, <span class="at">y =</span> Petal.Length, <span class="at">color =</span> Species)) <span class="sc">+</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Resultat : 3 couleurs differentes, une par espece, legende automatique</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># CORRECT -- Setting : tous les points en bleu clair</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length, <span class="at">y =</span> Petal.Length)) <span class="sc">+</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"lightblue"</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Resultat : tous les points sont bleu clair, pas de legende</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># ERREUR CLASSIQUE -- mettre "lightblue" dans aes()</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length, <span class="at">y =</span> Petal.Length, <span class="at">color =</span> <span class="st">"lightblue"</span>)) <span class="sc">+</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Resultat bizarre : tous les points ROUGES avec une legende "lightblue" !</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <section id="les-principaux-geoms" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="les-principaux-geoms"><span class="header-section-number">3</span> Les Principaux Geoms</h2>
 <section id="geom_point---nuage-de-points-scatter-plot" class="level3" data-number="3.1">
 <h3 data-number="3.1" class="anchored" data-anchor-id="geom_point---nuage-de-points-scatter-plot"><span class="header-section-number">3.1</span> <code>geom_point()</code> - Nuage de points (Scatter plot)</h3>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>En simple
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Quand l’utiliser ?</strong> Quand tu veux voir si deux mesures numeriques sont liees. Par exemple :</p>
+<ul>
+<li>“Est-ce que les etudiants qui etudient plus d’heures ont de meilleures notes ?”</li>
+<li>“Est-ce que les voitures plus lourdes consomment plus d’essence ?”</li>
+<li>“Est-ce que le prix d’un appartement augmente avec sa surface ?”</li>
+</ul>
+<p>Chaque point sur le graphique represente une observation (un etudiant, une voiture, un appartement). Sa position horizontale = une variable, sa position verticale = l’autre variable. Si les points forment une tendance (montante, descendante), il y a une relation.</p>
+</div>
+</div>
+</div>
 <p><strong>Usage :</strong> Relation entre <strong>2 variables continues</strong>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mtcars, <span class="fu">aes</span>(<span class="at">x =</span> disp, <span class="at">y =</span> mpg, <span class="at">color =</span> <span class="fu">as.factor</span>(cyl), <span class="at">size =</span> wt)) <span class="sc">+</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Covariance entre Cylindree et Efficience Energetique"</span>,</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Le poids du vehicule modere la consommation"</span>,</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Cylindree Moteur (cu.in.)"</span>,</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Rendement (Miles par Gallon)"</span>,</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Cylindres"</span>,</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="st">"Poids (Tonnes US)"</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mtcars, <span class="fu">aes</span>(<span class="at">x =</span> disp, <span class="at">y =</span> mpg, <span class="at">color =</span> <span class="fu">as.factor</span>(cyl), <span class="at">size =</span> wt)) <span class="sc">+</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span>          <span class="co"># alpha = transparence (0 = invisible, 1 = opaque)</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Covariance entre Cylindree et Efficience Energetique"</span>,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Le poids du vehicule modere la consommation"</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Cylindree Moteur (cu.in.)"</span>,      <span class="co"># nom de l'axe X</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Rendement (Miles par Gallon)"</span>,     <span class="co"># nom de l'axe Y</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Cylindres"</span>,                    <span class="co"># titre de la legende couleur</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="st">"Poids (1000 lbs)"</span>               <span class="co"># titre de la legende taille</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()                     <span class="co"># theme epure</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>Le probleme de l’Overplotting :</strong></p>
 <p>Quand les donnees sont massives, les points se superposent et masquent la distribution.</p>
 <table class="caption-top table">
@@ -432,6 +535,31 @@ window.Quarto = {
 </section>
 <section id="geom_bar-et-geom_col---diagrammes-a-barres" class="level3" data-number="3.2">
 <h3 data-number="3.2" class="anchored" data-anchor-id="geom_bar-et-geom_col---diagrammes-a-barres"><span class="header-section-number">3.2</span> <code>geom_bar()</code> et <code>geom_col()</code> - Diagrammes a barres</h3>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>En simple
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Quand l’utiliser ?</strong> Quand tu veux compter ou comparer des categories. Par exemple :</p>
+<ul>
+<li>“Combien d’etudiants dans chaque branche ?” -&gt; <code>geom_bar()</code> (R compte pour toi)</li>
+<li>“Quel est le chiffre d’affaires de chaque succursale ?” -&gt; <code>geom_col()</code> (tu fournis les valeurs)</li>
+</ul>
+<p>La difference cle :</p>
+<ul>
+<li><code>geom_bar()</code> : tu donnes juste X (les categories), R <strong>compte automatiquement</strong> combien il y en a</li>
+<li><code>geom_col()</code> : tu donnes X et Y, R dessine les barres a la <strong>hauteur que TU as fournie</strong></li>
+</ul>
+</div>
+</div>
+</div>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 34%">
@@ -458,20 +586,20 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># geom_bar : comptage automatique</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> cut)) <span class="sc">+</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Avec remplissage par une autre variable</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> cut, <span class="at">fill =</span> clarity)) <span class="sc">+</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">linewidth =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Analyse des Tailles de Diamants"</span>,</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Niveau de Taille"</span>,</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Denombrement"</span>,</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"Indice de Purete"</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># geom_bar : R compte automatiquement les diamants par categorie de coupe</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> cut)) <span class="sc">+</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Avec remplissage par une autre variable (clarte)</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> cut, <span class="at">fill =</span> clarity)) <span class="sc">+</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">linewidth =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Analyse des Tailles de Diamants"</span>,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Niveau de Taille"</span>,</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Denombrement"</span>,</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"Indice de Purete"</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>Positions pour barres empilees/paralleles :</strong></p>
 <table class="caption-top table">
 <thead>
@@ -498,15 +626,37 @@ window.Quarto = {
 </section>
 <section id="geom_histogram---histogramme" class="level3" data-number="3.3">
 <h3 data-number="3.3" class="anchored" data-anchor-id="geom_histogram---histogramme"><span class="header-section-number">3.3</span> <code>geom_histogram()</code> - Histogramme</h3>
-<p><strong>Usage :</strong> Distribution d’une <strong>variable continue</strong>. L’aire de chaque bac est proportionnelle a la frequence relative.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length)) <span class="sc">+</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.2</span>, <span class="at">fill =</span> <span class="st">"darkblue"</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Species) <span class="sc">+</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Densite des Longueurs de Sepales (par Espece)"</span>,</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Longueur (cm)"</span>,</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Frequence"</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>En simple
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Quand l’utiliser ?</strong> Quand tu veux voir <strong>comment se repartissent</strong> les valeurs d’une mesure numerique. Par exemple :</p>
+<ul>
+<li>“La plupart des etudiants ont-ils des notes entre 4 et 5, ou c’est plus disperse ?”</li>
+<li>“Les salaires sont-ils concentres autour de 5000 CHF ou tres etales ?”</li>
+<li>“Les temps de reponse au questionnaire sont-ils groupes ou eparpilles ?”</li>
+</ul>
+<p>L’histogramme decoupe les valeurs en “bacs” (intervalles) et montre combien d’observations tombent dans chaque bac. C’est une “photo” de la distribution.</p>
+</div>
+</div>
+</div>
+<p><strong>Usage :</strong> Distribution d’une <strong>variable continue</strong>. Par defaut, la hauteur de chaque bac represente le nombre d’observations (frequence absolue).</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length)) <span class="sc">+</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.2</span>, <span class="at">fill =</span> <span class="st">"darkblue"</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Species) <span class="sc">+</span>      <span class="co"># Un sous-graphique par espece</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Distribution des Longueurs de Sepales (par Espece)"</span>,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Longueur (cm)"</span>,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Frequence"</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -528,6 +678,28 @@ window.Quarto = {
 </section>
 <section id="geom_boxplot---boite-a-moustaches-tukey" class="level3" data-number="3.4">
 <h3 data-number="3.4" class="anchored" data-anchor-id="geom_boxplot---boite-a-moustaches-tukey"><span class="header-section-number">3.4</span> <code>geom_boxplot()</code> - Boite a moustaches (Tukey)</h3>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>En simple
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Quand l’utiliser ?</strong> Quand tu veux <strong>comparer la distribution d’une mesure entre plusieurs groupes</strong>. Par exemple :</p>
+<ul>
+<li>“Les notes sont-elles meilleures en Psycho ou en Droit ?”</li>
+<li>“Les salaires sont-ils plus variables dans le secteur prive que dans le public ?”</li>
+<li>“Y a-t-il des valeurs aberrantes (outliers) dans mes donnees ?”</li>
+</ul>
+<p>Le boxplot est un resume visuel ultra-compact : en un coup d’oeil, tu vois la mediane (le milieu), l’etendue des donnees, et les valeurs extremes. C’est comme un “bulletin meteo” de tes donnees : il te dit ou se situe le gros des observations et s’il y a des cas exceptionnels.</p>
+</div>
+</div>
+</div>
 <p><strong>Usage :</strong> Comparer les distributions entre <strong>groupes</strong>. Diagnostic base sur les quantiles.</p>
 <p><strong>Anatomie du boxplot :</strong></p>
 <table class="caption-top table">
@@ -552,7 +724,7 @@ window.Quarto = {
 </tr>
 <tr class="odd">
 <td><strong>Ligne mediane</strong></td>
-<td>50e centile (mediane). Si asymetrique → distribution biaisee</td>
+<td>50e centile (mediane). Si asymetrique -&gt; distribution biaisee</td>
 </tr>
 <tr class="even">
 <td><strong>Moustaches</strong></td>
@@ -564,55 +736,123 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> cut, <span class="at">y =</span> price)) <span class="sc">+</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Boxplot simple : comparer le prix des diamants selon leur coupe</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> cut, <span class="at">y =</span> price)) <span class="sc">+</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>Exemple avance avec transformation log et personnalisation des outliers :</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(igposts, <span class="fu">aes</span>(<span class="at">x =</span> Content_Type, <span class="at">y =</span> IGLikesPPost, <span class="at">fill =</span> Content_Type)) <span class="sc">+</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">outlier.color =</span> <span class="st">"darkred"</span>,</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">outlier.shape =</span> <span class="dv">8</span>,       <span class="co"># Asterisque pour les outliers</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">outlier.size =</span> <span class="fl">2.5</span>,</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">notch =</span> <span class="cn">FALSE</span>            <span class="co"># notch = TRUE pour IC 95% de la mediane</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_log10</span>() <span class="sc">+</span>          <span class="co"># Echelle logarithmique pour longue queue</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Dispersion de l'Efficacite des Publications (Likes/Post)"</span>,</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Echelle log. Points rouges = deviations virales."</span>,</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Categorie de Publication"</span>,</span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Likes Moyens (Echelle Log10)"</span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_d</span>(<span class="at">option =</span> <span class="st">"cividis"</span>) <span class="sc">+</span></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(igposts, <span class="fu">aes</span>(<span class="at">x =</span> Content_Type, <span class="at">y =</span> IGLikesPPost, <span class="at">fill =</span> Content_Type)) <span class="sc">+</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">outlier.color =</span> <span class="st">"darkred"</span>,   <span class="co"># Couleur des points aberrants</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">outlier.shape =</span> <span class="dv">8</span>,           <span class="co"># Forme asterisque pour les outliers</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">outlier.size =</span> <span class="fl">2.5</span>,          <span class="co"># Taille des outliers</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">notch =</span> <span class="cn">FALSE</span>                <span class="co"># notch = TRUE pour IC 95% de la mediane</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_log10</span>() <span class="sc">+</span>              <span class="co"># Echelle logarithmique pour longue queue</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Dispersion de l'Efficacite des Publications (Likes/Post)"</span>,</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Echelle log. Points rouges = deviations virales."</span>,</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Categorie de Publication"</span>,</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Likes par Post (Echelle Log10)"</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_d</span>(<span class="at">option =</span> <span class="st">"cividis"</span>) <span class="sc">+</span>  <span class="co"># Palette accessible daltoniens</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)              <span class="co"># Pas de legende (redondante ici)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="geom_line---ligne-tendance-evolution" class="level3" data-number="3.5">
+<h3 data-number="3.5" class="anchored" data-anchor-id="geom_line---ligne-tendance-evolution"><span class="header-section-number">3.5</span> <code>geom_line()</code> - Ligne (Tendance / Evolution)</h3>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>En simple
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Quand l’utiliser ?</strong> Quand tu veux montrer une <strong>evolution dans le temps</strong> ou une <strong>tendance</strong>. Par exemple :</p>
+<ul>
+<li>“Comment le PIB a-t-il evolue entre 2000 et 2020 ?”</li>
+<li>“Le nombre d’inscriptions augmente-t-il chaque annee ?”</li>
+<li>“Comment la temperature a-t-elle change au fil des mois ?”</li>
+</ul>
+<p>Les points sont relies par des lignes, ce qui permet de voir la direction generale (monte, descend, stagne).</p>
+</div>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exemple : evolution des temperatures sur plusieurs annees</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(donnees_climat, <span class="fu">aes</span>(<span class="at">x =</span> annee, <span class="at">y =</span> temperature_moyenne)) <span class="sc">+</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"steelblue"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span>  <span class="co"># Ligne bleue epaisse</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span>                            <span class="co"># Points a chaque annee</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Evolution de la Temperature Moyenne"</span>,</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Annee"</span>,</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Temperature (C)"</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="personnalisation-labels" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="personnalisation-labels"><span class="header-section-number">4</span> Personnalisation (Labels)</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> var_x, <span class="at">y =</span> var_y)) <span class="sc">+</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Titre principal"</span>,</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Sous-titre"</span>,</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Nom de l'axe X (unite)"</span>,</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Nom de l'axe Y (unite)"</span>,</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Titre legende couleur"</span>,</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Source : Dataset XYZ"</span>    <span class="co"># Note de bas de page</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>En simple
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><code>labs()</code> c’est la fonction “etiquettes” : elle permet de donner un titre, un sous-titre, de renommer les axes, et d’ajouter une source en bas du graphique. C’est ce qui rend un graphique <strong>lisible et professionnel</strong> au lieu d’avoir des noms de variables techniques.</p>
+</div>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> var_x, <span class="at">y =</span> var_y)) <span class="sc">+</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Titre principal"</span>,                 <span class="co"># Le gros titre</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Sous-titre"</span>,                   <span class="co"># Precision sous le titre</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Nom de l'axe X (unite)"</span>,             <span class="co"># Nom lisible pour l'axe X</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Nom de l'axe Y (unite)"</span>,             <span class="co"># Nom lisible pour l'axe Y</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Titre legende couleur"</span>,           <span class="co"># Titre de la legende</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Source : Dataset XYZ"</span>           <span class="co"># Note en bas a droite</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="facettes-sous-graphiques-par-categorie" class="level2" data-number="5">
 <h2 data-number="5" class="anchored" data-anchor-id="facettes-sous-graphiques-par-categorie"><span class="header-section-number">5</span> Facettes : Sous-graphiques par categorie</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Grille de sous-graphiques par espece</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length)) <span class="sc">+</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Species)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>En simple
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Les facettes, c’est comme <strong>decouper un graphique en petites vignettes</strong>, une par categorie. Au lieu d’avoir toutes les especes de fleurs sur un seul graphique (ce qui peut etre confus), tu obtiens un mini-graphique par espece, cote a cote. Ca permet de comparer facilement.</p>
+</div>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Grille de sous-graphiques par espece</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length)) <span class="sc">+</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Species)     <span class="co"># Un histogramme par espece, cote a cote</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="normes-daccessibilite-et-dintegrite" class="level2" data-number="6">
 <h2 data-number="6" class="anchored" data-anchor-id="normes-daccessibilite-et-dintegrite"><span class="header-section-number">6</span> Normes d’Accessibilite et d’Integrite</h2>
 <section id="daltonisme-8-des-hommes" class="level3" data-number="6.1">
 <h3 data-number="6.1" class="anchored" data-anchor-id="daltonisme-8-des-hommes"><span class="header-section-number">6.1</span> Daltonisme (~8% des hommes)</h3>
 <p>Ne jamais baser une information sur une opposition <strong>rouge/vert</strong> seule. Utiliser les palettes <code>viridis</code> :</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span> <span class="fu">scale_color_viridis_d</span>()   <span class="co"># Variables discretes</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span> <span class="fu">scale_color_viridis_c</span>()   <span class="co"># Variables continues</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span> <span class="fu">scale_color_viridis_d</span>()   <span class="co"># Variables discretes</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span> <span class="fu">scale_color_viridis_c</span>()   <span class="co"># Variables continues</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="axe-y-et-zero" class="level3" data-number="6.2">
 <h3 data-number="6.2" class="anchored" data-anchor-id="axe-y-et-zero"><span class="header-section-number">6.2</span> Axe Y et zero</h3>
@@ -623,12 +863,36 @@ window.Quarto = {
 <ul>
 <li><code>shape</code> est <strong>reserve aux variables nominales</strong> (pas continues)</li>
 <li>Maximum <strong>6 formes distinctes</strong> discriminables par le cerveau humain</li>
-<li>Variable continue dans <code>aes(shape = ...)</code> → <strong>erreur/crash</strong></li>
+<li>Variable continue dans <code>aes(shape = ...)</code> -&gt; <strong>erreur/crash</strong></li>
 </ul>
 </section>
 </section>
 <section id="recap-quel-geom-choisir" class="level2" data-number="7">
 <h2 data-number="7" class="anchored" data-anchor-id="recap-quel-geom-choisir"><span class="header-section-number">7</span> Recap : Quel Geom Choisir ?</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>En simple
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Le choix du geom depend de ta <strong>question</strong> et du <strong>type de tes variables</strong> :</p>
+<ul>
+<li>Tu as 2 nombres et tu veux voir le lien ? -&gt; <strong>points</strong> (<code>geom_point</code>)</li>
+<li>Tu veux voir comment une mesure se distribue ? -&gt; <strong>histogramme</strong> (<code>geom_histogram</code>)</li>
+<li>Tu veux compter des categories ? -&gt; <strong>barres</strong> (<code>geom_bar</code>)</li>
+<li>Tu veux comparer des groupes ? -&gt; <strong>boxplot</strong> (<code>geom_boxplot</code>)</li>
+<li>Tu veux montrer une evolution ? -&gt; <strong>ligne</strong> (<code>geom_line</code>)</li>
+<li>Tu as des valeurs deja calculees a montrer en barres ? -&gt; <strong>colonnes</strong> (<code>geom_col</code>)</li>
+</ul>
+</div>
+</div>
+</div>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 37%">

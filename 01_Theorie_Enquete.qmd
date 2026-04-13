@@ -86,5 +86,5 @@ Mathematiquement, une echelle de Likert (1-5) est **ordinale**. Mais en pratique
 | Biais | Description | Consequence |
 |-------|-------------|-------------|
 | **Desirabilite sociale** | Le repondant altere ses reponses pour paraitre socialement acceptable | Surestimation des comportements "positifs" |
-| **Acquiescement** | Tendance a repondre "Oui" / "D'accord" automatiquement | Corrélation artificielle positive |
+| **Acquiescement** | Tendance a repondre "Oui" / "D'accord" automatiquement | Correlation artificielle positive |
 | **Effet de Halo** | Perception globale contamine l'evaluation d'attributs specifiques | Correlation artificielle entre variables distinctes |

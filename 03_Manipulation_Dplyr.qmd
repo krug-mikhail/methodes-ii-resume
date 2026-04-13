@@ -32,29 +32,94 @@ La donnee doit demeurer inviolee : importation directement par code R.
 
 ## L'Operateur Pipe `%>%` (ou `|>`)
 
+::: {.callout-tip collapse="true"}
+## En simple
+Le pipe, c'est comme suivre une **recette de cuisine** etape par etape :
+
+1. D'abord, tu **prends** tes ingredients (le data frame)
+2. **Ensuite**, tu coupes les legumes (`select` -- tu choisis les colonnes)
+3. **Ensuite**, tu retires ce qui est abime (`filter` -- tu gardes les bonnes lignes)
+4. **Ensuite**, tu assaisonnes (`mutate` -- tu ajoutes de nouvelles colonnes)
+
+Sans le pipe, tu devrais tout ecrire en une seule ligne emboitee (comme des poupees russes). Avec le pipe `%>%`, tu lis le code de haut en bas, comme une recette : "prends ca, PUIS fais ca, PUIS fais ca".
+
+Le symbole `%>%` se lit "**et ensuite**" ou "**puis**".
+:::
+
 Le pipe extrait l'objet a gauche et l'injecte comme **premier argument** de la fonction a droite.
 
 **Raccourci :** `Ctrl + Shift + M` (Windows) / `Cmd + Shift + M` (Mac)
 
 ```r
-# Sans pipe (lecture de l'interieur vers l'exterieur)
+# Sans pipe -- il faut lire de l'INTERIEUR vers l'EXTERIEUR (penible !)
 filter(select(df, nom, age), age > 30)
 
-# Avec pipe (lecture lineaire gauche a droite)
-df %>%
-  select(nom, age) %>%
-  filter(age > 30)
+# Avec pipe -- on lit de HAUT en BAS, comme une recette
+df %>%                   # Prends le tableau df
+  select(nom, age) %>%  # PUIS garde seulement les colonnes nom et age
+  filter(age > 30)       # PUIS ne garde que les lignes ou age > 30
 ```
 
 ## Les Verbes de dplyr
 
 Chaque verbe prend un data frame en entree et retourne un data frame modifie.
 
-### `select()` - Projection des colonnes
+::: {.callout-tip collapse="true"}
+## En simple
+dplyr fournit des "verbes" -- des actions simples que tu enchaines. Pense a des instructions donnees a un assistant :
+
+- **select** = "montre-moi seulement ces colonnes"
+- **filter** = "garde seulement les lignes qui respectent cette condition"
+- **mutate** = "ajoute une nouvelle colonne calculee"
+- **arrange** = "trie le tableau"
+- **group_by + summarize** = "fais un resume par groupe"
+
+Tous les exemples ci-dessous utilisent ce petit jeu de donnees de 5 etudiants :
+:::
 
 ```r
-df %>% select(nom, age)
-df %>% select(-colonne_a_exclure)   # Exclusion avec -
+# Notre petit jeu de donnees pour tous les exemples
+etudiants <- data.frame(
+  nom = c("Alice", "Bob", "Clara", "David", "Emma"),
+  age = c(21, 23, 20, 22, 21),
+  note = c(5.5, 4.0, 5.8, 3.5, 4.5),
+  branche = c("Psycho", "Droit", "Psycho", "Droit", "Psycho")
+)
+#     nom age note branche
+# 1 Alice  21  5.5  Psycho
+# 2   Bob  23  4.0   Droit
+# 3 Clara  20  5.8  Psycho
+# 4 David  22  3.5   Droit
+# 5  Emma  21  4.5  Psycho
+```
+
+### `select()` - Projection des colonnes
+
+::: {.callout-tip collapse="true"}
+## En simple
+`select()`, c'est comme **cacher des colonnes dans Excel**. Tu ne supprimes rien, tu choisis juste quelles colonnes tu veux voir. Tu peux aussi exclure une colonne avec le signe `-`.
+:::
+
+```r
+# Garder seulement les colonnes "nom" et "note"
+etudiants %>% select(nom, note)
+# Resultat :
+#     nom note
+# 1 Alice  5.5
+# 2   Bob  4.0
+# 3 Clara  5.8
+# 4 David  3.5
+# 5  Emma  4.5
+
+# Exclure une colonne avec le signe -
+etudiants %>% select(-age)
+# Resultat : tout SAUF la colonne age
+#     nom note branche
+# 1 Alice  5.5  Psycho
+# 2   Bob  4.0   Droit
+# 3 Clara  5.8  Psycho
+# 4 David  3.5   Droit
+# 5  Emma  4.5  Psycho
 ```
 
 **Assistants de selection dynamiques :**
@@ -74,14 +139,30 @@ mtcars %>%
 
 ### `filter()` - Filtrage conditionnel des lignes
 
+::: {.callout-tip collapse="true"}
+## En simple
+`filter()`, c'est comme mettre un **filtre sur un tableau Excel** : tu ne gardes que les lignes qui respectent ta condition. Les lignes qui ne passent pas le test disparaissent du resultat (mais les donnees originales ne sont pas modifiees).
+:::
+
 Les lignes `TRUE` sont preservees, `FALSE` et `NA` sont purgees.
 
 ```r
-df %>% filter(mpg >= 25)
-df %>% filter(cyl == 4 & mpg > 20)
-df %>% filter(cyl == 4 | cyl == 6)
-df %>% filter(cut %in% c("Ideal", "Premium"))
-df %>% filter(!is.na(price))   # Exclure les NA
+# Garder seulement les etudiants de plus de 21 ans
+etudiants %>% filter(age > 21)
+# Resultat :
+#     nom age note branche
+# 1   Bob  23  4.0   Droit
+# 2 David  22  3.5   Droit
+
+# Garder les etudiants en Psycho avec une note >= 5
+etudiants %>% filter(branche == "Psycho" & note >= 5)
+# Resultat :
+#     nom age note branche
+# 1 Alice  21  5.5  Psycho
+# 2 Clara  20  5.8  Psycho
+
+# Garder les etudiants en Psycho OU en Droit (ici ca les prend tous)
+etudiants %>% filter(branche %in% c("Psycho", "Droit"))
 ```
 
 **Operateurs logiques :**
@@ -106,19 +187,71 @@ diamants_premium <- diamonds %>%
 
 ### `mutate()` - Creer ou modifier des colonnes
 
+::: {.callout-tip collapse="true"}
+## En simple
+`mutate()`, c'est comme **ajouter une nouvelle colonne dans ton tableau Excel** avec une formule. Le nombre de lignes ne change pas -- tu ajoutes juste une information supplementaire a chaque ligne.
+:::
+
 Ajoute des colonnes tout en **preservant le nombre de lignes**.
 
 ```r
-df %>% mutate(ratio = mpg / wt)
-df %>% mutate(categorie = ifelse(mpg > 20, "econome", "gourmand"))
+# Ajouter une colonne "mention" basee sur la note
+etudiants %>% mutate(reussi = note >= 4)
+# Resultat :
+#     nom age note branche reussi
+# 1 Alice  21  5.5  Psycho   TRUE
+# 2   Bob  23  4.0   Droit   TRUE
+# 3 Clara  20  5.8  Psycho   TRUE
+# 4 David  22  3.5   Droit  FALSE
+# 5  Emma  21  4.5  Psycho   TRUE
+
+# Ajouter une colonne calculee
+etudiants %>% mutate(note_sur_100 = note / 6 * 100)
+# Resultat : chaque note est convertie en pourcentage
+#     nom age note branche note_sur_100
+# 1 Alice  21  5.5  Psycho     91.66667
+# 2   Bob  23  4.0   Droit     66.66667
+# ...
 ```
 
 **Vectorisation conditionnelle avec `case_when()` :**
 
+::: {.callout-tip collapse="true"}
+## En simple
+`case_when()`, c'est un **"si... alors... sinon..."** en version puissante. Ca fonctionne comme un aiguillage de train :
+
+- **SI** la condition 1 est vraie **ALORS** fais ceci
+- **SINON SI** la condition 2 est vraie **ALORS** fais cela
+- **SINON** (pour tout le reste) fais ca
+
+La derniere ligne `TRUE ~ "valeur"` attrape tout ce qui n'a pas ete pris par les conditions precedentes, comme un filet de securite.
+:::
+
 ```r
+# Attribuer une mention selon la note
+etudiants %>%
+  mutate(
+    mention = case_when(
+      note >= 5.5  ~ "Tres bien",     # SI note >= 5.5 ALORS "Tres bien"
+      note >= 5.0  ~ "Bien",          # SINON SI note >= 5.0 ALORS "Bien"
+      note >= 4.0  ~ "Suffisant",     # SINON SI note >= 4.0 ALORS "Suffisant"
+      TRUE         ~ "Insuffisant"    # SINON (tout le reste) "Insuffisant"
+    )
+  )
+# Resultat :
+#     nom age note branche      mention
+# 1 Alice  21  5.5  Psycho    Tres bien
+# 2   Bob  23  4.0   Droit   Suffisant
+# 3 Clara  20  5.8  Psycho    Tres bien
+# 4 David  22  3.5   Droit Insuffisant
+# 5  Emma  21  4.5  Psycho   Suffisant
+```
+
+```r
+# Exemple avance avec donnees climatiques
 df %>%
   mutate(
-    temp_fahrenheit = (temperature_anomaly * 9/5) + 32,
+    temp_anomaly_fahrenheit = temperature_anomaly * 9/5,
     carbon_risk_ratio = co2_level / 280,
 
     climate_status = case_when(
@@ -132,13 +265,46 @@ df %>%
 
 ### `arrange()` - Tri des lignes
 
+::: {.callout-tip collapse="true"}
+## En simple
+`arrange()`, c'est comme cliquer sur l'en-tete d'une colonne Excel pour **trier le tableau**. Par defaut, ca trie du plus petit au plus grand. Pour trier du plus grand au plus petit, on utilise `desc()`.
+:::
+
 ```r
-df %>% arrange(mpg)          # Croissant (defaut)
-df %>% arrange(desc(mpg))    # Decroissant
-df %>% arrange(desc(temperature_anomaly), year)  # Tri multiple
+# Trier les etudiants par note croissante (du plus faible au meilleur)
+etudiants %>% arrange(note)
+# Resultat :
+#     nom age note branche
+# 1 David  22  3.5   Droit   <-- note la plus basse
+# 2   Bob  23  4.0   Droit
+# 3  Emma  21  4.5  Psycho
+# 4 Alice  21  5.5  Psycho
+# 5 Clara  20  5.8  Psycho   <-- note la plus haute
+
+# Trier par note decroissante (du meilleur au plus faible)
+etudiants %>% arrange(desc(note))
+# Resultat :
+#     nom age note branche
+# 1 Clara  20  5.8  Psycho   <-- meilleure note en premier
+# 2 Alice  21  5.5  Psycho
+# ...
+
+# Tri multiple : d'abord par branche, puis par note decroissante
+etudiants %>% arrange(branche, desc(note))
 ```
 
 ### `group_by()` + `summarize()` - Agregation (Split-Apply-Combine)
+
+::: {.callout-tip collapse="true"}
+## En simple
+Imagine que tu as un paquet de copies d'examen melangees. `group_by()` + `summarize()`, c'est :
+
+1. **Trier les copies par branche** (tu fais des piles : une pile Psycho, une pile Droit) -- c'est le `group_by()`
+2. **Calculer la moyenne de chaque pile** -- c'est le `summarize()`
+3. **Rassembler les resultats** dans un nouveau petit tableau
+
+C'est le meme principe que les tableaux croises dynamiques d'Excel. N'oublie pas `ungroup()` a la fin pour "defaire" le groupement.
+:::
 
 Le paradigme en 3 phases :
 
@@ -147,20 +313,23 @@ Le paradigme en 3 phases :
 3. **Combine** : recoud les resultats en un nouveau data frame
 
 ```r
-df %>%
-  group_by(cyl) %>%
+# Calculer la moyenne et le nombre d'etudiants par branche
+etudiants %>%
+  group_by(branche) %>%          # Fais des groupes par branche
   summarize(
-    moyenne_mpg = mean(mpg, na.rm = TRUE),
-    mediane_mpg = median(mpg, na.rm = TRUE),
-    ecart_type  = sd(mpg, na.rm = TRUE),
-    nb_obs      = n()
+    nb_etudiants = n(),          # Combien dans chaque groupe ?
+    moyenne_note = mean(note),   # Moyenne des notes du groupe
+    meilleure_note = max(note)   # Meilleure note du groupe
   ) %>%
-  ungroup()  # Toujours retirer le groupement apres !
+  ungroup()                      # Toujours retirer le groupement apres !
+# Resultat :
+#   branche nb_etudiants moyenne_note meilleure_note
+# 1   Droit            2         3.75            4.0
+# 2  Psycho            3         5.27            5.8
 ```
 
-**Exemple complet avec donnees d'engagement politique (igposts) :**
-
 ```r
+# Exemple complet avec donnees d'engagement politique (igposts)
 analyse_efficacite <- igposts %>%
   group_by(Political_Party) %>%
   summarize(
@@ -177,14 +346,27 @@ analyse_efficacite <- igposts %>%
 
 ### `count()` - Denombrement frequentiel
 
+::: {.callout-tip collapse="true"}
+## En simple
+`count()` est un raccourci pour compter combien de fois chaque valeur apparait. C'est comme demander "combien d'etudiants dans chaque branche ?"
+:::
+
 Raccourci pour `group_by(variable) %>% summarize(n = n())`.
 
 ```r
-df %>% count(cyl)
-df %>% count(cyl, sort = TRUE)  # Tri decroissant automatique
+# Compter le nombre d'etudiants par branche
+etudiants %>% count(branche)
+# Resultat :
+#   branche n
+# 1   Droit 2
+# 2  Psycho 3
 
-# Equivalent long
-df %>% group_by(cyl) %>% summarize(n = n())
+# Avec tri decroissant automatique
+etudiants %>% count(branche, sort = TRUE)
+# Resultat :
+#   branche n
+# 1  Psycho 3
+# 2   Droit 2
 ```
 
 ## Statistiques Descriptives - Recap

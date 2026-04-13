@@ -16,6 +16,8 @@ website:
         text: dplyr
       - href: 04_Visualisation_Ggplot2.qmd
         text: ggplot2
+      - href: glossaire.qmd
+        text: Glossaire
   sidebar:
     style: docked
     search: true
@@ -27,6 +29,7 @@ website:
           - 02_Bases_R.qmd
           - 03_Manipulation_Dplyr.qmd
           - 04_Visualisation_Ggplot2.qmd
+          - glossaire.qmd
 
 execute:
   enabled: false
