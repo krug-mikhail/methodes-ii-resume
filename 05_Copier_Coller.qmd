@@ -15,6 +15,23 @@ library(tidyverse)
 setwd("/chemin/vers/mon/dossier")
 ```
 
+## Charger les Datasets Integres
+
+```r
+# Ces datasets sont deja inclus dans R ou tidyverse
+# Mais pour les voir dans l'onglet Environment, il faut faire :
+data(diamonds)   # 53'940 diamants (prix, carat, coupe, couleur, clarte)
+data(mtcars)     # 32 voitures (consommation, cylindres, poids, etc.)
+data(iris)       # 150 fleurs (longueur/largeur sepales et petales, espece)
+data(mpg)        # 234 voitures (modele, cylindree, consommation ville/autoroute)
+data(starwars)   # 87 personnages Star Wars (nom, taille, poids, espece)
+```
+
+::: {.callout-tip collapse="true"}
+## En simple
+`mtcars`, `iris`, `diamonds` etc. sont des jeux de donnees "d'entrainement" fournis avec R. Ils sont deja la quand tu charges `library(tidyverse)`, mais ils n'apparaissent pas dans l'onglet **Environment** de RStudio tant que tu n'as pas fait `data(nom_du_dataset)`. C'est juste pour les rendre visibles, pas pour les telecharger.
+:::
+
 ## Importer des Donnees
 
 ```r

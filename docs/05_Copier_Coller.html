@@ -249,31 +249,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#demarrage-de-session-toujours-en-premier" id="toc-demarrage-de-session-toujours-en-premier" class="nav-link active" data-scroll-target="#demarrage-de-session-toujours-en-premier"><span class="header-section-number">1</span> Demarrage de Session (TOUJOURS en premier)</a></li>
-  <li><a href="#importer-des-donnees" id="toc-importer-des-donnees" class="nav-link" data-scroll-target="#importer-des-donnees"><span class="header-section-number">2</span> Importer des Donnees</a></li>
-  <li><a href="#explorer-les-donnees-premiere-chose-a-faire-apres-import" id="toc-explorer-les-donnees-premiere-chose-a-faire-apres-import" class="nav-link" data-scroll-target="#explorer-les-donnees-premiere-chose-a-faire-apres-import"><span class="header-section-number">3</span> Explorer les Donnees (premiere chose a faire apres import)</a></li>
-  <li><a href="#manipulation-avec-dplyr---templates" id="toc-manipulation-avec-dplyr---templates" class="nav-link" data-scroll-target="#manipulation-avec-dplyr---templates"><span class="header-section-number">4</span> Manipulation avec dplyr - Templates</a>
+  <li><a href="#charger-les-datasets-integres" id="toc-charger-les-datasets-integres" class="nav-link" data-scroll-target="#charger-les-datasets-integres"><span class="header-section-number">2</span> Charger les Datasets Integres</a></li>
+  <li><a href="#importer-des-donnees" id="toc-importer-des-donnees" class="nav-link" data-scroll-target="#importer-des-donnees"><span class="header-section-number">3</span> Importer des Donnees</a></li>
+  <li><a href="#explorer-les-donnees-premiere-chose-a-faire-apres-import" id="toc-explorer-les-donnees-premiere-chose-a-faire-apres-import" class="nav-link" data-scroll-target="#explorer-les-donnees-premiere-chose-a-faire-apres-import"><span class="header-section-number">4</span> Explorer les Donnees (premiere chose a faire apres import)</a></li>
+  <li><a href="#manipulation-avec-dplyr---templates" id="toc-manipulation-avec-dplyr---templates" class="nav-link" data-scroll-target="#manipulation-avec-dplyr---templates"><span class="header-section-number">5</span> Manipulation avec dplyr - Templates</a>
   <ul class="collapse">
-  <li><a href="#selectionner-des-colonnes" id="toc-selectionner-des-colonnes" class="nav-link" data-scroll-target="#selectionner-des-colonnes"><span class="header-section-number">4.1</span> Selectionner des colonnes</a></li>
-  <li><a href="#filtrer-des-lignes" id="toc-filtrer-des-lignes" class="nav-link" data-scroll-target="#filtrer-des-lignes"><span class="header-section-number">4.2</span> Filtrer des lignes</a></li>
-  <li><a href="#creer-modifier-une-colonne" id="toc-creer-modifier-une-colonne" class="nav-link" data-scroll-target="#creer-modifier-une-colonne"><span class="header-section-number">4.3</span> Creer / modifier une colonne</a></li>
-  <li><a href="#trier" id="toc-trier" class="nav-link" data-scroll-target="#trier"><span class="header-section-number">4.4</span> Trier</a></li>
-  <li><a href="#compter-les-occurrences" id="toc-compter-les-occurrences" class="nav-link" data-scroll-target="#compter-les-occurrences"><span class="header-section-number">4.5</span> Compter les occurrences</a></li>
-  <li><a href="#resumer-par-groupe-le-plus-courant-a-lexamen" id="toc-resumer-par-groupe-le-plus-courant-a-lexamen" class="nav-link" data-scroll-target="#resumer-par-groupe-le-plus-courant-a-lexamen"><span class="header-section-number">4.6</span> Resumer par groupe (le plus courant a l’examen)</a></li>
-  <li><a href="#chaine-complete-typique-filtre-groupe-resume-tri" id="toc-chaine-complete-typique-filtre-groupe-resume-tri" class="nav-link" data-scroll-target="#chaine-complete-typique-filtre-groupe-resume-tri"><span class="header-section-number">4.7</span> Chaine complete typique (filtre + groupe + resume + tri)</a></li>
+  <li><a href="#selectionner-des-colonnes" id="toc-selectionner-des-colonnes" class="nav-link" data-scroll-target="#selectionner-des-colonnes"><span class="header-section-number">5.1</span> Selectionner des colonnes</a></li>
+  <li><a href="#filtrer-des-lignes" id="toc-filtrer-des-lignes" class="nav-link" data-scroll-target="#filtrer-des-lignes"><span class="header-section-number">5.2</span> Filtrer des lignes</a></li>
+  <li><a href="#creer-modifier-une-colonne" id="toc-creer-modifier-une-colonne" class="nav-link" data-scroll-target="#creer-modifier-une-colonne"><span class="header-section-number">5.3</span> Creer / modifier une colonne</a></li>
+  <li><a href="#trier" id="toc-trier" class="nav-link" data-scroll-target="#trier"><span class="header-section-number">5.4</span> Trier</a></li>
+  <li><a href="#compter-les-occurrences" id="toc-compter-les-occurrences" class="nav-link" data-scroll-target="#compter-les-occurrences"><span class="header-section-number">5.5</span> Compter les occurrences</a></li>
+  <li><a href="#resumer-par-groupe-le-plus-courant-a-lexamen" id="toc-resumer-par-groupe-le-plus-courant-a-lexamen" class="nav-link" data-scroll-target="#resumer-par-groupe-le-plus-courant-a-lexamen"><span class="header-section-number">5.6</span> Resumer par groupe (le plus courant a l’examen)</a></li>
+  <li><a href="#chaine-complete-typique-filtre-groupe-resume-tri" id="toc-chaine-complete-typique-filtre-groupe-resume-tri" class="nav-link" data-scroll-target="#chaine-complete-typique-filtre-groupe-resume-tri"><span class="header-section-number">5.7</span> Chaine complete typique (filtre + groupe + resume + tri)</a></li>
   </ul></li>
-  <li><a href="#graphiques-ggplot2---templates" id="toc-graphiques-ggplot2---templates" class="nav-link" data-scroll-target="#graphiques-ggplot2---templates"><span class="header-section-number">5</span> Graphiques ggplot2 - Templates</a>
+  <li><a href="#graphiques-ggplot2---templates" id="toc-graphiques-ggplot2---templates" class="nav-link" data-scroll-target="#graphiques-ggplot2---templates"><span class="header-section-number">6</span> Graphiques ggplot2 - Templates</a>
   <ul class="collapse">
-  <li><a href="#nuage-de-points-2-variables-continues" id="toc-nuage-de-points-2-variables-continues" class="nav-link" data-scroll-target="#nuage-de-points-2-variables-continues"><span class="header-section-number">5.1</span> Nuage de points (2 variables continues)</a></li>
-  <li><a href="#diagramme-a-barres-frequences-dune-categorie" id="toc-diagramme-a-barres-frequences-dune-categorie" class="nav-link" data-scroll-target="#diagramme-a-barres-frequences-dune-categorie"><span class="header-section-number">5.2</span> Diagramme a barres (frequences d’une categorie)</a></li>
-  <li><a href="#histogramme-distribution-dune-variable-continue" id="toc-histogramme-distribution-dune-variable-continue" class="nav-link" data-scroll-target="#histogramme-distribution-dune-variable-continue"><span class="header-section-number">5.3</span> Histogramme (distribution d’une variable continue)</a></li>
-  <li><a href="#boxplot-comparer-distributions-entre-groupes" id="toc-boxplot-comparer-distributions-entre-groupes" class="nav-link" data-scroll-target="#boxplot-comparer-distributions-entre-groupes"><span class="header-section-number">5.4</span> Boxplot (comparer distributions entre groupes)</a></li>
-  <li><a href="#sous-graphiques-par-categorie-facettes" id="toc-sous-graphiques-par-categorie-facettes" class="nav-link" data-scroll-target="#sous-graphiques-par-categorie-facettes"><span class="header-section-number">5.5</span> Sous-graphiques par categorie (facettes)</a></li>
-  <li><a href="#personnalisation-rapide-a-ajouter-avec" id="toc-personnalisation-rapide-a-ajouter-avec" class="nav-link" data-scroll-target="#personnalisation-rapide-a-ajouter-avec"><span class="header-section-number">5.6</span> Personnalisation rapide (a ajouter avec +)</a></li>
+  <li><a href="#nuage-de-points-2-variables-continues" id="toc-nuage-de-points-2-variables-continues" class="nav-link" data-scroll-target="#nuage-de-points-2-variables-continues"><span class="header-section-number">6.1</span> Nuage de points (2 variables continues)</a></li>
+  <li><a href="#diagramme-a-barres-frequences-dune-categorie" id="toc-diagramme-a-barres-frequences-dune-categorie" class="nav-link" data-scroll-target="#diagramme-a-barres-frequences-dune-categorie"><span class="header-section-number">6.2</span> Diagramme a barres (frequences d’une categorie)</a></li>
+  <li><a href="#histogramme-distribution-dune-variable-continue" id="toc-histogramme-distribution-dune-variable-continue" class="nav-link" data-scroll-target="#histogramme-distribution-dune-variable-continue"><span class="header-section-number">6.3</span> Histogramme (distribution d’une variable continue)</a></li>
+  <li><a href="#boxplot-comparer-distributions-entre-groupes" id="toc-boxplot-comparer-distributions-entre-groupes" class="nav-link" data-scroll-target="#boxplot-comparer-distributions-entre-groupes"><span class="header-section-number">6.4</span> Boxplot (comparer distributions entre groupes)</a></li>
+  <li><a href="#sous-graphiques-par-categorie-facettes" id="toc-sous-graphiques-par-categorie-facettes" class="nav-link" data-scroll-target="#sous-graphiques-par-categorie-facettes"><span class="header-section-number">6.5</span> Sous-graphiques par categorie (facettes)</a></li>
+  <li><a href="#personnalisation-rapide-a-ajouter-avec" id="toc-personnalisation-rapide-a-ajouter-avec" class="nav-link" data-scroll-target="#personnalisation-rapide-a-ajouter-avec"><span class="header-section-number">6.6</span> Personnalisation rapide (a ajouter avec +)</a></li>
   </ul></li>
-  <li><a href="#statistiques-rapides-hors-graphique" id="toc-statistiques-rapides-hors-graphique" class="nav-link" data-scroll-target="#statistiques-rapides-hors-graphique"><span class="header-section-number">6</span> Statistiques Rapides (hors graphique)</a></li>
-  <li><a href="#conversions-de-types" id="toc-conversions-de-types" class="nav-link" data-scroll-target="#conversions-de-types"><span class="header-section-number">7</span> Conversions de Types</a></li>
-  <li><a href="#gestion-des-valeurs-manquantes-na" id="toc-gestion-des-valeurs-manquantes-na" class="nav-link" data-scroll-target="#gestion-des-valeurs-manquantes-na"><span class="header-section-number">8</span> Gestion des Valeurs Manquantes (NA)</a></li>
-  <li><a href="#raccourcis-clavier-rstudio" id="toc-raccourcis-clavier-rstudio" class="nav-link" data-scroll-target="#raccourcis-clavier-rstudio"><span class="header-section-number">9</span> Raccourcis Clavier RStudio</a></li>
+  <li><a href="#statistiques-rapides-hors-graphique" id="toc-statistiques-rapides-hors-graphique" class="nav-link" data-scroll-target="#statistiques-rapides-hors-graphique"><span class="header-section-number">7</span> Statistiques Rapides (hors graphique)</a></li>
+  <li><a href="#conversions-de-types" id="toc-conversions-de-types" class="nav-link" data-scroll-target="#conversions-de-types"><span class="header-section-number">8</span> Conversions de Types</a></li>
+  <li><a href="#gestion-des-valeurs-manquantes-na" id="toc-gestion-des-valeurs-manquantes-na" class="nav-link" data-scroll-target="#gestion-des-valeurs-manquantes-na"><span class="header-section-number">9</span> Gestion des Valeurs Manquantes (NA)</a></li>
+  <li><a href="#raccourcis-clavier-rstudio" id="toc-raccourcis-clavier-rstudio" class="nav-link" data-scroll-target="#raccourcis-clavier-rstudio"><span class="header-section-number">10</span> Raccourcis Clavier RStudio</a></li>
   </ul>
 </nav>
     </div>
@@ -306,184 +307,210 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Si besoin de definir le repertoire de travail</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"/chemin/vers/mon/dossier"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="importer-des-donnees" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="importer-des-donnees"><span class="header-section-number">2</span> Importer des Donnees</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Importer un fichier CSV</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"mon_fichier.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Importer un CSV avec separateur point-virgule (format europeen)</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv2</span>(<span class="st">"mon_fichier.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Importer un fichier Excel</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"mon_fichier.xlsx"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="charger-les-datasets-integres" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="charger-les-datasets-integres"><span class="header-section-number">2</span> Charger les Datasets Integres</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ces datasets sont deja inclus dans R ou tidyverse</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Mais pour les voir dans l'onglet Environment, il faut faire :</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(diamonds)   <span class="co"># 53'940 diamants (prix, carat, coupe, couleur, clarte)</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mtcars)     <span class="co"># 32 voitures (consommation, cylindres, poids, etc.)</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(iris)       <span class="co"># 150 fleurs (longueur/largeur sepales et petales, espece)</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mpg)        <span class="co"># 234 voitures (modele, cylindree, consommation ville/autoroute)</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(starwars)   <span class="co"># 87 personnages Star Wars (nom, taille, poids, espece)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>En simple
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><code>mtcars</code>, <code>iris</code>, <code>diamonds</code> etc. sont des jeux de donnees “d’entrainement” fournis avec R. Ils sont deja la quand tu charges <code>library(tidyverse)</code>, mais ils n’apparaissent pas dans l’onglet <strong>Environment</strong> de RStudio tant que tu n’as pas fait <code>data(nom_du_dataset)</code>. C’est juste pour les rendre visibles, pas pour les telecharger.</p>
+</div>
+</div>
+</div>
 </section>
-<section id="explorer-les-donnees-premiere-chose-a-faire-apres-import" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="explorer-les-donnees-premiere-chose-a-faire-apres-import"><span class="header-section-number">3</span> Explorer les Donnees (premiere chose a faire apres import)</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vue rapide : combien de lignes/colonnes, quels types ?</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(df)       <span class="co"># Nombre de lignes et colonnes</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(df)     <span class="co"># Noms des colonnes</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(df)       <span class="co"># Structure complete (types, apercu)</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(df)   <span class="co"># Stats descriptives de chaque colonne</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df)      <span class="co"># 6 premieres lignes</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Combien de valeurs manquantes ?</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(df))                  <span class="co"># Total de NA dans tout le dataset</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">colSums</span>(<span class="fu">is.na</span>(df))              <span class="co"># NA par colonne</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Combien de valeurs uniques dans une colonne ?</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">n_distinct</span>(df<span class="sc">$</span>ma_colonne)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(df<span class="sc">$</span>ma_colonne)           <span class="co"># Voir les valeurs uniques</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="importer-des-donnees" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="importer-des-donnees"><span class="header-section-number">3</span> Importer des Donnees</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Importer un fichier CSV</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"mon_fichier.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Importer un CSV avec separateur point-virgule (format europeen)</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv2</span>(<span class="st">"mon_fichier.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Importer un fichier Excel</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"mon_fichier.xlsx"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="manipulation-avec-dplyr---templates" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="manipulation-avec-dplyr---templates"><span class="header-section-number">4</span> Manipulation avec dplyr - Templates</h2>
-<section id="selectionner-des-colonnes" class="level3" data-number="4.1">
-<h3 data-number="4.1" class="anchored" data-anchor-id="selectionner-des-colonnes"><span class="header-section-number">4.1</span> Selectionner des colonnes</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">select</span>(col1, col2, col3)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span>colonne_a_exclure)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">"IG"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="explorer-les-donnees-premiere-chose-a-faire-apres-import" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="explorer-les-donnees-premiere-chose-a-faire-apres-import"><span class="header-section-number">4</span> Explorer les Donnees (premiere chose a faire apres import)</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vue rapide : combien de lignes/colonnes, quels types ?</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(df)       <span class="co"># Nombre de lignes et colonnes</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(df)     <span class="co"># Noms des colonnes</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(df)       <span class="co"># Structure complete (types, apercu)</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(df)   <span class="co"># Stats descriptives de chaque colonne</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df)      <span class="co"># 6 premieres lignes</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Combien de valeurs manquantes ?</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(df))                  <span class="co"># Total de NA dans tout le dataset</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">colSums</span>(<span class="fu">is.na</span>(df))              <span class="co"># NA par colonne</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Combien de valeurs uniques dans une colonne ?</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">n_distinct</span>(df<span class="sc">$</span>ma_colonne)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(df<span class="sc">$</span>ma_colonne)           <span class="co"># Voir les valeurs uniques</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="filtrer-des-lignes" class="level3" data-number="4.2">
-<h3 data-number="4.2" class="anchored" data-anchor-id="filtrer-des-lignes"><span class="header-section-number">4.2</span> Filtrer des lignes</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">filter</span>(age <span class="sc">&gt;</span> <span class="dv">25</span>)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">filter</span>(genre <span class="sc">==</span> <span class="st">"Femme"</span>)</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">filter</span>(note <span class="sc">&gt;=</span> <span class="dv">4</span> <span class="sc">&amp;</span> branche <span class="sc">==</span> <span class="st">"Psycho"</span>)</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">filter</span>(pays <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Suisse"</span>, <span class="st">"France"</span>, <span class="st">"Allemagne"</span>))</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(prix))     <span class="co"># Exclure les valeurs manquantes</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="manipulation-avec-dplyr---templates" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="manipulation-avec-dplyr---templates"><span class="header-section-number">5</span> Manipulation avec dplyr - Templates</h2>
+<section id="selectionner-des-colonnes" class="level3" data-number="5.1">
+<h3 data-number="5.1" class="anchored" data-anchor-id="selectionner-des-colonnes"><span class="header-section-number">5.1</span> Selectionner des colonnes</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">select</span>(col1, col2, col3)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span>colonne_a_exclure)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">"IG"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="creer-modifier-une-colonne" class="level3" data-number="4.3">
-<h3 data-number="4.3" class="anchored" data-anchor-id="creer-modifier-une-colonne"><span class="header-section-number">4.3</span> Creer / modifier une colonne</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">nouvelle_col =</span> col1 <span class="sc">/</span> col2)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">reussi =</span> note <span class="sc">&gt;=</span> <span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creer une colonne conditionnelle (si/sinon)</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">categorie =</span> <span class="fu">case_when</span>(</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    note <span class="sc">&gt;=</span> <span class="fl">5.5</span>  <span class="sc">~</span> <span class="st">"Tres bien"</span>,</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    note <span class="sc">&gt;=</span> <span class="fl">5.0</span>  <span class="sc">~</span> <span class="st">"Bien"</span>,</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    note <span class="sc">&gt;=</span> <span class="fl">4.0</span>  <span class="sc">~</span> <span class="st">"Suffisant"</span>,</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="cn">TRUE</span>         <span class="sc">~</span> <span class="st">"Insuffisant"</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="filtrer-des-lignes" class="level3" data-number="5.2">
+<h3 data-number="5.2" class="anchored" data-anchor-id="filtrer-des-lignes"><span class="header-section-number">5.2</span> Filtrer des lignes</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">filter</span>(age <span class="sc">&gt;</span> <span class="dv">25</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">filter</span>(genre <span class="sc">==</span> <span class="st">"Femme"</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">filter</span>(note <span class="sc">&gt;=</span> <span class="dv">4</span> <span class="sc">&amp;</span> branche <span class="sc">==</span> <span class="st">"Psycho"</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">filter</span>(pays <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Suisse"</span>, <span class="st">"France"</span>, <span class="st">"Allemagne"</span>))</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(prix))     <span class="co"># Exclure les valeurs manquantes</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="trier" class="level3" data-number="4.4">
-<h3 data-number="4.4" class="anchored" data-anchor-id="trier"><span class="header-section-number">4.4</span> Trier</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(note)              <span class="co"># Croissant</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(note))        <span class="co"># Decroissant</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="creer-modifier-une-colonne" class="level3" data-number="5.3">
+<h3 data-number="5.3" class="anchored" data-anchor-id="creer-modifier-une-colonne"><span class="header-section-number">5.3</span> Creer / modifier une colonne</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">nouvelle_col =</span> col1 <span class="sc">/</span> col2)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">reussi =</span> note <span class="sc">&gt;=</span> <span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creer une colonne conditionnelle (si/sinon)</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">categorie =</span> <span class="fu">case_when</span>(</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    note <span class="sc">&gt;=</span> <span class="fl">5.5</span>  <span class="sc">~</span> <span class="st">"Tres bien"</span>,</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    note <span class="sc">&gt;=</span> <span class="fl">5.0</span>  <span class="sc">~</span> <span class="st">"Bien"</span>,</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    note <span class="sc">&gt;=</span> <span class="fl">4.0</span>  <span class="sc">~</span> <span class="st">"Suffisant"</span>,</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    <span class="cn">TRUE</span>         <span class="sc">~</span> <span class="st">"Insuffisant"</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="compter-les-occurrences" class="level3" data-number="4.5">
-<h3 data-number="4.5" class="anchored" data-anchor-id="compter-les-occurrences"><span class="header-section-number">4.5</span> Compter les occurrences</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">count</span>(ma_variable)</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">count</span>(ma_variable, <span class="at">sort =</span> <span class="cn">TRUE</span>)   <span class="co"># Tri decroissant</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="trier" class="level3" data-number="5.4">
+<h3 data-number="5.4" class="anchored" data-anchor-id="trier"><span class="header-section-number">5.4</span> Trier</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(note)              <span class="co"># Croissant</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(note))        <span class="co"># Decroissant</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="resumer-par-groupe-le-plus-courant-a-lexamen" class="level3" data-number="4.6">
-<h3 data-number="4.6" class="anchored" data-anchor-id="resumer-par-groupe-le-plus-courant-a-lexamen"><span class="header-section-number">4.6</span> Resumer par groupe (le plus courant a l’examen)</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(variable_categorielle) <span class="sc">%&gt;%</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">nombre    =</span> <span class="fu">n</span>(),</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">moyenne   =</span> <span class="fu">mean</span>(variable_num, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">mediane   =</span> <span class="fu">median</span>(variable_num, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">ecart_type =</span> <span class="fu">sd</span>(variable_num, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">minimum   =</span> <span class="fu">min</span>(variable_num, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">maximum   =</span> <span class="fu">max</span>(variable_num, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="compter-les-occurrences" class="level3" data-number="5.5">
+<h3 data-number="5.5" class="anchored" data-anchor-id="compter-les-occurrences"><span class="header-section-number">5.5</span> Compter les occurrences</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">count</span>(ma_variable)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">count</span>(ma_variable, <span class="at">sort =</span> <span class="cn">TRUE</span>)   <span class="co"># Tri decroissant</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="chaine-complete-typique-filtre-groupe-resume-tri" class="level3" data-number="4.7">
-<h3 data-number="4.7" class="anchored" data-anchor-id="chaine-complete-typique-filtre-groupe-resume-tri"><span class="header-section-number">4.7</span> Chaine complete typique (filtre + groupe + resume + tri)</h3>
+<section id="resumer-par-groupe-le-plus-courant-a-lexamen" class="level3" data-number="5.6">
+<h3 data-number="5.6" class="anchored" data-anchor-id="resumer-par-groupe-le-plus-courant-a-lexamen"><span class="header-section-number">5.6</span> Resumer par groupe (le plus courant a l’examen)</h3>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(condition <span class="sc">&gt;</span> valeur) <span class="sc">%&gt;%</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(categorie) <span class="sc">%&gt;%</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>(),</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">moy =</span> <span class="fu">mean</span>(variable, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(moy))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(variable_categorielle) <span class="sc">%&gt;%</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">nombre    =</span> <span class="fu">n</span>(),</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">moyenne   =</span> <span class="fu">mean</span>(variable_num, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">mediane   =</span> <span class="fu">median</span>(variable_num, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">ecart_type =</span> <span class="fu">sd</span>(variable_num, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">minimum   =</span> <span class="fu">min</span>(variable_num, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">maximum   =</span> <span class="fu">max</span>(variable_num, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="chaine-complete-typique-filtre-groupe-resume-tri" class="level3" data-number="5.7">
+<h3 data-number="5.7" class="anchored" data-anchor-id="chaine-complete-typique-filtre-groupe-resume-tri"><span class="header-section-number">5.7</span> Chaine complete typique (filtre + groupe + resume + tri)</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(condition <span class="sc">&gt;</span> valeur) <span class="sc">%&gt;%</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(categorie) <span class="sc">%&gt;%</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>(),</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">moy =</span> <span class="fu">mean</span>(variable, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(moy))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
-<section id="graphiques-ggplot2---templates" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="graphiques-ggplot2---templates"><span class="header-section-number">5</span> Graphiques ggplot2 - Templates</h2>
-<section id="nuage-de-points-2-variables-continues" class="level3" data-number="5.1">
-<h3 data-number="5.1" class="anchored" data-anchor-id="nuage-de-points-2-variables-continues"><span class="header-section-number">5.1</span> Nuage de points (2 variables continues)</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> var_continue_1, <span class="at">y =</span> var_continue_2)) <span class="sc">+</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Mon titre"</span>, <span class="at">x =</span> <span class="st">"Axe X (unite)"</span>, <span class="at">y =</span> <span class="st">"Axe Y (unite)"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Avec couleur par categorie</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> var_x, <span class="at">y =</span> var_y, <span class="at">color =</span> var_categorie)) <span class="sc">+</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Titre"</span>, <span class="at">x =</span> <span class="st">"X"</span>, <span class="at">y =</span> <span class="st">"Y"</span>, <span class="at">color =</span> <span class="st">"Legende"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="graphiques-ggplot2---templates" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="graphiques-ggplot2---templates"><span class="header-section-number">6</span> Graphiques ggplot2 - Templates</h2>
+<section id="nuage-de-points-2-variables-continues" class="level3" data-number="6.1">
+<h3 data-number="6.1" class="anchored" data-anchor-id="nuage-de-points-2-variables-continues"><span class="header-section-number">6.1</span> Nuage de points (2 variables continues)</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> var_continue_1, <span class="at">y =</span> var_continue_2)) <span class="sc">+</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Mon titre"</span>, <span class="at">x =</span> <span class="st">"Axe X (unite)"</span>, <span class="at">y =</span> <span class="st">"Axe Y (unite)"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Avec couleur par categorie</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> var_x, <span class="at">y =</span> var_y, <span class="at">color =</span> var_categorie)) <span class="sc">+</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Titre"</span>, <span class="at">x =</span> <span class="st">"X"</span>, <span class="at">y =</span> <span class="st">"Y"</span>, <span class="at">color =</span> <span class="st">"Legende"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="diagramme-a-barres-frequences-dune-categorie" class="level3" data-number="5.2">
-<h3 data-number="5.2" class="anchored" data-anchor-id="diagramme-a-barres-frequences-dune-categorie"><span class="header-section-number">5.2</span> Diagramme a barres (frequences d’une categorie)</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> var_categorielle)) <span class="sc">+</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Mon titre"</span>, <span class="at">x =</span> <span class="st">"Categorie"</span>, <span class="at">y =</span> <span class="st">"Nombre"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Barres cote a cote par sous-groupe</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> var_cat_1, <span class="at">fill =</span> var_cat_2)) <span class="sc">+</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Titre"</span>, <span class="at">x =</span> <span class="st">"X"</span>, <span class="at">y =</span> <span class="st">"Nombre"</span>, <span class="at">fill =</span> <span class="st">"Legende"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="diagramme-a-barres-frequences-dune-categorie" class="level3" data-number="6.2">
+<h3 data-number="6.2" class="anchored" data-anchor-id="diagramme-a-barres-frequences-dune-categorie"><span class="header-section-number">6.2</span> Diagramme a barres (frequences d’une categorie)</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> var_categorielle)) <span class="sc">+</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Mon titre"</span>, <span class="at">x =</span> <span class="st">"Categorie"</span>, <span class="at">y =</span> <span class="st">"Nombre"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Barres cote a cote par sous-groupe</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> var_cat_1, <span class="at">fill =</span> var_cat_2)) <span class="sc">+</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Titre"</span>, <span class="at">x =</span> <span class="st">"X"</span>, <span class="at">y =</span> <span class="st">"Nombre"</span>, <span class="at">fill =</span> <span class="st">"Legende"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="histogramme-distribution-dune-variable-continue" class="level3" data-number="5.3">
-<h3 data-number="5.3" class="anchored" data-anchor-id="histogramme-distribution-dune-variable-continue"><span class="header-section-number">5.3</span> Histogramme (distribution d’une variable continue)</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> var_continue)) <span class="sc">+</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">10</span>) <span class="sc">+</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Mon titre"</span>, <span class="at">x =</span> <span class="st">"Variable (unite)"</span>, <span class="at">y =</span> <span class="st">"Frequence"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="histogramme-distribution-dune-variable-continue" class="level3" data-number="6.3">
+<h3 data-number="6.3" class="anchored" data-anchor-id="histogramme-distribution-dune-variable-continue"><span class="header-section-number">6.3</span> Histogramme (distribution d’une variable continue)</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> var_continue)) <span class="sc">+</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">10</span>) <span class="sc">+</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Mon titre"</span>, <span class="at">x =</span> <span class="st">"Variable (unite)"</span>, <span class="at">y =</span> <span class="st">"Frequence"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="boxplot-comparer-distributions-entre-groupes" class="level3" data-number="5.4">
-<h3 data-number="5.4" class="anchored" data-anchor-id="boxplot-comparer-distributions-entre-groupes"><span class="header-section-number">5.4</span> Boxplot (comparer distributions entre groupes)</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> var_categorielle, <span class="at">y =</span> var_continue)) <span class="sc">+</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Mon titre"</span>, <span class="at">x =</span> <span class="st">"Groupe"</span>, <span class="at">y =</span> <span class="st">"Variable (unite)"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="boxplot-comparer-distributions-entre-groupes" class="level3" data-number="6.4">
+<h3 data-number="6.4" class="anchored" data-anchor-id="boxplot-comparer-distributions-entre-groupes"><span class="header-section-number">6.4</span> Boxplot (comparer distributions entre groupes)</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> var_categorielle, <span class="at">y =</span> var_continue)) <span class="sc">+</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Mon titre"</span>, <span class="at">x =</span> <span class="st">"Groupe"</span>, <span class="at">y =</span> <span class="st">"Variable (unite)"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="sous-graphiques-par-categorie-facettes" class="level3" data-number="5.5">
-<h3 data-number="5.5" class="anchored" data-anchor-id="sous-graphiques-par-categorie-facettes"><span class="header-section-number">5.5</span> Sous-graphiques par categorie (facettes)</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajouter cette ligne a n'importe quel graphique</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="sc">~</span> var_categorielle)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="sous-graphiques-par-categorie-facettes" class="level3" data-number="6.5">
+<h3 data-number="6.5" class="anchored" data-anchor-id="sous-graphiques-par-categorie-facettes"><span class="header-section-number">6.5</span> Sous-graphiques par categorie (facettes)</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajouter cette ligne a n'importe quel graphique</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="sc">~</span> var_categorielle)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="personnalisation-rapide-a-ajouter-avec" class="level3" data-number="5.6">
-<h3 data-number="5.6" class="anchored" data-anchor-id="personnalisation-rapide-a-ajouter-avec"><span class="header-section-number">5.6</span> Personnalisation rapide (a ajouter avec +)</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Titre"</span>, <span class="at">subtitle =</span> <span class="st">"Sous-titre"</span>, <span class="at">x =</span> <span class="st">"Axe X"</span>, <span class="at">y =</span> <span class="st">"Axe Y"</span>,</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Legende"</span>, <span class="at">fill =</span> <span class="st">"Legende"</span>, <span class="at">caption =</span> <span class="st">"Source : ..."</span>)</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span> <span class="fu">theme_minimal</span>()           <span class="co"># Theme epure</span></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span> <span class="fu">theme_bw</span>()                <span class="co"># Theme noir et blanc</span></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)   <span class="co"># Supprimer la legende</span></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span> <span class="fu">scale_fill_viridis_d</span>()    <span class="co"># Palette accessible (daltonisme)</span></span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span> <span class="fu">scale_color_viridis_d</span>()   <span class="co"># Idem pour les couleurs de points/lignes</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="personnalisation-rapide-a-ajouter-avec" class="level3" data-number="6.6">
+<h3 data-number="6.6" class="anchored" data-anchor-id="personnalisation-rapide-a-ajouter-avec"><span class="header-section-number">6.6</span> Personnalisation rapide (a ajouter avec +)</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Titre"</span>, <span class="at">subtitle =</span> <span class="st">"Sous-titre"</span>, <span class="at">x =</span> <span class="st">"Axe X"</span>, <span class="at">y =</span> <span class="st">"Axe Y"</span>,</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Legende"</span>, <span class="at">fill =</span> <span class="st">"Legende"</span>, <span class="at">caption =</span> <span class="st">"Source : ..."</span>)</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span> <span class="fu">theme_minimal</span>()           <span class="co"># Theme epure</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span> <span class="fu">theme_bw</span>()                <span class="co"># Theme noir et blanc</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)   <span class="co"># Supprimer la legende</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span> <span class="fu">scale_fill_viridis_d</span>()    <span class="co"># Palette accessible (daltonisme)</span></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="sc">+</span> <span class="fu">scale_color_viridis_d</span>()   <span class="co"># Idem pour les couleurs de points/lignes</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
-<section id="statistiques-rapides-hors-graphique" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="statistiques-rapides-hors-graphique"><span class="header-section-number">6</span> Statistiques Rapides (hors graphique)</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(df<span class="sc">$</span>col, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)      <span class="co"># Moyenne</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(df<span class="sc">$</span>col, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)    <span class="co"># Mediane</span></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(df<span class="sc">$</span>col, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)        <span class="co"># Ecart-type</span></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(df<span class="sc">$</span>col, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)       <span class="co"># Minimum</span></span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(df<span class="sc">$</span>col, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)       <span class="co"># Maximum</span></span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(df<span class="sc">$</span>col, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)       <span class="co"># Somme</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="statistiques-rapides-hors-graphique" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="statistiques-rapides-hors-graphique"><span class="header-section-number">7</span> Statistiques Rapides (hors graphique)</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(df<span class="sc">$</span>col, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)      <span class="co"># Moyenne</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(df<span class="sc">$</span>col, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)    <span class="co"># Mediane</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(df<span class="sc">$</span>col, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)        <span class="co"># Ecart-type</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(df<span class="sc">$</span>col, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)       <span class="co"># Minimum</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(df<span class="sc">$</span>col, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)       <span class="co"># Maximum</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(df<span class="sc">$</span>col, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)       <span class="co"># Somme</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="conversions-de-types" class="level2" data-number="7">
-<h2 data-number="7" class="anchored" data-anchor-id="conversions-de-types"><span class="header-section-number">7</span> Conversions de Types</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convertir en numerique (si une colonne est lue comme texte)</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>col <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(df<span class="sc">$</span>col)</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Convertir en facteur (variable categorielle)</span></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>col <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(df<span class="sc">$</span>col)</span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Convertir en texte</span></span>
-<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>col <span class="ot">&lt;-</span> <span class="fu">as.character</span>(df<span class="sc">$</span>col)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="gestion-des-valeurs-manquantes-na" class="level2" data-number="8">
-<h2 data-number="8" class="anchored" data-anchor-id="gestion-des-valeurs-manquantes-na"><span class="header-section-number">8</span> Gestion des Valeurs Manquantes (NA)</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compter les NA</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(df<span class="sc">$</span>col))</span>
+<section id="conversions-de-types" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="conversions-de-types"><span class="header-section-number">8</span> Conversions de Types</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convertir en numerique (si une colonne est lue comme texte)</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>col <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(df<span class="sc">$</span>col)</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Supprimer les lignes avec NA dans une colonne</span></span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(col))</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Convertir en facteur (variable categorielle)</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>col <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(df<span class="sc">$</span>col)</span>
 <span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Supprimer TOUTES les lignes qui ont au moins un NA</span></span>
-<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">drop_na</span>()</span>
-<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Remplacer les NA par une valeur</span></span>
-<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">col =</span> <span class="fu">replace_na</span>(col, <span class="dv">0</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Convertir en texte</span></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>col <span class="ot">&lt;-</span> <span class="fu">as.character</span>(df<span class="sc">$</span>col)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="raccourcis-clavier-rstudio" class="level2" data-number="9">
-<h2 data-number="9" class="anchored" data-anchor-id="raccourcis-clavier-rstudio"><span class="header-section-number">9</span> Raccourcis Clavier RStudio</h2>
+<section id="gestion-des-valeurs-manquantes-na" class="level2" data-number="9">
+<h2 data-number="9" class="anchored" data-anchor-id="gestion-des-valeurs-manquantes-na"><span class="header-section-number">9</span> Gestion des Valeurs Manquantes (NA)</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compter les NA</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(df<span class="sc">$</span>col))</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Supprimer les lignes avec NA dans une colonne</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(col))</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Supprimer TOUTES les lignes qui ont au moins un NA</span></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">drop_na</span>()</span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Remplacer les NA par une valeur</span></span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">col =</span> <span class="fu">replace_na</span>(col, <span class="dv">0</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="raccourcis-clavier-rstudio" class="level2" data-number="10">
+<h2 data-number="10" class="anchored" data-anchor-id="raccourcis-clavier-rstudio"><span class="header-section-number">10</span> Raccourcis Clavier RStudio</h2>
 <table class="caption-top table">
 <thead>
 <tr class="header">

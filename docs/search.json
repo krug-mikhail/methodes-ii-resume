@@ -24,11 +24,23 @@
     ]
   },
   {
+    "objectID": "05_Copier_Coller.html#charger-les-datasets-integres",
+    "href": "05_Copier_Coller.html#charger-les-datasets-integres",
+    "title": "Commandes Rapides - Copier/Coller",
+    "section": "2 Charger les Datasets Integres",
+    "text": "2 Charger les Datasets Integres\n# Ces datasets sont deja inclus dans R ou tidyverse\n# Mais pour les voir dans l'onglet Environment, il faut faire :\ndata(diamonds)   # 53'940 diamants (prix, carat, coupe, couleur, clarte)\ndata(mtcars)     # 32 voitures (consommation, cylindres, poids, etc.)\ndata(iris)       # 150 fleurs (longueur/largeur sepales et petales, espece)\ndata(mpg)        # 234 voitures (modele, cylindree, consommation ville/autoroute)\ndata(starwars)   # 87 personnages Star Wars (nom, taille, poids, espece)\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nmtcars, iris, diamonds etc. sont des jeux de donnees “d’entrainement” fournis avec R. Ils sont deja la quand tu charges library(tidyverse), mais ils n’apparaissent pas dans l’onglet Environment de RStudio tant que tu n’as pas fait data(nom_du_dataset). C’est juste pour les rendre visibles, pas pour les telecharger.",
+    "crumbs": [
+      "Accueil",
+      "Resume du cours",
+      "Commandes Rapides - Copier/Coller"
+    ]
+  },
+  {
     "objectID": "05_Copier_Coller.html#importer-des-donnees",
     "href": "05_Copier_Coller.html#importer-des-donnees",
     "title": "Commandes Rapides - Copier/Coller",
-    "section": "2 Importer des Donnees",
-    "text": "2 Importer des Donnees\n# Importer un fichier CSV\ndf &lt;- read_csv(\"mon_fichier.csv\")\n# Importer un CSV avec separateur point-virgule (format europeen)\ndf &lt;- read_csv2(\"mon_fichier.csv\")\n# Importer un fichier Excel\nlibrary(readxl)\ndf &lt;- read_excel(\"mon_fichier.xlsx\")",
+    "section": "3 Importer des Donnees",
+    "text": "3 Importer des Donnees\n# Importer un fichier CSV\ndf &lt;- read_csv(\"mon_fichier.csv\")\n# Importer un CSV avec separateur point-virgule (format europeen)\ndf &lt;- read_csv2(\"mon_fichier.csv\")\n# Importer un fichier Excel\nlibrary(readxl)\ndf &lt;- read_excel(\"mon_fichier.xlsx\")",
     "crumbs": [
       "Accueil",
       "Resume du cours",
@@ -39,8 +51,8 @@
     "objectID": "05_Copier_Coller.html#explorer-les-donnees-premiere-chose-a-faire-apres-import",
     "href": "05_Copier_Coller.html#explorer-les-donnees-premiere-chose-a-faire-apres-import",
     "title": "Commandes Rapides - Copier/Coller",
-    "section": "3 Explorer les Donnees (premiere chose a faire apres import)",
-    "text": "3 Explorer les Donnees (premiere chose a faire apres import)\n# Vue rapide : combien de lignes/colonnes, quels types ?\ndim(df)       # Nombre de lignes et colonnes\nnames(df)     # Noms des colonnes\nstr(df)       # Structure complete (types, apercu)\nsummary(df)   # Stats descriptives de chaque colonne\nhead(df)      # 6 premieres lignes\n# Combien de valeurs manquantes ?\nsum(is.na(df))                  # Total de NA dans tout le dataset\ncolSums(is.na(df))              # NA par colonne\n# Combien de valeurs uniques dans une colonne ?\nn_distinct(df$ma_colonne)\nunique(df$ma_colonne)           # Voir les valeurs uniques",
+    "section": "4 Explorer les Donnees (premiere chose a faire apres import)",
+    "text": "4 Explorer les Donnees (premiere chose a faire apres import)\n# Vue rapide : combien de lignes/colonnes, quels types ?\ndim(df)       # Nombre de lignes et colonnes\nnames(df)     # Noms des colonnes\nstr(df)       # Structure complete (types, apercu)\nsummary(df)   # Stats descriptives de chaque colonne\nhead(df)      # 6 premieres lignes\n# Combien de valeurs manquantes ?\nsum(is.na(df))                  # Total de NA dans tout le dataset\ncolSums(is.na(df))              # NA par colonne\n# Combien de valeurs uniques dans une colonne ?\nn_distinct(df$ma_colonne)\nunique(df$ma_colonne)           # Voir les valeurs uniques",
     "crumbs": [
       "Accueil",
       "Resume du cours",
@@ -51,8 +63,8 @@
     "objectID": "05_Copier_Coller.html#manipulation-avec-dplyr---templates",
     "href": "05_Copier_Coller.html#manipulation-avec-dplyr---templates",
     "title": "Commandes Rapides - Copier/Coller",
-    "section": "4 Manipulation avec dplyr - Templates",
-    "text": "4 Manipulation avec dplyr - Templates\n\n4.1 Selectionner des colonnes\ndf %&gt;% select(col1, col2, col3)\ndf %&gt;% select(-colonne_a_exclure)\ndf %&gt;% select(starts_with(\"IG\"))\n\n\n4.2 Filtrer des lignes\ndf %&gt;% filter(age &gt; 25)\ndf %&gt;% filter(genre == \"Femme\")\ndf %&gt;% filter(note &gt;= 4 & branche == \"Psycho\")\ndf %&gt;% filter(pays %in% c(\"Suisse\", \"France\", \"Allemagne\"))\ndf %&gt;% filter(!is.na(prix))     # Exclure les valeurs manquantes\n\n\n4.3 Creer / modifier une colonne\ndf %&gt;% mutate(nouvelle_col = col1 / col2)\ndf %&gt;% mutate(reussi = note &gt;= 4)\n# Creer une colonne conditionnelle (si/sinon)\ndf %&gt;% mutate(\n  categorie = case_when(\n    note &gt;= 5.5  ~ \"Tres bien\",\n    note &gt;= 5.0  ~ \"Bien\",\n    note &gt;= 4.0  ~ \"Suffisant\",\n    TRUE         ~ \"Insuffisant\"\n  )\n)\n\n\n4.4 Trier\ndf %&gt;% arrange(note)              # Croissant\ndf %&gt;% arrange(desc(note))        # Decroissant\n\n\n4.5 Compter les occurrences\ndf %&gt;% count(ma_variable)\ndf %&gt;% count(ma_variable, sort = TRUE)   # Tri decroissant\n\n\n4.6 Resumer par groupe (le plus courant a l’examen)\ndf %&gt;%\n  group_by(variable_categorielle) %&gt;%\n  summarize(\n    nombre    = n(),\n    moyenne   = mean(variable_num, na.rm = TRUE),\n    mediane   = median(variable_num, na.rm = TRUE),\n    ecart_type = sd(variable_num, na.rm = TRUE),\n    minimum   = min(variable_num, na.rm = TRUE),\n    maximum   = max(variable_num, na.rm = TRUE)\n  ) %&gt;%\n  ungroup()\n\n\n4.7 Chaine complete typique (filtre + groupe + resume + tri)\ndf %&gt;%\n  filter(condition &gt; valeur) %&gt;%\n  group_by(categorie) %&gt;%\n  summarize(\n    n = n(),\n    moy = mean(variable, na.rm = TRUE)\n  ) %&gt;%\n  ungroup() %&gt;%\n  arrange(desc(moy))",
+    "section": "5 Manipulation avec dplyr - Templates",
+    "text": "5 Manipulation avec dplyr - Templates\n\n5.1 Selectionner des colonnes\ndf %&gt;% select(col1, col2, col3)\ndf %&gt;% select(-colonne_a_exclure)\ndf %&gt;% select(starts_with(\"IG\"))\n\n\n5.2 Filtrer des lignes\ndf %&gt;% filter(age &gt; 25)\ndf %&gt;% filter(genre == \"Femme\")\ndf %&gt;% filter(note &gt;= 4 & branche == \"Psycho\")\ndf %&gt;% filter(pays %in% c(\"Suisse\", \"France\", \"Allemagne\"))\ndf %&gt;% filter(!is.na(prix))     # Exclure les valeurs manquantes\n\n\n5.3 Creer / modifier une colonne\ndf %&gt;% mutate(nouvelle_col = col1 / col2)\ndf %&gt;% mutate(reussi = note &gt;= 4)\n# Creer une colonne conditionnelle (si/sinon)\ndf %&gt;% mutate(\n  categorie = case_when(\n    note &gt;= 5.5  ~ \"Tres bien\",\n    note &gt;= 5.0  ~ \"Bien\",\n    note &gt;= 4.0  ~ \"Suffisant\",\n    TRUE         ~ \"Insuffisant\"\n  )\n)\n\n\n5.4 Trier\ndf %&gt;% arrange(note)              # Croissant\ndf %&gt;% arrange(desc(note))        # Decroissant\n\n\n5.5 Compter les occurrences\ndf %&gt;% count(ma_variable)\ndf %&gt;% count(ma_variable, sort = TRUE)   # Tri decroissant\n\n\n5.6 Resumer par groupe (le plus courant a l’examen)\ndf %&gt;%\n  group_by(variable_categorielle) %&gt;%\n  summarize(\n    nombre    = n(),\n    moyenne   = mean(variable_num, na.rm = TRUE),\n    mediane   = median(variable_num, na.rm = TRUE),\n    ecart_type = sd(variable_num, na.rm = TRUE),\n    minimum   = min(variable_num, na.rm = TRUE),\n    maximum   = max(variable_num, na.rm = TRUE)\n  ) %&gt;%\n  ungroup()\n\n\n5.7 Chaine complete typique (filtre + groupe + resume + tri)\ndf %&gt;%\n  filter(condition &gt; valeur) %&gt;%\n  group_by(categorie) %&gt;%\n  summarize(\n    n = n(),\n    moy = mean(variable, na.rm = TRUE)\n  ) %&gt;%\n  ungroup() %&gt;%\n  arrange(desc(moy))",
     "crumbs": [
       "Accueil",
       "Resume du cours",
@@ -63,8 +75,8 @@
     "objectID": "05_Copier_Coller.html#graphiques-ggplot2---templates",
     "href": "05_Copier_Coller.html#graphiques-ggplot2---templates",
     "title": "Commandes Rapides - Copier/Coller",
-    "section": "5 Graphiques ggplot2 - Templates",
-    "text": "5 Graphiques ggplot2 - Templates\n\n5.1 Nuage de points (2 variables continues)\nggplot(df, aes(x = var_continue_1, y = var_continue_2)) +\n  geom_point() +\n  labs(title = \"Mon titre\", x = \"Axe X (unite)\", y = \"Axe Y (unite)\")\n# Avec couleur par categorie\nggplot(df, aes(x = var_x, y = var_y, color = var_categorie)) +\n  geom_point() +\n  labs(title = \"Titre\", x = \"X\", y = \"Y\", color = \"Legende\")\n\n\n5.2 Diagramme a barres (frequences d’une categorie)\nggplot(df, aes(x = var_categorielle)) +\n  geom_bar() +\n  labs(title = \"Mon titre\", x = \"Categorie\", y = \"Nombre\")\n# Barres cote a cote par sous-groupe\nggplot(df, aes(x = var_cat_1, fill = var_cat_2)) +\n  geom_bar(position = \"dodge\") +\n  labs(title = \"Titre\", x = \"X\", y = \"Nombre\", fill = \"Legende\")\n\n\n5.3 Histogramme (distribution d’une variable continue)\nggplot(df, aes(x = var_continue)) +\n  geom_histogram(binwidth = 10) +\n  labs(title = \"Mon titre\", x = \"Variable (unite)\", y = \"Frequence\")\n\n\n5.4 Boxplot (comparer distributions entre groupes)\nggplot(df, aes(x = var_categorielle, y = var_continue)) +\n  geom_boxplot() +\n  labs(title = \"Mon titre\", x = \"Groupe\", y = \"Variable (unite)\")\n\n\n5.5 Sous-graphiques par categorie (facettes)\n# Ajouter cette ligne a n'importe quel graphique\n+ facet_wrap(~ var_categorielle)\n\n\n5.6 Personnalisation rapide (a ajouter avec +)\n+ labs(title = \"Titre\", subtitle = \"Sous-titre\", x = \"Axe X\", y = \"Axe Y\",\n       color = \"Legende\", fill = \"Legende\", caption = \"Source : ...\")\n+ theme_minimal()           # Theme epure\n+ theme_bw()                # Theme noir et blanc\n+ theme(legend.position = \"none\")   # Supprimer la legende\n+ scale_fill_viridis_d()    # Palette accessible (daltonisme)\n+ scale_color_viridis_d()   # Idem pour les couleurs de points/lignes",
+    "section": "6 Graphiques ggplot2 - Templates",
+    "text": "6 Graphiques ggplot2 - Templates\n\n6.1 Nuage de points (2 variables continues)\nggplot(df, aes(x = var_continue_1, y = var_continue_2)) +\n  geom_point() +\n  labs(title = \"Mon titre\", x = \"Axe X (unite)\", y = \"Axe Y (unite)\")\n# Avec couleur par categorie\nggplot(df, aes(x = var_x, y = var_y, color = var_categorie)) +\n  geom_point() +\n  labs(title = \"Titre\", x = \"X\", y = \"Y\", color = \"Legende\")\n\n\n6.2 Diagramme a barres (frequences d’une categorie)\nggplot(df, aes(x = var_categorielle)) +\n  geom_bar() +\n  labs(title = \"Mon titre\", x = \"Categorie\", y = \"Nombre\")\n# Barres cote a cote par sous-groupe\nggplot(df, aes(x = var_cat_1, fill = var_cat_2)) +\n  geom_bar(position = \"dodge\") +\n  labs(title = \"Titre\", x = \"X\", y = \"Nombre\", fill = \"Legende\")\n\n\n6.3 Histogramme (distribution d’une variable continue)\nggplot(df, aes(x = var_continue)) +\n  geom_histogram(binwidth = 10) +\n  labs(title = \"Mon titre\", x = \"Variable (unite)\", y = \"Frequence\")\n\n\n6.4 Boxplot (comparer distributions entre groupes)\nggplot(df, aes(x = var_categorielle, y = var_continue)) +\n  geom_boxplot() +\n  labs(title = \"Mon titre\", x = \"Groupe\", y = \"Variable (unite)\")\n\n\n6.5 Sous-graphiques par categorie (facettes)\n# Ajouter cette ligne a n'importe quel graphique\n+ facet_wrap(~ var_categorielle)\n\n\n6.6 Personnalisation rapide (a ajouter avec +)\n+ labs(title = \"Titre\", subtitle = \"Sous-titre\", x = \"Axe X\", y = \"Axe Y\",\n       color = \"Legende\", fill = \"Legende\", caption = \"Source : ...\")\n+ theme_minimal()           # Theme epure\n+ theme_bw()                # Theme noir et blanc\n+ theme(legend.position = \"none\")   # Supprimer la legende\n+ scale_fill_viridis_d()    # Palette accessible (daltonisme)\n+ scale_color_viridis_d()   # Idem pour les couleurs de points/lignes",
     "crumbs": [
       "Accueil",
       "Resume du cours",
@@ -75,8 +87,8 @@
     "objectID": "05_Copier_Coller.html#statistiques-rapides-hors-graphique",
     "href": "05_Copier_Coller.html#statistiques-rapides-hors-graphique",
     "title": "Commandes Rapides - Copier/Coller",
-    "section": "6 Statistiques Rapides (hors graphique)",
-    "text": "6 Statistiques Rapides (hors graphique)\nmean(df$col, na.rm = TRUE)      # Moyenne\nmedian(df$col, na.rm = TRUE)    # Mediane\nsd(df$col, na.rm = TRUE)        # Ecart-type\nmin(df$col, na.rm = TRUE)       # Minimum\nmax(df$col, na.rm = TRUE)       # Maximum\nsum(df$col, na.rm = TRUE)       # Somme",
+    "section": "7 Statistiques Rapides (hors graphique)",
+    "text": "7 Statistiques Rapides (hors graphique)\nmean(df$col, na.rm = TRUE)      # Moyenne\nmedian(df$col, na.rm = TRUE)    # Mediane\nsd(df$col, na.rm = TRUE)        # Ecart-type\nmin(df$col, na.rm = TRUE)       # Minimum\nmax(df$col, na.rm = TRUE)       # Maximum\nsum(df$col, na.rm = TRUE)       # Somme",
     "crumbs": [
       "Accueil",
       "Resume du cours",
@@ -87,8 +99,8 @@
     "objectID": "05_Copier_Coller.html#conversions-de-types",
     "href": "05_Copier_Coller.html#conversions-de-types",
     "title": "Commandes Rapides - Copier/Coller",
-    "section": "7 Conversions de Types",
-    "text": "7 Conversions de Types\n# Convertir en numerique (si une colonne est lue comme texte)\ndf$col &lt;- as.numeric(df$col)\n\n# Convertir en facteur (variable categorielle)\ndf$col &lt;- as.factor(df$col)\n\n# Convertir en texte\ndf$col &lt;- as.character(df$col)",
+    "section": "8 Conversions de Types",
+    "text": "8 Conversions de Types\n# Convertir en numerique (si une colonne est lue comme texte)\ndf$col &lt;- as.numeric(df$col)\n\n# Convertir en facteur (variable categorielle)\ndf$col &lt;- as.factor(df$col)\n\n# Convertir en texte\ndf$col &lt;- as.character(df$col)",
     "crumbs": [
       "Accueil",
       "Resume du cours",
@@ -99,8 +111,8 @@
     "objectID": "05_Copier_Coller.html#gestion-des-valeurs-manquantes-na",
     "href": "05_Copier_Coller.html#gestion-des-valeurs-manquantes-na",
     "title": "Commandes Rapides - Copier/Coller",
-    "section": "8 Gestion des Valeurs Manquantes (NA)",
-    "text": "8 Gestion des Valeurs Manquantes (NA)\n# Compter les NA\nsum(is.na(df$col))\n\n# Supprimer les lignes avec NA dans une colonne\ndf %&gt;% filter(!is.na(col))\n\n# Supprimer TOUTES les lignes qui ont au moins un NA\ndf %&gt;% drop_na()\n\n# Remplacer les NA par une valeur\ndf %&gt;% mutate(col = replace_na(col, 0))",
+    "section": "9 Gestion des Valeurs Manquantes (NA)",
+    "text": "9 Gestion des Valeurs Manquantes (NA)\n# Compter les NA\nsum(is.na(df$col))\n\n# Supprimer les lignes avec NA dans une colonne\ndf %&gt;% filter(!is.na(col))\n\n# Supprimer TOUTES les lignes qui ont au moins un NA\ndf %&gt;% drop_na()\n\n# Remplacer les NA par une valeur\ndf %&gt;% mutate(col = replace_na(col, 0))",
     "crumbs": [
       "Accueil",
       "Resume du cours",
@@ -111,8 +123,8 @@
     "objectID": "05_Copier_Coller.html#raccourcis-clavier-rstudio",
     "href": "05_Copier_Coller.html#raccourcis-clavier-rstudio",
     "title": "Commandes Rapides - Copier/Coller",
-    "section": "9 Raccourcis Clavier RStudio",
-    "text": "9 Raccourcis Clavier RStudio\n\n\n\nAction\nWindows\nMac\n\n\n\n\n&lt;-\nAlt + -\nOption + -\n\n\n%&gt;%\nCtrl + Shift + M\nCmd + Shift + M\n\n\nExecuter\nCtrl + Enter\nCmd + Return\n\n\nCommenter\nCtrl + Shift + C\nCmd + Shift + C\n\n\nRedemarrer R\nCtrl + Shift + F10\nCmd + Shift + F10",
+    "section": "10 Raccourcis Clavier RStudio",
+    "text": "10 Raccourcis Clavier RStudio\n\n\n\nAction\nWindows\nMac\n\n\n\n\n&lt;-\nAlt + -\nOption + -\n\n\n%&gt;%\nCtrl + Shift + M\nCmd + Shift + M\n\n\nExecuter\nCtrl + Enter\nCmd + Return\n\n\nCommenter\nCtrl + Shift + C\nCmd + Shift + C\n\n\nRedemarrer R\nCtrl + Shift + F10\nCmd + Shift + F10",
     "crumbs": [
       "Accueil",
       "Resume du cours",
