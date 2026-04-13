@@ -18,6 +18,8 @@ website:
         text: ggplot2
       - href: glossaire.qmd
         text: Glossaire
+      - href: 05_Copier_Coller.qmd
+        text: Copier/Coller
   sidebar:
     style: docked
     search: true
@@ -30,6 +32,7 @@ website:
           - 03_Manipulation_Dplyr.qmd
           - 04_Visualisation_Ggplot2.qmd
           - glossaire.qmd
+          - 05_Copier_Coller.qmd
 
 execute:
   enabled: false

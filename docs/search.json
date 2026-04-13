@@ -1,194 +1,326 @@
 [
   {
-    "objectID": "02_Bases_R.html",
-    "href": "02_Bases_R.html",
-    "title": "Module 2 : Fondations de R et Architecture",
+    "objectID": "05_Copier_Coller.html",
+    "href": "05_Copier_Coller.html",
+    "title": "Commandes Rapides - Copier/Coller",
     "section": "",
-    "text": "R est un environnement de programmation open-source concu pour le calcul statistique et la visualisation de donnees. Contrairement aux logiciels GUI, R exige la redaction de scripts, garantissant la reproductibilite de la recherche.",
+    "text": "Des blocs de code prets a copier pour l’examen. Clique sur l’icone de copie en haut a droite de chaque bloc.",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Module 2 : Fondations de R et Architecture"
+      "Commandes Rapides - Copier/Coller"
     ]
   },
   {
-    "objectID": "02_Bases_R.html#lenvironnement-rstudio",
-    "href": "02_Bases_R.html#lenvironnement-rstudio",
-    "title": "Module 2 : Fondations de R et Architecture",
-    "section": "1 L’Environnement RStudio",
-    "text": "1 L’Environnement RStudio\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nRStudio, c’est comme un atelier de bricolage bien organise. Tu as ton etabli (l’editeur de code), un ecran de controle (la console), un rangement ou tu vois tout ce que tu as fabrique (l’environnement), et des tiroirs avec tes outils (aide, fichiers, graphiques). Chaque zone a son role, et ensemble elles te permettent de travailler efficacement.\n\n\n\nRStudio se divise en 4 quadrants :\n\nEditeur de code source : redaction et sauvegarde des scripts\nConsole : execution du code en temps reel\nEnvironnement : inventaire des objets en memoire\nPanneau utilitaire : fichiers, visualisations, packages, aide",
+    "objectID": "05_Copier_Coller.html#demarrage-de-session-toujours-en-premier",
+    "href": "05_Copier_Coller.html#demarrage-de-session-toujours-en-premier",
+    "title": "Commandes Rapides - Copier/Coller",
+    "section": "1 Demarrage de Session (TOUJOURS en premier)",
+    "text": "1 Demarrage de Session (TOUJOURS en premier)\nlibrary(tidyverse)\n# Si besoin de definir le repertoire de travail\nsetwd(\"/chemin/vers/mon/dossier\")",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Module 2 : Fondations de R et Architecture"
+      "Commandes Rapides - Copier/Coller"
     ]
   },
   {
-    "objectID": "02_Bases_R.html#raccourcis-de-productivite",
-    "href": "02_Bases_R.html#raccourcis-de-productivite",
-    "title": "Module 2 : Fondations de R et Architecture",
-    "section": "2 Raccourcis de Productivite",
-    "text": "2 Raccourcis de Productivite\n\n\n\n\n\n\n\n\n\nAction\nWindows/Linux\nmacOS\nDescription\n\n\n\n\nAssignation &lt;-\nAlt + -\nOption + -\nInsere l’operateur d’assignation avec espaces\n\n\nExecuter le code\nCtrl + Enter\nCmd + Return\nExecute la ligne ou le bloc selectionne\n\n\nPipe %&gt;%\nCtrl + Shift + M\nCmd + Shift + M\nInsere l’operateur pipe\n\n\nRedemarrer session\nCtrl + Shift + F10\nCmd + Shift + F10\nVide la memoire, detache les packages\n\n\nCommentaire en bloc\nCtrl + Shift + C\nCmd + Shift + C\nCommente/decommente une selection\n\n\n\n\n2.1 L’assignation &lt;-\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nUn operateur, c’est un symbole qui fait une action. Par exemple, + additionne, - soustrait. La fleche &lt;- est l’operateur d’assignation : elle permet de donner un nom a une valeur pour la reutiliser plus tard.\nImagine que tu colles une etiquette sur une boite. Tu ecris mon_age &lt;- 25 et ca veut dire : “colle l’etiquette mon_age sur la boite qui contient 25”. Apres, chaque fois que tu dis mon_age, R sait que tu parles de 25.\n\n\n\n# On colle l'etiquette \"mon_age\" sur la valeur 25\nmon_age &lt;- 25\n\n# Maintenant on peut utiliser \"mon_age\" dans des calculs\nmon_age + 5    # Resultat : 30\n\n# On peut aussi changer la valeur dans la boite\nmon_age &lt;- 26  # Maintenant mon_age vaut 26\n\n\n\n\n\n\nWarning&lt;- vs =\n\n\n\n\n&lt;- : assignation globale (standard obligatoire)\n= : reserve aux arguments dans les fonctions (ex: mean(x, na.rm = TRUE))\n\nNe jamais utiliser = pour l’assignation globale (conflits de portee lexicale).",
+    "objectID": "05_Copier_Coller.html#importer-des-donnees",
+    "href": "05_Copier_Coller.html#importer-des-donnees",
+    "title": "Commandes Rapides - Copier/Coller",
+    "section": "2 Importer des Donnees",
+    "text": "2 Importer des Donnees\n# Importer un fichier CSV\ndf &lt;- read_csv(\"mon_fichier.csv\")\n# Importer un CSV avec separateur point-virgule (format europeen)\ndf &lt;- read_csv2(\"mon_fichier.csv\")\n# Importer un fichier Excel\nlibrary(readxl)\ndf &lt;- read_excel(\"mon_fichier.xlsx\")",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Module 2 : Fondations de R et Architecture"
+      "Commandes Rapides - Copier/Coller"
     ]
   },
   {
-    "objectID": "02_Bases_R.html#types-de-variables-vecteurs-atomiques",
-    "href": "02_Bases_R.html#types-de-variables-vecteurs-atomiques",
-    "title": "Module 2 : Fondations de R et Architecture",
-    "section": "3 Types de Variables (Vecteurs Atomiques)",
-    "text": "3 Types de Variables (Vecteurs Atomiques)\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nEn R, meme un seul nombre est stocke dans un “vecteur” – pense a un train avec un seul wagon. Un vecteur, c’est juste une suite ordonnee de valeurs.\nLes types, c’est comme les rayons d’un supermarche : il y a le rayon des nombres entiers, le rayon des nombres a virgule, le rayon du texte, et le rayon vrai/faux. Chaque valeur appartient a un rayon precis.\n\n\n\nEn R, meme un nombre unique est un vecteur de longueur 1.\n\n\n\n\n\n\n\n\nType\nDescription\nExemple\n\n\n\n\nlogical\nBooleen\nTRUE, FALSE, NA\n\n\ninteger\nEntier strict\n42L (suffixe L obligatoire)\n\n\nnumeric / double\nReel a virgule flottante\n3.14 (defaut de R)\n\n\ncharacter\nTexte\n\"chien\" (avec guillemets)\n\n\n\n# Verification du type de chaque valeur\nclass(42L)      # \"integer\"  -- nombre entier (le L force le type entier)\nclass(3.14)     # \"numeric\"  -- nombre a virgule\nclass(\"texte\")  # \"character\" -- du texte (toujours entre guillemets)\nclass(TRUE)     # \"logical\"  -- vrai ou faux\n\n3.1 Coercition Implicite (le melange interdit)\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nImagine une boite ou tu ne peux mettre QUE des pommes OU QUE des oranges, jamais les deux. Un vecteur en R, c’est pareil : il ne peut contenir qu’un seul type de donnees. Si tu essaies de melanger des nombres et du texte dans le meme vecteur, R va tout transformer en texte sans te prevenir. C’est comme si tu melangeais des pommes et des oranges et que la boite transformait tout en oranges automatiquement.",
+    "objectID": "05_Copier_Coller.html#explorer-les-donnees-premiere-chose-a-faire-apres-import",
+    "href": "05_Copier_Coller.html#explorer-les-donnees-premiere-chose-a-faire-apres-import",
+    "title": "Commandes Rapides - Copier/Coller",
+    "section": "3 Explorer les Donnees (premiere chose a faire apres import)",
+    "text": "3 Explorer les Donnees (premiere chose a faire apres import)\n# Vue rapide : combien de lignes/colonnes, quels types ?\ndim(df)       # Nombre de lignes et colonnes\nnames(df)     # Noms des colonnes\nstr(df)       # Structure complete (types, apercu)\nsummary(df)   # Stats descriptives de chaque colonne\nhead(df)      # 6 premieres lignes\n# Combien de valeurs manquantes ?\nsum(is.na(df))                  # Total de NA dans tout le dataset\ncolSums(is.na(df))              # NA par colonne\n# Combien de valeurs uniques dans une colonne ?\nn_distinct(df$ma_colonne)\nunique(df$ma_colonne)           # Voir les valeurs uniques",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Module 2 : Fondations de R et Architecture"
+      "Commandes Rapides - Copier/Coller"
     ]
   },
   {
-    "objectID": "02_Bases_R.html#coercition-implicite",
-    "href": "02_Bases_R.html#coercition-implicite",
-    "title": "Module 2 : Fondations de R et Architecture",
-    "section": "4 Coercition Implicite",
-    "text": "4 Coercition Implicite\nUn vecteur atomique doit etre strictement homogene. Si on melange les types, R convertit silencieusement selon la hierarchie :\nlogical -&gt; integer -&gt; numeric -&gt; character\n# On melange un booleen, un nombre et du texte dans le meme vecteur\nc(TRUE, 5, \"Pomme\")\n# Resultat : c(\"TRUE\", \"5\", \"Pomme\") -- tout devient character !\n# Maintenant \"5\" est du TEXTE, pas un nombre. Tu ne peux plus calculer avec.\nToute operation mathematique sur \"5\" echouera ensuite.",
+    "objectID": "05_Copier_Coller.html#manipulation-avec-dplyr---templates",
+    "href": "05_Copier_Coller.html#manipulation-avec-dplyr---templates",
+    "title": "Commandes Rapides - Copier/Coller",
+    "section": "4 Manipulation avec dplyr - Templates",
+    "text": "4 Manipulation avec dplyr - Templates\n\n4.1 Selectionner des colonnes\ndf %&gt;% select(col1, col2, col3)\ndf %&gt;% select(-colonne_a_exclure)\ndf %&gt;% select(starts_with(\"IG\"))\n\n\n4.2 Filtrer des lignes\ndf %&gt;% filter(age &gt; 25)\ndf %&gt;% filter(genre == \"Femme\")\ndf %&gt;% filter(note &gt;= 4 & branche == \"Psycho\")\ndf %&gt;% filter(pays %in% c(\"Suisse\", \"France\", \"Allemagne\"))\ndf %&gt;% filter(!is.na(prix))     # Exclure les valeurs manquantes\n\n\n4.3 Creer / modifier une colonne\ndf %&gt;% mutate(nouvelle_col = col1 / col2)\ndf %&gt;% mutate(reussi = note &gt;= 4)\n# Creer une colonne conditionnelle (si/sinon)\ndf %&gt;% mutate(\n  categorie = case_when(\n    note &gt;= 5.5  ~ \"Tres bien\",\n    note &gt;= 5.0  ~ \"Bien\",\n    note &gt;= 4.0  ~ \"Suffisant\",\n    TRUE         ~ \"Insuffisant\"\n  )\n)\n\n\n4.4 Trier\ndf %&gt;% arrange(note)              # Croissant\ndf %&gt;% arrange(desc(note))        # Decroissant\n\n\n4.5 Compter les occurrences\ndf %&gt;% count(ma_variable)\ndf %&gt;% count(ma_variable, sort = TRUE)   # Tri decroissant\n\n\n4.6 Resumer par groupe (le plus courant a l’examen)\ndf %&gt;%\n  group_by(variable_categorielle) %&gt;%\n  summarize(\n    nombre    = n(),\n    moyenne   = mean(variable_num, na.rm = TRUE),\n    mediane   = median(variable_num, na.rm = TRUE),\n    ecart_type = sd(variable_num, na.rm = TRUE),\n    minimum   = min(variable_num, na.rm = TRUE),\n    maximum   = max(variable_num, na.rm = TRUE)\n  ) %&gt;%\n  ungroup()\n\n\n4.7 Chaine complete typique (filtre + groupe + resume + tri)\ndf %&gt;%\n  filter(condition &gt; valeur) %&gt;%\n  group_by(categorie) %&gt;%\n  summarize(\n    n = n(),\n    moy = mean(variable, na.rm = TRUE)\n  ) %&gt;%\n  ungroup() %&gt;%\n  arrange(desc(moy))",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Module 2 : Fondations de R et Architecture"
+      "Commandes Rapides - Copier/Coller"
     ]
   },
   {
-    "objectID": "02_Bases_R.html#structures-de-donnees",
-    "href": "02_Bases_R.html#structures-de-donnees",
-    "title": "Module 2 : Fondations de R et Architecture",
-    "section": "5 Structures de Donnees",
-    "text": "5 Structures de Donnees\n\n5.1 Vecteurs\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nUn vecteur, c’est une liste de valeurs du meme type, comme un collier de perles. Toutes les perles sont enfilees dans l’ordre, et elles sont toutes du meme materiau. Pour creer un vecteur, on utilise la fonction c() (comme “combiner” ou “concatener”).\n\n\n\n# Creation d'un vecteur de nombres avec c() -- \"c\" veut dire \"combiner\"\nv1 &lt;- c(1, 2, 3)           # Un vecteur avec 3 nombres\n\n# Creation d'un vecteur de texte\nv2 &lt;- c(\"chat\", \"chien\", \"oiseau\")  # Un vecteur avec 3 mots\n\n# Sequences rapides : creer une suite de nombres\nseq_1 &lt;- 1:100                        # Les nombres de 1 a 100\nseq_2 &lt;- seq(from = 0, to = 1, by = 0.1)  # De 0 a 1, par pas de 0.1\n\n# Acceder a un element par sa position (R commence a 1, pas 0)\nv2[1]   # \"chat\"   -- le premier element\nv2[3]   # \"oiseau\" -- le troisieme element\n\n\n5.2 Matrices\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nUne matrice, c’est un tableau rectangulaire ou toutes les cases contiennent le meme type de donnees (que des nombres, ou que du texte). Pense a une grille de sudoku : des lignes, des colonnes, et que des chiffres dedans.\n\n\n\nStructures 2D strictement homogenes (un seul type). Remplissage par colonnes par defaut.\n# Creer une matrice 3x3 avec les nombres de 1 a 9\nm &lt;- matrix(1:9, nrow = 3, ncol = 3)\n# Par defaut, R remplit colonne par colonne :\n#      [,1] [,2] [,3]\n# [1,]    1    4    7\n# [2,]    2    5    8\n# [3,]    3    6    9\n\n# Pour remplir ligne par ligne, ajouter byrow = TRUE\nm &lt;- matrix(1:9, nrow = 3, ncol = 3, byrow = TRUE)\n\n# Extraction : matrice[ligne, colonne]\nm[3, 2]   # L'element a la ligne 3, colonne 2\nm[1, ]    # Toute la ligne 1 (on laisse \"colonne\" vide)\nm[, 2]    # Toute la colonne 2 (on laisse \"ligne\" vide)\n\n\n5.3 Facteurs (Factors)\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nUn facteur, c’est une variable qui ne peut prendre que certaines valeurs predefinies, appelees “niveaux”. Pense a un formulaire avec un menu deroulant : tu ne peux choisir que parmi les options proposees (Primaire, Secondaire, Tertiaire). En plus, les niveaux peuvent etre ordonnes (Primaire &lt; Secondaire &lt; Tertiaire).\n\n\n\nVecteurs entiers avec attribut “niveaux” (levels). Socle des variables nominales/ordinales dans les regressions.\n# On a des niveaux d'education en vrac\nniveaux_education &lt;- c(\"Secondaire\", \"Primaire\", \"Tertiaire\", \"Primaire\")\n\n# On les transforme en facteur ordonne\nfacteur_education &lt;- factor(\n  niveaux_education,                                    # les donnees brutes\n  levels = c(\"Primaire\", \"Secondaire\", \"Tertiaire\"),    # l'ordre des niveaux\n  ordered = TRUE                                        # c'est un ordre !\n)\n# Resultat : Primaire &lt; Secondaire &lt; Tertiaire\n# R sait maintenant que Tertiaire &gt; Primaire\n\n\n5.4 Listes\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nSi un vecteur est un collier de perles identiques, une liste c’est un sac a dos : tu peux y mettre n’importe quoi – un livre, une bouteille, un cahier, un autre sac. Chaque element peut etre de type different et meme de taille differente.\n\n\n\nVecteurs heterogenes : peuvent contenir nombres, texte, matrices, autres listes, modeles statistiques.\n# Creer une liste avec des elements de types differents\nma_liste &lt;- list(\n  nom = \"Analyse\",           # un texte\n  valeurs = c(1, 2, 3),     # un vecteur de nombres\n  matrice = matrix(1:4, 2, 2)  # une matrice 2x2\n)\n\n# Acceder aux elements de la liste\nma_liste$nom          # \"Analyse\"  -- acces par le nom avec $\nma_liste[[2]]         # c(1, 2, 3) -- acces par la position avec [[ ]]\nma_liste[[\"valeurs\"]] # c(1, 2, 3) -- acces par le nom avec [[ ]]\n\n\n5.5 Data Frames\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nUn Data Frame, c’est exactement comme un tableau Excel : des lignes et des colonnes. Chaque colonne a un nom (comme “Nom”, “Age”, “Note”) et contient un type de donnees (la colonne “Nom” contient du texte, la colonne “Age” contient des nombres). Chaque ligne represente une personne, un produit, une observation – bref, un “cas”.\nLa grande difference avec une matrice : dans un Data Frame, chaque colonne peut avoir un type different (texte dans une colonne, nombres dans une autre). C’est LA structure que tu utiliseras 90% du temps en Data Science.\n\n\n\nL’objet central de la Data Science en R. C’est une liste de colonnes de meme longueur pouvant contenir des types differents.\n\nLigne = unite statistique (observation/personne)\nColonne = variable\n\n# Creer un Data Frame -- comme creer un tableau Excel\ndf &lt;- data.frame(\n  nom = c(\"Sid\", \"Manny\", \"Diego\"),  # colonne \"nom\" (texte)\n  age = c(30, 40, 35)                # colonne \"age\" (nombres)\n)\n# Resultat :\n#     nom age\n# 1   Sid  30\n# 2 Manny  40\n# 3 Diego  35\n\n# Extraire une colonne avec le signe $\ndf$age        # Donne : 30 40 35\n\n# Extraire une ligne avec les crochets\ndf[1, ]       # Toute la ligne 1 (Sid, 30)\n\n# Extraire une cellule precise\ndf[2, \"nom\"]  # \"Manny\" (ligne 2, colonne \"nom\")\n# Exemple plus complet : donnees d'entreprise\nentreprise_df &lt;- data.frame(\n  id_filiale = 1:5,                                    # identifiant de 1 a 5\n  actifs_fixes = c(50000, 75000, 42000, NA, 90000),    # NA = valeur manquante\n  passifs = c(20000, 30000, 15000, 40000, 45000)       # dettes\n)\n# Resultat :\n#   id_filiale actifs_fixes passifs\n# 1          1        50000   20000\n# 2          2        75000   30000\n# 3          3        42000   15000\n# 4          4           NA   40000   &lt;-- pas de donnee pour les actifs !\n# 5          5        90000   45000",
+    "objectID": "05_Copier_Coller.html#graphiques-ggplot2---templates",
+    "href": "05_Copier_Coller.html#graphiques-ggplot2---templates",
+    "title": "Commandes Rapides - Copier/Coller",
+    "section": "5 Graphiques ggplot2 - Templates",
+    "text": "5 Graphiques ggplot2 - Templates\n\n5.1 Nuage de points (2 variables continues)\nggplot(df, aes(x = var_continue_1, y = var_continue_2)) +\n  geom_point() +\n  labs(title = \"Mon titre\", x = \"Axe X (unite)\", y = \"Axe Y (unite)\")\n# Avec couleur par categorie\nggplot(df, aes(x = var_x, y = var_y, color = var_categorie)) +\n  geom_point() +\n  labs(title = \"Titre\", x = \"X\", y = \"Y\", color = \"Legende\")\n\n\n5.2 Diagramme a barres (frequences d’une categorie)\nggplot(df, aes(x = var_categorielle)) +\n  geom_bar() +\n  labs(title = \"Mon titre\", x = \"Categorie\", y = \"Nombre\")\n# Barres cote a cote par sous-groupe\nggplot(df, aes(x = var_cat_1, fill = var_cat_2)) +\n  geom_bar(position = \"dodge\") +\n  labs(title = \"Titre\", x = \"X\", y = \"Nombre\", fill = \"Legende\")\n\n\n5.3 Histogramme (distribution d’une variable continue)\nggplot(df, aes(x = var_continue)) +\n  geom_histogram(binwidth = 10) +\n  labs(title = \"Mon titre\", x = \"Variable (unite)\", y = \"Frequence\")\n\n\n5.4 Boxplot (comparer distributions entre groupes)\nggplot(df, aes(x = var_categorielle, y = var_continue)) +\n  geom_boxplot() +\n  labs(title = \"Mon titre\", x = \"Groupe\", y = \"Variable (unite)\")\n\n\n5.5 Sous-graphiques par categorie (facettes)\n# Ajouter cette ligne a n'importe quel graphique\n+ facet_wrap(~ var_categorielle)\n\n\n5.6 Personnalisation rapide (a ajouter avec +)\n+ labs(title = \"Titre\", subtitle = \"Sous-titre\", x = \"Axe X\", y = \"Axe Y\",\n       color = \"Legende\", fill = \"Legende\", caption = \"Source : ...\")\n+ theme_minimal()           # Theme epure\n+ theme_bw()                # Theme noir et blanc\n+ theme(legend.position = \"none\")   # Supprimer la legende\n+ scale_fill_viridis_d()    # Palette accessible (daltonisme)\n+ scale_color_viridis_d()   # Idem pour les couleurs de points/lignes",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Module 2 : Fondations de R et Architecture"
+      "Commandes Rapides - Copier/Coller"
     ]
   },
   {
-    "objectID": "02_Bases_R.html#fonctions-dexploration",
-    "href": "02_Bases_R.html#fonctions-dexploration",
-    "title": "Module 2 : Fondations de R et Architecture",
-    "section": "6 Fonctions d’Exploration",
-    "text": "6 Fonctions d’Exploration\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nQuand tu recois un nouveau jeu de donnees, la premiere chose a faire c’est l’explorer : combien de lignes ? Combien de colonnes ? Quels types de donnees ? Y a-t-il des valeurs manquantes ? Ces fonctions sont comme des “radiographies” de ton tableau – elles te montrent ce qu’il contient sans le modifier.\n\n\n\n\n\n\n\n\n\n\nFonction\nDescription\n\n\n\n\nstr(df)\nStructure interne : types, nb observations, apercu des valeurs\n\n\nsummary(df)\nStatistiques descriptives (Min, Q1, Mediane, Moyenne, Q3, Max, NA)\n\n\nhead(df, n)\nPremieres n lignes (defaut = 6)\n\n\ndim(df)\nVecteur [nb_lignes, nb_colonnes]\n\n\nnrow(df)\nNombre de lignes\n\n\nncol(df)\nNombre de colonnes\n\n\nnames(df)\nNoms des colonnes\n\n\nclass(x)\nType d’un objet\n\n\nis.na(x)\nMasque booleen des valeurs manquantes\n\n\nsum(is.na(x))\nComptage total des NA\n\n\n\n# Exemple pratique : explorer notre data frame d'entreprise\n\nstr(entreprise_df)       # Montre la structure : 5 obs., 3 variables, les types\nsummary(entreprise_df)   # Stats de chaque colonne (min, max, moyenne, NA)\nhead(entreprise_df, 3)   # Les 3 premieres lignes\ndim(entreprise_df)       # c(5, 3) -- 5 lignes, 3 colonnes\nnrow(entreprise_df)      # 5 lignes\nncol(entreprise_df)      # 3 colonnes\nnames(entreprise_df)     # \"id_filiale\" \"actifs_fixes\" \"passifs\"\n\n# Verifier les valeurs manquantes\nis.na(entreprise_df$actifs_fixes)  # FALSE FALSE FALSE TRUE FALSE\nsum(is.na(entreprise_df$actifs_fixes))  # 1 valeur manquante",
+    "objectID": "05_Copier_Coller.html#statistiques-rapides-hors-graphique",
+    "href": "05_Copier_Coller.html#statistiques-rapides-hors-graphique",
+    "title": "Commandes Rapides - Copier/Coller",
+    "section": "6 Statistiques Rapides (hors graphique)",
+    "text": "6 Statistiques Rapides (hors graphique)\nmean(df$col, na.rm = TRUE)      # Moyenne\nmedian(df$col, na.rm = TRUE)    # Mediane\nsd(df$col, na.rm = TRUE)        # Ecart-type\nmin(df$col, na.rm = TRUE)       # Minimum\nmax(df$col, na.rm = TRUE)       # Maximum\nsum(df$col, na.rm = TRUE)       # Somme",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Module 2 : Fondations de R et Architecture"
+      "Commandes Rapides - Copier/Coller"
     ]
   },
   {
-    "objectID": "02_Bases_R.html#fonctions-utilisateur-user-defined-functions",
-    "href": "02_Bases_R.html#fonctions-utilisateur-user-defined-functions",
-    "title": "Module 2 : Fondations de R et Architecture",
-    "section": "7 Fonctions Utilisateur (User-Defined Functions)",
-    "text": "7 Fonctions Utilisateur (User-Defined Functions)\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nUne fonction, c’est comme une machine a cafe. Tu mets des ingredients dedans (eau + cafe), elle fait son travail a l’interieur, et elle te sort un resultat (ton cafe). En R, tu peux creer tes propres machines :\n\nLes arguments = ce que tu mets dans la machine (les ingredients)\nLe corps = ce que la machine fait (les instructions)\nLe return = ce que la machine te rend (le resultat)\n\nL’avantage : une fois que ta machine est construite, tu peux l’utiliser autant de fois que tu veux sans refaire tout le travail a chaque fois.\n\n\n\n# On construit notre propre \"machine\" qui calcule un ratio\ncalculer_ratio &lt;- function(actifs, passifs) {\n  # 1. Verification : est-ce qu'il y a des valeurs manquantes ?\n  if (any(is.na(actifs)) | any(is.na(passifs))) {\n    warning(\"Valeurs manquantes detectees.\")  # Alerte si NA\n  }\n  # 2. Calcul du ratio\n  ratio &lt;- actifs / passifs\n  # 3. On retourne le resultat\n  return(ratio)\n}\n\n# Maintenant on utilise notre machine sur nos donnees\nentreprise_df$ratio_solv &lt;- calculer_ratio(\n  entreprise_df$actifs_fixes,   # argument 1 : les actifs\n  entreprise_df$passifs          # argument 2 : les passifs\n)\n# Resultat : une nouvelle colonne \"ratio_solv\" ajoutee au data frame\n# 2.5, 2.5, 2.8, NA, 2.0\n\nstr(entreprise_df)  # Verification : on voit bien la nouvelle colonne\n# Exemple plus simple : une fonction qui calcule la TVA\ncalculer_prix_ttc &lt;- function(prix_ht, taux_tva = 0.077) {\n  # taux_tva a une valeur par defaut de 7.7% (TVA suisse)\n  prix_ttc &lt;- prix_ht * (1 + taux_tva)  # on ajoute la TVA au prix\n  return(prix_ttc)                        # on retourne le resultat\n}\n\n# Utilisation avec la TVA par defaut (7.7%)\ncalculer_prix_ttc(100)         # Resultat : 107.7\n\n# Utilisation avec une TVA differente (20%)\ncalculer_prix_ttc(100, 0.20)   # Resultat : 120",
+    "objectID": "05_Copier_Coller.html#conversions-de-types",
+    "href": "05_Copier_Coller.html#conversions-de-types",
+    "title": "Commandes Rapides - Copier/Coller",
+    "section": "7 Conversions de Types",
+    "text": "7 Conversions de Types\n# Convertir en numerique (si une colonne est lue comme texte)\ndf$col &lt;- as.numeric(df$col)\n\n# Convertir en facteur (variable categorielle)\ndf$col &lt;- as.factor(df$col)\n\n# Convertir en texte\ndf$col &lt;- as.character(df$col)",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Module 2 : Fondations de R et Architecture"
+      "Commandes Rapides - Copier/Coller"
     ]
   },
   {
-    "objectID": "04_Visualisation_Ggplot2.html",
-    "href": "04_Visualisation_Ggplot2.html",
-    "title": "Module 4 : Visualisation Avancee avec ggplot2",
+    "objectID": "05_Copier_Coller.html#gestion-des-valeurs-manquantes-na",
+    "href": "05_Copier_Coller.html#gestion-des-valeurs-manquantes-na",
+    "title": "Commandes Rapides - Copier/Coller",
+    "section": "8 Gestion des Valeurs Manquantes (NA)",
+    "text": "8 Gestion des Valeurs Manquantes (NA)\n# Compter les NA\nsum(is.na(df$col))\n\n# Supprimer les lignes avec NA dans une colonne\ndf %&gt;% filter(!is.na(col))\n\n# Supprimer TOUTES les lignes qui ont au moins un NA\ndf %&gt;% drop_na()\n\n# Remplacer les NA par une valeur\ndf %&gt;% mutate(col = replace_na(col, 0))",
+    "crumbs": [
+      "Accueil",
+      "Resume du cours",
+      "Commandes Rapides - Copier/Coller"
+    ]
+  },
+  {
+    "objectID": "05_Copier_Coller.html#raccourcis-clavier-rstudio",
+    "href": "05_Copier_Coller.html#raccourcis-clavier-rstudio",
+    "title": "Commandes Rapides - Copier/Coller",
+    "section": "9 Raccourcis Clavier RStudio",
+    "text": "9 Raccourcis Clavier RStudio\n\n\n\nAction\nWindows\nMac\n\n\n\n\n&lt;-\nAlt + -\nOption + -\n\n\n%&gt;%\nCtrl + Shift + M\nCmd + Shift + M\n\n\nExecuter\nCtrl + Enter\nCmd + Return\n\n\nCommenter\nCtrl + Shift + C\nCmd + Shift + C\n\n\nRedemarrer R\nCtrl + Shift + F10\nCmd + Shift + F10",
+    "crumbs": [
+      "Accueil",
+      "Resume du cours",
+      "Commandes Rapides - Copier/Coller"
+    ]
+  },
+  {
+    "objectID": "01_Theorie_Enquete.html",
+    "href": "01_Theorie_Enquete.html",
+    "title": "Module 1 : Methodologie et Enquete",
     "section": "",
-    "text": "ggplot2 est l’implementation de “The Grammar of Graphics” (Leland Wilkinson). Il procede par addition sequentielle de calques (layers) superposes, liant les donnees a une representation spatiale.",
+    "text": "Ce module pose les fondations epistemologiques, conceptuelles et methodologiques indispensables avant toute interaction avec un logiciel d’analyse.",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Module 4 : Visualisation Avancee avec ggplot2"
+      "Module 1 : Methodologie et Enquete"
     ]
   },
   {
-    "objectID": "04_Visualisation_Ggplot2.html#concepts-fondamentaux",
-    "href": "04_Visualisation_Ggplot2.html#concepts-fondamentaux",
-    "title": "Module 4 : Visualisation Avancee avec ggplot2",
-    "section": "1 Concepts Fondamentaux",
-    "text": "1 Concepts Fondamentaux\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nggplot2, c’est comme construire un dessin couche par couche, exactement comme des calques dans Photoshop ou des transparents qu’on superpose :\n\nCalque 1 – la toile : tu dis a R quelles donnees utiliser et quels axes (ggplot(data, aes(...)))\nCalque 2 – les formes : tu choisis comment dessiner (des points ? des barres ? des lignes ?) (geom_*())\nCalques optionnels : tu ajoutes des titres, tu changes les couleurs, tu divises en sous-graphiques…\n\nChaque calque s’ajoute avec un +. C’est comme empiler des feuilles transparentes les unes sur les autres pour obtenir le dessin final.\n\n\n\nTout graphique necessite 3 composants obligatoires :\n\n\n\n\n\n\n\n\nComposant\nFonction\nRole\n\n\n\n\nDonnees\nggplot(data = ...)\nLe data frame source\n\n\nEsthetiques\naes(x, y, color, fill, size)\nMappage variable -&gt; attribut visuel\n\n\nGeometries\ngeom_*()\nL’objet visuel dessine (point, barre, ligne)\n\n\n\nEt des composants optionnels :\n\n\n\n\n\n\n\n\nComposant\nFonction\nRole\n\n\n\n\nFacettes\nfacet_wrap(), facet_grid()\nSous-graphiques par categorie\n\n\nThemes\ntheme_minimal(), theme_bw()\nStyle visuel (grilles, polices)\n\n\nLabels\nlabs()\nTitres, legendes, annotations\n\n\n\n# Structure de base -- toujours le meme squelette\nggplot(data = mon_df, mapping = aes(x = var_x, y = var_y, color = var_c)) +\n  geom_XXX()\n# 1. ggplot() : on pose la toile avec les donnees et les axes\n# 2. +        : on ajoute un calque\n# 3. geom_XXX : on choisit la forme (points, barres, lignes...)\n\n1.1 Mapping vs Setting (Erreur fatale courante)\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nC’est LA source d’erreur numero 1 pour les debutants. La difference :\n\nMapping (dans aes()) : la couleur depend des donnees. Exemple : “colorie chaque point selon l’espece de la fleur”. R choisit les couleurs automatiquement.\nSetting (hors aes()) : la couleur est fixe pour tout le monde. Exemple : “tous les points en bleu, point final”.\n\nAnalogie : Imagine que tu distribues des maillots a une equipe de sport.\n\nMapping = chaque joueur recoit un maillot d’une couleur differente selon son poste (gardien = jaune, defenseur = bleu, attaquant = rouge).\nSetting = tout le monde recoit un maillot bleu, sans distinction.",
+    "objectID": "01_Theorie_Enquete.html#la-question-de-recherche-rq",
+    "href": "01_Theorie_Enquete.html#la-question-de-recherche-rq",
+    "title": "Module 1 : Methodologie et Enquete",
+    "section": "1 La Question de Recherche (RQ)",
+    "text": "1 La Question de Recherche (RQ)\nUne question de recherche scientifique doit etre :\n\nClaire : Eviter la confusion et le vague ; bien delimiter la recherche\nFaisable : Rester realiste par rapport aux ressources (personnelles, materielles, temps)\nPertinente : Viser a mieux comprendre le phenomene plutot que de le decrire ; eviter les previsions et les jugements moraux\n\n\n1.1 Clarte des Construits\nLa recherche scientifique procede par l’evaluation d’hypotheses derivees de theories preexistantes. La pierre angulaire reside dans la definition stricte des construits theoriques. Les ambiguites conceptuelles compromettent fondamentalement la validite des conclusions empiriques.\nIl est imperatif de proceder a une revue systematique de la litterature pour identifier les variations dans la maniere dont un concept est defini par differents auteurs.",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Module 4 : Visualisation Avancee avec ggplot2"
+      "Module 1 : Methodologie et Enquete"
     ]
   },
   {
-    "objectID": "04_Visualisation_Ggplot2.html#mapping-vs-setting-erreur-fatale-courante-1",
-    "href": "04_Visualisation_Ggplot2.html#mapping-vs-setting-erreur-fatale-courante-1",
-    "title": "Module 4 : Visualisation Avancee avec ggplot2",
-    "section": "2 Mapping vs Setting (Erreur fatale courante)",
-    "text": "2 Mapping vs Setting (Erreur fatale courante)\n\nDans aes() : la couleur est dictee par une variable des donnees\n\naes(color = Species) -&gt; couleurs automatiques par espece\n\nHors aes() : la couleur est un choix stylistique fixe\n\ngeom_point(color = \"lightblue\") -&gt; tous les points en bleu\n\n\nSi on ecrit aes(color = \"lightblue\"), R traite “lightblue” comme une variable categorielle a une modalite -&gt; graphique probablement rouge avec legende aberrante !",
+    "objectID": "01_Theorie_Enquete.html#operationnalisation",
+    "href": "01_Theorie_Enquete.html#operationnalisation",
+    "title": "Module 1 : Methodologie et Enquete",
+    "section": "2 Operationnalisation",
+    "text": "2 Operationnalisation\nC’est le processus qui consiste a rendre un concept abstrait (ex: Social Media Literacy) mesurable a l’aide de variables concretes et de questions specifiques.\nExemple : Le construit “engagement politique en ligne” peut etre operationnalise via :\n\nSomme des publications (IGPosts)\nSomme des mentions “J’aime” (IGLikes)\nMoyenne des commentaires par publication (IGCommentsPPost)",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Module 4 : Visualisation Avancee avec ggplot2"
+      "Module 1 : Methodologie et Enquete"
     ]
   },
   {
-    "objectID": "04_Visualisation_Ggplot2.html#les-principaux-geoms",
-    "href": "04_Visualisation_Ggplot2.html#les-principaux-geoms",
-    "title": "Module 4 : Visualisation Avancee avec ggplot2",
-    "section": "3 Les Principaux Geoms",
-    "text": "3 Les Principaux Geoms\n\n3.1 geom_point() - Nuage de points (Scatter plot)\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nQuand l’utiliser ? Quand tu veux voir si deux mesures numeriques sont liees. Par exemple :\n\n“Est-ce que les etudiants qui etudient plus d’heures ont de meilleures notes ?”\n“Est-ce que les voitures plus lourdes consomment plus d’essence ?”\n“Est-ce que le prix d’un appartement augmente avec sa surface ?”\n\nChaque point sur le graphique represente une observation (un etudiant, une voiture, un appartement). Sa position horizontale = une variable, sa position verticale = l’autre variable. Si les points forment une tendance (montante, descendante), il y a une relation.\n\n\n\nUsage : Relation entre 2 variables continues.\nggplot(data = mtcars, aes(x = disp, y = mpg, color = as.factor(cyl), size = wt)) +\n  geom_point(alpha = 0.8) +          # alpha = transparence (0 = invisible, 1 = opaque)\n  labs(\n    title = \"Covariance entre Cylindree et Efficience Energetique\",\n    subtitle = \"Le poids du vehicule modere la consommation\",\n    x = \"Cylindree Moteur (cu.in.)\",      # nom de l'axe X\n    y = \"Rendement (Miles par Gallon)\",     # nom de l'axe Y\n    color = \"Cylindres\",                    # titre de la legende couleur\n    size = \"Poids (1000 lbs)\"               # titre de la legende taille\n  ) +\n  theme_minimal()                     # theme epure\nLe probleme de l’Overplotting :\nQuand les donnees sont massives, les points se superposent et masquent la distribution.\n\n\n\n\n\n\n\n\nSolution\nCode\nEffet\n\n\n\n\nTransparence\ngeom_point(alpha = 0.2)\n5 points superposes = pixel opaque\n\n\nBruit aleatoire\ngeom_jitter()\nDeplace legerement chaque point\n\n\n\n\n\n3.2 geom_bar() et geom_col() - Diagrammes a barres\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nQuand l’utiliser ? Quand tu veux compter ou comparer des categories. Par exemple :\n\n“Combien d’etudiants dans chaque branche ?” -&gt; geom_bar() (R compte pour toi)\n“Quel est le chiffre d’affaires de chaque succursale ?” -&gt; geom_col() (tu fournis les valeurs)\n\nLa difference cle :\n\ngeom_bar() : tu donnes juste X (les categories), R compte automatiquement combien il y en a\ngeom_col() : tu donnes X et Y, R dessine les barres a la hauteur que TU as fournie\n\n\n\n\n\n\n\n\n\n\n\n\nFonction\nStatistique\nUsage\n\n\n\n\ngeom_bar()\nstat = \"count\" (automatique)\nFournir X seulement, R compte les frequences\n\n\ngeom_col()\nstat = \"identity\"\nFournir X et Y (valeur deja calculee)\n\n\n\n# geom_bar : R compte automatiquement les diamants par categorie de coupe\nggplot(diamonds, aes(x = cut)) +\n  geom_bar()\n\n# Avec remplissage par une autre variable (clarte)\nggplot(diamonds, aes(x = cut, fill = clarity)) +\n  geom_bar(position = \"dodge\", color = \"black\", linewidth = 0.2) +\n  labs(\n    title = \"Analyse des Tailles de Diamants\",\n    x = \"Niveau de Taille\",\n    y = \"Denombrement\",\n    fill = \"Indice de Purete\"\n  ) +\n  theme_bw()\nPositions pour barres empilees/paralleles :\n\n\n\nPosition\nEffet\n\n\n\n\nposition = \"stack\"\nEmpilees (defaut)\n\n\nposition = \"dodge\"\nCote a cote\n\n\nposition = \"fill\"\nEmpilees normalisees a 100%\n\n\n\n\n\n3.3 geom_histogram() - Histogramme\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nQuand l’utiliser ? Quand tu veux voir comment se repartissent les valeurs d’une mesure numerique. Par exemple :\n\n“La plupart des etudiants ont-ils des notes entre 4 et 5, ou c’est plus disperse ?”\n“Les salaires sont-ils concentres autour de 5000 CHF ou tres etales ?”\n“Les temps de reponse au questionnaire sont-ils groupes ou eparpilles ?”\n\nL’histogramme decoupe les valeurs en “bacs” (intervalles) et montre combien d’observations tombent dans chaque bac. C’est une “photo” de la distribution.\n\n\n\nUsage : Distribution d’une variable continue. Par defaut, la hauteur de chaque bac represente le nombre d’observations (frequence absolue).\nggplot(iris, aes(x = Sepal.Length)) +\n  geom_histogram(binwidth = 0.2, fill = \"darkblue\", color = \"white\") +\n  facet_wrap(~ Species) +      # Un sous-graphique par espece\n  labs(\n    title = \"Distribution des Longueurs de Sepales (par Espece)\",\n    x = \"Longueur (cm)\",\n    y = \"Frequence\"\n  )\n\n\n\n\n\n\nWarningLe parametre binwidth\n\n\n\nLe reglage du binwidth (largeur de l’intervalle) est crucial :\n\nTrop large : masque la bimodalite (sous-ajustement)\nTrop fin : capte le bruit aleatoire, “dents de scie” (sur-ajustement)\n\nTester plusieurs valeurs pour trouver le bon equilibre.\n\n\n\n\n3.4 geom_boxplot() - Boite a moustaches (Tukey)\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nQuand l’utiliser ? Quand tu veux comparer la distribution d’une mesure entre plusieurs groupes. Par exemple :\n\n“Les notes sont-elles meilleures en Psycho ou en Droit ?”\n“Les salaires sont-ils plus variables dans le secteur prive que dans le public ?”\n“Y a-t-il des valeurs aberrantes (outliers) dans mes donnees ?”\n\nLe boxplot est un resume visuel ultra-compact : en un coup d’oeil, tu vois la mediane (le milieu), l’etendue des donnees, et les valeurs extremes. C’est comme un “bulletin meteo” de tes donnees : il te dit ou se situe le gros des observations et s’il y a des cas exceptionnels.\n\n\n\nUsage : Comparer les distributions entre groupes. Diagnostic base sur les quantiles.\nAnatomie du boxplot :\n\n\n\n\n\n\n\nElement\nDescription\n\n\n\n\nCorps de la boite\nDu \\(Q_1\\) (25e centile) au \\(Q_3\\) (75e centile)\n\n\nIQR\n\\(Q_3 - Q_1\\) = ecart interquartile (50% centraux)\n\n\nLigne mediane\n50e centile (mediane). Si asymetrique -&gt; distribution biaisee\n\n\nMoustaches\nJusqu’a l’observation la plus distante, max \\(1.5 \\times IQR\\)\n\n\nPoints (outliers)\nAu-dela des moustaches (~0.7% dans une loi normale)\n\n\n\n# Boxplot simple : comparer le prix des diamants selon leur coupe\nggplot(diamonds, aes(x = cut, y = price)) +\n  geom_boxplot()\nExemple avance avec transformation log et personnalisation des outliers :\nggplot(igposts, aes(x = Content_Type, y = IGLikesPPost, fill = Content_Type)) +\n  geom_boxplot(\n    outlier.color = \"darkred\",   # Couleur des points aberrants\n    outlier.shape = 8,           # Forme asterisque pour les outliers\n    outlier.size = 2.5,          # Taille des outliers\n    notch = FALSE                # notch = TRUE pour IC 95% de la mediane\n  ) +\n  scale_y_log10() +              # Echelle logarithmique pour longue queue\n  labs(\n    title = \"Dispersion de l'Efficacite des Publications (Likes/Post)\",\n    subtitle = \"Echelle log. Points rouges = deviations virales.\",\n    x = \"Categorie de Publication\",\n    y = \"Likes par Post (Echelle Log10)\"\n  ) +\n  scale_fill_viridis_d(option = \"cividis\") +  # Palette accessible daltoniens\n  theme_minimal() +\n  theme(legend.position = \"none\")              # Pas de legende (redondante ici)\n\n\n3.5 geom_line() - Ligne (Tendance / Evolution)\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nQuand l’utiliser ? Quand tu veux montrer une evolution dans le temps ou une tendance. Par exemple :\n\n“Comment le PIB a-t-il evolue entre 2000 et 2020 ?”\n“Le nombre d’inscriptions augmente-t-il chaque annee ?”\n“Comment la temperature a-t-elle change au fil des mois ?”\n\nLes points sont relies par des lignes, ce qui permet de voir la direction generale (monte, descend, stagne).\n\n\n\n# Exemple : evolution des temperatures sur plusieurs annees\nggplot(donnees_climat, aes(x = annee, y = temperature_moyenne)) +\n  geom_line(color = \"steelblue\", linewidth = 1) +  # Ligne bleue epaisse\n  geom_point(size = 2) +                            # Points a chaque annee\n  labs(\n    title = \"Evolution de la Temperature Moyenne\",\n    x = \"Annee\",\n    y = \"Temperature (C)\"\n  ) +\n  theme_minimal()",
+    "objectID": "01_Theorie_Enquete.html#hypotheses-statistiques",
+    "href": "01_Theorie_Enquete.html#hypotheses-statistiques",
+    "title": "Module 1 : Methodologie et Enquete",
+    "section": "3 Hypotheses Statistiques",
+    "text": "3 Hypotheses Statistiques\nL’evaluation empirique se structure autour de la formulation d’hypotheses binaires :\n\n\n\n\n\n\n\n\nHypothese\nDefinition\nExemple\n\n\n\n\n\\(H_0\\) (Nulle)\nAbsence d’effet, de difference ou de relation\n\\(\\mu_1 = \\mu_2\\) ou \\(\\rho = 0\\)\n\n\n\\(H_1\\) (Alternative)\nExistence d’un effet ou d’une relation\n\\(\\mu_1 \\neq \\mu_2\\) ou \\(\\rho \\neq 0\\)\n\n\n\n\n3.1 Erreurs de test\n\n\n\n\n\n\n\n\n\nErreur\nNom\nDescription\nSeuil\n\n\n\n\nType I (\\(\\alpha\\))\nFaux positif\nRejeter \\(H_0\\) alors qu’elle est vraie\nConvention : \\(\\alpha = 0.05\\)\n\n\nType II (\\(\\beta\\))\nFaux negatif\nNe pas rejeter \\(H_0\\) alors que \\(H_1\\) est vraie\nPuissance = \\(1 - \\beta\\)\n\n\n\n\n\n\n\n\n\nWarningInterpretation de la P-Value\n\n\n\nNe jamais definir la p-value comme “la probabilite que \\(H_0\\) soit vraie”.\nLa p-value = probabilite d’obtenir une statistique de test au moins aussi extreme que celle observee, en supposant que \\(H_0\\) est vraie.\n\np &gt; \\(\\alpha\\) : manque de preuves pour rejeter \\(H_0\\) (pas une preuve de \\(H_0\\))\np &lt; \\(\\alpha\\) : on rejette \\(H_0\\) en faveur de \\(H_1\\)",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Module 4 : Visualisation Avancee avec ggplot2"
+      "Module 1 : Methodologie et Enquete"
     ]
   },
   {
-    "objectID": "04_Visualisation_Ggplot2.html#personnalisation-labels",
-    "href": "04_Visualisation_Ggplot2.html#personnalisation-labels",
-    "title": "Module 4 : Visualisation Avancee avec ggplot2",
-    "section": "4 Personnalisation (Labels)",
-    "text": "4 Personnalisation (Labels)\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nlabs() c’est la fonction “etiquettes” : elle permet de donner un titre, un sous-titre, de renommer les axes, et d’ajouter une source en bas du graphique. C’est ce qui rend un graphique lisible et professionnel au lieu d’avoir des noms de variables techniques.\n\n\n\nggplot(df, aes(x = var_x, y = var_y)) +\n  geom_point() +\n  labs(\n    title = \"Titre principal\",                 # Le gros titre\n    subtitle = \"Sous-titre\",                   # Precision sous le titre\n    x = \"Nom de l'axe X (unite)\",             # Nom lisible pour l'axe X\n    y = \"Nom de l'axe Y (unite)\",             # Nom lisible pour l'axe Y\n    color = \"Titre legende couleur\",           # Titre de la legende\n    caption = \"Source : Dataset XYZ\"           # Note en bas a droite\n  )",
+    "objectID": "01_Theorie_Enquete.html#echelles-de-mesure-niveaux-de-stevens",
+    "href": "01_Theorie_Enquete.html#echelles-de-mesure-niveaux-de-stevens",
+    "title": "Module 1 : Methodologie et Enquete",
+    "section": "4 Echelles de Mesure (Niveaux de Stevens)",
+    "text": "4 Echelles de Mesure (Niveaux de Stevens)\nLa nature de la variable dicte la famille de tests statistiques applicables. Les niveaux sont hierarchiques et cumulatifs :\n\n\n\n\n\n\n\n\n\n\nNiveau\nDefinition\nProprietes\nExemples\nStatistiques applicables\n\n\n\n\nNominale\nCategories mutuellement exclusives, sans ordre\n\\(=\\) ou \\(\\neq\\)\nSexe, Religion, Parti politique\nMode, Frequences, Test \\(\\chi^2\\)\n\n\nOrdinale\nCategories avec hierarchie/ordre\n\\(&lt;, &gt;\\) (intervalles non constants)\nNiveau d’education, Echelle de Likert stricte\nMediane, Centiles, Spearman, Mann-Whitney\n\n\nIntervalle\nOrdre + distances constantes et mesurables\n\\(+, -\\) (zero arbitraire)\nTemperature (C/F), Scores QI\nMoyenne, Ecart-type, Pearson, ANOVA\n\n\nRatio\nIntervalle + zero absolu significatif\n\\(\\times, \\div\\)\nAge, Revenu, IGPosts, Temps de reaction\nCoefficient de variation, Moyenne geometrique\n\n\n\n\n\n\n\n\n\nNoteTraitement des Echelles de Likert\n\n\n\nMathematiquement, une echelle de Likert (1-5) est ordinale. Mais en pratique, sous reserve de normalite et symetrie, on les traite souvent comme des echelles d’intervalle pour permettre moyennes et regressions lineaires.",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Module 4 : Visualisation Avancee avec ggplot2"
+      "Module 1 : Methodologie et Enquete"
     ]
   },
   {
-    "objectID": "04_Visualisation_Ggplot2.html#facettes-sous-graphiques-par-categorie",
-    "href": "04_Visualisation_Ggplot2.html#facettes-sous-graphiques-par-categorie",
-    "title": "Module 4 : Visualisation Avancee avec ggplot2",
-    "section": "5 Facettes : Sous-graphiques par categorie",
-    "text": "5 Facettes : Sous-graphiques par categorie\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nLes facettes, c’est comme decouper un graphique en petites vignettes, une par categorie. Au lieu d’avoir toutes les especes de fleurs sur un seul graphique (ce qui peut etre confus), tu obtiens un mini-graphique par espece, cote a cote. Ca permet de comparer facilement.\n\n\n\n# Grille de sous-graphiques par espece\nggplot(iris, aes(x = Sepal.Length)) +\n  geom_histogram(binwidth = 0.2) +\n  facet_wrap(~ Species)     # Un histogramme par espece, cote a cote",
+    "objectID": "01_Theorie_Enquete.html#types-de-questions-denquete",
+    "href": "01_Theorie_Enquete.html#types-de-questions-denquete",
+    "title": "Module 1 : Methodologie et Enquete",
+    "section": "5 Types de Questions d’Enquete",
+    "text": "5 Types de Questions d’Enquete\n\n\n\n\n\n\n\n\nType\nDescription\nNature des donnees\n\n\n\n\nQuestions ouvertes\nTexte libre\nDonnees non structurees (codage necessaire)\n\n\nQuestions fermees\nChoix unique/multiple\nDonnees nominales\n\n\nEchelles de Likert\nDegre d’accord (1-5)\nOrdinales (traitees comme intervalle)\n\n\nDifferenciateur semantique\nContinuum entre 2 adjectifs bipolaires\nOrdinales/Intervalle",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Module 4 : Visualisation Avancee avec ggplot2"
+      "Module 1 : Methodologie et Enquete"
     ]
   },
   {
-    "objectID": "04_Visualisation_Ggplot2.html#normes-daccessibilite-et-dintegrite",
-    "href": "04_Visualisation_Ggplot2.html#normes-daccessibilite-et-dintegrite",
-    "title": "Module 4 : Visualisation Avancee avec ggplot2",
-    "section": "6 Normes d’Accessibilite et d’Integrite",
-    "text": "6 Normes d’Accessibilite et d’Integrite\n\n6.1 Daltonisme (~8% des hommes)\nNe jamais baser une information sur une opposition rouge/vert seule. Utiliser les palettes viridis :\n+ scale_color_viridis_d()   # Variables discretes\n+ scale_color_viridis_c()   # Variables continues\n\n\n6.2 Axe Y et zero\nPour geom_bar() / geom_col(), l’axe Y doit inclure le zero. Tronquer l’axe amplifie artificiellement les differences (manipulation visuelle). Si les donnees sont loin de zero, utiliser geom_point() a la place.\n\n\n6.3 Variable shape\n\nshape est reserve aux variables nominales (pas continues)\nMaximum 6 formes distinctes discriminables par le cerveau humain\nVariable continue dans aes(shape = ...) -&gt; erreur/crash",
+    "objectID": "01_Theorie_Enquete.html#biais-cognitifs-denquete",
+    "href": "01_Theorie_Enquete.html#biais-cognitifs-denquete",
+    "title": "Module 1 : Methodologie et Enquete",
+    "section": "6 Biais Cognitifs d’Enquete",
+    "text": "6 Biais Cognitifs d’Enquete\n\n\n\n\n\n\n\n\nBiais\nDescription\nConsequence\n\n\n\n\nDesirabilite sociale\nLe repondant altere ses reponses pour paraitre socialement acceptable\nSurestimation des comportements “positifs”\n\n\nAcquiescement\nTendance a repondre “Oui” / “D’accord” automatiquement\nCorrelation artificielle positive\n\n\nEffet de Halo\nPerception globale contamine l’evaluation d’attributs specifiques\nCorrelation artificielle entre variables distinctes",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Module 4 : Visualisation Avancee avec ggplot2"
+      "Module 1 : Methodologie et Enquete"
     ]
   },
   {
-    "objectID": "04_Visualisation_Ggplot2.html#recap-quel-geom-choisir",
-    "href": "04_Visualisation_Ggplot2.html#recap-quel-geom-choisir",
-    "title": "Module 4 : Visualisation Avancee avec ggplot2",
-    "section": "7 Recap : Quel Geom Choisir ?",
-    "text": "7 Recap : Quel Geom Choisir ?\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nLe choix du geom depend de ta question et du type de tes variables :\n\nTu as 2 nombres et tu veux voir le lien ? -&gt; points (geom_point)\nTu veux voir comment une mesure se distribue ? -&gt; histogramme (geom_histogram)\nTu veux compter des categories ? -&gt; barres (geom_bar)\nTu veux comparer des groupes ? -&gt; boxplot (geom_boxplot)\nTu veux montrer une evolution ? -&gt; ligne (geom_line)\nTu as des valeurs deja calculees a montrer en barres ? -&gt; colonnes (geom_col)\n\n\n\n\n\n\n\n\n\n\n\n\nObjectif\nGeom\nVariables\n\n\n\n\nRelation entre 2 var. continues\ngeom_point()\nx = continue, y = continue\n\n\nDistribution d’une var. numerique\ngeom_histogram()\nx = continue\n\n\nFrequences d’une var. categorielle\ngeom_bar()\nx = categorielle\n\n\nComparer distributions entre groupes\ngeom_boxplot()\nx = categorielle, y = continue\n\n\nTendance / evolution\ngeom_line()\nx = continue/date, y = continue\n\n\nValeurs pre-calculees en barres\ngeom_col()\nx = categorielle, y = valeur",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Methodes II - Analyse de Donnees et Statistiques sous R",
+    "section": "",
+    "text": "L’analyse quantitative des donnees en sciences sociales, economiques et naturelles requiert une maitrise des fondations theoriques et des outils informatiques. Ce document constitue la synthese exhaustive du cursus “Methodes II”, integrant la theorie, les exercices et les scripts R.",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Module 4 : Visualisation Avancee avec ggplot2"
+      "Methodes II - Analyse de Donnees et Statistiques sous R"
+    ]
+  },
+  {
+    "objectID": "index.html#introduction",
+    "href": "index.html#introduction",
+    "title": "Methodes II - Analyse de Donnees et Statistiques sous R",
+    "section": "",
+    "text": "L’analyse quantitative des donnees en sciences sociales, economiques et naturelles requiert une maitrise des fondations theoriques et des outils informatiques. Ce document constitue la synthese exhaustive du cursus “Methodes II”, integrant la theorie, les exercices et les scripts R.",
+    "crumbs": [
+      "Accueil",
+      "Resume du cours",
+      "Methodes II - Analyse de Donnees et Statistiques sous R"
+    ]
+  },
+  {
+    "objectID": "index.html#navigation",
+    "href": "index.html#navigation",
+    "title": "Methodes II - Analyse de Donnees et Statistiques sous R",
+    "section": "2 Navigation",
+    "text": "2 Navigation\n\n\n\nModule\nContenu\n\n\n\n\nModule 1 : Methodologie\nQuestions de recherche, hypotheses, operationnalisation, echelles de mesure, biais\n\n\nModule 2 : Bases de R\nRStudio, types de variables, vecteurs, matrices, data frames, fonctions\n\n\nModule 3 : Tidyverse / dplyr\nImportation CSV, pipe, select, filter, mutate, group_by, summarize\n\n\nModule 4 : ggplot2\nGrammaire graphique, geom_point, geom_bar, geom_histogram, geom_boxplot",
+    "crumbs": [
+      "Accueil",
+      "Resume du cours",
+      "Methodes II - Analyse de Donnees et Statistiques sous R"
+    ]
+  },
+  {
+    "objectID": "index.html#astuces-pour-lexamen",
+    "href": "index.html#astuces-pour-lexamen",
+    "title": "Methodes II - Analyse de Donnees et Statistiques sous R",
+    "section": "3 Astuces pour l’examen",
+    "text": "3 Astuces pour l’examen\n\nCtrl+F / Cmd+F pour chercher une commande specifique\nCtrl+K / Cmd+K pour la barre de recherche du site\nChargez vos paquets (library(tidyverse)) au debut de votre session\nL’operateur d’affectation est &lt;- (jamais = pour l’assignation globale)\nNe jamais ouvrir un CSV dans Excel avant de l’importer dans R",
+    "crumbs": [
+      "Accueil",
+      "Resume du cours",
+      "Methodes II - Analyse de Donnees et Statistiques sous R"
+    ]
+  },
+  {
+    "objectID": "03_Manipulation_Dplyr.html",
+    "href": "03_Manipulation_Dplyr.html",
+    "title": "Module 3 : Tidyverse & dplyr (Manipulation Avancee)",
+    "section": "",
+    "text": "Le Tidyverse est une philosophie et une grammaire coherente pour l’analyse de donnees. L’axiome central repose sur le concept de “Tidy Data” :",
+    "crumbs": [
+      "Accueil",
+      "Resume du cours",
+      "Module 3 : Tidyverse & dplyr (Manipulation Avancee)"
+    ]
+  },
+  {
+    "objectID": "03_Manipulation_Dplyr.html#importation-securisee-readr",
+    "href": "03_Manipulation_Dplyr.html#importation-securisee-readr",
+    "title": "Module 3 : Tidyverse & dplyr (Manipulation Avancee)",
+    "section": "1 Importation Securisee (readr)",
+    "text": "1 Importation Securisee (readr)\nLe package readr fournit read_csv(), superieur aux fonctions de base.\nlibrary(tidyverse)\nsetwd(\"/chemin/vers/dossier\")\ndf &lt;- read_csv(\"fichier.csv\")",
+    "crumbs": [
+      "Accueil",
+      "Resume du cours",
+      "Module 3 : Tidyverse & dplyr (Manipulation Avancee)"
+    ]
+  },
+  {
+    "objectID": "03_Manipulation_Dplyr.html#ne-jamais-ouvrir-un-csv-dans-excel-avant-r",
+    "href": "03_Manipulation_Dplyr.html#ne-jamais-ouvrir-un-csv-dans-excel-avant-r",
+    "title": "Module 3 : Tidyverse & dplyr (Manipulation Avancee)",
+    "section": "2 Ne Jamais Ouvrir un CSV dans Excel Avant R",
+    "text": "2 Ne Jamais Ouvrir un CSV dans Excel Avant R\nExcel applique des heuristiques de formatage invisibles et destructrices :\n\nCorruption UTF-8 : accents et symboles speciaux detruits\nConversion en dates : identifiants comme “MAR1” convertis en “1er Mars”\nRemplacement des separateurs : virgules remplacees par points-virgules selon les parametres regionaux\n\nLa donnee doit demeurer inviolee : importation directement par code R.",
+    "crumbs": [
+      "Accueil",
+      "Resume du cours",
+      "Module 3 : Tidyverse & dplyr (Manipulation Avancee)"
+    ]
+  },
+  {
+    "objectID": "03_Manipulation_Dplyr.html#loperateur-pipe-ou",
+    "href": "03_Manipulation_Dplyr.html#loperateur-pipe-ou",
+    "title": "Module 3 : Tidyverse & dplyr (Manipulation Avancee)",
+    "section": "3 L’Operateur Pipe %>% (ou |>)",
+    "text": "3 L’Operateur Pipe %&gt;% (ou |&gt;)\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nLe pipe, c’est comme suivre une recette de cuisine etape par etape :\n\nD’abord, tu prends tes ingredients (le data frame)\nEnsuite, tu coupes les legumes (select – tu choisis les colonnes)\nEnsuite, tu retires ce qui est abime (filter – tu gardes les bonnes lignes)\nEnsuite, tu assaisonnes (mutate – tu ajoutes de nouvelles colonnes)\n\nSans le pipe, tu devrais tout ecrire en une seule ligne emboitee (comme des poupees russes). Avec le pipe %&gt;%, tu lis le code de haut en bas, comme une recette : “prends ca, PUIS fais ca, PUIS fais ca”.\nLe symbole %&gt;% se lit “et ensuite” ou “puis”.\n\n\n\nLe pipe extrait l’objet a gauche et l’injecte comme premier argument de la fonction a droite.\nRaccourci : Ctrl + Shift + M (Windows) / Cmd + Shift + M (Mac)\n# Sans pipe -- il faut lire de l'INTERIEUR vers l'EXTERIEUR (penible !)\nfilter(select(df, nom, age), age &gt; 30)\n\n# Avec pipe -- on lit de HAUT en BAS, comme une recette\ndf %&gt;%                   # Prends le tableau df\n  select(nom, age) %&gt;%  # PUIS garde seulement les colonnes nom et age\n  filter(age &gt; 30)       # PUIS ne garde que les lignes ou age &gt; 30",
+    "crumbs": [
+      "Accueil",
+      "Resume du cours",
+      "Module 3 : Tidyverse & dplyr (Manipulation Avancee)"
+    ]
+  },
+  {
+    "objectID": "03_Manipulation_Dplyr.html#les-verbes-de-dplyr",
+    "href": "03_Manipulation_Dplyr.html#les-verbes-de-dplyr",
+    "title": "Module 3 : Tidyverse & dplyr (Manipulation Avancee)",
+    "section": "4 Les Verbes de dplyr",
+    "text": "4 Les Verbes de dplyr\nChaque verbe prend un data frame en entree et retourne un data frame modifie.\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\ndplyr fournit des “verbes” – des actions simples que tu enchaines. Pense a des instructions donnees a un assistant :\n\nselect = “montre-moi seulement ces colonnes”\nfilter = “garde seulement les lignes qui respectent cette condition”\nmutate = “ajoute une nouvelle colonne calculee”\narrange = “trie le tableau”\ngroup_by + summarize = “fais un resume par groupe”\n\nTous les exemples ci-dessous utilisent ce petit jeu de donnees de 5 etudiants :\n\n\n\n# Notre petit jeu de donnees pour tous les exemples\netudiants &lt;- data.frame(\n  nom = c(\"Alice\", \"Bob\", \"Clara\", \"David\", \"Emma\"),\n  age = c(21, 23, 20, 22, 21),\n  note = c(5.5, 4.0, 5.8, 3.5, 4.5),\n  branche = c(\"Psycho\", \"Droit\", \"Psycho\", \"Droit\", \"Psycho\")\n)\n#     nom age note branche\n# 1 Alice  21  5.5  Psycho\n# 2   Bob  23  4.0   Droit\n# 3 Clara  20  5.8  Psycho\n# 4 David  22  3.5   Droit\n# 5  Emma  21  4.5  Psycho\n\n4.1 select() - Projection des colonnes\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nselect(), c’est comme cacher des colonnes dans Excel. Tu ne supprimes rien, tu choisis juste quelles colonnes tu veux voir. Tu peux aussi exclure une colonne avec le signe -.\n\n\n\n# Garder seulement les colonnes \"nom\" et \"note\"\netudiants %&gt;% select(nom, note)\n# Resultat :\n#     nom note\n# 1 Alice  5.5\n# 2   Bob  4.0\n# 3 Clara  5.8\n# 4 David  3.5\n# 5  Emma  4.5\n\n# Exclure une colonne avec le signe -\netudiants %&gt;% select(-age)\n# Resultat : tout SAUF la colonne age\n#     nom note branche\n# 1 Alice  5.5  Psycho\n# 2   Bob  4.0   Droit\n# 3 Clara  5.8  Psycho\n# 4 David  3.5   Droit\n# 5  Emma  4.5  Psycho\nAssistants de selection dynamiques :\n\n\n\n\n\n\n\n\nHelper\nDescription\nExemple\n\n\n\n\nstarts_with(\"x\")\nColonnes commencant par “x”\nselect(starts_with(\"IG\"))\n\n\nends_with(\"x\")\nColonnes finissant par “x”\nselect(ends_with(\"Post\"))\n\n\ncontains(\"x\")\nColonnes contenant “x”\nselect(contains(\"Like\"))\n\n\n\n# Exemple avec mtcars\nmtcars %&gt;%\n  select(mpg, cyl, starts_with(\"c\")) %&gt;%\n  select(-cyl)  # Exclusion chirurgicale\n\n\n4.2 filter() - Filtrage conditionnel des lignes\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nfilter(), c’est comme mettre un filtre sur un tableau Excel : tu ne gardes que les lignes qui respectent ta condition. Les lignes qui ne passent pas le test disparaissent du resultat (mais les donnees originales ne sont pas modifiees).\n\n\n\nLes lignes TRUE sont preservees, FALSE et NA sont purgees.\n# Garder seulement les etudiants de plus de 21 ans\netudiants %&gt;% filter(age &gt; 21)\n# Resultat :\n#     nom age note branche\n# 1   Bob  23  4.0   Droit\n# 2 David  22  3.5   Droit\n\n# Garder les etudiants en Psycho avec une note &gt;= 5\netudiants %&gt;% filter(branche == \"Psycho\" & note &gt;= 5)\n# Resultat :\n#     nom age note branche\n# 1 Alice  21  5.5  Psycho\n# 2 Clara  20  5.8  Psycho\n\n# Garder les etudiants en Psycho OU en Droit (ici ca les prend tous)\netudiants %&gt;% filter(branche %in% c(\"Psycho\", \"Droit\"))\nOperateurs logiques :\n\n\n\nOperateur\nSignification\nAttention\n\n\n\n\n==\nEgal a\nPrudence sur les decimaux (virgule flottante)\n\n\n!=\nDifferent de\n\n\n\n&gt;, &lt;\nSuperieur, inferieur\n\n\n\n&gt;=, &lt;=\nSuperieur ou egal, inferieur ou egal\n\n\n\n&\nET logique (intersection)\n\n\n\n\\|\nOU logique (union)\n\n\n\n%in%\nAppartenance a un vecteur\nx %in% c(\"A\", \"B\")\n\n\n!\nNegation\n!is.na(x)\n\n\n\n# Exemple avec diamonds\ndiamants_premium &lt;- diamonds %&gt;%\n  filter(carat &gt;= 1.5 & cut %in% c(\"Ideal\", \"Premium\")) %&gt;%\n  filter(!is.na(price))\n\n\n4.3 mutate() - Creer ou modifier des colonnes\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nmutate(), c’est comme ajouter une nouvelle colonne dans ton tableau Excel avec une formule. Le nombre de lignes ne change pas – tu ajoutes juste une information supplementaire a chaque ligne.\n\n\n\nAjoute des colonnes tout en preservant le nombre de lignes.\n# Ajouter une colonne \"mention\" basee sur la note\netudiants %&gt;% mutate(reussi = note &gt;= 4)\n# Resultat :\n#     nom age note branche reussi\n# 1 Alice  21  5.5  Psycho   TRUE\n# 2   Bob  23  4.0   Droit   TRUE\n# 3 Clara  20  5.8  Psycho   TRUE\n# 4 David  22  3.5   Droit  FALSE\n# 5  Emma  21  4.5  Psycho   TRUE\n\n# Ajouter une colonne calculee\netudiants %&gt;% mutate(note_sur_100 = note / 6 * 100)\n# Resultat : chaque note est convertie en pourcentage\n#     nom age note branche note_sur_100\n# 1 Alice  21  5.5  Psycho     91.66667\n# 2   Bob  23  4.0   Droit     66.66667\n# ...\nVectorisation conditionnelle avec case_when() :\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\ncase_when(), c’est un “si… alors… sinon…” en version puissante. Ca fonctionne comme un aiguillage de train :\n\nSI la condition 1 est vraie ALORS fais ceci\nSINON SI la condition 2 est vraie ALORS fais cela\nSINON (pour tout le reste) fais ca\n\nLa derniere ligne TRUE ~ \"valeur\" attrape tout ce qui n’a pas ete pris par les conditions precedentes, comme un filet de securite.\n\n\n\n# Attribuer une mention selon la note\netudiants %&gt;%\n  mutate(\n    mention = case_when(\n      note &gt;= 5.5  ~ \"Tres bien\",     # SI note &gt;= 5.5 ALORS \"Tres bien\"\n      note &gt;= 5.0  ~ \"Bien\",          # SINON SI note &gt;= 5.0 ALORS \"Bien\"\n      note &gt;= 4.0  ~ \"Suffisant\",     # SINON SI note &gt;= 4.0 ALORS \"Suffisant\"\n      TRUE         ~ \"Insuffisant\"    # SINON (tout le reste) \"Insuffisant\"\n    )\n  )\n# Resultat :\n#     nom age note branche      mention\n# 1 Alice  21  5.5  Psycho    Tres bien\n# 2   Bob  23  4.0   Droit   Suffisant\n# 3 Clara  20  5.8  Psycho    Tres bien\n# 4 David  22  3.5   Droit Insuffisant\n# 5  Emma  21  4.5  Psycho   Suffisant\n# Exemple avance avec donnees climatiques\ndf %&gt;%\n  mutate(\n    temp_anomaly_fahrenheit = temperature_anomaly * 9/5,\n    carbon_risk_ratio = co2_level / 280,\n\n    climate_status = case_when(\n      carbon_risk_ratio &lt; 1.0                              ~ \"Periode Stable\",\n      carbon_risk_ratio &gt;= 1.0 & carbon_risk_ratio &lt; 1.5   ~ \"Hausse Moderee\",\n      carbon_risk_ratio &gt;= 1.5                              ~ \"Dereglement Severe\",\n      TRUE                                                  ~ \"Indetermine\"  # clause else\n    )\n  )\n\n\n4.4 arrange() - Tri des lignes\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\narrange(), c’est comme cliquer sur l’en-tete d’une colonne Excel pour trier le tableau. Par defaut, ca trie du plus petit au plus grand. Pour trier du plus grand au plus petit, on utilise desc().\n\n\n\n# Trier les etudiants par note croissante (du plus faible au meilleur)\netudiants %&gt;% arrange(note)\n# Resultat :\n#     nom age note branche\n# 1 David  22  3.5   Droit   &lt;-- note la plus basse\n# 2   Bob  23  4.0   Droit\n# 3  Emma  21  4.5  Psycho\n# 4 Alice  21  5.5  Psycho\n# 5 Clara  20  5.8  Psycho   &lt;-- note la plus haute\n\n# Trier par note decroissante (du meilleur au plus faible)\netudiants %&gt;% arrange(desc(note))\n# Resultat :\n#     nom age note branche\n# 1 Clara  20  5.8  Psycho   &lt;-- meilleure note en premier\n# 2 Alice  21  5.5  Psycho\n# ...\n\n# Tri multiple : d'abord par branche, puis par note decroissante\netudiants %&gt;% arrange(branche, desc(note))\n\n\n4.5 group_by() + summarize() - Agregation (Split-Apply-Combine)\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nImagine que tu as un paquet de copies d’examen melangees. group_by() + summarize(), c’est :\n\nTrier les copies par branche (tu fais des piles : une pile Psycho, une pile Droit) – c’est le group_by()\nCalculer la moyenne de chaque pile – c’est le summarize()\nRassembler les resultats dans un nouveau petit tableau\n\nC’est le meme principe que les tableaux croises dynamiques d’Excel. N’oublie pas ungroup() a la fin pour “defaire” le groupement.\n\n\n\nLe paradigme en 3 phases :\n\nSplit (group_by()) : fragmente les donnees par modalites\nApply (summarize()) : calcule les metriques par groupe\nCombine : recoud les resultats en un nouveau data frame\n\n# Calculer la moyenne et le nombre d'etudiants par branche\netudiants %&gt;%\n  group_by(branche) %&gt;%          # Fais des groupes par branche\n  summarize(\n    nb_etudiants = n(),          # Combien dans chaque groupe ?\n    moyenne_note = mean(note),   # Moyenne des notes du groupe\n    meilleure_note = max(note)   # Meilleure note du groupe\n  ) %&gt;%\n  ungroup()                      # Toujours retirer le groupement apres !\n# Resultat :\n#   branche nb_etudiants moyenne_note meilleure_note\n# 1   Droit            2         3.75            4.0\n# 2  Psycho            3         5.27            5.8\n# Exemple complet avec donnees d'engagement politique (igposts)\nanalyse_efficacite &lt;- igposts %&gt;%\n  group_by(Political_Party) %&gt;%\n  summarize(\n    nombre_candidats             = n(),\n    volume_moyen_posts           = mean(IGPosts, na.rm = TRUE),\n    total_likes                  = sum(IGLikes, na.rm = TRUE),\n    ecart_type_likes             = sd(IGLikes, na.rm = TRUE),\n    efficacite_likes_par_post    = mean(IGLikesPPost, na.rm = TRUE),\n    efficacite_comments_par_post = mean(IGCommentsPPost, na.rm = TRUE)\n  ) %&gt;%\n  ungroup() %&gt;%\n  arrange(desc(efficacite_likes_par_post))\n\n\n4.6 count() - Denombrement frequentiel\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\ncount() est un raccourci pour compter combien de fois chaque valeur apparait. C’est comme demander “combien d’etudiants dans chaque branche ?”\n\n\n\nRaccourci pour group_by(variable) %&gt;% summarize(n = n()).\n# Compter le nombre d'etudiants par branche\netudiants %&gt;% count(branche)\n# Resultat :\n#   branche n\n# 1   Droit 2\n# 2  Psycho 3\n\n# Avec tri decroissant automatique\netudiants %&gt;% count(branche, sort = TRUE)\n# Resultat :\n#   branche n\n# 1  Psycho 3\n# 2   Droit 2",
+    "crumbs": [
+      "Accueil",
+      "Resume du cours",
+      "Module 3 : Tidyverse & dplyr (Manipulation Avancee)"
+    ]
+  },
+  {
+    "objectID": "03_Manipulation_Dplyr.html#statistiques-descriptives---recap",
+    "href": "03_Manipulation_Dplyr.html#statistiques-descriptives---recap",
+    "title": "Module 3 : Tidyverse & dplyr (Manipulation Avancee)",
+    "section": "5 Statistiques Descriptives - Recap",
+    "text": "5 Statistiques Descriptives - Recap\n\n\n\nFonction\nDescription\nArgument NA\n\n\n\n\nmean(x)\nMoyenne\nna.rm = TRUE\n\n\nmedian(x)\nMediane\nna.rm = TRUE\n\n\nsd(x)\nEcart-type\nna.rm = TRUE\n\n\nmin(x), max(x)\nMinimum, Maximum\nna.rm = TRUE\n\n\nsum(x)\nSomme\nna.rm = TRUE\n\n\nn()\nNombre d’observations (dans summarize)\n-\n\n\nn_distinct(x)\nNombre de valeurs uniques\n-\n\n\n\n\n\n\n\n\n\nTipna.rm = TRUE\n\n\n\nToujours ajouter na.rm = TRUE dans les fonctions statistiques (mean, sd, median…) pour ignorer les valeurs manquantes. Sans cela, le resultat sera NA si une seule valeur manque.",
+    "crumbs": [
+      "Accueil",
+      "Resume du cours",
+      "Module 3 : Tidyverse & dplyr (Manipulation Avancee)"
     ]
   },
   {
@@ -444,207 +576,195 @@
     ]
   },
   {
-    "objectID": "03_Manipulation_Dplyr.html",
-    "href": "03_Manipulation_Dplyr.html",
-    "title": "Module 3 : Tidyverse & dplyr (Manipulation Avancee)",
+    "objectID": "04_Visualisation_Ggplot2.html",
+    "href": "04_Visualisation_Ggplot2.html",
+    "title": "Module 4 : Visualisation Avancee avec ggplot2",
     "section": "",
-    "text": "Le Tidyverse est une philosophie et une grammaire coherente pour l’analyse de donnees. L’axiome central repose sur le concept de “Tidy Data” :",
+    "text": "ggplot2 est l’implementation de “The Grammar of Graphics” (Leland Wilkinson). Il procede par addition sequentielle de calques (layers) superposes, liant les donnees a une representation spatiale.",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Module 3 : Tidyverse & dplyr (Manipulation Avancee)"
+      "Module 4 : Visualisation Avancee avec ggplot2"
     ]
   },
   {
-    "objectID": "03_Manipulation_Dplyr.html#importation-securisee-readr",
-    "href": "03_Manipulation_Dplyr.html#importation-securisee-readr",
-    "title": "Module 3 : Tidyverse & dplyr (Manipulation Avancee)",
-    "section": "1 Importation Securisee (readr)",
-    "text": "1 Importation Securisee (readr)\nLe package readr fournit read_csv(), superieur aux fonctions de base.\nlibrary(tidyverse)\nsetwd(\"/chemin/vers/dossier\")\ndf &lt;- read_csv(\"fichier.csv\")",
+    "objectID": "04_Visualisation_Ggplot2.html#concepts-fondamentaux",
+    "href": "04_Visualisation_Ggplot2.html#concepts-fondamentaux",
+    "title": "Module 4 : Visualisation Avancee avec ggplot2",
+    "section": "1 Concepts Fondamentaux",
+    "text": "1 Concepts Fondamentaux\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nggplot2, c’est comme construire un dessin couche par couche, exactement comme des calques dans Photoshop ou des transparents qu’on superpose :\n\nCalque 1 – la toile : tu dis a R quelles donnees utiliser et quels axes (ggplot(data, aes(...)))\nCalque 2 – les formes : tu choisis comment dessiner (des points ? des barres ? des lignes ?) (geom_*())\nCalques optionnels : tu ajoutes des titres, tu changes les couleurs, tu divises en sous-graphiques…\n\nChaque calque s’ajoute avec un +. C’est comme empiler des feuilles transparentes les unes sur les autres pour obtenir le dessin final.\n\n\n\nTout graphique necessite 3 composants obligatoires :\n\n\n\n\n\n\n\n\nComposant\nFonction\nRole\n\n\n\n\nDonnees\nggplot(data = ...)\nLe data frame source\n\n\nEsthetiques\naes(x, y, color, fill, size)\nMappage variable -&gt; attribut visuel\n\n\nGeometries\ngeom_*()\nL’objet visuel dessine (point, barre, ligne)\n\n\n\nEt des composants optionnels :\n\n\n\n\n\n\n\n\nComposant\nFonction\nRole\n\n\n\n\nFacettes\nfacet_wrap(), facet_grid()\nSous-graphiques par categorie\n\n\nThemes\ntheme_minimal(), theme_bw()\nStyle visuel (grilles, polices)\n\n\nLabels\nlabs()\nTitres, legendes, annotations\n\n\n\n# Structure de base -- toujours le meme squelette\nggplot(data = mon_df, mapping = aes(x = var_x, y = var_y, color = var_c)) +\n  geom_XXX()\n# 1. ggplot() : on pose la toile avec les donnees et les axes\n# 2. +        : on ajoute un calque\n# 3. geom_XXX : on choisit la forme (points, barres, lignes...)\n\n1.1 Mapping vs Setting (Erreur fatale courante)\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nC’est LA source d’erreur numero 1 pour les debutants. La difference :\n\nMapping (dans aes()) : la couleur depend des donnees. Exemple : “colorie chaque point selon l’espece de la fleur”. R choisit les couleurs automatiquement.\nSetting (hors aes()) : la couleur est fixe pour tout le monde. Exemple : “tous les points en bleu, point final”.\n\nAnalogie : Imagine que tu distribues des maillots a une equipe de sport.\n\nMapping = chaque joueur recoit un maillot d’une couleur differente selon son poste (gardien = jaune, defenseur = bleu, attaquant = rouge).\nSetting = tout le monde recoit un maillot bleu, sans distinction.",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Module 3 : Tidyverse & dplyr (Manipulation Avancee)"
+      "Module 4 : Visualisation Avancee avec ggplot2"
     ]
   },
   {
-    "objectID": "03_Manipulation_Dplyr.html#ne-jamais-ouvrir-un-csv-dans-excel-avant-r",
-    "href": "03_Manipulation_Dplyr.html#ne-jamais-ouvrir-un-csv-dans-excel-avant-r",
-    "title": "Module 3 : Tidyverse & dplyr (Manipulation Avancee)",
-    "section": "2 Ne Jamais Ouvrir un CSV dans Excel Avant R",
-    "text": "2 Ne Jamais Ouvrir un CSV dans Excel Avant R\nExcel applique des heuristiques de formatage invisibles et destructrices :\n\nCorruption UTF-8 : accents et symboles speciaux detruits\nConversion en dates : identifiants comme “MAR1” convertis en “1er Mars”\nRemplacement des separateurs : virgules remplacees par points-virgules selon les parametres regionaux\n\nLa donnee doit demeurer inviolee : importation directement par code R.",
+    "objectID": "04_Visualisation_Ggplot2.html#mapping-vs-setting-erreur-fatale-courante-1",
+    "href": "04_Visualisation_Ggplot2.html#mapping-vs-setting-erreur-fatale-courante-1",
+    "title": "Module 4 : Visualisation Avancee avec ggplot2",
+    "section": "2 Mapping vs Setting (Erreur fatale courante)",
+    "text": "2 Mapping vs Setting (Erreur fatale courante)\n\nDans aes() : la couleur est dictee par une variable des donnees\n\naes(color = Species) -&gt; couleurs automatiques par espece\n\nHors aes() : la couleur est un choix stylistique fixe\n\ngeom_point(color = \"lightblue\") -&gt; tous les points en bleu\n\n\nSi on ecrit aes(color = \"lightblue\"), R traite “lightblue” comme une variable categorielle a une modalite -&gt; graphique probablement rouge avec legende aberrante !",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Module 3 : Tidyverse & dplyr (Manipulation Avancee)"
+      "Module 4 : Visualisation Avancee avec ggplot2"
     ]
   },
   {
-    "objectID": "03_Manipulation_Dplyr.html#loperateur-pipe-ou",
-    "href": "03_Manipulation_Dplyr.html#loperateur-pipe-ou",
-    "title": "Module 3 : Tidyverse & dplyr (Manipulation Avancee)",
-    "section": "3 L’Operateur Pipe %>% (ou |>)",
-    "text": "3 L’Operateur Pipe %&gt;% (ou |&gt;)\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nLe pipe, c’est comme suivre une recette de cuisine etape par etape :\n\nD’abord, tu prends tes ingredients (le data frame)\nEnsuite, tu coupes les legumes (select – tu choisis les colonnes)\nEnsuite, tu retires ce qui est abime (filter – tu gardes les bonnes lignes)\nEnsuite, tu assaisonnes (mutate – tu ajoutes de nouvelles colonnes)\n\nSans le pipe, tu devrais tout ecrire en une seule ligne emboitee (comme des poupees russes). Avec le pipe %&gt;%, tu lis le code de haut en bas, comme une recette : “prends ca, PUIS fais ca, PUIS fais ca”.\nLe symbole %&gt;% se lit “et ensuite” ou “puis”.\n\n\n\nLe pipe extrait l’objet a gauche et l’injecte comme premier argument de la fonction a droite.\nRaccourci : Ctrl + Shift + M (Windows) / Cmd + Shift + M (Mac)\n# Sans pipe -- il faut lire de l'INTERIEUR vers l'EXTERIEUR (penible !)\nfilter(select(df, nom, age), age &gt; 30)\n\n# Avec pipe -- on lit de HAUT en BAS, comme une recette\ndf %&gt;%                   # Prends le tableau df\n  select(nom, age) %&gt;%  # PUIS garde seulement les colonnes nom et age\n  filter(age &gt; 30)       # PUIS ne garde que les lignes ou age &gt; 30",
+    "objectID": "04_Visualisation_Ggplot2.html#les-principaux-geoms",
+    "href": "04_Visualisation_Ggplot2.html#les-principaux-geoms",
+    "title": "Module 4 : Visualisation Avancee avec ggplot2",
+    "section": "3 Les Principaux Geoms",
+    "text": "3 Les Principaux Geoms\n\n3.1 geom_point() - Nuage de points (Scatter plot)\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nQuand l’utiliser ? Quand tu veux voir si deux mesures numeriques sont liees. Par exemple :\n\n“Est-ce que les etudiants qui etudient plus d’heures ont de meilleures notes ?”\n“Est-ce que les voitures plus lourdes consomment plus d’essence ?”\n“Est-ce que le prix d’un appartement augmente avec sa surface ?”\n\nChaque point sur le graphique represente une observation (un etudiant, une voiture, un appartement). Sa position horizontale = une variable, sa position verticale = l’autre variable. Si les points forment une tendance (montante, descendante), il y a une relation.\n\n\n\nUsage : Relation entre 2 variables continues.\nggplot(data = mtcars, aes(x = disp, y = mpg, color = as.factor(cyl), size = wt)) +\n  geom_point(alpha = 0.8) +          # alpha = transparence (0 = invisible, 1 = opaque)\n  labs(\n    title = \"Covariance entre Cylindree et Efficience Energetique\",\n    subtitle = \"Le poids du vehicule modere la consommation\",\n    x = \"Cylindree Moteur (cu.in.)\",      # nom de l'axe X\n    y = \"Rendement (Miles par Gallon)\",     # nom de l'axe Y\n    color = \"Cylindres\",                    # titre de la legende couleur\n    size = \"Poids (1000 lbs)\"               # titre de la legende taille\n  ) +\n  theme_minimal()                     # theme epure\nLe probleme de l’Overplotting :\nQuand les donnees sont massives, les points se superposent et masquent la distribution.\n\n\n\n\n\n\n\n\nSolution\nCode\nEffet\n\n\n\n\nTransparence\ngeom_point(alpha = 0.2)\n5 points superposes = pixel opaque\n\n\nBruit aleatoire\ngeom_jitter()\nDeplace legerement chaque point\n\n\n\n\n\n3.2 geom_bar() et geom_col() - Diagrammes a barres\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nQuand l’utiliser ? Quand tu veux compter ou comparer des categories. Par exemple :\n\n“Combien d’etudiants dans chaque branche ?” -&gt; geom_bar() (R compte pour toi)\n“Quel est le chiffre d’affaires de chaque succursale ?” -&gt; geom_col() (tu fournis les valeurs)\n\nLa difference cle :\n\ngeom_bar() : tu donnes juste X (les categories), R compte automatiquement combien il y en a\ngeom_col() : tu donnes X et Y, R dessine les barres a la hauteur que TU as fournie\n\n\n\n\n\n\n\n\n\n\n\n\nFonction\nStatistique\nUsage\n\n\n\n\ngeom_bar()\nstat = \"count\" (automatique)\nFournir X seulement, R compte les frequences\n\n\ngeom_col()\nstat = \"identity\"\nFournir X et Y (valeur deja calculee)\n\n\n\n# geom_bar : R compte automatiquement les diamants par categorie de coupe\nggplot(diamonds, aes(x = cut)) +\n  geom_bar()\n\n# Avec remplissage par une autre variable (clarte)\nggplot(diamonds, aes(x = cut, fill = clarity)) +\n  geom_bar(position = \"dodge\", color = \"black\", linewidth = 0.2) +\n  labs(\n    title = \"Analyse des Tailles de Diamants\",\n    x = \"Niveau de Taille\",\n    y = \"Denombrement\",\n    fill = \"Indice de Purete\"\n  ) +\n  theme_bw()\nPositions pour barres empilees/paralleles :\n\n\n\nPosition\nEffet\n\n\n\n\nposition = \"stack\"\nEmpilees (defaut)\n\n\nposition = \"dodge\"\nCote a cote\n\n\nposition = \"fill\"\nEmpilees normalisees a 100%\n\n\n\n\n\n3.3 geom_histogram() - Histogramme\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nQuand l’utiliser ? Quand tu veux voir comment se repartissent les valeurs d’une mesure numerique. Par exemple :\n\n“La plupart des etudiants ont-ils des notes entre 4 et 5, ou c’est plus disperse ?”\n“Les salaires sont-ils concentres autour de 5000 CHF ou tres etales ?”\n“Les temps de reponse au questionnaire sont-ils groupes ou eparpilles ?”\n\nL’histogramme decoupe les valeurs en “bacs” (intervalles) et montre combien d’observations tombent dans chaque bac. C’est une “photo” de la distribution.\n\n\n\nUsage : Distribution d’une variable continue. Par defaut, la hauteur de chaque bac represente le nombre d’observations (frequence absolue).\nggplot(iris, aes(x = Sepal.Length)) +\n  geom_histogram(binwidth = 0.2, fill = \"darkblue\", color = \"white\") +\n  facet_wrap(~ Species) +      # Un sous-graphique par espece\n  labs(\n    title = \"Distribution des Longueurs de Sepales (par Espece)\",\n    x = \"Longueur (cm)\",\n    y = \"Frequence\"\n  )\n\n\n\n\n\n\nWarningLe parametre binwidth\n\n\n\nLe reglage du binwidth (largeur de l’intervalle) est crucial :\n\nTrop large : masque la bimodalite (sous-ajustement)\nTrop fin : capte le bruit aleatoire, “dents de scie” (sur-ajustement)\n\nTester plusieurs valeurs pour trouver le bon equilibre.\n\n\n\n\n3.4 geom_boxplot() - Boite a moustaches (Tukey)\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nQuand l’utiliser ? Quand tu veux comparer la distribution d’une mesure entre plusieurs groupes. Par exemple :\n\n“Les notes sont-elles meilleures en Psycho ou en Droit ?”\n“Les salaires sont-ils plus variables dans le secteur prive que dans le public ?”\n“Y a-t-il des valeurs aberrantes (outliers) dans mes donnees ?”\n\nLe boxplot est un resume visuel ultra-compact : en un coup d’oeil, tu vois la mediane (le milieu), l’etendue des donnees, et les valeurs extremes. C’est comme un “bulletin meteo” de tes donnees : il te dit ou se situe le gros des observations et s’il y a des cas exceptionnels.\n\n\n\nUsage : Comparer les distributions entre groupes. Diagnostic base sur les quantiles.\nAnatomie du boxplot :\n\n\n\n\n\n\n\nElement\nDescription\n\n\n\n\nCorps de la boite\nDu \\(Q_1\\) (25e centile) au \\(Q_3\\) (75e centile)\n\n\nIQR\n\\(Q_3 - Q_1\\) = ecart interquartile (50% centraux)\n\n\nLigne mediane\n50e centile (mediane). Si asymetrique -&gt; distribution biaisee\n\n\nMoustaches\nJusqu’a l’observation la plus distante, max \\(1.5 \\times IQR\\)\n\n\nPoints (outliers)\nAu-dela des moustaches (~0.7% dans une loi normale)\n\n\n\n# Boxplot simple : comparer le prix des diamants selon leur coupe\nggplot(diamonds, aes(x = cut, y = price)) +\n  geom_boxplot()\nExemple avance avec transformation log et personnalisation des outliers :\nggplot(igposts, aes(x = Content_Type, y = IGLikesPPost, fill = Content_Type)) +\n  geom_boxplot(\n    outlier.color = \"darkred\",   # Couleur des points aberrants\n    outlier.shape = 8,           # Forme asterisque pour les outliers\n    outlier.size = 2.5,          # Taille des outliers\n    notch = FALSE                # notch = TRUE pour IC 95% de la mediane\n  ) +\n  scale_y_log10() +              # Echelle logarithmique pour longue queue\n  labs(\n    title = \"Dispersion de l'Efficacite des Publications (Likes/Post)\",\n    subtitle = \"Echelle log. Points rouges = deviations virales.\",\n    x = \"Categorie de Publication\",\n    y = \"Likes par Post (Echelle Log10)\"\n  ) +\n  scale_fill_viridis_d(option = \"cividis\") +  # Palette accessible daltoniens\n  theme_minimal() +\n  theme(legend.position = \"none\")              # Pas de legende (redondante ici)\n\n\n3.5 geom_line() - Ligne (Tendance / Evolution)\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nQuand l’utiliser ? Quand tu veux montrer une evolution dans le temps ou une tendance. Par exemple :\n\n“Comment le PIB a-t-il evolue entre 2000 et 2020 ?”\n“Le nombre d’inscriptions augmente-t-il chaque annee ?”\n“Comment la temperature a-t-elle change au fil des mois ?”\n\nLes points sont relies par des lignes, ce qui permet de voir la direction generale (monte, descend, stagne).\n\n\n\n# Exemple : evolution des temperatures sur plusieurs annees\nggplot(donnees_climat, aes(x = annee, y = temperature_moyenne)) +\n  geom_line(color = \"steelblue\", linewidth = 1) +  # Ligne bleue epaisse\n  geom_point(size = 2) +                            # Points a chaque annee\n  labs(\n    title = \"Evolution de la Temperature Moyenne\",\n    x = \"Annee\",\n    y = \"Temperature (C)\"\n  ) +\n  theme_minimal()",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Module 3 : Tidyverse & dplyr (Manipulation Avancee)"
+      "Module 4 : Visualisation Avancee avec ggplot2"
     ]
   },
   {
-    "objectID": "03_Manipulation_Dplyr.html#les-verbes-de-dplyr",
-    "href": "03_Manipulation_Dplyr.html#les-verbes-de-dplyr",
-    "title": "Module 3 : Tidyverse & dplyr (Manipulation Avancee)",
-    "section": "4 Les Verbes de dplyr",
-    "text": "4 Les Verbes de dplyr\nChaque verbe prend un data frame en entree et retourne un data frame modifie.\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\ndplyr fournit des “verbes” – des actions simples que tu enchaines. Pense a des instructions donnees a un assistant :\n\nselect = “montre-moi seulement ces colonnes”\nfilter = “garde seulement les lignes qui respectent cette condition”\nmutate = “ajoute une nouvelle colonne calculee”\narrange = “trie le tableau”\ngroup_by + summarize = “fais un resume par groupe”\n\nTous les exemples ci-dessous utilisent ce petit jeu de donnees de 5 etudiants :\n\n\n\n# Notre petit jeu de donnees pour tous les exemples\netudiants &lt;- data.frame(\n  nom = c(\"Alice\", \"Bob\", \"Clara\", \"David\", \"Emma\"),\n  age = c(21, 23, 20, 22, 21),\n  note = c(5.5, 4.0, 5.8, 3.5, 4.5),\n  branche = c(\"Psycho\", \"Droit\", \"Psycho\", \"Droit\", \"Psycho\")\n)\n#     nom age note branche\n# 1 Alice  21  5.5  Psycho\n# 2   Bob  23  4.0   Droit\n# 3 Clara  20  5.8  Psycho\n# 4 David  22  3.5   Droit\n# 5  Emma  21  4.5  Psycho\n\n4.1 select() - Projection des colonnes\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nselect(), c’est comme cacher des colonnes dans Excel. Tu ne supprimes rien, tu choisis juste quelles colonnes tu veux voir. Tu peux aussi exclure une colonne avec le signe -.\n\n\n\n# Garder seulement les colonnes \"nom\" et \"note\"\netudiants %&gt;% select(nom, note)\n# Resultat :\n#     nom note\n# 1 Alice  5.5\n# 2   Bob  4.0\n# 3 Clara  5.8\n# 4 David  3.5\n# 5  Emma  4.5\n\n# Exclure une colonne avec le signe -\netudiants %&gt;% select(-age)\n# Resultat : tout SAUF la colonne age\n#     nom note branche\n# 1 Alice  5.5  Psycho\n# 2   Bob  4.0   Droit\n# 3 Clara  5.8  Psycho\n# 4 David  3.5   Droit\n# 5  Emma  4.5  Psycho\nAssistants de selection dynamiques :\n\n\n\n\n\n\n\n\nHelper\nDescription\nExemple\n\n\n\n\nstarts_with(\"x\")\nColonnes commencant par “x”\nselect(starts_with(\"IG\"))\n\n\nends_with(\"x\")\nColonnes finissant par “x”\nselect(ends_with(\"Post\"))\n\n\ncontains(\"x\")\nColonnes contenant “x”\nselect(contains(\"Like\"))\n\n\n\n# Exemple avec mtcars\nmtcars %&gt;%\n  select(mpg, cyl, starts_with(\"c\")) %&gt;%\n  select(-cyl)  # Exclusion chirurgicale\n\n\n4.2 filter() - Filtrage conditionnel des lignes\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nfilter(), c’est comme mettre un filtre sur un tableau Excel : tu ne gardes que les lignes qui respectent ta condition. Les lignes qui ne passent pas le test disparaissent du resultat (mais les donnees originales ne sont pas modifiees).\n\n\n\nLes lignes TRUE sont preservees, FALSE et NA sont purgees.\n# Garder seulement les etudiants de plus de 21 ans\netudiants %&gt;% filter(age &gt; 21)\n# Resultat :\n#     nom age note branche\n# 1   Bob  23  4.0   Droit\n# 2 David  22  3.5   Droit\n\n# Garder les etudiants en Psycho avec une note &gt;= 5\netudiants %&gt;% filter(branche == \"Psycho\" & note &gt;= 5)\n# Resultat :\n#     nom age note branche\n# 1 Alice  21  5.5  Psycho\n# 2 Clara  20  5.8  Psycho\n\n# Garder les etudiants en Psycho OU en Droit (ici ca les prend tous)\netudiants %&gt;% filter(branche %in% c(\"Psycho\", \"Droit\"))\nOperateurs logiques :\n\n\n\nOperateur\nSignification\nAttention\n\n\n\n\n==\nEgal a\nPrudence sur les decimaux (virgule flottante)\n\n\n!=\nDifferent de\n\n\n\n&gt;, &lt;\nSuperieur, inferieur\n\n\n\n&gt;=, &lt;=\nSuperieur ou egal, inferieur ou egal\n\n\n\n&\nET logique (intersection)\n\n\n\n\\|\nOU logique (union)\n\n\n\n%in%\nAppartenance a un vecteur\nx %in% c(\"A\", \"B\")\n\n\n!\nNegation\n!is.na(x)\n\n\n\n# Exemple avec diamonds\ndiamants_premium &lt;- diamonds %&gt;%\n  filter(carat &gt;= 1.5 & cut %in% c(\"Ideal\", \"Premium\")) %&gt;%\n  filter(!is.na(price))\n\n\n4.3 mutate() - Creer ou modifier des colonnes\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nmutate(), c’est comme ajouter une nouvelle colonne dans ton tableau Excel avec une formule. Le nombre de lignes ne change pas – tu ajoutes juste une information supplementaire a chaque ligne.\n\n\n\nAjoute des colonnes tout en preservant le nombre de lignes.\n# Ajouter une colonne \"mention\" basee sur la note\netudiants %&gt;% mutate(reussi = note &gt;= 4)\n# Resultat :\n#     nom age note branche reussi\n# 1 Alice  21  5.5  Psycho   TRUE\n# 2   Bob  23  4.0   Droit   TRUE\n# 3 Clara  20  5.8  Psycho   TRUE\n# 4 David  22  3.5   Droit  FALSE\n# 5  Emma  21  4.5  Psycho   TRUE\n\n# Ajouter une colonne calculee\netudiants %&gt;% mutate(note_sur_100 = note / 6 * 100)\n# Resultat : chaque note est convertie en pourcentage\n#     nom age note branche note_sur_100\n# 1 Alice  21  5.5  Psycho     91.66667\n# 2   Bob  23  4.0   Droit     66.66667\n# ...\nVectorisation conditionnelle avec case_when() :\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\ncase_when(), c’est un “si… alors… sinon…” en version puissante. Ca fonctionne comme un aiguillage de train :\n\nSI la condition 1 est vraie ALORS fais ceci\nSINON SI la condition 2 est vraie ALORS fais cela\nSINON (pour tout le reste) fais ca\n\nLa derniere ligne TRUE ~ \"valeur\" attrape tout ce qui n’a pas ete pris par les conditions precedentes, comme un filet de securite.\n\n\n\n# Attribuer une mention selon la note\netudiants %&gt;%\n  mutate(\n    mention = case_when(\n      note &gt;= 5.5  ~ \"Tres bien\",     # SI note &gt;= 5.5 ALORS \"Tres bien\"\n      note &gt;= 5.0  ~ \"Bien\",          # SINON SI note &gt;= 5.0 ALORS \"Bien\"\n      note &gt;= 4.0  ~ \"Suffisant\",     # SINON SI note &gt;= 4.0 ALORS \"Suffisant\"\n      TRUE         ~ \"Insuffisant\"    # SINON (tout le reste) \"Insuffisant\"\n    )\n  )\n# Resultat :\n#     nom age note branche      mention\n# 1 Alice  21  5.5  Psycho    Tres bien\n# 2   Bob  23  4.0   Droit   Suffisant\n# 3 Clara  20  5.8  Psycho    Tres bien\n# 4 David  22  3.5   Droit Insuffisant\n# 5  Emma  21  4.5  Psycho   Suffisant\n# Exemple avance avec donnees climatiques\ndf %&gt;%\n  mutate(\n    temp_anomaly_fahrenheit = temperature_anomaly * 9/5,\n    carbon_risk_ratio = co2_level / 280,\n\n    climate_status = case_when(\n      carbon_risk_ratio &lt; 1.0                              ~ \"Periode Stable\",\n      carbon_risk_ratio &gt;= 1.0 & carbon_risk_ratio &lt; 1.5   ~ \"Hausse Moderee\",\n      carbon_risk_ratio &gt;= 1.5                              ~ \"Dereglement Severe\",\n      TRUE                                                  ~ \"Indetermine\"  # clause else\n    )\n  )\n\n\n4.4 arrange() - Tri des lignes\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\narrange(), c’est comme cliquer sur l’en-tete d’une colonne Excel pour trier le tableau. Par defaut, ca trie du plus petit au plus grand. Pour trier du plus grand au plus petit, on utilise desc().\n\n\n\n# Trier les etudiants par note croissante (du plus faible au meilleur)\netudiants %&gt;% arrange(note)\n# Resultat :\n#     nom age note branche\n# 1 David  22  3.5   Droit   &lt;-- note la plus basse\n# 2   Bob  23  4.0   Droit\n# 3  Emma  21  4.5  Psycho\n# 4 Alice  21  5.5  Psycho\n# 5 Clara  20  5.8  Psycho   &lt;-- note la plus haute\n\n# Trier par note decroissante (du meilleur au plus faible)\netudiants %&gt;% arrange(desc(note))\n# Resultat :\n#     nom age note branche\n# 1 Clara  20  5.8  Psycho   &lt;-- meilleure note en premier\n# 2 Alice  21  5.5  Psycho\n# ...\n\n# Tri multiple : d'abord par branche, puis par note decroissante\netudiants %&gt;% arrange(branche, desc(note))\n\n\n4.5 group_by() + summarize() - Agregation (Split-Apply-Combine)\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nImagine que tu as un paquet de copies d’examen melangees. group_by() + summarize(), c’est :\n\nTrier les copies par branche (tu fais des piles : une pile Psycho, une pile Droit) – c’est le group_by()\nCalculer la moyenne de chaque pile – c’est le summarize()\nRassembler les resultats dans un nouveau petit tableau\n\nC’est le meme principe que les tableaux croises dynamiques d’Excel. N’oublie pas ungroup() a la fin pour “defaire” le groupement.\n\n\n\nLe paradigme en 3 phases :\n\nSplit (group_by()) : fragmente les donnees par modalites\nApply (summarize()) : calcule les metriques par groupe\nCombine : recoud les resultats en un nouveau data frame\n\n# Calculer la moyenne et le nombre d'etudiants par branche\netudiants %&gt;%\n  group_by(branche) %&gt;%          # Fais des groupes par branche\n  summarize(\n    nb_etudiants = n(),          # Combien dans chaque groupe ?\n    moyenne_note = mean(note),   # Moyenne des notes du groupe\n    meilleure_note = max(note)   # Meilleure note du groupe\n  ) %&gt;%\n  ungroup()                      # Toujours retirer le groupement apres !\n# Resultat :\n#   branche nb_etudiants moyenne_note meilleure_note\n# 1   Droit            2         3.75            4.0\n# 2  Psycho            3         5.27            5.8\n# Exemple complet avec donnees d'engagement politique (igposts)\nanalyse_efficacite &lt;- igposts %&gt;%\n  group_by(Political_Party) %&gt;%\n  summarize(\n    nombre_candidats             = n(),\n    volume_moyen_posts           = mean(IGPosts, na.rm = TRUE),\n    total_likes                  = sum(IGLikes, na.rm = TRUE),\n    ecart_type_likes             = sd(IGLikes, na.rm = TRUE),\n    efficacite_likes_par_post    = mean(IGLikesPPost, na.rm = TRUE),\n    efficacite_comments_par_post = mean(IGCommentsPPost, na.rm = TRUE)\n  ) %&gt;%\n  ungroup() %&gt;%\n  arrange(desc(efficacite_likes_par_post))\n\n\n4.6 count() - Denombrement frequentiel\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\ncount() est un raccourci pour compter combien de fois chaque valeur apparait. C’est comme demander “combien d’etudiants dans chaque branche ?”\n\n\n\nRaccourci pour group_by(variable) %&gt;% summarize(n = n()).\n# Compter le nombre d'etudiants par branche\netudiants %&gt;% count(branche)\n# Resultat :\n#   branche n\n# 1   Droit 2\n# 2  Psycho 3\n\n# Avec tri decroissant automatique\netudiants %&gt;% count(branche, sort = TRUE)\n# Resultat :\n#   branche n\n# 1  Psycho 3\n# 2   Droit 2",
+    "objectID": "04_Visualisation_Ggplot2.html#personnalisation-labels",
+    "href": "04_Visualisation_Ggplot2.html#personnalisation-labels",
+    "title": "Module 4 : Visualisation Avancee avec ggplot2",
+    "section": "4 Personnalisation (Labels)",
+    "text": "4 Personnalisation (Labels)\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nlabs() c’est la fonction “etiquettes” : elle permet de donner un titre, un sous-titre, de renommer les axes, et d’ajouter une source en bas du graphique. C’est ce qui rend un graphique lisible et professionnel au lieu d’avoir des noms de variables techniques.\n\n\n\nggplot(df, aes(x = var_x, y = var_y)) +\n  geom_point() +\n  labs(\n    title = \"Titre principal\",                 # Le gros titre\n    subtitle = \"Sous-titre\",                   # Precision sous le titre\n    x = \"Nom de l'axe X (unite)\",             # Nom lisible pour l'axe X\n    y = \"Nom de l'axe Y (unite)\",             # Nom lisible pour l'axe Y\n    color = \"Titre legende couleur\",           # Titre de la legende\n    caption = \"Source : Dataset XYZ\"           # Note en bas a droite\n  )",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Module 3 : Tidyverse & dplyr (Manipulation Avancee)"
+      "Module 4 : Visualisation Avancee avec ggplot2"
     ]
   },
   {
-    "objectID": "03_Manipulation_Dplyr.html#statistiques-descriptives---recap",
-    "href": "03_Manipulation_Dplyr.html#statistiques-descriptives---recap",
-    "title": "Module 3 : Tidyverse & dplyr (Manipulation Avancee)",
-    "section": "5 Statistiques Descriptives - Recap",
-    "text": "5 Statistiques Descriptives - Recap\n\n\n\nFonction\nDescription\nArgument NA\n\n\n\n\nmean(x)\nMoyenne\nna.rm = TRUE\n\n\nmedian(x)\nMediane\nna.rm = TRUE\n\n\nsd(x)\nEcart-type\nna.rm = TRUE\n\n\nmin(x), max(x)\nMinimum, Maximum\nna.rm = TRUE\n\n\nsum(x)\nSomme\nna.rm = TRUE\n\n\nn()\nNombre d’observations (dans summarize)\n-\n\n\nn_distinct(x)\nNombre de valeurs uniques\n-\n\n\n\n\n\n\n\n\n\nTipna.rm = TRUE\n\n\n\nToujours ajouter na.rm = TRUE dans les fonctions statistiques (mean, sd, median…) pour ignorer les valeurs manquantes. Sans cela, le resultat sera NA si une seule valeur manque.",
+    "objectID": "04_Visualisation_Ggplot2.html#facettes-sous-graphiques-par-categorie",
+    "href": "04_Visualisation_Ggplot2.html#facettes-sous-graphiques-par-categorie",
+    "title": "Module 4 : Visualisation Avancee avec ggplot2",
+    "section": "5 Facettes : Sous-graphiques par categorie",
+    "text": "5 Facettes : Sous-graphiques par categorie\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nLes facettes, c’est comme decouper un graphique en petites vignettes, une par categorie. Au lieu d’avoir toutes les especes de fleurs sur un seul graphique (ce qui peut etre confus), tu obtiens un mini-graphique par espece, cote a cote. Ca permet de comparer facilement.\n\n\n\n# Grille de sous-graphiques par espece\nggplot(iris, aes(x = Sepal.Length)) +\n  geom_histogram(binwidth = 0.2) +\n  facet_wrap(~ Species)     # Un histogramme par espece, cote a cote",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Module 3 : Tidyverse & dplyr (Manipulation Avancee)"
+      "Module 4 : Visualisation Avancee avec ggplot2"
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Methodes II - Analyse de Donnees et Statistiques sous R",
+    "objectID": "04_Visualisation_Ggplot2.html#normes-daccessibilite-et-dintegrite",
+    "href": "04_Visualisation_Ggplot2.html#normes-daccessibilite-et-dintegrite",
+    "title": "Module 4 : Visualisation Avancee avec ggplot2",
+    "section": "6 Normes d’Accessibilite et d’Integrite",
+    "text": "6 Normes d’Accessibilite et d’Integrite\n\n6.1 Daltonisme (~8% des hommes)\nNe jamais baser une information sur une opposition rouge/vert seule. Utiliser les palettes viridis :\n+ scale_color_viridis_d()   # Variables discretes\n+ scale_color_viridis_c()   # Variables continues\n\n\n6.2 Axe Y et zero\nPour geom_bar() / geom_col(), l’axe Y doit inclure le zero. Tronquer l’axe amplifie artificiellement les differences (manipulation visuelle). Si les donnees sont loin de zero, utiliser geom_point() a la place.\n\n\n6.3 Variable shape\n\nshape est reserve aux variables nominales (pas continues)\nMaximum 6 formes distinctes discriminables par le cerveau humain\nVariable continue dans aes(shape = ...) -&gt; erreur/crash",
+    "crumbs": [
+      "Accueil",
+      "Resume du cours",
+      "Module 4 : Visualisation Avancee avec ggplot2"
+    ]
+  },
+  {
+    "objectID": "04_Visualisation_Ggplot2.html#recap-quel-geom-choisir",
+    "href": "04_Visualisation_Ggplot2.html#recap-quel-geom-choisir",
+    "title": "Module 4 : Visualisation Avancee avec ggplot2",
+    "section": "7 Recap : Quel Geom Choisir ?",
+    "text": "7 Recap : Quel Geom Choisir ?\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nLe choix du geom depend de ta question et du type de tes variables :\n\nTu as 2 nombres et tu veux voir le lien ? -&gt; points (geom_point)\nTu veux voir comment une mesure se distribue ? -&gt; histogramme (geom_histogram)\nTu veux compter des categories ? -&gt; barres (geom_bar)\nTu veux comparer des groupes ? -&gt; boxplot (geom_boxplot)\nTu veux montrer une evolution ? -&gt; ligne (geom_line)\nTu as des valeurs deja calculees a montrer en barres ? -&gt; colonnes (geom_col)\n\n\n\n\n\n\n\n\n\n\n\n\nObjectif\nGeom\nVariables\n\n\n\n\nRelation entre 2 var. continues\ngeom_point()\nx = continue, y = continue\n\n\nDistribution d’une var. numerique\ngeom_histogram()\nx = continue\n\n\nFrequences d’une var. categorielle\ngeom_bar()\nx = categorielle\n\n\nComparer distributions entre groupes\ngeom_boxplot()\nx = categorielle, y = continue\n\n\nTendance / evolution\ngeom_line()\nx = continue/date, y = continue\n\n\nValeurs pre-calculees en barres\ngeom_col()\nx = categorielle, y = valeur",
+    "crumbs": [
+      "Accueil",
+      "Resume du cours",
+      "Module 4 : Visualisation Avancee avec ggplot2"
+    ]
+  },
+  {
+    "objectID": "02_Bases_R.html",
+    "href": "02_Bases_R.html",
+    "title": "Module 2 : Fondations de R et Architecture",
     "section": "",
-    "text": "L’analyse quantitative des donnees en sciences sociales, economiques et naturelles requiert une maitrise des fondations theoriques et des outils informatiques. Ce document constitue la synthese exhaustive du cursus “Methodes II”, integrant la theorie, les exercices et les scripts R.",
+    "text": "R est un environnement de programmation open-source concu pour le calcul statistique et la visualisation de donnees. Contrairement aux logiciels GUI, R exige la redaction de scripts, garantissant la reproductibilite de la recherche.",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Methodes II - Analyse de Donnees et Statistiques sous R"
+      "Module 2 : Fondations de R et Architecture"
     ]
   },
   {
-    "objectID": "index.html#introduction",
-    "href": "index.html#introduction",
-    "title": "Methodes II - Analyse de Donnees et Statistiques sous R",
-    "section": "",
-    "text": "L’analyse quantitative des donnees en sciences sociales, economiques et naturelles requiert une maitrise des fondations theoriques et des outils informatiques. Ce document constitue la synthese exhaustive du cursus “Methodes II”, integrant la theorie, les exercices et les scripts R.",
+    "objectID": "02_Bases_R.html#lenvironnement-rstudio",
+    "href": "02_Bases_R.html#lenvironnement-rstudio",
+    "title": "Module 2 : Fondations de R et Architecture",
+    "section": "1 L’Environnement RStudio",
+    "text": "1 L’Environnement RStudio\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nRStudio, c’est comme un atelier de bricolage bien organise. Tu as ton etabli (l’editeur de code), un ecran de controle (la console), un rangement ou tu vois tout ce que tu as fabrique (l’environnement), et des tiroirs avec tes outils (aide, fichiers, graphiques). Chaque zone a son role, et ensemble elles te permettent de travailler efficacement.\n\n\n\nRStudio se divise en 4 quadrants :\n\nEditeur de code source : redaction et sauvegarde des scripts\nConsole : execution du code en temps reel\nEnvironnement : inventaire des objets en memoire\nPanneau utilitaire : fichiers, visualisations, packages, aide",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Methodes II - Analyse de Donnees et Statistiques sous R"
+      "Module 2 : Fondations de R et Architecture"
     ]
   },
   {
-    "objectID": "index.html#navigation",
-    "href": "index.html#navigation",
-    "title": "Methodes II - Analyse de Donnees et Statistiques sous R",
-    "section": "2 Navigation",
-    "text": "2 Navigation\n\n\n\nModule\nContenu\n\n\n\n\nModule 1 : Methodologie\nQuestions de recherche, hypotheses, operationnalisation, echelles de mesure, biais\n\n\nModule 2 : Bases de R\nRStudio, types de variables, vecteurs, matrices, data frames, fonctions\n\n\nModule 3 : Tidyverse / dplyr\nImportation CSV, pipe, select, filter, mutate, group_by, summarize\n\n\nModule 4 : ggplot2\nGrammaire graphique, geom_point, geom_bar, geom_histogram, geom_boxplot",
+    "objectID": "02_Bases_R.html#raccourcis-de-productivite",
+    "href": "02_Bases_R.html#raccourcis-de-productivite",
+    "title": "Module 2 : Fondations de R et Architecture",
+    "section": "2 Raccourcis de Productivite",
+    "text": "2 Raccourcis de Productivite\n\n\n\n\n\n\n\n\n\nAction\nWindows/Linux\nmacOS\nDescription\n\n\n\n\nAssignation &lt;-\nAlt + -\nOption + -\nInsere l’operateur d’assignation avec espaces\n\n\nExecuter le code\nCtrl + Enter\nCmd + Return\nExecute la ligne ou le bloc selectionne\n\n\nPipe %&gt;%\nCtrl + Shift + M\nCmd + Shift + M\nInsere l’operateur pipe\n\n\nRedemarrer session\nCtrl + Shift + F10\nCmd + Shift + F10\nVide la memoire, detache les packages\n\n\nCommentaire en bloc\nCtrl + Shift + C\nCmd + Shift + C\nCommente/decommente une selection\n\n\n\n\n2.1 L’assignation &lt;-\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nUn operateur, c’est un symbole qui fait une action. Par exemple, + additionne, - soustrait. La fleche &lt;- est l’operateur d’assignation : elle permet de donner un nom a une valeur pour la reutiliser plus tard.\nImagine que tu colles une etiquette sur une boite. Tu ecris mon_age &lt;- 25 et ca veut dire : “colle l’etiquette mon_age sur la boite qui contient 25”. Apres, chaque fois que tu dis mon_age, R sait que tu parles de 25.\n\n\n\n# On colle l'etiquette \"mon_age\" sur la valeur 25\nmon_age &lt;- 25\n\n# Maintenant on peut utiliser \"mon_age\" dans des calculs\nmon_age + 5    # Resultat : 30\n\n# On peut aussi changer la valeur dans la boite\nmon_age &lt;- 26  # Maintenant mon_age vaut 26\n\n\n\n\n\n\nWarning&lt;- vs =\n\n\n\n\n&lt;- : assignation globale (standard obligatoire)\n= : reserve aux arguments dans les fonctions (ex: mean(x, na.rm = TRUE))\n\nNe jamais utiliser = pour l’assignation globale (conflits de portee lexicale).",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Methodes II - Analyse de Donnees et Statistiques sous R"
+      "Module 2 : Fondations de R et Architecture"
     ]
   },
   {
-    "objectID": "index.html#astuces-pour-lexamen",
-    "href": "index.html#astuces-pour-lexamen",
-    "title": "Methodes II - Analyse de Donnees et Statistiques sous R",
-    "section": "3 Astuces pour l’examen",
-    "text": "3 Astuces pour l’examen\n\nCtrl+F / Cmd+F pour chercher une commande specifique\nCtrl+K / Cmd+K pour la barre de recherche du site\nChargez vos paquets (library(tidyverse)) au debut de votre session\nL’operateur d’affectation est &lt;- (jamais = pour l’assignation globale)\nNe jamais ouvrir un CSV dans Excel avant de l’importer dans R",
+    "objectID": "02_Bases_R.html#types-de-variables-vecteurs-atomiques",
+    "href": "02_Bases_R.html#types-de-variables-vecteurs-atomiques",
+    "title": "Module 2 : Fondations de R et Architecture",
+    "section": "3 Types de Variables (Vecteurs Atomiques)",
+    "text": "3 Types de Variables (Vecteurs Atomiques)\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nEn R, meme un seul nombre est stocke dans un “vecteur” – pense a un train avec un seul wagon. Un vecteur, c’est juste une suite ordonnee de valeurs.\nLes types, c’est comme les rayons d’un supermarche : il y a le rayon des nombres entiers, le rayon des nombres a virgule, le rayon du texte, et le rayon vrai/faux. Chaque valeur appartient a un rayon precis.\n\n\n\nEn R, meme un nombre unique est un vecteur de longueur 1.\n\n\n\n\n\n\n\n\nType\nDescription\nExemple\n\n\n\n\nlogical\nBooleen\nTRUE, FALSE, NA\n\n\ninteger\nEntier strict\n42L (suffixe L obligatoire)\n\n\nnumeric / double\nReel a virgule flottante\n3.14 (defaut de R)\n\n\ncharacter\nTexte\n\"chien\" (avec guillemets)\n\n\n\n# Verification du type de chaque valeur\nclass(42L)      # \"integer\"  -- nombre entier (le L force le type entier)\nclass(3.14)     # \"numeric\"  -- nombre a virgule\nclass(\"texte\")  # \"character\" -- du texte (toujours entre guillemets)\nclass(TRUE)     # \"logical\"  -- vrai ou faux\n\n3.1 Coercition Implicite (le melange interdit)\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nImagine une boite ou tu ne peux mettre QUE des pommes OU QUE des oranges, jamais les deux. Un vecteur en R, c’est pareil : il ne peut contenir qu’un seul type de donnees. Si tu essaies de melanger des nombres et du texte dans le meme vecteur, R va tout transformer en texte sans te prevenir. C’est comme si tu melangeais des pommes et des oranges et que la boite transformait tout en oranges automatiquement.",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Methodes II - Analyse de Donnees et Statistiques sous R"
+      "Module 2 : Fondations de R et Architecture"
     ]
   },
   {
-    "objectID": "01_Theorie_Enquete.html",
-    "href": "01_Theorie_Enquete.html",
-    "title": "Module 1 : Methodologie et Enquete",
-    "section": "",
-    "text": "Ce module pose les fondations epistemologiques, conceptuelles et methodologiques indispensables avant toute interaction avec un logiciel d’analyse.",
+    "objectID": "02_Bases_R.html#coercition-implicite",
+    "href": "02_Bases_R.html#coercition-implicite",
+    "title": "Module 2 : Fondations de R et Architecture",
+    "section": "4 Coercition Implicite",
+    "text": "4 Coercition Implicite\nUn vecteur atomique doit etre strictement homogene. Si on melange les types, R convertit silencieusement selon la hierarchie :\nlogical -&gt; integer -&gt; numeric -&gt; character\n# On melange un booleen, un nombre et du texte dans le meme vecteur\nc(TRUE, 5, \"Pomme\")\n# Resultat : c(\"TRUE\", \"5\", \"Pomme\") -- tout devient character !\n# Maintenant \"5\" est du TEXTE, pas un nombre. Tu ne peux plus calculer avec.\nToute operation mathematique sur \"5\" echouera ensuite.",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Module 1 : Methodologie et Enquete"
+      "Module 2 : Fondations de R et Architecture"
     ]
   },
   {
-    "objectID": "01_Theorie_Enquete.html#la-question-de-recherche-rq",
-    "href": "01_Theorie_Enquete.html#la-question-de-recherche-rq",
-    "title": "Module 1 : Methodologie et Enquete",
-    "section": "1 La Question de Recherche (RQ)",
-    "text": "1 La Question de Recherche (RQ)\nUne question de recherche scientifique doit etre :\n\nClaire : Eviter la confusion et le vague ; bien delimiter la recherche\nFaisable : Rester realiste par rapport aux ressources (personnelles, materielles, temps)\nPertinente : Viser a mieux comprendre le phenomene plutot que de le decrire ; eviter les previsions et les jugements moraux\n\n\n1.1 Clarte des Construits\nLa recherche scientifique procede par l’evaluation d’hypotheses derivees de theories preexistantes. La pierre angulaire reside dans la definition stricte des construits theoriques. Les ambiguites conceptuelles compromettent fondamentalement la validite des conclusions empiriques.\nIl est imperatif de proceder a une revue systematique de la litterature pour identifier les variations dans la maniere dont un concept est defini par differents auteurs.",
+    "objectID": "02_Bases_R.html#structures-de-donnees",
+    "href": "02_Bases_R.html#structures-de-donnees",
+    "title": "Module 2 : Fondations de R et Architecture",
+    "section": "5 Structures de Donnees",
+    "text": "5 Structures de Donnees\n\n5.1 Vecteurs\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nUn vecteur, c’est une liste de valeurs du meme type, comme un collier de perles. Toutes les perles sont enfilees dans l’ordre, et elles sont toutes du meme materiau. Pour creer un vecteur, on utilise la fonction c() (comme “combiner” ou “concatener”).\n\n\n\n# Creation d'un vecteur de nombres avec c() -- \"c\" veut dire \"combiner\"\nv1 &lt;- c(1, 2, 3)           # Un vecteur avec 3 nombres\n\n# Creation d'un vecteur de texte\nv2 &lt;- c(\"chat\", \"chien\", \"oiseau\")  # Un vecteur avec 3 mots\n\n# Sequences rapides : creer une suite de nombres\nseq_1 &lt;- 1:100                        # Les nombres de 1 a 100\nseq_2 &lt;- seq(from = 0, to = 1, by = 0.1)  # De 0 a 1, par pas de 0.1\n\n# Acceder a un element par sa position (R commence a 1, pas 0)\nv2[1]   # \"chat\"   -- le premier element\nv2[3]   # \"oiseau\" -- le troisieme element\n\n\n5.2 Matrices\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nUne matrice, c’est un tableau rectangulaire ou toutes les cases contiennent le meme type de donnees (que des nombres, ou que du texte). Pense a une grille de sudoku : des lignes, des colonnes, et que des chiffres dedans.\n\n\n\nStructures 2D strictement homogenes (un seul type). Remplissage par colonnes par defaut.\n# Creer une matrice 3x3 avec les nombres de 1 a 9\nm &lt;- matrix(1:9, nrow = 3, ncol = 3)\n# Par defaut, R remplit colonne par colonne :\n#      [,1] [,2] [,3]\n# [1,]    1    4    7\n# [2,]    2    5    8\n# [3,]    3    6    9\n\n# Pour remplir ligne par ligne, ajouter byrow = TRUE\nm &lt;- matrix(1:9, nrow = 3, ncol = 3, byrow = TRUE)\n\n# Extraction : matrice[ligne, colonne]\nm[3, 2]   # L'element a la ligne 3, colonne 2\nm[1, ]    # Toute la ligne 1 (on laisse \"colonne\" vide)\nm[, 2]    # Toute la colonne 2 (on laisse \"ligne\" vide)\n\n\n5.3 Facteurs (Factors)\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nUn facteur, c’est une variable qui ne peut prendre que certaines valeurs predefinies, appelees “niveaux”. Pense a un formulaire avec un menu deroulant : tu ne peux choisir que parmi les options proposees (Primaire, Secondaire, Tertiaire). En plus, les niveaux peuvent etre ordonnes (Primaire &lt; Secondaire &lt; Tertiaire).\n\n\n\nVecteurs entiers avec attribut “niveaux” (levels). Socle des variables nominales/ordinales dans les regressions.\n# On a des niveaux d'education en vrac\nniveaux_education &lt;- c(\"Secondaire\", \"Primaire\", \"Tertiaire\", \"Primaire\")\n\n# On les transforme en facteur ordonne\nfacteur_education &lt;- factor(\n  niveaux_education,                                    # les donnees brutes\n  levels = c(\"Primaire\", \"Secondaire\", \"Tertiaire\"),    # l'ordre des niveaux\n  ordered = TRUE                                        # c'est un ordre !\n)\n# Resultat : Primaire &lt; Secondaire &lt; Tertiaire\n# R sait maintenant que Tertiaire &gt; Primaire\n\n\n5.4 Listes\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nSi un vecteur est un collier de perles identiques, une liste c’est un sac a dos : tu peux y mettre n’importe quoi – un livre, une bouteille, un cahier, un autre sac. Chaque element peut etre de type different et meme de taille differente.\n\n\n\nVecteurs heterogenes : peuvent contenir nombres, texte, matrices, autres listes, modeles statistiques.\n# Creer une liste avec des elements de types differents\nma_liste &lt;- list(\n  nom = \"Analyse\",           # un texte\n  valeurs = c(1, 2, 3),     # un vecteur de nombres\n  matrice = matrix(1:4, 2, 2)  # une matrice 2x2\n)\n\n# Acceder aux elements de la liste\nma_liste$nom          # \"Analyse\"  -- acces par le nom avec $\nma_liste[[2]]         # c(1, 2, 3) -- acces par la position avec [[ ]]\nma_liste[[\"valeurs\"]] # c(1, 2, 3) -- acces par le nom avec [[ ]]\n\n\n5.5 Data Frames\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nUn Data Frame, c’est exactement comme un tableau Excel : des lignes et des colonnes. Chaque colonne a un nom (comme “Nom”, “Age”, “Note”) et contient un type de donnees (la colonne “Nom” contient du texte, la colonne “Age” contient des nombres). Chaque ligne represente une personne, un produit, une observation – bref, un “cas”.\nLa grande difference avec une matrice : dans un Data Frame, chaque colonne peut avoir un type different (texte dans une colonne, nombres dans une autre). C’est LA structure que tu utiliseras 90% du temps en Data Science.\n\n\n\nL’objet central de la Data Science en R. C’est une liste de colonnes de meme longueur pouvant contenir des types differents.\n\nLigne = unite statistique (observation/personne)\nColonne = variable\n\n# Creer un Data Frame -- comme creer un tableau Excel\ndf &lt;- data.frame(\n  nom = c(\"Sid\", \"Manny\", \"Diego\"),  # colonne \"nom\" (texte)\n  age = c(30, 40, 35)                # colonne \"age\" (nombres)\n)\n# Resultat :\n#     nom age\n# 1   Sid  30\n# 2 Manny  40\n# 3 Diego  35\n\n# Extraire une colonne avec le signe $\ndf$age        # Donne : 30 40 35\n\n# Extraire une ligne avec les crochets\ndf[1, ]       # Toute la ligne 1 (Sid, 30)\n\n# Extraire une cellule precise\ndf[2, \"nom\"]  # \"Manny\" (ligne 2, colonne \"nom\")\n# Exemple plus complet : donnees d'entreprise\nentreprise_df &lt;- data.frame(\n  id_filiale = 1:5,                                    # identifiant de 1 a 5\n  actifs_fixes = c(50000, 75000, 42000, NA, 90000),    # NA = valeur manquante\n  passifs = c(20000, 30000, 15000, 40000, 45000)       # dettes\n)\n# Resultat :\n#   id_filiale actifs_fixes passifs\n# 1          1        50000   20000\n# 2          2        75000   30000\n# 3          3        42000   15000\n# 4          4           NA   40000   &lt;-- pas de donnee pour les actifs !\n# 5          5        90000   45000",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Module 1 : Methodologie et Enquete"
+      "Module 2 : Fondations de R et Architecture"
     ]
   },
   {
-    "objectID": "01_Theorie_Enquete.html#operationnalisation",
-    "href": "01_Theorie_Enquete.html#operationnalisation",
-    "title": "Module 1 : Methodologie et Enquete",
-    "section": "2 Operationnalisation",
-    "text": "2 Operationnalisation\nC’est le processus qui consiste a rendre un concept abstrait (ex: Social Media Literacy) mesurable a l’aide de variables concretes et de questions specifiques.\nExemple : Le construit “engagement politique en ligne” peut etre operationnalise via :\n\nSomme des publications (IGPosts)\nSomme des mentions “J’aime” (IGLikes)\nMoyenne des commentaires par publication (IGCommentsPPost)",
+    "objectID": "02_Bases_R.html#fonctions-dexploration",
+    "href": "02_Bases_R.html#fonctions-dexploration",
+    "title": "Module 2 : Fondations de R et Architecture",
+    "section": "6 Fonctions d’Exploration",
+    "text": "6 Fonctions d’Exploration\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nQuand tu recois un nouveau jeu de donnees, la premiere chose a faire c’est l’explorer : combien de lignes ? Combien de colonnes ? Quels types de donnees ? Y a-t-il des valeurs manquantes ? Ces fonctions sont comme des “radiographies” de ton tableau – elles te montrent ce qu’il contient sans le modifier.\n\n\n\n\n\n\n\n\n\n\nFonction\nDescription\n\n\n\n\nstr(df)\nStructure interne : types, nb observations, apercu des valeurs\n\n\nsummary(df)\nStatistiques descriptives (Min, Q1, Mediane, Moyenne, Q3, Max, NA)\n\n\nhead(df, n)\nPremieres n lignes (defaut = 6)\n\n\ndim(df)\nVecteur [nb_lignes, nb_colonnes]\n\n\nnrow(df)\nNombre de lignes\n\n\nncol(df)\nNombre de colonnes\n\n\nnames(df)\nNoms des colonnes\n\n\nclass(x)\nType d’un objet\n\n\nis.na(x)\nMasque booleen des valeurs manquantes\n\n\nsum(is.na(x))\nComptage total des NA\n\n\n\n# Exemple pratique : explorer notre data frame d'entreprise\n\nstr(entreprise_df)       # Montre la structure : 5 obs., 3 variables, les types\nsummary(entreprise_df)   # Stats de chaque colonne (min, max, moyenne, NA)\nhead(entreprise_df, 3)   # Les 3 premieres lignes\ndim(entreprise_df)       # c(5, 3) -- 5 lignes, 3 colonnes\nnrow(entreprise_df)      # 5 lignes\nncol(entreprise_df)      # 3 colonnes\nnames(entreprise_df)     # \"id_filiale\" \"actifs_fixes\" \"passifs\"\n\n# Verifier les valeurs manquantes\nis.na(entreprise_df$actifs_fixes)  # FALSE FALSE FALSE TRUE FALSE\nsum(is.na(entreprise_df$actifs_fixes))  # 1 valeur manquante",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Module 1 : Methodologie et Enquete"
+      "Module 2 : Fondations de R et Architecture"
     ]
   },
   {
-    "objectID": "01_Theorie_Enquete.html#hypotheses-statistiques",
-    "href": "01_Theorie_Enquete.html#hypotheses-statistiques",
-    "title": "Module 1 : Methodologie et Enquete",
-    "section": "3 Hypotheses Statistiques",
-    "text": "3 Hypotheses Statistiques\nL’evaluation empirique se structure autour de la formulation d’hypotheses binaires :\n\n\n\n\n\n\n\n\nHypothese\nDefinition\nExemple\n\n\n\n\n\\(H_0\\) (Nulle)\nAbsence d’effet, de difference ou de relation\n\\(\\mu_1 = \\mu_2\\) ou \\(\\rho = 0\\)\n\n\n\\(H_1\\) (Alternative)\nExistence d’un effet ou d’une relation\n\\(\\mu_1 \\neq \\mu_2\\) ou \\(\\rho \\neq 0\\)\n\n\n\n\n3.1 Erreurs de test\n\n\n\n\n\n\n\n\n\nErreur\nNom\nDescription\nSeuil\n\n\n\n\nType I (\\(\\alpha\\))\nFaux positif\nRejeter \\(H_0\\) alors qu’elle est vraie\nConvention : \\(\\alpha = 0.05\\)\n\n\nType II (\\(\\beta\\))\nFaux negatif\nNe pas rejeter \\(H_0\\) alors que \\(H_1\\) est vraie\nPuissance = \\(1 - \\beta\\)\n\n\n\n\n\n\n\n\n\nWarningInterpretation de la P-Value\n\n\n\nNe jamais definir la p-value comme “la probabilite que \\(H_0\\) soit vraie”.\nLa p-value = probabilite d’obtenir une statistique de test au moins aussi extreme que celle observee, en supposant que \\(H_0\\) est vraie.\n\np &gt; \\(\\alpha\\) : manque de preuves pour rejeter \\(H_0\\) (pas une preuve de \\(H_0\\))\np &lt; \\(\\alpha\\) : on rejette \\(H_0\\) en faveur de \\(H_1\\)",
+    "objectID": "02_Bases_R.html#fonctions-utilisateur-user-defined-functions",
+    "href": "02_Bases_R.html#fonctions-utilisateur-user-defined-functions",
+    "title": "Module 2 : Fondations de R et Architecture",
+    "section": "7 Fonctions Utilisateur (User-Defined Functions)",
+    "text": "7 Fonctions Utilisateur (User-Defined Functions)\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nUne fonction, c’est comme une machine a cafe. Tu mets des ingredients dedans (eau + cafe), elle fait son travail a l’interieur, et elle te sort un resultat (ton cafe). En R, tu peux creer tes propres machines :\n\nLes arguments = ce que tu mets dans la machine (les ingredients)\nLe corps = ce que la machine fait (les instructions)\nLe return = ce que la machine te rend (le resultat)\n\nL’avantage : une fois que ta machine est construite, tu peux l’utiliser autant de fois que tu veux sans refaire tout le travail a chaque fois.\n\n\n\n# On construit notre propre \"machine\" qui calcule un ratio\ncalculer_ratio &lt;- function(actifs, passifs) {\n  # 1. Verification : est-ce qu'il y a des valeurs manquantes ?\n  if (any(is.na(actifs)) | any(is.na(passifs))) {\n    warning(\"Valeurs manquantes detectees.\")  # Alerte si NA\n  }\n  # 2. Calcul du ratio\n  ratio &lt;- actifs / passifs\n  # 3. On retourne le resultat\n  return(ratio)\n}\n\n# Maintenant on utilise notre machine sur nos donnees\nentreprise_df$ratio_solv &lt;- calculer_ratio(\n  entreprise_df$actifs_fixes,   # argument 1 : les actifs\n  entreprise_df$passifs          # argument 2 : les passifs\n)\n# Resultat : une nouvelle colonne \"ratio_solv\" ajoutee au data frame\n# 2.5, 2.5, 2.8, NA, 2.0\n\nstr(entreprise_df)  # Verification : on voit bien la nouvelle colonne\n# Exemple plus simple : une fonction qui calcule la TVA\ncalculer_prix_ttc &lt;- function(prix_ht, taux_tva = 0.077) {\n  # taux_tva a une valeur par defaut de 7.7% (TVA suisse)\n  prix_ttc &lt;- prix_ht * (1 + taux_tva)  # on ajoute la TVA au prix\n  return(prix_ttc)                        # on retourne le resultat\n}\n\n# Utilisation avec la TVA par defaut (7.7%)\ncalculer_prix_ttc(100)         # Resultat : 107.7\n\n# Utilisation avec une TVA differente (20%)\ncalculer_prix_ttc(100, 0.20)   # Resultat : 120",
     "crumbs": [
       "Accueil",
       "Resume du cours",
-      "Module 1 : Methodologie et Enquete"
-    ]
-  },
-  {
-    "objectID": "01_Theorie_Enquete.html#echelles-de-mesure-niveaux-de-stevens",
-    "href": "01_Theorie_Enquete.html#echelles-de-mesure-niveaux-de-stevens",
-    "title": "Module 1 : Methodologie et Enquete",
-    "section": "4 Echelles de Mesure (Niveaux de Stevens)",
-    "text": "4 Echelles de Mesure (Niveaux de Stevens)\nLa nature de la variable dicte la famille de tests statistiques applicables. Les niveaux sont hierarchiques et cumulatifs :\n\n\n\n\n\n\n\n\n\n\nNiveau\nDefinition\nProprietes\nExemples\nStatistiques applicables\n\n\n\n\nNominale\nCategories mutuellement exclusives, sans ordre\n\\(=\\) ou \\(\\neq\\)\nSexe, Religion, Parti politique\nMode, Frequences, Test \\(\\chi^2\\)\n\n\nOrdinale\nCategories avec hierarchie/ordre\n\\(&lt;, &gt;\\) (intervalles non constants)\nNiveau d’education, Echelle de Likert stricte\nMediane, Centiles, Spearman, Mann-Whitney\n\n\nIntervalle\nOrdre + distances constantes et mesurables\n\\(+, -\\) (zero arbitraire)\nTemperature (C/F), Scores QI\nMoyenne, Ecart-type, Pearson, ANOVA\n\n\nRatio\nIntervalle + zero absolu significatif\n\\(\\times, \\div\\)\nAge, Revenu, IGPosts, Temps de reaction\nCoefficient de variation, Moyenne geometrique\n\n\n\n\n\n\n\n\n\nNoteTraitement des Echelles de Likert\n\n\n\nMathematiquement, une echelle de Likert (1-5) est ordinale. Mais en pratique, sous reserve de normalite et symetrie, on les traite souvent comme des echelles d’intervalle pour permettre moyennes et regressions lineaires.",
-    "crumbs": [
-      "Accueil",
-      "Resume du cours",
-      "Module 1 : Methodologie et Enquete"
-    ]
-  },
-  {
-    "objectID": "01_Theorie_Enquete.html#types-de-questions-denquete",
-    "href": "01_Theorie_Enquete.html#types-de-questions-denquete",
-    "title": "Module 1 : Methodologie et Enquete",
-    "section": "5 Types de Questions d’Enquete",
-    "text": "5 Types de Questions d’Enquete\n\n\n\n\n\n\n\n\nType\nDescription\nNature des donnees\n\n\n\n\nQuestions ouvertes\nTexte libre\nDonnees non structurees (codage necessaire)\n\n\nQuestions fermees\nChoix unique/multiple\nDonnees nominales\n\n\nEchelles de Likert\nDegre d’accord (1-5)\nOrdinales (traitees comme intervalle)\n\n\nDifferenciateur semantique\nContinuum entre 2 adjectifs bipolaires\nOrdinales/Intervalle",
-    "crumbs": [
-      "Accueil",
-      "Resume du cours",
-      "Module 1 : Methodologie et Enquete"
-    ]
-  },
-  {
-    "objectID": "01_Theorie_Enquete.html#biais-cognitifs-denquete",
-    "href": "01_Theorie_Enquete.html#biais-cognitifs-denquete",
-    "title": "Module 1 : Methodologie et Enquete",
-    "section": "6 Biais Cognitifs d’Enquete",
-    "text": "6 Biais Cognitifs d’Enquete\n\n\n\n\n\n\n\n\nBiais\nDescription\nConsequence\n\n\n\n\nDesirabilite sociale\nLe repondant altere ses reponses pour paraitre socialement acceptable\nSurestimation des comportements “positifs”\n\n\nAcquiescement\nTendance a repondre “Oui” / “D’accord” automatiquement\nCorrelation artificielle positive\n\n\nEffet de Halo\nPerception globale contamine l’evaluation d’attributs specifiques\nCorrelation artificielle entre variables distinctes",
-    "crumbs": [
-      "Accueil",
-      "Resume du cours",
-      "Module 1 : Methodologie et Enquete"
+      "Module 2 : Fondations de R et Architecture"
     ]
   }
 ]

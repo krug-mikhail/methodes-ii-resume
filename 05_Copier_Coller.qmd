@@ -1,0 +1,257 @@
+---
+title: "Commandes Rapides - Copier/Coller"
+---
+
+Des blocs de code prets a copier pour l'examen. Clique sur l'icone de copie en haut a droite de chaque bloc.
+
+## Demarrage de Session (TOUJOURS en premier)
+
+```r
+library(tidyverse)
+```
+
+```r
+# Si besoin de definir le repertoire de travail
+setwd("/chemin/vers/mon/dossier")
+```
+
+## Importer des Donnees
+
+```r
+# Importer un fichier CSV
+df <- read_csv("mon_fichier.csv")
+```
+
+```r
+# Importer un CSV avec separateur point-virgule (format europeen)
+df <- read_csv2("mon_fichier.csv")
+```
+
+```r
+# Importer un fichier Excel
+library(readxl)
+df <- read_excel("mon_fichier.xlsx")
+```
+
+## Explorer les Donnees (premiere chose a faire apres import)
+
+```r
+# Vue rapide : combien de lignes/colonnes, quels types ?
+dim(df)       # Nombre de lignes et colonnes
+names(df)     # Noms des colonnes
+str(df)       # Structure complete (types, apercu)
+summary(df)   # Stats descriptives de chaque colonne
+head(df)      # 6 premieres lignes
+```
+
+```r
+# Combien de valeurs manquantes ?
+sum(is.na(df))                  # Total de NA dans tout le dataset
+colSums(is.na(df))              # NA par colonne
+```
+
+```r
+# Combien de valeurs uniques dans une colonne ?
+n_distinct(df$ma_colonne)
+unique(df$ma_colonne)           # Voir les valeurs uniques
+```
+
+## Manipulation avec dplyr - Templates
+
+### Selectionner des colonnes
+
+```r
+df %>% select(col1, col2, col3)
+df %>% select(-colonne_a_exclure)
+df %>% select(starts_with("IG"))
+```
+
+### Filtrer des lignes
+
+```r
+df %>% filter(age > 25)
+df %>% filter(genre == "Femme")
+df %>% filter(note >= 4 & branche == "Psycho")
+df %>% filter(pays %in% c("Suisse", "France", "Allemagne"))
+df %>% filter(!is.na(prix))     # Exclure les valeurs manquantes
+```
+
+### Creer / modifier une colonne
+
+```r
+df %>% mutate(nouvelle_col = col1 / col2)
+df %>% mutate(reussi = note >= 4)
+```
+
+```r
+# Creer une colonne conditionnelle (si/sinon)
+df %>% mutate(
+  categorie = case_when(
+    note >= 5.5  ~ "Tres bien",
+    note >= 5.0  ~ "Bien",
+    note >= 4.0  ~ "Suffisant",
+    TRUE         ~ "Insuffisant"
+  )
+)
+```
+
+### Trier
+
+```r
+df %>% arrange(note)              # Croissant
+df %>% arrange(desc(note))        # Decroissant
+```
+
+### Compter les occurrences
+
+```r
+df %>% count(ma_variable)
+df %>% count(ma_variable, sort = TRUE)   # Tri decroissant
+```
+
+### Resumer par groupe (le plus courant a l'examen)
+
+```r
+df %>%
+  group_by(variable_categorielle) %>%
+  summarize(
+    nombre    = n(),
+    moyenne   = mean(variable_num, na.rm = TRUE),
+    mediane   = median(variable_num, na.rm = TRUE),
+    ecart_type = sd(variable_num, na.rm = TRUE),
+    minimum   = min(variable_num, na.rm = TRUE),
+    maximum   = max(variable_num, na.rm = TRUE)
+  ) %>%
+  ungroup()
+```
+
+### Chaine complete typique (filtre + groupe + resume + tri)
+
+```r
+df %>%
+  filter(condition > valeur) %>%
+  group_by(categorie) %>%
+  summarize(
+    n = n(),
+    moy = mean(variable, na.rm = TRUE)
+  ) %>%
+  ungroup() %>%
+  arrange(desc(moy))
+```
+
+## Graphiques ggplot2 - Templates
+
+### Nuage de points (2 variables continues)
+
+```r
+ggplot(df, aes(x = var_continue_1, y = var_continue_2)) +
+  geom_point() +
+  labs(title = "Mon titre", x = "Axe X (unite)", y = "Axe Y (unite)")
+```
+
+```r
+# Avec couleur par categorie
+ggplot(df, aes(x = var_x, y = var_y, color = var_categorie)) +
+  geom_point() +
+  labs(title = "Titre", x = "X", y = "Y", color = "Legende")
+```
+
+### Diagramme a barres (frequences d'une categorie)
+
+```r
+ggplot(df, aes(x = var_categorielle)) +
+  geom_bar() +
+  labs(title = "Mon titre", x = "Categorie", y = "Nombre")
+```
+
+```r
+# Barres cote a cote par sous-groupe
+ggplot(df, aes(x = var_cat_1, fill = var_cat_2)) +
+  geom_bar(position = "dodge") +
+  labs(title = "Titre", x = "X", y = "Nombre", fill = "Legende")
+```
+
+### Histogramme (distribution d'une variable continue)
+
+```r
+ggplot(df, aes(x = var_continue)) +
+  geom_histogram(binwidth = 10) +
+  labs(title = "Mon titre", x = "Variable (unite)", y = "Frequence")
+```
+
+### Boxplot (comparer distributions entre groupes)
+
+```r
+ggplot(df, aes(x = var_categorielle, y = var_continue)) +
+  geom_boxplot() +
+  labs(title = "Mon titre", x = "Groupe", y = "Variable (unite)")
+```
+
+### Sous-graphiques par categorie (facettes)
+
+```r
+# Ajouter cette ligne a n'importe quel graphique
++ facet_wrap(~ var_categorielle)
+```
+
+### Personnalisation rapide (a ajouter avec +)
+
+```r
++ labs(title = "Titre", subtitle = "Sous-titre", x = "Axe X", y = "Axe Y",
+       color = "Legende", fill = "Legende", caption = "Source : ...")
++ theme_minimal()           # Theme epure
++ theme_bw()                # Theme noir et blanc
++ theme(legend.position = "none")   # Supprimer la legende
++ scale_fill_viridis_d()    # Palette accessible (daltonisme)
++ scale_color_viridis_d()   # Idem pour les couleurs de points/lignes
+```
+
+## Statistiques Rapides (hors graphique)
+
+```r
+mean(df$col, na.rm = TRUE)      # Moyenne
+median(df$col, na.rm = TRUE)    # Mediane
+sd(df$col, na.rm = TRUE)        # Ecart-type
+min(df$col, na.rm = TRUE)       # Minimum
+max(df$col, na.rm = TRUE)       # Maximum
+sum(df$col, na.rm = TRUE)       # Somme
+```
+
+## Conversions de Types
+
+```r
+# Convertir en numerique (si une colonne est lue comme texte)
+df$col <- as.numeric(df$col)
+
+# Convertir en facteur (variable categorielle)
+df$col <- as.factor(df$col)
+
+# Convertir en texte
+df$col <- as.character(df$col)
+```
+
+## Gestion des Valeurs Manquantes (NA)
+
+```r
+# Compter les NA
+sum(is.na(df$col))
+
+# Supprimer les lignes avec NA dans une colonne
+df %>% filter(!is.na(col))
+
+# Supprimer TOUTES les lignes qui ont au moins un NA
+df %>% drop_na()
+
+# Remplacer les NA par une valeur
+df %>% mutate(col = replace_na(col, 0))
+```
+
+## Raccourcis Clavier RStudio
+
+| Action | Windows | Mac |
+|--------|---------|-----|
+| `<-` | `Alt + -` | `Option + -` |
+| `%>%` | `Ctrl + Shift + M` | `Cmd + Shift + M` |
+| Executer | `Ctrl + Enter` | `Cmd + Return` |
+| Commenter | `Ctrl + Shift + C` | `Cmd + Shift + C` |
+| Redemarrer R | `Ctrl + Shift + F10` | `Cmd + Shift + F10` |
