@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Examen blanc — Méthodes II R II</title>
+<style>
+  :root{
+    --bleu:#2563eb; --bleu-fonce:#1e40af; --vert:#16a34a; --rouge:#dc2626;
+    --fond:#eef2f7; --carte:#ffffff; --texte:#1f2937; --gris:#6b7280;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--fond);color:var(--texte);line-height:1.6;
+    padding-bottom:80px;-webkit-text-size-adjust:100%;
+  }
+  header{
+    background:linear-gradient(135deg,var(--bleu),var(--bleu-fonce));
+    color:#fff;padding:34px 20px 28px;text-align:center;
+  }
+  header h1{font-size:1.6rem;margin-bottom:6px}
+  header p{opacity:.9;font-size:.95rem}
+  .wrap{max-width:780px;margin:0 auto;padding:20px 16px}
+  .intro{
+    background:var(--carte);border-radius:14px;padding:18px 20px;margin:18px 0;
+    box-shadow:0 2px 10px rgba(0,0,0,.06);font-size:.95rem;
+  }
+  .intro b{color:var(--bleu-fonce)}
+  .section-titre{
+    margin:34px 0 14px;padding-left:12px;border-left:5px solid var(--bleu);
+    font-size:1.25rem;color:var(--bleu-fonce);font-weight:700;
+  }
+  .question{
+    background:var(--carte);border-radius:14px;padding:20px;margin:16px 0;
+    box-shadow:0 2px 10px rgba(0,0,0,.06);
+  }
+  .q-tag{
+    display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.04em;
+    text-transform:uppercase;padding:3px 9px;border-radius:20px;margin-bottom:10px;
+  }
+  .tag-qcm{background:#dbeafe;color:#1e40af}
+  .tag-code{background:#fef3c7;color:#92400e}
+  .q-text{font-weight:600;margin-bottom:14px}
+  .q-text code,.explication code,.q-text .inline{
+    background:#eef2f7;padding:1px 6px;border-radius:5px;
+    font-family:"SF Mono",Menlo,Consolas,monospace;font-size:.88em;
+  }
+  .options{list-style:none}
+  .options li{
+    border:2px solid #e5e7eb;border-radius:10px;padding:11px 14px;margin:8px 0;
+    cursor:pointer;transition:.15s;font-size:.95rem;
+  }
+  .options li:hover{border-color:var(--bleu);background:#f8faff}
+  .question.answered .options li{cursor:default}
+  .question.answered .options li:hover{background:transparent}
+  .options li.correct{
+    border-color:var(--vert);background:#f0fdf4;font-weight:600;
+  }
+  .options li.correct::before{content:"\2713  ";color:var(--vert);font-weight:800}
+  .options li.wrong{
+    border-color:var(--rouge);background:#fef2f2;
+  }
+  .options li.wrong::before{content:"\2717  ";color:var(--rouge);font-weight:800}
+  .explication{
+    display:none;margin-top:14px;padding:13px 15px;border-radius:10px;
+    background:#f1f5f9;border-left:4px solid var(--bleu);font-size:.92rem;
+  }
+  .explication.show{display:block}
+  .explication b{color:var(--bleu-fonce)}
+  .btn-sol{
+    background:var(--bleu);color:#fff;border:none;border-radius:9px;
+    padding:9px 16px;font-size:.9rem;font-weight:600;cursor:pointer;margin-top:6px;
+  }
+  .btn-sol:hover{background:var(--bleu-fonce)}
+  .solution{
+    display:none;margin-top:12px;background:#0f172a;color:#e2e8f0;
+    border-radius:10px;padding:14px 16px;overflow-x:auto;
+    font-family:"SF Mono",Menlo,Consolas,monospace;font-size:.86rem;line-height:1.55;
+  }
+  .solution.show{display:block}
+  .solution .cm{color:#64748b}
+  .solution .fn{color:#7dd3fc}
+  .sol-note{
+    display:none;margin-top:10px;font-size:.9rem;color:var(--gris);
+  }
+  .sol-note.show{display:block}
+  .barre{
+    position:fixed;bottom:0;left:0;right:0;background:#fff;
+    box-shadow:0 -2px 12px rgba(0,0,0,.12);padding:10px 16px;z-index:10;
+  }
+  .barre-in{
+    max-width:780px;margin:0 auto;display:flex;align-items:center;
+    justify-content:space-between;gap:12px;
+  }
+  .progress{flex:1;height:9px;background:#e5e7eb;border-radius:6px;overflow:hidden}
+  .progress span{display:block;height:100%;width:0;background:var(--bleu);transition:.3s}
+  .score{font-weight:700;color:var(--bleu-fonce);white-space:nowrap;font-size:.92rem}
+  .reset{
+    background:none;border:1.5px solid #cbd5e1;color:var(--gris);
+    border-radius:8px;padding:6px 12px;font-size:.82rem;cursor:pointer;
+  }
+  .reset:hover{border-color:var(--bleu);color:var(--bleu)}
+  footer{text-align:center;color:var(--gris);font-size:.82rem;padding:24px 16px}
+  a{color:var(--bleu)}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Examen blanc — Méthodes II</h1>
+  <p>Examen R II · Statistiques descriptives &amp; inférentielles · SP 2026</p>
+</header>
+
+<div class="wrap">
+
+  <div class="intro">
+    <b>Mode d'emploi.</b> 36 questions basées sur les exercices 10 à 13 (descriptives, test t,
+    ANOVA, régression, présentation des résultats). Pour les <b>QCM</b>, clique sur une réponse :
+    le corrigé et l'explication s'affichent. Pour les <b>questions de code</b>, écris ta réponse
+    sur papier puis clique sur « Voir la solution ». Ton score QCM s'affiche en bas.
+  </div>
+
+  <!-- ================= SECTION 1 ================= -->
+  <div class="section-titre">1 · Statistiques descriptives</div>
+
+  <div class="question" data-type="qcm">
+    <span class="q-tag tag-qcm">QCM · Q1</span>
+    <div class="q-text">Quelle fonction affiche, pour chaque colonne d'un data frame, le minimum, Q1, la médiane, la moyenne, Q3 et le maximum ?</div>
+    <ul class="options">
+      <li data-correct="false"><code>str()</code></li>
+      <li data-correct="true"><code>summary()</code></li>
+      <li data-correct="false"><code>head()</code></li>
+      <li data-correct="false"><code>dim()</code></li>
+    </ul>
+    <div class="explication"><b>summary()</b> donne le résumé statistique de chaque colonne. <code>str()</code> montre la structure (types), <code>head()</code> les 6 premières lignes, <code>dim()</code> le nombre de lignes/colonnes.</div>
+  </div>
+
+  <div class="question" data-type="qcm">
+    <span class="q-tag tag-qcm">QCM · Q2</span>
+    <div class="q-text">Pour la variable <code>genre</code> (Femme / Homme / Autre), quelle mesure de tendance centrale a du sens ?</div>
+    <ul class="options">
+      <li data-correct="false">La moyenne</li>
+      <li data-correct="false">La médiane</li>
+      <li data-correct="true">Le mode</li>
+      <li data-correct="false">L'écart-type</li>
+    </ul>
+    <div class="explication"><b>Le mode</b> (catégorie la plus fréquente). <code>genre</code> est une variable <b>nominale</b> : on ne peut calculer ni moyenne ni médiane sur des catégories. L'écart-type n'est pas une mesure de centre.</div>
+  </div>
+
+  <div class="question" data-type="code">
+    <span class="q-tag tag-code">Code · Q3</span>
+    <div class="q-text">Écris la commande qui calcule la moyenne de la colonne <code>note_ecole</code> du data frame <code>reponses_socio</code>, en ignorant les valeurs manquantes.</div>
+    <button class="btn-sol">Voir la solution</button>
+    <pre class="solution"><span class="fn">mean</span>(reponses_socio$note_ecole, na.rm = <span class="fn">TRUE</span>)
+<span class="cm"># na.rm = TRUE indique d'ignorer les NA, sinon le resultat serait NA</span></pre>
+  </div>
+
+  <div class="question" data-type="qcm">
+    <span class="q-tag tag-qcm">QCM · Q4</span>
+    <div class="q-text">Dans une entreprise, le salaire <b>médian</b> est 4'000 CHF et le salaire <b>moyen</b> 9'000 CHF. Que peut-on en conclure ?</div>
+    <ul class="options">
+      <li data-correct="false">Il y a forcément une erreur de calcul</li>
+      <li data-correct="true">La distribution est asymétrique : quelques très hauts salaires tirent la moyenne vers le haut</li>
+      <li data-correct="false">La moitié des employés gagne 9'000 CHF</li>
+      <li data-correct="false">L'écart-type est nul</li>
+    </ul>
+    <div class="explication">La <b>moyenne est sensible aux valeurs extrêmes</b>. Quand moyenne ≫ médiane, la distribution est étirée vers les hautes valeurs. La <b>médiane</b> décrit alors mieux le cas typique.</div>
+  </div>
+
+  <div class="question" data-type="qcm">
+    <span class="q-tag tag-qcm">QCM · Q5</span>
+    <div class="q-text">Que calcule la fonction <code>sd()</code> ?</div>
+    <ul class="options">
+      <li data-correct="false">La somme</li>
+      <li data-correct="false">La variance</li>
+      <li data-correct="true">L'écart-type</li>
+      <li data-correct="false">La médiane</li>
+    </ul>
+    <div class="explication"><b>sd</b> = <i>standard deviation</i> = écart-type. La variance se calcule avec <code>var()</code> (et variance = écart-type²).</div>
+  </div>
+
+  <div class="question" data-type="code">
+    <span class="q-tag tag-code">Code · Q6</span>
+    <div class="q-text">Le data frame <code>reponses_socio</code> a une colonne <code>genre</code>. Écris le code qui convertit <code>genre</code> en facteur pour que les catégories apparaissent dans l'ordre <b>Femme, Homme, Autre</b>.</div>
+    <button class="btn-sol">Voir la solution</button>
+    <pre class="solution">ordre <- <span class="fn">c</span>(<span class="cm">"Femme"</span>, <span class="cm">"Homme"</span>, <span class="cm">"Autre"</span>)
+reponses_socio$genre <- <span class="fn">factor</span>(reponses_socio$genre, levels = ordre)
+<span class="cm"># Sans 'levels', R classe les categories par ordre alphabetique</span></pre>
+  </div>
+
+  <div class="question" data-type="qcm">
+    <span class="q-tag tag-qcm">QCM · Q7</span>
+    <div class="q-text"><code>table(reponses_socio$permis)</code> renvoie <span class="inline">N/A 1&nbsp;&nbsp;Non 18&nbsp;&nbsp;Oui 55</span>. Qu'est-ce que c'est ?</div>
+    <ul class="options">
+      <li data-correct="false">Les pourcentages de chaque catégorie</li>
+      <li data-correct="true">Un tableau de fréquences (le nombre d'observations par catégorie)</li>
+      <li data-correct="false">La moyenne de la variable</li>
+      <li data-correct="false">La liste des valeurs manquantes</li>
+    </ul>
+    <div class="explication"><code>table()</code> compte les effectifs : 1 réponse « N/A », 18 « Non », 55 « Oui ». Pour des pourcentages, il faudrait <code>prop.table()</code> ou <code>count()</code> + <code>mutate()</code>.</div>
+  </div>
+
+  <div class="question" data-type="qcm">
+    <span class="q-tag tag-qcm">QCM · Q8</span>
+    <div class="q-text">Dans une sortie <code>summary()</code>, sous la colonne <code>note_ecole</code> on lit <span class="inline">NA's : 2</span>. Cela signifie :</div>
+    <ul class="options">
+      <li data-correct="false">2 valeurs sont égales à 0</li>
+      <li data-correct="true">2 observations ont une valeur manquante pour cette variable</li>
+      <li data-correct="false">La moyenne vaut 2</li>
+      <li data-correct="false">Il y a 2 catégories</li>
+    </ul>
+    <div class="explication"><b>NA</b> = valeur manquante (<i>Not Available</i>). Ici, 2 personnes n'ont pas de <code>note_ecole</code> renseignée — ce n'est pas la valeur 0.</div>
+  </div>
+
+  <div class="question" data-type="code">
+    <span class="q-tag tag-code">Code · Q9</span>
+    <div class="q-text">Écris le code <code>ggplot2</code> qui crée un histogramme de la variable <code>trajet</code> de <code>reponses_socio</code>, avec une largeur d'intervalle de 10.</div>
+    <button class="btn-sol">Voir la solution</button>
+    <pre class="solution"><span class="fn">ggplot</span>(data = reponses_socio, mapping = <span class="fn">aes</span>(x = trajet)) +
+  <span class="fn">geom_histogram</span>(binwidth = 10)
+<span class="cm"># on peut enrichir : + labs(title = "...", x = "...", y = "Frequence")</span></pre>
+  </div>
+
+  <div class="question" data-type="qcm">
+    <span class="q-tag tag-qcm">QCM · Q10</span>
+    <div class="q-text">Quelle fonction sauvegarde un data frame dans un fichier CSV sur le disque ?</div>
+    <ul class="options">
+      <li data-correct="false"><code>read.csv()</code></li>
+      <li data-correct="true"><code>write.csv()</code></li>
+      <li data-correct="false"><code>save.df()</code></li>
+      <li data-correct="false"><code>summary()</code></li>
+    </ul>
+    <div class="explication"><code>write.csv()</code> (ou <code>write_csv()</code> du tidyverse) <b>exporte</b> les données. <code>read.csv()</code> fait l'inverse : il <b>importe</b> un CSV dans R.</div>
+  </div>
+
+  <!-- ================= SECTION 2 ================= -->
+  <div class="section-titre">2 · Test t (statistiques inférentielles I)</div>
+
+  <div class="question" data-type="qcm">
+    <span class="q-tag tag-qcm">QCM · Q11</span>
+    <div class="q-text">À quoi sert le test t ?</div>
+    <ul class="options">
+      <li data-correct="false">À compter des catégories</li>
+      <li data-correct="true">À comparer des moyennes</li>
+      <li data-correct="false">À créer un graphique</li>
+      <li data-correct="false">À trier un data frame</li>
+    </ul>
+    <div class="explication">Le <b>test t</b> (de Student) évalue si une moyenne diffère d'une référence, ou si deux moyennes diffèrent significativement l'une de l'autre.</div>
+  </div>
+
+  <div class="question" data-type="qcm">
+    <span class="q-tag tag-qcm">QCM · Q12</span>
+    <div class="q-text">Que teste la commande <code>t.test(scores_qi, mu = 100)</code> ?</div>
+    <ul class="options">
+      <li data-correct="false">Si deux groupes ont la même moyenne</li>
+      <li data-correct="true">Si la moyenne de <code>scores_qi</code> diffère significativement de 100</li>
+      <li data-correct="false">Si <code>scores_qi</code> suit une loi normale</li>
+      <li data-correct="false">La corrélation entre <code>scores_qi</code> et 100</li>
+    </ul>
+    <div class="explication">C'est un <b>test t à un échantillon</b> : on compare la moyenne de l'échantillon à une valeur de référence fixée par l'argument <code>mu</code>.</div>
+  </div>
+
+  <div class="question" data-type="qcm">
+    <span class="q-tag tag-qcm">QCM · Q13</span>
+    <div class="q-text">Une sortie de test t donne <span class="inline">p-value = 0.1262</span>. Au seuil de 5 %, on conclut :</div>
+    <ul class="options">
+      <li data-correct="false">On rejette H0 : la différence est significative</li>
+      <li data-correct="true">On ne rejette pas H0 : la différence n'est pas significative</li>
+      <li data-correct="false">Le test est invalide</li>
+      <li data-correct="false">H0 a 12,6 % de chances d'être vraie</li>
+    </ul>
+    <div class="explication">0.1262 ≥ 0.05 → on <b>ne rejette pas H0</b>. Attention : la p-value n'est <b>pas</b> la probabilité que H0 soit vraie ; c'est la probabilité d'observer ces données <i>si</i> H0 était vraie.</div>
+  </div>
+
+  <div class="question" data-type="qcm">
+    <span class="q-tag tag-qcm">QCM · Q14</span>
+    <div class="q-text">Le <b>même</b> test, refait avec un échantillon plus grand, donne <span class="inline">p-value = 0.007</span>. On conclut :</div>
+    <ul class="options">
+      <li data-correct="false">On ne rejette pas H0</li>
+      <li data-correct="true">On rejette H0 : la différence est significative</li>
+      <li data-correct="false">L'échantillon est devenu trop petit</li>
+      <li data-correct="false">Le résultat est identique au précédent</li>
+    </ul>
+    <div class="explication">0.007 &lt; 0.05 (et même &lt; 0.01) → on <b>rejette H0</b>. Le même écart devient significatif avec plus d'observations : c'est la <b>puissance statistique</b>. Un résultat non significatif sur petit échantillon ne prouve donc pas l'absence d'effet.</div>
+  </div>
+
+  <div class="question" data-type="qcm">
+    <span class="q-tag tag-qcm">QCM · Q15</span>
+    <div class="q-text">Que signifie l'hypothèse nulle (H0) ?</div>
+    <ul class="options">
+      <li data-correct="false">Il existe un effet ou une différence</li>
+      <li data-correct="true">Il n'y a aucun effet, aucune différence (tout est dû au hasard)</li>
+      <li data-correct="false">L'échantillon est vide</li>
+      <li data-correct="false">La p-value vaut zéro</li>
+    </ul>
+    <div class="explication"><b>H0</b> = « rien ne se passe ». C'est l'hypothèse qu'on cherche à rejeter. <b>H1</b> (alternative) dit « il y a un effet ».</div>
+  </div>
+
+  <div class="question" data-type="code">
+    <span class="q-tag tag-code">Code · Q16</span>
+    <div class="q-text">Écris la commande qui réalise un test t comparant les moyennes de deux échantillons indépendants, <code>tailles_f</code> et <code>tailles_h</code>.</div>
+    <button class="btn-sol">Voir la solution</button>
+    <pre class="solution"><span class="fn">t.test</span>(tailles_f, tailles_h)
+<span class="cm"># R applique par defaut le "Welch Two Sample t-test"</span>
+<span class="cm"># Variante si les donnees sont dans un data frame :</span>
+<span class="cm"># t.test(taille ~ genre, data = mon_df)</span></pre>
+  </div>
+
+  <div class="question" data-type="qcm">
+    <span class="q-tag tag-qcm">QCM · Q17</span>
+    <div class="q-text">Laquelle de ces conditions n'est <b>PAS</b> requise pour appliquer un test t ?</div>
+    <ul class="options">
+      <li data-correct="false">Les données sont continues</li>
+      <li data-correct="false">Les observations sont indépendantes</li>
+      <li data-correct="false">La variable suit approximativement une loi normale</li>
+      <li data-correct="true">Les deux groupes ont exactement le même nombre d'observations</li>
+    </ul>
+    <div class="explication">Le test t <b>ne requiert pas</b> des effectifs égaux. Conditions réelles : données continues, échantillonnage aléatoire, indépendance, normalité approximative, et homoscédasticité (variances similaires).</div>
+  </div>
+
+  <div class="question" data-type="qcm">
+    <span class="q-tag tag-qcm">QCM · Q18</span>
+    <div class="q-text">À quoi sert <code>set.seed(123)</code> avant un <code>rnorm()</code> ?</div>
+    <ul class="options">
+      <li data-correct="false">À fixer la taille de l'échantillon</li>
+      <li data-correct="true">À garantir que les nombres aléatoires soient les mêmes à chaque exécution</li>
+      <li data-correct="false">À définir la moyenne de la distribution</li>
+      <li data-correct="false">À importer un fichier de données</li>
+    </ul>
+    <div class="explication"><code>set.seed()</code> fige le générateur aléatoire : <code>rnorm()</code> produira toujours la même séquence. Indispensable pour la <b>reproductibilité</b> des résultats.</div>
+  </div>
+
+  <div class="question" data-type="qcm">
+    <span class="q-tag tag-qcm">QCM · Q19</span>
+    <div class="q-text">Un test t contre <code>mu = 100</code> donne un intervalle de confiance à 95 % de <span class="inline">[98.6 ; 110.4]</span>. Cela indique :</div>
+    <ul class="options">
+      <li data-correct="false">La différence avec 100 est significative</li>
+      <li data-correct="true">La différence avec 100 n'est pas significative — l'IC contient 100</li>
+      <li data-correct="false">La moyenne vaut exactement 100</li>
+      <li data-correct="false">Le test a échoué</li>
+    </ul>
+    <div class="explication">Si l'intervalle de confiance <b>contient la valeur de référence</b> (100), on ne peut pas exclure « aucune différence » → résultat <b>non significatif</b>.</div>
+  </div>
+
+  <div class="question" data-type="code">
+    <span class="q-tag tag-code">Code · Q20</span>
+    <div class="q-text">Écris le code qui simule, avec <code>rnorm()</code>, 30 valeurs suivant une loi normale de moyenne 7.9 et d'écart-type 2 (résultat reproductible).</div>
+    <button class="btn-sol">Voir la solution</button>
+    <pre class="solution"><span class="fn">set.seed</span>(123)
+echantillon <- <span class="fn">rnorm</span>(30, mean = 7.9, sd = 2)
+<span class="cm"># rnorm(n, mean, sd) : n valeurs, loi normale</span></pre>
+  </div>
+
+  <!-- ================= SECTION 3 ================= -->
+  <div class="section-titre">3 · ANOVA</div>
+
+  <div class="question" data-type="qcm">
+    <span class="q-tag tag-qcm">QCM · Q21</span>
+    <div class="q-text">Pour comparer les moyennes de <b>3 espèces</b> de manchots, quel test utiliser ?</div>
+    <ul class="options">
+      <li data-correct="false">Un test t</li>
+      <li data-correct="true">Une ANOVA</li>
+      <li data-correct="false">Une corrélation</li>
+      <li data-correct="false">Un histogramme</li>
+    </ul>
+    <div class="explication">Le test t ne compare que <b>2</b> moyennes. Pour <b>3 groupes ou plus</b>, on utilise l'<b>ANOVA</b> (<code>aov()</code>).</div>
+  </div>
+
+  <div class="question" data-type="code">
+    <span class="q-tag tag-code">Code · Q22</span>
+    <div class="q-text">Écris la commande qui réalise une ANOVA de <code>flipper_length_mm</code> selon <code>species</code> dans le data frame <code>penguins</code>, et stocke le résultat dans <code>anova1</code>.</div>
+    <button class="btn-sol">Voir la solution</button>
+    <pre class="solution">anova1 <- <span class="fn">aov</span>(flipper_length_mm ~ species, data = penguins)
+<span class="fn">summary</span>(anova1)
+<span class="cm"># syntaxe : aov(variable_a_expliquer ~ variable_groupe, data = ...)</span></pre>
+  </div>
+
+  <div class="question" data-type="qcm">
+    <span class="q-tag tag-qcm">QCM · Q23</span>
+    <div class="q-text">Le <code>summary()</code> d'une ANOVA affiche <span class="inline">Pr(&gt;F) &lt;2e-16 ***</span>. On conclut :</div>
+    <ul class="options">
+      <li data-correct="false">Aucune différence entre les groupes</li>
+      <li data-correct="true">Au moins un groupe a une moyenne significativement différente des autres</li>
+      <li data-correct="false">Tous les groupes ont exactement la même moyenne</li>
+      <li data-correct="false">Le test est invalide</li>
+    </ul>
+    <div class="explication"><code>Pr(&gt;F)</code> est la p-value globale. <span class="inline">&lt;2e-16</span> ≈ 0 &lt; 0.05 → on <b>rejette H0</b>. L'ANOVA dit qu'<b>au moins un</b> groupe diffère, mais pas lequel.</div>
+  </div>
+
+  <div class="question" data-type="qcm">
+    <span class="q-tag tag-qcm">QCM · Q24</span>
+    <div class="q-text">Après une ANOVA significative, quel test indique <b>quelles paires</b> de groupes diffèrent ?</div>
+    <ul class="options">
+      <li data-correct="false">Un nouveau test t</li>
+      <li data-correct="true">Le test post-hoc de Tukey, <code>TukeyHSD()</code></li>
+      <li data-correct="false">Une régression linéaire</li>
+      <li data-correct="false">La fonction <code>summary()</code></li>
+    </ul>
+    <div class="explication"><code>TukeyHSD(anova1)</code> compare chaque paire de groupes. On ne le lance <b>qu'après</b> une ANOVA significative.</div>
+  </div>
+
+  <div class="question" data-type="qcm">
+    <span class="q-tag tag-qcm">QCM · Q25</span>
+    <div class="q-text">Pourquoi préférer une ANOVA à plusieurs tests t deux à deux ?</div>
+    <ul class="options">
+      <li data-correct="false">L'ANOVA est plus rapide à taper</li>
+      <li data-correct="true">Enchaîner les tests t gonfle le risque d'erreur de type I</li>
+      <li data-correct="false">Le test t ne fonctionne pas dans R</li>
+      <li data-correct="false">L'ANOVA ne demande aucune condition</li>
+    </ul>
+    <div class="explication">Chaque test t comporte 5 % de risque d'erreur de type I ; les multiplier <b>accumule</b> ce risque. L'ANOVA fait un <b>seul test global</b> et protège contre cette inflation.</div>
+  </div>
+
+  <!-- ================= SECTION 4 ================= -->
+  <div class="section-titre">4 · Régression linéaire</div>
+
+  <div class="question" data-type="code">
+    <span class="q-tag tag-code">Code · Q26</span>
+    <div class="q-text">Écris la commande qui ajuste une régression linéaire de <code>mpg</code> (variable à expliquer) par <code>wt</code> dans <code>mtcars</code>, et affiche le résumé du modèle.</div>
+    <button class="btn-sol">Voir la solution</button>
+    <pre class="solution">modele1 <- <span class="fn">lm</span>(mpg ~ wt, data = mtcars)
+<span class="fn">summary</span>(modele1)
+<span class="cm"># lm(Y ~ X, data = ...) : Y expliquee par X</span></pre>
+  </div>
+
+  <div class="question" data-type="qcm">
+    <span class="q-tag tag-qcm">QCM · Q27</span>
+    <div class="q-text">Dans <code>summary(lm(mpg ~ wt, data = mtcars))</code>, le coefficient (<i>Estimate</i>) de <code>wt</code> vaut <b>-5.34</b>. Interprétation :</div>
+    <ul class="options">
+      <li data-correct="false">Chaque unité de poids en plus augmente <code>mpg</code> de 5,34</li>
+      <li data-correct="true">Chaque unité de poids en plus fait baisser <code>mpg</code> de 5,34 en moyenne</li>
+      <li data-correct="false">Le poids n'a aucun effet sur <code>mpg</code></li>
+      <li data-correct="false"><code>mpg</code> vaut toujours -5,34</li>
+    </ul>
+    <div class="explication">Le coefficient est la <b>pente</b> : signe <b>négatif</b> → quand <code>wt</code> augmente d'1 unité, <code>mpg</code> diminue de 5,34 en moyenne.</div>
+  </div>
+
+  <div class="question" data-type="qcm">
+    <span class="q-tag tag-qcm">QCM · Q28</span>
+    <div class="q-text">La sortie indique <span class="inline">Multiple R-squared : 0.7528</span>. Cela signifie :</div>
+    <ul class="options">
+      <li data-correct="false">La corrélation vaut 0,75</li>
+      <li data-correct="true">Le modèle explique environ 75 % de la variance de <code>mpg</code></li>
+      <li data-correct="false">75 % des données sont manquantes</li>
+      <li data-correct="false">La p-value vaut 0,75</li>
+    </ul>
+    <div class="explication">Le <b>R²</b> mesure la part de la variance de la variable à expliquer captée par le modèle. Ici 75 % ; les 25 % restants viennent d'autres facteurs.</div>
+  </div>
+
+  <div class="question" data-type="qcm">
+    <span class="q-tag tag-qcm">QCM · Q29</span>
+    <div class="q-text">Que réalise <code>lm(mpg ~ wt + hp, data = mtcars)</code> ?</div>
+    <ul class="options">
+      <li data-correct="false">Une régression linéaire simple</li>
+      <li data-correct="true">Une régression linéaire multiple</li>
+      <li data-correct="false">Une ANOVA</li>
+      <li data-correct="false">Un test de corrélation</li>
+    </ul>
+    <div class="explication">Il y a <b>plusieurs variables explicatives</b> (<code>wt</code> ET <code>hp</code>) → régression <b>multiple</b>. Chaque coefficient s'interprète « toutes choses égales par ailleurs ».</div>
+  </div>
+
+  <div class="question" data-type="qcm">
+    <span class="q-tag tag-qcm">QCM · Q30</span>
+    <div class="q-text">À côté du coefficient de <code>wt</code>, R affiche <span class="inline">***</span>. Cela indique :</div>
+    <ul class="options">
+      <li data-correct="false">Le coefficient est erroné</li>
+      <li data-correct="true">p &lt; 0.001 : le prédicteur est très hautement significatif</li>
+      <li data-correct="false">Il manque des données</li>
+      <li data-correct="false">Le coefficient vaut 3</li>
+    </ul>
+    <div class="explication">Codes de significativité : <code>***</code> p&lt;0.001, <code>**</code> p&lt;0.01, <code>*</code> p&lt;0.05, <code>.</code> p&lt;0.1. Trois étoiles = très hautement significatif.</div>
+  </div>
+
+  <div class="question" data-type="qcm">
+    <span class="q-tag tag-qcm">QCM · Q31</span>
+    <div class="q-text">Que produit <code>plot(modele1)</code> après un <code>lm()</code> ?</div>
+    <ul class="options">
+      <li data-correct="false">Le résumé chiffré du modèle</li>
+      <li data-correct="true">4 graphiques de diagnostic (résidus, Q-Q, etc.)</li>
+      <li data-correct="false">Un simple histogramme</li>
+      <li data-correct="false">La p-value du modèle</li>
+    </ul>
+    <div class="explication"><code>plot()</code> sur un modèle <code>lm</code> affiche <b>4 graphiques de diagnostic</b> : Residuals vs Fitted, Q-Q Residuals, Scale-Location, Residuals vs Leverage. Ils vérifient les conditions du modèle.</div>
+  </div>
+
+  <div class="question" data-type="qcm">
+    <span class="q-tag tag-qcm">QCM · Q32</span>
+    <div class="q-text">Dans la formule <code>lm(y ~ x)</code>, comment s'appelle <code>y</code> ?</div>
+    <ul class="options">
+      <li data-correct="false">La variable explicative / le prédicteur</li>
+      <li data-correct="true">La variable à expliquer (dépendante)</li>
+      <li data-correct="false">Le résidu</li>
+      <li data-correct="false">L'intercept</li>
+    </ul>
+    <div class="explication"><code>y</code> = variable <b>à expliquer</b> (dépendante). <code>x</code> = variable <b>explicative</b> (indépendante / prédicteur). Le <code>~</code> se lit « expliquée par ».</div>
+  </div>
+
+  <!-- ================= SECTION 5 ================= -->
+  <div class="section-titre">5 · Présentation des résultats</div>
+
+  <div class="question" data-type="qcm">
+    <span class="q-tag tag-qcm">QCM · Q33</span>
+    <div class="q-text">Une section Résultats affirme : « l'hypothèse est confirmée, <i>p = 0.5</i> ». Quelle est l'erreur ?</div>
+    <ul class="options">
+      <li data-correct="false">Aucune, l'affirmation est correcte</li>
+      <li data-correct="true">p = 0.5 est très supérieur à 0.05 → le résultat est NON significatif, l'affirmation est contradictoire</li>
+      <li data-correct="false">Une p-value ne peut pas être positive</li>
+      <li data-correct="false">Il faudrait écrire « p = 0.5 % »</li>
+    </ul>
+    <div class="explication">Une p-value de <b>0.5</b> (50 %) ne permet pas de rejeter H0. Annoncer « confirmé » est faux — c'est sans doute une faute de frappe pour <code>p &lt; .05</code>.</div>
+  </div>
+
+  <div class="question" data-type="qcm">
+    <span class="q-tag tag-qcm">QCM · Q34</span>
+    <div class="q-text">« Une corrélation <i>r = .62</i> montre qu'Instagram <b>cause</b> de l'anxiété. » Quelle est l'erreur ?</div>
+    <ul class="options">
+      <li data-correct="false">Aucune erreur</li>
+      <li data-correct="true">Corrélation n'est pas causalité : un lien statistique ne prouve pas un lien de cause à effet</li>
+      <li data-correct="false">r devrait toujours valoir 1</li>
+      <li data-correct="false">Il fallait faire un test t</li>
+    </ul>
+    <div class="explication">Une corrélation, même forte, ne démontre <b>jamais</b> une causalité (variable cachée, causalité inversée…). Formulation correcte : « est <b>associé à</b> ».</div>
+  </div>
+
+  <div class="question" data-type="qcm">
+    <span class="q-tag tag-qcm">QCM · Q35</span>
+    <div class="q-text">Comment rapporter correctement une moyenne dans une section Résultats ?</div>
+    <ul class="options">
+      <li data-correct="false">La moyenne seule suffit toujours</li>
+      <li data-correct="true">Avec son écart-type (SD) et l'échelle utilisée</li>
+      <li data-correct="false">Avec la couleur du graphique</li>
+      <li data-correct="false">Uniquement sous forme de pourcentage</li>
+    </ul>
+    <div class="explication">Exemple correct : « <i>M = 3.76, SD = 0.68, sur une échelle de 1 à 5</i> ». Une moyenne sans SD ni échelle est ininterprétable.</div>
+  </div>
+
+  <div class="question" data-type="qcm">
+    <span class="q-tag tag-qcm">QCM · Q36</span>
+    <div class="q-text">Dans un rapport scientifique, que désignent les abréviations <code>M</code> et <code>SD</code> ?</div>
+    <ul class="options">
+      <li data-correct="false">Médiane et Somme des Données</li>
+      <li data-correct="true">Moyenne (<i>Mean</i>) et écart-type (<i>Standard Deviation</i>)</li>
+      <li data-correct="false">Maximum et Minimum</li>
+      <li data-correct="false">Mode et Statistique Descriptive</li>
+    </ul>
+    <div class="explication"><code>M</code> = <i>Mean</i> = moyenne ; <code>SD</code> = <i>Standard Deviation</i> = écart-type. Notation standard (style APA).</div>
+  </div>
+
+  <footer>
+    Examen blanc généré pour la révision · Méthodes II — Examen R II · SP 2026<br>
+    Bonne chance ! 🍀
+  </footer>
+
+</div>
+
+<div class="barre">
+  <div class="barre-in">
+    <button class="reset" onclick="location.reload()">Recommencer</button>
+    <div class="progress"><span id="bar"></span></div>
+    <div class="score">Score : <span id="score">0 / 36</span></div>
+  </div>
+</div>
+
+<script>
+  var total = document.querySelectorAll('.question[data-type="qcm"]').length;
+  var answered = 0, correct = 0;
+  document.getElementById('score').textContent = '0 / ' + total;
+
+  document.querySelectorAll('.options li').forEach(function(opt){
+    opt.addEventListener('click', function(){
+      var q = this.closest('.question');
+      if(q.classList.contains('answered')) return;
+      q.classList.add('answered');
+      answered++;
+      if(this.dataset.correct === 'true'){
+        this.classList.add('correct');
+        correct++;
+      } else {
+        this.classList.add('wrong');
+        q.querySelector('.options li[data-correct="true"]').classList.add('correct');
+      }
+      q.querySelector('.explication').classList.add('show');
+      update();
+    });
+  });
+
+  document.querySelectorAll('.btn-sol').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var sol = this.nextElementSibling;
+      sol.classList.toggle('show');
+      this.textContent = sol.classList.contains('show') ? 'Masquer la solution' : 'Voir la solution';
+    });
+  });
+
+  function update(){
+    document.getElementById('score').textContent = correct + ' / ' + total;
+    document.getElementById('bar').style.width = (answered / total * 100) + '%';
+  }
+</script>
+
+</body>
+</html>

@@ -32,6 +32,8 @@ website:
             text: Copier/Coller PS2
       - href: glossaire.qmd
         text: Glossaire
+      - href: examen_blanc_PS2.html
+        text: "Examen blanc"
   sidebar:
     style: docked
     search: true
