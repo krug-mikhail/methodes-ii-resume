@@ -477,8 +477,8 @@
     "objectID": "09_Copier_Coller_PS2.html#statistiques-descriptives",
     "href": "09_Copier_Coller_PS2.html#statistiques-descriptives",
     "title": "Commandes Rapides PS2 - Copier/Coller",
-    "section": "2 Statistiques Descriptives",
-    "text": "2 Statistiques Descriptives\n\n2.1 Exploration rapide\nstr(df)        # types des colonnes\nsummary(df)    # min, Q1, mediane, moyenne, Q3, max par colonne\n\n\n2.2 Tendance centrale et dispersion\nmean(df$variable, na.rm = TRUE)      # moyenne\nmedian(df$variable, na.rm = TRUE)    # mediane\nsd(df$variable, na.rm = TRUE)        # ecart-type\nvar(df$variable, na.rm = TRUE)       # variance\nIQR(df$variable, na.rm = TRUE)       # intervalle interquartile (Q3 - Q1)\nrange(df$variable, na.rm = TRUE)     # minimum et maximum\nquantile(df$variable, na.rm = TRUE)  # min, Q1, mediane, Q3, max\n\n\n2.3 Tableaux de frequences\n# Comptage d'une variable categorielle\ndf %&gt;% count(ma_variable)\ndf %&gt;% count(ma_variable, sort = TRUE)\n\n# Frequences en pourcentages\ndf %&gt;%\n  count(ma_variable) %&gt;%\n  mutate(pourcentage = n / sum(n) * 100)\n\n# Tableau croise de deux variables categorielles\ndf %&gt;% count(variable_1, variable_2)\ntable(df$variable_1, df$variable_2)\n\n\n2.4 Tableau descriptif par groupe\ndf %&gt;%\n  group_by(variable_categorielle) %&gt;%\n  summarize(\n    n          = n(),\n    moyenne    = mean(variable_num, na.rm = TRUE),\n    mediane    = median(variable_num, na.rm = TRUE),\n    ecart_type = sd(variable_num, na.rm = TRUE)\n  ) %&gt;%\n  ungroup()\n\n\n2.5 Ordonner une variable categorielle\nordre &lt;- c(\"Jamais\", \"Parfois\", \"Souvent\", \"Toujours\")\ndf &lt;- df %&gt;% mutate(ma_variable = factor(ma_variable, levels = ordre))\n\n\n2.6 Exporter un jeu de donnees\nwrite_csv(df, file = \"~/Documents/R/resultats.csv\")",
+    "section": "3 Statistiques Descriptives",
+    "text": "3 Statistiques Descriptives\n\n3.1 Exploration rapide\nstr(df)        # types des colonnes\nsummary(df)    # min, Q1, mediane, moyenne, Q3, max par colonne\n\n\n3.2 Tendance centrale et dispersion\nmean(df$variable, na.rm = TRUE)      # moyenne\nmedian(df$variable, na.rm = TRUE)    # mediane\nsd(df$variable, na.rm = TRUE)        # ecart-type\nvar(df$variable, na.rm = TRUE)       # variance\nIQR(df$variable, na.rm = TRUE)       # intervalle interquartile (Q3 - Q1)\nrange(df$variable, na.rm = TRUE)     # minimum et maximum\nquantile(df$variable, na.rm = TRUE)  # min, Q1, mediane, Q3, max\n\n\n3.3 Tableaux de frequences\n# Comptage d'une variable categorielle\ndf %&gt;% count(ma_variable)\ndf %&gt;% count(ma_variable, sort = TRUE)\n\n# Frequences en pourcentages\ndf %&gt;%\n  count(ma_variable) %&gt;%\n  mutate(pourcentage = n / sum(n) * 100)\n\n# Tableau croise de deux variables categorielles\ndf %&gt;% count(variable_1, variable_2)\ntable(df$variable_1, df$variable_2)\n\n\n3.4 Tableau descriptif par groupe\ndf %&gt;%\n  group_by(variable_categorielle) %&gt;%\n  summarize(\n    n          = n(),\n    moyenne    = mean(variable_num, na.rm = TRUE),\n    mediane    = median(variable_num, na.rm = TRUE),\n    ecart_type = sd(variable_num, na.rm = TRUE)\n  ) %&gt;%\n  ungroup()\n\n\n3.5 Ordonner une variable categorielle\nordre &lt;- c(\"Jamais\", \"Parfois\", \"Souvent\", \"Toujours\")\ndf &lt;- df %&gt;% mutate(ma_variable = factor(ma_variable, levels = ordre))\n\n\n3.6 Exporter un jeu de donnees\nwrite_csv(df, file = \"~/Documents/R/resultats.csv\")",
     "crumbs": [
       "Accueil",
       "Categorie 2 - Probleme Set 2",
@@ -489,8 +489,8 @@
     "objectID": "09_Copier_Coller_PS2.html#simuler-un-echantillon-aleatoire",
     "href": "09_Copier_Coller_PS2.html#simuler-un-echantillon-aleatoire",
     "title": "Commandes Rapides PS2 - Copier/Coller",
-    "section": "3 Simuler un Echantillon Aleatoire",
-    "text": "3 Simuler un Echantillon Aleatoire\nset.seed(123)                              # fige le hasard (reproductibilite)\nechantillon &lt;- rnorm(25, mean = 105, sd = 15)   # 25 valeurs, loi normale",
+    "section": "4 Simuler un Echantillon Aleatoire",
+    "text": "4 Simuler un Echantillon Aleatoire\nset.seed(123)                              # fige le hasard (reproductibilite)\nechantillon &lt;- rnorm(25, mean = 105, sd = 15)   # 25 valeurs, loi normale",
     "crumbs": [
       "Accueil",
       "Categorie 2 - Probleme Set 2",
@@ -501,8 +501,8 @@
     "objectID": "09_Copier_Coller_PS2.html#test-t",
     "href": "09_Copier_Coller_PS2.html#test-t",
     "title": "Commandes Rapides PS2 - Copier/Coller",
-    "section": "4 Test t",
-    "text": "4 Test t\n\n4.1 Test t a un echantillon (comparer a une reference)\n# H0 : la moyenne vaut 100\nt.test(df$variable, mu = 100)\n\n\n4.2 Test t a deux echantillons (comparer deux groupes)\n# Deux vecteurs separes\nt.test(groupe_a, groupe_b)\n\n# Une variable numerique selon une variable a 2 categories\nt.test(variable_num ~ variable_groupe, data = df)",
+    "section": "5 Test t",
+    "text": "5 Test t\n\n5.1 Test t a un echantillon (comparer a une reference)\n# H0 : la moyenne vaut 100\nt.test(df$variable, mu = 100)\n\n\n5.2 Test t a deux echantillons (comparer deux groupes)\n# Deux vecteurs separes\nt.test(groupe_a, groupe_b)\n\n# Une variable numerique selon une variable a 2 categories\nt.test(variable_num ~ variable_groupe, data = df)",
     "crumbs": [
       "Accueil",
       "Categorie 2 - Probleme Set 2",
@@ -513,8 +513,8 @@
     "objectID": "09_Copier_Coller_PS2.html#anova-3-groupes-ou-plus",
     "href": "09_Copier_Coller_PS2.html#anova-3-groupes-ou-plus",
     "title": "Commandes Rapides PS2 - Copier/Coller",
-    "section": "5 ANOVA (3 groupes ou plus)",
-    "text": "5 ANOVA (3 groupes ou plus)\n# H0 : tous les groupes ont la meme moyenne\nmon_anova &lt;- aov(variable_num ~ variable_groupe, data = df)\nsummary(mon_anova)\n# Test post-hoc : quelles paires de groupes different\nTukeyHSD(mon_anova)",
+    "section": "6 ANOVA (3 groupes ou plus)",
+    "text": "6 ANOVA (3 groupes ou plus)\n# H0 : tous les groupes ont la meme moyenne\nmon_anova &lt;- aov(variable_num ~ variable_groupe, data = df)\nsummary(mon_anova)\n# Test post-hoc : quelles paires de groupes different\nTukeyHSD(mon_anova)",
     "crumbs": [
       "Accueil",
       "Categorie 2 - Probleme Set 2",
@@ -525,8 +525,8 @@
     "objectID": "09_Copier_Coller_PS2.html#correlation",
     "href": "09_Copier_Coller_PS2.html#correlation",
     "title": "Commandes Rapides PS2 - Copier/Coller",
-    "section": "6 Correlation",
-    "text": "6 Correlation\n# Coefficient seul (r entre -1 et +1)\ncor(df$variable_1, df$variable_2, use = \"complete.obs\")\n\n# Test de correlation : ajoute p-value et intervalle de confiance\ncor.test(df$variable_1, df$variable_2)",
+    "section": "7 Correlation",
+    "text": "7 Correlation\n# Coefficient seul (r entre -1 et +1)\ncor(df$variable_1, df$variable_2, use = \"complete.obs\")\n\n# Test de correlation : ajoute p-value et intervalle de confiance\ncor.test(df$variable_1, df$variable_2)",
     "crumbs": [
       "Accueil",
       "Categorie 2 - Probleme Set 2",
@@ -537,8 +537,8 @@
     "objectID": "09_Copier_Coller_PS2.html#regression-lineaire",
     "href": "09_Copier_Coller_PS2.html#regression-lineaire",
     "title": "Commandes Rapides PS2 - Copier/Coller",
-    "section": "7 Regression Lineaire",
-    "text": "7 Regression Lineaire\n# Regression simple : Y explique par X\nmodele1 &lt;- lm(variable_y ~ variable_x, data = df)\nsummary(modele1)\n# Regression multiple : Y explique par plusieurs X\nmodele2 &lt;- lm(variable_y ~ variable_x1 + variable_x2, data = df)\nsummary(modele2)\n# Eviter la notation scientifique dans les sorties (ex. 2e-16)\noptions(scipen = 999)",
+    "section": "8 Regression Lineaire",
+    "text": "8 Regression Lineaire\n# Regression simple : Y explique par X\nmodele1 &lt;- lm(variable_y ~ variable_x, data = df)\nsummary(modele1)\n# Regression multiple : Y explique par plusieurs X\nmodele2 &lt;- lm(variable_y ~ variable_x1 + variable_x2, data = df)\nsummary(modele2)\n# Eviter la notation scientifique dans les sorties (ex. 2e-16)\noptions(scipen = 999)",
     "crumbs": [
       "Accueil",
       "Categorie 2 - Probleme Set 2",
@@ -549,8 +549,8 @@
     "objectID": "09_Copier_Coller_PS2.html#aide-memoire-lire-les-sorties-r",
     "href": "09_Copier_Coller_PS2.html#aide-memoire-lire-les-sorties-r",
     "title": "Commandes Rapides PS2 - Copier/Coller",
-    "section": "8 Aide-Memoire : Lire les Sorties R",
-    "text": "8 Aide-Memoire : Lire les Sorties R\n\n8.1 Sortie de t.test()\n\n\n\nElement\nCe que c’est\n\n\n\n\nt\nStatistique de test\n\n\ndf\nDegres de liberte\n\n\np-value\n&lt; 0.05 -&gt; difference significative\n\n\nconfidence interval\nFourchette plausible de la difference\n\n\nmean of x\nMoyenne(s) observee(s)\n\n\n\n\n\n8.2 Sortie de summary(aov())\n\n\n\nElement\nCe que c’est\n\n\n\n\nF value\nStatistique de l’ANOVA\n\n\nPr(&gt;F)\np-value globale ; &lt; 0.05 -&gt; au moins un groupe differe\n\n\n\n\n\n8.3 Sortie de summary(lm())\n\n\n\n\n\n\n\nElement\nCe que c’est\n\n\n\n\nEstimate\nIntercept et pente(s) ; signe = sens de l’effet\n\n\nStd. Error\nIncertitude du coefficient\n\n\nPr(&gt;|t|)\np-value du coefficient ; &lt; 0.05 -&gt; predicteur significatif\n\n\nMultiple R-squared\nPart de variance de Y expliquee par le modele\n\n\nF-statistic p-value\nLe modele global est-il utile\n\n\n\n\n\n8.4 Codes de significativite\n\n\n\nCode\nSeuil\n\n\n\n\n***\np &lt; 0.001\n\n\n**\np &lt; 0.01\n\n\n*\np &lt; 0.05\n\n\n.\np &lt; 0.1 (non significatif au seuil 5 %)",
+    "section": "9 Aide-Memoire : Lire les Sorties R",
+    "text": "9 Aide-Memoire : Lire les Sorties R\n\n9.1 Sortie de t.test()\n\n\n\nElement\nCe que c’est\n\n\n\n\nt\nStatistique de test\n\n\ndf\nDegres de liberte\n\n\np-value\n&lt; 0.05 -&gt; difference significative\n\n\nconfidence interval\nFourchette plausible de la difference\n\n\nmean of x\nMoyenne(s) observee(s)\n\n\n\n\n\n9.2 Sortie de summary(aov())\n\n\n\nElement\nCe que c’est\n\n\n\n\nF value\nStatistique de l’ANOVA\n\n\nPr(&gt;F)\np-value globale ; &lt; 0.05 -&gt; au moins un groupe differe\n\n\n\n\n\n9.3 Sortie de summary(lm())\n\n\n\n\n\n\n\nElement\nCe que c’est\n\n\n\n\nEstimate\nIntercept et pente(s) ; signe = sens de l’effet\n\n\nStd. Error\nIncertitude du coefficient\n\n\nPr(&gt;|t|)\np-value du coefficient ; &lt; 0.05 -&gt; predicteur significatif\n\n\nMultiple R-squared\nPart de variance de Y expliquee par le modele\n\n\nF-statistic p-value\nLe modele global est-il utile\n\n\n\n\n\n9.4 Codes de significativite\n\n\n\nCode\nSeuil\n\n\n\n\n***\np &lt; 0.001\n\n\n**\np &lt; 0.01\n\n\n*\np &lt; 0.05\n\n\n.\np &lt; 0.1 (non significatif au seuil 5 %)",
     "crumbs": [
       "Accueil",
       "Categorie 2 - Probleme Set 2",
@@ -561,8 +561,8 @@
     "objectID": "09_Copier_Coller_PS2.html#choisir-le-bon-test-rappel",
     "href": "09_Copier_Coller_PS2.html#choisir-le-bon-test-rappel",
     "title": "Commandes Rapides PS2 - Copier/Coller",
-    "section": "9 Choisir le Bon Test (rappel)",
-    "text": "9 Choisir le Bon Test (rappel)\n# 1 moyenne vs une reference\nt.test(x, mu = valeur)\n\n# 2 moyennes (2 groupes)\nt.test(x ~ groupe, data = df)\n\n# 3+ moyennes\naov(x ~ groupe, data = df)   # puis TukeyHSD()\n\n# Lien entre 2 variables numeriques\ncor.test(x, y)\n\n# Modeliser / predire Y\nlm(y ~ x1 + x2, data = df)",
+    "section": "10 Choisir le Bon Test (rappel)",
+    "text": "10 Choisir le Bon Test (rappel)\n# 1 moyenne vs une reference\nt.test(x, mu = valeur)\n\n# 2 moyennes (2 groupes)\nt.test(x ~ groupe, data = df)\n\n# 3+ moyennes\naov(x ~ groupe, data = df)   # puis TukeyHSD()\n\n# Lien entre 2 variables numeriques\ncor.test(x, y)\n\n# Modeliser / predire Y\nlm(y ~ x1 + x2, data = df)",
     "crumbs": [
       "Accueil",
       "Categorie 2 - Probleme Set 2",
@@ -1362,6 +1362,18 @@
       "Accueil",
       "Categorie 2 - Probleme Set 2",
       "Module 5 : Statistiques Descriptives"
+    ]
+  },
+  {
+    "objectID": "09_Copier_Coller_PS2.html#mise-en-route-exercice-descriptives",
+    "href": "09_Copier_Coller_PS2.html#mise-en-route-exercice-descriptives",
+    "title": "Commandes Rapides PS2 - Copier/Coller",
+    "section": "2 Mise en Route (exercice descriptives)",
+    "text": "2 Mise en Route (exercice descriptives)\nLes commandes exactes utilisees au debut de l’exercice de statistiques descriptives :\nlibrary(tidyverse)\nlibrary(ggthemes)            # themes graphiques supplementaires (theme_economist, etc.)\nsetwd(\"~/Documents/R\")       # definir le repertoire de travail\n\n# Importer un CSV : read.csv (R de base) ou read_csv (tidyverse) -- les deux marchent\nreponses_socio &lt;- read.csv(\"~/Documents/R/reponses_socio.csv\")\n\nView(reponses_socio)         # ouvre le tableau dans un onglet RStudio\n\n\n\n\n\n\nTipread.csv ou read_csv ?\n\n\n\n\n\nread.csv() est la fonction de R de base ; read_csv() vient du tidyverse. Elles font la meme chose ici. read_csv() est un peu plus rapide et affiche un resume des colonnes ; read.csv() fonctionne sans charger de paquet. A l’examen, utilise celle vue en cours – les deux sont acceptees.",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Commandes Rapides PS2 - Copier/Coller"
     ]
   }
 ]

@@ -21,6 +21,26 @@ data(penguins)
 data(mtcars)
 ```
 
+## Mise en Route (exercice descriptives)
+
+Les commandes exactes utilisees au debut de l'exercice de statistiques descriptives :
+
+```r
+library(tidyverse)
+library(ggthemes)            # themes graphiques supplementaires (theme_economist, etc.)
+setwd("~/Documents/R")       # definir le repertoire de travail
+
+# Importer un CSV : read.csv (R de base) ou read_csv (tidyverse) -- les deux marchent
+reponses_socio <- read.csv("~/Documents/R/reponses_socio.csv")
+
+View(reponses_socio)         # ouvre le tableau dans un onglet RStudio
+```
+
+::: {.callout-tip collapse="true"}
+## read.csv ou read_csv ?
+`read.csv()` est la fonction de **R de base** ; `read_csv()` vient du **tidyverse**. Elles font la meme chose ici. `read_csv()` est un peu plus rapide et affiche un resume des colonnes ; `read.csv()` fonctionne sans charger de paquet. A l'examen, utilise celle vue en cours -- les deux sont acceptees.
+:::
+
 ## Statistiques Descriptives
 
 ### Exploration rapide
