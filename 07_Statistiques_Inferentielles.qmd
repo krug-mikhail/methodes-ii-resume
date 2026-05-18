@@ -130,13 +130,14 @@ print(resultat)
 
 ### Test t a deux echantillons
 
-Compare les moyennes de **deux groupes** independants.
+Compare les moyennes de **deux groupes** independants. Par defaut, R applique le **Welch Two Sample t-test** (il ne suppose pas que les variances des deux groupes sont egales).
 
 > Question type : "les femmes et les hommes ont-ils une taille moyenne differente ?"
 
 ```r
-tailles_f <- rnorm(30, mean = 164.7, sd = 5.6)
-tailles_h <- rnorm(30, mean = 177.4, sd = 6.1)
+set.seed(123)
+tailles_f <- rnorm(5, mean = 164.7, sd = 5.6)
+tailles_h <- rnorm(5, mean = 177.4, sd = 6.1)
 
 # H0 : memes moyennes   |   H1 : moyennes differentes
 t.test(tailles_f, tailles_h)
@@ -145,34 +146,73 @@ t.test(tailles_f, tailles_h)
 t.test(taille ~ genre, data = mon_df)
 ```
 
+### Test t pour echantillons apparies
+
+Quand on mesure les **memes individus deux fois** (avant / apres un traitement), on ajoute `paired = TRUE`. Exemple : les notes d'une classe avant et apres un cours de soutien.
+
+```r
+t.test(avant, apres, paired = TRUE)
+```
+
+::: {.callout-warning}
+## Conditions a respecter pour un test t
+Le test t suppose que :
+
+- les donnees sont **continues** ;
+- l'echantillonnage est **aleatoire** ;
+- les observations sont **independantes** (sauf pour le test apparie) ;
+- la variable suit **approximativement une loi normale** dans chaque groupe (verifiable avec un histogramme ou `shapiro.test()`) ;
+- les **variances** des groupes sont similaires -- homoscedasticite (test de Levene ou de Bartlett).
+
+En pratique, le test t est **robuste** a de petits ecarts a ces conditions si n est grand. Si elles sont vraiment violees, on utilise des alternatives : `wilcox.test()` (Wilcoxon-Mann-Whitney) ou `kruskal.test()` (Kruskal-Wallis).
+:::
+
 ### Lire la Sortie d'un Test t
+
+Reprenons le test t a un echantillon sur les scores de QI (`mu = 100`). **Avec n = 25 :**
 
 ```
         One Sample t-test
 
 data:  scores_qi
-t = 2.31, df = 24, p-value = 0.02968
+t = 1.5844, df = 24, p-value = 0.1262
 alternative hypothesis: true mean is not equal to 100
 95 percent confidence interval:
- 100.62 112.40
+  98.63817 110.36192
 sample estimates:
 mean of x
-   106.51
+    104.5
 ```
 
 | Element | Valeur | Interpretation |
 |---|---|---|
-| `t` | 2.31 | La statistique de test (plus elle est loin de 0, plus l'ecart est marque) |
-| `df` | 24 | Degres de liberte (lies a la taille de l'echantillon : n - 1) |
-| `p-value` | 0.02968 | **< 0.05 -> on rejette H0** |
-| `confidence interval` | [100.62 ; 112.40] | Fourchette plausible de la vraie moyenne ; **ne contient pas 100** |
-| `mean of x` | 106.51 | La moyenne observee dans l'echantillon |
+| `t` | 1.58 | La statistique de test (plus elle est loin de 0, plus l'ecart est marque) |
+| `df` | 24 | Degres de liberte (ici n - 1 = 24) |
+| `p-value` | 0.1262 | **>= 0.05 -> on NE rejette PAS H0** |
+| `confidence interval` | [98.6 ; 110.4] | **contient 100** -> la difference avec 100 n'est pas significative |
+| `mean of x` | 104.5 | La moyenne observee dans l'echantillon |
 
-**Conclusion redigee :** "Le QI moyen des etudiants (M = 106.5) est significativement superieur a 100, t(24) = 2.31, p = .030."
+**Conclusion :** avec n = 25, la difference entre le QI des etudiants et 100 **n'est pas significative** (p = 0.13). On ne peut pas rejeter H0 : l'ecart observe pourrait etre du au hasard.
+
+**Le meme test avec n = 50 :**
+
+```
+        One Sample t-test
+
+data:  scores_qi
+t = 2.8085, df = 49, p-value = 0.007129
+95 percent confidence interval:
+ 101.5691 109.4630
+sample estimates:
+mean of x
+ 105.5161
+```
+
+Cette fois `p = 0.007 < 0.05` (et meme < 0.01), et l'IC [101.6 ; 109.5] **ne contient plus 100** : on **rejette H0**. Le QI moyen est significativement superieur a 100.
 
 ::: {.callout-warning}
 ## Petit echantillon = test peu puissant
-Avec n = 25, un test peut ne rien detecter (p >= 0.05) meme si un effet existe. En augmentant n (ex. 50, 100), le meme ecart peut devenir significatif. Un resultat non significatif sur petit echantillon ne prouve donc **pas** l'absence d'effet.
+C'est exactement ce que montre l'exemple ci-dessus : **le meme ecart** (moyenne ~105 contre 100) est **non significatif avec n = 25** mais **significatif avec n = 50**. Un resultat non significatif sur petit echantillon ne prouve donc **pas** l'absence d'effet -- il peut simplement manquer de puissance.
 :::
 
 ## L'ANOVA (Analyse de Variance)
@@ -184,6 +224,13 @@ Le test t ne compare que **2** moyennes. Pour comparer **3 groupes ou plus**, on
 ::: {.callout-tip collapse="true"}
 ## En simple
 Si tu faisais plein de tests t deux-a-deux (groupe A vs B, A vs C, B vs C...), tu multiplierais le risque d'erreur de type I (5 % a chaque fois s'accumulent). L'ANOVA fait **un seul test global** : "au moins un des groupes differe-t-il des autres ?" Elle protege contre l'inflation du risque.
+:::
+
+L'ANOVA repose sur le **principe de la variance totale** : la variance observee se decompose en variance **entre les groupes** et variance **a l'interieur des groupes**. Si la variance entre groupes domine, c'est que les groupes different vraiment. Developpee par Ronald Fisher.
+
+::: {.callout-warning}
+## Conditions a respecter pour une ANOVA
+Comme le test t, l'ANOVA suppose : des observations **independantes**, une variable a expliquer **approximativement normale** dans chaque groupe, et des **variances similaires** entre groupes (homoscedasticite). On peut verifier ce dernier point en calculant la variance par groupe avec `group_by()` + `summarize(var(...))`.
 :::
 
 ```r
@@ -356,6 +403,50 @@ summary(regression2)
 "Toutes choses egales par ailleurs" veut dire : le coefficient de `wt` mesure l'effet du poids **a puissance constante** -- comme si on comparait deux voitures de meme puissance mais de poids different. Cela permet d'isoler l'effet propre de chaque variable.
 :::
 
+::: {.callout-note collapse="true"}
+## R-squared ou R-squared ajuste ?
+Ajouter une variable fait **toujours** monter le `Multiple R-squared`, meme une variable inutile. Le **`Adjusted R-squared`** corrige ce biais en penalisant les variables superflues : c'est lui qu'on regarde pour **comparer des modeles** comportant un nombre different de variables.
+:::
+
+### Les Graphiques de Diagnostic
+
+Apres un `lm()`, la fonction `plot()` produit **4 graphiques** qui verifient si les conditions de la regression sont respectees.
+
+```r
+par(mfrow = c(2, 2))   # afficher les 4 graphiques dans une grille 2x2
+plot(regression1)
+```
+
+| Graphique | Ce qu'il verifie |
+|---|---|
+| **Residuals vs Fitted** | Linearite : les residus doivent etre repartis au hasard autour de 0, sans tendance |
+| **Q-Q Residuals** | Normalite des residus : les points doivent suivre la diagonale en pointilles |
+| **Scale-Location** | Homoscedasticite : ligne rouge horizontale, points repartis egalement |
+| **Residuals vs Leverage** | Reperer les valeurs aberrantes influentes (distance de Cook) |
+
+::: {.callout-tip collapse="true"}
+## En simple
+Les graphiques de diagnostic, c'est le **controle technique** de ta regression. Le modele "roule", mais est-il fiable ? Ces 4 graphiques verifient que les hypotheses (linearite, residus normaux, variance constante, pas d'outlier qui fausse tout) tiennent la route. Si un graphique deraille, le modele est a revoir.
+:::
+
+### Regression par Etapes (stepwise)
+
+Avec beaucoup de variables explicatives possibles, comment choisir le **meilleur modele** ? La regression par etapes (`step()`) teste automatiquement les combinaisons et garde celle qui equilibre **pouvoir explicatif** et **simplicite**, en minimisant le critere **AIC**.
+
+```r
+# Modele complet : mpg explique par TOUTES les autres variables (~ .)
+full_model <- lm(mpg ~ ., data = mtcars)
+
+# step() ajoute/retire des variables pour minimiser l'AIC
+stepwise_model <- step(full_model, direction = "both")
+summary(stepwise_model)
+```
+
+::: {.callout-tip collapse="true"}
+## En simple
+Preparer une valise : tu veux emporter le **strict utile**, ni trop ni trop peu. `step()` fait pareil avec les variables d'un modele -- il enleve celles qui ne servent presque a rien et garde celles qui comptent. L'**AIC** est la "note de valise" : plus il est bas, mieux le modele equilibre precision et simplicite. Un modele avec trop de variables (sur-ajuste) est penalise.
+:::
+
 ::: {.callout-warning}
 ## Choisir le bon test
 | Tu veux... | Variables | Test |
@@ -394,14 +485,26 @@ Non. Correlation forte et positive, mais **correlation n'est pas causalite**. Il
 Le modele explique 75 % de la variance de la variable dependante. Les 25 % restants sont dus a des facteurs non inclus dans le modele.
 :::
 
+::: {.callout-note collapse="true"}
+## "Quelles conditions faut-il pour appliquer un test t ?"
+Donnees **continues**, echantillonnage **aleatoire**, observations **independantes**, variable **approximativement normale** dans chaque groupe, et **variances similaires** entre groupes (homoscedasticite). Le test t reste robuste si n est grand ; sinon on utilise `wilcox.test()`.
+:::
+
+::: {.callout-note collapse="true"}
+## "A quoi servent les graphiques de diagnostic d'une regression ?"
+A verifier que les conditions du modele sont respectees : linearite (Residuals vs Fitted), normalite des residus (Q-Q), variance constante / homoscedasticite (Scale-Location), et valeurs aberrantes influentes (Residuals vs Leverage). On les obtient avec `plot(mon_modele)`.
+:::
+
 ## Recapitulatif du Module
 
 | Notion | Commande R | A retenir |
 |---|---|---|
 | Echantillon aleatoire normal | `rnorm()` + `set.seed()` | Fige le hasard pour la reproductibilite |
-| Comparer 1 ou 2 moyennes | `t.test()` | Lire `t`, `df`, `p-value`, IC |
+| Comparer 1 ou 2 moyennes | `t.test()` | Lire `t`, `df`, `p-value`, IC ; conditions a verifier |
 | Comparer 3+ moyennes | `aov()` + `summary()` | Lire `F value`, `Pr(>F)` |
 | Quelles paires different | `TukeyHSD()` | Uniquement apres ANOVA significative |
 | Lien entre 2 numeriques | `cor.test()` | `r` de -1 a +1 ; jamais causalite |
 | Modeliser / predire | `lm()` + `summary()` | Lire Estimate, `Pr(>|t|)`, R-squared |
+| Verifier un modele | `plot(modele)` | 4 graphiques de diagnostic |
+| Choisir le meilleur modele | `step()` | Minimise l'AIC (regression par etapes) |
 | Seuil de decision | alpha = 0.05 | p < 0.05 -> rejet de H0 |

@@ -31,7 +31,9 @@ library(ggthemes)            # themes graphiques supplementaires (theme_economis
 setwd("~/Documents/R")       # definir le repertoire de travail
 
 # Importer un CSV : read.csv (R de base) ou read_csv (tidyverse) -- les deux marchent
-reponses_socio <- read.csv("~/Documents/R/reponses_socio.csv")
+# stringsAsFactors = TRUE convertit directement les colonnes texte en facteurs
+reponses_socio <- read.csv("~/Documents/R/reponses_socio.csv",
+                           encoding = "UTF-8", stringsAsFactors = TRUE)
 
 View(reponses_socio)         # ouvre le tableau dans un onglet RStudio
 ```
@@ -100,10 +102,20 @@ ordre <- c("Jamais", "Parfois", "Souvent", "Toujours")
 df <- df %>% mutate(ma_variable = factor(ma_variable, levels = ordre))
 ```
 
+### Visualiser une relation (nuage de points + droite)
+
+```r
+# Nuage de points avec droite de regression lineaire
+ggplot(df, aes(x = variable_x, y = variable_y)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+```
+
 ### Exporter un jeu de donnees
 
 ```r
-write_csv(df, file = "~/Documents/R/resultats.csv")
+write_csv(df, file = "~/Documents/R/resultats.csv")     # tidyverse
+write.csv(df, file = "~/Documents/R/resultats.csv")     # R de base
 ```
 
 ## Simuler un Echantillon Aleatoire
@@ -172,6 +184,19 @@ summary(modele2)
 ```r
 # Eviter la notation scientifique dans les sorties (ex. 2e-16)
 options(scipen = 999)
+```
+
+```r
+# Graphiques de diagnostic du modele (4 plots en grille 2x2)
+par(mfrow = c(2, 2))
+plot(modele1)
+```
+
+```r
+# Regression par etapes : choisir le meilleur modele (minimise l'AIC)
+full_model <- lm(variable_y ~ ., data = df)   # ~ . = toutes les autres variables
+stepwise_model <- step(full_model, direction = "both")
+summary(stepwise_model)
 ```
 
 ## Aide-Memoire : Lire les Sorties R

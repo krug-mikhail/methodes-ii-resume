@@ -331,7 +331,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#test-t-a-un-echantillon" id="toc-test-t-a-un-echantillon" class="nav-link" data-scroll-target="#test-t-a-un-echantillon"><span class="header-section-number">5.1</span> Test t a un echantillon</a></li>
   <li><a href="#test-t-a-deux-echantillons" id="toc-test-t-a-deux-echantillons" class="nav-link" data-scroll-target="#test-t-a-deux-echantillons"><span class="header-section-number">5.2</span> Test t a deux echantillons</a></li>
-  <li><a href="#lire-la-sortie-dun-test-t" id="toc-lire-la-sortie-dun-test-t" class="nav-link" data-scroll-target="#lire-la-sortie-dun-test-t"><span class="header-section-number">5.3</span> Lire la Sortie d’un Test t</a></li>
+  <li><a href="#test-t-pour-echantillons-apparies" id="toc-test-t-pour-echantillons-apparies" class="nav-link" data-scroll-target="#test-t-pour-echantillons-apparies"><span class="header-section-number">5.3</span> Test t pour echantillons apparies</a></li>
+  <li><a href="#lire-la-sortie-dun-test-t" id="toc-lire-la-sortie-dun-test-t" class="nav-link" data-scroll-target="#lire-la-sortie-dun-test-t"><span class="header-section-number">5.4</span> Lire la Sortie d’un Test t</a></li>
   </ul></li>
   <li><a href="#lanova-analyse-de-variance" id="toc-lanova-analyse-de-variance" class="nav-link" data-scroll-target="#lanova-analyse-de-variance"><span class="header-section-number">6</span> L’ANOVA (Analyse de Variance)</a>
   <ul class="collapse">
@@ -345,6 +346,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#lire-la-sortie-dun-summarylm" id="toc-lire-la-sortie-dun-summarylm" class="nav-link" data-scroll-target="#lire-la-sortie-dun-summarylm"><span class="header-section-number">9.2</span> Lire la Sortie d’un <code>summary(lm())</code></a></li>
   <li><a href="#les-codes-de-significativite-les-etoiles" id="toc-les-codes-de-significativite-les-etoiles" class="nav-link" data-scroll-target="#les-codes-de-significativite-les-etoiles"><span class="header-section-number">9.3</span> Les Codes de Significativite (les etoiles)</a></li>
   <li><a href="#regression-multiple" id="toc-regression-multiple" class="nav-link" data-scroll-target="#regression-multiple"><span class="header-section-number">9.4</span> Regression Multiple</a></li>
+  <li><a href="#les-graphiques-de-diagnostic" id="toc-les-graphiques-de-diagnostic" class="nav-link" data-scroll-target="#les-graphiques-de-diagnostic"><span class="header-section-number">9.5</span> Les Graphiques de Diagnostic</a></li>
+  <li><a href="#regression-par-etapes-stepwise" id="toc-regression-par-etapes-stepwise" class="nav-link" data-scroll-target="#regression-par-etapes-stepwise"><span class="header-section-number">9.6</span> Regression par Etapes (stepwise)</a></li>
   </ul></li>
   <li><a href="#questions-probables-dexamen" id="toc-questions-probables-dexamen" class="nav-link" data-scroll-target="#questions-probables-dexamen"><span class="header-section-number">10</span> Questions Probables d’Examen</a></li>
   <li><a href="#recapitulatif-du-module" id="toc-recapitulatif-du-module" class="nav-link" data-scroll-target="#recapitulatif-du-module"><span class="header-section-number">11</span> Recapitulatif du Module</a></li>
@@ -648,31 +651,59 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="test-t-a-deux-echantillons" class="level3" data-number="5.2">
 <h3 data-number="5.2" class="anchored" data-anchor-id="test-t-a-deux-echantillons"><span class="header-section-number">5.2</span> Test t a deux echantillons</h3>
-<p>Compare les moyennes de <strong>deux groupes</strong> independants.</p>
+<p>Compare les moyennes de <strong>deux groupes</strong> independants. Par defaut, R applique le <strong>Welch Two Sample t-test</strong> (il ne suppose pas que les variances des deux groupes sont egales).</p>
 <blockquote class="blockquote">
 <p>Question type : “les femmes et les hommes ont-ils une taille moyenne differente ?”</p>
 </blockquote>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>tailles_f <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="at">mean =</span> <span class="fl">164.7</span>, <span class="at">sd =</span> <span class="fl">5.6</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>tailles_h <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="at">mean =</span> <span class="fl">177.4</span>, <span class="at">sd =</span> <span class="fl">6.1</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># H0 : memes moyennes   |   H1 : moyennes differentes</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(tailles_f, tailles_h)</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Variante si les deux variables sont dans un seul data frame :</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(taille <span class="sc">~</span> genre, <span class="at">data =</span> mon_df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>tailles_f <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">5</span>, <span class="at">mean =</span> <span class="fl">164.7</span>, <span class="at">sd =</span> <span class="fl">5.6</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>tailles_h <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">5</span>, <span class="at">mean =</span> <span class="fl">177.4</span>, <span class="at">sd =</span> <span class="fl">6.1</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># H0 : memes moyennes   |   H1 : moyennes differentes</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(tailles_f, tailles_h)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Variante si les deux variables sont dans un seul data frame :</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(taille <span class="sc">~</span> genre, <span class="at">data =</span> mon_df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="lire-la-sortie-dun-test-t" class="level3" data-number="5.3">
-<h3 data-number="5.3" class="anchored" data-anchor-id="lire-la-sortie-dun-test-t"><span class="header-section-number">5.3</span> Lire la Sortie d’un Test t</h3>
+<section id="test-t-pour-echantillons-apparies" class="level3" data-number="5.3">
+<h3 data-number="5.3" class="anchored" data-anchor-id="test-t-pour-echantillons-apparies"><span class="header-section-number">5.3</span> Test t pour echantillons apparies</h3>
+<p>Quand on mesure les <strong>memes individus deux fois</strong> (avant / apres un traitement), on ajoute <code>paired = TRUE</code>. Exemple : les notes d’une classe avant et apres un cours de soutien.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(avant, apres, <span class="at">paired =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Conditions a respecter pour un test t
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Le test t suppose que :</p>
+<ul>
+<li>les donnees sont <strong>continues</strong> ;</li>
+<li>l’echantillonnage est <strong>aleatoire</strong> ;</li>
+<li>les observations sont <strong>independantes</strong> (sauf pour le test apparie) ;</li>
+<li>la variable suit <strong>approximativement une loi normale</strong> dans chaque groupe (verifiable avec un histogramme ou <code>shapiro.test()</code>) ;</li>
+<li>les <strong>variances</strong> des groupes sont similaires – homoscedasticite (test de Levene ou de Bartlett).</li>
+</ul>
+<p>En pratique, le test t est <strong>robuste</strong> a de petits ecarts a ces conditions si n est grand. Si elles sont vraiment violees, on utilise des alternatives : <code>wilcox.test()</code> (Wilcoxon-Mann-Whitney) ou <code>kruskal.test()</code> (Kruskal-Wallis).</p>
+</div>
+</div>
+</section>
+<section id="lire-la-sortie-dun-test-t" class="level3" data-number="5.4">
+<h3 data-number="5.4" class="anchored" data-anchor-id="lire-la-sortie-dun-test-t"><span class="header-section-number">5.4</span> Lire la Sortie d’un Test t</h3>
+<p>Reprenons le test t a un echantillon sur les scores de QI (<code>mu = 100</code>). <strong>Avec n = 25 :</strong></p>
 <pre><code>        One Sample t-test
 
 data:  scores_qi
-t = 2.31, df = 24, p-value = 0.02968
+t = 1.5844, df = 24, p-value = 0.1262
 alternative hypothesis: true mean is not equal to 100
 95 percent confidence interval:
- 100.62 112.40
+  98.63817 110.36192
 sample estimates:
 mean of x
-   106.51</code></pre>
+    104.5</code></pre>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -689,32 +720,43 @@ mean of x
 <tbody>
 <tr class="odd">
 <td><code>t</code></td>
-<td>2.31</td>
+<td>1.58</td>
 <td>La statistique de test (plus elle est loin de 0, plus l’ecart est marque)</td>
 </tr>
 <tr class="even">
 <td><code>df</code></td>
 <td>24</td>
-<td>Degres de liberte (lies a la taille de l’echantillon : n - 1)</td>
+<td>Degres de liberte (ici n - 1 = 24)</td>
 </tr>
 <tr class="odd">
 <td><code>p-value</code></td>
-<td>0.02968</td>
-<td><strong>&lt; 0.05 -&gt; on rejette H0</strong></td>
+<td>0.1262</td>
+<td><strong>&gt;= 0.05 -&gt; on NE rejette PAS H0</strong></td>
 </tr>
 <tr class="even">
 <td><code>confidence interval</code></td>
-<td>[100.62 ; 112.40]</td>
-<td>Fourchette plausible de la vraie moyenne ; <strong>ne contient pas 100</strong></td>
+<td>[98.6 ; 110.4]</td>
+<td><strong>contient 100</strong> -&gt; la difference avec 100 n’est pas significative</td>
 </tr>
 <tr class="odd">
 <td><code>mean of x</code></td>
-<td>106.51</td>
+<td>104.5</td>
 <td>La moyenne observee dans l’echantillon</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Conclusion redigee :</strong> “Le QI moyen des etudiants (M = 106.5) est significativement superieur a 100, t(24) = 2.31, p = .030.”</p>
+<p><strong>Conclusion :</strong> avec n = 25, la difference entre le QI des etudiants et 100 <strong>n’est pas significative</strong> (p = 0.13). On ne peut pas rejeter H0 : l’ecart observe pourrait etre du au hasard.</p>
+<p><strong>Le meme test avec n = 50 :</strong></p>
+<pre><code>        One Sample t-test
+
+data:  scores_qi
+t = 2.8085, df = 49, p-value = 0.007129
+95 percent confidence interval:
+ 101.5691 109.4630
+sample estimates:
+mean of x
+ 105.5161</code></pre>
+<p>Cette fois <code>p = 0.007 &lt; 0.05</code> (et meme &lt; 0.01), et l’IC [101.6 ; 109.5] <strong>ne contient plus 100</strong> : on <strong>rejette H0</strong>. Le QI moyen est significativement superieur a 100.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -725,7 +767,7 @@ mean of x
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Avec n = 25, un test peut ne rien detecter (p &gt;= 0.05) meme si un effet existe. En augmentant n (ex. 50, 100), le meme ecart peut devenir significatif. Un resultat non significatif sur petit echantillon ne prouve donc <strong>pas</strong> l’absence d’effet.</p>
+<p>C’est exactement ce que montre l’exemple ci-dessus : <strong>le meme ecart</strong> (moyenne ~105 contre 100) est <strong>non significatif avec n = 25</strong> mais <strong>significatif avec n = 50</strong>. Un resultat non significatif sur petit echantillon ne prouve donc <strong>pas</strong> l’absence d’effet – il peut simplement manquer de puissance.</p>
 </div>
 </div>
 </section>
@@ -737,7 +779,7 @@ mean of x
 <p>Question type : “la longueur des nageoires differe-t-elle entre les 3 especes de manchots ?”</p>
 </blockquote>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -746,18 +788,32 @@ mean of x
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Si tu faisais plein de tests t deux-a-deux (groupe A vs B, A vs C, B vs C…), tu multiplierais le risque d’erreur de type I (5 % a chaque fois s’accumulent). L’ANOVA fait <strong>un seul test global</strong> : “au moins un des groupes differe-t-il des autres ?” Elle protege contre l’inflation du risque.</p>
 </div>
 </div>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># H0 : toutes les especes ont la meme moyenne</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># H1 : au moins une espece differe</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>anova1 <span class="ot">&lt;-</span> <span class="fu">aov</span>(flipper_length_mm <span class="sc">~</span> species, <span class="at">data =</span> penguins)</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(anova1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>L’ANOVA repose sur le <strong>principe de la variance totale</strong> : la variance observee se decompose en variance <strong>entre les groupes</strong> et variance <strong>a l’interieur des groupes</strong>. Si la variance entre groupes domine, c’est que les groupes different vraiment. Developpee par Ronald Fisher.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Conditions a respecter pour une ANOVA
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Comme le test t, l’ANOVA suppose : des observations <strong>independantes</strong>, une variable a expliquer <strong>approximativement normale</strong> dans chaque groupe, et des <strong>variances similaires</strong> entre groupes (homoscedasticite). On peut verifier ce dernier point en calculant la variance par groupe avec <code>group_by()</code> + <code>summarize(var(...))</code>.</p>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># H0 : toutes les especes ont la meme moyenne</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># H1 : au moins une espece differe</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>anova1 <span class="ot">&lt;-</span> <span class="fu">aov</span>(flipper_length_mm <span class="sc">~</span> species, <span class="at">data =</span> penguins)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(anova1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Sortie typique :</p>
 <pre><code>             Df Sum Sq Mean Sq F value  Pr(&gt;F)
 species       2  52473   26237   594.8  &lt;2e-16 ***
@@ -792,14 +848,14 @@ Residuals   339  14953      44</code></pre>
 <section id="test-post-hoc-tukey-hsd" class="level3" data-number="6.1">
 <h3 data-number="6.1" class="anchored" data-anchor-id="test-post-hoc-tukey-hsd"><span class="header-section-number">6.1</span> Test Post-Hoc : Tukey HSD</h3>
 <p>Apres une ANOVA significative, le test de <strong>Tukey</strong> identifie <strong>quelles paires</strong> de groupes different.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">TukeyHSD</span>(anova1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">TukeyHSD</span>(anova1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <pre><code>                      diff     lwr     upr  p adj
 Chinstrap-Adelie     5.87    3.51    8.24  0.000
 Gentoo-Adelie       27.23   25.42   29.04  0.000
 Gentoo-Chinstrap    21.36   18.86   23.86  0.000</code></pre>
 <p>Pour chaque paire : <code>diff</code> = l’ecart des moyennes, <code>p adj</code> = la p-value ajustee. Ici les 3 paires ont <code>p adj &lt; 0.05</code> -&gt; les 3 especes different toutes entre elles.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -808,7 +864,7 @@ Gentoo-Chinstrap    21.36   18.86   23.86  0.000</code></pre>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>L’ANOVA est le <strong>detecteur de fumee</strong> : il sonne pour dire “il y a un probleme quelque part dans la maison”. Le test de Tukey est l’<strong>inspection piece par piece</strong> : il dit “le feu est dans la cuisine, pas dans la chambre”. On ne fait Tukey que si le detecteur (ANOVA) a sonne.</p>
 </div>
@@ -846,11 +902,11 @@ Gentoo-Chinstrap    21.36   18.86   23.86  0.000</code></pre>
 </tbody>
 </table>
 <p>Reperes d’intensite (en valeur absolue) : ~0.1 faible, ~0.3 moyenne, ~0.5 et plus forte.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Coefficient seul</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(mtcars<span class="sc">$</span>wt, mtcars<span class="sc">$</span>mpg)            <span class="co"># -0.87 : lien negatif fort</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Test de correlation : ajoute une p-value et un IC</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(mtcars<span class="sc">$</span>wt, mtcars<span class="sc">$</span>mpg)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Coefficient seul</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(mtcars<span class="sc">$</span>wt, mtcars<span class="sc">$</span>mpg)            <span class="co"># -0.87 : lien negatif fort</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Test de correlation : ajoute une p-value et un IC</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(mtcars<span class="sc">$</span>wt, mtcars<span class="sc">$</span>mpg)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <pre><code>        Pearson's product-moment correlation
 
 t = -9.56, df = 30, p-value = 1.3e-10
@@ -874,12 +930,12 @@ sample estimates:
 </blockquote>
 <section id="regression-lineaire-simple" class="level3" data-number="9.1">
 <h3 data-number="9.1" class="anchored" data-anchor-id="regression-lineaire-simple"><span class="header-section-number">9.1</span> Regression Lineaire Simple</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># mpg (consommation) expliquee par wt (poids)</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># La syntaxe est toujours : lm(Y ~ X, data = ...)</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>regression1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> wt, <span class="at">data =</span> mtcars)</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(regression1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># mpg (consommation) expliquee par wt (poids)</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># La syntaxe est toujours : lm(Y ~ X, data = ...)</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>regression1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> wt, <span class="at">data =</span> mtcars)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(regression1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -888,7 +944,7 @@ sample estimates:
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>La regression cherche <strong>la meilleure droite</strong> qui traverse le nuage de points. Cette droite a une equation : <code>Y = intercept + pente * X</code>.</p>
 <ul>
@@ -962,7 +1018,7 @@ F-statistic: 91.38 on 1 and 30 DF,  p-value: 1.294e-10</code></pre>
 </tbody>
 </table>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -971,7 +1027,7 @@ F-statistic: 91.38 on 1 and 30 DF,  p-value: 1.294e-10</code></pre>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Le <strong>R-carre</strong> (R-squared) repond a : “quelle part du phenomene mon modele explique-t-il ?” Il va de 0 a 1.</p>
 <ul>
@@ -1025,11 +1081,11 @@ F-statistic: 91.38 on 1 and 30 DF,  p-value: 1.294e-10</code></pre>
 <section id="regression-multiple" class="level3" data-number="9.4">
 <h3 data-number="9.4" class="anchored" data-anchor-id="regression-multiple"><span class="header-section-number">9.4</span> Regression Multiple</h3>
 <p>On ajoute plusieurs variables explicatives avec <code>+</code>. Chaque coefficient s’interprete alors <strong>“toutes choses egales par ailleurs”</strong>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Consommation expliquee par le poids ET la puissance</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>regression2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> wt <span class="sc">+</span> hp, <span class="at">data =</span> mtcars)</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(regression2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Consommation expliquee par le poids ET la puissance</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>regression2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> wt <span class="sc">+</span> hp, <span class="at">data =</span> mtcars)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(regression2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1038,9 +1094,103 @@ F-statistic: 91.38 on 1 and 30 DF,  p-value: 1.294e-10</code></pre>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>“Toutes choses egales par ailleurs” veut dire : le coefficient de <code>wt</code> mesure l’effet du poids <strong>a puissance constante</strong> – comme si on comparait deux voitures de meme puissance mais de poids different. Cela permet d’isoler l’effet propre de chaque variable.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>R-squared ou R-squared ajuste ?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Ajouter une variable fait <strong>toujours</strong> monter le <code>Multiple R-squared</code>, meme une variable inutile. Le <strong><code>Adjusted R-squared</code></strong> corrige ce biais en penalisant les variables superflues : c’est lui qu’on regarde pour <strong>comparer des modeles</strong> comportant un nombre different de variables.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="les-graphiques-de-diagnostic" class="level3" data-number="9.5">
+<h3 data-number="9.5" class="anchored" data-anchor-id="les-graphiques-de-diagnostic"><span class="header-section-number">9.5</span> Les Graphiques de Diagnostic</h3>
+<p>Apres un <code>lm()</code>, la fonction <code>plot()</code> produit <strong>4 graphiques</strong> qui verifient si les conditions de la regression sont respectees.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))   <span class="co"># afficher les 4 graphiques dans une grille 2x2</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(regression1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Graphique</th>
+<th>Ce qu’il verifie</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Residuals vs Fitted</strong></td>
+<td>Linearite : les residus doivent etre repartis au hasard autour de 0, sans tendance</td>
+</tr>
+<tr class="even">
+<td><strong>Q-Q Residuals</strong></td>
+<td>Normalite des residus : les points doivent suivre la diagonale en pointilles</td>
+</tr>
+<tr class="odd">
+<td><strong>Scale-Location</strong></td>
+<td>Homoscedasticite : ligne rouge horizontale, points repartis egalement</td>
+</tr>
+<tr class="even">
+<td><strong>Residuals vs Leverage</strong></td>
+<td>Reperer les valeurs aberrantes influentes (distance de Cook)</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>En simple
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Les graphiques de diagnostic, c’est le <strong>controle technique</strong> de ta regression. Le modele “roule”, mais est-il fiable ? Ces 4 graphiques verifient que les hypotheses (linearite, residus normaux, variance constante, pas d’outlier qui fausse tout) tiennent la route. Si un graphique deraille, le modele est a revoir.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="regression-par-etapes-stepwise" class="level3" data-number="9.6">
+<h3 data-number="9.6" class="anchored" data-anchor-id="regression-par-etapes-stepwise"><span class="header-section-number">9.6</span> Regression par Etapes (stepwise)</h3>
+<p>Avec beaucoup de variables explicatives possibles, comment choisir le <strong>meilleur modele</strong> ? La regression par etapes (<code>step()</code>) teste automatiquement les combinaisons et garde celle qui equilibre <strong>pouvoir explicatif</strong> et <strong>simplicite</strong>, en minimisant le critere <strong>AIC</strong>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Modele complet : mpg explique par TOUTES les autres variables (~ .)</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>full_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> ., <span class="at">data =</span> mtcars)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># step() ajoute/retire des variables pour minimiser l'AIC</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>stepwise_model <span class="ot">&lt;-</span> <span class="fu">step</span>(full_model, <span class="at">direction =</span> <span class="st">"both"</span>)</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(stepwise_model)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>En simple
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Preparer une valise : tu veux emporter le <strong>strict utile</strong>, ni trop ni trop peu. <code>step()</code> fait pareil avec les variables d’un modele – il enleve celles qui ne servent presque a rien et garde celles qui comptent. L’<strong>AIC</strong> est la “note de valise” : plus il est bas, mieux le modele equilibre precision et simplicite. Un modele avec trop de variables (sur-ajuste) est penalise.</p>
 </div>
 </div>
 </div>
@@ -1102,7 +1252,7 @@ F-statistic: 91.38 on 1 and 30 DF,  p-value: 1.294e-10</code></pre>
 <section id="questions-probables-dexamen" class="level2" data-number="10">
 <h2 data-number="10" class="anchored" data-anchor-id="questions-probables-dexamen"><span class="header-section-number">10</span> Questions Probables d’Examen</h2>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1111,14 +1261,14 @@ F-statistic: 91.38 on 1 and 30 DF,  p-value: 1.294e-10</code></pre>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>0.03 &lt; 0.05 -&gt; on <strong>rejette H0</strong> : le resultat est statistiquement significatif. Attention a ne pas dire “H0 a 3 % de chances d’etre vraie”.</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1127,14 +1277,14 @@ F-statistic: 91.38 on 1 and 30 DF,  p-value: 1.294e-10</code></pre>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Regarder la colonne <code>Pr(&gt;|t|)</code> de la ligne du coefficient. Si &lt; 0.05 (ou s’il y a au moins une etoile <code>*</code>), le predicteur est significatif. Donner aussi le signe et la valeur de l’Estimate pour interpreter le sens de l’effet.</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1143,14 +1293,14 @@ F-statistic: 91.38 on 1 and 30 DF,  p-value: 1.294e-10</code></pre>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>4 groupes -&gt; <strong>ANOVA</strong> (<code>aov</code>), suivie d’un <strong>TukeyHSD</strong> si l’ANOVA est significative, pour savoir quels services different.</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1159,14 +1309,14 @@ F-statistic: 91.38 on 1 and 30 DF,  p-value: 1.294e-10</code></pre>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Non. Correlation forte et positive, mais <strong>correlation n’est pas causalite</strong>. Il peut y avoir une variable cachee, ou la causalite peut etre inversee. Une correlation ne permet jamais d’affirmer un lien de cause a effet.</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1175,9 +1325,41 @@ F-statistic: 91.38 on 1 and 30 DF,  p-value: 1.294e-10</code></pre>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Le modele explique 75 % de la variance de la variable dependante. Les 25 % restants sont dus a des facteurs non inclus dans le modele.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>“Quelles conditions faut-il pour appliquer un test t ?”
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Donnees <strong>continues</strong>, echantillonnage <strong>aleatoire</strong>, observations <strong>independantes</strong>, variable <strong>approximativement normale</strong> dans chaque groupe, et <strong>variances similaires</strong> entre groupes (homoscedasticite). Le test t reste robuste si n est grand ; sinon on utilise <code>wilcox.test()</code>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>“A quoi servent les graphiques de diagnostic d’une regression ?”
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>A verifier que les conditions du modele sont respectees : linearite (Residuals vs Fitted), normalite des residus (Q-Q), variance constante / homoscedasticite (Scale-Location), et valeurs aberrantes influentes (Residuals vs Leverage). On les obtient avec <code>plot(mon_modele)</code>.</p>
 </div>
 </div>
 </div>
@@ -1206,7 +1388,7 @@ F-statistic: 91.38 on 1 and 30 DF,  p-value: 1.294e-10</code></pre>
 <tr class="even">
 <td>Comparer 1 ou 2 moyennes</td>
 <td><code>t.test()</code></td>
-<td>Lire <code>t</code>, <code>df</code>, <code>p-value</code>, IC</td>
+<td>Lire <code>t</code>, <code>df</code>, <code>p-value</code>, IC ; conditions a verifier</td>
 </tr>
 <tr class="odd">
 <td>Comparer 3+ moyennes</td>
@@ -1227,6 +1409,16 @@ F-statistic: 91.38 on 1 and 30 DF,  p-value: 1.294e-10</code></pre>
 <td>Modeliser / predire</td>
 <td><code>lm()</code> + <code>summary()</code></td>
 <td>Lire Estimate, <code>Pr(&gt;|t|)</code>, R-squared</td>
+</tr>
+<tr class="odd">
+<td>Verifier un modele</td>
+<td><code>plot(modele)</code></td>
+<td>4 graphiques de diagnostic</td>
+</tr>
+<tr class="even">
+<td>Choisir le meilleur modele</td>
+<td><code>step()</code></td>
+<td>Minimise l’AIC (regression par etapes)</td>
 </tr>
 <tr class="odd">
 <td>Seuil de decision</td>
