@@ -1,0 +1,407 @@
+---
+title: "Module 6 : Statistiques Inferentielles"
+---
+
+Les statistiques inferentielles permettent de **tirer des conclusions sur une population entiere** a partir d'un simple **echantillon**. La question n'est plus "qu'est-ce que j'observe ?" (Module 5) mais "puis-je generaliser ce que j'observe ?".
+
+::: {.callout-tip collapse="true"}
+## En simple
+Inferer, c'est **gouter une cuillere de soupe pour juger toute la casserole**. Tu ne manges pas les 3 litres de soupe : tu prends une cuillere (l'echantillon), et tu en deduis si toute la soupe (la population) est trop salee. Les statistiques inferentielles, ce sont les regles qui disent : "ta cuillere est-elle assez representative pour conclure ?" et "quel risque de te tromper ?".
+:::
+
+## Population, Echantillon, et le Role du Hasard
+
+| Terme | Definition | Exemple |
+|---|---|---|
+| **Population** | L'ensemble total qu'on veut etudier | Tous les etudiants de l'UNIFR |
+| **Echantillon** | Le sous-ensemble qu'on observe reellement | 200 etudiants interroges |
+| **Parametre** | Une valeur **vraie** dans la population (inconnue) | La vraie note moyenne de tous |
+| **Statistique** | Une valeur **calculee** sur l'echantillon (connue) | La note moyenne des 200 |
+
+L'echantillon doit etre **aleatoire** (chaque individu a la meme chance d'etre choisi) pour etre representatif. C'est ce qui justifie toute la machinerie inferentielle.
+
+### Simuler un Echantillon : `rnorm()` et `set.seed()`
+
+En exercice, on cree souvent des donnees fictives qui suivent une **loi normale** (courbe en cloche).
+
+```r
+# set.seed() fige le hasard : tout le monde obtient les MEMES nombres aleatoires
+set.seed(123)
+
+# rnorm(n, mean, sd) : genere n valeurs aleatoires suivant une loi normale
+scores_qi <- rnorm(25, mean = 105, sd = 15)
+# -> 25 scores de QI, centres autour de 105, ecart-type 15
+```
+
+::: {.callout-tip collapse="true"}
+## En simple
+`set.seed(123)` c'est comme **truquer un de pour qu'il tombe toujours sur la meme sequence**. Le hasard de R n'est pas vraiment du hasard : c'est une recette. En fixant la "graine" (seed), tu garantis que ton code donnera exactement les memes nombres a chaque execution -- indispensable pour que ton prof reproduise ton resultat.
+:::
+
+## La Demarche du Test d'Hypothese
+
+C'est le coeur du module. **Tout test statistique suit le meme scenario en 4 actes.**
+
+### Acte 1 — Poser deux hypotheses
+
+| Hypothese | Symbole | Signification | Role |
+|---|---|---|---|
+| **Hypothese nulle** | H0 | "Il n'y a **rien** : aucun effet, aucune difference, aucun lien" | Ce qu'on cherche a rejeter |
+| **Hypothese alternative** | H1 | "Il y a **quelque chose** : un effet, une difference, un lien" | Ce qu'on espere montrer |
+
+::: {.callout-tip collapse="true"}
+## En simple
+Le test d'hypothese fonctionne comme un **proces** :
+
+- H0 = "l'accuse est innocent" (presomption d'innocence : il ne se passe rien)
+- H1 = "l'accuse est coupable" (il y a un effet)
+
+On ne declare jamais H0 "vraie" : on dit soit "coupable" (on rejette H0), soit "pas assez de preuves" (on ne rejette pas H0). Un acquittement ne prouve pas l'innocence -- juste le manque de preuves.
+:::
+
+### Acte 2 — Calculer une statistique de test et une p-value
+
+Le test produit une **p-value** : la probabilite d'observer un resultat aussi extreme que le tien **si H0 etait vraie**.
+
+### Acte 3 — Comparer la p-value au seuil alpha
+
+Le seuil de signification **alpha** est fixe **avant** le test, presque toujours a **0.05** (5 %).
+
+| Resultat | Decision | Formulation |
+|---|---|---|
+| **p < 0.05** | On **rejette H0** | "Le resultat est statistiquement significatif" |
+| **p >= 0.05** | On **ne rejette pas H0** | "Le resultat n'est pas significatif" |
+
+### Acte 4 — Interpreter dans le contexte
+
+Traduire la decision statistique en phrase comprehensible sur le phenomene etudie.
+
+::: {.callout-danger}
+## Les 3 erreurs d'interpretation de la p-value
+1. **La p-value n'est PAS la probabilite que H0 soit vraie.** C'est la probabilite des donnees *si* H0 est vraie.
+2. **"Non significatif" ne veut PAS dire "il n'y a pas d'effet".** Cela peut juste signifier que l'echantillon est trop petit pour le detecter.
+3. **Significatif n'est pas synonyme d'important.** Avec un tres grand echantillon, un effet minuscule et sans interet pratique peut devenir "significatif".
+:::
+
+### Erreurs de Type I et Type II
+
+Comme dans un proces, on peut se tromper de deux facons :
+
+| | H0 est vraie en realite | H0 est fausse en realite |
+|---|---|---|
+| **On rejette H0** | **Erreur de type I** (faux positif) -- proba = alpha | Decision correcte |
+| **On ne rejette pas H0** | Decision correcte | **Erreur de type II** (faux negatif) |
+
+::: {.callout-tip collapse="true"}
+## En simple
+- **Erreur de type I** : condamner un innocent. On crie "il y a un effet !" alors qu'il n'y en a aucun. Le seuil alpha = 0.05 signifie qu'on accepte 5 % de risque de faire cette erreur.
+- **Erreur de type II** : acquitter un coupable. Il y avait bien un effet, mais on ne l'a pas detecte (souvent : echantillon trop petit).
+:::
+
+## L'Intervalle de Confiance (IC)
+
+Plutot qu'une seule valeur, l'IC donne une **fourchette plausible** pour le parametre de la population. Un IC a 95 % signifie : "si on repetait l'etude un grand nombre de fois, 95 % des intervalles calcules contiendraient la vraie valeur".
+
+::: {.callout-tip collapse="true"}
+## En simple
+Une estimation ponctuelle ("la moyenne est 4.6") est une **flechette plantee sur une cible**. L'intervalle de confiance est le **cercle dessine autour** : "la vraie valeur est probablement quelque part la-dedans, entre 4.4 et 4.8". Plus l'echantillon est grand, plus le cercle est petit (estimation precise).
+
+Astuce : si un IC a 95 % pour une **difference** contient **0**, c'est que la difference n'est pas significative (0 = "aucune difference" reste plausible).
+:::
+
+## Le Test t (t-test)
+
+Le test t compare des **moyennes**. C'est le test le plus frequent a l'examen.
+
+### Test t a un echantillon
+
+Compare la moyenne d'un echantillon a une **valeur de reference** fixee (`mu`).
+
+> Question type : "le QI moyen de nos etudiants differe-t-il de 100 ?"
+
+```r
+set.seed(123)
+scores_qi <- rnorm(25, mean = 105, sd = 15)
+
+# H0 : la moyenne vaut 100   |   H1 : la moyenne differe de 100
+resultat <- t.test(scores_qi, mu = 100)
+print(resultat)
+```
+
+### Test t a deux echantillons
+
+Compare les moyennes de **deux groupes** independants.
+
+> Question type : "les femmes et les hommes ont-ils une taille moyenne differente ?"
+
+```r
+tailles_f <- rnorm(30, mean = 164.7, sd = 5.6)
+tailles_h <- rnorm(30, mean = 177.4, sd = 6.1)
+
+# H0 : memes moyennes   |   H1 : moyennes differentes
+t.test(tailles_f, tailles_h)
+
+# Variante si les deux variables sont dans un seul data frame :
+t.test(taille ~ genre, data = mon_df)
+```
+
+### Lire la Sortie d'un Test t
+
+```
+        One Sample t-test
+
+data:  scores_qi
+t = 2.31, df = 24, p-value = 0.02968
+alternative hypothesis: true mean is not equal to 100
+95 percent confidence interval:
+ 100.62 112.40
+sample estimates:
+mean of x
+   106.51
+```
+
+| Element | Valeur | Interpretation |
+|---|---|---|
+| `t` | 2.31 | La statistique de test (plus elle est loin de 0, plus l'ecart est marque) |
+| `df` | 24 | Degres de liberte (lies a la taille de l'echantillon : n - 1) |
+| `p-value` | 0.02968 | **< 0.05 -> on rejette H0** |
+| `confidence interval` | [100.62 ; 112.40] | Fourchette plausible de la vraie moyenne ; **ne contient pas 100** |
+| `mean of x` | 106.51 | La moyenne observee dans l'echantillon |
+
+**Conclusion redigee :** "Le QI moyen des etudiants (M = 106.5) est significativement superieur a 100, t(24) = 2.31, p = .030."
+
+::: {.callout-warning}
+## Petit echantillon = test peu puissant
+Avec n = 25, un test peut ne rien detecter (p >= 0.05) meme si un effet existe. En augmentant n (ex. 50, 100), le meme ecart peut devenir significatif. Un resultat non significatif sur petit echantillon ne prouve donc **pas** l'absence d'effet.
+:::
+
+## L'ANOVA (Analyse de Variance)
+
+Le test t ne compare que **2** moyennes. Pour comparer **3 groupes ou plus**, on utilise l'**ANOVA**.
+
+> Question type : "la longueur des nageoires differe-t-elle entre les 3 especes de manchots ?"
+
+::: {.callout-tip collapse="true"}
+## En simple
+Si tu faisais plein de tests t deux-a-deux (groupe A vs B, A vs C, B vs C...), tu multiplierais le risque d'erreur de type I (5 % a chaque fois s'accumulent). L'ANOVA fait **un seul test global** : "au moins un des groupes differe-t-il des autres ?" Elle protege contre l'inflation du risque.
+:::
+
+```r
+library(palmerpenguins)
+
+# H0 : toutes les especes ont la meme moyenne
+# H1 : au moins une espece differe
+anova1 <- aov(flipper_length_mm ~ species, data = penguins)
+summary(anova1)
+```
+
+Sortie typique :
+
+```
+             Df Sum Sq Mean Sq F value  Pr(>F)
+species       2  52473   26237   594.8  <2e-16 ***
+Residuals   339  14953      44
+```
+
+| Element | Interpretation |
+|---|---|
+| `F value` | La statistique de test de l'ANOVA |
+| `Pr(>F)` | La p-value. Ici `<2e-16` = quasiment 0 -> **on rejette H0** |
+| `***` | Code de significativite (voir tableau plus bas) |
+
+**Mais l'ANOVA ne dit pas QUELS groupes different.** Elle dit juste "il y a une difference quelque part".
+
+### Test Post-Hoc : Tukey HSD
+
+Apres une ANOVA significative, le test de **Tukey** identifie **quelles paires** de groupes different.
+
+```r
+TukeyHSD(anova1)
+```
+
+```
+                      diff     lwr     upr  p adj
+Chinstrap-Adelie     5.87    3.51    8.24  0.000
+Gentoo-Adelie       27.23   25.42   29.04  0.000
+Gentoo-Chinstrap    21.36   18.86   23.86  0.000
+```
+
+Pour chaque paire : `diff` = l'ecart des moyennes, `p adj` = la p-value ajustee. Ici les 3 paires ont `p adj < 0.05` -> les 3 especes different toutes entre elles.
+
+::: {.callout-tip collapse="true"}
+## En simple
+L'ANOVA est le **detecteur de fumee** : il sonne pour dire "il y a un probleme quelque part dans la maison". Le test de Tukey est l'**inspection piece par piece** : il dit "le feu est dans la cuisine, pas dans la chambre". On ne fait Tukey que si le detecteur (ANOVA) a sonne.
+:::
+
+## La Correlation
+
+La correlation mesure la **force et la direction du lien lineaire** entre **deux variables numeriques**. Le coefficient **r** varie de -1 a +1.
+
+| Valeur de r | Interpretation |
+|---|---|
+| proche de **+1** | Forte correlation **positive** (les deux augmentent ensemble) |
+| proche de **0** | Pas de lien lineaire |
+| proche de **-1** | Forte correlation **negative** (l'une monte, l'autre descend) |
+
+Reperes d'intensite (en valeur absolue) : ~0.1 faible, ~0.3 moyenne, ~0.5 et plus forte.
+
+```r
+# Coefficient seul
+cor(mtcars$wt, mtcars$mpg)            # -0.87 : lien negatif fort
+
+# Test de correlation : ajoute une p-value et un IC
+cor.test(mtcars$wt, mtcars$mpg)
+```
+
+```
+        Pearson's product-moment correlation
+
+t = -9.56, df = 30, p-value = 1.3e-10
+95 percent confidence interval:
+ -0.934 -0.744
+sample estimates:
+   cor
+-0.868
+```
+
+`cor = -0.868`, `p-value` minuscule -> correlation negative forte et significative.
+
+::: {.callout-danger}
+## Correlation n'est PAS causalite
+C'est L'erreur a ne jamais commettre. Que deux variables varient ensemble ne prouve **pas** que l'une cause l'autre.
+
+Exemple : les ventes de glaces et les noyades sont fortement correlees. Les glaces ne noient personne -- c'est la **chaleur** (variable cachee) qui fait grimper les deux. A l'examen, ne jamais ecrire "X cause Y" sur la base d'une simple correlation.
+:::
+
+## La Regression Lineaire
+
+La regression va plus loin que la correlation : elle **modelise** une variable a expliquer (Y, dependante) en fonction d'une ou plusieurs variables explicatives (X, independantes), et permet de **predire**.
+
+> Question type : "le poids d'une voiture predit-il sa consommation ?"
+
+### Regression Lineaire Simple
+
+```r
+# mpg (consommation) expliquee par wt (poids)
+# La syntaxe est toujours : lm(Y ~ X, data = ...)
+regression1 <- lm(mpg ~ wt, data = mtcars)
+summary(regression1)
+```
+
+::: {.callout-tip collapse="true"}
+## En simple
+La regression cherche **la meilleure droite** qui traverse le nuage de points. Cette droite a une equation : `Y = intercept + pente * X`.
+
+- L'**intercept** (ordonnee a l'origine) : la valeur de Y quand X = 0.
+- La **pente** (le coefficient de X) : de combien Y change quand X augmente de 1 unite.
+
+Le tilde `~` se lit "expliquee par" : `mpg ~ wt` = "la consommation expliquee par le poids".
+:::
+
+### Lire la Sortie d'un `summary(lm())`
+
+```
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)
+(Intercept)  37.2851     1.8776   19.86  < 2e-16 ***
+wt           -5.3445     0.5591   -9.56  1.3e-10 ***
+
+Residual standard error: 3.046 on 30 degrees of freedom
+Multiple R-squared:  0.7528,  Adjusted R-squared:  0.7446
+F-statistic: 91.38 on 1 and 30 DF,  p-value: 1.294e-10
+```
+
+| Element | Valeur | Interpretation |
+|---|---|---|
+| **Estimate (Intercept)** | 37.29 | Consommation predite pour un poids de 0 (peu interpretable seul) |
+| **Estimate (wt)** | -5.34 | **Chaque tonne en plus fait perdre 5.34 mpg.** Signe negatif = lien negatif |
+| **Std. Error** | 0.56 | Incertitude sur le coefficient |
+| **t value** | -9.56 | Estimate / Std. Error |
+| **Pr(>\|t\|)** | 1.3e-10 | p-value du coefficient. **< 0.05 -> wt est un predicteur significatif** |
+| **R-squared** | 0.7528 | **Le poids explique 75 % de la variation** de la consommation |
+| **F-statistic / p-value** | p = 1.3e-10 | Test global : le modele est-il utile ? Oui ici |
+
+::: {.callout-tip collapse="true"}
+## En simple le R-squared
+Le **R-carre** (R-squared) repond a : "quelle part du phenomene mon modele explique-t-il ?" Il va de 0 a 1.
+
+- R-squared = 0.75 -> le modele explique 75 % de la variation de Y ; les 25 % restants viennent d'autres facteurs non inclus.
+- R-squared = 0.05 -> le modele n'explique presque rien.
+:::
+
+### Les Codes de Significativite (les etoiles)
+
+R affiche des etoiles a cote de chaque p-value :
+
+| Code | Seuil | Signification |
+|---|---|---|
+| `***` | p < 0.001 | Tres hautement significatif |
+| `**` | p < 0.01 | Hautement significatif |
+| `*` | p < 0.05 | Significatif |
+| `.` | p < 0.1 | Tendance (non significatif au seuil 5 %) |
+| (rien) | p >= 0.1 | Non significatif |
+
+### Regression Multiple
+
+On ajoute plusieurs variables explicatives avec `+`. Chaque coefficient s'interprete alors **"toutes choses egales par ailleurs"**.
+
+```r
+# Consommation expliquee par le poids ET la puissance
+regression2 <- lm(mpg ~ wt + hp, data = mtcars)
+summary(regression2)
+```
+
+::: {.callout-tip collapse="true"}
+## En simple
+"Toutes choses egales par ailleurs" veut dire : le coefficient de `wt` mesure l'effet du poids **a puissance constante** -- comme si on comparait deux voitures de meme puissance mais de poids different. Cela permet d'isoler l'effet propre de chaque variable.
+:::
+
+::: {.callout-warning}
+## Choisir le bon test
+| Tu veux... | Variables | Test |
+|---|---|---|
+| Comparer 1 moyenne a une reference | 1 numerique | `t.test(x, mu = ...)` |
+| Comparer 2 moyennes | 1 numerique + 1 categorielle (2 groupes) | `t.test(x ~ groupe)` |
+| Comparer 3+ moyennes | 1 numerique + 1 categorielle (3+ groupes) | `aov()` + `TukeyHSD()` |
+| Mesurer un lien | 2 numeriques | `cor.test()` |
+| Modeliser / predire | 1 Y numerique + 1 ou plusieurs X | `lm()` |
+:::
+
+## Questions Probables d'Examen
+
+::: {.callout-note collapse="true"}
+## "Cette p-value de 0.03 : que conclure ?"
+0.03 < 0.05 -> on **rejette H0** : le resultat est statistiquement significatif. Attention a ne pas dire "H0 a 3 % de chances d'etre vraie".
+:::
+
+::: {.callout-note collapse="true"}
+## "Ce coefficient de regression est-il significatif ?"
+Regarder la colonne `Pr(>|t|)` de la ligne du coefficient. Si < 0.05 (ou s'il y a au moins une etoile `*`), le predicteur est significatif. Donner aussi le signe et la valeur de l'Estimate pour interpreter le sens de l'effet.
+:::
+
+::: {.callout-note collapse="true"}
+## "Quel test pour comparer la satisfaction de 4 services differents ?"
+4 groupes -> **ANOVA** (`aov`), suivie d'un **TukeyHSD** si l'ANOVA est significative, pour savoir quels services different.
+:::
+
+::: {.callout-note collapse="true"}
+## "r = 0.62 entre usage d'Instagram et anxiete : peut-on dire qu'Instagram rend anxieux ?"
+Non. Correlation forte et positive, mais **correlation n'est pas causalite**. Il peut y avoir une variable cachee, ou la causalite peut etre inversee. Une correlation ne permet jamais d'affirmer un lien de cause a effet.
+:::
+
+::: {.callout-note collapse="true"}
+## "Le R-squared vaut 0.75 : qu'est-ce que cela signifie ?"
+Le modele explique 75 % de la variance de la variable dependante. Les 25 % restants sont dus a des facteurs non inclus dans le modele.
+:::
+
+## Recapitulatif du Module
+
+| Notion | Commande R | A retenir |
+|---|---|---|
+| Echantillon aleatoire normal | `rnorm()` + `set.seed()` | Fige le hasard pour la reproductibilite |
+| Comparer 1 ou 2 moyennes | `t.test()` | Lire `t`, `df`, `p-value`, IC |
+| Comparer 3+ moyennes | `aov()` + `summary()` | Lire `F value`, `Pr(>F)` |
+| Quelles paires different | `TukeyHSD()` | Uniquement apres ANOVA significative |
+| Lien entre 2 numeriques | `cor.test()` | `r` de -1 a +1 ; jamais causalite |
+| Modeliser / predire | `lm()` + `summary()` | Lire Estimate, `Pr(>|t|)`, R-squared |
+| Seuil de decision | alpha = 0.05 | p < 0.05 -> rejet de H0 |

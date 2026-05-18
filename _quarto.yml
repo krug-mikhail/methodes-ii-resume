@@ -8,31 +8,49 @@ website:
     left:
       - href: index.qmd
         text: Accueil
-      - href: 01_Theorie_Enquete.qmd
-        text: Theorie
-      - href: 02_Bases_R.qmd
-        text: Bases de R
-      - href: 03_Manipulation_Dplyr.qmd
-        text: dplyr
-      - href: 04_Visualisation_Ggplot2.qmd
-        text: ggplot2
+      - text: "Probleme Set 1"
+        menu:
+          - href: 01_Theorie_Enquete.qmd
+            text: Theorie & Enquete
+          - href: 02_Bases_R.qmd
+            text: Bases de R
+          - href: 03_Manipulation_Dplyr.qmd
+            text: Manipulation (dplyr)
+          - href: 04_Visualisation_Ggplot2.qmd
+            text: Visualisation (ggplot2)
+          - href: 05_Copier_Coller.qmd
+            text: Copier/Coller PS1
+      - text: "Probleme Set 2"
+        menu:
+          - href: 06_Statistiques_Descriptives.qmd
+            text: Statistiques descriptives
+          - href: 07_Statistiques_Inferentielles.qmd
+            text: Statistiques inferentielles
+          - href: 08_Communication_Resultats.qmd
+            text: Communication des resultats
+          - href: 09_Copier_Coller_PS2.qmd
+            text: Copier/Coller PS2
       - href: glossaire.qmd
         text: Glossaire
-      - href: 05_Copier_Coller.qmd
-        text: Copier/Coller
   sidebar:
     style: docked
     search: true
     contents:
-      - section: "Resume du cours"
+      - index.qmd
+      - section: "Categorie 1 - Probleme Set 1"
         contents:
-          - index.qmd
           - 01_Theorie_Enquete.qmd
           - 02_Bases_R.qmd
           - 03_Manipulation_Dplyr.qmd
           - 04_Visualisation_Ggplot2.qmd
-          - glossaire.qmd
           - 05_Copier_Coller.qmd
+      - section: "Categorie 2 - Probleme Set 2"
+        contents:
+          - 06_Statistiques_Descriptives.qmd
+          - 07_Statistiques_Inferentielles.qmd
+          - 08_Communication_Resultats.qmd
+          - 09_Copier_Coller_PS2.qmd
+      - glossaire.qmd
 
 execute:
   enabled: false

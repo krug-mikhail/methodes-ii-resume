@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Module 1 : Methodologie et Enquete – Methodes II &amp; R</title>
+<title>Module 7 : Communication des Resultats – Methodes II &amp; R</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -71,35 +71,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -189,7 +160,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01_Theorie_Enquete.html">Categorie 1 - Probleme Set 1</a></li><li class="breadcrumb-item"><a href="./01_Theorie_Enquete.html">Module 1 : Methodologie et Enquete</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./06_Statistiques_Descriptives.html">Categorie 2 - Probleme Set 2</a></li><li class="breadcrumb-item"><a href="./08_Communication_Resultats.html">Module 7 : Communication des Resultats</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -226,7 +197,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01_Theorie_Enquete.html" class="sidebar-item-text sidebar-link active">
+  <a href="./01_Theorie_Enquete.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Module 1 : Methodologie et Enquete</span></a>
   </div>
 </li>
@@ -279,7 +250,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08_Communication_Resultats.html" class="sidebar-item-text sidebar-link">
+  <a href="./08_Communication_Resultats.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Module 7 : Communication des Resultats</span></a>
   </div>
 </li>
@@ -307,27 +278,42 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#la-question-de-recherche-rq" id="toc-la-question-de-recherche-rq" class="nav-link active" data-scroll-target="#la-question-de-recherche-rq"><span class="header-section-number">1</span> La Question de Recherche (RQ)</a>
+  <li><a href="#la-structure-dune-section-resultats" id="toc-la-structure-dune-section-resultats" class="nav-link active" data-scroll-target="#la-structure-dune-section-resultats"><span class="header-section-number">1</span> La Structure d’une Section “Resultats”</a></li>
+  <li><a href="#les-conventions-de-notation" id="toc-les-conventions-de-notation" class="nav-link" data-scroll-target="#les-conventions-de-notation"><span class="header-section-number">2</span> Les Conventions de Notation</a></li>
+  <li><a href="#rapporter-chaque-type-de-test" id="toc-rapporter-chaque-type-de-test" class="nav-link" data-scroll-target="#rapporter-chaque-type-de-test"><span class="header-section-number">3</span> Rapporter Chaque Type de Test</a>
   <ul class="collapse">
-  <li><a href="#clarte-des-construits" id="toc-clarte-des-construits" class="nav-link" data-scroll-target="#clarte-des-construits"><span class="header-section-number">1.1</span> Clarte des Construits</a></li>
+  <li><a href="#rapporter-des-statistiques-descriptives" id="toc-rapporter-des-statistiques-descriptives" class="nav-link" data-scroll-target="#rapporter-des-statistiques-descriptives"><span class="header-section-number">3.1</span> Rapporter des Statistiques Descriptives</a></li>
+  <li><a href="#rapporter-un-test-t" id="toc-rapporter-un-test-t" class="nav-link" data-scroll-target="#rapporter-un-test-t"><span class="header-section-number">3.2</span> Rapporter un Test t</a></li>
+  <li><a href="#rapporter-une-anova" id="toc-rapporter-une-anova" class="nav-link" data-scroll-target="#rapporter-une-anova"><span class="header-section-number">3.3</span> Rapporter une ANOVA</a></li>
+  <li><a href="#rapporter-une-correlation" id="toc-rapporter-une-correlation" class="nav-link" data-scroll-target="#rapporter-une-correlation"><span class="header-section-number">3.4</span> Rapporter une Correlation</a></li>
+  <li><a href="#rapporter-une-regression" id="toc-rapporter-une-regression" class="nav-link" data-scroll-target="#rapporter-une-regression"><span class="header-section-number">3.5</span> Rapporter une Regression</a></li>
   </ul></li>
-  <li><a href="#operationnalisation" id="toc-operationnalisation" class="nav-link" data-scroll-target="#operationnalisation"><span class="header-section-number">2</span> Operationnalisation</a></li>
-  <li><a href="#hypotheses-statistiques" id="toc-hypotheses-statistiques" class="nav-link" data-scroll-target="#hypotheses-statistiques"><span class="header-section-number">3</span> Hypotheses Statistiques</a>
+  <li><a href="#les-tableaux-de-resultats" id="toc-les-tableaux-de-resultats" class="nav-link" data-scroll-target="#les-tableaux-de-resultats"><span class="header-section-number">4</span> Les Tableaux de Resultats</a></li>
+  <li><a href="#tableau-incomplet" id="toc-tableau-incomplet" class="nav-link" data-scroll-target="#tableau-incomplet"><span class="header-section-number">5</span> Tableau incomplet</a></li>
+  <li><a href="#exercice-type-la-chasse-aux-erreurs" id="toc-exercice-type-la-chasse-aux-erreurs" class="nav-link" data-scroll-target="#exercice-type-la-chasse-aux-erreurs"><span class="header-section-number">6</span> Exercice Type : la Chasse aux Erreurs</a>
   <ul class="collapse">
-  <li><a href="#erreurs-de-test" id="toc-erreurs-de-test" class="nav-link" data-scroll-target="#erreurs-de-test"><span class="header-section-number">3.1</span> Erreurs de test</a></li>
+  <li><a href="#erreur-1-la-p-value-mal-ecrite-ou-impossible" id="toc-erreur-1-la-p-value-mal-ecrite-ou-impossible" class="nav-link" data-scroll-target="#erreur-1-la-p-value-mal-ecrite-ou-impossible"><span class="header-section-number">6.1</span> Erreur 1 — La p-value mal ecrite ou impossible</a></li>
   </ul></li>
-  <li><a href="#echelles-de-mesure-niveaux-de-stevens" id="toc-echelles-de-mesure-niveaux-de-stevens" class="nav-link" data-scroll-target="#echelles-de-mesure-niveaux-de-stevens"><span class="header-section-number">4</span> Echelles de Mesure (Niveaux de Stevens)</a></li>
-  <li><a href="#types-de-questions-denquete" id="toc-types-de-questions-denquete" class="nav-link" data-scroll-target="#types-de-questions-denquete"><span class="header-section-number">5</span> Types de Questions d’Enquete</a></li>
-  <li><a href="#biais-cognitifs-denquete" id="toc-biais-cognitifs-denquete" class="nav-link" data-scroll-target="#biais-cognitifs-denquete"><span class="header-section-number">6</span> Biais Cognitifs d’Enquete</a></li>
+  <li><a href="#p-0.5-alors-quon-annonce-un-effet-significatif" id="toc-p-0.5-alors-quon-annonce-un-effet-significatif" class="nav-link" data-scroll-target="#p-0.5-alors-quon-annonce-un-effet-significatif"><span class="header-section-number">7</span> “p = 0.5” alors qu’on annonce un effet significatif</a></li>
+  <li><a href="#erreur-2-confondre-correlation-et-causalite" id="toc-erreur-2-confondre-correlation-et-causalite" class="nav-link" data-scroll-target="#erreur-2-confondre-correlation-et-causalite"><span class="header-section-number">7.1</span> Erreur 2 — Confondre correlation et causalite</a></li>
+  <li><a href="#r-.62-montre-quinstagram-est-un-facteur-de-risque" id="toc-r-.62-montre-quinstagram-est-un-facteur-de-risque" class="nav-link" data-scroll-target="#r-.62-montre-quinstagram-est-un-facteur-de-risque"><span class="header-section-number">8</span> “r = .62 montre qu’Instagram est un facteur de risque”</a></li>
+  <li><a href="#erreur-3-sur-interpreter-un-resultat-non-significatif-ou-minuscule" id="toc-erreur-3-sur-interpreter-un-resultat-non-significatif-ou-minuscule" class="nav-link" data-scroll-target="#erreur-3-sur-interpreter-un-resultat-non-significatif-ou-minuscule"><span class="header-section-number">8.1</span> Erreur 3 — Sur-interpreter un resultat non significatif ou minuscule</a></li>
+  <li><a href="#les-utilisateurs-sont-plus-sociaux-m-2.42-vs-m-2.40" id="toc-les-utilisateurs-sont-plus-sociaux-m-2.42-vs-m-2.40" class="nav-link" data-scroll-target="#les-utilisateurs-sont-plus-sociaux-m-2.42-vs-m-2.40"><span class="header-section-number">9</span> “Les utilisateurs sont plus sociaux : M = 2.42 vs M = 2.40”</a></li>
+  <li><a href="#erreur-4-affirmer-plus-que-ce-que-le-test-permet" id="toc-erreur-4-affirmer-plus-que-ce-que-le-test-permet" class="nav-link" data-scroll-target="#erreur-4-affirmer-plus-que-ce-que-le-test-permet"><span class="header-section-number">9.1</span> Erreur 4 — Affirmer plus que ce que le test permet</a></li>
+  <li><a href="#ces-resultats-confirment-definitivement-la-theorie" id="toc-ces-resultats-confirment-definitivement-la-theorie" class="nav-link" data-scroll-target="#ces-resultats-confirment-definitivement-la-theorie"><span class="header-section-number">10</span> “Ces resultats confirment definitivement la theorie”</a></li>
+  <li><a href="#erreur-5-oublier-le-contexte-sd-n-echelle" id="toc-erreur-5-oublier-le-contexte-sd-n-echelle" class="nav-link" data-scroll-target="#erreur-5-oublier-le-contexte-sd-n-echelle"><span class="header-section-number">10.1</span> Erreur 5 — Oublier le contexte (SD, n, echelle)</a></li>
+  <li><a href="#la-moyenne-est-3.8-et-puis" id="toc-la-moyenne-est-3.8-et-puis" class="nav-link" data-scroll-target="#la-moyenne-est-3.8-et-puis"><span class="header-section-number">11</span> “La moyenne est 3.8” – et puis ?</a></li>
+  <li><a href="#questions-probables-dexamen" id="toc-questions-probables-dexamen" class="nav-link" data-scroll-target="#questions-probables-dexamen"><span class="header-section-number">12</span> Questions Probables d’Examen</a></li>
+  <li><a href="#recapitulatif-du-module" id="toc-recapitulatif-du-module" class="nav-link" data-scroll-target="#recapitulatif-du-module"><span class="header-section-number">13</span> Recapitulatif du Module</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01_Theorie_Enquete.html">Categorie 1 - Probleme Set 1</a></li><li class="breadcrumb-item"><a href="./01_Theorie_Enquete.html">Module 1 : Methodologie et Enquete</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./06_Statistiques_Descriptives.html">Categorie 2 - Probleme Set 2</a></li><li class="breadcrumb-item"><a href="./08_Communication_Resultats.html">Module 7 : Communication des Resultats</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Module 1 : Methodologie et Enquete</h1>
+<h1 class="title">Module 7 : Communication des Resultats</h1>
 </div>
 
 
@@ -344,246 +330,358 @@ window.Quarto = {
 </header>
 
 
-<p>Ce module pose les fondations epistemologiques, conceptuelles et methodologiques indispensables avant toute interaction avec un logiciel d’analyse.</p>
-<section id="la-question-de-recherche-rq" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="la-question-de-recherche-rq"><span class="header-section-number">1</span> La Question de Recherche (RQ)</h2>
-<p>Une question de recherche scientifique doit etre :</p>
-<ul>
-<li><strong>Claire :</strong> Eviter la confusion et le vague ; bien delimiter la recherche</li>
-<li><strong>Faisable :</strong> Rester realiste par rapport aux ressources (personnelles, materielles, temps)</li>
-<li><strong>Pertinente :</strong> Viser a mieux comprendre le phenomene plutot que de le decrire ; eviter les previsions et les jugements moraux</li>
-</ul>
-<section id="clarte-des-construits" class="level3" data-number="1.1">
-<h3 data-number="1.1" class="anchored" data-anchor-id="clarte-des-construits"><span class="header-section-number">1.1</span> Clarte des Construits</h3>
-<p>La recherche scientifique procede par l’evaluation d’hypotheses derivees de theories preexistantes. La pierre angulaire reside dans la <strong>definition stricte des construits theoriques</strong>. Les ambiguites conceptuelles compromettent fondamentalement la validite des conclusions empiriques.</p>
-<p>Il est imperatif de proceder a une revue systematique de la litterature pour identifier les variations dans la maniere dont un concept est defini par differents auteurs.</p>
-</section>
-</section>
-<section id="operationnalisation" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="operationnalisation"><span class="header-section-number">2</span> Operationnalisation</h2>
-<p>C’est le processus qui consiste a rendre un concept abstrait (ex: <em>Social Media Literacy</em>) mesurable a l’aide de variables concretes et de questions specifiques.</p>
-<p><strong>Exemple :</strong> Le construit “engagement politique en ligne” peut etre operationnalise via :</p>
-<ul>
-<li>Somme des publications (<code>IGPosts</code>)</li>
-<li>Somme des mentions “J’aime” (<code>IGLikes</code>)</li>
-<li>Moyenne des commentaires par publication (<code>IGCommentsPPost</code>)</li>
-</ul>
-</section>
-<section id="hypotheses-statistiques" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="hypotheses-statistiques"><span class="header-section-number">3</span> Hypotheses Statistiques</h2>
-<p>L’evaluation empirique se structure autour de la formulation d’hypotheses binaires :</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 35%">
-<col style="width: 35%">
-<col style="width: 29%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Hypothese</th>
-<th>Definition</th>
-<th>Exemple</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong><span class="math inline">\(H_0\)</span> (Nulle)</strong></td>
-<td>Absence d’effet, de difference ou de relation</td>
-<td><span class="math inline">\(\mu_1 = \mu_2\)</span> ou <span class="math inline">\(\rho = 0\)</span></td>
-</tr>
-<tr class="even">
-<td><strong><span class="math inline">\(H_1\)</span> (Alternative)</strong></td>
-<td>Existence d’un effet ou d’une relation</td>
-<td><span class="math inline">\(\mu_1 \neq \mu_2\)</span> ou <span class="math inline">\(\rho \neq 0\)</span></td>
-</tr>
-</tbody>
-</table>
-<section id="erreurs-de-test" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="erreurs-de-test"><span class="header-section-number">3.1</span> Erreurs de test</h3>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 24%">
-<col style="width: 15%">
-<col style="width: 39%">
-<col style="width: 21%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Erreur</th>
-<th>Nom</th>
-<th>Description</th>
-<th>Seuil</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Type I (<span class="math inline">\(\alpha\)</span>)</strong></td>
-<td>Faux positif</td>
-<td>Rejeter <span class="math inline">\(H_0\)</span> alors qu’elle est vraie</td>
-<td>Convention : <span class="math inline">\(\alpha = 0.05\)</span></td>
-</tr>
-<tr class="even">
-<td><strong>Type II (<span class="math inline">\(\beta\)</span>)</strong></td>
-<td>Faux negatif</td>
-<td>Ne pas rejeter <span class="math inline">\(H_0\)</span> alors que <span class="math inline">\(H_1\)</span> est vraie</td>
-<td>Puissance = <span class="math inline">\(1 - \beta\)</span></td>
-</tr>
-</tbody>
-</table>
+<p>Produire des analyses ne suffit pas : il faut savoir les <strong>presenter clairement et honnetement</strong>. Ce module couvre la redaction d’une section “Resultats” et, surtout, la <strong>detection des erreurs d’interpretation</strong> – un type d’exercice classique a l’examen.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>En simple
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Communiquer des resultats, c’est comme <strong>rendre un plat en cuisine</strong> : peu importe le travail en coulisses, ce qui compte c’est l’assiette finale. Le lecteur ne voit pas ton code R ; il voit ta phrase “M = 3.76, SD = 0.68”. Si cette phrase est fausse ou mal interpretee, tout le reste ne sert a rien.</p>
+</div>
+</div>
+</div>
+<section id="la-structure-dune-section-resultats" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="la-structure-dune-section-resultats"><span class="header-section-number">1</span> La Structure d’une Section “Resultats”</h2>
+<p>Une section Resultats suit toujours la meme logique :</p>
+<ol type="1">
+<li><strong>Description de l’echantillon</strong> : qui a participe (n, age moyen, repartition genre…).</li>
+<li><strong>Statistiques descriptives</strong> : les moyennes/frequences des variables cles, souvent dans un tableau.</li>
+<li><strong>Tests d’hypotheses</strong> : pour chaque hypothese, rappeler H1, citer le test utilise, donner le resultat chiffre, conclure.</li>
+<li><strong>Analyses complementaires</strong> : correlations, tests additionnels.</li>
+</ol>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>Interpretation de la P-Value
+<span class="screen-reader-only">Warning</span>Decrire, pas interpreter (pas encore)
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Ne <strong>jamais</strong> definir la p-value comme “la probabilite que <span class="math inline">\(H_0\)</span> soit vraie”.</p>
-<p>La p-value = probabilite d’obtenir une statistique de test au moins aussi extreme que celle observee, <strong>en supposant que <span class="math inline">\(H_0\)</span> est vraie</strong>.</p>
-<ul>
-<li>p &gt; <span class="math inline">\(\alpha\)</span> : manque de preuves pour rejeter <span class="math inline">\(H_0\)</span> (pas une preuve de <span class="math inline">\(H_0\)</span>)</li>
-<li>p &lt; <span class="math inline">\(\alpha\)</span> : on rejette <span class="math inline">\(H_0\)</span> en faveur de <span class="math inline">\(H_1\)</span></li>
-</ul>
+<p>La section <strong>Resultats</strong> rapporte les faits chiffres de maniere neutre. L’<strong>interpretation</strong> large, le lien avec la theorie et les implications vont dans la section <strong>Discussion</strong>. Ne pas melanger : dans les Resultats, on ecrit “les utilisateurs ont un score plus eleve” – pas “ce qui prouve que les reseaux sociaux sont benefiques”.</p>
 </div>
 </div>
 </section>
-</section>
-<section id="echelles-de-mesure-niveaux-de-stevens" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="echelles-de-mesure-niveaux-de-stevens"><span class="header-section-number">4</span> Echelles de Mesure (Niveaux de Stevens)</h2>
-<p>La nature de la variable dicte la famille de tests statistiques applicables. Les niveaux sont <strong>hierarchiques et cumulatifs</strong> :</p>
+<section id="les-conventions-de-notation" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="les-conventions-de-notation"><span class="header-section-number">2</span> Les Conventions de Notation</h2>
+<p>Les statistiques se rapportent avec des <strong>symboles standardises</strong> (style APA), en italique dans un vrai rapport.</p>
 <table class="caption-top table">
-<colgroup>
-<col style="width: 12%">
-<col style="width: 16%">
-<col style="width: 18%">
-<col style="width: 15%">
-<col style="width: 37%">
-</colgroup>
 <thead>
 <tr class="header">
-<th>Niveau</th>
-<th>Definition</th>
-<th>Proprietes</th>
-<th>Exemples</th>
-<th>Statistiques applicables</th>
+<th>Symbole</th>
+<th>Signification</th>
+<th>Exemple</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Nominale</strong></td>
-<td>Categories mutuellement exclusives, sans ordre</td>
-<td><span class="math inline">\(=\)</span> ou <span class="math inline">\(\neq\)</span></td>
-<td>Sexe, Religion, Parti politique</td>
-<td>Mode, Frequences, Test <span class="math inline">\(\chi^2\)</span></td>
+<td><strong>n</strong></td>
+<td>Taille de l’echantillon (ou d’un sous-groupe)</td>
+<td>n = 74</td>
 </tr>
 <tr class="even">
-<td><strong>Ordinale</strong></td>
-<td>Categories avec hierarchie/ordre</td>
-<td><span class="math inline">\(&lt;, &gt;\)</span> (intervalles non constants)</td>
-<td>Niveau d’education, Echelle de Likert stricte</td>
-<td>Mediane, Centiles, Spearman, Mann-Whitney</td>
+<td><strong>M</strong></td>
+<td>Moyenne (Mean)</td>
+<td>M = 3.76</td>
 </tr>
 <tr class="odd">
-<td><strong>Intervalle</strong></td>
-<td>Ordre + distances constantes et mesurables</td>
-<td><span class="math inline">\(+, -\)</span> (zero arbitraire)</td>
-<td>Temperature (C/F), Scores QI</td>
-<td>Moyenne, Ecart-type, Pearson, ANOVA</td>
+<td><strong>SD</strong></td>
+<td>Ecart-type (Standard Deviation)</td>
+<td>SD = 0.68</td>
 </tr>
 <tr class="even">
-<td><strong>Ratio</strong></td>
-<td>Intervalle + zero absolu significatif</td>
-<td><span class="math inline">\(\times, \div\)</span></td>
-<td>Age, Revenu, IGPosts, Temps de reaction</td>
-<td>Coefficient de variation, Moyenne geometrique</td>
+<td><strong>%</strong></td>
+<td>Pourcentage</td>
+<td>78 % des eleves</td>
+</tr>
+<tr class="odd">
+<td><strong>t</strong></td>
+<td>Statistique du test t (avec ses df)</td>
+<td>t(58) = 2.54</td>
+</tr>
+<tr class="even">
+<td><strong>F</strong></td>
+<td>Statistique de l’ANOVA (avec ses df)</td>
+<td>F(2, 339) = 594.8</td>
+</tr>
+<tr class="odd">
+<td><strong>r</strong></td>
+<td>Coefficient de correlation</td>
+<td>r = .62</td>
+</tr>
+<tr class="even">
+<td><strong>b</strong></td>
+<td>Coefficient de regression (pente)</td>
+<td>b = 0.28</td>
+</tr>
+<tr class="odd">
+<td><strong>SE</strong></td>
+<td>Erreur standard (Standard Error)</td>
+<td>SE = 0.11</td>
+</tr>
+<tr class="even">
+<td><strong>p</strong></td>
+<td>p-value</td>
+<td>p = .03 ou p &lt; .001</td>
+</tr>
+<tr class="odd">
+<td><strong>R²</strong></td>
+<td>Part de variance expliquee</td>
+<td>R² = .75</td>
 </tr>
 </tbody>
 </table>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Traitement des Echelles de Likert
+<span class="screen-reader-only">Tip</span>En simple
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Mathematiquement, une echelle de Likert (1-5) est <strong>ordinale</strong>. Mais en pratique, sous reserve de normalite et symetrie, on les traite souvent comme des echelles d’<strong>intervalle</strong> pour permettre moyennes et regressions lineaires.</p>
+<p>Ces symboles sont un <strong>langage international</strong>. Comme les panneaux routiers se comprennent dans tous les pays, “M = 3.76, SD = 0.68” se lit de la meme facon dans n’importe quel article scientifique du monde. Les apprendre, c’est apprendre l’alphabet du rapport de recherche.</p>
+</div>
 </div>
 </div>
 </section>
-<section id="types-de-questions-denquete" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="types-de-questions-denquete"><span class="header-section-number">5</span> Types de Questions d’Enquete</h2>
+<section id="rapporter-chaque-type-de-test" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="rapporter-chaque-type-de-test"><span class="header-section-number">3</span> Rapporter Chaque Type de Test</h2>
+<section id="rapporter-des-statistiques-descriptives" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="rapporter-des-statistiques-descriptives"><span class="header-section-number">3.1</span> Rapporter des Statistiques Descriptives</h3>
+<blockquote class="blockquote">
+<p>Le score moyen de pensee critique est eleve (M = 3.76, SD = 0.68, sur une echelle de 1 a 5). 78 % des eleves declarent etre actifs sur au moins une plateforme.</p>
+</blockquote>
+<p>Toujours accompagner une moyenne de son <strong>SD</strong>, et preciser l’<strong>echelle</strong> (de 1 a 5, en minutes…).</p>
+</section>
+<section id="rapporter-un-test-t" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="rapporter-un-test-t"><span class="header-section-number">3.2</span> Rapporter un Test t</h3>
+<blockquote class="blockquote">
+<p>Les eleves actifs sur Instagram sont en moyenne plus sociables (M = 3.8, SD = 0.5) que les non-utilisateurs (M = 3.4, SD = 0.6) ; cette difference est significative, t(45) = 3.12, p &lt; .001.</p>
+</blockquote>
+<p>On donne : les <strong>deux moyennes</strong> comparees (avec SD), puis <code>t(df) = valeur, p = valeur</code>.</p>
+</section>
+<section id="rapporter-une-anova" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="rapporter-une-anova"><span class="header-section-number">3.3</span> Rapporter une ANOVA</h3>
+<blockquote class="blockquote">
+<p>La longueur des nageoires differe significativement entre les trois especes, F(2, 339) = 594.8, p &lt; .001. Le test post-hoc de Tukey indique que les trois especes different deux a deux (tous les p &lt; .001).</p>
+</blockquote>
+</section>
+<section id="rapporter-une-correlation" class="level3" data-number="3.4">
+<h3 data-number="3.4" class="anchored" data-anchor-id="rapporter-une-correlation"><span class="header-section-number">3.4</span> Rapporter une Correlation</h3>
+<blockquote class="blockquote">
+<p>L’usage d’Instagram et le score d’anxiete sont positivement correles, r = .62, p &lt; .05.</p>
+</blockquote>
+</section>
+<section id="rapporter-une-regression" class="level3" data-number="3.5">
+<h3 data-number="3.5" class="anchored" data-anchor-id="rapporter-une-regression"><span class="header-section-number">3.5</span> Rapporter une Regression</h3>
+<blockquote class="blockquote">
+<p>Une regression lineaire montre un effet significatif de la frequence d’exposition sur la pensee critique, b = 0.28, SE = 0.11, t(58) = 2.54, p = .013. Le modele explique 18 % de la variance (R² = .18).</p>
+</blockquote>
+</section>
+</section>
+<section id="les-tableaux-de-resultats" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="les-tableaux-de-resultats"><span class="header-section-number">4</span> Les Tableaux de Resultats</h2>
+<p>Un tableau evite de noyer le lecteur sous les chiffres. Regles d’or :</p>
+<ul>
+<li>Un <strong>titre numerote</strong> (“Tableau 1 : …”) au-dessus.</li>
+<li>Des <strong>en-tetes de colonnes clairs</strong> avec les unites ou echelles.</li>
+<li>Les memes <strong>decimales partout</strong> (en general 2).</li>
+<li>Une <strong>note de bas de tableau</strong> pour les abreviations si besoin.</li>
+</ul>
 <table class="caption-top table">
-<colgroup>
-<col style="width: 15%">
-<col style="width: 34%">
-<col style="width: 50%">
-</colgroup>
 <thead>
 <tr class="header">
-<th>Type</th>
-<th>Description</th>
-<th>Nature des donnees</th>
+<th>Groupe</th>
+<th>Age (annees)</th>
+<th>Usage Instagram (1-5)</th>
+<th>Sociabilite (1-5)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Questions ouvertes</strong></td>
-<td>Texte libre</td>
-<td>Donnees non structurees (codage necessaire)</td>
+<td>Filles</td>
+<td>16.4</td>
+<td>4.3</td>
+<td>3.6</td>
 </tr>
 <tr class="even">
-<td><strong>Questions fermees</strong></td>
-<td>Choix unique/multiple</td>
-<td>Donnees nominales</td>
-</tr>
-<tr class="odd">
-<td><strong>Echelles de Likert</strong></td>
-<td>Degre d’accord (1-5)</td>
-<td>Ordinales (traitees comme intervalle)</td>
-</tr>
-<tr class="even">
-<td><strong>Differenciateur semantique</strong></td>
-<td>Continuum entre 2 adjectifs bipolaires</td>
-<td>Ordinales/Intervalle</td>
+<td>Garcons</td>
+<td>16.7</td>
+<td>3.1</td>
+<td>3.4</td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="biais-cognitifs-denquete" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="biais-cognitifs-denquete"><span class="header-section-number">6</span> Biais Cognitifs d’Enquete</h2>
+<section id="tableau-incomplet" class="level2 callout-danger" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="tableau-incomplet"><span class="header-section-number">5</span> Tableau incomplet</h2>
+<p>Un piege classique : un tableau avec des <strong>cases vides</strong>. Si la valeur “Sociabilite des garcons” manque, le tableau est inexploitable. Verifie toujours que <strong>toutes les cellules sont remplies</strong> et que chaque ligne/colonne a une etiquette.</p>
+</section>
+<section id="exercice-type-la-chasse-aux-erreurs" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="exercice-type-la-chasse-aux-erreurs"><span class="header-section-number">6</span> Exercice Type : la Chasse aux Erreurs</h2>
+<p>L’exercice du 12 mai consiste a <strong>relire une section Resultats et reperer ses erreurs</strong>. Voici les fautes les plus frequentes – a connaitre absolument.</p>
+<section id="erreur-1-la-p-value-mal-ecrite-ou-impossible" class="level3" data-number="6.1">
+<h3 data-number="6.1" class="anchored" data-anchor-id="erreur-1-la-p-value-mal-ecrite-ou-impossible"><span class="header-section-number">6.1</span> Erreur 1 — La p-value mal ecrite ou impossible</h3>
+</section>
+</section>
+<section id="p-0.5-alors-quon-annonce-un-effet-significatif" class="level2 callout-danger" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="p-0.5-alors-quon-annonce-un-effet-significatif"><span class="header-section-number">7</span> “p = 0.5” alors qu’on annonce un effet significatif</h2>
+<p>Une p-value de <strong>0.5</strong> (50 %) est tres <strong>au-dessus</strong> du seuil 0.05 : le resultat serait <strong>non significatif</strong>. Si le texte dit “l’hypothese est confirmee, p = 0.5”, il y a une contradiction – c’est probablement une faute de frappe pour <code>p = .05</code> ou <code>p &lt; .05</code>. Une p-value se situe toujours entre 0 et 1, et “significatif” exige p &lt; 0.05.</p>
+</section>
+<section id="erreur-2-confondre-correlation-et-causalite" class="level3" data-number="7.1">
+<h3 data-number="7.1" class="anchored" data-anchor-id="erreur-2-confondre-correlation-et-causalite"><span class="header-section-number">7.1</span> Erreur 2 — Confondre correlation et causalite</h3>
+</section>
+<section id="r-.62-montre-quinstagram-est-un-facteur-de-risque" class="level2 callout-danger" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="r-.62-montre-quinstagram-est-un-facteur-de-risque"><span class="header-section-number">8</span> “r = .62 montre qu’Instagram est un facteur de risque”</h2>
+<p>Une correlation, meme forte, ne demontre <strong>jamais</strong> un lien de cause a effet. Ecrire “l’usage d’Instagram constitue un facteur de risque” a partir d’un simple <code>r</code> est une <strong>sur-interpretation</strong>. Formulation correcte : “l’usage d’Instagram est associe a…” (association, pas causalite).</p>
+</section>
+<section id="erreur-3-sur-interpreter-un-resultat-non-significatif-ou-minuscule" class="level3" data-number="8.1">
+<h3 data-number="8.1" class="anchored" data-anchor-id="erreur-3-sur-interpreter-un-resultat-non-significatif-ou-minuscule"><span class="header-section-number">8.1</span> Erreur 3 — Sur-interpreter un resultat non significatif ou minuscule</h3>
+</section>
+<section id="les-utilisateurs-sont-plus-sociaux-m-2.42-vs-m-2.40" class="level2 callout-danger" data-number="9">
+<h2 data-number="9" class="anchored" data-anchor-id="les-utilisateurs-sont-plus-sociaux-m-2.42-vs-m-2.40"><span class="header-section-number">9</span> “Les utilisateurs sont plus sociaux : M = 2.42 vs M = 2.40”</h2>
+<p>Un ecart de <strong>0.02 point</strong> est negligeable, meme si le test ressort significatif. Et inversement : conclure “les reseaux favorisent les competences sociales” sur une difference aussi minime est abusif. Significatif n’est pas synonyme d’important : toujours regarder la <strong>taille</strong> de l’ecart, pas seulement la p-value.</p>
+</section>
+<section id="erreur-4-affirmer-plus-que-ce-que-le-test-permet" class="level3" data-number="9.1">
+<h3 data-number="9.1" class="anchored" data-anchor-id="erreur-4-affirmer-plus-que-ce-que-le-test-permet"><span class="header-section-number">9.1</span> Erreur 4 — Affirmer plus que ce que le test permet</h3>
+</section>
+<section id="ces-resultats-confirment-definitivement-la-theorie" class="level2 callout-danger" data-number="10">
+<h2 data-number="10" class="anchored" data-anchor-id="ces-resultats-confirment-definitivement-la-theorie"><span class="header-section-number">10</span> “Ces resultats confirment definitivement la theorie”</h2>
+<p>Un test statistique ne <strong>prouve</strong> ni ne <strong>confirme definitivement</strong> rien. Il apporte un degre de soutien (ou non) a une hypothese, sur un echantillon donne. Vocabulaire prudent attendu : “les resultats vont dans le sens de l’hypothese”, “suggerent que”, “sont compatibles avec”.</p>
+</section>
+<section id="erreur-5-oublier-le-contexte-sd-n-echelle" class="level3" data-number="10.1">
+<h3 data-number="10.1" class="anchored" data-anchor-id="erreur-5-oublier-le-contexte-sd-n-echelle"><span class="header-section-number">10.1</span> Erreur 5 — Oublier le contexte (SD, n, echelle)</h3>
+</section>
+<section id="la-moyenne-est-3.8-et-puis" class="level2 callout-danger" data-number="11">
+<h2 data-number="11" class="anchored" data-anchor-id="la-moyenne-est-3.8-et-puis"><span class="header-section-number">11</span> “La moyenne est 3.8” – et puis ?</h2>
+<p>Une moyenne seule est ininterpretable. 3.8 sur une echelle de 1 a 5 est eleve ; 3.8 sur une echelle de 1 a 100 est tres bas. Toujours preciser l’<strong>echelle</strong>, accompagner du <strong>SD</strong>, et rappeler le <strong>n</strong>.</p>
+</section>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>En simple : la grille de relecture
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Pour chaque phrase d’une section Resultats, pose-toi 4 questions :</p>
+<ol type="1">
+<li>La p-value est-elle coherente avec la conclusion (significatif &lt;-&gt; p &lt; 0.05) ?</li>
+<li>Le mot “cause / prouve / rend” est-il utilise alors qu’on n’a qu’une correlation ?</li>
+<li>L’ecart est-il vraiment important, ou juste “significatif” sur le papier ?</li>
+<li>Manque-t-il un chiffre (SD, n, echelle, une case de tableau) ?</li>
+</ol>
+</div>
+</div>
+</div>
+<section id="questions-probables-dexamen" class="level2" data-number="12">
+<h2 data-number="12" class="anchored" data-anchor-id="questions-probables-dexamen"><span class="header-section-number">12</span> Questions Probables d’Examen</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>“Reperez trois erreurs dans cette section Resultats.”
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Cherche en priorite : (1) une p-value incoherente avec la conclusion, (2) un glissement correlation -&gt; causalite, (3) une conclusion trop forte ou un ecart minuscule presente comme important, (4) un chiffre manquant (SD, n, case de tableau vide).</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>“Rediger une phrase rapportant ce test t.”
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Modele : “Le groupe A (M = …, SD = …) differe significativement du groupe B (M = …, SD = …), t(df) = …, p = …”. Donner les deux moyennes, les deux SD, t avec ses df, et la p-value.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>“Cette conclusion est-elle justifiee : ‘l’etude prouve que X cause Y’ ?”
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Presque toujours non. Verifier : s’agit-il d’une correlation (alors pas de causalite) ? Le mot “prouve” est trop fort (un test soutient, ne prouve pas). Reformuler en “est associe a” / “suggere que”.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="recapitulatif-du-module" class="level2" data-number="13">
+<h2 data-number="13" class="anchored" data-anchor-id="recapitulatif-du-module"><span class="header-section-number">13</span> Recapitulatif du Module</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 21%">
-<col style="width: 39%">
-<col style="width: 39%">
+<col style="width: 50%">
+<col style="width: 50%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Biais</th>
-<th>Description</th>
-<th>Consequence</th>
+<th>Point cle</th>
+<th>A retenir</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Desirabilite sociale</strong></td>
-<td>Le repondant altere ses reponses pour paraitre socialement acceptable</td>
-<td>Surestimation des comportements “positifs”</td>
+<td>Structure</td>
+<td>Echantillon -&gt; descriptifs -&gt; tests d’hypotheses -&gt; analyses complementaires</td>
 </tr>
 <tr class="even">
-<td><strong>Acquiescement</strong></td>
-<td>Tendance a repondre “Oui” / “D’accord” automatiquement</td>
-<td>Correlation artificielle positive</td>
+<td>Notation</td>
+<td>M, SD, n, %, t(df), F(df1,df2), r, b, SE, p, R²</td>
 </tr>
 <tr class="odd">
-<td><strong>Effet de Halo</strong></td>
-<td>Perception globale contamine l’evaluation d’attributs specifiques</td>
-<td>Correlation artificielle entre variables distinctes</td>
+<td>Une moyenne</td>
+<td>Toujours avec son SD et son echelle</td>
+</tr>
+<tr class="even">
+<td>Resultats vs Discussion</td>
+<td>Resultats = faits chiffres ; Discussion = interpretation</td>
+</tr>
+<tr class="odd">
+<td>Correlation</td>
+<td>“associe a”, jamais “cause”</td>
+</tr>
+<tr class="even">
+<td>Vocabulaire</td>
+<td>“suggere”, “va dans le sens de” – jamais “prouve definitivement”</td>
+</tr>
+<tr class="odd">
+<td>Significatif</td>
+<td>N’est pas synonyme d’important : regarder la taille de l’effet</td>
 </tr>
 </tbody>
 </table>

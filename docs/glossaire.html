@@ -124,29 +124,59 @@ window.Quarto = {
     <a class="nav-link active" href="./index.html" aria-current="page"> 
 <span class="menu-text">Accueil</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./01_Theorie_Enquete.html"> 
-<span class="menu-text">Theorie</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-probleme-set-1" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Probleme Set 1</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-probleme-set-1">    
+        <li>
+    <a class="dropdown-item" href="./01_Theorie_Enquete.html">
+ <span class="dropdown-text">Theorie &amp; Enquete</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./02_Bases_R.html"> 
-<span class="menu-text">Bases de R</span></a>
+        <li>
+    <a class="dropdown-item" href="./02_Bases_R.html">
+ <span class="dropdown-text">Bases de R</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./03_Manipulation_Dplyr.html"> 
-<span class="menu-text">dplyr</span></a>
+        <li>
+    <a class="dropdown-item" href="./03_Manipulation_Dplyr.html">
+ <span class="dropdown-text">Manipulation (dplyr)</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./04_Visualisation_Ggplot2.html"> 
-<span class="menu-text">ggplot2</span></a>
+        <li>
+    <a class="dropdown-item" href="./04_Visualisation_Ggplot2.html">
+ <span class="dropdown-text">Visualisation (ggplot2)</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./05_Copier_Coller.html">
+ <span class="dropdown-text">Copier/Coller PS1</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-probleme-set-2" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Probleme Set 2</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-probleme-set-2">    
+        <li>
+    <a class="dropdown-item" href="./06_Statistiques_Descriptives.html">
+ <span class="dropdown-text">Statistiques descriptives</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./07_Statistiques_Inferentielles.html">
+ <span class="dropdown-text">Statistiques inferentielles</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./08_Communication_Resultats.html">
+ <span class="dropdown-text">Communication des resultats</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./09_Copier_Coller_PS2.html">
+ <span class="dropdown-text">Copier/Coller PS2</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="./glossaire.html"> 
 <span class="menu-text">Glossaire</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./05_Copier_Coller.html"> 
-<span class="menu-text">Copier/Coller</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -159,7 +189,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Resume du cours</a></li><li class="breadcrumb-item"><a href="./glossaire.html">Glossaire - Dictionnaire des Termes</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./glossaire.html">Glossaire - Dictionnaire des Termes</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -179,21 +209,21 @@ window.Quarto = {
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Resume du cours</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Methodes II - Analyse de Donnees et Statistiques sous R</span></a>
   </div>
 </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Categorie 1 - Probleme Set 1</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01_Theorie_Enquete.html" class="sidebar-item-text sidebar-link">
@@ -220,18 +250,53 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./glossaire.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Glossaire - Dictionnaire des Termes</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./05_Copier_Coller.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Commandes Rapides - Copier/Coller</span></a>
   </div>
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Categorie 2 - Probleme Set 2</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_Statistiques_Descriptives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Module 5 : Statistiques Descriptives</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07_Statistiques_Inferentielles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Module 6 : Statistiques Inferentielles</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08_Communication_Resultats.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Module 7 : Communication des Resultats</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09_Copier_Coller_PS2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Commandes Rapides PS2 - Copier/Coller</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./glossaire.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Glossaire - Dictionnaire des Termes</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -268,7 +333,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Resume du cours</a></li><li class="breadcrumb-item"><a href="./glossaire.html">Glossaire - Dictionnaire des Termes</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Glossaire - Dictionnaire des Termes</h1>
 </div>
@@ -287,7 +352,7 @@ window.Quarto = {
 </header>
 
 
-<p>Ce glossaire explique <strong>en langage simple</strong> tous les termes techniques utilises dans les 4 modules du cours. Cliquez sur un terme pour derouler son explication.</p>
+<p>Ce glossaire explique <strong>en langage simple</strong> tous les termes techniques utilises dans les modules du cours (Probleme Set 1 et 2). Cliquez sur un terme pour derouler son explication.</p>
 <section id="a" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="a"><span class="header-section-number">1</span> A</h2>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -296,14 +361,14 @@ window.Quarto = {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Argument
+<span class="screen-reader-only">Note</span>ANOVA (Analyse de variance)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>En simple :</strong> Un argument, c’est une information supplementaire qu’on donne a une fonction pour qu’elle sache quoi faire ou comment le faire. C’est comme un reglage ou une option.</p>
-<p><strong>Exemple du quotidien :</strong> Quand tu commandes un cafe, “cafe” c’est la fonction, mais “avec du lait”, “sans sucre”, “taille grande” sont les arguments. En R : <code>mean(x, na.rm = TRUE)</code> – ici <code>x</code> et <code>na.rm = TRUE</code> sont les arguments donnes a la fonction <code>mean</code>.</p>
+<p><strong>En simple :</strong> Un test qui compare les moyennes de <strong>trois groupes ou plus</strong> en une seule fois, pour savoir si au moins un groupe se distingue des autres.</p>
+<p><strong>Exemple du quotidien :</strong> Tu veux savoir si la note moyenne differe entre trois classes (A, B, C). Plutot que de comparer A-B, A-C, B-C separement – ce qui multiplie le risque d’erreur – l’ANOVA pose une seule question : “y a-t-il une difference quelque part ?”. En R : <code>aov(note ~ classe, data = df)</code>.</p>
 </div>
 </div>
 </div>
@@ -313,14 +378,14 @@ window.Quarto = {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Assignation / Operateur d’assignation (<code>&lt;-</code>)
+<span class="screen-reader-only">Note</span>Argument
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>En simple :</strong> Assigner, c’est donner un nom a quelque chose pour le retrouver plus tard. L’operateur <code>&lt;-</code> est la fleche qui dit “range cette valeur dans cette boite portant ce nom”.</p>
-<p><strong>Exemple du quotidien :</strong> C’est comme coller une etiquette sur un bocal. Tu ecris “biscuits” sur le bocal et tu mets les biscuits dedans. En R : <code>age &lt;- 25</code> signifie “range 25 dans la boite appelee age”.</p>
+<p><strong>En simple :</strong> Un argument, c’est une information supplementaire qu’on donne a une fonction pour qu’elle sache quoi faire ou comment le faire. C’est comme un reglage ou une option.</p>
+<p><strong>Exemple du quotidien :</strong> Quand tu commandes un cafe, “cafe” c’est la fonction, mais “avec du lait”, “sans sucre”, “taille grande” sont les arguments. En R : <code>mean(x, na.rm = TRUE)</code> – ici <code>x</code> et <code>na.rm = TRUE</code> sont les arguments donnes a la fonction <code>mean</code>.</p>
 </div>
 </div>
 </div>
@@ -330,14 +395,14 @@ window.Quarto = {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span><code>aes()</code> (Esthetiques / Aesthetics)
+<span class="screen-reader-only">Note</span>Assignation / Operateur d’assignation (<code>&lt;-</code>)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>En simple :</strong> C’est la partie du code graphique qui dit “quelle colonne de mon tableau correspond a quel aspect visuel du graphique” (position X, position Y, couleur, taille…).</p>
-<p><strong>Exemple du quotidien :</strong> Imagine que tu fais un plan de table pour un diner. <code>aes()</code> c’est la regle qui dit : “la colonne ‘nom’ determine l’etiquette, la colonne ‘equipe’ determine la couleur du carton”. Chaque variable du tableau est reliee a un element visuel.</p>
+<p><strong>En simple :</strong> Assigner, c’est donner un nom a quelque chose pour le retrouver plus tard. L’operateur <code>&lt;-</code> est la fleche qui dit “range cette valeur dans cette boite portant ce nom”.</p>
+<p><strong>Exemple du quotidien :</strong> C’est comme coller une etiquette sur un bocal. Tu ecris “biscuits” sur le bocal et tu mets les biscuits dedans. En R : <code>age &lt;- 25</code> signifie “range 25 dans la boite appelee age”.</p>
 </div>
 </div>
 </div>
@@ -347,11 +412,28 @@ window.Quarto = {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span><code>arrange()</code> (Tri)
+<span class="screen-reader-only">Note</span><code>aes()</code> (Esthetiques / Aesthetics)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> C’est la partie du code graphique qui dit “quelle colonne de mon tableau correspond a quel aspect visuel du graphique” (position X, position Y, couleur, taille…).</p>
+<p><strong>Exemple du quotidien :</strong> Imagine que tu fais un plan de table pour un diner. <code>aes()</code> c’est la regle qui dit : “la colonne ‘nom’ determine l’etiquette, la colonne ‘equipe’ determine la couleur du carton”. Chaque variable du tableau est reliee a un element visuel.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span><code>arrange()</code> (Tri)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> Une fonction dplyr qui trie les lignes d’un tableau dans un ordre precis (croissant ou decroissant).</p>
 <p><strong>Exemple du quotidien :</strong> C’est comme trier une pile de copies d’examen par note, de la plus basse a la plus haute (ou l’inverse avec <code>desc()</code>).</p>
@@ -362,7 +444,7 @@ window.Quarto = {
 <section id="b" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="b"><span class="header-section-number">2</span> B</h2>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -371,27 +453,10 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> Dans un histogramme, le binwidth c’est la taille de chaque “bac” qui regroupe les donnees. Un bac large regroupe beaucoup de valeurs ensemble, un bac fin les separe davantage.</p>
 <p><strong>Exemple du quotidien :</strong> Imagine que tu classes des eleves par taille. Si ton binwidth est 10 cm (ex: 150-160, 160-170…), tu as peu de groupes. Si c’est 1 cm (150-151, 151-152…), tu en as beaucoup. Trop large, tu perds les details. Trop fin, tu vois trop de bruit.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Biais cognitif (d’enquete)
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><strong>En simple :</strong> Une erreur systematique dans les reponses d’un questionnaire, causee par la psychologie humaine et non par le hasard. Les gens ne repondent pas toujours honnetement ou objectivement.</p>
-<p><strong>Exemple du quotidien :</strong> Si on te demande “Combien de fois par semaine fais-tu du sport ?”, tu as tendance a gonfler le chiffre pour paraitre en forme (biais de desirabilite sociale). Le biais d’acquiescement, c’est dire “oui” a tout par reflexe.</p>
 </div>
 </div>
 </div>
@@ -401,11 +466,28 @@ window.Quarto = {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Boxplot (Boite a moustaches)
+<span class="screen-reader-only">Note</span>Biais cognitif (d’enquete)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Une erreur systematique dans les reponses d’un questionnaire, causee par la psychologie humaine et non par le hasard. Les gens ne repondent pas toujours honnetement ou objectivement.</p>
+<p><strong>Exemple du quotidien :</strong> Si on te demande “Combien de fois par semaine fais-tu du sport ?”, tu as tendance a gonfler le chiffre pour paraitre en forme (biais de desirabilite sociale). Le biais d’acquiescement, c’est dire “oui” a tout par reflexe.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Boxplot (Boite a moustaches)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> Un type de graphique qui resume une distribution en montrant les quartiles, la mediane et les valeurs extremes dans un schema compact en forme de boite.</p>
 <p><strong>Exemple du quotidien :</strong> C’est comme un bulletin meteo qui te dit : “la temperature la plus basse etait 5, la plus haute 28, la moitie du temps c’etait entre 12 et 20, et la temperature typique etait 16”. Tout ca dans un seul dessin.</p>
@@ -416,36 +498,19 @@ window.Quarto = {
 <section id="c" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="c"><span class="header-section-number">3</span> C</h2>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span><code>case_when()</code> (Conditions multiples)
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><strong>En simple :</strong> Une fonction qui permet de creer des categories en enchainant plusieurs conditions “si… alors…”. C’est comme un <code>ifelse()</code> mais pour plus de 2 cas.</p>
-<p><strong>Exemple du quotidien :</strong> C’est comme un barreme de notation : si la note est &gt;= 90, c’est “Excellent” ; si &gt;= 70, c’est “Bien” ; si &gt;= 50, c’est “Suffisant” ; sinon, c’est “Insuffisant”.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Coercition implicite
+<span class="screen-reader-only">Note</span>Causalite (correlation n’est pas causalite)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>En simple :</strong> C’est quand R transforme automatiquement et silencieusement le type de tes donnees pour que tout soit du meme type dans un vecteur. Tu ne le demandes pas, R le fait tout seul, et ca peut causer des surprises.</p>
-<p><strong>Exemple du quotidien :</strong> Imagine une boite de rangement qui n’accepte qu’un seul type d’objet. Si tu mets des pommes et un livre dedans, la boite transforme tout en livres (le type le plus general). En R : <code>c(TRUE, 5, "Pomme")</code> devient <code>c("TRUE", "5", "Pomme")</code> – tout est converti en texte, et le chiffre 5 ne peut plus servir pour des calculs.</p>
+<p><strong>En simple :</strong> Ce n’est pas parce que deux choses varient ensemble que l’une cause l’autre. Une correlation montre un lien, jamais une cause.</p>
+<p><strong>Exemple du quotidien :</strong> Les ventes de glaces et le nombre de noyades augmentent en meme temps. Les glaces ne causent pas les noyades : c’est la chaleur de l’ete qui fait grimper les deux. Affirmer “X cause Y” demande bien plus qu’une simple correlation.</p>
 </div>
 </div>
 </div>
@@ -455,14 +520,14 @@ window.Quarto = {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Console
+<span class="screen-reader-only">Note</span>Coefficient de regression (b)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>En simple :</strong> C’est la zone de RStudio ou tu peux taper du code et voir le resultat immediatement. C’est comme un brouillon interactif.</p>
-<p><strong>Exemple du quotidien :</strong> C’est comme la calculatrice de ton telephone : tu tapes un calcul, tu appuies sur Entree, et le resultat s’affiche tout de suite. Mais rien n’est sauvegarde – si tu fermes, c’est perdu.</p>
+<p><strong>En simple :</strong> Dans une regression, le coefficient (note b) indique de combien la variable a expliquer change quand la variable explicative augmente d’une unite.</p>
+<p><strong>Exemple du quotidien :</strong> Si la regression du salaire sur les annees d’experience donne b = 1200, cela veut dire : “chaque annee d’experience supplementaire rapporte en moyenne 1200 CHF de plus”. Le signe (+ ou -) donne le sens du lien.</p>
 </div>
 </div>
 </div>
@@ -472,14 +537,14 @@ window.Quarto = {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Construit theorique
+<span class="screen-reader-only">Note</span>Correlation
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>En simple :</strong> Un concept abstrait qu’on utilise dans la recherche mais qu’on ne peut pas mesurer directement. Il faut le transformer en quelque chose de concret pour pouvoir l’etudier.</p>
-<p><strong>Exemple du quotidien :</strong> “L’intelligence” est un construit – on ne peut pas la peser ou la mesurer avec une regle. On doit la transformer en questions de test (QI) pour pouvoir la quantifier.</p>
+<p><strong>En simple :</strong> Une mesure du lien entre deux variables numeriques. Le coefficient r va de -1 a +1 : proche de +1 elles montent ensemble, proche de -1 l’une monte quand l’autre descend, proche de 0 il n’y a pas de lien lineaire.</p>
+<p><strong>Exemple du quotidien :</strong> La taille et la pointure sont positivement correlees : les grandes personnes ont souvent de grands pieds. En R : <code>cor.test(x, y)</code>.</p>
 </div>
 </div>
 </div>
@@ -489,14 +554,14 @@ window.Quarto = {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span><code>count()</code> (Denombrement)
+<span class="screen-reader-only">Note</span><code>case_when()</code> (Conditions multiples)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>En simple :</strong> Une fonction raccourci qui compte combien de fois chaque categorie apparait dans une colonne.</p>
-<p><strong>Exemple du quotidien :</strong> C’est comme compter combien d’eleves il y a dans chaque classe : 3A = 25 eleves, 3B = 22 eleves, 3C = 27 eleves.</p>
+<p><strong>En simple :</strong> Une fonction qui permet de creer des categories en enchainant plusieurs conditions “si… alors…”. C’est comme un <code>ifelse()</code> mais pour plus de 2 cas.</p>
+<p><strong>Exemple du quotidien :</strong> C’est comme un barreme de notation : si la note est &gt;= 90, c’est “Excellent” ; si &gt;= 70, c’est “Bien” ; si &gt;= 50, c’est “Suffisant” ; sinon, c’est “Insuffisant”.</p>
 </div>
 </div>
 </div>
@@ -506,11 +571,79 @@ window.Quarto = {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>CSV (Comma-Separated Values)
+<span class="screen-reader-only">Note</span>Coercition implicite
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> C’est quand R transforme automatiquement et silencieusement le type de tes donnees pour que tout soit du meme type dans un vecteur. Tu ne le demandes pas, R le fait tout seul, et ca peut causer des surprises.</p>
+<p><strong>Exemple du quotidien :</strong> Imagine une boite de rangement qui n’accepte qu’un seul type d’objet. Si tu mets des pommes et un livre dedans, la boite transforme tout en livres (le type le plus general). En R : <code>c(TRUE, 5, "Pomme")</code> devient <code>c("TRUE", "5", "Pomme")</code> – tout est converti en texte, et le chiffre 5 ne peut plus servir pour des calculs.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Console
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> C’est la zone de RStudio ou tu peux taper du code et voir le resultat immediatement. C’est comme un brouillon interactif.</p>
+<p><strong>Exemple du quotidien :</strong> C’est comme la calculatrice de ton telephone : tu tapes un calcul, tu appuies sur Entree, et le resultat s’affiche tout de suite. Mais rien n’est sauvegarde – si tu fermes, c’est perdu.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Construit theorique
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Un concept abstrait qu’on utilise dans la recherche mais qu’on ne peut pas mesurer directement. Il faut le transformer en quelque chose de concret pour pouvoir l’etudier.</p>
+<p><strong>Exemple du quotidien :</strong> “L’intelligence” est un construit – on ne peut pas la peser ou la mesurer avec une regle. On doit la transformer en questions de test (QI) pour pouvoir la quantifier.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span><code>count()</code> (Denombrement)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Une fonction raccourci qui compte combien de fois chaque categorie apparait dans une colonne.</p>
+<p><strong>Exemple du quotidien :</strong> C’est comme compter combien d’eleves il y a dans chaque classe : 3A = 25 eleves, 3B = 22 eleves, 3C = 27 eleves.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>CSV (Comma-Separated Values)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> Un format de fichier tres simple pour stocker des tableaux. Chaque ligne est une ligne du tableau, et les colonnes sont separees par des virgules (ou des points-virgules).</p>
 <p><strong>Exemple du quotidien :</strong> Imagine un tableau ecrit dans un fichier texte brut, ou au lieu de colonnes visuelles, on separe les informations par des virgules : “Nom,Age,Ville” puis “Alice,25,Geneve”. C’est lisible par n’importe quel logiciel.</p>
@@ -521,7 +654,24 @@ window.Quarto = {
 <section id="d" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="d"><span class="header-section-number">4</span> D</h2>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Degres de liberte (df)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Un nombre, lie a la taille de l’echantillon, qui intervient dans le calcul des tests statistiques. Plus l’echantillon est grand, plus les degres de liberte sont eleves.</p>
+<p><strong>Exemple du quotidien :</strong> Si tu dois depenser exactement 100 CHF sur 5 achats, tu choisis librement 4 montants, mais le 5e est impose par ce qui reste : 4 “libertes” pour 5 valeurs. En pratique R les calcule pour toi ; tu dois juste savoir les reporter, ex. t(24).</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -530,7 +680,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> C’est l’objet le plus important en R pour stocker des donnees. C’est un tableau avec des lignes (observations) et des colonnes (variables), ou chaque colonne peut contenir un type de donnee different.</p>
 <p><strong>Exemple du quotidien :</strong> C’est exactement comme un tableau Excel : chaque ligne represente une personne (ou un produit, une observation…) et chaque colonne une information (nom, age, ville…). La difference : en R, ce tableau vit dans le code.</p>
@@ -538,7 +688,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -547,7 +697,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> Une fonction utilisee avec <code>arrange()</code> pour trier du plus grand au plus petit au lieu du plus petit au plus grand.</p>
 <p><strong>Exemple du quotidien :</strong> C’est la difference entre classer les eleves du premier au dernier (croissant) ou du dernier au premier (decroissant avec <code>desc()</code>).</p>
@@ -555,7 +705,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -564,7 +714,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> Un type de question d’enquete ou la personne se positionne sur un curseur entre deux mots opposes (ex: “Laid” a gauche, “Beau” a droite).</p>
 <p><strong>Exemple du quotidien :</strong> C’est comme un curseur de volume mais pour une opinion. A gauche “Pas du tout satisfait”, a droite “Tres satisfait”, et tu places ton curseur ou tu veux entre les deux.</p>
@@ -575,7 +725,58 @@ window.Quarto = {
 <section id="e" class="level2" data-number="5">
 <h2 data-number="5" class="anchored" data-anchor-id="e"><span class="header-section-number">5</span> E</h2>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Echantillon
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Le sous-ensemble d’individus reellement observes, choisi dans une population beaucoup plus grande qu’on veut etudier.</p>
+<p><strong>Exemple du quotidien :</strong> Pour connaitre l’avis des 10’000 etudiants d’une fac, on n’en interroge que 300 : ces 300, c’est l’echantillon. Pour qu’il soit fiable, il doit etre aleatoire et representatif de la population.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Ecart-type (SD, Standard Deviation)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Une mesure de dispersion : en moyenne, de combien les valeurs s’eloignent-elles de la moyenne. Petit ecart-type = donnees serrees ; grand = donnees eparpillees.</p>
+<p><strong>Exemple du quotidien :</strong> Deux classes ont 4.5 de moyenne. Dans l’une tout le monde est entre 4.2 et 4.8 (petit ecart-type) ; dans l’autre les notes vont de 2 a 6 (grand ecart-type). En R : <code>sd(x, na.rm = TRUE)</code>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Erreur standard (SE, Standard Error)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> L’incertitude attachee a une statistique estimee (une moyenne, un coefficient de regression). Plus le SE est petit, plus l’estimation est precise.</p>
+<p><strong>Exemple du quotidien :</strong> Si tu peses un objet 5 fois et obtiens des valeurs tres proches, ton estimation est precise (petit SE). Si les pesees sont dispersees, l’estimation est incertaine (grand SE). Dans une sortie de regression, c’est la colonne <code>Std. Error</code>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -584,7 +785,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> Un format de question d’enquete ou on demande le degre d’accord sur une echelle, typiquement de 1 a 5 (ou 1 a 7), allant de “Pas du tout d’accord” a “Tout a fait d’accord”.</p>
 <p><strong>Exemple du quotidien :</strong> Quand un site te demande “Evaluez votre experience de 1 a 5 etoiles”, c’est le meme principe. Chaque etoile represente un niveau de satisfaction.</p>
@@ -592,7 +793,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -601,7 +802,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> C’est une classification qui dit de quel “type” est une variable, ce qui determine quels calculs on peut faire dessus. Il y a 4 niveaux : nominale, ordinale, intervalle et ratio.</p>
 <p><strong>Exemple du quotidien :</strong> Les numeros de maillot de foot (nominale : juste des etiquettes) vs.&nbsp;le classement d’une course (ordinale : un ordre) vs.&nbsp;la temperature en Celsius (intervalle : des ecarts reguliers) vs.&nbsp;le poids en kg (ratio : un vrai zero existe).</p>
@@ -609,7 +810,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -618,7 +819,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div id="callout-27" class="callout-27-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> C’est le panneau de RStudio qui montre tout ce que R a en memoire a un instant donne : les variables, les tableaux, les fonctions que tu as crees. C’est l’inventaire de tes objets.</p>
 <p><strong>Exemple du quotidien :</strong> C’est comme le plan de travail de ta cuisine : tu vois tous les ingredients et ustensiles que tu as sortis et prepares. Si un objet n’est pas sur le plan de travail (dans l’environnement), R ne le connait pas.</p>
@@ -626,7 +827,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -635,7 +836,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div id="callout-28" class="callout-28-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> C’est quand on conclut qu’il y a un effet alors qu’en realite il n’y en a pas. On “voit” quelque chose qui n’existe pas.</p>
 <p><strong>Exemple du quotidien :</strong> C’est comme un detecteur de fumee qui sonne alors qu’il n’y a pas de feu – il a detecte un faux signal. En statistique, on fixe le seuil alpha (souvent 5%) pour limiter ce risque.</p>
@@ -643,7 +844,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -652,7 +853,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div id="callout-29" class="callout-29-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> C’est quand on conclut qu’il n’y a pas d’effet alors qu’en realite il y en a un. On “rate” quelque chose qui existe.</p>
 <p><strong>Exemple du quotidien :</strong> C’est comme un detecteur de fumee qui ne sonne pas alors qu’il y a vraiment de la fumee – il a rate un vrai signal.</p>
@@ -663,7 +864,7 @@ window.Quarto = {
 <section id="f" class="level2" data-number="6">
 <h2 data-number="6" class="anchored" data-anchor-id="f"><span class="header-section-number">6</span> F</h2>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -672,7 +873,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div id="callout-30" class="callout-30-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> C’est une technique de ggplot2 qui divise un graphique en plusieurs petits graphiques identiques, un pour chaque categorie d’une variable. Ca permet de comparer facilement.</p>
 <p><strong>Exemple du quotidien :</strong> Imagine un professeur qui fait le meme graphique de notes pour chaque classe separement, cote a cote : une grille avec “Classe 3A” a gauche, “Classe 3B” au milieu, “Classe 3C” a droite. Meme format, donnees differentes.</p>
@@ -680,7 +881,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -689,7 +890,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div id="callout-31" class="callout-31-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> C’est un type special de variable en R pour representer des categories, avec un ensemble fixe de valeurs possibles (appelees “niveaux” ou “levels”). C’est utile pour les variables nominales et ordinales.</p>
 <p><strong>Exemple du quotidien :</strong> C’est comme un menu deroulant sur un formulaire en ligne : les reponses possibles sont fixees a l’avance (ex: “Primaire”, “Secondaire”, “Tertiaire”). Si tu ecris autre chose, ca ne marche pas. Un facteur ordonne, c’est quand l’ordre compte (Primaire &lt; Secondaire &lt; Tertiaire).</p>
@@ -697,7 +898,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -706,7 +907,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div id="callout-32" class="callout-32-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> Une fonction dplyr qui garde uniquement les lignes d’un tableau qui remplissent une condition, et supprime les autres.</p>
 <p><strong>Exemple du quotidien :</strong> C’est comme un tamis a farine : seules les particules assez fines passent, le reste est elimine. <code>filter(age &gt; 18)</code> ne garde que les personnes majeures.</p>
@@ -714,7 +915,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-33-contents" aria-controls="callout-33" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -723,7 +924,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div id="callout-33" class="callout-33-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> Une fonction, c’est une “machine” qui prend des ingredients (arguments), fait un traitement, et donne un resultat. En R, on utilise des fonctions pre-existantes ou on cree les siennes.</p>
 <p><strong>Exemple du quotidien :</strong> Un grille-pain est une fonction : tu mets du pain (argument), il le grille (traitement), et il te donne du pain grille (resultat). En R : <code>mean(c(10, 20, 30))</code> donne <code>20</code> – la fonction <code>mean</code> prend des nombres et calcule la moyenne.</p>
@@ -734,7 +935,7 @@ window.Quarto = {
 <section id="g" class="level2" data-number="7">
 <h2 data-number="7" class="anchored" data-anchor-id="g"><span class="header-section-number">7</span> G</h2>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -743,7 +944,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-26" class="callout-26-contents callout-collapse collapse">
+<div id="callout-34" class="callout-34-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> Dans ggplot2, un “geom” c’est le type de forme visuelle qu’on dessine sur le graphique : des points, des barres, des lignes, des boites… Chaque <code>geom_*()</code> produit un type de graphique different.</p>
 <p><strong>Exemple du quotidien :</strong> C’est comme choisir le type de graphique dans Excel : “camembert”, “barres”, “nuage de points”… Sauf qu’en ggplot2, on choisit le geom : <code>geom_point()</code> pour des points, <code>geom_bar()</code> pour des barres, <code>geom_histogram()</code> pour un histogramme.</p>
@@ -751,7 +952,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-35-contents" aria-controls="callout-35" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -760,7 +961,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-27" class="callout-27-contents callout-collapse collapse">
+<div id="callout-35" class="callout-35-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> <code>group_by()</code> separe le tableau en sous-groupes selon une variable, puis <code>summarize()</code> calcule un resume (moyenne, somme, etc.) pour chaque groupe. C’est le paradigme “Split-Apply-Combine”.</p>
 <p><strong>Exemple du quotidien :</strong> Imagine que tu veux connaitre le salaire moyen par departement dans une entreprise. Tu separes les employes par departement (<code>group_by</code>), tu calcules la moyenne de chaque groupe (<code>summarize</code>), et tu obtiens un tableau avec un departement par ligne et sa moyenne.</p>
@@ -771,7 +972,7 @@ window.Quarto = {
 <section id="h" class="level2" data-number="8">
 <h2 data-number="8" class="anchored" data-anchor-id="h"><span class="header-section-number">8</span> H</h2>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-36-contents" aria-controls="callout-36" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -780,7 +981,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-28" class="callout-28-contents callout-collapse collapse">
+<div id="callout-36" class="callout-36-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> Un type de graphique en barres qui montre comment les valeurs d’une variable numerique se repartissent. Chaque barre represente un intervalle de valeurs et sa hauteur indique combien d’observations tombent dedans.</p>
 <p><strong>Exemple du quotidien :</strong> Imagine que tu mesures la taille de 100 personnes. L’histogramme te montre : “15 personnes mesurent entre 160 et 165 cm, 30 entre 165 et 170 cm, etc.” Tu vois tout de suite ou se concentre la majorite.</p>
@@ -788,7 +989,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-37-contents" aria-controls="callout-37" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -797,7 +998,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-29" class="callout-29-contents callout-collapse collapse">
+<div id="callout-37" class="callout-37-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> Qui contient un seul et meme type de donnees. En R, un vecteur atomique ou une matrice doit etre homogene : tout doit etre du meme type (que des nombres, OU que du texte, etc.).</p>
 <p><strong>Exemple du quotidien :</strong> Un tiroir range “homogene” ne contient que des chaussettes. Si tu mets un t-shirt dedans, le tiroir te force a tout transformer en un seul type (c’est la coercition implicite). Contrairement a une liste qui est heterogene et accepte tout.</p>
@@ -805,7 +1006,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-38-contents" aria-controls="callout-38" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -814,7 +1015,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-30" class="callout-30-contents callout-collapse collapse">
+<div id="callout-38" class="callout-38-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> L’hypothese nulle (<span class="math inline">\(H_0\)</span>) dit “il ne se passe rien de special, pas de difference, pas d’effet”. L’hypothese alternative (<span class="math inline">\(H_1\)</span>) dit “il y a bien un effet ou une difference”. Le but d’un test statistique est de voir si on peut rejeter <span class="math inline">\(H_0\)</span>.</p>
 <p><strong>Exemple du quotidien :</strong> Tu testes un nouveau medicament. <span class="math inline">\(H_0\)</span> : “le medicament n’a aucun effet” (les malades guerissent autant avec ou sans). <span class="math inline">\(H_1\)</span> : “le medicament a un effet”. On fait le test et si les resultats sont trop improbables sous <span class="math inline">\(H_0\)</span>, on la rejette.</p>
@@ -825,7 +1026,24 @@ window.Quarto = {
 <section id="i" class="level2" data-number="9">
 <h2 data-number="9" class="anchored" data-anchor-id="i"><span class="header-section-number">9</span> I</h2>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-39-contents" aria-controls="callout-39" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Intervalle de confiance
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-39" class="callout-39-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Une fourchette de valeurs plausibles pour un parametre de la population, plutot qu’une seule valeur. Un IC a 95 % signifie : “la vraie valeur est tres probablement dans cet intervalle”.</p>
+<p><strong>Exemple du quotidien :</strong> Un sondage annonce “52 % d’intentions de vote, marge d’erreur 3 %”. L’intervalle [49 % ; 55 %] est l’intervalle de confiance. Astuce : si un IC pour une difference contient 0, la difference n’est pas significative.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-40-contents" aria-controls="callout-40" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -834,7 +1052,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-31" class="callout-31-contents callout-collapse collapse">
+<div id="callout-40" class="callout-40-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> C’est la difference entre le 3e quartile (Q3, 75%) et le 1er quartile (Q1, 25%). Ca represente l’etendue des 50% centraux des donnees, en ignorant les extremes.</p>
 <p><strong>Exemple du quotidien :</strong> Si tu classes les salaires d’une entreprise du plus bas au plus haut, l’IQR c’est la fourchette dans laquelle se trouvent les 50% du milieu. Ca evite d’etre trompe par le patron qui gagne 10x plus que tout le monde.</p>
@@ -845,7 +1063,7 @@ window.Quarto = {
 <section id="l" class="level2" data-number="10">
 <h2 data-number="10" class="anchored" data-anchor-id="l"><span class="header-section-number">10</span> L</h2>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-41-contents" aria-controls="callout-41" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -854,7 +1072,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-32" class="callout-32-contents callout-collapse collapse">
+<div id="callout-41" class="callout-41-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> Une fonction ggplot2 qui permet d’ajouter ou modifier les titres, sous-titres, noms des axes et legendes d’un graphique.</p>
 <p><strong>Exemple du quotidien :</strong> C’est comme ajouter un titre et des legendes a un graphique fait a la main sur une feuille. Sans <code>labs()</code>, les axes s’appellent juste par le nom brut de la colonne, ce qui n’est pas tres lisible.</p>
@@ -862,7 +1080,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-33-contents" aria-controls="callout-33" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-42-contents" aria-controls="callout-42" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -871,7 +1089,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-33" class="callout-33-contents callout-collapse collapse">
+<div id="callout-42" class="callout-42-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> Une structure de donnees en R qui peut contenir des elements de types differents : des nombres, du texte, des tableaux, d’autres listes… C’est le “fourre-tout” de R.</p>
 <p><strong>Exemple du quotidien :</strong> C’est comme un sac a dos : tu peux y mettre un livre, un sandwich, des cles et un telephone – des objets completement differents. Contrairement a un vecteur (qui serait un sac de billes : uniquement des billes).</p>
@@ -882,7 +1100,41 @@ window.Quarto = {
 <section id="m" class="level2" data-number="11">
 <h2 data-number="11" class="anchored" data-anchor-id="m"><span class="header-section-number">11</span> M</h2>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-43-contents" aria-controls="callout-43" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Mode
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-43" class="callout-43-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> La valeur ou la categorie la plus frequente dans un jeu de donnees. C’est la seule mesure de “centre” utilisable pour une variable nominale.</p>
+<p><strong>Exemple du quotidien :</strong> Dans une classe ou la couleur de cheveux la plus repandue est “brun”, le mode est “brun”. En R, on le trouve avec <code>count(variable, sort = TRUE)</code>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-44-contents" aria-controls="callout-44" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Moyenne
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-44" class="callout-44-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> La somme de toutes les valeurs divisee par leur nombre. La mesure de centre la plus connue, mais sensible aux valeurs extremes.</p>
+<p><strong>Exemple du quotidien :</strong> Dans une salle de 10 personnes a 4000 CHF/mois, si un milliardaire entre, le salaire moyen explose alors que personne d’autre n’a change de salaire. Dans ce cas la mediane decrit mieux le cas typique. En R : <code>mean(x, na.rm = TRUE)</code>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-45-contents" aria-controls="callout-45" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -891,7 +1143,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-34" class="callout-34-contents callout-collapse collapse">
+<div id="callout-45" class="callout-45-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> “Mapping” (dans <code>aes()</code>) signifie que l’apparence du graphique depend d’une variable des donnees. “Setting” (hors <code>aes()</code>) signifie qu’on fixe l’apparence de maniere constante pour tous les points.</p>
 <p><strong>Exemple du quotidien :</strong> Mapping : “les garcons portent un maillot bleu et les filles un maillot rouge” (la couleur depend d’une variable). Setting : “tout le monde porte un maillot vert” (couleur fixe). Si tu ecris <code>aes(color = "bleu")</code>, R pense que “bleu” est une categorie de donnees, pas une couleur !</p>
@@ -899,7 +1151,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-35-contents" aria-controls="callout-35" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-46-contents" aria-controls="callout-46" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -908,7 +1160,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-35" class="callout-35-contents callout-collapse collapse">
+<div id="callout-46" class="callout-46-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> Un tableau a 2 dimensions (lignes et colonnes) ou toutes les valeurs doivent etre du meme type. C’est comme un vecteur mais en 2D.</p>
 <p><strong>Exemple du quotidien :</strong> Pense a une grille de sudoku : toutes les cases contiennent des chiffres (homogene), et chaque case est identifiee par sa ligne et sa colonne. En R : <code>m[3, 2]</code> = la case a la ligne 3, colonne 2.</p>
@@ -916,7 +1168,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-36-contents" aria-controls="callout-36" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-47-contents" aria-controls="callout-47" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -925,7 +1177,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-36" class="callout-36-contents callout-collapse collapse">
+<div id="callout-47" class="callout-47-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> La valeur du milieu quand on range toutes les donnees en ordre. 50% des valeurs sont en dessous, 50% sont au dessus.</p>
 <p><strong>Exemple du quotidien :</strong> Si 5 personnes gagnent 2000, 2500, 3000, 3500 et 50000 CHF, la mediane est 3000. La moyenne serait 12200, completement faussee par la personne a 50000. La mediane resiste mieux aux valeurs extremes.</p>
@@ -933,7 +1185,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-37-contents" aria-controls="callout-37" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-48-contents" aria-controls="callout-48" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -942,7 +1194,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-37" class="callout-37-contents callout-collapse collapse">
+<div id="callout-48" class="callout-48-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> Une fonction dplyr qui ajoute de nouvelles colonnes a un tableau (ou modifie des colonnes existantes) en faisant des calculs, sans changer le nombre de lignes.</p>
 <p><strong>Exemple du quotidien :</strong> Tu as un tableau d’eleves avec les notes de math et de francais. Avec <code>mutate()</code>, tu ajoutes une colonne “moyenne” qui est <code>(math + francais) / 2</code>. Le nombre d’eleves ne change pas, mais tu as une info en plus.</p>
@@ -953,7 +1205,7 @@ window.Quarto = {
 <section id="n" class="level2" data-number="12">
 <h2 data-number="12" class="anchored" data-anchor-id="n"><span class="header-section-number">12</span> N</h2>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-38-contents" aria-controls="callout-38" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-49-contents" aria-controls="callout-49" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -962,7 +1214,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-38" class="callout-38-contents callout-collapse collapse">
+<div id="callout-49" class="callout-49-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> <code>NA</code> signifie “cette donnee est absente ou inconnue”. Ce n’est pas zero, ce n’est pas du vide – c’est “on ne sait pas”. En R, les NA contaminent les calculs : la moyenne d’un vecteur contenant un NA sera NA (sauf si on ajoute <code>na.rm = TRUE</code>).</p>
 <p><strong>Exemple du quotidien :</strong> Dans un sondage, si quelqu’un n’a pas repondu a la question sur son age, on met NA. Ce n’est pas qu’il a 0 ans, c’est qu’on ne connait pas son age.</p>
@@ -970,7 +1222,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-39-contents" aria-controls="callout-39" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-50-contents" aria-controls="callout-50" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -979,7 +1231,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-39" class="callout-39-contents callout-collapse collapse">
+<div id="callout-50" class="callout-50-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> Un argument qu’on ajoute aux fonctions statistiques (<code>mean</code>, <code>sd</code>, <code>median</code>…) pour dire a R “ignore les valeurs manquantes (NA) et calcule quand meme avec le reste”.</p>
 <p><strong>Exemple du quotidien :</strong> Si tu fais la moyenne des notes d’une classe et qu’un eleve etait absent (NA), <code>na.rm = TRUE</code> dit “calcule la moyenne sans cet eleve”. Sans cet argument, R refuse de calculer et repond NA.</p>
@@ -990,7 +1242,7 @@ window.Quarto = {
 <section id="o" class="level2" data-number="13">
 <h2 data-number="13" class="anchored" data-anchor-id="o"><span class="header-section-number">13</span> O</h2>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-40-contents" aria-controls="callout-40" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-51-contents" aria-controls="callout-51" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -999,7 +1251,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-40" class="callout-40-contents callout-collapse collapse">
+<div id="callout-51" class="callout-51-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> Un symbole qui fait une operation. Les operateurs mathematiques (<code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>) font des calculs, les operateurs logiques (<code>==</code>, <code>!=</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&amp;</code>, <code>|</code>) font des comparaisons, et l’operateur d’assignation (<code>&lt;-</code>) range des valeurs.</p>
 <p><strong>Exemple du quotidien :</strong> Les operateurs sont comme les signes sur une calculatrice (+, -, x, :). En R, on en a en plus pour comparer (== signifie “est-ce egal ?”) et pour combiner des conditions (&amp; signifie “ET”, | signifie “OU”).</p>
@@ -1007,7 +1259,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-41-contents" aria-controls="callout-41" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-52-contents" aria-controls="callout-52" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1016,7 +1268,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-41" class="callout-41-contents callout-collapse collapse">
+<div id="callout-52" class="callout-52-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> Un operateur qui verifie si une valeur fait partie d’une liste de valeurs. Il retourne TRUE ou FALSE.</p>
 <p><strong>Exemple du quotidien :</strong> C’est comme verifier si ton nom est sur la liste des invites a une fete. <code>"Alice" %in% c("Bob", "Alice", "Eve")</code> retourne TRUE parce qu’Alice est bien dans la liste.</p>
@@ -1024,7 +1276,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-42-contents" aria-controls="callout-42" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-53-contents" aria-controls="callout-53" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1033,7 +1285,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-42" class="callout-42-contents callout-collapse collapse">
+<div id="callout-53" class="callout-53-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> C’est le processus qui consiste a transformer un concept abstrait et vague en quelque chose de concret et mesurable, a l’aide de variables et de questions precises.</p>
 <p><strong>Exemple du quotidien :</strong> Le concept “bonheur” est abstrait. Pour l’operationnaliser, on pourrait le mesurer par : le nombre de sourires par jour, une note de 1 a 10 donnee par la personne, ou un questionnaire de 20 questions. On transforme l’abstrait en mesurable.</p>
@@ -1041,7 +1293,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-43-contents" aria-controls="callout-43" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-54-contents" aria-controls="callout-54" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1050,7 +1302,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-43" class="callout-43-contents callout-collapse collapse">
+<div id="callout-54" class="callout-54-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> Une observation qui est tres eloignee de toutes les autres. Sur un boxplot, c’est un point affiche au-dela des moustaches.</p>
 <p><strong>Exemple du quotidien :</strong> Si dans ta classe tout le monde a entre 50 et 90 a un examen, et qu’une personne a 2, c’est un outlier. Ca peut etre une erreur de saisie ou un cas vraiment extreme.</p>
@@ -1058,7 +1310,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-44-contents" aria-controls="callout-44" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-55-contents" aria-controls="callout-55" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1067,7 +1319,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-44" class="callout-44-contents callout-collapse collapse">
+<div id="callout-55" class="callout-55-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> Quand il y a trop de points sur un graphique et qu’ils se superposent au point qu’on ne distingue plus rien. Le graphique devient une tache noire inutile.</p>
 <p><strong>Exemple du quotidien :</strong> Imagine une photo de foule prise de loin : on ne distingue plus les individus, tout se melange. Les solutions : rendre les points transparents (<code>alpha</code>) ou les disperser legerement (<code>geom_jitter()</code>).</p>
@@ -1078,7 +1330,24 @@ window.Quarto = {
 <section id="p" class="level2" data-number="14">
 <h2 data-number="14" class="anchored" data-anchor-id="p"><span class="header-section-number">14</span> P</h2>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-45-contents" aria-controls="callout-45" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-56-contents" aria-controls="callout-56" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Population
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-56" class="callout-56-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> L’ensemble complet des individus, objets ou cas qu’on cherche a etudier. On observe rarement la population entiere : on travaille sur un echantillon et on generalise.</p>
+<p><strong>Exemple du quotidien :</strong> Si l’etude porte sur “les adolescents suisses”, la population ce sont TOUS les adolescents suisses. Comme on ne peut pas tous les interroger, on en etudie un echantillon.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-57-contents" aria-controls="callout-57" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1087,7 +1356,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-45" class="callout-45-contents callout-collapse collapse">
+<div id="callout-57" class="callout-57-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> Un package, c’est une extension qu’on installe pour ajouter des fonctionnalites a R. R de base fait des choses simples ; les packages ajoutent des outils specialises.</p>
 <p><strong>Exemple du quotidien :</strong> C’est comme une application sur ton telephone. Le telephone de base fait des appels et des SMS, mais tu installes des apps pour faire plus : Instagram, Google Maps, etc. En R, tu installes des packages avec <code>install.packages()</code> et tu les actives avec <code>library()</code>.</p>
@@ -1095,7 +1364,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-46-contents" aria-controls="callout-46" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-58-contents" aria-controls="callout-58" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1104,7 +1373,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-46" class="callout-46-contents callout-collapse collapse">
+<div id="callout-58" class="callout-58-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> Le pipe prend le resultat de ce qui est a gauche et l’envoie comme premier ingredient dans la fonction a droite. Ca permet d’enchainer les operations de facon lisible, comme une recette etape par etape.</p>
 <p><strong>Exemple du quotidien :</strong> Au lieu de dire “mets dans l’assiette(decoupe(lave(la salade)))” (illisible, de l’interieur vers l’exterieur), le pipe permet d’ecrire : “prends la salade PUIS lave-la PUIS decoupe-la PUIS mets-la dans l’assiette”. Lecture de gauche a droite, beaucoup plus naturelle.</p>
@@ -1112,7 +1381,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-47-contents" aria-controls="callout-47" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-59-contents" aria-controls="callout-59" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1121,7 +1390,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-47" class="callout-47-contents callout-collapse collapse">
+<div id="callout-59" class="callout-59-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> La p-value mesure a quel point les resultats observes seraient improbables SI l’hypothese nulle etait vraie. Plus elle est petite, plus il est raisonnable de rejeter <span class="math inline">\(H_0\)</span>. Attention : ce n’est PAS la probabilite que <span class="math inline">\(H_0\)</span> soit vraie.</p>
 <p><strong>Exemple du quotidien :</strong> Tu lances une piece 100 fois et obtiens 90 fois face. La p-value te dit : “si la piece etait equilibree (<span class="math inline">\(H_0\)</span>), la probabilite d’obtenir un resultat aussi extreme est quasi nulle”. Donc tu rejettes l’idee que la piece est equilibree. Seuil habituel : si p &lt; 0.05, on rejette <span class="math inline">\(H_0\)</span>.</p>
@@ -1129,7 +1398,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-48-contents" aria-controls="callout-48" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-60-contents" aria-controls="callout-60" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1138,7 +1407,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-48" class="callout-48-contents callout-collapse collapse">
+<div id="callout-60" class="callout-60-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> Dans un diagramme a barres, la position determine comment les sous-categories sont affichees : empilees les unes sur les autres (<code>stack</code>), cote a cote (<code>dodge</code>), ou normalisees a 100% (<code>fill</code>).</p>
 <p><strong>Exemple du quotidien :</strong> Imagine des barres representant les ventes par magasin, colorees par type de produit. <code>stack</code> : une seule barre par magasin, les produits empiles. <code>dodge</code> : des barres separees cote a cote. <code>fill</code> : tout ramene en pourcentage pour comparer les proportions.</p>
@@ -1149,7 +1418,7 @@ window.Quarto = {
 <section id="q" class="level2" data-number="15">
 <h2 data-number="15" class="anchored" data-anchor-id="q"><span class="header-section-number">15</span> Q</h2>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-49-contents" aria-controls="callout-49" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-61-contents" aria-controls="callout-61" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1158,7 +1427,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-49" class="callout-49-contents callout-collapse collapse">
+<div id="callout-61" class="callout-61-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> Les quartiles divisent les donnees triees en 4 parts egales. Q1 = 25% des donnees en dessous, Q2 = la mediane (50%), Q3 = 75% des donnees en dessous.</p>
 <p><strong>Exemple du quotidien :</strong> Imagine 100 eleves ranges par note. Q1 c’est la note du 25e eleve (un quart), Q2 c’est la note du 50e (la moitie), Q3 c’est la note du 75e (trois quarts). Ca permet de voir ou se situent la majorite des eleves.</p>
@@ -1166,7 +1435,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-50-contents" aria-controls="callout-50" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-62-contents" aria-controls="callout-62" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1175,7 +1444,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-50" class="callout-50-contents callout-collapse collapse">
+<div id="callout-62" class="callout-62-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> La question centrale a laquelle une etude scientifique cherche a repondre. Elle doit etre claire, faisable et pertinente.</p>
 <p><strong>Exemple du quotidien :</strong> Bonne RQ : “L’utilisation des reseaux sociaux est-elle liee au bien-etre des adolescents ?” Mauvaise RQ : “Les reseaux sociaux, c’est bien ou c’est mal ?” (jugement moral, pas scientifique).</p>
@@ -1186,7 +1455,58 @@ window.Quarto = {
 <section id="r" class="level2" data-number="16">
 <h2 data-number="16" class="anchored" data-anchor-id="r"><span class="header-section-number">16</span> R</h2>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-51-contents" aria-controls="callout-51" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-63-contents" aria-controls="callout-63" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>R-carre (R-squared)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-63" class="callout-63-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Dans une regression, un nombre entre 0 et 1 qui dit quelle part du phenomene le modele explique. 0.75 = le modele explique 75 % de la variation de la variable a expliquer.</p>
+<p><strong>Exemple du quotidien :</strong> Tu veux expliquer les notes des eleves. Si ton modele “heures de revision” a un R-carre de 0.6, les revisions expliquent 60 % des differences de notes ; les 40 % restants viennent d’autres facteurs (sommeil, stress…).</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-64-contents" aria-controls="callout-64" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Regression lineaire
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-64" class="callout-64-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Une methode qui modelise une variable a expliquer (Y) en fonction d’une ou plusieurs variables explicatives (X), en tracant la meilleure droite a travers les donnees. Elle permet aussi de predire.</p>
+<p><strong>Exemple du quotidien :</strong> Tu veux predire le prix d’un appartement a partir de sa surface. La regression trouve la droite “prix = base + (prix au m2) x surface”. En R : <code>lm(prix ~ surface, data = df)</code>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-65-contents" aria-controls="callout-65" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span><code>rnorm()</code> / <code>set.seed()</code>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-65" class="callout-65-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> <code>rnorm()</code> genere des nombres aleatoires suivant une loi normale (courbe en cloche). <code>set.seed()</code> fige ce hasard pour que le code donne toujours le meme resultat.</p>
+<p><strong>Exemple du quotidien :</strong> <code>set.seed()</code> c’est comme truquer un de pour qu’il tombe toujours sur la meme sequence – indispensable pour que ton prof reproduise exactement tes resultats. <code>rnorm(25, mean = 105, sd = 15)</code> cree 25 valeurs centrees sur 105.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-66-contents" aria-controls="callout-66" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1195,7 +1515,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-51" class="callout-51-contents callout-collapse collapse">
+<div id="callout-66" class="callout-66-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> Une fonction du package <code>readr</code> (Tidyverse) qui lit un fichier CSV et le transforme en tableau (data frame) dans R.</p>
 <p><strong>Exemple du quotidien :</strong> C’est comme ouvrir un fichier Excel, sauf qu’au lieu de double-cliquer sur le fichier, tu donnes l’instruction par code : <code>df &lt;- read_csv("mon_fichier.csv")</code>. L’avantage : c’est reproductible et ne corrompt pas les donnees (contrairement a Excel).</p>
@@ -1203,7 +1523,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-52-contents" aria-controls="callout-52" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-67-contents" aria-controls="callout-67" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1212,7 +1532,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-52" class="callout-52-contents callout-collapse collapse">
+<div id="callout-67" class="callout-67-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> Le fait que n’importe qui puisse relancer exactement la meme analyse et obtenir les memes resultats. En utilisant du code R plutot que des clics de souris, on garantit la reproductibilite.</p>
 <p><strong>Exemple du quotidien :</strong> C’est comme une recette de cuisine ecrite vs.&nbsp;“j’ai fait au feeling”. Si la recette est ecrite (= le script R), n’importe qui peut reproduire le plat exactement. Si c’est “au feeling” (= des clics dans un logiciel), personne ne peut verifier ni reproduire.</p>
@@ -1223,7 +1543,58 @@ window.Quarto = {
 <section id="s" class="level2" data-number="17">
 <h2 data-number="17" class="anchored" data-anchor-id="s"><span class="header-section-number">17</span> S</h2>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-53-contents" aria-controls="callout-53" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-68-contents" aria-controls="callout-68" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Seuil de signification (alpha)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-68" class="callout-68-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Le niveau de risque qu’on accepte de se tromper en rejetant l’hypothese nulle. Il est fixe avant le test, presque toujours a 0.05 (5 %).</p>
+<p><strong>Exemple du quotidien :</strong> C’est la “barre de hauteur” d’un saut : si la p-value passe sous 0.05, le resultat est declare significatif. Accepter alpha = 5 %, c’est accepter 5 % de risque de crier “il y a un effet !” alors qu’il n’y en a aucun.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-69-contents" aria-controls="callout-69" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Significativite statistique
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-69" class="callout-69-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Un resultat est “statistiquement significatif” quand sa p-value est inferieure au seuil alpha (0.05) : on considere alors que l’effet observe n’est probablement pas du au hasard.</p>
+<p><strong>Exemple du quotidien :</strong> Attention au piege : “significatif” ne veut pas dire “important”. Avec un tres grand echantillon, une difference minuscule et sans interet pratique peut devenir significative. Toujours regarder aussi la taille de l’effet.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-70-contents" aria-controls="callout-70" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Statistiques descriptives vs inferentielles
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-70" class="callout-70-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Les statistiques descriptives resument ce qu’on a observe (moyenne, frequences…). Les statistiques inferentielles generalisent de l’echantillon a la population (tests, intervalles de confiance).</p>
+<p><strong>Exemple du quotidien :</strong> “La note moyenne des 200 etudiants interroges est 4.6” = descriptif. “La note moyenne de tous les etudiants est probablement entre 4.4 et 4.8” = inferentiel.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-71-contents" aria-controls="callout-71" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1232,7 +1603,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-53" class="callout-53-contents callout-collapse collapse">
+<div id="callout-71" class="callout-71-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> Un fichier texte (extension <code>.R</code>) qui contient du code R sauvegarde. Contrairement a la console (ou le code est perdu), le script garde tout en memoire et permet de relancer l’analyse plus tard.</p>
 <p><strong>Exemple du quotidien :</strong> La console c’est comme parler a voix haute (les mots disparaissent). Le script c’est comme ecrire une lettre (les mots sont sauvegardes). Tu peux relire, modifier et partager ton script.</p>
@@ -1240,7 +1611,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-54-contents" aria-controls="callout-54" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-72-contents" aria-controls="callout-72" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1249,7 +1620,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-54" class="callout-54-contents callout-collapse collapse">
+<div id="callout-72" class="callout-72-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> Une fonction dplyr qui choisit quelles colonnes garder (ou exclure) dans un tableau.</p>
 <p><strong>Exemple du quotidien :</strong> Tu as un tableau avec 50 colonnes mais tu n’as besoin que du nom et de l’age. <code>select(nom, age)</code> ne garde que ces 2 colonnes. <code>select(-adresse)</code> enleve seulement la colonne adresse.</p>
@@ -1257,7 +1628,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-55-contents" aria-controls="callout-55" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-73-contents" aria-controls="callout-73" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1266,7 +1637,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-55" class="callout-55-contents callout-collapse collapse">
+<div id="callout-73" class="callout-73-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> Deux fonctions pour examiner rapidement un tableau. <code>str()</code> montre la structure interne (types, apercu). <code>summary()</code> donne les statistiques descriptives (min, max, moyenne, mediane…).</p>
 <p><strong>Exemple du quotidien :</strong> <code>str()</code> c’est comme ouvrir le capot d’une voiture pour voir le moteur. <code>summary()</code> c’est comme lire le tableau de bord : vitesse moyenne, kilometres parcourus, niveau d’essence…</p>
@@ -1277,7 +1648,58 @@ window.Quarto = {
 <section id="t" class="level2" data-number="18">
 <h2 data-number="18" class="anchored" data-anchor-id="t"><span class="header-section-number">18</span> T</h2>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-56-contents" aria-controls="callout-56" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-74-contents" aria-controls="callout-74" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Test d’hypothese
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-74" class="callout-74-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Une procedure qui confronte deux hypotheses (H0 = aucun effet, H1 = un effet) et utilise une p-value pour decider laquelle retenir.</p>
+<p><strong>Exemple du quotidien :</strong> C’est un proces : H0 = “innocent” (presomption), H1 = “coupable”. Si les preuves (p-value) sont assez fortes (p &lt; 0.05), on rejette l’innocence. Sinon, “pas assez de preuves” – ce qui ne prouve pas l’innocence.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-75-contents" aria-controls="callout-75" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Test t (t-test)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-75" class="callout-75-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Un test qui compare des moyennes : soit une moyenne a une valeur de reference, soit les moyennes de deux groupes.</p>
+<p><strong>Exemple du quotidien :</strong> “Le temps de trajet moyen de nos etudiants differe-t-il de la moyenne nationale de 30 min ?” -&gt; test t a un echantillon. “Les femmes et les hommes ont-ils le meme temps de trajet ?” -&gt; test t a deux echantillons. En R : <code>t.test()</code>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-76-contents" aria-controls="callout-76" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Tukey (test post-hoc)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-76" class="callout-76-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Un test qu’on lance APRES une ANOVA significative pour savoir exactement quelles paires de groupes different entre elles.</p>
+<p><strong>Exemple du quotidien :</strong> L’ANOVA est le detecteur de fumee : “il y a un probleme quelque part”. Le test de Tukey est l’inspection piece par piece : “le feu est dans la cuisine, pas dans la chambre”. En R : <code>TukeyHSD(mon_anova)</code>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-77-contents" aria-controls="callout-77" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1286,7 +1708,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-56" class="callout-56-contents callout-collapse collapse">
+<div id="callout-77" class="callout-77-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> Un theme controle l’apparence generale du graphique : couleur de fond, style des grilles, polices, etc. Ca ne change pas les donnees, juste l’habillage visuel.</p>
 <p><strong>Exemple du quotidien :</strong> C’est comme choisir le cadre et le fond pour une photo. La photo reste la meme, mais <code>theme_minimal()</code> donne un look epure, <code>theme_bw()</code> un look noir et blanc, etc.</p>
@@ -1294,7 +1716,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-57-contents" aria-controls="callout-57" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-78-contents" aria-controls="callout-78" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1303,7 +1725,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-57" class="callout-57-contents callout-collapse collapse">
+<div id="callout-78" class="callout-78-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> Une version modernisee du data frame dans le Tidyverse. C’est pratiquement la meme chose qu’un data frame, mais avec un affichage plus propre et des comportements plus previsibles.</p>
 <p><strong>Exemple du quotidien :</strong> C’est comme la difference entre un vieux telephone et un smartphone : ils font la meme chose (appeler), mais le nouveau est plus agreable a utiliser et evite certains pieges de l’ancien.</p>
@@ -1311,7 +1733,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-58-contents" aria-controls="callout-58" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-79-contents" aria-controls="callout-79" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1320,7 +1742,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-58" class="callout-58-contents callout-collapse collapse">
+<div id="callout-79" class="callout-79-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> Un format standard de tableau ou chaque variable a sa propre colonne, chaque observation a sa propre ligne, et chaque type d’observation forme une table distincte. C’est le format ideal pour l’analyse.</p>
 <p><strong>Exemple du quotidien :</strong> Un carnet d’adresses bien range : une ligne par personne, une colonne pour le nom, une pour le telephone, une pour l’email. Pas de personnes sur plusieurs lignes, pas de numeros de telephone melanges avec les emails dans une meme colonne.</p>
@@ -1328,7 +1750,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-59-contents" aria-controls="callout-59" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-80-contents" aria-controls="callout-80" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1337,7 +1759,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-59" class="callout-59-contents callout-collapse collapse">
+<div id="callout-80" class="callout-80-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> Un ensemble de packages R qui partagent une philosophie commune et une “grammaire” coherente pour manipuler, transformer et visualiser les donnees. Ca inclut dplyr, ggplot2, readr, et d’autres.</p>
 <p><strong>Exemple du quotidien :</strong> C’est comme une boite a outils complete et bien organisee (marteau, tournevis, cle…) ou tous les outils viennent du meme fabricant et s’emboitent bien ensemble. On charge tout d’un coup avec <code>library(tidyverse)</code>.</p>
@@ -1348,7 +1770,7 @@ window.Quarto = {
 <section id="u" class="level2" data-number="19">
 <h2 data-number="19" class="anchored" data-anchor-id="u"><span class="header-section-number">19</span> U</h2>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-60-contents" aria-controls="callout-60" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-81-contents" aria-controls="callout-81" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1357,7 +1779,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-60" class="callout-60-contents callout-collapse collapse">
+<div id="callout-81" class="callout-81-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> Apres avoir utilise <code>group_by()</code>, il faut appeler <code>ungroup()</code> pour dire a R “c’est fini, arrete de traiter les donnees par groupes”. Oublier ca peut causer des bugs subtils.</p>
 <p><strong>Exemple du quotidien :</strong> C’est comme enlever un filtre sur Instagram. Tu avais filtre “mes photos de vacances”, maintenant tu veux revoir toutes tes photos. <code>ungroup()</code> enleve le filtre de groupement.</p>
@@ -1368,7 +1790,24 @@ window.Quarto = {
 <section id="v" class="level2" data-number="20">
 <h2 data-number="20" class="anchored" data-anchor-id="v"><span class="header-section-number">20</span> V</h2>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-61-contents" aria-controls="callout-61" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-82-contents" aria-controls="callout-82" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Variance
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-82" class="callout-82-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>En simple :</strong> Une mesure de dispersion, egale a l’ecart-type au carre. Elle dit a quel point les valeurs sont eparpillees, mais dans une unite “au carre” peu intuitive.</p>
+<p><strong>Exemple du quotidien :</strong> Si les donnees sont des minutes, la variance est en “minutes au carre” – difficile a interpreter. C’est pourquoi on prefere souvent l’ecart-type (sa racine carree), qui revient a l’unite d’origine. En R : <code>var(x, na.rm = TRUE)</code>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-83-contents" aria-controls="callout-83" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1377,7 +1816,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-61" class="callout-61-contents callout-collapse collapse">
+<div id="callout-83" class="callout-83-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> Une variable c’est une caracteristique qu’on mesure ou observe. Elle peut etre de differents types :</p>
 <ul>
@@ -1391,7 +1830,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-62-contents" aria-controls="callout-62" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-84-contents" aria-controls="callout-84" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1400,7 +1839,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-62" class="callout-62-contents callout-collapse collapse">
+<div id="callout-84" class="callout-84-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> La brique de base de R. C’est une suite ordonnee de valeurs du meme type. Meme un simple nombre comme <code>42</code> est en realite un vecteur de longueur 1 en R.</p>
 <p><strong>Exemple du quotidien :</strong> C’est comme un collier de perles : toutes les perles sont enfilees dans l’ordre, et elles doivent etre du meme type (toutes rondes, ou toutes carrees). En R : <code>c(10, 20, 30)</code> est un vecteur de 3 nombres. <code>c("chat", "chien")</code> est un vecteur de 2 textes.</p>
@@ -1408,7 +1847,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-63-contents" aria-controls="callout-63" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-85-contents" aria-controls="callout-85" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1417,7 +1856,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-63" class="callout-63-contents callout-collapse collapse">
+<div id="callout-85" class="callout-85-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> Le fait que R applique automatiquement une operation a chaque element d’un vecteur, sans qu’on ait besoin d’ecrire une boucle. C’est une des grandes forces de R.</p>
 <p><strong>Exemple du quotidien :</strong> Au lieu de dire “prends le 1er prix et ajoute 10%, puis le 2e prix et ajoute 10%, puis le 3e…” tu dis juste “ajoute 10% a tous les prix”. En R : <code>prix * 1.10</code> multiplie chaque element du vecteur par 1.10 d’un coup.</p>
@@ -1425,7 +1864,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-64-contents" aria-controls="callout-64" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-86-contents" aria-controls="callout-86" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1434,7 +1873,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-64" class="callout-64-contents callout-collapse collapse">
+<div id="callout-86" class="callout-86-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>En simple :</strong> Une famille de palettes de couleurs concue pour etre lisible par les personnes daltoniennes et en impression noir et blanc.</p>
 <p><strong>Exemple du quotidien :</strong> Au lieu d’utiliser rouge et vert (que 8% des hommes ne distinguent pas), viridis utilise des degrades de jaune-vert-violet qui restent distinguables pour tout le monde.</p>

@@ -1,0 +1,1648 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Module 6 : Statistiques Inferentielles – Methodes II &amp; R</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-0441d281c0042f78ca5e6da214781463.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Methodes II &amp; R</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
+<span class="menu-text">Accueil</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-probleme-set-1" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Probleme Set 1</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-probleme-set-1">    
+        <li>
+    <a class="dropdown-item" href="./01_Theorie_Enquete.html">
+ <span class="dropdown-text">Theorie &amp; Enquete</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./02_Bases_R.html">
+ <span class="dropdown-text">Bases de R</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./03_Manipulation_Dplyr.html">
+ <span class="dropdown-text">Manipulation (dplyr)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./04_Visualisation_Ggplot2.html">
+ <span class="dropdown-text">Visualisation (ggplot2)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./05_Copier_Coller.html">
+ <span class="dropdown-text">Copier/Coller PS1</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-probleme-set-2" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Probleme Set 2</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-probleme-set-2">    
+        <li>
+    <a class="dropdown-item" href="./06_Statistiques_Descriptives.html">
+ <span class="dropdown-text">Statistiques descriptives</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./07_Statistiques_Inferentielles.html">
+ <span class="dropdown-text">Statistiques inferentielles</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./08_Communication_Resultats.html">
+ <span class="dropdown-text">Communication des resultats</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./09_Copier_Coller_PS2.html">
+ <span class="dropdown-text">Copier/Coller PS2</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./glossaire.html"> 
+<span class="menu-text">Glossaire</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./06_Statistiques_Descriptives.html">Categorie 2 - Probleme Set 2</a></li><li class="breadcrumb-item"><a href="./07_Statistiques_Inferentielles.html">Module 6 : Statistiques Inferentielles</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Methodes II - Analyse de Donnees et Statistiques sous R</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Categorie 1 - Probleme Set 1</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_Theorie_Enquete.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Module 1 : Methodologie et Enquete</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02_Bases_R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Module 2 : Fondations de R et Architecture</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03_Manipulation_Dplyr.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Module 3 : Tidyverse &amp; dplyr (Manipulation Avancee)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04_Visualisation_Ggplot2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Module 4 : Visualisation Avancee avec ggplot2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05_Copier_Coller.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Commandes Rapides - Copier/Coller</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Categorie 2 - Probleme Set 2</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_Statistiques_Descriptives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Module 5 : Statistiques Descriptives</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07_Statistiques_Inferentielles.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Module 6 : Statistiques Inferentielles</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08_Communication_Resultats.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Module 7 : Communication des Resultats</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09_Copier_Coller_PS2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Commandes Rapides PS2 - Copier/Coller</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./glossaire.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Glossaire - Dictionnaire des Termes</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#population-echantillon-et-le-role-du-hasard" id="toc-population-echantillon-et-le-role-du-hasard" class="nav-link active" data-scroll-target="#population-echantillon-et-le-role-du-hasard"><span class="header-section-number">1</span> Population, Echantillon, et le Role du Hasard</a>
+  <ul class="collapse">
+  <li><a href="#simuler-un-echantillon-rnorm-et-set.seed" id="toc-simuler-un-echantillon-rnorm-et-set.seed" class="nav-link" data-scroll-target="#simuler-un-echantillon-rnorm-et-set.seed"><span class="header-section-number">1.1</span> Simuler un Echantillon : <code>rnorm()</code> et <code>set.seed()</code></a></li>
+  </ul></li>
+  <li><a href="#la-demarche-du-test-dhypothese" id="toc-la-demarche-du-test-dhypothese" class="nav-link" data-scroll-target="#la-demarche-du-test-dhypothese"><span class="header-section-number">2</span> La Demarche du Test d’Hypothese</a>
+  <ul class="collapse">
+  <li><a href="#acte-1-poser-deux-hypotheses" id="toc-acte-1-poser-deux-hypotheses" class="nav-link" data-scroll-target="#acte-1-poser-deux-hypotheses"><span class="header-section-number">2.1</span> Acte 1 — Poser deux hypotheses</a></li>
+  <li><a href="#acte-2-calculer-une-statistique-de-test-et-une-p-value" id="toc-acte-2-calculer-une-statistique-de-test-et-une-p-value" class="nav-link" data-scroll-target="#acte-2-calculer-une-statistique-de-test-et-une-p-value"><span class="header-section-number">2.2</span> Acte 2 — Calculer une statistique de test et une p-value</a></li>
+  <li><a href="#acte-3-comparer-la-p-value-au-seuil-alpha" id="toc-acte-3-comparer-la-p-value-au-seuil-alpha" class="nav-link" data-scroll-target="#acte-3-comparer-la-p-value-au-seuil-alpha"><span class="header-section-number">2.3</span> Acte 3 — Comparer la p-value au seuil alpha</a></li>
+  <li><a href="#acte-4-interpreter-dans-le-contexte" id="toc-acte-4-interpreter-dans-le-contexte" class="nav-link" data-scroll-target="#acte-4-interpreter-dans-le-contexte"><span class="header-section-number">2.4</span> Acte 4 — Interpreter dans le contexte</a></li>
+  </ul></li>
+  <li><a href="#les-3-erreurs-dinterpretation-de-la-p-value" id="toc-les-3-erreurs-dinterpretation-de-la-p-value" class="nav-link" data-scroll-target="#les-3-erreurs-dinterpretation-de-la-p-value"><span class="header-section-number">3</span> Les 3 erreurs d’interpretation de la p-value</a></li>
+  <li><a href="#erreurs-de-type-i-et-type-ii" id="toc-erreurs-de-type-i-et-type-ii" class="nav-link" data-scroll-target="#erreurs-de-type-i-et-type-ii"><span class="header-section-number">3.1</span> Erreurs de Type I et Type II</a></li>
+  <li><a href="#lintervalle-de-confiance-ic" id="toc-lintervalle-de-confiance-ic" class="nav-link" data-scroll-target="#lintervalle-de-confiance-ic"><span class="header-section-number">4</span> L’Intervalle de Confiance (IC)</a></li>
+  <li><a href="#le-test-t-t-test" id="toc-le-test-t-t-test" class="nav-link" data-scroll-target="#le-test-t-t-test"><span class="header-section-number">5</span> Le Test t (t-test)</a>
+  <ul class="collapse">
+  <li><a href="#test-t-a-un-echantillon" id="toc-test-t-a-un-echantillon" class="nav-link" data-scroll-target="#test-t-a-un-echantillon"><span class="header-section-number">5.1</span> Test t a un echantillon</a></li>
+  <li><a href="#test-t-a-deux-echantillons" id="toc-test-t-a-deux-echantillons" class="nav-link" data-scroll-target="#test-t-a-deux-echantillons"><span class="header-section-number">5.2</span> Test t a deux echantillons</a></li>
+  <li><a href="#lire-la-sortie-dun-test-t" id="toc-lire-la-sortie-dun-test-t" class="nav-link" data-scroll-target="#lire-la-sortie-dun-test-t"><span class="header-section-number">5.3</span> Lire la Sortie d’un Test t</a></li>
+  </ul></li>
+  <li><a href="#lanova-analyse-de-variance" id="toc-lanova-analyse-de-variance" class="nav-link" data-scroll-target="#lanova-analyse-de-variance"><span class="header-section-number">6</span> L’ANOVA (Analyse de Variance)</a>
+  <ul class="collapse">
+  <li><a href="#test-post-hoc-tukey-hsd" id="toc-test-post-hoc-tukey-hsd" class="nav-link" data-scroll-target="#test-post-hoc-tukey-hsd"><span class="header-section-number">6.1</span> Test Post-Hoc : Tukey HSD</a></li>
+  </ul></li>
+  <li><a href="#la-correlation" id="toc-la-correlation" class="nav-link" data-scroll-target="#la-correlation"><span class="header-section-number">7</span> La Correlation</a></li>
+  <li><a href="#correlation-nest-pas-causalite" id="toc-correlation-nest-pas-causalite" class="nav-link" data-scroll-target="#correlation-nest-pas-causalite"><span class="header-section-number">8</span> Correlation n’est PAS causalite</a></li>
+  <li><a href="#la-regression-lineaire" id="toc-la-regression-lineaire" class="nav-link" data-scroll-target="#la-regression-lineaire"><span class="header-section-number">9</span> La Regression Lineaire</a>
+  <ul class="collapse">
+  <li><a href="#regression-lineaire-simple" id="toc-regression-lineaire-simple" class="nav-link" data-scroll-target="#regression-lineaire-simple"><span class="header-section-number">9.1</span> Regression Lineaire Simple</a></li>
+  <li><a href="#lire-la-sortie-dun-summarylm" id="toc-lire-la-sortie-dun-summarylm" class="nav-link" data-scroll-target="#lire-la-sortie-dun-summarylm"><span class="header-section-number">9.2</span> Lire la Sortie d’un <code>summary(lm())</code></a></li>
+  <li><a href="#les-codes-de-significativite-les-etoiles" id="toc-les-codes-de-significativite-les-etoiles" class="nav-link" data-scroll-target="#les-codes-de-significativite-les-etoiles"><span class="header-section-number">9.3</span> Les Codes de Significativite (les etoiles)</a></li>
+  <li><a href="#regression-multiple" id="toc-regression-multiple" class="nav-link" data-scroll-target="#regression-multiple"><span class="header-section-number">9.4</span> Regression Multiple</a></li>
+  </ul></li>
+  <li><a href="#questions-probables-dexamen" id="toc-questions-probables-dexamen" class="nav-link" data-scroll-target="#questions-probables-dexamen"><span class="header-section-number">10</span> Questions Probables d’Examen</a></li>
+  <li><a href="#recapitulatif-du-module" id="toc-recapitulatif-du-module" class="nav-link" data-scroll-target="#recapitulatif-du-module"><span class="header-section-number">11</span> Recapitulatif du Module</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./06_Statistiques_Descriptives.html">Categorie 2 - Probleme Set 2</a></li><li class="breadcrumb-item"><a href="./07_Statistiques_Inferentielles.html">Module 6 : Statistiques Inferentielles</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Module 6 : Statistiques Inferentielles</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Les statistiques inferentielles permettent de <strong>tirer des conclusions sur une population entiere</strong> a partir d’un simple <strong>echantillon</strong>. La question n’est plus “qu’est-ce que j’observe ?” (Module 5) mais “puis-je generaliser ce que j’observe ?”.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>En simple
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Inferer, c’est <strong>gouter une cuillere de soupe pour juger toute la casserole</strong>. Tu ne manges pas les 3 litres de soupe : tu prends une cuillere (l’echantillon), et tu en deduis si toute la soupe (la population) est trop salee. Les statistiques inferentielles, ce sont les regles qui disent : “ta cuillere est-elle assez representative pour conclure ?” et “quel risque de te tromper ?”.</p>
+</div>
+</div>
+</div>
+<section id="population-echantillon-et-le-role-du-hasard" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="population-echantillon-et-le-role-du-hasard"><span class="header-section-number">1</span> Population, Echantillon, et le Role du Hasard</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Terme</th>
+<th>Definition</th>
+<th>Exemple</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Population</strong></td>
+<td>L’ensemble total qu’on veut etudier</td>
+<td>Tous les etudiants de l’UNIFR</td>
+</tr>
+<tr class="even">
+<td><strong>Echantillon</strong></td>
+<td>Le sous-ensemble qu’on observe reellement</td>
+<td>200 etudiants interroges</td>
+</tr>
+<tr class="odd">
+<td><strong>Parametre</strong></td>
+<td>Une valeur <strong>vraie</strong> dans la population (inconnue)</td>
+<td>La vraie note moyenne de tous</td>
+</tr>
+<tr class="even">
+<td><strong>Statistique</strong></td>
+<td>Une valeur <strong>calculee</strong> sur l’echantillon (connue)</td>
+<td>La note moyenne des 200</td>
+</tr>
+</tbody>
+</table>
+<p>L’echantillon doit etre <strong>aleatoire</strong> (chaque individu a la meme chance d’etre choisi) pour etre representatif. C’est ce qui justifie toute la machinerie inferentielle.</p>
+<section id="simuler-un-echantillon-rnorm-et-set.seed" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="simuler-un-echantillon-rnorm-et-set.seed"><span class="header-section-number">1.1</span> Simuler un Echantillon : <code>rnorm()</code> et <code>set.seed()</code></h3>
+<p>En exercice, on cree souvent des donnees fictives qui suivent une <strong>loi normale</strong> (courbe en cloche).</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set.seed() fige le hasard : tout le monde obtient les MEMES nombres aleatoires</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># rnorm(n, mean, sd) : genere n valeurs aleatoires suivant une loi normale</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>scores_qi <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">25</span>, <span class="at">mean =</span> <span class="dv">105</span>, <span class="at">sd =</span> <span class="dv">15</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># -&gt; 25 scores de QI, centres autour de 105, ecart-type 15</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>En simple
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><code>set.seed(123)</code> c’est comme <strong>truquer un de pour qu’il tombe toujours sur la meme sequence</strong>. Le hasard de R n’est pas vraiment du hasard : c’est une recette. En fixant la “graine” (seed), tu garantis que ton code donnera exactement les memes nombres a chaque execution – indispensable pour que ton prof reproduise ton resultat.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="la-demarche-du-test-dhypothese" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="la-demarche-du-test-dhypothese"><span class="header-section-number">2</span> La Demarche du Test d’Hypothese</h2>
+<p>C’est le coeur du module. <strong>Tout test statistique suit le meme scenario en 4 actes.</strong></p>
+<section id="acte-1-poser-deux-hypotheses" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="acte-1-poser-deux-hypotheses"><span class="header-section-number">2.1</span> Acte 1 — Poser deux hypotheses</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Hypothese</th>
+<th>Symbole</th>
+<th>Signification</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Hypothese nulle</strong></td>
+<td>H0</td>
+<td>“Il n’y a <strong>rien</strong> : aucun effet, aucune difference, aucun lien”</td>
+<td>Ce qu’on cherche a rejeter</td>
+</tr>
+<tr class="even">
+<td><strong>Hypothese alternative</strong></td>
+<td>H1</td>
+<td>“Il y a <strong>quelque chose</strong> : un effet, une difference, un lien”</td>
+<td>Ce qu’on espere montrer</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>En simple
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Le test d’hypothese fonctionne comme un <strong>proces</strong> :</p>
+<ul>
+<li>H0 = “l’accuse est innocent” (presomption d’innocence : il ne se passe rien)</li>
+<li>H1 = “l’accuse est coupable” (il y a un effet)</li>
+</ul>
+<p>On ne declare jamais H0 “vraie” : on dit soit “coupable” (on rejette H0), soit “pas assez de preuves” (on ne rejette pas H0). Un acquittement ne prouve pas l’innocence – juste le manque de preuves.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="acte-2-calculer-une-statistique-de-test-et-une-p-value" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="acte-2-calculer-une-statistique-de-test-et-une-p-value"><span class="header-section-number">2.2</span> Acte 2 — Calculer une statistique de test et une p-value</h3>
+<p>Le test produit une <strong>p-value</strong> : la probabilite d’observer un resultat aussi extreme que le tien <strong>si H0 etait vraie</strong>.</p>
+</section>
+<section id="acte-3-comparer-la-p-value-au-seuil-alpha" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="acte-3-comparer-la-p-value-au-seuil-alpha"><span class="header-section-number">2.3</span> Acte 3 — Comparer la p-value au seuil alpha</h3>
+<p>Le seuil de signification <strong>alpha</strong> est fixe <strong>avant</strong> le test, presque toujours a <strong>0.05</strong> (5 %).</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Resultat</th>
+<th>Decision</th>
+<th>Formulation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>p &lt; 0.05</strong></td>
+<td>On <strong>rejette H0</strong></td>
+<td>“Le resultat est statistiquement significatif”</td>
+</tr>
+<tr class="even">
+<td><strong>p &gt;= 0.05</strong></td>
+<td>On <strong>ne rejette pas H0</strong></td>
+<td>“Le resultat n’est pas significatif”</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="acte-4-interpreter-dans-le-contexte" class="level3" data-number="2.4">
+<h3 data-number="2.4" class="anchored" data-anchor-id="acte-4-interpreter-dans-le-contexte"><span class="header-section-number">2.4</span> Acte 4 — Interpreter dans le contexte</h3>
+<p>Traduire la decision statistique en phrase comprehensible sur le phenomene etudie.</p>
+</section>
+</section>
+<section id="les-3-erreurs-dinterpretation-de-la-p-value" class="level2 callout-danger" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="les-3-erreurs-dinterpretation-de-la-p-value"><span class="header-section-number">3</span> Les 3 erreurs d’interpretation de la p-value</h2>
+<ol type="1">
+<li><strong>La p-value n’est PAS la probabilite que H0 soit vraie.</strong> C’est la probabilite des donnees <em>si</em> H0 est vraie.</li>
+<li><strong>“Non significatif” ne veut PAS dire “il n’y a pas d’effet”.</strong> Cela peut juste signifier que l’echantillon est trop petit pour le detecter.</li>
+<li><strong>Significatif n’est pas synonyme d’important.</strong> Avec un tres grand echantillon, un effet minuscule et sans interet pratique peut devenir “significatif”.</li>
+</ol>
+</section>
+<section id="erreurs-de-type-i-et-type-ii" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="erreurs-de-type-i-et-type-ii"><span class="header-section-number">3.1</span> Erreurs de Type I et Type II</h3>
+<p>Comme dans un proces, on peut se tromper de deux facons :</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>H0 est vraie en realite</th>
+<th>H0 est fausse en realite</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>On rejette H0</strong></td>
+<td><strong>Erreur de type I</strong> (faux positif) – proba = alpha</td>
+<td>Decision correcte</td>
+</tr>
+<tr class="even">
+<td><strong>On ne rejette pas H0</strong></td>
+<td>Decision correcte</td>
+<td><strong>Erreur de type II</strong> (faux negatif)</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>En simple
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>Erreur de type I</strong> : condamner un innocent. On crie “il y a un effet !” alors qu’il n’y en a aucun. Le seuil alpha = 0.05 signifie qu’on accepte 5 % de risque de faire cette erreur.</li>
+<li><strong>Erreur de type II</strong> : acquitter un coupable. Il y avait bien un effet, mais on ne l’a pas detecte (souvent : echantillon trop petit).</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="lintervalle-de-confiance-ic" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="lintervalle-de-confiance-ic"><span class="header-section-number">4</span> L’Intervalle de Confiance (IC)</h2>
+<p>Plutot qu’une seule valeur, l’IC donne une <strong>fourchette plausible</strong> pour le parametre de la population. Un IC a 95 % signifie : “si on repetait l’etude un grand nombre de fois, 95 % des intervalles calcules contiendraient la vraie valeur”.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>En simple
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Une estimation ponctuelle (“la moyenne est 4.6”) est une <strong>flechette plantee sur une cible</strong>. L’intervalle de confiance est le <strong>cercle dessine autour</strong> : “la vraie valeur est probablement quelque part la-dedans, entre 4.4 et 4.8”. Plus l’echantillon est grand, plus le cercle est petit (estimation precise).</p>
+<p>Astuce : si un IC a 95 % pour une <strong>difference</strong> contient <strong>0</strong>, c’est que la difference n’est pas significative (0 = “aucune difference” reste plausible).</p>
+</div>
+</div>
+</div>
+</section>
+<section id="le-test-t-t-test" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="le-test-t-t-test"><span class="header-section-number">5</span> Le Test t (t-test)</h2>
+<p>Le test t compare des <strong>moyennes</strong>. C’est le test le plus frequent a l’examen.</p>
+<section id="test-t-a-un-echantillon" class="level3" data-number="5.1">
+<h3 data-number="5.1" class="anchored" data-anchor-id="test-t-a-un-echantillon"><span class="header-section-number">5.1</span> Test t a un echantillon</h3>
+<p>Compare la moyenne d’un echantillon a une <strong>valeur de reference</strong> fixee (<code>mu</code>).</p>
+<blockquote class="blockquote">
+<p>Question type : “le QI moyen de nos etudiants differe-t-il de 100 ?”</p>
+</blockquote>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>scores_qi <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">25</span>, <span class="at">mean =</span> <span class="dv">105</span>, <span class="at">sd =</span> <span class="dv">15</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># H0 : la moyenne vaut 100   |   H1 : la moyenne differe de 100</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>resultat <span class="ot">&lt;-</span> <span class="fu">t.test</span>(scores_qi, <span class="at">mu =</span> <span class="dv">100</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(resultat)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="test-t-a-deux-echantillons" class="level3" data-number="5.2">
+<h3 data-number="5.2" class="anchored" data-anchor-id="test-t-a-deux-echantillons"><span class="header-section-number">5.2</span> Test t a deux echantillons</h3>
+<p>Compare les moyennes de <strong>deux groupes</strong> independants.</p>
+<blockquote class="blockquote">
+<p>Question type : “les femmes et les hommes ont-ils une taille moyenne differente ?”</p>
+</blockquote>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>tailles_f <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="at">mean =</span> <span class="fl">164.7</span>, <span class="at">sd =</span> <span class="fl">5.6</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>tailles_h <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="at">mean =</span> <span class="fl">177.4</span>, <span class="at">sd =</span> <span class="fl">6.1</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># H0 : memes moyennes   |   H1 : moyennes differentes</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(tailles_f, tailles_h)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Variante si les deux variables sont dans un seul data frame :</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(taille <span class="sc">~</span> genre, <span class="at">data =</span> mon_df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="lire-la-sortie-dun-test-t" class="level3" data-number="5.3">
+<h3 data-number="5.3" class="anchored" data-anchor-id="lire-la-sortie-dun-test-t"><span class="header-section-number">5.3</span> Lire la Sortie d’un Test t</h3>
+<pre><code>        One Sample t-test
+
+data:  scores_qi
+t = 2.31, df = 24, p-value = 0.02968
+alternative hypothesis: true mean is not equal to 100
+95 percent confidence interval:
+ 100.62 112.40
+sample estimates:
+mean of x
+   106.51</code></pre>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Element</th>
+<th>Valeur</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>t</code></td>
+<td>2.31</td>
+<td>La statistique de test (plus elle est loin de 0, plus l’ecart est marque)</td>
+</tr>
+<tr class="even">
+<td><code>df</code></td>
+<td>24</td>
+<td>Degres de liberte (lies a la taille de l’echantillon : n - 1)</td>
+</tr>
+<tr class="odd">
+<td><code>p-value</code></td>
+<td>0.02968</td>
+<td><strong>&lt; 0.05 -&gt; on rejette H0</strong></td>
+</tr>
+<tr class="even">
+<td><code>confidence interval</code></td>
+<td>[100.62 ; 112.40]</td>
+<td>Fourchette plausible de la vraie moyenne ; <strong>ne contient pas 100</strong></td>
+</tr>
+<tr class="odd">
+<td><code>mean of x</code></td>
+<td>106.51</td>
+<td>La moyenne observee dans l’echantillon</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Conclusion redigee :</strong> “Le QI moyen des etudiants (M = 106.5) est significativement superieur a 100, t(24) = 2.31, p = .030.”</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Petit echantillon = test peu puissant
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Avec n = 25, un test peut ne rien detecter (p &gt;= 0.05) meme si un effet existe. En augmentant n (ex. 50, 100), le meme ecart peut devenir significatif. Un resultat non significatif sur petit echantillon ne prouve donc <strong>pas</strong> l’absence d’effet.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="lanova-analyse-de-variance" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="lanova-analyse-de-variance"><span class="header-section-number">6</span> L’ANOVA (Analyse de Variance)</h2>
+<p>Le test t ne compare que <strong>2</strong> moyennes. Pour comparer <strong>3 groupes ou plus</strong>, on utilise l’<strong>ANOVA</strong>.</p>
+<blockquote class="blockquote">
+<p>Question type : “la longueur des nageoires differe-t-elle entre les 3 especes de manchots ?”</p>
+</blockquote>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>En simple
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Si tu faisais plein de tests t deux-a-deux (groupe A vs B, A vs C, B vs C…), tu multiplierais le risque d’erreur de type I (5 % a chaque fois s’accumulent). L’ANOVA fait <strong>un seul test global</strong> : “au moins un des groupes differe-t-il des autres ?” Elle protege contre l’inflation du risque.</p>
+</div>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># H0 : toutes les especes ont la meme moyenne</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># H1 : au moins une espece differe</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>anova1 <span class="ot">&lt;-</span> <span class="fu">aov</span>(flipper_length_mm <span class="sc">~</span> species, <span class="at">data =</span> penguins)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(anova1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Sortie typique :</p>
+<pre><code>             Df Sum Sq Mean Sq F value  Pr(&gt;F)
+species       2  52473   26237   594.8  &lt;2e-16 ***
+Residuals   339  14953      44</code></pre>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Element</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>F value</code></td>
+<td>La statistique de test de l’ANOVA</td>
+</tr>
+<tr class="even">
+<td><code>Pr(&gt;F)</code></td>
+<td>La p-value. Ici <code>&lt;2e-16</code> = quasiment 0 -&gt; <strong>on rejette H0</strong></td>
+</tr>
+<tr class="odd">
+<td><code>***</code></td>
+<td>Code de significativite (voir tableau plus bas)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Mais l’ANOVA ne dit pas QUELS groupes different.</strong> Elle dit juste “il y a une difference quelque part”.</p>
+<section id="test-post-hoc-tukey-hsd" class="level3" data-number="6.1">
+<h3 data-number="6.1" class="anchored" data-anchor-id="test-post-hoc-tukey-hsd"><span class="header-section-number">6.1</span> Test Post-Hoc : Tukey HSD</h3>
+<p>Apres une ANOVA significative, le test de <strong>Tukey</strong> identifie <strong>quelles paires</strong> de groupes different.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">TukeyHSD</span>(anova1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>                      diff     lwr     upr  p adj
+Chinstrap-Adelie     5.87    3.51    8.24  0.000
+Gentoo-Adelie       27.23   25.42   29.04  0.000
+Gentoo-Chinstrap    21.36   18.86   23.86  0.000</code></pre>
+<p>Pour chaque paire : <code>diff</code> = l’ecart des moyennes, <code>p adj</code> = la p-value ajustee. Ici les 3 paires ont <code>p adj &lt; 0.05</code> -&gt; les 3 especes different toutes entre elles.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>En simple
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>L’ANOVA est le <strong>detecteur de fumee</strong> : il sonne pour dire “il y a un probleme quelque part dans la maison”. Le test de Tukey est l’<strong>inspection piece par piece</strong> : il dit “le feu est dans la cuisine, pas dans la chambre”. On ne fait Tukey que si le detecteur (ANOVA) a sonne.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="la-correlation" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="la-correlation"><span class="header-section-number">7</span> La Correlation</h2>
+<p>La correlation mesure la <strong>force et la direction du lien lineaire</strong> entre <strong>deux variables numeriques</strong>. Le coefficient <strong>r</strong> varie de -1 a +1.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Valeur de r</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>proche de <strong>+1</strong></td>
+<td>Forte correlation <strong>positive</strong> (les deux augmentent ensemble)</td>
+</tr>
+<tr class="even">
+<td>proche de <strong>0</strong></td>
+<td>Pas de lien lineaire</td>
+</tr>
+<tr class="odd">
+<td>proche de <strong>-1</strong></td>
+<td>Forte correlation <strong>negative</strong> (l’une monte, l’autre descend)</td>
+</tr>
+</tbody>
+</table>
+<p>Reperes d’intensite (en valeur absolue) : ~0.1 faible, ~0.3 moyenne, ~0.5 et plus forte.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Coefficient seul</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(mtcars<span class="sc">$</span>wt, mtcars<span class="sc">$</span>mpg)            <span class="co"># -0.87 : lien negatif fort</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Test de correlation : ajoute une p-value et un IC</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(mtcars<span class="sc">$</span>wt, mtcars<span class="sc">$</span>mpg)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>        Pearson's product-moment correlation
+
+t = -9.56, df = 30, p-value = 1.3e-10
+95 percent confidence interval:
+ -0.934 -0.744
+sample estimates:
+   cor
+-0.868</code></pre>
+<p><code>cor = -0.868</code>, <code>p-value</code> minuscule -&gt; correlation negative forte et significative.</p>
+</section>
+<section id="correlation-nest-pas-causalite" class="level2 callout-danger" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="correlation-nest-pas-causalite"><span class="header-section-number">8</span> Correlation n’est PAS causalite</h2>
+<p>C’est L’erreur a ne jamais commettre. Que deux variables varient ensemble ne prouve <strong>pas</strong> que l’une cause l’autre.</p>
+<p>Exemple : les ventes de glaces et les noyades sont fortement correlees. Les glaces ne noient personne – c’est la <strong>chaleur</strong> (variable cachee) qui fait grimper les deux. A l’examen, ne jamais ecrire “X cause Y” sur la base d’une simple correlation.</p>
+</section>
+<section id="la-regression-lineaire" class="level2" data-number="9">
+<h2 data-number="9" class="anchored" data-anchor-id="la-regression-lineaire"><span class="header-section-number">9</span> La Regression Lineaire</h2>
+<p>La regression va plus loin que la correlation : elle <strong>modelise</strong> une variable a expliquer (Y, dependante) en fonction d’une ou plusieurs variables explicatives (X, independantes), et permet de <strong>predire</strong>.</p>
+<blockquote class="blockquote">
+<p>Question type : “le poids d’une voiture predit-il sa consommation ?”</p>
+</blockquote>
+<section id="regression-lineaire-simple" class="level3" data-number="9.1">
+<h3 data-number="9.1" class="anchored" data-anchor-id="regression-lineaire-simple"><span class="header-section-number">9.1</span> Regression Lineaire Simple</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># mpg (consommation) expliquee par wt (poids)</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># La syntaxe est toujours : lm(Y ~ X, data = ...)</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>regression1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> wt, <span class="at">data =</span> mtcars)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(regression1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>En simple
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>La regression cherche <strong>la meilleure droite</strong> qui traverse le nuage de points. Cette droite a une equation : <code>Y = intercept + pente * X</code>.</p>
+<ul>
+<li>L’<strong>intercept</strong> (ordonnee a l’origine) : la valeur de Y quand X = 0.</li>
+<li>La <strong>pente</strong> (le coefficient de X) : de combien Y change quand X augmente de 1 unite.</li>
+</ul>
+<p>Le tilde <code>~</code> se lit “expliquee par” : <code>mpg ~ wt</code> = “la consommation expliquee par le poids”.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="lire-la-sortie-dun-summarylm" class="level3" data-number="9.2">
+<h3 data-number="9.2" class="anchored" data-anchor-id="lire-la-sortie-dun-summarylm"><span class="header-section-number">9.2</span> Lire la Sortie d’un <code>summary(lm())</code></h3>
+<pre><code>Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)
+(Intercept)  37.2851     1.8776   19.86  &lt; 2e-16 ***
+wt           -5.3445     0.5591   -9.56  1.3e-10 ***
+
+Residual standard error: 3.046 on 30 degrees of freedom
+Multiple R-squared:  0.7528,  Adjusted R-squared:  0.7446
+F-statistic: 91.38 on 1 and 30 DF,  p-value: 1.294e-10</code></pre>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Element</th>
+<th>Valeur</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Estimate (Intercept)</strong></td>
+<td>37.29</td>
+<td>Consommation predite pour un poids de 0 (peu interpretable seul)</td>
+</tr>
+<tr class="even">
+<td><strong>Estimate (wt)</strong></td>
+<td>-5.34</td>
+<td><strong>Chaque tonne en plus fait perdre 5.34 mpg.</strong> Signe negatif = lien negatif</td>
+</tr>
+<tr class="odd">
+<td><strong>Std. Error</strong></td>
+<td>0.56</td>
+<td>Incertitude sur le coefficient</td>
+</tr>
+<tr class="even">
+<td><strong>t value</strong></td>
+<td>-9.56</td>
+<td>Estimate / Std. Error</td>
+</tr>
+<tr class="odd">
+<td><strong>Pr(&gt;|t|)</strong></td>
+<td>1.3e-10</td>
+<td>p-value du coefficient. <strong>&lt; 0.05 -&gt; wt est un predicteur significatif</strong></td>
+</tr>
+<tr class="even">
+<td><strong>R-squared</strong></td>
+<td>0.7528</td>
+<td><strong>Le poids explique 75 % de la variation</strong> de la consommation</td>
+</tr>
+<tr class="odd">
+<td><strong>F-statistic / p-value</strong></td>
+<td>p = 1.3e-10</td>
+<td>Test global : le modele est-il utile ? Oui ici</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>En simple le R-squared
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Le <strong>R-carre</strong> (R-squared) repond a : “quelle part du phenomene mon modele explique-t-il ?” Il va de 0 a 1.</p>
+<ul>
+<li>R-squared = 0.75 -&gt; le modele explique 75 % de la variation de Y ; les 25 % restants viennent d’autres facteurs non inclus.</li>
+<li>R-squared = 0.05 -&gt; le modele n’explique presque rien.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="les-codes-de-significativite-les-etoiles" class="level3" data-number="9.3">
+<h3 data-number="9.3" class="anchored" data-anchor-id="les-codes-de-significativite-les-etoiles"><span class="header-section-number">9.3</span> Les Codes de Significativite (les etoiles)</h3>
+<p>R affiche des etoiles a cote de chaque p-value :</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Code</th>
+<th>Seuil</th>
+<th>Signification</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>***</code></td>
+<td>p &lt; 0.001</td>
+<td>Tres hautement significatif</td>
+</tr>
+<tr class="even">
+<td><code>**</code></td>
+<td>p &lt; 0.01</td>
+<td>Hautement significatif</td>
+</tr>
+<tr class="odd">
+<td><code>*</code></td>
+<td>p &lt; 0.05</td>
+<td>Significatif</td>
+</tr>
+<tr class="even">
+<td><code>.</code></td>
+<td>p &lt; 0.1</td>
+<td>Tendance (non significatif au seuil 5 %)</td>
+</tr>
+<tr class="odd">
+<td>(rien)</td>
+<td>p &gt;= 0.1</td>
+<td>Non significatif</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="regression-multiple" class="level3" data-number="9.4">
+<h3 data-number="9.4" class="anchored" data-anchor-id="regression-multiple"><span class="header-section-number">9.4</span> Regression Multiple</h3>
+<p>On ajoute plusieurs variables explicatives avec <code>+</code>. Chaque coefficient s’interprete alors <strong>“toutes choses egales par ailleurs”</strong>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Consommation expliquee par le poids ET la puissance</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>regression2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> wt <span class="sc">+</span> hp, <span class="at">data =</span> mtcars)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(regression2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>En simple
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>“Toutes choses egales par ailleurs” veut dire : le coefficient de <code>wt</code> mesure l’effet du poids <strong>a puissance constante</strong> – comme si on comparait deux voitures de meme puissance mais de poids different. Cela permet d’isoler l’effet propre de chaque variable.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Choisir le bon test
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tu veux…</th>
+<th>Variables</th>
+<th>Test</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Comparer 1 moyenne a une reference</td>
+<td>1 numerique</td>
+<td><code>t.test(x, mu = ...)</code></td>
+</tr>
+<tr class="even">
+<td>Comparer 2 moyennes</td>
+<td>1 numerique + 1 categorielle (2 groupes)</td>
+<td><code>t.test(x ~ groupe)</code></td>
+</tr>
+<tr class="odd">
+<td>Comparer 3+ moyennes</td>
+<td>1 numerique + 1 categorielle (3+ groupes)</td>
+<td><code>aov()</code> + <code>TukeyHSD()</code></td>
+</tr>
+<tr class="even">
+<td>Mesurer un lien</td>
+<td>2 numeriques</td>
+<td><code>cor.test()</code></td>
+</tr>
+<tr class="odd">
+<td>Modeliser / predire</td>
+<td>1 Y numerique + 1 ou plusieurs X</td>
+<td><code>lm()</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+</section>
+<section id="questions-probables-dexamen" class="level2" data-number="10">
+<h2 data-number="10" class="anchored" data-anchor-id="questions-probables-dexamen"><span class="header-section-number">10</span> Questions Probables d’Examen</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>“Cette p-value de 0.03 : que conclure ?”
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>0.03 &lt; 0.05 -&gt; on <strong>rejette H0</strong> : le resultat est statistiquement significatif. Attention a ne pas dire “H0 a 3 % de chances d’etre vraie”.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>“Ce coefficient de regression est-il significatif ?”
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Regarder la colonne <code>Pr(&gt;|t|)</code> de la ligne du coefficient. Si &lt; 0.05 (ou s’il y a au moins une etoile <code>*</code>), le predicteur est significatif. Donner aussi le signe et la valeur de l’Estimate pour interpreter le sens de l’effet.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>“Quel test pour comparer la satisfaction de 4 services differents ?”
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>4 groupes -&gt; <strong>ANOVA</strong> (<code>aov</code>), suivie d’un <strong>TukeyHSD</strong> si l’ANOVA est significative, pour savoir quels services different.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>“r = 0.62 entre usage d’Instagram et anxiete : peut-on dire qu’Instagram rend anxieux ?”
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Non. Correlation forte et positive, mais <strong>correlation n’est pas causalite</strong>. Il peut y avoir une variable cachee, ou la causalite peut etre inversee. Une correlation ne permet jamais d’affirmer un lien de cause a effet.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>“Le R-squared vaut 0.75 : qu’est-ce que cela signifie ?”
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Le modele explique 75 % de la variance de la variable dependante. Les 25 % restants sont dus a des facteurs non inclus dans le modele.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="recapitulatif-du-module" class="level2" data-number="11">
+<h2 data-number="11" class="anchored" data-anchor-id="recapitulatif-du-module"><span class="header-section-number">11</span> Recapitulatif du Module</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Notion</th>
+<th>Commande R</th>
+<th>A retenir</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Echantillon aleatoire normal</td>
+<td><code>rnorm()</code> + <code>set.seed()</code></td>
+<td>Fige le hasard pour la reproductibilite</td>
+</tr>
+<tr class="even">
+<td>Comparer 1 ou 2 moyennes</td>
+<td><code>t.test()</code></td>
+<td>Lire <code>t</code>, <code>df</code>, <code>p-value</code>, IC</td>
+</tr>
+<tr class="odd">
+<td>Comparer 3+ moyennes</td>
+<td><code>aov()</code> + <code>summary()</code></td>
+<td>Lire <code>F value</code>, <code>Pr(&gt;F)</code></td>
+</tr>
+<tr class="even">
+<td>Quelles paires different</td>
+<td><code>TukeyHSD()</code></td>
+<td>Uniquement apres ANOVA significative</td>
+</tr>
+<tr class="odd">
+<td>Lien entre 2 numeriques</td>
+<td><code>cor.test()</code></td>
+<td><code>r</code> de -1 a +1 ; jamais causalite</td>
+</tr>
+<tr class="even">
+<td>Modeliser / predire</td>
+<td><code>lm()</code> + <code>summary()</code></td>
+<td>Lire Estimate, <code>Pr(&gt;|t|)</code>, R-squared</td>
+</tr>
+<tr class="odd">
+<td>Seuil de decision</td>
+<td>alpha = 0.05</td>
+<td>p &lt; 0.05 -&gt; rejet de H0</td>
+</tr>
+</tbody>
+</table>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

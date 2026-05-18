@@ -7,7 +7,11 @@ subtitle: "Fiche de Revision Exhaustive - SP 2026"
 
 L'analyse quantitative des donnees en sciences sociales, economiques et naturelles requiert une maitrise des fondations theoriques et des outils informatiques. Ce document constitue la synthese exhaustive du cursus "Methodes II", integrant la theorie, les exercices et les scripts R.
 
-## Navigation
+Le site est organise en **deux categories**, correspondant aux deux problemes sets (deux examens R) :
+
+## Categorie 1 - Probleme Set 1
+
+Methodologie d'enquete, prise en main de R, manipulation et visualisation de donnees.
 
 | Module | Contenu |
 |--------|---------|
@@ -15,6 +19,22 @@ L'analyse quantitative des donnees en sciences sociales, economiques et naturell
 | [Module 2 : Bases de R](02_Bases_R.qmd) | RStudio, types de variables, vecteurs, matrices, data frames, fonctions |
 | [Module 3 : Tidyverse / dplyr](03_Manipulation_Dplyr.qmd) | Importation CSV, pipe, select, filter, mutate, group_by, summarize |
 | [Module 4 : ggplot2](04_Visualisation_Ggplot2.qmd) | Grammaire graphique, geom_point, geom_bar, geom_histogram, geom_boxplot |
+| [Copier/Coller PS1](05_Copier_Coller.qmd) | Blocs de code prets a coller pour le premier examen |
+
+## Categorie 2 - Probleme Set 2
+
+Statistiques descriptives, statistiques inferentielles et communication des resultats.
+
+| Module | Contenu |
+|--------|---------|
+| [Module 5 : Statistiques descriptives](06_Statistiques_Descriptives.qmd) | Tendance centrale, dispersion, quartiles, frequences, facteurs ordonnes |
+| [Module 6 : Statistiques inferentielles](07_Statistiques_Inferentielles.qmd) | Hypotheses, p-value, test t, ANOVA, Tukey, correlation, regression |
+| [Module 7 : Communication des resultats](08_Communication_Resultats.qmd) | Rapporter M/SD/t/r/b, tableaux, detecter les erreurs d'interpretation |
+| [Copier/Coller PS2](09_Copier_Coller_PS2.qmd) | Blocs de code prets a coller pour le deuxieme examen |
+
+## Ressource transversale
+
+- [Glossaire](glossaire.qmd) : dictionnaire de tous les termes techniques expliques en langage simple.
 
 ## Astuces pour l'examen
 
@@ -23,3 +43,5 @@ L'analyse quantitative des donnees en sciences sociales, economiques et naturell
 - Chargez vos paquets (`library(tidyverse)`) au debut de votre session
 - L'operateur d'affectation est `<-` (jamais `=` pour l'assignation globale)
 - Ne jamais ouvrir un CSV dans Excel avant de l'importer dans R
+- Pour les tests : seuil de decision **alpha = 0.05** ; `p < 0.05` -> on rejette l'hypothese nulle
+- Correlation n'est jamais une preuve de causalite

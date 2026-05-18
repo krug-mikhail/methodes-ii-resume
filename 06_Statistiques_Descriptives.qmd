@@ -1,0 +1,276 @@
+---
+title: "Module 5 : Statistiques Descriptives"
+---
+
+Les statistiques descriptives servent a **resumer et decrire** un jeu de donnees : ou se situe le "centre" des valeurs, a quel point elles sont dispersees, et comment elles se repartissent. Elles ne tirent aucune conclusion au-dela de l'echantillon observe (c'est le role des statistiques inferentielles, Module 6).
+
+::: {.callout-tip collapse="true"}
+## En simple
+Decrire des donnees, c'est comme **resumer un match de foot a un ami** qui ne l'a pas vu. Tu ne lui racontes pas les 90 minutes seconde par seconde : tu dis "score final 2-1, beaucoup d'occasions, ambiance tendue". Les statistiques descriptives sont ce resume : un petit nombre de chiffres qui donnent l'essentiel d'un grand tableau.
+:::
+
+## Decrire vs Inferer
+
+| | Statistiques descriptives | Statistiques inferentielles |
+|---|---|---|
+| **But** | Resumer ce qu'on a observe | Generaliser a une population |
+| **Porte sur** | L'echantillon | La population entiere |
+| **Exemple** | "La note moyenne des 74 repondants est 4.6" | "La note moyenne de tous les etudiants est probablement entre 4.4 et 4.8" |
+| **Module** | Ce module (5) | Module 6 |
+
+## Choisir la Bonne Statistique selon le Type de Variable
+
+Le type de variable **dicte** quelles statistiques ont du sens. C'est la decision la plus importante du module.
+
+| Type de variable | Exemple | Tendance centrale | Dispersion | Graphique |
+|---|---|---|---|---|
+| **Nominale** (categories sans ordre) | genre, pays | Mode | (frequences) | Diagramme a barres |
+| **Ordinale** (categories ordonnees) | niveau d'accord 1-5 | Mode, mediane | Etendue, quartiles | Barres |
+| **Continue / discrete** (numerique) | age, trajet en minutes | Moyenne, mediane | Ecart-type, variance, IQR | Histogramme, boxplot |
+
+::: {.callout-danger}
+## Erreur fatale courante
+Calculer une **moyenne sur une variable categorielle**. La "moyenne" de la variable `genre` (Femme, Homme, Autre) n'a aucun sens. De meme, la moyenne d'une variable ordinale codee 1-5 est discutable : techniquement on devrait utiliser la mediane. A l'examen, regarde toujours le type de variable **avant** de choisir ta statistique.
+:::
+
+## Mesures de Tendance Centrale
+
+Elles repondent a la question : "ou se trouve le centre des donnees ?"
+
+### Le Mode
+
+La valeur (ou categorie) **la plus frequente**.
+
+::: {.callout-tip collapse="true"}
+## En simple
+Le mode, c'est le "best-seller" : la valeur qui revient le plus souvent. Dans une classe ou la couleur de cheveux la plus repandue est "brun", le mode est "brun". C'est la seule mesure de centre utilisable pour une variable nominale.
+:::
+
+```r
+# R n'a pas de fonction "mode" directe : on compte les frequences
+reponses_socio %>% count(genre, sort = TRUE)
+# La premiere ligne donne la categorie la plus frequente = le mode
+```
+
+### La Mediane
+
+La valeur qui **coupe les donnees triees en deux moities egales** : 50 % des observations sont en dessous, 50 % au-dessus.
+
+::: {.callout-tip collapse="true"}
+## En simple
+Range tous les eleves par taille, du plus petit au plus grand. La mediane, c'est la taille de **celui du milieu**. Son grand avantage : elle se moque des valeurs extremes. Si le plus grand mesure 2m10 au lieu de 1m90, l'eleve du milieu ne bouge pas.
+:::
+
+```r
+median(reponses_socio$note_ecole, na.rm = TRUE)
+```
+
+### La Moyenne (Arithmetique)
+
+La somme de toutes les valeurs divisee par leur nombre.
+
+```r
+mean(reponses_socio$note_ecole, na.rm = TRUE)
+```
+
+::: {.callout-warning}
+## Moyenne ou mediane ?
+La **moyenne est sensible aux valeurs extremes** (outliers). Exemple : dans une salle de 10 personnes a 4'000 CHF/mois, si Bill Gates entre, le salaire **moyen** explose a plusieurs millions, alors que le salaire **median** reste a 4'000 CHF. Quand la distribution est asymetrique (revenus, prix de l'immobilier), la mediane decrit mieux le "cas typique".
+:::
+
+| Situation | Mesure recommandee |
+|---|---|
+| Distribution symetrique, pas d'outlier | Moyenne |
+| Distribution asymetrique ou outliers presents | Mediane |
+| Variable nominale | Mode (seul choix possible) |
+
+## Mesures de Dispersion
+
+Elles repondent a : "a quel point les valeurs sont-elles eloignees les unes des autres ?" Deux groupes peuvent avoir la **meme moyenne** mais des dispersions tres differentes.
+
+::: {.callout-tip collapse="true"}
+## En simple
+Imagine deux classes avec la meme moyenne de 4.5 :
+
+- Classe A : tout le monde entre 4.2 et 4.8 (homogene, faible dispersion)
+- Classe B : la moitie a 2.5, l'autre a 6.0 (heterogene, forte dispersion)
+
+La moyenne seule ne distingue pas ces deux classes. La dispersion, si. C'est pourquoi on rapporte **toujours** une mesure de centre AVEC une mesure de dispersion.
+:::
+
+### Etendue (Range)
+
+La difference entre la valeur maximale et la valeur minimale.
+
+```r
+max(reponses_socio$trajet, na.rm = TRUE) - min(reponses_socio$trajet, na.rm = TRUE)
+range(reponses_socio$trajet, na.rm = TRUE)   # affiche min et max
+```
+
+### Variance et Ecart-type
+
+L'**ecart-type** (standard deviation, `sd`) mesure la distance moyenne des valeurs par rapport a la moyenne. La **variance** est simplement l'ecart-type au carre.
+
+::: {.callout-tip collapse="true"}
+## En simple
+L'ecart-type repond a : "en moyenne, de combien chaque valeur s'eloigne-t-elle de la moyenne ?" Un petit ecart-type = les donnees sont serrees autour de la moyenne. Un grand ecart-type = elles sont eparpillees. On prefere l'ecart-type a la variance car il est dans la **meme unite** que les donnees (des minutes, pas des "minutes au carre").
+:::
+
+```r
+sd(reponses_socio$trajet, na.rm = TRUE)    # ecart-type
+var(reponses_socio$trajet, na.rm = TRUE)   # variance = sd^2
+```
+
+### Quartiles et Intervalle Interquartile (IQR)
+
+Les **quartiles** decoupent les donnees triees en 4 parts egales :
+
+- **Q1** (1er quartile) : 25 % des valeurs sont en dessous
+- **Q2** : c'est la mediane (50 %)
+- **Q3** (3e quartile) : 75 % des valeurs sont en dessous
+- **IQR** = Q3 - Q1 : l'intervalle qui contient les 50 % "du milieu"
+
+```r
+quantile(reponses_socio$trajet, na.rm = TRUE)   # min, Q1, mediane, Q3, max
+IQR(reponses_socio$trajet, na.rm = TRUE)         # Q3 - Q1
+```
+
+L'IQR est la mesure de dispersion qui accompagne la mediane (toutes deux resistantes aux outliers). C'est exactement ce que dessine un **boxplot**.
+
+## L'Exploration Rapide : `str()` et `summary()`
+
+Les deux premieres commandes a lancer apres avoir importe un jeu de donnees.
+
+```r
+str(reponses_socio)      # structure : types des colonnes, apercu des valeurs
+summary(reponses_socio)  # resume statistique de chaque colonne
+```
+
+::: {.callout-tip collapse="true"}
+## En simple
+- `str()` = la **fiche technique** du tableau : combien de lignes, combien de colonnes, et de quel type est chacune (nombre ? texte ? facteur ?).
+- `summary()` = le **bilan de sante** : pour chaque colonne numerique il donne min, Q1, mediane, moyenne, Q3, max ; pour les colonnes texte/facteur, il compte les categories.
+:::
+
+`summary()` sur une variable numerique affiche directement les 6 chiffres cles :
+
+```
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.
+   2.00    8.00   15.00   17.34   24.00   55.00
+```
+
+## Tableaux de Frequences
+
+Pour une variable categorielle, on ne calcule pas de moyenne : on **compte** combien d'observations tombent dans chaque categorie.
+
+```r
+# Comptage simple (dplyr) -- la methode a privilegier
+reponses_socio %>% count(genre)
+reponses_socio %>% count(genre, sort = TRUE)   # trie du plus frequent au moins frequent
+
+# Equivalent en R de base
+table(reponses_socio$genre)
+
+# Frequences en proportions / pourcentages
+reponses_socio %>%
+  count(genre) %>%
+  mutate(pourcentage = n / sum(n) * 100)
+```
+
+### Tableau Croise (Crosstab)
+
+Pour croiser **deux** variables categorielles (ex : genre x branche d'etudes) :
+
+```r
+# Avec dplyr
+reponses_socio %>% count(genre, branche)
+
+# Avec R de base : tableau a double entree
+table(reponses_socio$genre, reponses_socio$branche)
+```
+
+## Ordonner une Variable Categorielle (Facteurs)
+
+Par defaut R classe les categories par ordre **alphabetique**. Pour imposer un ordre logique (ex : Femme, Homme, Autre, ou : Jamais < Parfois < Souvent < Toujours), on convertit la variable en **facteur** avec des niveaux (`levels`) explicites.
+
+```r
+ordre <- c("Femme", "Homme", "Autre")
+
+reponses_socio %>%
+  mutate(genre = factor(genre, levels = ordre)) %>%
+  ggplot(aes(x = genre, fill = genre)) +
+  geom_bar(show.legend = FALSE) +
+  labs(title = "Repartition des genres", x = "Genre", y = "Frequence") +
+  theme_minimal()
+```
+
+::: {.callout-tip collapse="true"}
+## En simple
+Un **facteur**, c'est une variable categorielle a qui on a explique l'ordre des categories. Sans ca, R range "Toujours" avant "Jamais" simplement parce que T... non, J vient avant T : il les met dans l'ordre de l'alphabet, ce qui est absurde pour une echelle. En definissant `levels`, tu dis a R : "voici le bon ordre, respecte-le sur les graphiques et les tableaux".
+:::
+
+## Resumes Statistiques par Groupe
+
+La combinaison `group_by()` + `summarize()` (vue au Module 3) est l'outil central pour produire un tableau descriptif comparant des sous-groupes.
+
+```r
+reponses_socio %>%
+  group_by(genre) %>%
+  summarize(
+    n          = n(),
+    moyenne    = mean(note_ecole, na.rm = TRUE),
+    mediane    = median(note_ecole, na.rm = TRUE),
+    ecart_type = sd(note_ecole, na.rm = TRUE)
+  ) %>%
+  ungroup()
+```
+
+## Exporter un Jeu de Donnees
+
+L'oppose de `read_csv()` : sauvegarder un data frame dans un fichier CSV.
+
+```r
+write_csv(mon_df, file = "~/Documents/R/resultats.csv")
+```
+
+## Questions Probables d'Examen
+
+::: {.callout-note collapse="true"}
+## "Quelle mesure de tendance centrale utiliser pour la variable 'genre' ?"
+Le **mode** (la categorie la plus frequente). `genre` est une variable nominale : la moyenne et la mediane n'ont aucun sens. En R : `count(df, genre, sort = TRUE)`.
+:::
+
+::: {.callout-note collapse="true"}
+## "Le salaire median d'une entreprise est 4'000 mais la moyenne est 8'000. Pourquoi ?"
+La distribution est **asymetrique** : quelques tres hauts salaires (outliers) tirent la **moyenne** vers le haut, alors que la **mediane** reste au niveau du salarie typique. Dans ce cas, la mediane decrit mieux la realite.
+:::
+
+::: {.callout-note collapse="true"}
+## "Comment afficher les categories dans l'ordre Jamais < Parfois < Souvent < Toujours ?"
+Convertir la variable en facteur avec des niveaux explicites : `factor(x, levels = c("Jamais", "Parfois", "Souvent", "Toujours"))`. Sans cela, R les classe par ordre alphabetique.
+:::
+
+::: {.callout-note collapse="true"}
+## "Quelle commande pour croiser 'genre' et 'branche d'etudes' ?"
+Un tableau croise : `count(df, genre, branche)` (dplyr) ou `table(df$genre, df$branche)` (R de base).
+:::
+
+::: {.callout-note collapse="true"}
+## "Deux groupes ont la meme moyenne. Sont-ils identiques ?"
+Pas forcement : ils peuvent avoir des **dispersions** tres differentes. Il faut comparer aussi l'ecart-type (`sd`). C'est pourquoi on rapporte toujours une mesure de centre AVEC une mesure de dispersion.
+:::
+
+## Recapitulatif du Module
+
+| Question | Outil |
+|---|---|
+| Quel est le type de chaque colonne ? | `str()` |
+| Resume statistique global ? | `summary()` |
+| Valeur la plus frequente (categorielle) ? | `count(..., sort = TRUE)` |
+| Centre d'une variable numerique ? | `mean()`, `median()` |
+| Dispersion ? | `sd()`, `var()`, `IQR()`, `range()` |
+| Quartiles ? | `quantile()` |
+| Frequences d'une categorie ? | `count()` / `table()` |
+| Croiser deux categories ? | `count(v1, v2)` / `table(v1, v2)` |
+| Comparer des sous-groupes ? | `group_by()` + `summarize()` |
+| Imposer un ordre de categories ? | `factor(x, levels = ...)` |

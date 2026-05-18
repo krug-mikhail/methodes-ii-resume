@@ -1,0 +1,170 @@
+---
+title: "Module 7 : Communication des Resultats"
+---
+
+Produire des analyses ne suffit pas : il faut savoir les **presenter clairement et honnetement**. Ce module couvre la redaction d'une section "Resultats" et, surtout, la **detection des erreurs d'interpretation** -- un type d'exercice classique a l'examen.
+
+::: {.callout-tip collapse="true"}
+## En simple
+Communiquer des resultats, c'est comme **rendre un plat en cuisine** : peu importe le travail en coulisses, ce qui compte c'est l'assiette finale. Le lecteur ne voit pas ton code R ; il voit ta phrase "M = 3.76, SD = 0.68". Si cette phrase est fausse ou mal interpretee, tout le reste ne sert a rien.
+:::
+
+## La Structure d'une Section "Resultats"
+
+Une section Resultats suit toujours la meme logique :
+
+1. **Description de l'echantillon** : qui a participe (n, age moyen, repartition genre...).
+2. **Statistiques descriptives** : les moyennes/frequences des variables cles, souvent dans un tableau.
+3. **Tests d'hypotheses** : pour chaque hypothese, rappeler H1, citer le test utilise, donner le resultat chiffre, conclure.
+4. **Analyses complementaires** : correlations, tests additionnels.
+
+::: {.callout-warning}
+## Decrire, pas interpreter (pas encore)
+La section **Resultats** rapporte les faits chiffres de maniere neutre. L'**interpretation** large, le lien avec la theorie et les implications vont dans la section **Discussion**. Ne pas melanger : dans les Resultats, on ecrit "les utilisateurs ont un score plus eleve" -- pas "ce qui prouve que les reseaux sociaux sont benefiques".
+:::
+
+## Les Conventions de Notation
+
+Les statistiques se rapportent avec des **symboles standardises** (style APA), en italique dans un vrai rapport.
+
+| Symbole | Signification | Exemple |
+|---|---|---|
+| **n** | Taille de l'echantillon (ou d'un sous-groupe) | n = 74 |
+| **M** | Moyenne (Mean) | M = 3.76 |
+| **SD** | Ecart-type (Standard Deviation) | SD = 0.68 |
+| **%** | Pourcentage | 78 % des eleves |
+| **t** | Statistique du test t (avec ses df) | t(58) = 2.54 |
+| **F** | Statistique de l'ANOVA (avec ses df) | F(2, 339) = 594.8 |
+| **r** | Coefficient de correlation | r = .62 |
+| **b** | Coefficient de regression (pente) | b = 0.28 |
+| **SE** | Erreur standard (Standard Error) | SE = 0.11 |
+| **p** | p-value | p = .03 ou p < .001 |
+| **R²** | Part de variance expliquee | R² = .75 |
+
+::: {.callout-tip collapse="true"}
+## En simple
+Ces symboles sont un **langage international**. Comme les panneaux routiers se comprennent dans tous les pays, "M = 3.76, SD = 0.68" se lit de la meme facon dans n'importe quel article scientifique du monde. Les apprendre, c'est apprendre l'alphabet du rapport de recherche.
+:::
+
+## Rapporter Chaque Type de Test
+
+### Rapporter des Statistiques Descriptives
+
+> Le score moyen de pensee critique est eleve (M = 3.76, SD = 0.68, sur une echelle de 1 a 5). 78 % des eleves declarent etre actifs sur au moins une plateforme.
+
+Toujours accompagner une moyenne de son **SD**, et preciser l'**echelle** (de 1 a 5, en minutes...).
+
+### Rapporter un Test t
+
+> Les eleves actifs sur Instagram sont en moyenne plus sociables (M = 3.8, SD = 0.5) que les non-utilisateurs (M = 3.4, SD = 0.6) ; cette difference est significative, t(45) = 3.12, p < .001.
+
+On donne : les **deux moyennes** comparees (avec SD), puis `t(df) = valeur, p = valeur`.
+
+### Rapporter une ANOVA
+
+> La longueur des nageoires differe significativement entre les trois especes, F(2, 339) = 594.8, p < .001. Le test post-hoc de Tukey indique que les trois especes different deux a deux (tous les p < .001).
+
+### Rapporter une Correlation
+
+> L'usage d'Instagram et le score d'anxiete sont positivement correles, r = .62, p < .05.
+
+### Rapporter une Regression
+
+> Une regression lineaire montre un effet significatif de la frequence d'exposition sur la pensee critique, b = 0.28, SE = 0.11, t(58) = 2.54, p = .013. Le modele explique 18 % de la variance (R² = .18).
+
+## Les Tableaux de Resultats
+
+Un tableau evite de noyer le lecteur sous les chiffres. Regles d'or :
+
+- Un **titre numerote** ("Tableau 1 : ...") au-dessus.
+- Des **en-tetes de colonnes clairs** avec les unites ou echelles.
+- Les memes **decimales partout** (en general 2).
+- Une **note de bas de tableau** pour les abreviations si besoin.
+
+| Groupe | Age (annees) | Usage Instagram (1-5) | Sociabilite (1-5) |
+|---|---|---|---|
+| Filles | 16.4 | 4.3 | 3.6 |
+| Garcons | 16.7 | 3.1 | 3.4 |
+
+::: {.callout-danger}
+## Tableau incomplet
+Un piege classique : un tableau avec des **cases vides**. Si la valeur "Sociabilite des garcons" manque, le tableau est inexploitable. Verifie toujours que **toutes les cellules sont remplies** et que chaque ligne/colonne a une etiquette.
+:::
+
+## Exercice Type : la Chasse aux Erreurs
+
+L'exercice du 12 mai consiste a **relire une section Resultats et reperer ses erreurs**. Voici les fautes les plus frequentes -- a connaitre absolument.
+
+### Erreur 1 — La p-value mal ecrite ou impossible
+
+::: {.callout-danger}
+## "p = 0.5" alors qu'on annonce un effet significatif
+Une p-value de **0.5** (50 %) est tres **au-dessus** du seuil 0.05 : le resultat serait **non significatif**. Si le texte dit "l'hypothese est confirmee, p = 0.5", il y a une contradiction -- c'est probablement une faute de frappe pour `p = .05` ou `p < .05`. Une p-value se situe toujours entre 0 et 1, et "significatif" exige p < 0.05.
+:::
+
+### Erreur 2 — Confondre correlation et causalite
+
+::: {.callout-danger}
+## "r = .62 montre qu'Instagram est un facteur de risque"
+Une correlation, meme forte, ne demontre **jamais** un lien de cause a effet. Ecrire "l'usage d'Instagram constitue un facteur de risque" a partir d'un simple `r` est une **sur-interpretation**. Formulation correcte : "l'usage d'Instagram est associe a..." (association, pas causalite).
+:::
+
+### Erreur 3 — Sur-interpreter un resultat non significatif ou minuscule
+
+::: {.callout-danger}
+## "Les utilisateurs sont plus sociaux : M = 2.42 vs M = 2.40"
+Un ecart de **0.02 point** est negligeable, meme si le test ressort significatif. Et inversement : conclure "les reseaux favorisent les competences sociales" sur une difference aussi minime est abusif. Significatif n'est pas synonyme d'important : toujours regarder la **taille** de l'ecart, pas seulement la p-value.
+:::
+
+### Erreur 4 — Affirmer plus que ce que le test permet
+
+::: {.callout-danger}
+## "Ces resultats confirment definitivement la theorie"
+Un test statistique ne **prouve** ni ne **confirme definitivement** rien. Il apporte un degre de soutien (ou non) a une hypothese, sur un echantillon donne. Vocabulaire prudent attendu : "les resultats vont dans le sens de l'hypothese", "suggerent que", "sont compatibles avec".
+:::
+
+### Erreur 5 — Oublier le contexte (SD, n, echelle)
+
+::: {.callout-danger}
+## "La moyenne est 3.8" -- et puis ?
+Une moyenne seule est ininterpretable. 3.8 sur une echelle de 1 a 5 est eleve ; 3.8 sur une echelle de 1 a 100 est tres bas. Toujours preciser l'**echelle**, accompagner du **SD**, et rappeler le **n**.
+:::
+
+::: {.callout-tip collapse="true"}
+## En simple : la grille de relecture
+Pour chaque phrase d'une section Resultats, pose-toi 4 questions :
+
+1. La p-value est-elle coherente avec la conclusion (significatif <-> p < 0.05) ?
+2. Le mot "cause / prouve / rend" est-il utilise alors qu'on n'a qu'une correlation ?
+3. L'ecart est-il vraiment important, ou juste "significatif" sur le papier ?
+4. Manque-t-il un chiffre (SD, n, echelle, une case de tableau) ?
+:::
+
+## Questions Probables d'Examen
+
+::: {.callout-note collapse="true"}
+## "Reperez trois erreurs dans cette section Resultats."
+Cherche en priorite : (1) une p-value incoherente avec la conclusion, (2) un glissement correlation -> causalite, (3) une conclusion trop forte ou un ecart minuscule presente comme important, (4) un chiffre manquant (SD, n, case de tableau vide).
+:::
+
+::: {.callout-note collapse="true"}
+## "Rediger une phrase rapportant ce test t."
+Modele : "Le groupe A (M = ..., SD = ...) differe significativement du groupe B (M = ..., SD = ...), t(df) = ..., p = ...". Donner les deux moyennes, les deux SD, t avec ses df, et la p-value.
+:::
+
+::: {.callout-note collapse="true"}
+## "Cette conclusion est-elle justifiee : 'l'etude prouve que X cause Y' ?"
+Presque toujours non. Verifier : s'agit-il d'une correlation (alors pas de causalite) ? Le mot "prouve" est trop fort (un test soutient, ne prouve pas). Reformuler en "est associe a" / "suggere que".
+:::
+
+## Recapitulatif du Module
+
+| Point cle | A retenir |
+|---|---|
+| Structure | Echantillon -> descriptifs -> tests d'hypotheses -> analyses complementaires |
+| Notation | M, SD, n, %, t(df), F(df1,df2), r, b, SE, p, R² |
+| Une moyenne | Toujours avec son SD et son echelle |
+| Resultats vs Discussion | Resultats = faits chiffres ; Discussion = interpretation |
+| Correlation | "associe a", jamais "cause" |
+| Vocabulaire | "suggere", "va dans le sens de" -- jamais "prouve definitivement" |
+| Significatif | N'est pas synonyme d'important : regarder la taille de l'effet |

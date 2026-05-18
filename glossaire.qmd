@@ -2,9 +2,16 @@
 title: "Glossaire - Dictionnaire des Termes"
 ---
 
-Ce glossaire explique **en langage simple** tous les termes techniques utilises dans les 4 modules du cours. Cliquez sur un terme pour derouler son explication.
+Ce glossaire explique **en langage simple** tous les termes techniques utilises dans les modules du cours (Probleme Set 1 et 2). Cliquez sur un terme pour derouler son explication.
 
 ## A
+
+::: {.callout-note collapse="true"}
+## ANOVA (Analyse de variance)
+**En simple :** Un test qui compare les moyennes de **trois groupes ou plus** en une seule fois, pour savoir si au moins un groupe se distingue des autres.
+
+**Exemple du quotidien :** Tu veux savoir si la note moyenne differe entre trois classes (A, B, C). Plutot que de comparer A-B, A-C, B-C separement -- ce qui multiplie le risque d'erreur -- l'ANOVA pose une seule question : "y a-t-il une difference quelque part ?". En R : `aov(note ~ classe, data = df)`.
+:::
 
 ::: {.callout-note collapse="true"}
 ## Argument
@@ -60,6 +67,27 @@ Ce glossaire explique **en langage simple** tous les termes techniques utilises 
 ## C
 
 ::: {.callout-note collapse="true"}
+## Causalite (correlation n'est pas causalite)
+**En simple :** Ce n'est pas parce que deux choses varient ensemble que l'une cause l'autre. Une correlation montre un lien, jamais une cause.
+
+**Exemple du quotidien :** Les ventes de glaces et le nombre de noyades augmentent en meme temps. Les glaces ne causent pas les noyades : c'est la chaleur de l'ete qui fait grimper les deux. Affirmer "X cause Y" demande bien plus qu'une simple correlation.
+:::
+
+::: {.callout-note collapse="true"}
+## Coefficient de regression (b)
+**En simple :** Dans une regression, le coefficient (note b) indique de combien la variable a expliquer change quand la variable explicative augmente d'une unite.
+
+**Exemple du quotidien :** Si la regression du salaire sur les annees d'experience donne b = 1200, cela veut dire : "chaque annee d'experience supplementaire rapporte en moyenne 1200 CHF de plus". Le signe (+ ou -) donne le sens du lien.
+:::
+
+::: {.callout-note collapse="true"}
+## Correlation
+**En simple :** Une mesure du lien entre deux variables numeriques. Le coefficient r va de -1 a +1 : proche de +1 elles montent ensemble, proche de -1 l'une monte quand l'autre descend, proche de 0 il n'y a pas de lien lineaire.
+
+**Exemple du quotidien :** La taille et la pointure sont positivement correlees : les grandes personnes ont souvent de grands pieds. En R : `cor.test(x, y)`.
+:::
+
+::: {.callout-note collapse="true"}
 ## `case_when()` (Conditions multiples)
 **En simple :** Une fonction qui permet de creer des categories en enchainant plusieurs conditions "si... alors...". C'est comme un `ifelse()` mais pour plus de 2 cas.
 
@@ -104,6 +132,13 @@ Ce glossaire explique **en langage simple** tous les termes techniques utilises 
 ## D
 
 ::: {.callout-note collapse="true"}
+## Degres de liberte (df)
+**En simple :** Un nombre, lie a la taille de l'echantillon, qui intervient dans le calcul des tests statistiques. Plus l'echantillon est grand, plus les degres de liberte sont eleves.
+
+**Exemple du quotidien :** Si tu dois depenser exactement 100 CHF sur 5 achats, tu choisis librement 4 montants, mais le 5e est impose par ce qui reste : 4 "libertes" pour 5 valeurs. En pratique R les calcule pour toi ; tu dois juste savoir les reporter, ex. t(24).
+:::
+
+::: {.callout-note collapse="true"}
 ## Data Frame (Tableau de donnees)
 **En simple :** C'est l'objet le plus important en R pour stocker des donnees. C'est un tableau avec des lignes (observations) et des colonnes (variables), ou chaque colonne peut contenir un type de donnee different.
 
@@ -125,6 +160,27 @@ Ce glossaire explique **en langage simple** tous les termes techniques utilises 
 :::
 
 ## E
+
+::: {.callout-note collapse="true"}
+## Echantillon
+**En simple :** Le sous-ensemble d'individus reellement observes, choisi dans une population beaucoup plus grande qu'on veut etudier.
+
+**Exemple du quotidien :** Pour connaitre l'avis des 10'000 etudiants d'une fac, on n'en interroge que 300 : ces 300, c'est l'echantillon. Pour qu'il soit fiable, il doit etre aleatoire et representatif de la population.
+:::
+
+::: {.callout-note collapse="true"}
+## Ecart-type (SD, Standard Deviation)
+**En simple :** Une mesure de dispersion : en moyenne, de combien les valeurs s'eloignent-elles de la moyenne. Petit ecart-type = donnees serrees ; grand = donnees eparpillees.
+
+**Exemple du quotidien :** Deux classes ont 4.5 de moyenne. Dans l'une tout le monde est entre 4.2 et 4.8 (petit ecart-type) ; dans l'autre les notes vont de 2 a 6 (grand ecart-type). En R : `sd(x, na.rm = TRUE)`.
+:::
+
+::: {.callout-note collapse="true"}
+## Erreur standard (SE, Standard Error)
+**En simple :** L'incertitude attachee a une statistique estimee (une moyenne, un coefficient de regression). Plus le SE est petit, plus l'estimation est precise.
+
+**Exemple du quotidien :** Si tu peses un objet 5 fois et obtiens des valeurs tres proches, ton estimation est precise (petit SE). Si les pesees sont dispersees, l'estimation est incertaine (grand SE). Dans une sortie de regression, c'est la colonne `Std. Error`.
+:::
 
 ::: {.callout-note collapse="true"}
 ## Echelle de Likert
@@ -233,6 +289,13 @@ Ce glossaire explique **en langage simple** tous les termes techniques utilises 
 ## I
 
 ::: {.callout-note collapse="true"}
+## Intervalle de confiance
+**En simple :** Une fourchette de valeurs plausibles pour un parametre de la population, plutot qu'une seule valeur. Un IC a 95 % signifie : "la vraie valeur est tres probablement dans cet intervalle".
+
+**Exemple du quotidien :** Un sondage annonce "52 % d'intentions de vote, marge d'erreur 3 %". L'intervalle [49 % ; 55 %] est l'intervalle de confiance. Astuce : si un IC pour une difference contient 0, la difference n'est pas significative.
+:::
+
+::: {.callout-note collapse="true"}
 ## IQR (Ecart interquartile / Interquartile Range)
 **En simple :** C'est la difference entre le 3e quartile (Q3, 75%) et le 1er quartile (Q1, 25%). Ca represente l'etendue des 50% centraux des donnees, en ignorant les extremes.
 
@@ -256,6 +319,20 @@ Ce glossaire explique **en langage simple** tous les termes techniques utilises 
 :::
 
 ## M
+
+::: {.callout-note collapse="true"}
+## Mode
+**En simple :** La valeur ou la categorie la plus frequente dans un jeu de donnees. C'est la seule mesure de "centre" utilisable pour une variable nominale.
+
+**Exemple du quotidien :** Dans une classe ou la couleur de cheveux la plus repandue est "brun", le mode est "brun". En R, on le trouve avec `count(variable, sort = TRUE)`.
+:::
+
+::: {.callout-note collapse="true"}
+## Moyenne
+**En simple :** La somme de toutes les valeurs divisee par leur nombre. La mesure de centre la plus connue, mais sensible aux valeurs extremes.
+
+**Exemple du quotidien :** Dans une salle de 10 personnes a 4000 CHF/mois, si un milliardaire entre, le salaire moyen explose alors que personne d'autre n'a change de salaire. Dans ce cas la mediane decrit mieux le cas typique. En R : `mean(x, na.rm = TRUE)`.
+:::
 
 ::: {.callout-note collapse="true"}
 ## Mapping vs Setting (dans ggplot2)
@@ -341,6 +418,13 @@ Ce glossaire explique **en langage simple** tous les termes techniques utilises 
 ## P
 
 ::: {.callout-note collapse="true"}
+## Population
+**En simple :** L'ensemble complet des individus, objets ou cas qu'on cherche a etudier. On observe rarement la population entiere : on travaille sur un echantillon et on generalise.
+
+**Exemple du quotidien :** Si l'etude porte sur "les adolescents suisses", la population ce sont TOUS les adolescents suisses. Comme on ne peut pas tous les interroger, on en etudie un echantillon.
+:::
+
+::: {.callout-note collapse="true"}
 ## Package / Paquet (Library)
 **En simple :** Un package, c'est une extension qu'on installe pour ajouter des fonctionnalites a R. R de base fait des choses simples ; les packages ajoutent des outils specialises.
 
@@ -387,6 +471,27 @@ Ce glossaire explique **en langage simple** tous les termes techniques utilises 
 ## R
 
 ::: {.callout-note collapse="true"}
+## R-carre (R-squared)
+**En simple :** Dans une regression, un nombre entre 0 et 1 qui dit quelle part du phenomene le modele explique. 0.75 = le modele explique 75 % de la variation de la variable a expliquer.
+
+**Exemple du quotidien :** Tu veux expliquer les notes des eleves. Si ton modele "heures de revision" a un R-carre de 0.6, les revisions expliquent 60 % des differences de notes ; les 40 % restants viennent d'autres facteurs (sommeil, stress...).
+:::
+
+::: {.callout-note collapse="true"}
+## Regression lineaire
+**En simple :** Une methode qui modelise une variable a expliquer (Y) en fonction d'une ou plusieurs variables explicatives (X), en tracant la meilleure droite a travers les donnees. Elle permet aussi de predire.
+
+**Exemple du quotidien :** Tu veux predire le prix d'un appartement a partir de sa surface. La regression trouve la droite "prix = base + (prix au m2) x surface". En R : `lm(prix ~ surface, data = df)`.
+:::
+
+::: {.callout-note collapse="true"}
+## `rnorm()` / `set.seed()`
+**En simple :** `rnorm()` genere des nombres aleatoires suivant une loi normale (courbe en cloche). `set.seed()` fige ce hasard pour que le code donne toujours le meme resultat.
+
+**Exemple du quotidien :** `set.seed()` c'est comme truquer un de pour qu'il tombe toujours sur la meme sequence -- indispensable pour que ton prof reproduise exactement tes resultats. `rnorm(25, mean = 105, sd = 15)` cree 25 valeurs centrees sur 105.
+:::
+
+::: {.callout-note collapse="true"}
 ## `read_csv()` (Importation de fichiers)
 **En simple :** Une fonction du package `readr` (Tidyverse) qui lit un fichier CSV et le transforme en tableau (data frame) dans R.
 
@@ -401,6 +506,27 @@ Ce glossaire explique **en langage simple** tous les termes techniques utilises 
 :::
 
 ## S
+
+::: {.callout-note collapse="true"}
+## Seuil de signification (alpha)
+**En simple :** Le niveau de risque qu'on accepte de se tromper en rejetant l'hypothese nulle. Il est fixe avant le test, presque toujours a 0.05 (5 %).
+
+**Exemple du quotidien :** C'est la "barre de hauteur" d'un saut : si la p-value passe sous 0.05, le resultat est declare significatif. Accepter alpha = 5 %, c'est accepter 5 % de risque de crier "il y a un effet !" alors qu'il n'y en a aucun.
+:::
+
+::: {.callout-note collapse="true"}
+## Significativite statistique
+**En simple :** Un resultat est "statistiquement significatif" quand sa p-value est inferieure au seuil alpha (0.05) : on considere alors que l'effet observe n'est probablement pas du au hasard.
+
+**Exemple du quotidien :** Attention au piege : "significatif" ne veut pas dire "important". Avec un tres grand echantillon, une difference minuscule et sans interet pratique peut devenir significative. Toujours regarder aussi la taille de l'effet.
+:::
+
+::: {.callout-note collapse="true"}
+## Statistiques descriptives vs inferentielles
+**En simple :** Les statistiques descriptives resument ce qu'on a observe (moyenne, frequences...). Les statistiques inferentielles generalisent de l'echantillon a la population (tests, intervalles de confiance).
+
+**Exemple du quotidien :** "La note moyenne des 200 etudiants interroges est 4.6" = descriptif. "La note moyenne de tous les etudiants est probablement entre 4.4 et 4.8" = inferentiel.
+:::
 
 ::: {.callout-note collapse="true"}
 ## Script
@@ -424,6 +550,27 @@ Ce glossaire explique **en langage simple** tous les termes techniques utilises 
 :::
 
 ## T
+
+::: {.callout-note collapse="true"}
+## Test d'hypothese
+**En simple :** Une procedure qui confronte deux hypotheses (H0 = aucun effet, H1 = un effet) et utilise une p-value pour decider laquelle retenir.
+
+**Exemple du quotidien :** C'est un proces : H0 = "innocent" (presomption), H1 = "coupable". Si les preuves (p-value) sont assez fortes (p < 0.05), on rejette l'innocence. Sinon, "pas assez de preuves" -- ce qui ne prouve pas l'innocence.
+:::
+
+::: {.callout-note collapse="true"}
+## Test t (t-test)
+**En simple :** Un test qui compare des moyennes : soit une moyenne a une valeur de reference, soit les moyennes de deux groupes.
+
+**Exemple du quotidien :** "Le temps de trajet moyen de nos etudiants differe-t-il de la moyenne nationale de 30 min ?" -> test t a un echantillon. "Les femmes et les hommes ont-ils le meme temps de trajet ?" -> test t a deux echantillons. En R : `t.test()`.
+:::
+
+::: {.callout-note collapse="true"}
+## Tukey (test post-hoc)
+**En simple :** Un test qu'on lance APRES une ANOVA significative pour savoir exactement quelles paires de groupes different entre elles.
+
+**Exemple du quotidien :** L'ANOVA est le detecteur de fumee : "il y a un probleme quelque part". Le test de Tukey est l'inspection piece par piece : "le feu est dans la cuisine, pas dans la chambre". En R : `TukeyHSD(mon_anova)`.
+:::
 
 ::: {.callout-note collapse="true"}
 ## Theme (dans ggplot2)
@@ -463,6 +610,13 @@ Ce glossaire explique **en langage simple** tous les termes techniques utilises 
 :::
 
 ## V
+
+::: {.callout-note collapse="true"}
+## Variance
+**En simple :** Une mesure de dispersion, egale a l'ecart-type au carre. Elle dit a quel point les valeurs sont eparpillees, mais dans une unite "au carre" peu intuitive.
+
+**Exemple du quotidien :** Si les donnees sont des minutes, la variance est en "minutes au carre" -- difficile a interpreter. C'est pourquoi on prefere souvent l'ecart-type (sa racine carree), qui revient a l'unite d'origine. En R : `var(x, na.rm = TRUE)`.
+:::
 
 ::: {.callout-note collapse="true"}
 ## Variable (types : nominale, ordinale, continue, discrete)

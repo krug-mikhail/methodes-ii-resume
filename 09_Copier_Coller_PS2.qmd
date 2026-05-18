@@ -1,0 +1,212 @@
+---
+title: "Commandes Rapides PS2 - Copier/Coller"
+---
+
+Blocs de code prets a coller pour le **deuxieme examen** (statistiques descriptives et inferentielles). Clique sur l'icone de copie en haut a droite de chaque bloc.
+
+Pour les commandes de base (import, dplyr, ggplot2), voir la page [Copier/Coller PS1](05_Copier_Coller.qmd).
+
+## Demarrage de Session
+
+```r
+library(tidyverse)
+```
+
+```r
+# Paquet de donnees utilise dans les exercices d'inference
+# A installer UNE SEULE FOIS (puis library() a chaque session)
+install.packages("palmerpenguins")
+library(palmerpenguins)
+data(penguins)
+data(mtcars)
+```
+
+## Statistiques Descriptives
+
+### Exploration rapide
+
+```r
+str(df)        # types des colonnes
+summary(df)    # min, Q1, mediane, moyenne, Q3, max par colonne
+```
+
+### Tendance centrale et dispersion
+
+```r
+mean(df$variable, na.rm = TRUE)      # moyenne
+median(df$variable, na.rm = TRUE)    # mediane
+sd(df$variable, na.rm = TRUE)        # ecart-type
+var(df$variable, na.rm = TRUE)       # variance
+IQR(df$variable, na.rm = TRUE)       # intervalle interquartile (Q3 - Q1)
+range(df$variable, na.rm = TRUE)     # minimum et maximum
+quantile(df$variable, na.rm = TRUE)  # min, Q1, mediane, Q3, max
+```
+
+### Tableaux de frequences
+
+```r
+# Comptage d'une variable categorielle
+df %>% count(ma_variable)
+df %>% count(ma_variable, sort = TRUE)
+
+# Frequences en pourcentages
+df %>%
+  count(ma_variable) %>%
+  mutate(pourcentage = n / sum(n) * 100)
+
+# Tableau croise de deux variables categorielles
+df %>% count(variable_1, variable_2)
+table(df$variable_1, df$variable_2)
+```
+
+### Tableau descriptif par groupe
+
+```r
+df %>%
+  group_by(variable_categorielle) %>%
+  summarize(
+    n          = n(),
+    moyenne    = mean(variable_num, na.rm = TRUE),
+    mediane    = median(variable_num, na.rm = TRUE),
+    ecart_type = sd(variable_num, na.rm = TRUE)
+  ) %>%
+  ungroup()
+```
+
+### Ordonner une variable categorielle
+
+```r
+ordre <- c("Jamais", "Parfois", "Souvent", "Toujours")
+df <- df %>% mutate(ma_variable = factor(ma_variable, levels = ordre))
+```
+
+### Exporter un jeu de donnees
+
+```r
+write_csv(df, file = "~/Documents/R/resultats.csv")
+```
+
+## Simuler un Echantillon Aleatoire
+
+```r
+set.seed(123)                              # fige le hasard (reproductibilite)
+echantillon <- rnorm(25, mean = 105, sd = 15)   # 25 valeurs, loi normale
+```
+
+## Test t
+
+### Test t a un echantillon (comparer a une reference)
+
+```r
+# H0 : la moyenne vaut 100
+t.test(df$variable, mu = 100)
+```
+
+### Test t a deux echantillons (comparer deux groupes)
+
+```r
+# Deux vecteurs separes
+t.test(groupe_a, groupe_b)
+
+# Une variable numerique selon une variable a 2 categories
+t.test(variable_num ~ variable_groupe, data = df)
+```
+
+## ANOVA (3 groupes ou plus)
+
+```r
+# H0 : tous les groupes ont la meme moyenne
+mon_anova <- aov(variable_num ~ variable_groupe, data = df)
+summary(mon_anova)
+```
+
+```r
+# Test post-hoc : quelles paires de groupes different
+TukeyHSD(mon_anova)
+```
+
+## Correlation
+
+```r
+# Coefficient seul (r entre -1 et +1)
+cor(df$variable_1, df$variable_2, use = "complete.obs")
+
+# Test de correlation : ajoute p-value et intervalle de confiance
+cor.test(df$variable_1, df$variable_2)
+```
+
+## Regression Lineaire
+
+```r
+# Regression simple : Y explique par X
+modele1 <- lm(variable_y ~ variable_x, data = df)
+summary(modele1)
+```
+
+```r
+# Regression multiple : Y explique par plusieurs X
+modele2 <- lm(variable_y ~ variable_x1 + variable_x2, data = df)
+summary(modele2)
+```
+
+```r
+# Eviter la notation scientifique dans les sorties (ex. 2e-16)
+options(scipen = 999)
+```
+
+## Aide-Memoire : Lire les Sorties R
+
+### Sortie de `t.test()`
+
+| Element | Ce que c'est |
+|---|---|
+| `t` | Statistique de test |
+| `df` | Degres de liberte |
+| `p-value` | < 0.05 -> difference significative |
+| `confidence interval` | Fourchette plausible de la difference |
+| `mean of x` | Moyenne(s) observee(s) |
+
+### Sortie de `summary(aov())`
+
+| Element | Ce que c'est |
+|---|---|
+| `F value` | Statistique de l'ANOVA |
+| `Pr(>F)` | p-value globale ; < 0.05 -> au moins un groupe differe |
+
+### Sortie de `summary(lm())`
+
+| Element | Ce que c'est |
+|---|---|
+| `Estimate` | Intercept et pente(s) ; signe = sens de l'effet |
+| `Std. Error` | Incertitude du coefficient |
+| `Pr(>|t|)` | p-value du coefficient ; < 0.05 -> predicteur significatif |
+| `Multiple R-squared` | Part de variance de Y expliquee par le modele |
+| `F-statistic` p-value | Le modele global est-il utile |
+
+### Codes de significativite
+
+| Code | Seuil |
+|---|---|
+| `***` | p < 0.001 |
+| `**` | p < 0.01 |
+| `*` | p < 0.05 |
+| `.` | p < 0.1 (non significatif au seuil 5 %) |
+
+## Choisir le Bon Test (rappel)
+
+```r
+# 1 moyenne vs une reference
+t.test(x, mu = valeur)
+
+# 2 moyennes (2 groupes)
+t.test(x ~ groupe, data = df)
+
+# 3+ moyennes
+aov(x ~ groupe, data = df)   # puis TukeyHSD()
+
+# Lien entre 2 variables numeriques
+cor.test(x, y)
+
+# Modeliser / predire Y
+lm(y ~ x1 + x2, data = df)
+```

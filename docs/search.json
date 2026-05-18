@@ -1,5 +1,173 @@
 [
   {
+    "objectID": "08_Communication_Resultats.html",
+    "href": "08_Communication_Resultats.html",
+    "title": "Module 7 : Communication des Resultats",
+    "section": "",
+    "text": "Produire des analyses ne suffit pas : il faut savoir les presenter clairement et honnetement. Ce module couvre la redaction d’une section “Resultats” et, surtout, la detection des erreurs d’interpretation – un type d’exercice classique a l’examen.",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Module 7 : Communication des Resultats"
+    ]
+  },
+  {
+    "objectID": "08_Communication_Resultats.html#la-structure-dune-section-resultats",
+    "href": "08_Communication_Resultats.html#la-structure-dune-section-resultats",
+    "title": "Module 7 : Communication des Resultats",
+    "section": "1 La Structure d’une Section “Resultats”",
+    "text": "1 La Structure d’une Section “Resultats”\nUne section Resultats suit toujours la meme logique :\n\nDescription de l’echantillon : qui a participe (n, age moyen, repartition genre…).\nStatistiques descriptives : les moyennes/frequences des variables cles, souvent dans un tableau.\nTests d’hypotheses : pour chaque hypothese, rappeler H1, citer le test utilise, donner le resultat chiffre, conclure.\nAnalyses complementaires : correlations, tests additionnels.\n\n\n\n\n\n\n\nWarningDecrire, pas interpreter (pas encore)\n\n\n\nLa section Resultats rapporte les faits chiffres de maniere neutre. L’interpretation large, le lien avec la theorie et les implications vont dans la section Discussion. Ne pas melanger : dans les Resultats, on ecrit “les utilisateurs ont un score plus eleve” – pas “ce qui prouve que les reseaux sociaux sont benefiques”.",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Module 7 : Communication des Resultats"
+    ]
+  },
+  {
+    "objectID": "08_Communication_Resultats.html#les-conventions-de-notation",
+    "href": "08_Communication_Resultats.html#les-conventions-de-notation",
+    "title": "Module 7 : Communication des Resultats",
+    "section": "2 Les Conventions de Notation",
+    "text": "2 Les Conventions de Notation\nLes statistiques se rapportent avec des symboles standardises (style APA), en italique dans un vrai rapport.\n\n\n\nSymbole\nSignification\nExemple\n\n\n\n\nn\nTaille de l’echantillon (ou d’un sous-groupe)\nn = 74\n\n\nM\nMoyenne (Mean)\nM = 3.76\n\n\nSD\nEcart-type (Standard Deviation)\nSD = 0.68\n\n\n%\nPourcentage\n78 % des eleves\n\n\nt\nStatistique du test t (avec ses df)\nt(58) = 2.54\n\n\nF\nStatistique de l’ANOVA (avec ses df)\nF(2, 339) = 594.8\n\n\nr\nCoefficient de correlation\nr = .62\n\n\nb\nCoefficient de regression (pente)\nb = 0.28\n\n\nSE\nErreur standard (Standard Error)\nSE = 0.11\n\n\np\np-value\np = .03 ou p &lt; .001\n\n\nR²\nPart de variance expliquee\nR² = .75\n\n\n\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nCes symboles sont un langage international. Comme les panneaux routiers se comprennent dans tous les pays, “M = 3.76, SD = 0.68” se lit de la meme facon dans n’importe quel article scientifique du monde. Les apprendre, c’est apprendre l’alphabet du rapport de recherche.",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Module 7 : Communication des Resultats"
+    ]
+  },
+  {
+    "objectID": "08_Communication_Resultats.html#rapporter-chaque-type-de-test",
+    "href": "08_Communication_Resultats.html#rapporter-chaque-type-de-test",
+    "title": "Module 7 : Communication des Resultats",
+    "section": "3 Rapporter Chaque Type de Test",
+    "text": "3 Rapporter Chaque Type de Test\n\n3.1 Rapporter des Statistiques Descriptives\n\nLe score moyen de pensee critique est eleve (M = 3.76, SD = 0.68, sur une echelle de 1 a 5). 78 % des eleves declarent etre actifs sur au moins une plateforme.\n\nToujours accompagner une moyenne de son SD, et preciser l’echelle (de 1 a 5, en minutes…).\n\n\n3.2 Rapporter un Test t\n\nLes eleves actifs sur Instagram sont en moyenne plus sociables (M = 3.8, SD = 0.5) que les non-utilisateurs (M = 3.4, SD = 0.6) ; cette difference est significative, t(45) = 3.12, p &lt; .001.\n\nOn donne : les deux moyennes comparees (avec SD), puis t(df) = valeur, p = valeur.\n\n\n3.3 Rapporter une ANOVA\n\nLa longueur des nageoires differe significativement entre les trois especes, F(2, 339) = 594.8, p &lt; .001. Le test post-hoc de Tukey indique que les trois especes different deux a deux (tous les p &lt; .001).\n\n\n\n3.4 Rapporter une Correlation\n\nL’usage d’Instagram et le score d’anxiete sont positivement correles, r = .62, p &lt; .05.\n\n\n\n3.5 Rapporter une Regression\n\nUne regression lineaire montre un effet significatif de la frequence d’exposition sur la pensee critique, b = 0.28, SE = 0.11, t(58) = 2.54, p = .013. Le modele explique 18 % de la variance (R² = .18).",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Module 7 : Communication des Resultats"
+    ]
+  },
+  {
+    "objectID": "08_Communication_Resultats.html#les-tableaux-de-resultats",
+    "href": "08_Communication_Resultats.html#les-tableaux-de-resultats",
+    "title": "Module 7 : Communication des Resultats",
+    "section": "4 Les Tableaux de Resultats",
+    "text": "4 Les Tableaux de Resultats\nUn tableau evite de noyer le lecteur sous les chiffres. Regles d’or :\n\nUn titre numerote (“Tableau 1 : …”) au-dessus.\nDes en-tetes de colonnes clairs avec les unites ou echelles.\nLes memes decimales partout (en general 2).\nUne note de bas de tableau pour les abreviations si besoin.\n\n\n\n\nGroupe\nAge (annees)\nUsage Instagram (1-5)\nSociabilite (1-5)\n\n\n\n\nFilles\n16.4\n4.3\n3.6\n\n\nGarcons\n16.7\n3.1\n3.4",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Module 7 : Communication des Resultats"
+    ]
+  },
+  {
+    "objectID": "08_Communication_Resultats.html#tableau-incomplet",
+    "href": "08_Communication_Resultats.html#tableau-incomplet",
+    "title": "Module 7 : Communication des Resultats",
+    "section": "5 Tableau incomplet",
+    "text": "5 Tableau incomplet\nUn piege classique : un tableau avec des cases vides. Si la valeur “Sociabilite des garcons” manque, le tableau est inexploitable. Verifie toujours que toutes les cellules sont remplies et que chaque ligne/colonne a une etiquette.",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Module 7 : Communication des Resultats"
+    ]
+  },
+  {
+    "objectID": "08_Communication_Resultats.html#exercice-type-la-chasse-aux-erreurs",
+    "href": "08_Communication_Resultats.html#exercice-type-la-chasse-aux-erreurs",
+    "title": "Module 7 : Communication des Resultats",
+    "section": "6 Exercice Type : la Chasse aux Erreurs",
+    "text": "6 Exercice Type : la Chasse aux Erreurs\nL’exercice du 12 mai consiste a relire une section Resultats et reperer ses erreurs. Voici les fautes les plus frequentes – a connaitre absolument.\n\n6.1 Erreur 1 — La p-value mal ecrite ou impossible",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Module 7 : Communication des Resultats"
+    ]
+  },
+  {
+    "objectID": "08_Communication_Resultats.html#p-0.5-alors-quon-annonce-un-effet-significatif",
+    "href": "08_Communication_Resultats.html#p-0.5-alors-quon-annonce-un-effet-significatif",
+    "title": "Module 7 : Communication des Resultats",
+    "section": "7 “p = 0.5” alors qu’on annonce un effet significatif",
+    "text": "7 “p = 0.5” alors qu’on annonce un effet significatif\nUne p-value de 0.5 (50 %) est tres au-dessus du seuil 0.05 : le resultat serait non significatif. Si le texte dit “l’hypothese est confirmee, p = 0.5”, il y a une contradiction – c’est probablement une faute de frappe pour p = .05 ou p &lt; .05. Une p-value se situe toujours entre 0 et 1, et “significatif” exige p &lt; 0.05.",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Module 7 : Communication des Resultats"
+    ]
+  },
+  {
+    "objectID": "08_Communication_Resultats.html#r-.62-montre-quinstagram-est-un-facteur-de-risque",
+    "href": "08_Communication_Resultats.html#r-.62-montre-quinstagram-est-un-facteur-de-risque",
+    "title": "Module 7 : Communication des Resultats",
+    "section": "8 “r = .62 montre qu’Instagram est un facteur de risque”",
+    "text": "8 “r = .62 montre qu’Instagram est un facteur de risque”\nUne correlation, meme forte, ne demontre jamais un lien de cause a effet. Ecrire “l’usage d’Instagram constitue un facteur de risque” a partir d’un simple r est une sur-interpretation. Formulation correcte : “l’usage d’Instagram est associe a…” (association, pas causalite).",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Module 7 : Communication des Resultats"
+    ]
+  },
+  {
+    "objectID": "08_Communication_Resultats.html#les-utilisateurs-sont-plus-sociaux-m-2.42-vs-m-2.40",
+    "href": "08_Communication_Resultats.html#les-utilisateurs-sont-plus-sociaux-m-2.42-vs-m-2.40",
+    "title": "Module 7 : Communication des Resultats",
+    "section": "9 “Les utilisateurs sont plus sociaux : M = 2.42 vs M = 2.40”",
+    "text": "9 “Les utilisateurs sont plus sociaux : M = 2.42 vs M = 2.40”\nUn ecart de 0.02 point est negligeable, meme si le test ressort significatif. Et inversement : conclure “les reseaux favorisent les competences sociales” sur une difference aussi minime est abusif. Significatif n’est pas synonyme d’important : toujours regarder la taille de l’ecart, pas seulement la p-value.",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Module 7 : Communication des Resultats"
+    ]
+  },
+  {
+    "objectID": "08_Communication_Resultats.html#ces-resultats-confirment-definitivement-la-theorie",
+    "href": "08_Communication_Resultats.html#ces-resultats-confirment-definitivement-la-theorie",
+    "title": "Module 7 : Communication des Resultats",
+    "section": "10 “Ces resultats confirment definitivement la theorie”",
+    "text": "10 “Ces resultats confirment definitivement la theorie”\nUn test statistique ne prouve ni ne confirme definitivement rien. Il apporte un degre de soutien (ou non) a une hypothese, sur un echantillon donne. Vocabulaire prudent attendu : “les resultats vont dans le sens de l’hypothese”, “suggerent que”, “sont compatibles avec”.",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Module 7 : Communication des Resultats"
+    ]
+  },
+  {
+    "objectID": "08_Communication_Resultats.html#la-moyenne-est-3.8-et-puis",
+    "href": "08_Communication_Resultats.html#la-moyenne-est-3.8-et-puis",
+    "title": "Module 7 : Communication des Resultats",
+    "section": "11 “La moyenne est 3.8” – et puis ?",
+    "text": "11 “La moyenne est 3.8” – et puis ?\nUne moyenne seule est ininterpretable. 3.8 sur une echelle de 1 a 5 est eleve ; 3.8 sur une echelle de 1 a 100 est tres bas. Toujours preciser l’echelle, accompagner du SD, et rappeler le n.",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Module 7 : Communication des Resultats"
+    ]
+  },
+  {
+    "objectID": "08_Communication_Resultats.html#questions-probables-dexamen",
+    "href": "08_Communication_Resultats.html#questions-probables-dexamen",
+    "title": "Module 7 : Communication des Resultats",
+    "section": "12 Questions Probables d’Examen",
+    "text": "12 Questions Probables d’Examen\n\n\n\n\n\n\nNote“Reperez trois erreurs dans cette section Resultats.”\n\n\n\n\n\nCherche en priorite : (1) une p-value incoherente avec la conclusion, (2) un glissement correlation -&gt; causalite, (3) une conclusion trop forte ou un ecart minuscule presente comme important, (4) un chiffre manquant (SD, n, case de tableau vide).\n\n\n\n\n\n\n\n\n\nNote“Rediger une phrase rapportant ce test t.”\n\n\n\n\n\nModele : “Le groupe A (M = …, SD = …) differe significativement du groupe B (M = …, SD = …), t(df) = …, p = …”. Donner les deux moyennes, les deux SD, t avec ses df, et la p-value.\n\n\n\n\n\n\n\n\n\nNote“Cette conclusion est-elle justifiee : ‘l’etude prouve que X cause Y’ ?”\n\n\n\n\n\nPresque toujours non. Verifier : s’agit-il d’une correlation (alors pas de causalite) ? Le mot “prouve” est trop fort (un test soutient, ne prouve pas). Reformuler en “est associe a” / “suggere que”.",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Module 7 : Communication des Resultats"
+    ]
+  },
+  {
+    "objectID": "08_Communication_Resultats.html#recapitulatif-du-module",
+    "href": "08_Communication_Resultats.html#recapitulatif-du-module",
+    "title": "Module 7 : Communication des Resultats",
+    "section": "13 Recapitulatif du Module",
+    "text": "13 Recapitulatif du Module\n\n\n\n\n\n\n\nPoint cle\nA retenir\n\n\n\n\nStructure\nEchantillon -&gt; descriptifs -&gt; tests d’hypotheses -&gt; analyses complementaires\n\n\nNotation\nM, SD, n, %, t(df), F(df1,df2), r, b, SE, p, R²\n\n\nUne moyenne\nToujours avec son SD et son echelle\n\n\nResultats vs Discussion\nResultats = faits chiffres ; Discussion = interpretation\n\n\nCorrelation\n“associe a”, jamais “cause”\n\n\nVocabulaire\n“suggere”, “va dans le sens de” – jamais “prouve definitivement”\n\n\nSignificatif\nN’est pas synonyme d’important : regarder la taille de l’effet",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Module 7 : Communication des Resultats"
+    ]
+  },
+  {
     "objectID": "05_Copier_Coller.html",
     "href": "05_Copier_Coller.html",
     "title": "Commandes Rapides - Copier/Coller",
@@ -7,7 +175,7 @@
     "text": "Des blocs de code prets a copier pour l’examen. Clique sur l’icone de copie en haut a droite de chaque bloc.",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
+      "Categorie 1 - Probleme Set 1",
       "Commandes Rapides - Copier/Coller"
     ]
   },
@@ -19,7 +187,7 @@
     "text": "1 Demarrage de Session (TOUJOURS en premier)\nlibrary(tidyverse)\n# Si besoin de definir le repertoire de travail\nsetwd(\"/chemin/vers/mon/dossier\")",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
+      "Categorie 1 - Probleme Set 1",
       "Commandes Rapides - Copier/Coller"
     ]
   },
@@ -31,7 +199,7 @@
     "text": "2 Charger les Datasets Integres\n# Ces datasets sont deja inclus dans R ou tidyverse\n# Mais pour les voir dans l'onglet Environment, il faut faire :\ndata(diamonds)   # 53'940 diamants (prix, carat, coupe, couleur, clarte)\ndata(mtcars)     # 32 voitures (consommation, cylindres, poids, etc.)\ndata(iris)       # 150 fleurs (longueur/largeur sepales et petales, espece)\ndata(mpg)        # 234 voitures (modele, cylindree, consommation ville/autoroute)\ndata(starwars)   # 87 personnages Star Wars (nom, taille, poids, espece)\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nmtcars, iris, diamonds etc. sont des jeux de donnees “d’entrainement” fournis avec R. Ils sont deja la quand tu charges library(tidyverse), mais ils n’apparaissent pas dans l’onglet Environment de RStudio tant que tu n’as pas fait data(nom_du_dataset). C’est juste pour les rendre visibles, pas pour les telecharger.",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
+      "Categorie 1 - Probleme Set 1",
       "Commandes Rapides - Copier/Coller"
     ]
   },
@@ -43,7 +211,7 @@
     "text": "3 Importer des Donnees\n# Importer un fichier CSV\ndf &lt;- read_csv(\"mon_fichier.csv\")\n# Importer un CSV avec separateur point-virgule (format europeen)\ndf &lt;- read_csv2(\"mon_fichier.csv\")\n# Importer un fichier Excel\nlibrary(readxl)\ndf &lt;- read_excel(\"mon_fichier.xlsx\")",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
+      "Categorie 1 - Probleme Set 1",
       "Commandes Rapides - Copier/Coller"
     ]
   },
@@ -55,7 +223,7 @@
     "text": "4 Explorer les Donnees (premiere chose a faire apres import)\n# Vue rapide : combien de lignes/colonnes, quels types ?\ndim(df)       # Nombre de lignes et colonnes\nnames(df)     # Noms des colonnes\nstr(df)       # Structure complete (types, apercu)\nsummary(df)   # Stats descriptives de chaque colonne\nhead(df)      # 6 premieres lignes\n# Combien de valeurs manquantes ?\nsum(is.na(df))                  # Total de NA dans tout le dataset\ncolSums(is.na(df))              # NA par colonne\n# Combien de valeurs uniques dans une colonne ?\nn_distinct(df$ma_colonne)\nunique(df$ma_colonne)           # Voir les valeurs uniques",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
+      "Categorie 1 - Probleme Set 1",
       "Commandes Rapides - Copier/Coller"
     ]
   },
@@ -67,7 +235,7 @@
     "text": "5 Manipulation avec dplyr - Templates\n\n5.1 Selectionner des colonnes\ndf %&gt;% select(col1, col2, col3)\ndf %&gt;% select(-colonne_a_exclure)\ndf %&gt;% select(starts_with(\"IG\"))\n\n\n5.2 Filtrer des lignes\ndf %&gt;% filter(age &gt; 25)\ndf %&gt;% filter(genre == \"Femme\")\ndf %&gt;% filter(note &gt;= 4 & branche == \"Psycho\")\ndf %&gt;% filter(pays %in% c(\"Suisse\", \"France\", \"Allemagne\"))\ndf %&gt;% filter(!is.na(prix))     # Exclure les valeurs manquantes\n\n\n5.3 Creer / modifier une colonne\ndf %&gt;% mutate(nouvelle_col = col1 / col2)\ndf %&gt;% mutate(reussi = note &gt;= 4)\n# Creer une colonne conditionnelle (si/sinon)\ndf %&gt;% mutate(\n  categorie = case_when(\n    note &gt;= 5.5  ~ \"Tres bien\",\n    note &gt;= 5.0  ~ \"Bien\",\n    note &gt;= 4.0  ~ \"Suffisant\",\n    TRUE         ~ \"Insuffisant\"\n  )\n)\n\n\n5.4 Trier\ndf %&gt;% arrange(note)              # Croissant\ndf %&gt;% arrange(desc(note))        # Decroissant\n\n\n5.5 Compter les occurrences\ndf %&gt;% count(ma_variable)\ndf %&gt;% count(ma_variable, sort = TRUE)   # Tri decroissant\n\n\n5.6 Resumer par groupe (le plus courant a l’examen)\ndf %&gt;%\n  group_by(variable_categorielle) %&gt;%\n  summarize(\n    nombre    = n(),\n    moyenne   = mean(variable_num, na.rm = TRUE),\n    mediane   = median(variable_num, na.rm = TRUE),\n    ecart_type = sd(variable_num, na.rm = TRUE),\n    minimum   = min(variable_num, na.rm = TRUE),\n    maximum   = max(variable_num, na.rm = TRUE)\n  ) %&gt;%\n  ungroup()\n\n\n5.7 Chaine complete typique (filtre + groupe + resume + tri)\ndf %&gt;%\n  filter(condition &gt; valeur) %&gt;%\n  group_by(categorie) %&gt;%\n  summarize(\n    n = n(),\n    moy = mean(variable, na.rm = TRUE)\n  ) %&gt;%\n  ungroup() %&gt;%\n  arrange(desc(moy))",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
+      "Categorie 1 - Probleme Set 1",
       "Commandes Rapides - Copier/Coller"
     ]
   },
@@ -79,7 +247,7 @@
     "text": "6 Graphiques ggplot2 - Templates\n\n6.1 Nuage de points (2 variables continues)\nggplot(df, aes(x = var_continue_1, y = var_continue_2)) +\n  geom_point() +\n  labs(title = \"Mon titre\", x = \"Axe X (unite)\", y = \"Axe Y (unite)\")\n# Avec couleur par categorie\nggplot(df, aes(x = var_x, y = var_y, color = var_categorie)) +\n  geom_point() +\n  labs(title = \"Titre\", x = \"X\", y = \"Y\", color = \"Legende\")\n\n\n6.2 Diagramme a barres (frequences d’une categorie)\nggplot(df, aes(x = var_categorielle)) +\n  geom_bar() +\n  labs(title = \"Mon titre\", x = \"Categorie\", y = \"Nombre\")\n# Barres cote a cote par sous-groupe\nggplot(df, aes(x = var_cat_1, fill = var_cat_2)) +\n  geom_bar(position = \"dodge\") +\n  labs(title = \"Titre\", x = \"X\", y = \"Nombre\", fill = \"Legende\")\n\n\n6.3 Histogramme (distribution d’une variable continue)\nggplot(df, aes(x = var_continue)) +\n  geom_histogram(binwidth = 10) +\n  labs(title = \"Mon titre\", x = \"Variable (unite)\", y = \"Frequence\")\n\n\n6.4 Boxplot (comparer distributions entre groupes)\nggplot(df, aes(x = var_categorielle, y = var_continue)) +\n  geom_boxplot() +\n  labs(title = \"Mon titre\", x = \"Groupe\", y = \"Variable (unite)\")\n\n\n6.5 Sous-graphiques par categorie (facettes)\n# Ajouter cette ligne a n'importe quel graphique\n+ facet_wrap(~ var_categorielle)\n\n\n6.6 Personnalisation rapide (a ajouter avec +)\n+ labs(title = \"Titre\", subtitle = \"Sous-titre\", x = \"Axe X\", y = \"Axe Y\",\n       color = \"Legende\", fill = \"Legende\", caption = \"Source : ...\")\n+ theme_minimal()           # Theme epure\n+ theme_bw()                # Theme noir et blanc\n+ theme(legend.position = \"none\")   # Supprimer la legende\n+ scale_fill_viridis_d()    # Palette accessible (daltonisme)\n+ scale_color_viridis_d()   # Idem pour les couleurs de points/lignes",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
+      "Categorie 1 - Probleme Set 1",
       "Commandes Rapides - Copier/Coller"
     ]
   },
@@ -91,7 +259,7 @@
     "text": "7 Statistiques Rapides (hors graphique)\nmean(df$col, na.rm = TRUE)      # Moyenne\nmedian(df$col, na.rm = TRUE)    # Mediane\nsd(df$col, na.rm = TRUE)        # Ecart-type\nmin(df$col, na.rm = TRUE)       # Minimum\nmax(df$col, na.rm = TRUE)       # Maximum\nsum(df$col, na.rm = TRUE)       # Somme",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
+      "Categorie 1 - Probleme Set 1",
       "Commandes Rapides - Copier/Coller"
     ]
   },
@@ -103,7 +271,7 @@
     "text": "8 Conversions de Types\n# Convertir en numerique (si une colonne est lue comme texte)\ndf$col &lt;- as.numeric(df$col)\n\n# Convertir en facteur (variable categorielle)\ndf$col &lt;- as.factor(df$col)\n\n# Convertir en texte\ndf$col &lt;- as.character(df$col)",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
+      "Categorie 1 - Probleme Set 1",
       "Commandes Rapides - Copier/Coller"
     ]
   },
@@ -115,7 +283,7 @@
     "text": "9 Gestion des Valeurs Manquantes (NA)\n# Compter les NA\nsum(is.na(df$col))\n\n# Supprimer les lignes avec NA dans une colonne\ndf %&gt;% filter(!is.na(col))\n\n# Supprimer TOUTES les lignes qui ont au moins un NA\ndf %&gt;% drop_na()\n\n# Remplacer les NA par une valeur\ndf %&gt;% mutate(col = replace_na(col, 0))",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
+      "Categorie 1 - Probleme Set 1",
       "Commandes Rapides - Copier/Coller"
     ]
   },
@@ -127,7 +295,7 @@
     "text": "10 Raccourcis Clavier RStudio\n\n\n\nAction\nWindows\nMac\n\n\n\n\n&lt;-\nAlt + -\nOption + -\n\n\n%&gt;%\nCtrl + Shift + M\nCmd + Shift + M\n\n\nExecuter\nCtrl + Enter\nCmd + Return\n\n\nCommenter\nCtrl + Shift + C\nCmd + Shift + C\n\n\nRedemarrer R\nCtrl + Shift + F10\nCmd + Shift + F10",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
+      "Categorie 1 - Probleme Set 1",
       "Commandes Rapides - Copier/Coller"
     ]
   },
@@ -139,7 +307,7 @@
     "text": "Ce module pose les fondations epistemologiques, conceptuelles et methodologiques indispensables avant toute interaction avec un logiciel d’analyse.",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
+      "Categorie 1 - Probleme Set 1",
       "Module 1 : Methodologie et Enquete"
     ]
   },
@@ -151,7 +319,7 @@
     "text": "1 La Question de Recherche (RQ)\nUne question de recherche scientifique doit etre :\n\nClaire : Eviter la confusion et le vague ; bien delimiter la recherche\nFaisable : Rester realiste par rapport aux ressources (personnelles, materielles, temps)\nPertinente : Viser a mieux comprendre le phenomene plutot que de le decrire ; eviter les previsions et les jugements moraux\n\n\n1.1 Clarte des Construits\nLa recherche scientifique procede par l’evaluation d’hypotheses derivees de theories preexistantes. La pierre angulaire reside dans la definition stricte des construits theoriques. Les ambiguites conceptuelles compromettent fondamentalement la validite des conclusions empiriques.\nIl est imperatif de proceder a une revue systematique de la litterature pour identifier les variations dans la maniere dont un concept est defini par differents auteurs.",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
+      "Categorie 1 - Probleme Set 1",
       "Module 1 : Methodologie et Enquete"
     ]
   },
@@ -163,7 +331,7 @@
     "text": "2 Operationnalisation\nC’est le processus qui consiste a rendre un concept abstrait (ex: Social Media Literacy) mesurable a l’aide de variables concretes et de questions specifiques.\nExemple : Le construit “engagement politique en ligne” peut etre operationnalise via :\n\nSomme des publications (IGPosts)\nSomme des mentions “J’aime” (IGLikes)\nMoyenne des commentaires par publication (IGCommentsPPost)",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
+      "Categorie 1 - Probleme Set 1",
       "Module 1 : Methodologie et Enquete"
     ]
   },
@@ -175,7 +343,7 @@
     "text": "3 Hypotheses Statistiques\nL’evaluation empirique se structure autour de la formulation d’hypotheses binaires :\n\n\n\n\n\n\n\n\nHypothese\nDefinition\nExemple\n\n\n\n\n\\(H_0\\) (Nulle)\nAbsence d’effet, de difference ou de relation\n\\(\\mu_1 = \\mu_2\\) ou \\(\\rho = 0\\)\n\n\n\\(H_1\\) (Alternative)\nExistence d’un effet ou d’une relation\n\\(\\mu_1 \\neq \\mu_2\\) ou \\(\\rho \\neq 0\\)\n\n\n\n\n3.1 Erreurs de test\n\n\n\n\n\n\n\n\n\nErreur\nNom\nDescription\nSeuil\n\n\n\n\nType I (\\(\\alpha\\))\nFaux positif\nRejeter \\(H_0\\) alors qu’elle est vraie\nConvention : \\(\\alpha = 0.05\\)\n\n\nType II (\\(\\beta\\))\nFaux negatif\nNe pas rejeter \\(H_0\\) alors que \\(H_1\\) est vraie\nPuissance = \\(1 - \\beta\\)\n\n\n\n\n\n\n\n\n\nWarningInterpretation de la P-Value\n\n\n\nNe jamais definir la p-value comme “la probabilite que \\(H_0\\) soit vraie”.\nLa p-value = probabilite d’obtenir une statistique de test au moins aussi extreme que celle observee, en supposant que \\(H_0\\) est vraie.\n\np &gt; \\(\\alpha\\) : manque de preuves pour rejeter \\(H_0\\) (pas une preuve de \\(H_0\\))\np &lt; \\(\\alpha\\) : on rejette \\(H_0\\) en faveur de \\(H_1\\)",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
+      "Categorie 1 - Probleme Set 1",
       "Module 1 : Methodologie et Enquete"
     ]
   },
@@ -187,7 +355,7 @@
     "text": "4 Echelles de Mesure (Niveaux de Stevens)\nLa nature de la variable dicte la famille de tests statistiques applicables. Les niveaux sont hierarchiques et cumulatifs :\n\n\n\n\n\n\n\n\n\n\nNiveau\nDefinition\nProprietes\nExemples\nStatistiques applicables\n\n\n\n\nNominale\nCategories mutuellement exclusives, sans ordre\n\\(=\\) ou \\(\\neq\\)\nSexe, Religion, Parti politique\nMode, Frequences, Test \\(\\chi^2\\)\n\n\nOrdinale\nCategories avec hierarchie/ordre\n\\(&lt;, &gt;\\) (intervalles non constants)\nNiveau d’education, Echelle de Likert stricte\nMediane, Centiles, Spearman, Mann-Whitney\n\n\nIntervalle\nOrdre + distances constantes et mesurables\n\\(+, -\\) (zero arbitraire)\nTemperature (C/F), Scores QI\nMoyenne, Ecart-type, Pearson, ANOVA\n\n\nRatio\nIntervalle + zero absolu significatif\n\\(\\times, \\div\\)\nAge, Revenu, IGPosts, Temps de reaction\nCoefficient de variation, Moyenne geometrique\n\n\n\n\n\n\n\n\n\nNoteTraitement des Echelles de Likert\n\n\n\nMathematiquement, une echelle de Likert (1-5) est ordinale. Mais en pratique, sous reserve de normalite et symetrie, on les traite souvent comme des echelles d’intervalle pour permettre moyennes et regressions lineaires.",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
+      "Categorie 1 - Probleme Set 1",
       "Module 1 : Methodologie et Enquete"
     ]
   },
@@ -199,7 +367,7 @@
     "text": "5 Types de Questions d’Enquete\n\n\n\n\n\n\n\n\nType\nDescription\nNature des donnees\n\n\n\n\nQuestions ouvertes\nTexte libre\nDonnees non structurees (codage necessaire)\n\n\nQuestions fermees\nChoix unique/multiple\nDonnees nominales\n\n\nEchelles de Likert\nDegre d’accord (1-5)\nOrdinales (traitees comme intervalle)\n\n\nDifferenciateur semantique\nContinuum entre 2 adjectifs bipolaires\nOrdinales/Intervalle",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
+      "Categorie 1 - Probleme Set 1",
       "Module 1 : Methodologie et Enquete"
     ]
   },
@@ -211,7 +379,7 @@
     "text": "6 Biais Cognitifs d’Enquete\n\n\n\n\n\n\n\n\nBiais\nDescription\nConsequence\n\n\n\n\nDesirabilite sociale\nLe repondant altere ses reponses pour paraitre socialement acceptable\nSurestimation des comportements “positifs”\n\n\nAcquiescement\nTendance a repondre “Oui” / “D’accord” automatiquement\nCorrelation artificielle positive\n\n\nEffet de Halo\nPerception globale contamine l’evaluation d’attributs specifiques\nCorrelation artificielle entre variables distinctes",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
+      "Categorie 1 - Probleme Set 1",
       "Module 1 : Methodologie et Enquete"
     ]
   },
@@ -220,10 +388,9 @@
     "href": "index.html",
     "title": "Methodes II - Analyse de Donnees et Statistiques sous R",
     "section": "",
-    "text": "L’analyse quantitative des donnees en sciences sociales, economiques et naturelles requiert une maitrise des fondations theoriques et des outils informatiques. Ce document constitue la synthese exhaustive du cursus “Methodes II”, integrant la theorie, les exercices et les scripts R.",
+    "text": "L’analyse quantitative des donnees en sciences sociales, economiques et naturelles requiert une maitrise des fondations theoriques et des outils informatiques. Ce document constitue la synthese exhaustive du cursus “Methodes II”, integrant la theorie, les exercices et les scripts R.\nLe site est organise en deux categories, correspondant aux deux problemes sets (deux examens R) :",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
       "Methodes II - Analyse de Donnees et Statistiques sous R"
     ]
   },
@@ -232,22 +399,42 @@
     "href": "index.html#introduction",
     "title": "Methodes II - Analyse de Donnees et Statistiques sous R",
     "section": "",
-    "text": "L’analyse quantitative des donnees en sciences sociales, economiques et naturelles requiert une maitrise des fondations theoriques et des outils informatiques. Ce document constitue la synthese exhaustive du cursus “Methodes II”, integrant la theorie, les exercices et les scripts R.",
+    "text": "L’analyse quantitative des donnees en sciences sociales, economiques et naturelles requiert une maitrise des fondations theoriques et des outils informatiques. Ce document constitue la synthese exhaustive du cursus “Methodes II”, integrant la theorie, les exercices et les scripts R.\nLe site est organise en deux categories, correspondant aux deux problemes sets (deux examens R) :",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
       "Methodes II - Analyse de Donnees et Statistiques sous R"
     ]
   },
   {
-    "objectID": "index.html#navigation",
-    "href": "index.html#navigation",
+    "objectID": "index.html#categorie-1---probleme-set-1",
+    "href": "index.html#categorie-1---probleme-set-1",
     "title": "Methodes II - Analyse de Donnees et Statistiques sous R",
-    "section": "2 Navigation",
-    "text": "2 Navigation\n\n\n\nModule\nContenu\n\n\n\n\nModule 1 : Methodologie\nQuestions de recherche, hypotheses, operationnalisation, echelles de mesure, biais\n\n\nModule 2 : Bases de R\nRStudio, types de variables, vecteurs, matrices, data frames, fonctions\n\n\nModule 3 : Tidyverse / dplyr\nImportation CSV, pipe, select, filter, mutate, group_by, summarize\n\n\nModule 4 : ggplot2\nGrammaire graphique, geom_point, geom_bar, geom_histogram, geom_boxplot",
+    "section": "2 Categorie 1 - Probleme Set 1",
+    "text": "2 Categorie 1 - Probleme Set 1\nMethodologie d’enquete, prise en main de R, manipulation et visualisation de donnees.\n\n\n\nModule\nContenu\n\n\n\n\nModule 1 : Methodologie\nQuestions de recherche, hypotheses, operationnalisation, echelles de mesure, biais\n\n\nModule 2 : Bases de R\nRStudio, types de variables, vecteurs, matrices, data frames, fonctions\n\n\nModule 3 : Tidyverse / dplyr\nImportation CSV, pipe, select, filter, mutate, group_by, summarize\n\n\nModule 4 : ggplot2\nGrammaire graphique, geom_point, geom_bar, geom_histogram, geom_boxplot\n\n\nCopier/Coller PS1\nBlocs de code prets a coller pour le premier examen",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
+      "Methodes II - Analyse de Donnees et Statistiques sous R"
+    ]
+  },
+  {
+    "objectID": "index.html#categorie-2---probleme-set-2",
+    "href": "index.html#categorie-2---probleme-set-2",
+    "title": "Methodes II - Analyse de Donnees et Statistiques sous R",
+    "section": "3 Categorie 2 - Probleme Set 2",
+    "text": "3 Categorie 2 - Probleme Set 2\nStatistiques descriptives, statistiques inferentielles et communication des resultats.\n\n\n\nModule\nContenu\n\n\n\n\nModule 5 : Statistiques descriptives\nTendance centrale, dispersion, quartiles, frequences, facteurs ordonnes\n\n\nModule 6 : Statistiques inferentielles\nHypotheses, p-value, test t, ANOVA, Tukey, correlation, regression\n\n\nModule 7 : Communication des resultats\nRapporter M/SD/t/r/b, tableaux, detecter les erreurs d’interpretation\n\n\nCopier/Coller PS2\nBlocs de code prets a coller pour le deuxieme examen",
+    "crumbs": [
+      "Accueil",
+      "Methodes II - Analyse de Donnees et Statistiques sous R"
+    ]
+  },
+  {
+    "objectID": "index.html#ressource-transversale",
+    "href": "index.html#ressource-transversale",
+    "title": "Methodes II - Analyse de Donnees et Statistiques sous R",
+    "section": "4 Ressource transversale",
+    "text": "4 Ressource transversale\n\nGlossaire : dictionnaire de tous les termes techniques expliques en langage simple.",
+    "crumbs": [
+      "Accueil",
       "Methodes II - Analyse de Donnees et Statistiques sous R"
     ]
   },
@@ -255,12 +442,131 @@
     "objectID": "index.html#astuces-pour-lexamen",
     "href": "index.html#astuces-pour-lexamen",
     "title": "Methodes II - Analyse de Donnees et Statistiques sous R",
-    "section": "3 Astuces pour l’examen",
-    "text": "3 Astuces pour l’examen\n\nCtrl+F / Cmd+F pour chercher une commande specifique\nCtrl+K / Cmd+K pour la barre de recherche du site\nChargez vos paquets (library(tidyverse)) au debut de votre session\nL’operateur d’affectation est &lt;- (jamais = pour l’assignation globale)\nNe jamais ouvrir un CSV dans Excel avant de l’importer dans R",
+    "section": "5 Astuces pour l’examen",
+    "text": "5 Astuces pour l’examen\n\nCtrl+F / Cmd+F pour chercher une commande specifique\nCtrl+K / Cmd+K pour la barre de recherche du site\nChargez vos paquets (library(tidyverse)) au debut de votre session\nL’operateur d’affectation est &lt;- (jamais = pour l’assignation globale)\nNe jamais ouvrir un CSV dans Excel avant de l’importer dans R\nPour les tests : seuil de decision alpha = 0.05 ; p &lt; 0.05 -&gt; on rejette l’hypothese nulle\nCorrelation n’est jamais une preuve de causalite",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
       "Methodes II - Analyse de Donnees et Statistiques sous R"
+    ]
+  },
+  {
+    "objectID": "09_Copier_Coller_PS2.html",
+    "href": "09_Copier_Coller_PS2.html",
+    "title": "Commandes Rapides PS2 - Copier/Coller",
+    "section": "",
+    "text": "Blocs de code prets a coller pour le deuxieme examen (statistiques descriptives et inferentielles). Clique sur l’icone de copie en haut a droite de chaque bloc.\nPour les commandes de base (import, dplyr, ggplot2), voir la page Copier/Coller PS1.",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Commandes Rapides PS2 - Copier/Coller"
+    ]
+  },
+  {
+    "objectID": "09_Copier_Coller_PS2.html#demarrage-de-session",
+    "href": "09_Copier_Coller_PS2.html#demarrage-de-session",
+    "title": "Commandes Rapides PS2 - Copier/Coller",
+    "section": "1 Demarrage de Session",
+    "text": "1 Demarrage de Session\nlibrary(tidyverse)\n# Paquet de donnees utilise dans les exercices d'inference\n# A installer UNE SEULE FOIS (puis library() a chaque session)\ninstall.packages(\"palmerpenguins\")\nlibrary(palmerpenguins)\ndata(penguins)\ndata(mtcars)",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Commandes Rapides PS2 - Copier/Coller"
+    ]
+  },
+  {
+    "objectID": "09_Copier_Coller_PS2.html#statistiques-descriptives",
+    "href": "09_Copier_Coller_PS2.html#statistiques-descriptives",
+    "title": "Commandes Rapides PS2 - Copier/Coller",
+    "section": "2 Statistiques Descriptives",
+    "text": "2 Statistiques Descriptives\n\n2.1 Exploration rapide\nstr(df)        # types des colonnes\nsummary(df)    # min, Q1, mediane, moyenne, Q3, max par colonne\n\n\n2.2 Tendance centrale et dispersion\nmean(df$variable, na.rm = TRUE)      # moyenne\nmedian(df$variable, na.rm = TRUE)    # mediane\nsd(df$variable, na.rm = TRUE)        # ecart-type\nvar(df$variable, na.rm = TRUE)       # variance\nIQR(df$variable, na.rm = TRUE)       # intervalle interquartile (Q3 - Q1)\nrange(df$variable, na.rm = TRUE)     # minimum et maximum\nquantile(df$variable, na.rm = TRUE)  # min, Q1, mediane, Q3, max\n\n\n2.3 Tableaux de frequences\n# Comptage d'une variable categorielle\ndf %&gt;% count(ma_variable)\ndf %&gt;% count(ma_variable, sort = TRUE)\n\n# Frequences en pourcentages\ndf %&gt;%\n  count(ma_variable) %&gt;%\n  mutate(pourcentage = n / sum(n) * 100)\n\n# Tableau croise de deux variables categorielles\ndf %&gt;% count(variable_1, variable_2)\ntable(df$variable_1, df$variable_2)\n\n\n2.4 Tableau descriptif par groupe\ndf %&gt;%\n  group_by(variable_categorielle) %&gt;%\n  summarize(\n    n          = n(),\n    moyenne    = mean(variable_num, na.rm = TRUE),\n    mediane    = median(variable_num, na.rm = TRUE),\n    ecart_type = sd(variable_num, na.rm = TRUE)\n  ) %&gt;%\n  ungroup()\n\n\n2.5 Ordonner une variable categorielle\nordre &lt;- c(\"Jamais\", \"Parfois\", \"Souvent\", \"Toujours\")\ndf &lt;- df %&gt;% mutate(ma_variable = factor(ma_variable, levels = ordre))\n\n\n2.6 Exporter un jeu de donnees\nwrite_csv(df, file = \"~/Documents/R/resultats.csv\")",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Commandes Rapides PS2 - Copier/Coller"
+    ]
+  },
+  {
+    "objectID": "09_Copier_Coller_PS2.html#simuler-un-echantillon-aleatoire",
+    "href": "09_Copier_Coller_PS2.html#simuler-un-echantillon-aleatoire",
+    "title": "Commandes Rapides PS2 - Copier/Coller",
+    "section": "3 Simuler un Echantillon Aleatoire",
+    "text": "3 Simuler un Echantillon Aleatoire\nset.seed(123)                              # fige le hasard (reproductibilite)\nechantillon &lt;- rnorm(25, mean = 105, sd = 15)   # 25 valeurs, loi normale",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Commandes Rapides PS2 - Copier/Coller"
+    ]
+  },
+  {
+    "objectID": "09_Copier_Coller_PS2.html#test-t",
+    "href": "09_Copier_Coller_PS2.html#test-t",
+    "title": "Commandes Rapides PS2 - Copier/Coller",
+    "section": "4 Test t",
+    "text": "4 Test t\n\n4.1 Test t a un echantillon (comparer a une reference)\n# H0 : la moyenne vaut 100\nt.test(df$variable, mu = 100)\n\n\n4.2 Test t a deux echantillons (comparer deux groupes)\n# Deux vecteurs separes\nt.test(groupe_a, groupe_b)\n\n# Une variable numerique selon une variable a 2 categories\nt.test(variable_num ~ variable_groupe, data = df)",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Commandes Rapides PS2 - Copier/Coller"
+    ]
+  },
+  {
+    "objectID": "09_Copier_Coller_PS2.html#anova-3-groupes-ou-plus",
+    "href": "09_Copier_Coller_PS2.html#anova-3-groupes-ou-plus",
+    "title": "Commandes Rapides PS2 - Copier/Coller",
+    "section": "5 ANOVA (3 groupes ou plus)",
+    "text": "5 ANOVA (3 groupes ou plus)\n# H0 : tous les groupes ont la meme moyenne\nmon_anova &lt;- aov(variable_num ~ variable_groupe, data = df)\nsummary(mon_anova)\n# Test post-hoc : quelles paires de groupes different\nTukeyHSD(mon_anova)",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Commandes Rapides PS2 - Copier/Coller"
+    ]
+  },
+  {
+    "objectID": "09_Copier_Coller_PS2.html#correlation",
+    "href": "09_Copier_Coller_PS2.html#correlation",
+    "title": "Commandes Rapides PS2 - Copier/Coller",
+    "section": "6 Correlation",
+    "text": "6 Correlation\n# Coefficient seul (r entre -1 et +1)\ncor(df$variable_1, df$variable_2, use = \"complete.obs\")\n\n# Test de correlation : ajoute p-value et intervalle de confiance\ncor.test(df$variable_1, df$variable_2)",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Commandes Rapides PS2 - Copier/Coller"
+    ]
+  },
+  {
+    "objectID": "09_Copier_Coller_PS2.html#regression-lineaire",
+    "href": "09_Copier_Coller_PS2.html#regression-lineaire",
+    "title": "Commandes Rapides PS2 - Copier/Coller",
+    "section": "7 Regression Lineaire",
+    "text": "7 Regression Lineaire\n# Regression simple : Y explique par X\nmodele1 &lt;- lm(variable_y ~ variable_x, data = df)\nsummary(modele1)\n# Regression multiple : Y explique par plusieurs X\nmodele2 &lt;- lm(variable_y ~ variable_x1 + variable_x2, data = df)\nsummary(modele2)\n# Eviter la notation scientifique dans les sorties (ex. 2e-16)\noptions(scipen = 999)",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Commandes Rapides PS2 - Copier/Coller"
+    ]
+  },
+  {
+    "objectID": "09_Copier_Coller_PS2.html#aide-memoire-lire-les-sorties-r",
+    "href": "09_Copier_Coller_PS2.html#aide-memoire-lire-les-sorties-r",
+    "title": "Commandes Rapides PS2 - Copier/Coller",
+    "section": "8 Aide-Memoire : Lire les Sorties R",
+    "text": "8 Aide-Memoire : Lire les Sorties R\n\n8.1 Sortie de t.test()\n\n\n\nElement\nCe que c’est\n\n\n\n\nt\nStatistique de test\n\n\ndf\nDegres de liberte\n\n\np-value\n&lt; 0.05 -&gt; difference significative\n\n\nconfidence interval\nFourchette plausible de la difference\n\n\nmean of x\nMoyenne(s) observee(s)\n\n\n\n\n\n8.2 Sortie de summary(aov())\n\n\n\nElement\nCe que c’est\n\n\n\n\nF value\nStatistique de l’ANOVA\n\n\nPr(&gt;F)\np-value globale ; &lt; 0.05 -&gt; au moins un groupe differe\n\n\n\n\n\n8.3 Sortie de summary(lm())\n\n\n\n\n\n\n\nElement\nCe que c’est\n\n\n\n\nEstimate\nIntercept et pente(s) ; signe = sens de l’effet\n\n\nStd. Error\nIncertitude du coefficient\n\n\nPr(&gt;|t|)\np-value du coefficient ; &lt; 0.05 -&gt; predicteur significatif\n\n\nMultiple R-squared\nPart de variance de Y expliquee par le modele\n\n\nF-statistic p-value\nLe modele global est-il utile\n\n\n\n\n\n8.4 Codes de significativite\n\n\n\nCode\nSeuil\n\n\n\n\n***\np &lt; 0.001\n\n\n**\np &lt; 0.01\n\n\n*\np &lt; 0.05\n\n\n.\np &lt; 0.1 (non significatif au seuil 5 %)",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Commandes Rapides PS2 - Copier/Coller"
+    ]
+  },
+  {
+    "objectID": "09_Copier_Coller_PS2.html#choisir-le-bon-test-rappel",
+    "href": "09_Copier_Coller_PS2.html#choisir-le-bon-test-rappel",
+    "title": "Commandes Rapides PS2 - Copier/Coller",
+    "section": "9 Choisir le Bon Test (rappel)",
+    "text": "9 Choisir le Bon Test (rappel)\n# 1 moyenne vs une reference\nt.test(x, mu = valeur)\n\n# 2 moyennes (2 groupes)\nt.test(x ~ groupe, data = df)\n\n# 3+ moyennes\naov(x ~ groupe, data = df)   # puis TukeyHSD()\n\n# Lien entre 2 variables numeriques\ncor.test(x, y)\n\n# Modeliser / predire Y\nlm(y ~ x1 + x2, data = df)",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Commandes Rapides PS2 - Copier/Coller"
     ]
   },
   {
@@ -271,7 +577,7 @@
     "text": "Le Tidyverse est une philosophie et une grammaire coherente pour l’analyse de donnees. L’axiome central repose sur le concept de “Tidy Data” :",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
+      "Categorie 1 - Probleme Set 1",
       "Module 3 : Tidyverse & dplyr (Manipulation Avancee)"
     ]
   },
@@ -283,7 +589,7 @@
     "text": "1 Importation Securisee (readr)\nLe package readr fournit read_csv(), superieur aux fonctions de base.\nlibrary(tidyverse)\nsetwd(\"/chemin/vers/dossier\")\ndf &lt;- read_csv(\"fichier.csv\")",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
+      "Categorie 1 - Probleme Set 1",
       "Module 3 : Tidyverse & dplyr (Manipulation Avancee)"
     ]
   },
@@ -295,7 +601,7 @@
     "text": "2 Ne Jamais Ouvrir un CSV dans Excel Avant R\nExcel applique des heuristiques de formatage invisibles et destructrices :\n\nCorruption UTF-8 : accents et symboles speciaux detruits\nConversion en dates : identifiants comme “MAR1” convertis en “1er Mars”\nRemplacement des separateurs : virgules remplacees par points-virgules selon les parametres regionaux\n\nLa donnee doit demeurer inviolee : importation directement par code R.",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
+      "Categorie 1 - Probleme Set 1",
       "Module 3 : Tidyverse & dplyr (Manipulation Avancee)"
     ]
   },
@@ -307,7 +613,7 @@
     "text": "3 L’Operateur Pipe %&gt;% (ou |&gt;)\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nLe pipe, c’est comme suivre une recette de cuisine etape par etape :\n\nD’abord, tu prends tes ingredients (le data frame)\nEnsuite, tu coupes les legumes (select – tu choisis les colonnes)\nEnsuite, tu retires ce qui est abime (filter – tu gardes les bonnes lignes)\nEnsuite, tu assaisonnes (mutate – tu ajoutes de nouvelles colonnes)\n\nSans le pipe, tu devrais tout ecrire en une seule ligne emboitee (comme des poupees russes). Avec le pipe %&gt;%, tu lis le code de haut en bas, comme une recette : “prends ca, PUIS fais ca, PUIS fais ca”.\nLe symbole %&gt;% se lit “et ensuite” ou “puis”.\n\n\n\nLe pipe extrait l’objet a gauche et l’injecte comme premier argument de la fonction a droite.\nRaccourci : Ctrl + Shift + M (Windows) / Cmd + Shift + M (Mac)\n# Sans pipe -- il faut lire de l'INTERIEUR vers l'EXTERIEUR (penible !)\nfilter(select(df, nom, age), age &gt; 30)\n\n# Avec pipe -- on lit de HAUT en BAS, comme une recette\ndf %&gt;%                   # Prends le tableau df\n  select(nom, age) %&gt;%  # PUIS garde seulement les colonnes nom et age\n  filter(age &gt; 30)       # PUIS ne garde que les lignes ou age &gt; 30",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
+      "Categorie 1 - Probleme Set 1",
       "Module 3 : Tidyverse & dplyr (Manipulation Avancee)"
     ]
   },
@@ -319,7 +625,7 @@
     "text": "4 Les Verbes de dplyr\nChaque verbe prend un data frame en entree et retourne un data frame modifie.\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\ndplyr fournit des “verbes” – des actions simples que tu enchaines. Pense a des instructions donnees a un assistant :\n\nselect = “montre-moi seulement ces colonnes”\nfilter = “garde seulement les lignes qui respectent cette condition”\nmutate = “ajoute une nouvelle colonne calculee”\narrange = “trie le tableau”\ngroup_by + summarize = “fais un resume par groupe”\n\nTous les exemples ci-dessous utilisent ce petit jeu de donnees de 5 etudiants :\n\n\n\n# Notre petit jeu de donnees pour tous les exemples\netudiants &lt;- data.frame(\n  nom = c(\"Alice\", \"Bob\", \"Clara\", \"David\", \"Emma\"),\n  age = c(21, 23, 20, 22, 21),\n  note = c(5.5, 4.0, 5.8, 3.5, 4.5),\n  branche = c(\"Psycho\", \"Droit\", \"Psycho\", \"Droit\", \"Psycho\")\n)\n#     nom age note branche\n# 1 Alice  21  5.5  Psycho\n# 2   Bob  23  4.0   Droit\n# 3 Clara  20  5.8  Psycho\n# 4 David  22  3.5   Droit\n# 5  Emma  21  4.5  Psycho\n\n4.1 select() - Projection des colonnes\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nselect(), c’est comme cacher des colonnes dans Excel. Tu ne supprimes rien, tu choisis juste quelles colonnes tu veux voir. Tu peux aussi exclure une colonne avec le signe -.\n\n\n\n# Garder seulement les colonnes \"nom\" et \"note\"\netudiants %&gt;% select(nom, note)\n# Resultat :\n#     nom note\n# 1 Alice  5.5\n# 2   Bob  4.0\n# 3 Clara  5.8\n# 4 David  3.5\n# 5  Emma  4.5\n\n# Exclure une colonne avec le signe -\netudiants %&gt;% select(-age)\n# Resultat : tout SAUF la colonne age\n#     nom note branche\n# 1 Alice  5.5  Psycho\n# 2   Bob  4.0   Droit\n# 3 Clara  5.8  Psycho\n# 4 David  3.5   Droit\n# 5  Emma  4.5  Psycho\nAssistants de selection dynamiques :\n\n\n\n\n\n\n\n\nHelper\nDescription\nExemple\n\n\n\n\nstarts_with(\"x\")\nColonnes commencant par “x”\nselect(starts_with(\"IG\"))\n\n\nends_with(\"x\")\nColonnes finissant par “x”\nselect(ends_with(\"Post\"))\n\n\ncontains(\"x\")\nColonnes contenant “x”\nselect(contains(\"Like\"))\n\n\n\n# Exemple avec mtcars\nmtcars %&gt;%\n  select(mpg, cyl, starts_with(\"c\")) %&gt;%\n  select(-cyl)  # Exclusion chirurgicale\n\n\n4.2 filter() - Filtrage conditionnel des lignes\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nfilter(), c’est comme mettre un filtre sur un tableau Excel : tu ne gardes que les lignes qui respectent ta condition. Les lignes qui ne passent pas le test disparaissent du resultat (mais les donnees originales ne sont pas modifiees).\n\n\n\nLes lignes TRUE sont preservees, FALSE et NA sont purgees.\n# Garder seulement les etudiants de plus de 21 ans\netudiants %&gt;% filter(age &gt; 21)\n# Resultat :\n#     nom age note branche\n# 1   Bob  23  4.0   Droit\n# 2 David  22  3.5   Droit\n\n# Garder les etudiants en Psycho avec une note &gt;= 5\netudiants %&gt;% filter(branche == \"Psycho\" & note &gt;= 5)\n# Resultat :\n#     nom age note branche\n# 1 Alice  21  5.5  Psycho\n# 2 Clara  20  5.8  Psycho\n\n# Garder les etudiants en Psycho OU en Droit (ici ca les prend tous)\netudiants %&gt;% filter(branche %in% c(\"Psycho\", \"Droit\"))\nOperateurs logiques :\n\n\n\nOperateur\nSignification\nAttention\n\n\n\n\n==\nEgal a\nPrudence sur les decimaux (virgule flottante)\n\n\n!=\nDifferent de\n\n\n\n&gt;, &lt;\nSuperieur, inferieur\n\n\n\n&gt;=, &lt;=\nSuperieur ou egal, inferieur ou egal\n\n\n\n&\nET logique (intersection)\n\n\n\n\\|\nOU logique (union)\n\n\n\n%in%\nAppartenance a un vecteur\nx %in% c(\"A\", \"B\")\n\n\n!\nNegation\n!is.na(x)\n\n\n\n# Exemple avec diamonds\ndiamants_premium &lt;- diamonds %&gt;%\n  filter(carat &gt;= 1.5 & cut %in% c(\"Ideal\", \"Premium\")) %&gt;%\n  filter(!is.na(price))\n\n\n4.3 mutate() - Creer ou modifier des colonnes\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nmutate(), c’est comme ajouter une nouvelle colonne dans ton tableau Excel avec une formule. Le nombre de lignes ne change pas – tu ajoutes juste une information supplementaire a chaque ligne.\n\n\n\nAjoute des colonnes tout en preservant le nombre de lignes.\n# Ajouter une colonne \"mention\" basee sur la note\netudiants %&gt;% mutate(reussi = note &gt;= 4)\n# Resultat :\n#     nom age note branche reussi\n# 1 Alice  21  5.5  Psycho   TRUE\n# 2   Bob  23  4.0   Droit   TRUE\n# 3 Clara  20  5.8  Psycho   TRUE\n# 4 David  22  3.5   Droit  FALSE\n# 5  Emma  21  4.5  Psycho   TRUE\n\n# Ajouter une colonne calculee\netudiants %&gt;% mutate(note_sur_100 = note / 6 * 100)\n# Resultat : chaque note est convertie en pourcentage\n#     nom age note branche note_sur_100\n# 1 Alice  21  5.5  Psycho     91.66667\n# 2   Bob  23  4.0   Droit     66.66667\n# ...\nVectorisation conditionnelle avec case_when() :\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\ncase_when(), c’est un “si… alors… sinon…” en version puissante. Ca fonctionne comme un aiguillage de train :\n\nSI la condition 1 est vraie ALORS fais ceci\nSINON SI la condition 2 est vraie ALORS fais cela\nSINON (pour tout le reste) fais ca\n\nLa derniere ligne TRUE ~ \"valeur\" attrape tout ce qui n’a pas ete pris par les conditions precedentes, comme un filet de securite.\n\n\n\n# Attribuer une mention selon la note\netudiants %&gt;%\n  mutate(\n    mention = case_when(\n      note &gt;= 5.5  ~ \"Tres bien\",     # SI note &gt;= 5.5 ALORS \"Tres bien\"\n      note &gt;= 5.0  ~ \"Bien\",          # SINON SI note &gt;= 5.0 ALORS \"Bien\"\n      note &gt;= 4.0  ~ \"Suffisant\",     # SINON SI note &gt;= 4.0 ALORS \"Suffisant\"\n      TRUE         ~ \"Insuffisant\"    # SINON (tout le reste) \"Insuffisant\"\n    )\n  )\n# Resultat :\n#     nom age note branche      mention\n# 1 Alice  21  5.5  Psycho    Tres bien\n# 2   Bob  23  4.0   Droit   Suffisant\n# 3 Clara  20  5.8  Psycho    Tres bien\n# 4 David  22  3.5   Droit Insuffisant\n# 5  Emma  21  4.5  Psycho   Suffisant\n# Exemple avance avec donnees climatiques\ndf %&gt;%\n  mutate(\n    temp_anomaly_fahrenheit = temperature_anomaly * 9/5,\n    carbon_risk_ratio = co2_level / 280,\n\n    climate_status = case_when(\n      carbon_risk_ratio &lt; 1.0                              ~ \"Periode Stable\",\n      carbon_risk_ratio &gt;= 1.0 & carbon_risk_ratio &lt; 1.5   ~ \"Hausse Moderee\",\n      carbon_risk_ratio &gt;= 1.5                              ~ \"Dereglement Severe\",\n      TRUE                                                  ~ \"Indetermine\"  # clause else\n    )\n  )\n\n\n4.4 arrange() - Tri des lignes\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\narrange(), c’est comme cliquer sur l’en-tete d’une colonne Excel pour trier le tableau. Par defaut, ca trie du plus petit au plus grand. Pour trier du plus grand au plus petit, on utilise desc().\n\n\n\n# Trier les etudiants par note croissante (du plus faible au meilleur)\netudiants %&gt;% arrange(note)\n# Resultat :\n#     nom age note branche\n# 1 David  22  3.5   Droit   &lt;-- note la plus basse\n# 2   Bob  23  4.0   Droit\n# 3  Emma  21  4.5  Psycho\n# 4 Alice  21  5.5  Psycho\n# 5 Clara  20  5.8  Psycho   &lt;-- note la plus haute\n\n# Trier par note decroissante (du meilleur au plus faible)\netudiants %&gt;% arrange(desc(note))\n# Resultat :\n#     nom age note branche\n# 1 Clara  20  5.8  Psycho   &lt;-- meilleure note en premier\n# 2 Alice  21  5.5  Psycho\n# ...\n\n# Tri multiple : d'abord par branche, puis par note decroissante\netudiants %&gt;% arrange(branche, desc(note))\n\n\n4.5 group_by() + summarize() - Agregation (Split-Apply-Combine)\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nImagine que tu as un paquet de copies d’examen melangees. group_by() + summarize(), c’est :\n\nTrier les copies par branche (tu fais des piles : une pile Psycho, une pile Droit) – c’est le group_by()\nCalculer la moyenne de chaque pile – c’est le summarize()\nRassembler les resultats dans un nouveau petit tableau\n\nC’est le meme principe que les tableaux croises dynamiques d’Excel. N’oublie pas ungroup() a la fin pour “defaire” le groupement.\n\n\n\nLe paradigme en 3 phases :\n\nSplit (group_by()) : fragmente les donnees par modalites\nApply (summarize()) : calcule les metriques par groupe\nCombine : recoud les resultats en un nouveau data frame\n\n# Calculer la moyenne et le nombre d'etudiants par branche\netudiants %&gt;%\n  group_by(branche) %&gt;%          # Fais des groupes par branche\n  summarize(\n    nb_etudiants = n(),          # Combien dans chaque groupe ?\n    moyenne_note = mean(note),   # Moyenne des notes du groupe\n    meilleure_note = max(note)   # Meilleure note du groupe\n  ) %&gt;%\n  ungroup()                      # Toujours retirer le groupement apres !\n# Resultat :\n#   branche nb_etudiants moyenne_note meilleure_note\n# 1   Droit            2         3.75            4.0\n# 2  Psycho            3         5.27            5.8\n# Exemple complet avec donnees d'engagement politique (igposts)\nanalyse_efficacite &lt;- igposts %&gt;%\n  group_by(Political_Party) %&gt;%\n  summarize(\n    nombre_candidats             = n(),\n    volume_moyen_posts           = mean(IGPosts, na.rm = TRUE),\n    total_likes                  = sum(IGLikes, na.rm = TRUE),\n    ecart_type_likes             = sd(IGLikes, na.rm = TRUE),\n    efficacite_likes_par_post    = mean(IGLikesPPost, na.rm = TRUE),\n    efficacite_comments_par_post = mean(IGCommentsPPost, na.rm = TRUE)\n  ) %&gt;%\n  ungroup() %&gt;%\n  arrange(desc(efficacite_likes_par_post))\n\n\n4.6 count() - Denombrement frequentiel\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\ncount() est un raccourci pour compter combien de fois chaque valeur apparait. C’est comme demander “combien d’etudiants dans chaque branche ?”\n\n\n\nRaccourci pour group_by(variable) %&gt;% summarize(n = n()).\n# Compter le nombre d'etudiants par branche\netudiants %&gt;% count(branche)\n# Resultat :\n#   branche n\n# 1   Droit 2\n# 2  Psycho 3\n\n# Avec tri decroissant automatique\netudiants %&gt;% count(branche, sort = TRUE)\n# Resultat :\n#   branche n\n# 1  Psycho 3\n# 2   Droit 2",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
+      "Categorie 1 - Probleme Set 1",
       "Module 3 : Tidyverse & dplyr (Manipulation Avancee)"
     ]
   },
@@ -331,8 +637,152 @@
     "text": "5 Statistiques Descriptives - Recap\n\n\n\nFonction\nDescription\nArgument NA\n\n\n\n\nmean(x)\nMoyenne\nna.rm = TRUE\n\n\nmedian(x)\nMediane\nna.rm = TRUE\n\n\nsd(x)\nEcart-type\nna.rm = TRUE\n\n\nmin(x), max(x)\nMinimum, Maximum\nna.rm = TRUE\n\n\nsum(x)\nSomme\nna.rm = TRUE\n\n\nn()\nNombre d’observations (dans summarize)\n-\n\n\nn_distinct(x)\nNombre de valeurs uniques\n-\n\n\n\n\n\n\n\n\n\nTipna.rm = TRUE\n\n\n\nToujours ajouter na.rm = TRUE dans les fonctions statistiques (mean, sd, median…) pour ignorer les valeurs manquantes. Sans cela, le resultat sera NA si une seule valeur manque.",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
+      "Categorie 1 - Probleme Set 1",
       "Module 3 : Tidyverse & dplyr (Manipulation Avancee)"
+    ]
+  },
+  {
+    "objectID": "07_Statistiques_Inferentielles.html",
+    "href": "07_Statistiques_Inferentielles.html",
+    "title": "Module 6 : Statistiques Inferentielles",
+    "section": "",
+    "text": "Les statistiques inferentielles permettent de tirer des conclusions sur une population entiere a partir d’un simple echantillon. La question n’est plus “qu’est-ce que j’observe ?” (Module 5) mais “puis-je generaliser ce que j’observe ?”.",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Module 6 : Statistiques Inferentielles"
+    ]
+  },
+  {
+    "objectID": "07_Statistiques_Inferentielles.html#population-echantillon-et-le-role-du-hasard",
+    "href": "07_Statistiques_Inferentielles.html#population-echantillon-et-le-role-du-hasard",
+    "title": "Module 6 : Statistiques Inferentielles",
+    "section": "1 Population, Echantillon, et le Role du Hasard",
+    "text": "1 Population, Echantillon, et le Role du Hasard\n\n\n\n\n\n\n\n\nTerme\nDefinition\nExemple\n\n\n\n\nPopulation\nL’ensemble total qu’on veut etudier\nTous les etudiants de l’UNIFR\n\n\nEchantillon\nLe sous-ensemble qu’on observe reellement\n200 etudiants interroges\n\n\nParametre\nUne valeur vraie dans la population (inconnue)\nLa vraie note moyenne de tous\n\n\nStatistique\nUne valeur calculee sur l’echantillon (connue)\nLa note moyenne des 200\n\n\n\nL’echantillon doit etre aleatoire (chaque individu a la meme chance d’etre choisi) pour etre representatif. C’est ce qui justifie toute la machinerie inferentielle.\n\n1.1 Simuler un Echantillon : rnorm() et set.seed()\nEn exercice, on cree souvent des donnees fictives qui suivent une loi normale (courbe en cloche).\n# set.seed() fige le hasard : tout le monde obtient les MEMES nombres aleatoires\nset.seed(123)\n\n# rnorm(n, mean, sd) : genere n valeurs aleatoires suivant une loi normale\nscores_qi &lt;- rnorm(25, mean = 105, sd = 15)\n# -&gt; 25 scores de QI, centres autour de 105, ecart-type 15\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nset.seed(123) c’est comme truquer un de pour qu’il tombe toujours sur la meme sequence. Le hasard de R n’est pas vraiment du hasard : c’est une recette. En fixant la “graine” (seed), tu garantis que ton code donnera exactement les memes nombres a chaque execution – indispensable pour que ton prof reproduise ton resultat.",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Module 6 : Statistiques Inferentielles"
+    ]
+  },
+  {
+    "objectID": "07_Statistiques_Inferentielles.html#la-demarche-du-test-dhypothese",
+    "href": "07_Statistiques_Inferentielles.html#la-demarche-du-test-dhypothese",
+    "title": "Module 6 : Statistiques Inferentielles",
+    "section": "2 La Demarche du Test d’Hypothese",
+    "text": "2 La Demarche du Test d’Hypothese\nC’est le coeur du module. Tout test statistique suit le meme scenario en 4 actes.\n\n2.1 Acte 1 — Poser deux hypotheses\n\n\n\n\n\n\n\n\n\nHypothese\nSymbole\nSignification\nRole\n\n\n\n\nHypothese nulle\nH0\n“Il n’y a rien : aucun effet, aucune difference, aucun lien”\nCe qu’on cherche a rejeter\n\n\nHypothese alternative\nH1\n“Il y a quelque chose : un effet, une difference, un lien”\nCe qu’on espere montrer\n\n\n\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nLe test d’hypothese fonctionne comme un proces :\n\nH0 = “l’accuse est innocent” (presomption d’innocence : il ne se passe rien)\nH1 = “l’accuse est coupable” (il y a un effet)\n\nOn ne declare jamais H0 “vraie” : on dit soit “coupable” (on rejette H0), soit “pas assez de preuves” (on ne rejette pas H0). Un acquittement ne prouve pas l’innocence – juste le manque de preuves.\n\n\n\n\n\n2.2 Acte 2 — Calculer une statistique de test et une p-value\nLe test produit une p-value : la probabilite d’observer un resultat aussi extreme que le tien si H0 etait vraie.\n\n\n2.3 Acte 3 — Comparer la p-value au seuil alpha\nLe seuil de signification alpha est fixe avant le test, presque toujours a 0.05 (5 %).\n\n\n\n\n\n\n\n\nResultat\nDecision\nFormulation\n\n\n\n\np &lt; 0.05\nOn rejette H0\n“Le resultat est statistiquement significatif”\n\n\np &gt;= 0.05\nOn ne rejette pas H0\n“Le resultat n’est pas significatif”\n\n\n\n\n\n2.4 Acte 4 — Interpreter dans le contexte\nTraduire la decision statistique en phrase comprehensible sur le phenomene etudie.",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Module 6 : Statistiques Inferentielles"
+    ]
+  },
+  {
+    "objectID": "07_Statistiques_Inferentielles.html#les-3-erreurs-dinterpretation-de-la-p-value",
+    "href": "07_Statistiques_Inferentielles.html#les-3-erreurs-dinterpretation-de-la-p-value",
+    "title": "Module 6 : Statistiques Inferentielles",
+    "section": "3 Les 3 erreurs d’interpretation de la p-value",
+    "text": "3 Les 3 erreurs d’interpretation de la p-value\n\nLa p-value n’est PAS la probabilite que H0 soit vraie. C’est la probabilite des donnees si H0 est vraie.\n“Non significatif” ne veut PAS dire “il n’y a pas d’effet”. Cela peut juste signifier que l’echantillon est trop petit pour le detecter.\nSignificatif n’est pas synonyme d’important. Avec un tres grand echantillon, un effet minuscule et sans interet pratique peut devenir “significatif”.",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Module 6 : Statistiques Inferentielles"
+    ]
+  },
+  {
+    "objectID": "07_Statistiques_Inferentielles.html#lintervalle-de-confiance-ic",
+    "href": "07_Statistiques_Inferentielles.html#lintervalle-de-confiance-ic",
+    "title": "Module 6 : Statistiques Inferentielles",
+    "section": "4 L’Intervalle de Confiance (IC)",
+    "text": "4 L’Intervalle de Confiance (IC)\nPlutot qu’une seule valeur, l’IC donne une fourchette plausible pour le parametre de la population. Un IC a 95 % signifie : “si on repetait l’etude un grand nombre de fois, 95 % des intervalles calcules contiendraient la vraie valeur”.\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nUne estimation ponctuelle (“la moyenne est 4.6”) est une flechette plantee sur une cible. L’intervalle de confiance est le cercle dessine autour : “la vraie valeur est probablement quelque part la-dedans, entre 4.4 et 4.8”. Plus l’echantillon est grand, plus le cercle est petit (estimation precise).\nAstuce : si un IC a 95 % pour une difference contient 0, c’est que la difference n’est pas significative (0 = “aucune difference” reste plausible).",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Module 6 : Statistiques Inferentielles"
+    ]
+  },
+  {
+    "objectID": "07_Statistiques_Inferentielles.html#le-test-t-t-test",
+    "href": "07_Statistiques_Inferentielles.html#le-test-t-t-test",
+    "title": "Module 6 : Statistiques Inferentielles",
+    "section": "5 Le Test t (t-test)",
+    "text": "5 Le Test t (t-test)\nLe test t compare des moyennes. C’est le test le plus frequent a l’examen.\n\n5.1 Test t a un echantillon\nCompare la moyenne d’un echantillon a une valeur de reference fixee (mu).\n\nQuestion type : “le QI moyen de nos etudiants differe-t-il de 100 ?”\n\nset.seed(123)\nscores_qi &lt;- rnorm(25, mean = 105, sd = 15)\n\n# H0 : la moyenne vaut 100   |   H1 : la moyenne differe de 100\nresultat &lt;- t.test(scores_qi, mu = 100)\nprint(resultat)\n\n\n5.2 Test t a deux echantillons\nCompare les moyennes de deux groupes independants.\n\nQuestion type : “les femmes et les hommes ont-ils une taille moyenne differente ?”\n\ntailles_f &lt;- rnorm(30, mean = 164.7, sd = 5.6)\ntailles_h &lt;- rnorm(30, mean = 177.4, sd = 6.1)\n\n# H0 : memes moyennes   |   H1 : moyennes differentes\nt.test(tailles_f, tailles_h)\n\n# Variante si les deux variables sont dans un seul data frame :\nt.test(taille ~ genre, data = mon_df)\n\n\n5.3 Lire la Sortie d’un Test t\n        One Sample t-test\n\ndata:  scores_qi\nt = 2.31, df = 24, p-value = 0.02968\nalternative hypothesis: true mean is not equal to 100\n95 percent confidence interval:\n 100.62 112.40\nsample estimates:\nmean of x\n   106.51\n\n\n\n\n\n\n\n\nElement\nValeur\nInterpretation\n\n\n\n\nt\n2.31\nLa statistique de test (plus elle est loin de 0, plus l’ecart est marque)\n\n\ndf\n24\nDegres de liberte (lies a la taille de l’echantillon : n - 1)\n\n\np-value\n0.02968\n&lt; 0.05 -&gt; on rejette H0\n\n\nconfidence interval\n[100.62 ; 112.40]\nFourchette plausible de la vraie moyenne ; ne contient pas 100\n\n\nmean of x\n106.51\nLa moyenne observee dans l’echantillon\n\n\n\nConclusion redigee : “Le QI moyen des etudiants (M = 106.5) est significativement superieur a 100, t(24) = 2.31, p = .030.”\n\n\n\n\n\n\nWarningPetit echantillon = test peu puissant\n\n\n\nAvec n = 25, un test peut ne rien detecter (p &gt;= 0.05) meme si un effet existe. En augmentant n (ex. 50, 100), le meme ecart peut devenir significatif. Un resultat non significatif sur petit echantillon ne prouve donc pas l’absence d’effet.",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Module 6 : Statistiques Inferentielles"
+    ]
+  },
+  {
+    "objectID": "07_Statistiques_Inferentielles.html#lanova-analyse-de-variance",
+    "href": "07_Statistiques_Inferentielles.html#lanova-analyse-de-variance",
+    "title": "Module 6 : Statistiques Inferentielles",
+    "section": "6 L’ANOVA (Analyse de Variance)",
+    "text": "6 L’ANOVA (Analyse de Variance)\nLe test t ne compare que 2 moyennes. Pour comparer 3 groupes ou plus, on utilise l’ANOVA.\n\nQuestion type : “la longueur des nageoires differe-t-elle entre les 3 especes de manchots ?”\n\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nSi tu faisais plein de tests t deux-a-deux (groupe A vs B, A vs C, B vs C…), tu multiplierais le risque d’erreur de type I (5 % a chaque fois s’accumulent). L’ANOVA fait un seul test global : “au moins un des groupes differe-t-il des autres ?” Elle protege contre l’inflation du risque.\n\n\n\nlibrary(palmerpenguins)\n\n# H0 : toutes les especes ont la meme moyenne\n# H1 : au moins une espece differe\nanova1 &lt;- aov(flipper_length_mm ~ species, data = penguins)\nsummary(anova1)\nSortie typique :\n             Df Sum Sq Mean Sq F value  Pr(&gt;F)\nspecies       2  52473   26237   594.8  &lt;2e-16 ***\nResiduals   339  14953      44\n\n\n\n\n\n\n\nElement\nInterpretation\n\n\n\n\nF value\nLa statistique de test de l’ANOVA\n\n\nPr(&gt;F)\nLa p-value. Ici &lt;2e-16 = quasiment 0 -&gt; on rejette H0\n\n\n***\nCode de significativite (voir tableau plus bas)\n\n\n\nMais l’ANOVA ne dit pas QUELS groupes different. Elle dit juste “il y a une difference quelque part”.\n\n6.1 Test Post-Hoc : Tukey HSD\nApres une ANOVA significative, le test de Tukey identifie quelles paires de groupes different.\nTukeyHSD(anova1)\n                      diff     lwr     upr  p adj\nChinstrap-Adelie     5.87    3.51    8.24  0.000\nGentoo-Adelie       27.23   25.42   29.04  0.000\nGentoo-Chinstrap    21.36   18.86   23.86  0.000\nPour chaque paire : diff = l’ecart des moyennes, p adj = la p-value ajustee. Ici les 3 paires ont p adj &lt; 0.05 -&gt; les 3 especes different toutes entre elles.\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nL’ANOVA est le detecteur de fumee : il sonne pour dire “il y a un probleme quelque part dans la maison”. Le test de Tukey est l’inspection piece par piece : il dit “le feu est dans la cuisine, pas dans la chambre”. On ne fait Tukey que si le detecteur (ANOVA) a sonne.",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Module 6 : Statistiques Inferentielles"
+    ]
+  },
+  {
+    "objectID": "07_Statistiques_Inferentielles.html#la-correlation",
+    "href": "07_Statistiques_Inferentielles.html#la-correlation",
+    "title": "Module 6 : Statistiques Inferentielles",
+    "section": "7 La Correlation",
+    "text": "7 La Correlation\nLa correlation mesure la force et la direction du lien lineaire entre deux variables numeriques. Le coefficient r varie de -1 a +1.\n\n\n\n\n\n\n\nValeur de r\nInterpretation\n\n\n\n\nproche de +1\nForte correlation positive (les deux augmentent ensemble)\n\n\nproche de 0\nPas de lien lineaire\n\n\nproche de -1\nForte correlation negative (l’une monte, l’autre descend)\n\n\n\nReperes d’intensite (en valeur absolue) : ~0.1 faible, ~0.3 moyenne, ~0.5 et plus forte.\n# Coefficient seul\ncor(mtcars$wt, mtcars$mpg)            # -0.87 : lien negatif fort\n\n# Test de correlation : ajoute une p-value et un IC\ncor.test(mtcars$wt, mtcars$mpg)\n        Pearson's product-moment correlation\n\nt = -9.56, df = 30, p-value = 1.3e-10\n95 percent confidence interval:\n -0.934 -0.744\nsample estimates:\n   cor\n-0.868\ncor = -0.868, p-value minuscule -&gt; correlation negative forte et significative.",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Module 6 : Statistiques Inferentielles"
+    ]
+  },
+  {
+    "objectID": "07_Statistiques_Inferentielles.html#correlation-nest-pas-causalite",
+    "href": "07_Statistiques_Inferentielles.html#correlation-nest-pas-causalite",
+    "title": "Module 6 : Statistiques Inferentielles",
+    "section": "8 Correlation n’est PAS causalite",
+    "text": "8 Correlation n’est PAS causalite\nC’est L’erreur a ne jamais commettre. Que deux variables varient ensemble ne prouve pas que l’une cause l’autre.\nExemple : les ventes de glaces et les noyades sont fortement correlees. Les glaces ne noient personne – c’est la chaleur (variable cachee) qui fait grimper les deux. A l’examen, ne jamais ecrire “X cause Y” sur la base d’une simple correlation.",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Module 6 : Statistiques Inferentielles"
+    ]
+  },
+  {
+    "objectID": "07_Statistiques_Inferentielles.html#la-regression-lineaire",
+    "href": "07_Statistiques_Inferentielles.html#la-regression-lineaire",
+    "title": "Module 6 : Statistiques Inferentielles",
+    "section": "9 La Regression Lineaire",
+    "text": "9 La Regression Lineaire\nLa regression va plus loin que la correlation : elle modelise une variable a expliquer (Y, dependante) en fonction d’une ou plusieurs variables explicatives (X, independantes), et permet de predire.\n\nQuestion type : “le poids d’une voiture predit-il sa consommation ?”\n\n\n9.1 Regression Lineaire Simple\n# mpg (consommation) expliquee par wt (poids)\n# La syntaxe est toujours : lm(Y ~ X, data = ...)\nregression1 &lt;- lm(mpg ~ wt, data = mtcars)\nsummary(regression1)\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nLa regression cherche la meilleure droite qui traverse le nuage de points. Cette droite a une equation : Y = intercept + pente * X.\n\nL’intercept (ordonnee a l’origine) : la valeur de Y quand X = 0.\nLa pente (le coefficient de X) : de combien Y change quand X augmente de 1 unite.\n\nLe tilde ~ se lit “expliquee par” : mpg ~ wt = “la consommation expliquee par le poids”.\n\n\n\n\n\n9.2 Lire la Sortie d’un summary(lm())\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)\n(Intercept)  37.2851     1.8776   19.86  &lt; 2e-16 ***\nwt           -5.3445     0.5591   -9.56  1.3e-10 ***\n\nResidual standard error: 3.046 on 30 degrees of freedom\nMultiple R-squared:  0.7528,  Adjusted R-squared:  0.7446\nF-statistic: 91.38 on 1 and 30 DF,  p-value: 1.294e-10\n\n\n\n\n\n\n\n\nElement\nValeur\nInterpretation\n\n\n\n\nEstimate (Intercept)\n37.29\nConsommation predite pour un poids de 0 (peu interpretable seul)\n\n\nEstimate (wt)\n-5.34\nChaque tonne en plus fait perdre 5.34 mpg. Signe negatif = lien negatif\n\n\nStd. Error\n0.56\nIncertitude sur le coefficient\n\n\nt value\n-9.56\nEstimate / Std. Error\n\n\nPr(&gt;|t|)\n1.3e-10\np-value du coefficient. &lt; 0.05 -&gt; wt est un predicteur significatif\n\n\nR-squared\n0.7528\nLe poids explique 75 % de la variation de la consommation\n\n\nF-statistic / p-value\np = 1.3e-10\nTest global : le modele est-il utile ? Oui ici\n\n\n\n\n\n\n\n\n\nTipEn simple le R-squared\n\n\n\n\n\nLe R-carre (R-squared) repond a : “quelle part du phenomene mon modele explique-t-il ?” Il va de 0 a 1.\n\nR-squared = 0.75 -&gt; le modele explique 75 % de la variation de Y ; les 25 % restants viennent d’autres facteurs non inclus.\nR-squared = 0.05 -&gt; le modele n’explique presque rien.\n\n\n\n\n\n\n9.3 Les Codes de Significativite (les etoiles)\nR affiche des etoiles a cote de chaque p-value :\n\n\n\nCode\nSeuil\nSignification\n\n\n\n\n***\np &lt; 0.001\nTres hautement significatif\n\n\n**\np &lt; 0.01\nHautement significatif\n\n\n*\np &lt; 0.05\nSignificatif\n\n\n.\np &lt; 0.1\nTendance (non significatif au seuil 5 %)\n\n\n(rien)\np &gt;= 0.1\nNon significatif\n\n\n\n\n\n9.4 Regression Multiple\nOn ajoute plusieurs variables explicatives avec +. Chaque coefficient s’interprete alors “toutes choses egales par ailleurs”.\n# Consommation expliquee par le poids ET la puissance\nregression2 &lt;- lm(mpg ~ wt + hp, data = mtcars)\nsummary(regression2)\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\n“Toutes choses egales par ailleurs” veut dire : le coefficient de wt mesure l’effet du poids a puissance constante – comme si on comparait deux voitures de meme puissance mais de poids different. Cela permet d’isoler l’effet propre de chaque variable.\n\n\n\n\n\n\n\n\n\nWarningChoisir le bon test\n\n\n\n\n\n\n\n\n\n\n\nTu veux…\nVariables\nTest\n\n\n\n\nComparer 1 moyenne a une reference\n1 numerique\nt.test(x, mu = ...)\n\n\nComparer 2 moyennes\n1 numerique + 1 categorielle (2 groupes)\nt.test(x ~ groupe)\n\n\nComparer 3+ moyennes\n1 numerique + 1 categorielle (3+ groupes)\naov() + TukeyHSD()\n\n\nMesurer un lien\n2 numeriques\ncor.test()\n\n\nModeliser / predire\n1 Y numerique + 1 ou plusieurs X\nlm()",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Module 6 : Statistiques Inferentielles"
+    ]
+  },
+  {
+    "objectID": "07_Statistiques_Inferentielles.html#questions-probables-dexamen",
+    "href": "07_Statistiques_Inferentielles.html#questions-probables-dexamen",
+    "title": "Module 6 : Statistiques Inferentielles",
+    "section": "10 Questions Probables d’Examen",
+    "text": "10 Questions Probables d’Examen\n\n\n\n\n\n\nNote“Cette p-value de 0.03 : que conclure ?”\n\n\n\n\n\n0.03 &lt; 0.05 -&gt; on rejette H0 : le resultat est statistiquement significatif. Attention a ne pas dire “H0 a 3 % de chances d’etre vraie”.\n\n\n\n\n\n\n\n\n\nNote“Ce coefficient de regression est-il significatif ?”\n\n\n\n\n\nRegarder la colonne Pr(&gt;|t|) de la ligne du coefficient. Si &lt; 0.05 (ou s’il y a au moins une etoile *), le predicteur est significatif. Donner aussi le signe et la valeur de l’Estimate pour interpreter le sens de l’effet.\n\n\n\n\n\n\n\n\n\nNote“Quel test pour comparer la satisfaction de 4 services differents ?”\n\n\n\n\n\n4 groupes -&gt; ANOVA (aov), suivie d’un TukeyHSD si l’ANOVA est significative, pour savoir quels services different.\n\n\n\n\n\n\n\n\n\nNote“r = 0.62 entre usage d’Instagram et anxiete : peut-on dire qu’Instagram rend anxieux ?”\n\n\n\n\n\nNon. Correlation forte et positive, mais correlation n’est pas causalite. Il peut y avoir une variable cachee, ou la causalite peut etre inversee. Une correlation ne permet jamais d’affirmer un lien de cause a effet.\n\n\n\n\n\n\n\n\n\nNote“Le R-squared vaut 0.75 : qu’est-ce que cela signifie ?”\n\n\n\n\n\nLe modele explique 75 % de la variance de la variable dependante. Les 25 % restants sont dus a des facteurs non inclus dans le modele.",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Module 6 : Statistiques Inferentielles"
+    ]
+  },
+  {
+    "objectID": "07_Statistiques_Inferentielles.html#recapitulatif-du-module",
+    "href": "07_Statistiques_Inferentielles.html#recapitulatif-du-module",
+    "title": "Module 6 : Statistiques Inferentielles",
+    "section": "11 Recapitulatif du Module",
+    "text": "11 Recapitulatif du Module\n\n\n\n\n\n\n\n\nNotion\nCommande R\nA retenir\n\n\n\n\nEchantillon aleatoire normal\nrnorm() + set.seed()\nFige le hasard pour la reproductibilite\n\n\nComparer 1 ou 2 moyennes\nt.test()\nLire t, df, p-value, IC\n\n\nComparer 3+ moyennes\naov() + summary()\nLire F value, Pr(&gt;F)\n\n\nQuelles paires different\nTukeyHSD()\nUniquement apres ANOVA significative\n\n\nLien entre 2 numeriques\ncor.test()\nr de -1 a +1 ; jamais causalite\n\n\nModeliser / predire\nlm() + summary()\nLire Estimate, Pr(&gt;|t|), R-squared\n\n\nSeuil de decision\nalpha = 0.05\np &lt; 0.05 -&gt; rejet de H0",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Module 6 : Statistiques Inferentielles"
     ]
   },
   {
@@ -340,10 +790,9 @@
     "href": "glossaire.html",
     "title": "Glossaire - Dictionnaire des Termes",
     "section": "",
-    "text": "Ce glossaire explique en langage simple tous les termes techniques utilises dans les 4 modules du cours. Cliquez sur un terme pour derouler son explication.",
+    "text": "Ce glossaire explique en langage simple tous les termes techniques utilises dans les modules du cours (Probleme Set 1 et 2). Cliquez sur un terme pour derouler son explication.",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
       "Glossaire - Dictionnaire des Termes"
     ]
   },
@@ -352,10 +801,9 @@
     "href": "glossaire.html#a",
     "title": "Glossaire - Dictionnaire des Termes",
     "section": "1 A",
-    "text": "1 A\n\n\n\n\n\n\nNoteArgument\n\n\n\n\n\nEn simple : Un argument, c’est une information supplementaire qu’on donne a une fonction pour qu’elle sache quoi faire ou comment le faire. C’est comme un reglage ou une option.\nExemple du quotidien : Quand tu commandes un cafe, “cafe” c’est la fonction, mais “avec du lait”, “sans sucre”, “taille grande” sont les arguments. En R : mean(x, na.rm = TRUE) – ici x et na.rm = TRUE sont les arguments donnes a la fonction mean.\n\n\n\n\n\n\n\n\n\nNoteAssignation / Operateur d’assignation (&lt;-)\n\n\n\n\n\nEn simple : Assigner, c’est donner un nom a quelque chose pour le retrouver plus tard. L’operateur &lt;- est la fleche qui dit “range cette valeur dans cette boite portant ce nom”.\nExemple du quotidien : C’est comme coller une etiquette sur un bocal. Tu ecris “biscuits” sur le bocal et tu mets les biscuits dedans. En R : age &lt;- 25 signifie “range 25 dans la boite appelee age”.\n\n\n\n\n\n\n\n\n\nNoteaes() (Esthetiques / Aesthetics)\n\n\n\n\n\nEn simple : C’est la partie du code graphique qui dit “quelle colonne de mon tableau correspond a quel aspect visuel du graphique” (position X, position Y, couleur, taille…).\nExemple du quotidien : Imagine que tu fais un plan de table pour un diner. aes() c’est la regle qui dit : “la colonne ‘nom’ determine l’etiquette, la colonne ‘equipe’ determine la couleur du carton”. Chaque variable du tableau est reliee a un element visuel.\n\n\n\n\n\n\n\n\n\nNotearrange() (Tri)\n\n\n\n\n\nEn simple : Une fonction dplyr qui trie les lignes d’un tableau dans un ordre precis (croissant ou decroissant).\nExemple du quotidien : C’est comme trier une pile de copies d’examen par note, de la plus basse a la plus haute (ou l’inverse avec desc()).",
+    "text": "1 A\n\n\n\n\n\n\nNoteANOVA (Analyse de variance)\n\n\n\n\n\nEn simple : Un test qui compare les moyennes de trois groupes ou plus en une seule fois, pour savoir si au moins un groupe se distingue des autres.\nExemple du quotidien : Tu veux savoir si la note moyenne differe entre trois classes (A, B, C). Plutot que de comparer A-B, A-C, B-C separement – ce qui multiplie le risque d’erreur – l’ANOVA pose une seule question : “y a-t-il une difference quelque part ?”. En R : aov(note ~ classe, data = df).\n\n\n\n\n\n\n\n\n\nNoteArgument\n\n\n\n\n\nEn simple : Un argument, c’est une information supplementaire qu’on donne a une fonction pour qu’elle sache quoi faire ou comment le faire. C’est comme un reglage ou une option.\nExemple du quotidien : Quand tu commandes un cafe, “cafe” c’est la fonction, mais “avec du lait”, “sans sucre”, “taille grande” sont les arguments. En R : mean(x, na.rm = TRUE) – ici x et na.rm = TRUE sont les arguments donnes a la fonction mean.\n\n\n\n\n\n\n\n\n\nNoteAssignation / Operateur d’assignation (&lt;-)\n\n\n\n\n\nEn simple : Assigner, c’est donner un nom a quelque chose pour le retrouver plus tard. L’operateur &lt;- est la fleche qui dit “range cette valeur dans cette boite portant ce nom”.\nExemple du quotidien : C’est comme coller une etiquette sur un bocal. Tu ecris “biscuits” sur le bocal et tu mets les biscuits dedans. En R : age &lt;- 25 signifie “range 25 dans la boite appelee age”.\n\n\n\n\n\n\n\n\n\nNoteaes() (Esthetiques / Aesthetics)\n\n\n\n\n\nEn simple : C’est la partie du code graphique qui dit “quelle colonne de mon tableau correspond a quel aspect visuel du graphique” (position X, position Y, couleur, taille…).\nExemple du quotidien : Imagine que tu fais un plan de table pour un diner. aes() c’est la regle qui dit : “la colonne ‘nom’ determine l’etiquette, la colonne ‘equipe’ determine la couleur du carton”. Chaque variable du tableau est reliee a un element visuel.\n\n\n\n\n\n\n\n\n\nNotearrange() (Tri)\n\n\n\n\n\nEn simple : Une fonction dplyr qui trie les lignes d’un tableau dans un ordre precis (croissant ou decroissant).\nExemple du quotidien : C’est comme trier une pile de copies d’examen par note, de la plus basse a la plus haute (ou l’inverse avec desc()).",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
       "Glossaire - Dictionnaire des Termes"
     ]
   },
@@ -367,7 +815,6 @@
     "text": "2 B\n\n\n\n\n\n\nNoteBinwidth (Largeur d’intervalle)\n\n\n\n\n\nEn simple : Dans un histogramme, le binwidth c’est la taille de chaque “bac” qui regroupe les donnees. Un bac large regroupe beaucoup de valeurs ensemble, un bac fin les separe davantage.\nExemple du quotidien : Imagine que tu classes des eleves par taille. Si ton binwidth est 10 cm (ex: 150-160, 160-170…), tu as peu de groupes. Si c’est 1 cm (150-151, 151-152…), tu en as beaucoup. Trop large, tu perds les details. Trop fin, tu vois trop de bruit.\n\n\n\n\n\n\n\n\n\nNoteBiais cognitif (d’enquete)\n\n\n\n\n\nEn simple : Une erreur systematique dans les reponses d’un questionnaire, causee par la psychologie humaine et non par le hasard. Les gens ne repondent pas toujours honnetement ou objectivement.\nExemple du quotidien : Si on te demande “Combien de fois par semaine fais-tu du sport ?”, tu as tendance a gonfler le chiffre pour paraitre en forme (biais de desirabilite sociale). Le biais d’acquiescement, c’est dire “oui” a tout par reflexe.\n\n\n\n\n\n\n\n\n\nNoteBoxplot (Boite a moustaches)\n\n\n\n\n\nEn simple : Un type de graphique qui resume une distribution en montrant les quartiles, la mediane et les valeurs extremes dans un schema compact en forme de boite.\nExemple du quotidien : C’est comme un bulletin meteo qui te dit : “la temperature la plus basse etait 5, la plus haute 28, la moitie du temps c’etait entre 12 et 20, et la temperature typique etait 16”. Tout ca dans un seul dessin.",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
       "Glossaire - Dictionnaire des Termes"
     ]
   },
@@ -376,10 +823,9 @@
     "href": "glossaire.html#c",
     "title": "Glossaire - Dictionnaire des Termes",
     "section": "3 C",
-    "text": "3 C\n\n\n\n\n\n\nNotecase_when() (Conditions multiples)\n\n\n\n\n\nEn simple : Une fonction qui permet de creer des categories en enchainant plusieurs conditions “si… alors…”. C’est comme un ifelse() mais pour plus de 2 cas.\nExemple du quotidien : C’est comme un barreme de notation : si la note est &gt;= 90, c’est “Excellent” ; si &gt;= 70, c’est “Bien” ; si &gt;= 50, c’est “Suffisant” ; sinon, c’est “Insuffisant”.\n\n\n\n\n\n\n\n\n\nNoteCoercition implicite\n\n\n\n\n\nEn simple : C’est quand R transforme automatiquement et silencieusement le type de tes donnees pour que tout soit du meme type dans un vecteur. Tu ne le demandes pas, R le fait tout seul, et ca peut causer des surprises.\nExemple du quotidien : Imagine une boite de rangement qui n’accepte qu’un seul type d’objet. Si tu mets des pommes et un livre dedans, la boite transforme tout en livres (le type le plus general). En R : c(TRUE, 5, \"Pomme\") devient c(\"TRUE\", \"5\", \"Pomme\") – tout est converti en texte, et le chiffre 5 ne peut plus servir pour des calculs.\n\n\n\n\n\n\n\n\n\nNoteConsole\n\n\n\n\n\nEn simple : C’est la zone de RStudio ou tu peux taper du code et voir le resultat immediatement. C’est comme un brouillon interactif.\nExemple du quotidien : C’est comme la calculatrice de ton telephone : tu tapes un calcul, tu appuies sur Entree, et le resultat s’affiche tout de suite. Mais rien n’est sauvegarde – si tu fermes, c’est perdu.\n\n\n\n\n\n\n\n\n\nNoteConstruit theorique\n\n\n\n\n\nEn simple : Un concept abstrait qu’on utilise dans la recherche mais qu’on ne peut pas mesurer directement. Il faut le transformer en quelque chose de concret pour pouvoir l’etudier.\nExemple du quotidien : “L’intelligence” est un construit – on ne peut pas la peser ou la mesurer avec une regle. On doit la transformer en questions de test (QI) pour pouvoir la quantifier.\n\n\n\n\n\n\n\n\n\nNotecount() (Denombrement)\n\n\n\n\n\nEn simple : Une fonction raccourci qui compte combien de fois chaque categorie apparait dans une colonne.\nExemple du quotidien : C’est comme compter combien d’eleves il y a dans chaque classe : 3A = 25 eleves, 3B = 22 eleves, 3C = 27 eleves.\n\n\n\n\n\n\n\n\n\nNoteCSV (Comma-Separated Values)\n\n\n\n\n\nEn simple : Un format de fichier tres simple pour stocker des tableaux. Chaque ligne est une ligne du tableau, et les colonnes sont separees par des virgules (ou des points-virgules).\nExemple du quotidien : Imagine un tableau ecrit dans un fichier texte brut, ou au lieu de colonnes visuelles, on separe les informations par des virgules : “Nom,Age,Ville” puis “Alice,25,Geneve”. C’est lisible par n’importe quel logiciel.",
+    "text": "3 C\n\n\n\n\n\n\nNoteCausalite (correlation n’est pas causalite)\n\n\n\n\n\nEn simple : Ce n’est pas parce que deux choses varient ensemble que l’une cause l’autre. Une correlation montre un lien, jamais une cause.\nExemple du quotidien : Les ventes de glaces et le nombre de noyades augmentent en meme temps. Les glaces ne causent pas les noyades : c’est la chaleur de l’ete qui fait grimper les deux. Affirmer “X cause Y” demande bien plus qu’une simple correlation.\n\n\n\n\n\n\n\n\n\nNoteCoefficient de regression (b)\n\n\n\n\n\nEn simple : Dans une regression, le coefficient (note b) indique de combien la variable a expliquer change quand la variable explicative augmente d’une unite.\nExemple du quotidien : Si la regression du salaire sur les annees d’experience donne b = 1200, cela veut dire : “chaque annee d’experience supplementaire rapporte en moyenne 1200 CHF de plus”. Le signe (+ ou -) donne le sens du lien.\n\n\n\n\n\n\n\n\n\nNoteCorrelation\n\n\n\n\n\nEn simple : Une mesure du lien entre deux variables numeriques. Le coefficient r va de -1 a +1 : proche de +1 elles montent ensemble, proche de -1 l’une monte quand l’autre descend, proche de 0 il n’y a pas de lien lineaire.\nExemple du quotidien : La taille et la pointure sont positivement correlees : les grandes personnes ont souvent de grands pieds. En R : cor.test(x, y).\n\n\n\n\n\n\n\n\n\nNotecase_when() (Conditions multiples)\n\n\n\n\n\nEn simple : Une fonction qui permet de creer des categories en enchainant plusieurs conditions “si… alors…”. C’est comme un ifelse() mais pour plus de 2 cas.\nExemple du quotidien : C’est comme un barreme de notation : si la note est &gt;= 90, c’est “Excellent” ; si &gt;= 70, c’est “Bien” ; si &gt;= 50, c’est “Suffisant” ; sinon, c’est “Insuffisant”.\n\n\n\n\n\n\n\n\n\nNoteCoercition implicite\n\n\n\n\n\nEn simple : C’est quand R transforme automatiquement et silencieusement le type de tes donnees pour que tout soit du meme type dans un vecteur. Tu ne le demandes pas, R le fait tout seul, et ca peut causer des surprises.\nExemple du quotidien : Imagine une boite de rangement qui n’accepte qu’un seul type d’objet. Si tu mets des pommes et un livre dedans, la boite transforme tout en livres (le type le plus general). En R : c(TRUE, 5, \"Pomme\") devient c(\"TRUE\", \"5\", \"Pomme\") – tout est converti en texte, et le chiffre 5 ne peut plus servir pour des calculs.\n\n\n\n\n\n\n\n\n\nNoteConsole\n\n\n\n\n\nEn simple : C’est la zone de RStudio ou tu peux taper du code et voir le resultat immediatement. C’est comme un brouillon interactif.\nExemple du quotidien : C’est comme la calculatrice de ton telephone : tu tapes un calcul, tu appuies sur Entree, et le resultat s’affiche tout de suite. Mais rien n’est sauvegarde – si tu fermes, c’est perdu.\n\n\n\n\n\n\n\n\n\nNoteConstruit theorique\n\n\n\n\n\nEn simple : Un concept abstrait qu’on utilise dans la recherche mais qu’on ne peut pas mesurer directement. Il faut le transformer en quelque chose de concret pour pouvoir l’etudier.\nExemple du quotidien : “L’intelligence” est un construit – on ne peut pas la peser ou la mesurer avec une regle. On doit la transformer en questions de test (QI) pour pouvoir la quantifier.\n\n\n\n\n\n\n\n\n\nNotecount() (Denombrement)\n\n\n\n\n\nEn simple : Une fonction raccourci qui compte combien de fois chaque categorie apparait dans une colonne.\nExemple du quotidien : C’est comme compter combien d’eleves il y a dans chaque classe : 3A = 25 eleves, 3B = 22 eleves, 3C = 27 eleves.\n\n\n\n\n\n\n\n\n\nNoteCSV (Comma-Separated Values)\n\n\n\n\n\nEn simple : Un format de fichier tres simple pour stocker des tableaux. Chaque ligne est une ligne du tableau, et les colonnes sont separees par des virgules (ou des points-virgules).\nExemple du quotidien : Imagine un tableau ecrit dans un fichier texte brut, ou au lieu de colonnes visuelles, on separe les informations par des virgules : “Nom,Age,Ville” puis “Alice,25,Geneve”. C’est lisible par n’importe quel logiciel.",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
       "Glossaire - Dictionnaire des Termes"
     ]
   },
@@ -388,10 +834,9 @@
     "href": "glossaire.html#d",
     "title": "Glossaire - Dictionnaire des Termes",
     "section": "4 D",
-    "text": "4 D\n\n\n\n\n\n\nNoteData Frame (Tableau de donnees)\n\n\n\n\n\nEn simple : C’est l’objet le plus important en R pour stocker des donnees. C’est un tableau avec des lignes (observations) et des colonnes (variables), ou chaque colonne peut contenir un type de donnee different.\nExemple du quotidien : C’est exactement comme un tableau Excel : chaque ligne represente une personne (ou un produit, une observation…) et chaque colonne une information (nom, age, ville…). La difference : en R, ce tableau vit dans le code.\n\n\n\n\n\n\n\n\n\nNotedesc() (Ordre decroissant)\n\n\n\n\n\nEn simple : Une fonction utilisee avec arrange() pour trier du plus grand au plus petit au lieu du plus petit au plus grand.\nExemple du quotidien : C’est la difference entre classer les eleves du premier au dernier (croissant) ou du dernier au premier (decroissant avec desc()).\n\n\n\n\n\n\n\n\n\nNoteDifferenciation semantique\n\n\n\n\n\nEn simple : Un type de question d’enquete ou la personne se positionne sur un curseur entre deux mots opposes (ex: “Laid” a gauche, “Beau” a droite).\nExemple du quotidien : C’est comme un curseur de volume mais pour une opinion. A gauche “Pas du tout satisfait”, a droite “Tres satisfait”, et tu places ton curseur ou tu veux entre les deux.",
+    "text": "4 D\n\n\n\n\n\n\nNoteDegres de liberte (df)\n\n\n\n\n\nEn simple : Un nombre, lie a la taille de l’echantillon, qui intervient dans le calcul des tests statistiques. Plus l’echantillon est grand, plus les degres de liberte sont eleves.\nExemple du quotidien : Si tu dois depenser exactement 100 CHF sur 5 achats, tu choisis librement 4 montants, mais le 5e est impose par ce qui reste : 4 “libertes” pour 5 valeurs. En pratique R les calcule pour toi ; tu dois juste savoir les reporter, ex. t(24).\n\n\n\n\n\n\n\n\n\nNoteData Frame (Tableau de donnees)\n\n\n\n\n\nEn simple : C’est l’objet le plus important en R pour stocker des donnees. C’est un tableau avec des lignes (observations) et des colonnes (variables), ou chaque colonne peut contenir un type de donnee different.\nExemple du quotidien : C’est exactement comme un tableau Excel : chaque ligne represente une personne (ou un produit, une observation…) et chaque colonne une information (nom, age, ville…). La difference : en R, ce tableau vit dans le code.\n\n\n\n\n\n\n\n\n\nNotedesc() (Ordre decroissant)\n\n\n\n\n\nEn simple : Une fonction utilisee avec arrange() pour trier du plus grand au plus petit au lieu du plus petit au plus grand.\nExemple du quotidien : C’est la difference entre classer les eleves du premier au dernier (croissant) ou du dernier au premier (decroissant avec desc()).\n\n\n\n\n\n\n\n\n\nNoteDifferenciation semantique\n\n\n\n\n\nEn simple : Un type de question d’enquete ou la personne se positionne sur un curseur entre deux mots opposes (ex: “Laid” a gauche, “Beau” a droite).\nExemple du quotidien : C’est comme un curseur de volume mais pour une opinion. A gauche “Pas du tout satisfait”, a droite “Tres satisfait”, et tu places ton curseur ou tu veux entre les deux.",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
       "Glossaire - Dictionnaire des Termes"
     ]
   },
@@ -400,10 +845,9 @@
     "href": "glossaire.html#e",
     "title": "Glossaire - Dictionnaire des Termes",
     "section": "5 E",
-    "text": "5 E\n\n\n\n\n\n\nNoteEchelle de Likert\n\n\n\n\n\nEn simple : Un format de question d’enquete ou on demande le degre d’accord sur une echelle, typiquement de 1 a 5 (ou 1 a 7), allant de “Pas du tout d’accord” a “Tout a fait d’accord”.\nExemple du quotidien : Quand un site te demande “Evaluez votre experience de 1 a 5 etoiles”, c’est le meme principe. Chaque etoile represente un niveau de satisfaction.\n\n\n\n\n\n\n\n\n\nNoteEchelle de mesure (Niveaux de Stevens)\n\n\n\n\n\nEn simple : C’est une classification qui dit de quel “type” est une variable, ce qui determine quels calculs on peut faire dessus. Il y a 4 niveaux : nominale, ordinale, intervalle et ratio.\nExemple du quotidien : Les numeros de maillot de foot (nominale : juste des etiquettes) vs. le classement d’une course (ordinale : un ordre) vs. la temperature en Celsius (intervalle : des ecarts reguliers) vs. le poids en kg (ratio : un vrai zero existe).\n\n\n\n\n\n\n\n\n\nNoteEnvironnement (Environment)\n\n\n\n\n\nEn simple : C’est le panneau de RStudio qui montre tout ce que R a en memoire a un instant donne : les variables, les tableaux, les fonctions que tu as crees. C’est l’inventaire de tes objets.\nExemple du quotidien : C’est comme le plan de travail de ta cuisine : tu vois tous les ingredients et ustensiles que tu as sortis et prepares. Si un objet n’est pas sur le plan de travail (dans l’environnement), R ne le connait pas.\n\n\n\n\n\n\n\n\n\nNoteErreur de Type I (Faux positif)\n\n\n\n\n\nEn simple : C’est quand on conclut qu’il y a un effet alors qu’en realite il n’y en a pas. On “voit” quelque chose qui n’existe pas.\nExemple du quotidien : C’est comme un detecteur de fumee qui sonne alors qu’il n’y a pas de feu – il a detecte un faux signal. En statistique, on fixe le seuil alpha (souvent 5%) pour limiter ce risque.\n\n\n\n\n\n\n\n\n\nNoteErreur de Type II (Faux negatif)\n\n\n\n\n\nEn simple : C’est quand on conclut qu’il n’y a pas d’effet alors qu’en realite il y en a un. On “rate” quelque chose qui existe.\nExemple du quotidien : C’est comme un detecteur de fumee qui ne sonne pas alors qu’il y a vraiment de la fumee – il a rate un vrai signal.",
+    "text": "5 E\n\n\n\n\n\n\nNoteEchantillon\n\n\n\n\n\nEn simple : Le sous-ensemble d’individus reellement observes, choisi dans une population beaucoup plus grande qu’on veut etudier.\nExemple du quotidien : Pour connaitre l’avis des 10’000 etudiants d’une fac, on n’en interroge que 300 : ces 300, c’est l’echantillon. Pour qu’il soit fiable, il doit etre aleatoire et representatif de la population.\n\n\n\n\n\n\n\n\n\nNoteEcart-type (SD, Standard Deviation)\n\n\n\n\n\nEn simple : Une mesure de dispersion : en moyenne, de combien les valeurs s’eloignent-elles de la moyenne. Petit ecart-type = donnees serrees ; grand = donnees eparpillees.\nExemple du quotidien : Deux classes ont 4.5 de moyenne. Dans l’une tout le monde est entre 4.2 et 4.8 (petit ecart-type) ; dans l’autre les notes vont de 2 a 6 (grand ecart-type). En R : sd(x, na.rm = TRUE).\n\n\n\n\n\n\n\n\n\nNoteErreur standard (SE, Standard Error)\n\n\n\n\n\nEn simple : L’incertitude attachee a une statistique estimee (une moyenne, un coefficient de regression). Plus le SE est petit, plus l’estimation est precise.\nExemple du quotidien : Si tu peses un objet 5 fois et obtiens des valeurs tres proches, ton estimation est precise (petit SE). Si les pesees sont dispersees, l’estimation est incertaine (grand SE). Dans une sortie de regression, c’est la colonne Std. Error.\n\n\n\n\n\n\n\n\n\nNoteEchelle de Likert\n\n\n\n\n\nEn simple : Un format de question d’enquete ou on demande le degre d’accord sur une echelle, typiquement de 1 a 5 (ou 1 a 7), allant de “Pas du tout d’accord” a “Tout a fait d’accord”.\nExemple du quotidien : Quand un site te demande “Evaluez votre experience de 1 a 5 etoiles”, c’est le meme principe. Chaque etoile represente un niveau de satisfaction.\n\n\n\n\n\n\n\n\n\nNoteEchelle de mesure (Niveaux de Stevens)\n\n\n\n\n\nEn simple : C’est une classification qui dit de quel “type” est une variable, ce qui determine quels calculs on peut faire dessus. Il y a 4 niveaux : nominale, ordinale, intervalle et ratio.\nExemple du quotidien : Les numeros de maillot de foot (nominale : juste des etiquettes) vs. le classement d’une course (ordinale : un ordre) vs. la temperature en Celsius (intervalle : des ecarts reguliers) vs. le poids en kg (ratio : un vrai zero existe).\n\n\n\n\n\n\n\n\n\nNoteEnvironnement (Environment)\n\n\n\n\n\nEn simple : C’est le panneau de RStudio qui montre tout ce que R a en memoire a un instant donne : les variables, les tableaux, les fonctions que tu as crees. C’est l’inventaire de tes objets.\nExemple du quotidien : C’est comme le plan de travail de ta cuisine : tu vois tous les ingredients et ustensiles que tu as sortis et prepares. Si un objet n’est pas sur le plan de travail (dans l’environnement), R ne le connait pas.\n\n\n\n\n\n\n\n\n\nNoteErreur de Type I (Faux positif)\n\n\n\n\n\nEn simple : C’est quand on conclut qu’il y a un effet alors qu’en realite il n’y en a pas. On “voit” quelque chose qui n’existe pas.\nExemple du quotidien : C’est comme un detecteur de fumee qui sonne alors qu’il n’y a pas de feu – il a detecte un faux signal. En statistique, on fixe le seuil alpha (souvent 5%) pour limiter ce risque.\n\n\n\n\n\n\n\n\n\nNoteErreur de Type II (Faux negatif)\n\n\n\n\n\nEn simple : C’est quand on conclut qu’il n’y a pas d’effet alors qu’en realite il y en a un. On “rate” quelque chose qui existe.\nExemple du quotidien : C’est comme un detecteur de fumee qui ne sonne pas alors qu’il y a vraiment de la fumee – il a rate un vrai signal.",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
       "Glossaire - Dictionnaire des Termes"
     ]
   },
@@ -415,7 +859,6 @@
     "text": "6 F\n\n\n\n\n\n\nNoteFacette (Facet)\n\n\n\n\n\nEn simple : C’est une technique de ggplot2 qui divise un graphique en plusieurs petits graphiques identiques, un pour chaque categorie d’une variable. Ca permet de comparer facilement.\nExemple du quotidien : Imagine un professeur qui fait le meme graphique de notes pour chaque classe separement, cote a cote : une grille avec “Classe 3A” a gauche, “Classe 3B” au milieu, “Classe 3C” a droite. Meme format, donnees differentes.\n\n\n\n\n\n\n\n\n\nNoteFacteur (Factor)\n\n\n\n\n\nEn simple : C’est un type special de variable en R pour representer des categories, avec un ensemble fixe de valeurs possibles (appelees “niveaux” ou “levels”). C’est utile pour les variables nominales et ordinales.\nExemple du quotidien : C’est comme un menu deroulant sur un formulaire en ligne : les reponses possibles sont fixees a l’avance (ex: “Primaire”, “Secondaire”, “Tertiaire”). Si tu ecris autre chose, ca ne marche pas. Un facteur ordonne, c’est quand l’ordre compte (Primaire &lt; Secondaire &lt; Tertiaire).\n\n\n\n\n\n\n\n\n\nNotefilter() (Filtrage)\n\n\n\n\n\nEn simple : Une fonction dplyr qui garde uniquement les lignes d’un tableau qui remplissent une condition, et supprime les autres.\nExemple du quotidien : C’est comme un tamis a farine : seules les particules assez fines passent, le reste est elimine. filter(age &gt; 18) ne garde que les personnes majeures.\n\n\n\n\n\n\n\n\n\nNoteFonction (Function)\n\n\n\n\n\nEn simple : Une fonction, c’est une “machine” qui prend des ingredients (arguments), fait un traitement, et donne un resultat. En R, on utilise des fonctions pre-existantes ou on cree les siennes.\nExemple du quotidien : Un grille-pain est une fonction : tu mets du pain (argument), il le grille (traitement), et il te donne du pain grille (resultat). En R : mean(c(10, 20, 30)) donne 20 – la fonction mean prend des nombres et calcule la moyenne.",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
       "Glossaire - Dictionnaire des Termes"
     ]
   },
@@ -427,7 +870,6 @@
     "text": "7 G\n\n\n\n\n\n\nNoteGeometrie (geom)\n\n\n\n\n\nEn simple : Dans ggplot2, un “geom” c’est le type de forme visuelle qu’on dessine sur le graphique : des points, des barres, des lignes, des boites… Chaque geom_*() produit un type de graphique different.\nExemple du quotidien : C’est comme choisir le type de graphique dans Excel : “camembert”, “barres”, “nuage de points”… Sauf qu’en ggplot2, on choisit le geom : geom_point() pour des points, geom_bar() pour des barres, geom_histogram() pour un histogramme.\n\n\n\n\n\n\n\n\n\nNotegroup_by() + summarize() (Agregation)\n\n\n\n\n\nEn simple : group_by() separe le tableau en sous-groupes selon une variable, puis summarize() calcule un resume (moyenne, somme, etc.) pour chaque groupe. C’est le paradigme “Split-Apply-Combine”.\nExemple du quotidien : Imagine que tu veux connaitre le salaire moyen par departement dans une entreprise. Tu separes les employes par departement (group_by), tu calcules la moyenne de chaque groupe (summarize), et tu obtiens un tableau avec un departement par ligne et sa moyenne.",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
       "Glossaire - Dictionnaire des Termes"
     ]
   },
@@ -439,7 +881,6 @@
     "text": "8 H\n\n\n\n\n\n\nNoteHistogramme (geom_histogram())\n\n\n\n\n\nEn simple : Un type de graphique en barres qui montre comment les valeurs d’une variable numerique se repartissent. Chaque barre represente un intervalle de valeurs et sa hauteur indique combien d’observations tombent dedans.\nExemple du quotidien : Imagine que tu mesures la taille de 100 personnes. L’histogramme te montre : “15 personnes mesurent entre 160 et 165 cm, 30 entre 165 et 170 cm, etc.” Tu vois tout de suite ou se concentre la majorite.\n\n\n\n\n\n\n\n\n\nNoteHomogene\n\n\n\n\n\nEn simple : Qui contient un seul et meme type de donnees. En R, un vecteur atomique ou une matrice doit etre homogene : tout doit etre du meme type (que des nombres, OU que du texte, etc.).\nExemple du quotidien : Un tiroir range “homogene” ne contient que des chaussettes. Si tu mets un t-shirt dedans, le tiroir te force a tout transformer en un seul type (c’est la coercition implicite). Contrairement a une liste qui est heterogene et accepte tout.\n\n\n\n\n\n\n\n\n\nNoteHypothese nulle (\\(H_0\\)) / Hypothese alternative (\\(H_1\\))\n\n\n\n\n\nEn simple : L’hypothese nulle (\\(H_0\\)) dit “il ne se passe rien de special, pas de difference, pas d’effet”. L’hypothese alternative (\\(H_1\\)) dit “il y a bien un effet ou une difference”. Le but d’un test statistique est de voir si on peut rejeter \\(H_0\\).\nExemple du quotidien : Tu testes un nouveau medicament. \\(H_0\\) : “le medicament n’a aucun effet” (les malades guerissent autant avec ou sans). \\(H_1\\) : “le medicament a un effet”. On fait le test et si les resultats sont trop improbables sous \\(H_0\\), on la rejette.",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
       "Glossaire - Dictionnaire des Termes"
     ]
   },
@@ -448,10 +889,9 @@
     "href": "glossaire.html#i",
     "title": "Glossaire - Dictionnaire des Termes",
     "section": "9 I",
-    "text": "9 I\n\n\n\n\n\n\nNoteIQR (Ecart interquartile / Interquartile Range)\n\n\n\n\n\nEn simple : C’est la difference entre le 3e quartile (Q3, 75%) et le 1er quartile (Q1, 25%). Ca represente l’etendue des 50% centraux des donnees, en ignorant les extremes.\nExemple du quotidien : Si tu classes les salaires d’une entreprise du plus bas au plus haut, l’IQR c’est la fourchette dans laquelle se trouvent les 50% du milieu. Ca evite d’etre trompe par le patron qui gagne 10x plus que tout le monde.",
+    "text": "9 I\n\n\n\n\n\n\nNoteIntervalle de confiance\n\n\n\n\n\nEn simple : Une fourchette de valeurs plausibles pour un parametre de la population, plutot qu’une seule valeur. Un IC a 95 % signifie : “la vraie valeur est tres probablement dans cet intervalle”.\nExemple du quotidien : Un sondage annonce “52 % d’intentions de vote, marge d’erreur 3 %”. L’intervalle [49 % ; 55 %] est l’intervalle de confiance. Astuce : si un IC pour une difference contient 0, la difference n’est pas significative.\n\n\n\n\n\n\n\n\n\nNoteIQR (Ecart interquartile / Interquartile Range)\n\n\n\n\n\nEn simple : C’est la difference entre le 3e quartile (Q3, 75%) et le 1er quartile (Q1, 25%). Ca represente l’etendue des 50% centraux des donnees, en ignorant les extremes.\nExemple du quotidien : Si tu classes les salaires d’une entreprise du plus bas au plus haut, l’IQR c’est la fourchette dans laquelle se trouvent les 50% du milieu. Ca evite d’etre trompe par le patron qui gagne 10x plus que tout le monde.",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
       "Glossaire - Dictionnaire des Termes"
     ]
   },
@@ -463,7 +903,6 @@
     "text": "10 L\n\n\n\n\n\n\nNotelabs() (Labels / Etiquettes)\n\n\n\n\n\nEn simple : Une fonction ggplot2 qui permet d’ajouter ou modifier les titres, sous-titres, noms des axes et legendes d’un graphique.\nExemple du quotidien : C’est comme ajouter un titre et des legendes a un graphique fait a la main sur une feuille. Sans labs(), les axes s’appellent juste par le nom brut de la colonne, ce qui n’est pas tres lisible.\n\n\n\n\n\n\n\n\n\nNoteListe (List)\n\n\n\n\n\nEn simple : Une structure de donnees en R qui peut contenir des elements de types differents : des nombres, du texte, des tableaux, d’autres listes… C’est le “fourre-tout” de R.\nExemple du quotidien : C’est comme un sac a dos : tu peux y mettre un livre, un sandwich, des cles et un telephone – des objets completement differents. Contrairement a un vecteur (qui serait un sac de billes : uniquement des billes).",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
       "Glossaire - Dictionnaire des Termes"
     ]
   },
@@ -472,10 +911,9 @@
     "href": "glossaire.html#m",
     "title": "Glossaire - Dictionnaire des Termes",
     "section": "11 M",
-    "text": "11 M\n\n\n\n\n\n\nNoteMapping vs Setting (dans ggplot2)\n\n\n\n\n\nEn simple : “Mapping” (dans aes()) signifie que l’apparence du graphique depend d’une variable des donnees. “Setting” (hors aes()) signifie qu’on fixe l’apparence de maniere constante pour tous les points.\nExemple du quotidien : Mapping : “les garcons portent un maillot bleu et les filles un maillot rouge” (la couleur depend d’une variable). Setting : “tout le monde porte un maillot vert” (couleur fixe). Si tu ecris aes(color = \"bleu\"), R pense que “bleu” est une categorie de donnees, pas une couleur !\n\n\n\n\n\n\n\n\n\nNoteMatrice (Matrix)\n\n\n\n\n\nEn simple : Un tableau a 2 dimensions (lignes et colonnes) ou toutes les valeurs doivent etre du meme type. C’est comme un vecteur mais en 2D.\nExemple du quotidien : Pense a une grille de sudoku : toutes les cases contiennent des chiffres (homogene), et chaque case est identifiee par sa ligne et sa colonne. En R : m[3, 2] = la case a la ligne 3, colonne 2.\n\n\n\n\n\n\n\n\n\nNoteMediane\n\n\n\n\n\nEn simple : La valeur du milieu quand on range toutes les donnees en ordre. 50% des valeurs sont en dessous, 50% sont au dessus.\nExemple du quotidien : Si 5 personnes gagnent 2000, 2500, 3000, 3500 et 50000 CHF, la mediane est 3000. La moyenne serait 12200, completement faussee par la personne a 50000. La mediane resiste mieux aux valeurs extremes.\n\n\n\n\n\n\n\n\n\nNotemutate() (Creer/Modifier des colonnes)\n\n\n\n\n\nEn simple : Une fonction dplyr qui ajoute de nouvelles colonnes a un tableau (ou modifie des colonnes existantes) en faisant des calculs, sans changer le nombre de lignes.\nExemple du quotidien : Tu as un tableau d’eleves avec les notes de math et de francais. Avec mutate(), tu ajoutes une colonne “moyenne” qui est (math + francais) / 2. Le nombre d’eleves ne change pas, mais tu as une info en plus.",
+    "text": "11 M\n\n\n\n\n\n\nNoteMode\n\n\n\n\n\nEn simple : La valeur ou la categorie la plus frequente dans un jeu de donnees. C’est la seule mesure de “centre” utilisable pour une variable nominale.\nExemple du quotidien : Dans une classe ou la couleur de cheveux la plus repandue est “brun”, le mode est “brun”. En R, on le trouve avec count(variable, sort = TRUE).\n\n\n\n\n\n\n\n\n\nNoteMoyenne\n\n\n\n\n\nEn simple : La somme de toutes les valeurs divisee par leur nombre. La mesure de centre la plus connue, mais sensible aux valeurs extremes.\nExemple du quotidien : Dans une salle de 10 personnes a 4000 CHF/mois, si un milliardaire entre, le salaire moyen explose alors que personne d’autre n’a change de salaire. Dans ce cas la mediane decrit mieux le cas typique. En R : mean(x, na.rm = TRUE).\n\n\n\n\n\n\n\n\n\nNoteMapping vs Setting (dans ggplot2)\n\n\n\n\n\nEn simple : “Mapping” (dans aes()) signifie que l’apparence du graphique depend d’une variable des donnees. “Setting” (hors aes()) signifie qu’on fixe l’apparence de maniere constante pour tous les points.\nExemple du quotidien : Mapping : “les garcons portent un maillot bleu et les filles un maillot rouge” (la couleur depend d’une variable). Setting : “tout le monde porte un maillot vert” (couleur fixe). Si tu ecris aes(color = \"bleu\"), R pense que “bleu” est une categorie de donnees, pas une couleur !\n\n\n\n\n\n\n\n\n\nNoteMatrice (Matrix)\n\n\n\n\n\nEn simple : Un tableau a 2 dimensions (lignes et colonnes) ou toutes les valeurs doivent etre du meme type. C’est comme un vecteur mais en 2D.\nExemple du quotidien : Pense a une grille de sudoku : toutes les cases contiennent des chiffres (homogene), et chaque case est identifiee par sa ligne et sa colonne. En R : m[3, 2] = la case a la ligne 3, colonne 2.\n\n\n\n\n\n\n\n\n\nNoteMediane\n\n\n\n\n\nEn simple : La valeur du milieu quand on range toutes les donnees en ordre. 50% des valeurs sont en dessous, 50% sont au dessus.\nExemple du quotidien : Si 5 personnes gagnent 2000, 2500, 3000, 3500 et 50000 CHF, la mediane est 3000. La moyenne serait 12200, completement faussee par la personne a 50000. La mediane resiste mieux aux valeurs extremes.\n\n\n\n\n\n\n\n\n\nNotemutate() (Creer/Modifier des colonnes)\n\n\n\n\n\nEn simple : Une fonction dplyr qui ajoute de nouvelles colonnes a un tableau (ou modifie des colonnes existantes) en faisant des calculs, sans changer le nombre de lignes.\nExemple du quotidien : Tu as un tableau d’eleves avec les notes de math et de francais. Avec mutate(), tu ajoutes une colonne “moyenne” qui est (math + francais) / 2. Le nombre d’eleves ne change pas, mais tu as une info en plus.",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
       "Glossaire - Dictionnaire des Termes"
     ]
   },
@@ -487,7 +925,6 @@
     "text": "12 N\n\n\n\n\n\n\nNoteNA (Valeur manquante / Not Available)\n\n\n\n\n\nEn simple : NA signifie “cette donnee est absente ou inconnue”. Ce n’est pas zero, ce n’est pas du vide – c’est “on ne sait pas”. En R, les NA contaminent les calculs : la moyenne d’un vecteur contenant un NA sera NA (sauf si on ajoute na.rm = TRUE).\nExemple du quotidien : Dans un sondage, si quelqu’un n’a pas repondu a la question sur son age, on met NA. Ce n’est pas qu’il a 0 ans, c’est qu’on ne connait pas son age.\n\n\n\n\n\n\n\n\n\nNotena.rm = TRUE\n\n\n\n\n\nEn simple : Un argument qu’on ajoute aux fonctions statistiques (mean, sd, median…) pour dire a R “ignore les valeurs manquantes (NA) et calcule quand meme avec le reste”.\nExemple du quotidien : Si tu fais la moyenne des notes d’une classe et qu’un eleve etait absent (NA), na.rm = TRUE dit “calcule la moyenne sans cet eleve”. Sans cet argument, R refuse de calculer et repond NA.",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
       "Glossaire - Dictionnaire des Termes"
     ]
   },
@@ -499,7 +936,6 @@
     "text": "13 O\n\n\n\n\n\n\nNoteOperateur\n\n\n\n\n\nEn simple : Un symbole qui fait une operation. Les operateurs mathematiques (+, -, *, /) font des calculs, les operateurs logiques (==, !=, &gt;, &lt;, &, |) font des comparaisons, et l’operateur d’assignation (&lt;-) range des valeurs.\nExemple du quotidien : Les operateurs sont comme les signes sur une calculatrice (+, -, x, :). En R, on en a en plus pour comparer (== signifie “est-ce egal ?”) et pour combiner des conditions (& signifie “ET”, | signifie “OU”).\n\n\n\n\n\n\n\n\n\nNoteOperateur %in% (Appartenance)\n\n\n\n\n\nEn simple : Un operateur qui verifie si une valeur fait partie d’une liste de valeurs. Il retourne TRUE ou FALSE.\nExemple du quotidien : C’est comme verifier si ton nom est sur la liste des invites a une fete. \"Alice\" %in% c(\"Bob\", \"Alice\", \"Eve\") retourne TRUE parce qu’Alice est bien dans la liste.\n\n\n\n\n\n\n\n\n\nNoteOperationnalisation\n\n\n\n\n\nEn simple : C’est le processus qui consiste a transformer un concept abstrait et vague en quelque chose de concret et mesurable, a l’aide de variables et de questions precises.\nExemple du quotidien : Le concept “bonheur” est abstrait. Pour l’operationnaliser, on pourrait le mesurer par : le nombre de sourires par jour, une note de 1 a 10 donnee par la personne, ou un questionnaire de 20 questions. On transforme l’abstrait en mesurable.\n\n\n\n\n\n\n\n\n\nNoteOutlier (Valeur aberrante)\n\n\n\n\n\nEn simple : Une observation qui est tres eloignee de toutes les autres. Sur un boxplot, c’est un point affiche au-dela des moustaches.\nExemple du quotidien : Si dans ta classe tout le monde a entre 50 et 90 a un examen, et qu’une personne a 2, c’est un outlier. Ca peut etre une erreur de saisie ou un cas vraiment extreme.\n\n\n\n\n\n\n\n\n\nNoteOverplotting (Superposition)\n\n\n\n\n\nEn simple : Quand il y a trop de points sur un graphique et qu’ils se superposent au point qu’on ne distingue plus rien. Le graphique devient une tache noire inutile.\nExemple du quotidien : Imagine une photo de foule prise de loin : on ne distingue plus les individus, tout se melange. Les solutions : rendre les points transparents (alpha) ou les disperser legerement (geom_jitter()).",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
       "Glossaire - Dictionnaire des Termes"
     ]
   },
@@ -508,10 +944,9 @@
     "href": "glossaire.html#p",
     "title": "Glossaire - Dictionnaire des Termes",
     "section": "14 P",
-    "text": "14 P\n\n\n\n\n\n\nNotePackage / Paquet (Library)\n\n\n\n\n\nEn simple : Un package, c’est une extension qu’on installe pour ajouter des fonctionnalites a R. R de base fait des choses simples ; les packages ajoutent des outils specialises.\nExemple du quotidien : C’est comme une application sur ton telephone. Le telephone de base fait des appels et des SMS, mais tu installes des apps pour faire plus : Instagram, Google Maps, etc. En R, tu installes des packages avec install.packages() et tu les actives avec library().\n\n\n\n\n\n\n\n\n\nNotePipe (%&gt;% ou |&gt;)\n\n\n\n\n\nEn simple : Le pipe prend le resultat de ce qui est a gauche et l’envoie comme premier ingredient dans la fonction a droite. Ca permet d’enchainer les operations de facon lisible, comme une recette etape par etape.\nExemple du quotidien : Au lieu de dire “mets dans l’assiette(decoupe(lave(la salade)))” (illisible, de l’interieur vers l’exterieur), le pipe permet d’ecrire : “prends la salade PUIS lave-la PUIS decoupe-la PUIS mets-la dans l’assiette”. Lecture de gauche a droite, beaucoup plus naturelle.\n\n\n\n\n\n\n\n\n\nNoteP-value (Valeur-p)\n\n\n\n\n\nEn simple : La p-value mesure a quel point les resultats observes seraient improbables SI l’hypothese nulle etait vraie. Plus elle est petite, plus il est raisonnable de rejeter \\(H_0\\). Attention : ce n’est PAS la probabilite que \\(H_0\\) soit vraie.\nExemple du quotidien : Tu lances une piece 100 fois et obtiens 90 fois face. La p-value te dit : “si la piece etait equilibree (\\(H_0\\)), la probabilite d’obtenir un resultat aussi extreme est quasi nulle”. Donc tu rejettes l’idee que la piece est equilibree. Seuil habituel : si p &lt; 0.05, on rejette \\(H_0\\).\n\n\n\n\n\n\n\n\n\nNotePosition (dodge, stack, fill)\n\n\n\n\n\nEn simple : Dans un diagramme a barres, la position determine comment les sous-categories sont affichees : empilees les unes sur les autres (stack), cote a cote (dodge), ou normalisees a 100% (fill).\nExemple du quotidien : Imagine des barres representant les ventes par magasin, colorees par type de produit. stack : une seule barre par magasin, les produits empiles. dodge : des barres separees cote a cote. fill : tout ramene en pourcentage pour comparer les proportions.",
+    "text": "14 P\n\n\n\n\n\n\nNotePopulation\n\n\n\n\n\nEn simple : L’ensemble complet des individus, objets ou cas qu’on cherche a etudier. On observe rarement la population entiere : on travaille sur un echantillon et on generalise.\nExemple du quotidien : Si l’etude porte sur “les adolescents suisses”, la population ce sont TOUS les adolescents suisses. Comme on ne peut pas tous les interroger, on en etudie un echantillon.\n\n\n\n\n\n\n\n\n\nNotePackage / Paquet (Library)\n\n\n\n\n\nEn simple : Un package, c’est une extension qu’on installe pour ajouter des fonctionnalites a R. R de base fait des choses simples ; les packages ajoutent des outils specialises.\nExemple du quotidien : C’est comme une application sur ton telephone. Le telephone de base fait des appels et des SMS, mais tu installes des apps pour faire plus : Instagram, Google Maps, etc. En R, tu installes des packages avec install.packages() et tu les actives avec library().\n\n\n\n\n\n\n\n\n\nNotePipe (%&gt;% ou |&gt;)\n\n\n\n\n\nEn simple : Le pipe prend le resultat de ce qui est a gauche et l’envoie comme premier ingredient dans la fonction a droite. Ca permet d’enchainer les operations de facon lisible, comme une recette etape par etape.\nExemple du quotidien : Au lieu de dire “mets dans l’assiette(decoupe(lave(la salade)))” (illisible, de l’interieur vers l’exterieur), le pipe permet d’ecrire : “prends la salade PUIS lave-la PUIS decoupe-la PUIS mets-la dans l’assiette”. Lecture de gauche a droite, beaucoup plus naturelle.\n\n\n\n\n\n\n\n\n\nNoteP-value (Valeur-p)\n\n\n\n\n\nEn simple : La p-value mesure a quel point les resultats observes seraient improbables SI l’hypothese nulle etait vraie. Plus elle est petite, plus il est raisonnable de rejeter \\(H_0\\). Attention : ce n’est PAS la probabilite que \\(H_0\\) soit vraie.\nExemple du quotidien : Tu lances une piece 100 fois et obtiens 90 fois face. La p-value te dit : “si la piece etait equilibree (\\(H_0\\)), la probabilite d’obtenir un resultat aussi extreme est quasi nulle”. Donc tu rejettes l’idee que la piece est equilibree. Seuil habituel : si p &lt; 0.05, on rejette \\(H_0\\).\n\n\n\n\n\n\n\n\n\nNotePosition (dodge, stack, fill)\n\n\n\n\n\nEn simple : Dans un diagramme a barres, la position determine comment les sous-categories sont affichees : empilees les unes sur les autres (stack), cote a cote (dodge), ou normalisees a 100% (fill).\nExemple du quotidien : Imagine des barres representant les ventes par magasin, colorees par type de produit. stack : une seule barre par magasin, les produits empiles. dodge : des barres separees cote a cote. fill : tout ramene en pourcentage pour comparer les proportions.",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
       "Glossaire - Dictionnaire des Termes"
     ]
   },
@@ -523,7 +958,6 @@
     "text": "15 Q\n\n\n\n\n\n\nNoteQuartile (Q1, Q2, Q3)\n\n\n\n\n\nEn simple : Les quartiles divisent les donnees triees en 4 parts egales. Q1 = 25% des donnees en dessous, Q2 = la mediane (50%), Q3 = 75% des donnees en dessous.\nExemple du quotidien : Imagine 100 eleves ranges par note. Q1 c’est la note du 25e eleve (un quart), Q2 c’est la note du 50e (la moitie), Q3 c’est la note du 75e (trois quarts). Ca permet de voir ou se situent la majorite des eleves.\n\n\n\n\n\n\n\n\n\nNoteQuestion de recherche (RQ)\n\n\n\n\n\nEn simple : La question centrale a laquelle une etude scientifique cherche a repondre. Elle doit etre claire, faisable et pertinente.\nExemple du quotidien : Bonne RQ : “L’utilisation des reseaux sociaux est-elle liee au bien-etre des adolescents ?” Mauvaise RQ : “Les reseaux sociaux, c’est bien ou c’est mal ?” (jugement moral, pas scientifique).",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
       "Glossaire - Dictionnaire des Termes"
     ]
   },
@@ -532,10 +966,9 @@
     "href": "glossaire.html#r",
     "title": "Glossaire - Dictionnaire des Termes",
     "section": "16 R",
-    "text": "16 R\n\n\n\n\n\n\nNoteread_csv() (Importation de fichiers)\n\n\n\n\n\nEn simple : Une fonction du package readr (Tidyverse) qui lit un fichier CSV et le transforme en tableau (data frame) dans R.\nExemple du quotidien : C’est comme ouvrir un fichier Excel, sauf qu’au lieu de double-cliquer sur le fichier, tu donnes l’instruction par code : df &lt;- read_csv(\"mon_fichier.csv\"). L’avantage : c’est reproductible et ne corrompt pas les donnees (contrairement a Excel).\n\n\n\n\n\n\n\n\n\nNoteReproductibilite\n\n\n\n\n\nEn simple : Le fait que n’importe qui puisse relancer exactement la meme analyse et obtenir les memes resultats. En utilisant du code R plutot que des clics de souris, on garantit la reproductibilite.\nExemple du quotidien : C’est comme une recette de cuisine ecrite vs. “j’ai fait au feeling”. Si la recette est ecrite (= le script R), n’importe qui peut reproduire le plat exactement. Si c’est “au feeling” (= des clics dans un logiciel), personne ne peut verifier ni reproduire.",
+    "text": "16 R\n\n\n\n\n\n\nNoteR-carre (R-squared)\n\n\n\n\n\nEn simple : Dans une regression, un nombre entre 0 et 1 qui dit quelle part du phenomene le modele explique. 0.75 = le modele explique 75 % de la variation de la variable a expliquer.\nExemple du quotidien : Tu veux expliquer les notes des eleves. Si ton modele “heures de revision” a un R-carre de 0.6, les revisions expliquent 60 % des differences de notes ; les 40 % restants viennent d’autres facteurs (sommeil, stress…).\n\n\n\n\n\n\n\n\n\nNoteRegression lineaire\n\n\n\n\n\nEn simple : Une methode qui modelise une variable a expliquer (Y) en fonction d’une ou plusieurs variables explicatives (X), en tracant la meilleure droite a travers les donnees. Elle permet aussi de predire.\nExemple du quotidien : Tu veux predire le prix d’un appartement a partir de sa surface. La regression trouve la droite “prix = base + (prix au m2) x surface”. En R : lm(prix ~ surface, data = df).\n\n\n\n\n\n\n\n\n\nNoternorm() / set.seed()\n\n\n\n\n\nEn simple : rnorm() genere des nombres aleatoires suivant une loi normale (courbe en cloche). set.seed() fige ce hasard pour que le code donne toujours le meme resultat.\nExemple du quotidien : set.seed() c’est comme truquer un de pour qu’il tombe toujours sur la meme sequence – indispensable pour que ton prof reproduise exactement tes resultats. rnorm(25, mean = 105, sd = 15) cree 25 valeurs centrees sur 105.\n\n\n\n\n\n\n\n\n\nNoteread_csv() (Importation de fichiers)\n\n\n\n\n\nEn simple : Une fonction du package readr (Tidyverse) qui lit un fichier CSV et le transforme en tableau (data frame) dans R.\nExemple du quotidien : C’est comme ouvrir un fichier Excel, sauf qu’au lieu de double-cliquer sur le fichier, tu donnes l’instruction par code : df &lt;- read_csv(\"mon_fichier.csv\"). L’avantage : c’est reproductible et ne corrompt pas les donnees (contrairement a Excel).\n\n\n\n\n\n\n\n\n\nNoteReproductibilite\n\n\n\n\n\nEn simple : Le fait que n’importe qui puisse relancer exactement la meme analyse et obtenir les memes resultats. En utilisant du code R plutot que des clics de souris, on garantit la reproductibilite.\nExemple du quotidien : C’est comme une recette de cuisine ecrite vs. “j’ai fait au feeling”. Si la recette est ecrite (= le script R), n’importe qui peut reproduire le plat exactement. Si c’est “au feeling” (= des clics dans un logiciel), personne ne peut verifier ni reproduire.",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
       "Glossaire - Dictionnaire des Termes"
     ]
   },
@@ -544,10 +977,9 @@
     "href": "glossaire.html#s",
     "title": "Glossaire - Dictionnaire des Termes",
     "section": "17 S",
-    "text": "17 S\n\n\n\n\n\n\nNoteScript\n\n\n\n\n\nEn simple : Un fichier texte (extension .R) qui contient du code R sauvegarde. Contrairement a la console (ou le code est perdu), le script garde tout en memoire et permet de relancer l’analyse plus tard.\nExemple du quotidien : La console c’est comme parler a voix haute (les mots disparaissent). Le script c’est comme ecrire une lettre (les mots sont sauvegardes). Tu peux relire, modifier et partager ton script.\n\n\n\n\n\n\n\n\n\nNoteselect() (Selection de colonnes)\n\n\n\n\n\nEn simple : Une fonction dplyr qui choisit quelles colonnes garder (ou exclure) dans un tableau.\nExemple du quotidien : Tu as un tableau avec 50 colonnes mais tu n’as besoin que du nom et de l’age. select(nom, age) ne garde que ces 2 colonnes. select(-adresse) enleve seulement la colonne adresse.\n\n\n\n\n\n\n\n\n\nNotestr() / summary() (Exploration)\n\n\n\n\n\nEn simple : Deux fonctions pour examiner rapidement un tableau. str() montre la structure interne (types, apercu). summary() donne les statistiques descriptives (min, max, moyenne, mediane…).\nExemple du quotidien : str() c’est comme ouvrir le capot d’une voiture pour voir le moteur. summary() c’est comme lire le tableau de bord : vitesse moyenne, kilometres parcourus, niveau d’essence…",
+    "text": "17 S\n\n\n\n\n\n\nNoteSeuil de signification (alpha)\n\n\n\n\n\nEn simple : Le niveau de risque qu’on accepte de se tromper en rejetant l’hypothese nulle. Il est fixe avant le test, presque toujours a 0.05 (5 %).\nExemple du quotidien : C’est la “barre de hauteur” d’un saut : si la p-value passe sous 0.05, le resultat est declare significatif. Accepter alpha = 5 %, c’est accepter 5 % de risque de crier “il y a un effet !” alors qu’il n’y en a aucun.\n\n\n\n\n\n\n\n\n\nNoteSignificativite statistique\n\n\n\n\n\nEn simple : Un resultat est “statistiquement significatif” quand sa p-value est inferieure au seuil alpha (0.05) : on considere alors que l’effet observe n’est probablement pas du au hasard.\nExemple du quotidien : Attention au piege : “significatif” ne veut pas dire “important”. Avec un tres grand echantillon, une difference minuscule et sans interet pratique peut devenir significative. Toujours regarder aussi la taille de l’effet.\n\n\n\n\n\n\n\n\n\nNoteStatistiques descriptives vs inferentielles\n\n\n\n\n\nEn simple : Les statistiques descriptives resument ce qu’on a observe (moyenne, frequences…). Les statistiques inferentielles generalisent de l’echantillon a la population (tests, intervalles de confiance).\nExemple du quotidien : “La note moyenne des 200 etudiants interroges est 4.6” = descriptif. “La note moyenne de tous les etudiants est probablement entre 4.4 et 4.8” = inferentiel.\n\n\n\n\n\n\n\n\n\nNoteScript\n\n\n\n\n\nEn simple : Un fichier texte (extension .R) qui contient du code R sauvegarde. Contrairement a la console (ou le code est perdu), le script garde tout en memoire et permet de relancer l’analyse plus tard.\nExemple du quotidien : La console c’est comme parler a voix haute (les mots disparaissent). Le script c’est comme ecrire une lettre (les mots sont sauvegardes). Tu peux relire, modifier et partager ton script.\n\n\n\n\n\n\n\n\n\nNoteselect() (Selection de colonnes)\n\n\n\n\n\nEn simple : Une fonction dplyr qui choisit quelles colonnes garder (ou exclure) dans un tableau.\nExemple du quotidien : Tu as un tableau avec 50 colonnes mais tu n’as besoin que du nom et de l’age. select(nom, age) ne garde que ces 2 colonnes. select(-adresse) enleve seulement la colonne adresse.\n\n\n\n\n\n\n\n\n\nNotestr() / summary() (Exploration)\n\n\n\n\n\nEn simple : Deux fonctions pour examiner rapidement un tableau. str() montre la structure interne (types, apercu). summary() donne les statistiques descriptives (min, max, moyenne, mediane…).\nExemple du quotidien : str() c’est comme ouvrir le capot d’une voiture pour voir le moteur. summary() c’est comme lire le tableau de bord : vitesse moyenne, kilometres parcourus, niveau d’essence…",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
       "Glossaire - Dictionnaire des Termes"
     ]
   },
@@ -556,10 +988,9 @@
     "href": "glossaire.html#t",
     "title": "Glossaire - Dictionnaire des Termes",
     "section": "18 T",
-    "text": "18 T\n\n\n\n\n\n\nNoteTheme (dans ggplot2)\n\n\n\n\n\nEn simple : Un theme controle l’apparence generale du graphique : couleur de fond, style des grilles, polices, etc. Ca ne change pas les donnees, juste l’habillage visuel.\nExemple du quotidien : C’est comme choisir le cadre et le fond pour une photo. La photo reste la meme, mais theme_minimal() donne un look epure, theme_bw() un look noir et blanc, etc.\n\n\n\n\n\n\n\n\n\nNoteTibble\n\n\n\n\n\nEn simple : Une version modernisee du data frame dans le Tidyverse. C’est pratiquement la meme chose qu’un data frame, mais avec un affichage plus propre et des comportements plus previsibles.\nExemple du quotidien : C’est comme la difference entre un vieux telephone et un smartphone : ils font la meme chose (appeler), mais le nouveau est plus agreable a utiliser et evite certains pieges de l’ancien.\n\n\n\n\n\n\n\n\n\nNoteTidy Data (Donnees bien rangees)\n\n\n\n\n\nEn simple : Un format standard de tableau ou chaque variable a sa propre colonne, chaque observation a sa propre ligne, et chaque type d’observation forme une table distincte. C’est le format ideal pour l’analyse.\nExemple du quotidien : Un carnet d’adresses bien range : une ligne par personne, une colonne pour le nom, une pour le telephone, une pour l’email. Pas de personnes sur plusieurs lignes, pas de numeros de telephone melanges avec les emails dans une meme colonne.\n\n\n\n\n\n\n\n\n\nNoteTidyverse\n\n\n\n\n\nEn simple : Un ensemble de packages R qui partagent une philosophie commune et une “grammaire” coherente pour manipuler, transformer et visualiser les donnees. Ca inclut dplyr, ggplot2, readr, et d’autres.\nExemple du quotidien : C’est comme une boite a outils complete et bien organisee (marteau, tournevis, cle…) ou tous les outils viennent du meme fabricant et s’emboitent bien ensemble. On charge tout d’un coup avec library(tidyverse).",
+    "text": "18 T\n\n\n\n\n\n\nNoteTest d’hypothese\n\n\n\n\n\nEn simple : Une procedure qui confronte deux hypotheses (H0 = aucun effet, H1 = un effet) et utilise une p-value pour decider laquelle retenir.\nExemple du quotidien : C’est un proces : H0 = “innocent” (presomption), H1 = “coupable”. Si les preuves (p-value) sont assez fortes (p &lt; 0.05), on rejette l’innocence. Sinon, “pas assez de preuves” – ce qui ne prouve pas l’innocence.\n\n\n\n\n\n\n\n\n\nNoteTest t (t-test)\n\n\n\n\n\nEn simple : Un test qui compare des moyennes : soit une moyenne a une valeur de reference, soit les moyennes de deux groupes.\nExemple du quotidien : “Le temps de trajet moyen de nos etudiants differe-t-il de la moyenne nationale de 30 min ?” -&gt; test t a un echantillon. “Les femmes et les hommes ont-ils le meme temps de trajet ?” -&gt; test t a deux echantillons. En R : t.test().\n\n\n\n\n\n\n\n\n\nNoteTukey (test post-hoc)\n\n\n\n\n\nEn simple : Un test qu’on lance APRES une ANOVA significative pour savoir exactement quelles paires de groupes different entre elles.\nExemple du quotidien : L’ANOVA est le detecteur de fumee : “il y a un probleme quelque part”. Le test de Tukey est l’inspection piece par piece : “le feu est dans la cuisine, pas dans la chambre”. En R : TukeyHSD(mon_anova).\n\n\n\n\n\n\n\n\n\nNoteTheme (dans ggplot2)\n\n\n\n\n\nEn simple : Un theme controle l’apparence generale du graphique : couleur de fond, style des grilles, polices, etc. Ca ne change pas les donnees, juste l’habillage visuel.\nExemple du quotidien : C’est comme choisir le cadre et le fond pour une photo. La photo reste la meme, mais theme_minimal() donne un look epure, theme_bw() un look noir et blanc, etc.\n\n\n\n\n\n\n\n\n\nNoteTibble\n\n\n\n\n\nEn simple : Une version modernisee du data frame dans le Tidyverse. C’est pratiquement la meme chose qu’un data frame, mais avec un affichage plus propre et des comportements plus previsibles.\nExemple du quotidien : C’est comme la difference entre un vieux telephone et un smartphone : ils font la meme chose (appeler), mais le nouveau est plus agreable a utiliser et evite certains pieges de l’ancien.\n\n\n\n\n\n\n\n\n\nNoteTidy Data (Donnees bien rangees)\n\n\n\n\n\nEn simple : Un format standard de tableau ou chaque variable a sa propre colonne, chaque observation a sa propre ligne, et chaque type d’observation forme une table distincte. C’est le format ideal pour l’analyse.\nExemple du quotidien : Un carnet d’adresses bien range : une ligne par personne, une colonne pour le nom, une pour le telephone, une pour l’email. Pas de personnes sur plusieurs lignes, pas de numeros de telephone melanges avec les emails dans une meme colonne.\n\n\n\n\n\n\n\n\n\nNoteTidyverse\n\n\n\n\n\nEn simple : Un ensemble de packages R qui partagent une philosophie commune et une “grammaire” coherente pour manipuler, transformer et visualiser les donnees. Ca inclut dplyr, ggplot2, readr, et d’autres.\nExemple du quotidien : C’est comme une boite a outils complete et bien organisee (marteau, tournevis, cle…) ou tous les outils viennent du meme fabricant et s’emboitent bien ensemble. On charge tout d’un coup avec library(tidyverse).",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
       "Glossaire - Dictionnaire des Termes"
     ]
   },
@@ -571,7 +1002,6 @@
     "text": "19 U\n\n\n\n\n\n\nNoteungroup() (Retirer le groupement)\n\n\n\n\n\nEn simple : Apres avoir utilise group_by(), il faut appeler ungroup() pour dire a R “c’est fini, arrete de traiter les donnees par groupes”. Oublier ca peut causer des bugs subtils.\nExemple du quotidien : C’est comme enlever un filtre sur Instagram. Tu avais filtre “mes photos de vacances”, maintenant tu veux revoir toutes tes photos. ungroup() enleve le filtre de groupement.",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
       "Glossaire - Dictionnaire des Termes"
     ]
   },
@@ -580,10 +1010,9 @@
     "href": "glossaire.html#v",
     "title": "Glossaire - Dictionnaire des Termes",
     "section": "20 V",
-    "text": "20 V\n\n\n\n\n\n\nNoteVariable (types : nominale, ordinale, continue, discrete)\n\n\n\n\n\nEn simple : Une variable c’est une caracteristique qu’on mesure ou observe. Elle peut etre de differents types :\n\nNominale : des categories sans ordre (couleur des yeux, parti politique)\nOrdinale : des categories avec un ordre (niveau d’education : primaire &lt; secondaire &lt; tertiaire)\nContinue : des valeurs numeriques qui peuvent prendre n’importe quelle valeur dans un intervalle (taille : 1.75 m)\nDiscrete : des valeurs numeriques qui ne prennent que des nombres entiers (nombre d’enfants : 0, 1, 2, 3)\n\nExemple du quotidien : Sur un formulaire d’inscription : “Sexe” = nominale, “Satisfaction (1 a 5)” = ordinale, “Poids en kg” = continue, “Nombre de freres et soeurs” = discrete.\n\n\n\n\n\n\n\n\n\nNoteVecteur / Vecteur atomique\n\n\n\n\n\nEn simple : La brique de base de R. C’est une suite ordonnee de valeurs du meme type. Meme un simple nombre comme 42 est en realite un vecteur de longueur 1 en R.\nExemple du quotidien : C’est comme un collier de perles : toutes les perles sont enfilees dans l’ordre, et elles doivent etre du meme type (toutes rondes, ou toutes carrees). En R : c(10, 20, 30) est un vecteur de 3 nombres. c(\"chat\", \"chien\") est un vecteur de 2 textes.\n\n\n\n\n\n\n\n\n\nNoteVectorisation\n\n\n\n\n\nEn simple : Le fait que R applique automatiquement une operation a chaque element d’un vecteur, sans qu’on ait besoin d’ecrire une boucle. C’est une des grandes forces de R.\nExemple du quotidien : Au lieu de dire “prends le 1er prix et ajoute 10%, puis le 2e prix et ajoute 10%, puis le 3e…” tu dis juste “ajoute 10% a tous les prix”. En R : prix * 1.10 multiplie chaque element du vecteur par 1.10 d’un coup.\n\n\n\n\n\n\n\n\n\nNoteViridis (Palette de couleurs)\n\n\n\n\n\nEn simple : Une famille de palettes de couleurs concue pour etre lisible par les personnes daltoniennes et en impression noir et blanc.\nExemple du quotidien : Au lieu d’utiliser rouge et vert (que 8% des hommes ne distinguent pas), viridis utilise des degrades de jaune-vert-violet qui restent distinguables pour tout le monde.",
+    "text": "20 V\n\n\n\n\n\n\nNoteVariance\n\n\n\n\n\nEn simple : Une mesure de dispersion, egale a l’ecart-type au carre. Elle dit a quel point les valeurs sont eparpillees, mais dans une unite “au carre” peu intuitive.\nExemple du quotidien : Si les donnees sont des minutes, la variance est en “minutes au carre” – difficile a interpreter. C’est pourquoi on prefere souvent l’ecart-type (sa racine carree), qui revient a l’unite d’origine. En R : var(x, na.rm = TRUE).\n\n\n\n\n\n\n\n\n\nNoteVariable (types : nominale, ordinale, continue, discrete)\n\n\n\n\n\nEn simple : Une variable c’est une caracteristique qu’on mesure ou observe. Elle peut etre de differents types :\n\nNominale : des categories sans ordre (couleur des yeux, parti politique)\nOrdinale : des categories avec un ordre (niveau d’education : primaire &lt; secondaire &lt; tertiaire)\nContinue : des valeurs numeriques qui peuvent prendre n’importe quelle valeur dans un intervalle (taille : 1.75 m)\nDiscrete : des valeurs numeriques qui ne prennent que des nombres entiers (nombre d’enfants : 0, 1, 2, 3)\n\nExemple du quotidien : Sur un formulaire d’inscription : “Sexe” = nominale, “Satisfaction (1 a 5)” = ordinale, “Poids en kg” = continue, “Nombre de freres et soeurs” = discrete.\n\n\n\n\n\n\n\n\n\nNoteVecteur / Vecteur atomique\n\n\n\n\n\nEn simple : La brique de base de R. C’est une suite ordonnee de valeurs du meme type. Meme un simple nombre comme 42 est en realite un vecteur de longueur 1 en R.\nExemple du quotidien : C’est comme un collier de perles : toutes les perles sont enfilees dans l’ordre, et elles doivent etre du meme type (toutes rondes, ou toutes carrees). En R : c(10, 20, 30) est un vecteur de 3 nombres. c(\"chat\", \"chien\") est un vecteur de 2 textes.\n\n\n\n\n\n\n\n\n\nNoteVectorisation\n\n\n\n\n\nEn simple : Le fait que R applique automatiquement une operation a chaque element d’un vecteur, sans qu’on ait besoin d’ecrire une boucle. C’est une des grandes forces de R.\nExemple du quotidien : Au lieu de dire “prends le 1er prix et ajoute 10%, puis le 2e prix et ajoute 10%, puis le 3e…” tu dis juste “ajoute 10% a tous les prix”. En R : prix * 1.10 multiplie chaque element du vecteur par 1.10 d’un coup.\n\n\n\n\n\n\n\n\n\nNoteViridis (Palette de couleurs)\n\n\n\n\n\nEn simple : Une famille de palettes de couleurs concue pour etre lisible par les personnes daltoniennes et en impression noir et blanc.\nExemple du quotidien : Au lieu d’utiliser rouge et vert (que 8% des hommes ne distinguent pas), viridis utilise des degrades de jaune-vert-violet qui restent distinguables pour tout le monde.",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
       "Glossaire - Dictionnaire des Termes"
     ]
   },
@@ -595,7 +1024,7 @@
     "text": "ggplot2 est l’implementation de “The Grammar of Graphics” (Leland Wilkinson). Il procede par addition sequentielle de calques (layers) superposes, liant les donnees a une representation spatiale.",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
+      "Categorie 1 - Probleme Set 1",
       "Module 4 : Visualisation Avancee avec ggplot2"
     ]
   },
@@ -607,7 +1036,7 @@
     "text": "1 Concepts Fondamentaux\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nggplot2, c’est comme construire un dessin couche par couche, exactement comme des calques dans Photoshop ou des transparents qu’on superpose :\n\nCalque 1 – la toile : tu dis a R quelles donnees utiliser et quels axes (ggplot(data, aes(...)))\nCalque 2 – les formes : tu choisis comment dessiner (des points ? des barres ? des lignes ?) (geom_*())\nCalques optionnels : tu ajoutes des titres, tu changes les couleurs, tu divises en sous-graphiques…\n\nChaque calque s’ajoute avec un +. C’est comme empiler des feuilles transparentes les unes sur les autres pour obtenir le dessin final.\n\n\n\nTout graphique necessite 3 composants obligatoires :\n\n\n\n\n\n\n\n\nComposant\nFonction\nRole\n\n\n\n\nDonnees\nggplot(data = ...)\nLe data frame source\n\n\nEsthetiques\naes(x, y, color, fill, size)\nMappage variable -&gt; attribut visuel\n\n\nGeometries\ngeom_*()\nL’objet visuel dessine (point, barre, ligne)\n\n\n\nEt des composants optionnels :\n\n\n\n\n\n\n\n\nComposant\nFonction\nRole\n\n\n\n\nFacettes\nfacet_wrap(), facet_grid()\nSous-graphiques par categorie\n\n\nThemes\ntheme_minimal(), theme_bw()\nStyle visuel (grilles, polices)\n\n\nLabels\nlabs()\nTitres, legendes, annotations\n\n\n\n# Structure de base -- toujours le meme squelette\nggplot(data = mon_df, mapping = aes(x = var_x, y = var_y, color = var_c)) +\n  geom_XXX()\n# 1. ggplot() : on pose la toile avec les donnees et les axes\n# 2. +        : on ajoute un calque\n# 3. geom_XXX : on choisit la forme (points, barres, lignes...)\n\n1.1 Mapping vs Setting (Erreur fatale courante)\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nC’est LA source d’erreur numero 1 pour les debutants. La difference :\n\nMapping (dans aes()) : la couleur depend des donnees. Exemple : “colorie chaque point selon l’espece de la fleur”. R choisit les couleurs automatiquement.\nSetting (hors aes()) : la couleur est fixe pour tout le monde. Exemple : “tous les points en bleu, point final”.\n\nAnalogie : Imagine que tu distribues des maillots a une equipe de sport.\n\nMapping = chaque joueur recoit un maillot d’une couleur differente selon son poste (gardien = jaune, defenseur = bleu, attaquant = rouge).\nSetting = tout le monde recoit un maillot bleu, sans distinction.",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
+      "Categorie 1 - Probleme Set 1",
       "Module 4 : Visualisation Avancee avec ggplot2"
     ]
   },
@@ -619,7 +1048,7 @@
     "text": "2 Mapping vs Setting (Erreur fatale courante)\n\nDans aes() : la couleur est dictee par une variable des donnees\n\naes(color = Species) -&gt; couleurs automatiques par espece\n\nHors aes() : la couleur est un choix stylistique fixe\n\ngeom_point(color = \"lightblue\") -&gt; tous les points en bleu\n\n\nSi on ecrit aes(color = \"lightblue\"), R traite “lightblue” comme une variable categorielle a une modalite -&gt; graphique probablement rouge avec legende aberrante !",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
+      "Categorie 1 - Probleme Set 1",
       "Module 4 : Visualisation Avancee avec ggplot2"
     ]
   },
@@ -631,7 +1060,7 @@
     "text": "3 Les Principaux Geoms\n\n3.1 geom_point() - Nuage de points (Scatter plot)\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nQuand l’utiliser ? Quand tu veux voir si deux mesures numeriques sont liees. Par exemple :\n\n“Est-ce que les etudiants qui etudient plus d’heures ont de meilleures notes ?”\n“Est-ce que les voitures plus lourdes consomment plus d’essence ?”\n“Est-ce que le prix d’un appartement augmente avec sa surface ?”\n\nChaque point sur le graphique represente une observation (un etudiant, une voiture, un appartement). Sa position horizontale = une variable, sa position verticale = l’autre variable. Si les points forment une tendance (montante, descendante), il y a une relation.\n\n\n\nUsage : Relation entre 2 variables continues.\nggplot(data = mtcars, aes(x = disp, y = mpg, color = as.factor(cyl), size = wt)) +\n  geom_point(alpha = 0.8) +          # alpha = transparence (0 = invisible, 1 = opaque)\n  labs(\n    title = \"Covariance entre Cylindree et Efficience Energetique\",\n    subtitle = \"Le poids du vehicule modere la consommation\",\n    x = \"Cylindree Moteur (cu.in.)\",      # nom de l'axe X\n    y = \"Rendement (Miles par Gallon)\",     # nom de l'axe Y\n    color = \"Cylindres\",                    # titre de la legende couleur\n    size = \"Poids (1000 lbs)\"               # titre de la legende taille\n  ) +\n  theme_minimal()                     # theme epure\nLe probleme de l’Overplotting :\nQuand les donnees sont massives, les points se superposent et masquent la distribution.\n\n\n\n\n\n\n\n\nSolution\nCode\nEffet\n\n\n\n\nTransparence\ngeom_point(alpha = 0.2)\n5 points superposes = pixel opaque\n\n\nBruit aleatoire\ngeom_jitter()\nDeplace legerement chaque point\n\n\n\n\n\n3.2 geom_bar() et geom_col() - Diagrammes a barres\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nQuand l’utiliser ? Quand tu veux compter ou comparer des categories. Par exemple :\n\n“Combien d’etudiants dans chaque branche ?” -&gt; geom_bar() (R compte pour toi)\n“Quel est le chiffre d’affaires de chaque succursale ?” -&gt; geom_col() (tu fournis les valeurs)\n\nLa difference cle :\n\ngeom_bar() : tu donnes juste X (les categories), R compte automatiquement combien il y en a\ngeom_col() : tu donnes X et Y, R dessine les barres a la hauteur que TU as fournie\n\n\n\n\n\n\n\n\n\n\n\n\nFonction\nStatistique\nUsage\n\n\n\n\ngeom_bar()\nstat = \"count\" (automatique)\nFournir X seulement, R compte les frequences\n\n\ngeom_col()\nstat = \"identity\"\nFournir X et Y (valeur deja calculee)\n\n\n\n# geom_bar : R compte automatiquement les diamants par categorie de coupe\nggplot(diamonds, aes(x = cut)) +\n  geom_bar()\n\n# Avec remplissage par une autre variable (clarte)\nggplot(diamonds, aes(x = cut, fill = clarity)) +\n  geom_bar(position = \"dodge\", color = \"black\", linewidth = 0.2) +\n  labs(\n    title = \"Analyse des Tailles de Diamants\",\n    x = \"Niveau de Taille\",\n    y = \"Denombrement\",\n    fill = \"Indice de Purete\"\n  ) +\n  theme_bw()\nPositions pour barres empilees/paralleles :\n\n\n\nPosition\nEffet\n\n\n\n\nposition = \"stack\"\nEmpilees (defaut)\n\n\nposition = \"dodge\"\nCote a cote\n\n\nposition = \"fill\"\nEmpilees normalisees a 100%\n\n\n\n\n\n3.3 geom_histogram() - Histogramme\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nQuand l’utiliser ? Quand tu veux voir comment se repartissent les valeurs d’une mesure numerique. Par exemple :\n\n“La plupart des etudiants ont-ils des notes entre 4 et 5, ou c’est plus disperse ?”\n“Les salaires sont-ils concentres autour de 5000 CHF ou tres etales ?”\n“Les temps de reponse au questionnaire sont-ils groupes ou eparpilles ?”\n\nL’histogramme decoupe les valeurs en “bacs” (intervalles) et montre combien d’observations tombent dans chaque bac. C’est une “photo” de la distribution.\n\n\n\nUsage : Distribution d’une variable continue. Par defaut, la hauteur de chaque bac represente le nombre d’observations (frequence absolue).\nggplot(iris, aes(x = Sepal.Length)) +\n  geom_histogram(binwidth = 0.2, fill = \"darkblue\", color = \"white\") +\n  facet_wrap(~ Species) +      # Un sous-graphique par espece\n  labs(\n    title = \"Distribution des Longueurs de Sepales (par Espece)\",\n    x = \"Longueur (cm)\",\n    y = \"Frequence\"\n  )\n\n\n\n\n\n\nWarningLe parametre binwidth\n\n\n\nLe reglage du binwidth (largeur de l’intervalle) est crucial :\n\nTrop large : masque la bimodalite (sous-ajustement)\nTrop fin : capte le bruit aleatoire, “dents de scie” (sur-ajustement)\n\nTester plusieurs valeurs pour trouver le bon equilibre.\n\n\n\n\n3.4 geom_boxplot() - Boite a moustaches (Tukey)\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nQuand l’utiliser ? Quand tu veux comparer la distribution d’une mesure entre plusieurs groupes. Par exemple :\n\n“Les notes sont-elles meilleures en Psycho ou en Droit ?”\n“Les salaires sont-ils plus variables dans le secteur prive que dans le public ?”\n“Y a-t-il des valeurs aberrantes (outliers) dans mes donnees ?”\n\nLe boxplot est un resume visuel ultra-compact : en un coup d’oeil, tu vois la mediane (le milieu), l’etendue des donnees, et les valeurs extremes. C’est comme un “bulletin meteo” de tes donnees : il te dit ou se situe le gros des observations et s’il y a des cas exceptionnels.\n\n\n\nUsage : Comparer les distributions entre groupes. Diagnostic base sur les quantiles.\nAnatomie du boxplot :\n\n\n\n\n\n\n\nElement\nDescription\n\n\n\n\nCorps de la boite\nDu \\(Q_1\\) (25e centile) au \\(Q_3\\) (75e centile)\n\n\nIQR\n\\(Q_3 - Q_1\\) = ecart interquartile (50% centraux)\n\n\nLigne mediane\n50e centile (mediane). Si asymetrique -&gt; distribution biaisee\n\n\nMoustaches\nJusqu’a l’observation la plus distante, max \\(1.5 \\times IQR\\)\n\n\nPoints (outliers)\nAu-dela des moustaches (~0.7% dans une loi normale)\n\n\n\n# Boxplot simple : comparer le prix des diamants selon leur coupe\nggplot(diamonds, aes(x = cut, y = price)) +\n  geom_boxplot()\nExemple avance avec transformation log et personnalisation des outliers :\nggplot(igposts, aes(x = Content_Type, y = IGLikesPPost, fill = Content_Type)) +\n  geom_boxplot(\n    outlier.color = \"darkred\",   # Couleur des points aberrants\n    outlier.shape = 8,           # Forme asterisque pour les outliers\n    outlier.size = 2.5,          # Taille des outliers\n    notch = FALSE                # notch = TRUE pour IC 95% de la mediane\n  ) +\n  scale_y_log10() +              # Echelle logarithmique pour longue queue\n  labs(\n    title = \"Dispersion de l'Efficacite des Publications (Likes/Post)\",\n    subtitle = \"Echelle log. Points rouges = deviations virales.\",\n    x = \"Categorie de Publication\",\n    y = \"Likes par Post (Echelle Log10)\"\n  ) +\n  scale_fill_viridis_d(option = \"cividis\") +  # Palette accessible daltoniens\n  theme_minimal() +\n  theme(legend.position = \"none\")              # Pas de legende (redondante ici)\n\n\n3.5 geom_line() - Ligne (Tendance / Evolution)\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nQuand l’utiliser ? Quand tu veux montrer une evolution dans le temps ou une tendance. Par exemple :\n\n“Comment le PIB a-t-il evolue entre 2000 et 2020 ?”\n“Le nombre d’inscriptions augmente-t-il chaque annee ?”\n“Comment la temperature a-t-elle change au fil des mois ?”\n\nLes points sont relies par des lignes, ce qui permet de voir la direction generale (monte, descend, stagne).\n\n\n\n# Exemple : evolution des temperatures sur plusieurs annees\nggplot(donnees_climat, aes(x = annee, y = temperature_moyenne)) +\n  geom_line(color = \"steelblue\", linewidth = 1) +  # Ligne bleue epaisse\n  geom_point(size = 2) +                            # Points a chaque annee\n  labs(\n    title = \"Evolution de la Temperature Moyenne\",\n    x = \"Annee\",\n    y = \"Temperature (C)\"\n  ) +\n  theme_minimal()",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
+      "Categorie 1 - Probleme Set 1",
       "Module 4 : Visualisation Avancee avec ggplot2"
     ]
   },
@@ -643,7 +1072,7 @@
     "text": "4 Personnalisation (Labels)\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nlabs() c’est la fonction “etiquettes” : elle permet de donner un titre, un sous-titre, de renommer les axes, et d’ajouter une source en bas du graphique. C’est ce qui rend un graphique lisible et professionnel au lieu d’avoir des noms de variables techniques.\n\n\n\nggplot(df, aes(x = var_x, y = var_y)) +\n  geom_point() +\n  labs(\n    title = \"Titre principal\",                 # Le gros titre\n    subtitle = \"Sous-titre\",                   # Precision sous le titre\n    x = \"Nom de l'axe X (unite)\",             # Nom lisible pour l'axe X\n    y = \"Nom de l'axe Y (unite)\",             # Nom lisible pour l'axe Y\n    color = \"Titre legende couleur\",           # Titre de la legende\n    caption = \"Source : Dataset XYZ\"           # Note en bas a droite\n  )",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
+      "Categorie 1 - Probleme Set 1",
       "Module 4 : Visualisation Avancee avec ggplot2"
     ]
   },
@@ -655,7 +1084,7 @@
     "text": "5 Facettes : Sous-graphiques par categorie\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nLes facettes, c’est comme decouper un graphique en petites vignettes, une par categorie. Au lieu d’avoir toutes les especes de fleurs sur un seul graphique (ce qui peut etre confus), tu obtiens un mini-graphique par espece, cote a cote. Ca permet de comparer facilement.\n\n\n\n# Grille de sous-graphiques par espece\nggplot(iris, aes(x = Sepal.Length)) +\n  geom_histogram(binwidth = 0.2) +\n  facet_wrap(~ Species)     # Un histogramme par espece, cote a cote",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
+      "Categorie 1 - Probleme Set 1",
       "Module 4 : Visualisation Avancee avec ggplot2"
     ]
   },
@@ -667,7 +1096,7 @@
     "text": "6 Normes d’Accessibilite et d’Integrite\n\n6.1 Daltonisme (~8% des hommes)\nNe jamais baser une information sur une opposition rouge/vert seule. Utiliser les palettes viridis :\n+ scale_color_viridis_d()   # Variables discretes\n+ scale_color_viridis_c()   # Variables continues\n\n\n6.2 Axe Y et zero\nPour geom_bar() / geom_col(), l’axe Y doit inclure le zero. Tronquer l’axe amplifie artificiellement les differences (manipulation visuelle). Si les donnees sont loin de zero, utiliser geom_point() a la place.\n\n\n6.3 Variable shape\n\nshape est reserve aux variables nominales (pas continues)\nMaximum 6 formes distinctes discriminables par le cerveau humain\nVariable continue dans aes(shape = ...) -&gt; erreur/crash",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
+      "Categorie 1 - Probleme Set 1",
       "Module 4 : Visualisation Avancee avec ggplot2"
     ]
   },
@@ -679,7 +1108,7 @@
     "text": "7 Recap : Quel Geom Choisir ?\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nLe choix du geom depend de ta question et du type de tes variables :\n\nTu as 2 nombres et tu veux voir le lien ? -&gt; points (geom_point)\nTu veux voir comment une mesure se distribue ? -&gt; histogramme (geom_histogram)\nTu veux compter des categories ? -&gt; barres (geom_bar)\nTu veux comparer des groupes ? -&gt; boxplot (geom_boxplot)\nTu veux montrer une evolution ? -&gt; ligne (geom_line)\nTu as des valeurs deja calculees a montrer en barres ? -&gt; colonnes (geom_col)\n\n\n\n\n\n\n\n\n\n\n\n\nObjectif\nGeom\nVariables\n\n\n\n\nRelation entre 2 var. continues\ngeom_point()\nx = continue, y = continue\n\n\nDistribution d’une var. numerique\ngeom_histogram()\nx = continue\n\n\nFrequences d’une var. categorielle\ngeom_bar()\nx = categorielle\n\n\nComparer distributions entre groupes\ngeom_boxplot()\nx = categorielle, y = continue\n\n\nTendance / evolution\ngeom_line()\nx = continue/date, y = continue\n\n\nValeurs pre-calculees en barres\ngeom_col()\nx = categorielle, y = valeur",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
+      "Categorie 1 - Probleme Set 1",
       "Module 4 : Visualisation Avancee avec ggplot2"
     ]
   },
@@ -691,7 +1120,7 @@
     "text": "R est un environnement de programmation open-source concu pour le calcul statistique et la visualisation de donnees. Contrairement aux logiciels GUI, R exige la redaction de scripts, garantissant la reproductibilite de la recherche.",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
+      "Categorie 1 - Probleme Set 1",
       "Module 2 : Fondations de R et Architecture"
     ]
   },
@@ -703,7 +1132,7 @@
     "text": "1 L’Environnement RStudio\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nRStudio, c’est comme un atelier de bricolage bien organise. Tu as ton etabli (l’editeur de code), un ecran de controle (la console), un rangement ou tu vois tout ce que tu as fabrique (l’environnement), et des tiroirs avec tes outils (aide, fichiers, graphiques). Chaque zone a son role, et ensemble elles te permettent de travailler efficacement.\n\n\n\nRStudio se divise en 4 quadrants :\n\nEditeur de code source : redaction et sauvegarde des scripts\nConsole : execution du code en temps reel\nEnvironnement : inventaire des objets en memoire\nPanneau utilitaire : fichiers, visualisations, packages, aide",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
+      "Categorie 1 - Probleme Set 1",
       "Module 2 : Fondations de R et Architecture"
     ]
   },
@@ -715,7 +1144,7 @@
     "text": "2 Raccourcis de Productivite\n\n\n\n\n\n\n\n\n\nAction\nWindows/Linux\nmacOS\nDescription\n\n\n\n\nAssignation &lt;-\nAlt + -\nOption + -\nInsere l’operateur d’assignation avec espaces\n\n\nExecuter le code\nCtrl + Enter\nCmd + Return\nExecute la ligne ou le bloc selectionne\n\n\nPipe %&gt;%\nCtrl + Shift + M\nCmd + Shift + M\nInsere l’operateur pipe\n\n\nRedemarrer session\nCtrl + Shift + F10\nCmd + Shift + F10\nVide la memoire, detache les packages\n\n\nCommentaire en bloc\nCtrl + Shift + C\nCmd + Shift + C\nCommente/decommente une selection\n\n\n\n\n2.1 L’assignation &lt;-\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nUn operateur, c’est un symbole qui fait une action. Par exemple, + additionne, - soustrait. La fleche &lt;- est l’operateur d’assignation : elle permet de donner un nom a une valeur pour la reutiliser plus tard.\nImagine que tu colles une etiquette sur une boite. Tu ecris mon_age &lt;- 25 et ca veut dire : “colle l’etiquette mon_age sur la boite qui contient 25”. Apres, chaque fois que tu dis mon_age, R sait que tu parles de 25.\n\n\n\n# On colle l'etiquette \"mon_age\" sur la valeur 25\nmon_age &lt;- 25\n\n# Maintenant on peut utiliser \"mon_age\" dans des calculs\nmon_age + 5    # Resultat : 30\n\n# On peut aussi changer la valeur dans la boite\nmon_age &lt;- 26  # Maintenant mon_age vaut 26\n\n\n\n\n\n\nWarning&lt;- vs =\n\n\n\n\n&lt;- : assignation globale (standard obligatoire)\n= : reserve aux arguments dans les fonctions (ex: mean(x, na.rm = TRUE))\n\nNe jamais utiliser = pour l’assignation globale (conflits de portee lexicale).",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
+      "Categorie 1 - Probleme Set 1",
       "Module 2 : Fondations de R et Architecture"
     ]
   },
@@ -727,7 +1156,7 @@
     "text": "3 Types de Variables (Vecteurs Atomiques)\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nEn R, meme un seul nombre est stocke dans un “vecteur” – pense a un train avec un seul wagon. Un vecteur, c’est juste une suite ordonnee de valeurs.\nLes types, c’est comme les rayons d’un supermarche : il y a le rayon des nombres entiers, le rayon des nombres a virgule, le rayon du texte, et le rayon vrai/faux. Chaque valeur appartient a un rayon precis.\n\n\n\nEn R, meme un nombre unique est un vecteur de longueur 1.\n\n\n\n\n\n\n\n\nType\nDescription\nExemple\n\n\n\n\nlogical\nBooleen\nTRUE, FALSE, NA\n\n\ninteger\nEntier strict\n42L (suffixe L obligatoire)\n\n\nnumeric / double\nReel a virgule flottante\n3.14 (defaut de R)\n\n\ncharacter\nTexte\n\"chien\" (avec guillemets)\n\n\n\n# Verification du type de chaque valeur\nclass(42L)      # \"integer\"  -- nombre entier (le L force le type entier)\nclass(3.14)     # \"numeric\"  -- nombre a virgule\nclass(\"texte\")  # \"character\" -- du texte (toujours entre guillemets)\nclass(TRUE)     # \"logical\"  -- vrai ou faux\n\n3.1 Coercition Implicite (le melange interdit)\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nImagine une boite ou tu ne peux mettre QUE des pommes OU QUE des oranges, jamais les deux. Un vecteur en R, c’est pareil : il ne peut contenir qu’un seul type de donnees. Si tu essaies de melanger des nombres et du texte dans le meme vecteur, R va tout transformer en texte sans te prevenir. C’est comme si tu melangeais des pommes et des oranges et que la boite transformait tout en oranges automatiquement.",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
+      "Categorie 1 - Probleme Set 1",
       "Module 2 : Fondations de R et Architecture"
     ]
   },
@@ -739,7 +1168,7 @@
     "text": "4 Coercition Implicite\nUn vecteur atomique doit etre strictement homogene. Si on melange les types, R convertit silencieusement selon la hierarchie :\nlogical -&gt; integer -&gt; numeric -&gt; character\n# On melange un booleen, un nombre et du texte dans le meme vecteur\nc(TRUE, 5, \"Pomme\")\n# Resultat : c(\"TRUE\", \"5\", \"Pomme\") -- tout devient character !\n# Maintenant \"5\" est du TEXTE, pas un nombre. Tu ne peux plus calculer avec.\nToute operation mathematique sur \"5\" echouera ensuite.",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
+      "Categorie 1 - Probleme Set 1",
       "Module 2 : Fondations de R et Architecture"
     ]
   },
@@ -751,7 +1180,7 @@
     "text": "5 Structures de Donnees\n\n5.1 Vecteurs\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nUn vecteur, c’est une liste de valeurs du meme type, comme un collier de perles. Toutes les perles sont enfilees dans l’ordre, et elles sont toutes du meme materiau. Pour creer un vecteur, on utilise la fonction c() (comme “combiner” ou “concatener”).\n\n\n\n# Creation d'un vecteur de nombres avec c() -- \"c\" veut dire \"combiner\"\nv1 &lt;- c(1, 2, 3)           # Un vecteur avec 3 nombres\n\n# Creation d'un vecteur de texte\nv2 &lt;- c(\"chat\", \"chien\", \"oiseau\")  # Un vecteur avec 3 mots\n\n# Sequences rapides : creer une suite de nombres\nseq_1 &lt;- 1:100                        # Les nombres de 1 a 100\nseq_2 &lt;- seq(from = 0, to = 1, by = 0.1)  # De 0 a 1, par pas de 0.1\n\n# Acceder a un element par sa position (R commence a 1, pas 0)\nv2[1]   # \"chat\"   -- le premier element\nv2[3]   # \"oiseau\" -- le troisieme element\n\n\n5.2 Matrices\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nUne matrice, c’est un tableau rectangulaire ou toutes les cases contiennent le meme type de donnees (que des nombres, ou que du texte). Pense a une grille de sudoku : des lignes, des colonnes, et que des chiffres dedans.\n\n\n\nStructures 2D strictement homogenes (un seul type). Remplissage par colonnes par defaut.\n# Creer une matrice 3x3 avec les nombres de 1 a 9\nm &lt;- matrix(1:9, nrow = 3, ncol = 3)\n# Par defaut, R remplit colonne par colonne :\n#      [,1] [,2] [,3]\n# [1,]    1    4    7\n# [2,]    2    5    8\n# [3,]    3    6    9\n\n# Pour remplir ligne par ligne, ajouter byrow = TRUE\nm &lt;- matrix(1:9, nrow = 3, ncol = 3, byrow = TRUE)\n\n# Extraction : matrice[ligne, colonne]\nm[3, 2]   # L'element a la ligne 3, colonne 2\nm[1, ]    # Toute la ligne 1 (on laisse \"colonne\" vide)\nm[, 2]    # Toute la colonne 2 (on laisse \"ligne\" vide)\n\n\n5.3 Facteurs (Factors)\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nUn facteur, c’est une variable qui ne peut prendre que certaines valeurs predefinies, appelees “niveaux”. Pense a un formulaire avec un menu deroulant : tu ne peux choisir que parmi les options proposees (Primaire, Secondaire, Tertiaire). En plus, les niveaux peuvent etre ordonnes (Primaire &lt; Secondaire &lt; Tertiaire).\n\n\n\nVecteurs entiers avec attribut “niveaux” (levels). Socle des variables nominales/ordinales dans les regressions.\n# On a des niveaux d'education en vrac\nniveaux_education &lt;- c(\"Secondaire\", \"Primaire\", \"Tertiaire\", \"Primaire\")\n\n# On les transforme en facteur ordonne\nfacteur_education &lt;- factor(\n  niveaux_education,                                    # les donnees brutes\n  levels = c(\"Primaire\", \"Secondaire\", \"Tertiaire\"),    # l'ordre des niveaux\n  ordered = TRUE                                        # c'est un ordre !\n)\n# Resultat : Primaire &lt; Secondaire &lt; Tertiaire\n# R sait maintenant que Tertiaire &gt; Primaire\n\n\n5.4 Listes\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nSi un vecteur est un collier de perles identiques, une liste c’est un sac a dos : tu peux y mettre n’importe quoi – un livre, une bouteille, un cahier, un autre sac. Chaque element peut etre de type different et meme de taille differente.\n\n\n\nVecteurs heterogenes : peuvent contenir nombres, texte, matrices, autres listes, modeles statistiques.\n# Creer une liste avec des elements de types differents\nma_liste &lt;- list(\n  nom = \"Analyse\",           # un texte\n  valeurs = c(1, 2, 3),     # un vecteur de nombres\n  matrice = matrix(1:4, 2, 2)  # une matrice 2x2\n)\n\n# Acceder aux elements de la liste\nma_liste$nom          # \"Analyse\"  -- acces par le nom avec $\nma_liste[[2]]         # c(1, 2, 3) -- acces par la position avec [[ ]]\nma_liste[[\"valeurs\"]] # c(1, 2, 3) -- acces par le nom avec [[ ]]\n\n\n5.5 Data Frames\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nUn Data Frame, c’est exactement comme un tableau Excel : des lignes et des colonnes. Chaque colonne a un nom (comme “Nom”, “Age”, “Note”) et contient un type de donnees (la colonne “Nom” contient du texte, la colonne “Age” contient des nombres). Chaque ligne represente une personne, un produit, une observation – bref, un “cas”.\nLa grande difference avec une matrice : dans un Data Frame, chaque colonne peut avoir un type different (texte dans une colonne, nombres dans une autre). C’est LA structure que tu utiliseras 90% du temps en Data Science.\n\n\n\nL’objet central de la Data Science en R. C’est une liste de colonnes de meme longueur pouvant contenir des types differents.\n\nLigne = unite statistique (observation/personne)\nColonne = variable\n\n# Creer un Data Frame -- comme creer un tableau Excel\ndf &lt;- data.frame(\n  nom = c(\"Sid\", \"Manny\", \"Diego\"),  # colonne \"nom\" (texte)\n  age = c(30, 40, 35)                # colonne \"age\" (nombres)\n)\n# Resultat :\n#     nom age\n# 1   Sid  30\n# 2 Manny  40\n# 3 Diego  35\n\n# Extraire une colonne avec le signe $\ndf$age        # Donne : 30 40 35\n\n# Extraire une ligne avec les crochets\ndf[1, ]       # Toute la ligne 1 (Sid, 30)\n\n# Extraire une cellule precise\ndf[2, \"nom\"]  # \"Manny\" (ligne 2, colonne \"nom\")\n# Exemple plus complet : donnees d'entreprise\nentreprise_df &lt;- data.frame(\n  id_filiale = 1:5,                                    # identifiant de 1 a 5\n  actifs_fixes = c(50000, 75000, 42000, NA, 90000),    # NA = valeur manquante\n  passifs = c(20000, 30000, 15000, 40000, 45000)       # dettes\n)\n# Resultat :\n#   id_filiale actifs_fixes passifs\n# 1          1        50000   20000\n# 2          2        75000   30000\n# 3          3        42000   15000\n# 4          4           NA   40000   &lt;-- pas de donnee pour les actifs !\n# 5          5        90000   45000",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
+      "Categorie 1 - Probleme Set 1",
       "Module 2 : Fondations de R et Architecture"
     ]
   },
@@ -763,7 +1192,7 @@
     "text": "6 Fonctions d’Exploration\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nQuand tu recois un nouveau jeu de donnees, la premiere chose a faire c’est l’explorer : combien de lignes ? Combien de colonnes ? Quels types de donnees ? Y a-t-il des valeurs manquantes ? Ces fonctions sont comme des “radiographies” de ton tableau – elles te montrent ce qu’il contient sans le modifier.\n\n\n\n\n\n\n\n\n\n\nFonction\nDescription\n\n\n\n\nstr(df)\nStructure interne : types, nb observations, apercu des valeurs\n\n\nsummary(df)\nStatistiques descriptives (Min, Q1, Mediane, Moyenne, Q3, Max, NA)\n\n\nhead(df, n)\nPremieres n lignes (defaut = 6)\n\n\ndim(df)\nVecteur [nb_lignes, nb_colonnes]\n\n\nnrow(df)\nNombre de lignes\n\n\nncol(df)\nNombre de colonnes\n\n\nnames(df)\nNoms des colonnes\n\n\nclass(x)\nType d’un objet\n\n\nis.na(x)\nMasque booleen des valeurs manquantes\n\n\nsum(is.na(x))\nComptage total des NA\n\n\n\n# Exemple pratique : explorer notre data frame d'entreprise\n\nstr(entreprise_df)       # Montre la structure : 5 obs., 3 variables, les types\nsummary(entreprise_df)   # Stats de chaque colonne (min, max, moyenne, NA)\nhead(entreprise_df, 3)   # Les 3 premieres lignes\ndim(entreprise_df)       # c(5, 3) -- 5 lignes, 3 colonnes\nnrow(entreprise_df)      # 5 lignes\nncol(entreprise_df)      # 3 colonnes\nnames(entreprise_df)     # \"id_filiale\" \"actifs_fixes\" \"passifs\"\n\n# Verifier les valeurs manquantes\nis.na(entreprise_df$actifs_fixes)  # FALSE FALSE FALSE TRUE FALSE\nsum(is.na(entreprise_df$actifs_fixes))  # 1 valeur manquante",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
+      "Categorie 1 - Probleme Set 1",
       "Module 2 : Fondations de R et Architecture"
     ]
   },
@@ -775,8 +1204,164 @@
     "text": "7 Fonctions Utilisateur (User-Defined Functions)\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nUne fonction, c’est comme une machine a cafe. Tu mets des ingredients dedans (eau + cafe), elle fait son travail a l’interieur, et elle te sort un resultat (ton cafe). En R, tu peux creer tes propres machines :\n\nLes arguments = ce que tu mets dans la machine (les ingredients)\nLe corps = ce que la machine fait (les instructions)\nLe return = ce que la machine te rend (le resultat)\n\nL’avantage : une fois que ta machine est construite, tu peux l’utiliser autant de fois que tu veux sans refaire tout le travail a chaque fois.\n\n\n\n# On construit notre propre \"machine\" qui calcule un ratio\ncalculer_ratio &lt;- function(actifs, passifs) {\n  # 1. Verification : est-ce qu'il y a des valeurs manquantes ?\n  if (any(is.na(actifs)) | any(is.na(passifs))) {\n    warning(\"Valeurs manquantes detectees.\")  # Alerte si NA\n  }\n  # 2. Calcul du ratio\n  ratio &lt;- actifs / passifs\n  # 3. On retourne le resultat\n  return(ratio)\n}\n\n# Maintenant on utilise notre machine sur nos donnees\nentreprise_df$ratio_solv &lt;- calculer_ratio(\n  entreprise_df$actifs_fixes,   # argument 1 : les actifs\n  entreprise_df$passifs          # argument 2 : les passifs\n)\n# Resultat : une nouvelle colonne \"ratio_solv\" ajoutee au data frame\n# 2.5, 2.5, 2.8, NA, 2.0\n\nstr(entreprise_df)  # Verification : on voit bien la nouvelle colonne\n# Exemple plus simple : une fonction qui calcule la TVA\ncalculer_prix_ttc &lt;- function(prix_ht, taux_tva = 0.077) {\n  # taux_tva a une valeur par defaut de 7.7% (TVA suisse)\n  prix_ttc &lt;- prix_ht * (1 + taux_tva)  # on ajoute la TVA au prix\n  return(prix_ttc)                        # on retourne le resultat\n}\n\n# Utilisation avec la TVA par defaut (7.7%)\ncalculer_prix_ttc(100)         # Resultat : 107.7\n\n# Utilisation avec une TVA differente (20%)\ncalculer_prix_ttc(100, 0.20)   # Resultat : 120",
     "crumbs": [
       "Accueil",
-      "Resume du cours",
+      "Categorie 1 - Probleme Set 1",
       "Module 2 : Fondations de R et Architecture"
+    ]
+  },
+  {
+    "objectID": "06_Statistiques_Descriptives.html",
+    "href": "06_Statistiques_Descriptives.html",
+    "title": "Module 5 : Statistiques Descriptives",
+    "section": "",
+    "text": "Les statistiques descriptives servent a resumer et decrire un jeu de donnees : ou se situe le “centre” des valeurs, a quel point elles sont dispersees, et comment elles se repartissent. Elles ne tirent aucune conclusion au-dela de l’echantillon observe (c’est le role des statistiques inferentielles, Module 6).",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Module 5 : Statistiques Descriptives"
+    ]
+  },
+  {
+    "objectID": "06_Statistiques_Descriptives.html#decrire-vs-inferer",
+    "href": "06_Statistiques_Descriptives.html#decrire-vs-inferer",
+    "title": "Module 5 : Statistiques Descriptives",
+    "section": "1 Decrire vs Inferer",
+    "text": "1 Decrire vs Inferer\n\n\n\n\n\n\n\n\n\nStatistiques descriptives\nStatistiques inferentielles\n\n\n\n\nBut\nResumer ce qu’on a observe\nGeneraliser a une population\n\n\nPorte sur\nL’echantillon\nLa population entiere\n\n\nExemple\n“La note moyenne des 74 repondants est 4.6”\n“La note moyenne de tous les etudiants est probablement entre 4.4 et 4.8”\n\n\nModule\nCe module (5)\nModule 6",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Module 5 : Statistiques Descriptives"
+    ]
+  },
+  {
+    "objectID": "06_Statistiques_Descriptives.html#choisir-la-bonne-statistique-selon-le-type-de-variable",
+    "href": "06_Statistiques_Descriptives.html#choisir-la-bonne-statistique-selon-le-type-de-variable",
+    "title": "Module 5 : Statistiques Descriptives",
+    "section": "2 Choisir la Bonne Statistique selon le Type de Variable",
+    "text": "2 Choisir la Bonne Statistique selon le Type de Variable\nLe type de variable dicte quelles statistiques ont du sens. C’est la decision la plus importante du module.\n\n\n\n\n\n\n\n\n\n\nType de variable\nExemple\nTendance centrale\nDispersion\nGraphique\n\n\n\n\nNominale (categories sans ordre)\ngenre, pays\nMode\n(frequences)\nDiagramme a barres\n\n\nOrdinale (categories ordonnees)\nniveau d’accord 1-5\nMode, mediane\nEtendue, quartiles\nBarres\n\n\nContinue / discrete (numerique)\nage, trajet en minutes\nMoyenne, mediane\nEcart-type, variance, IQR\nHistogramme, boxplot",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Module 5 : Statistiques Descriptives"
+    ]
+  },
+  {
+    "objectID": "06_Statistiques_Descriptives.html#erreur-fatale-courante",
+    "href": "06_Statistiques_Descriptives.html#erreur-fatale-courante",
+    "title": "Module 5 : Statistiques Descriptives",
+    "section": "3 Erreur fatale courante",
+    "text": "3 Erreur fatale courante\nCalculer une moyenne sur une variable categorielle. La “moyenne” de la variable genre (Femme, Homme, Autre) n’a aucun sens. De meme, la moyenne d’une variable ordinale codee 1-5 est discutable : techniquement on devrait utiliser la mediane. A l’examen, regarde toujours le type de variable avant de choisir ta statistique.",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Module 5 : Statistiques Descriptives"
+    ]
+  },
+  {
+    "objectID": "06_Statistiques_Descriptives.html#mesures-de-tendance-centrale",
+    "href": "06_Statistiques_Descriptives.html#mesures-de-tendance-centrale",
+    "title": "Module 5 : Statistiques Descriptives",
+    "section": "4 Mesures de Tendance Centrale",
+    "text": "4 Mesures de Tendance Centrale\nElles repondent a la question : “ou se trouve le centre des donnees ?”\n\n4.1 Le Mode\nLa valeur (ou categorie) la plus frequente.\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nLe mode, c’est le “best-seller” : la valeur qui revient le plus souvent. Dans une classe ou la couleur de cheveux la plus repandue est “brun”, le mode est “brun”. C’est la seule mesure de centre utilisable pour une variable nominale.\n\n\n\n# R n'a pas de fonction \"mode\" directe : on compte les frequences\nreponses_socio %&gt;% count(genre, sort = TRUE)\n# La premiere ligne donne la categorie la plus frequente = le mode\n\n\n4.2 La Mediane\nLa valeur qui coupe les donnees triees en deux moities egales : 50 % des observations sont en dessous, 50 % au-dessus.\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nRange tous les eleves par taille, du plus petit au plus grand. La mediane, c’est la taille de celui du milieu. Son grand avantage : elle se moque des valeurs extremes. Si le plus grand mesure 2m10 au lieu de 1m90, l’eleve du milieu ne bouge pas.\n\n\n\nmedian(reponses_socio$note_ecole, na.rm = TRUE)\n\n\n4.3 La Moyenne (Arithmetique)\nLa somme de toutes les valeurs divisee par leur nombre.\nmean(reponses_socio$note_ecole, na.rm = TRUE)\n\n\n\n\n\n\nWarningMoyenne ou mediane ?\n\n\n\nLa moyenne est sensible aux valeurs extremes (outliers). Exemple : dans une salle de 10 personnes a 4’000 CHF/mois, si Bill Gates entre, le salaire moyen explose a plusieurs millions, alors que le salaire median reste a 4’000 CHF. Quand la distribution est asymetrique (revenus, prix de l’immobilier), la mediane decrit mieux le “cas typique”.\n\n\n\n\n\nSituation\nMesure recommandee\n\n\n\n\nDistribution symetrique, pas d’outlier\nMoyenne\n\n\nDistribution asymetrique ou outliers presents\nMediane\n\n\nVariable nominale\nMode (seul choix possible)",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Module 5 : Statistiques Descriptives"
+    ]
+  },
+  {
+    "objectID": "06_Statistiques_Descriptives.html#mesures-de-dispersion",
+    "href": "06_Statistiques_Descriptives.html#mesures-de-dispersion",
+    "title": "Module 5 : Statistiques Descriptives",
+    "section": "5 Mesures de Dispersion",
+    "text": "5 Mesures de Dispersion\nElles repondent a : “a quel point les valeurs sont-elles eloignees les unes des autres ?” Deux groupes peuvent avoir la meme moyenne mais des dispersions tres differentes.\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nImagine deux classes avec la meme moyenne de 4.5 :\n\nClasse A : tout le monde entre 4.2 et 4.8 (homogene, faible dispersion)\nClasse B : la moitie a 2.5, l’autre a 6.0 (heterogene, forte dispersion)\n\nLa moyenne seule ne distingue pas ces deux classes. La dispersion, si. C’est pourquoi on rapporte toujours une mesure de centre AVEC une mesure de dispersion.\n\n\n\n\n5.1 Etendue (Range)\nLa difference entre la valeur maximale et la valeur minimale.\nmax(reponses_socio$trajet, na.rm = TRUE) - min(reponses_socio$trajet, na.rm = TRUE)\nrange(reponses_socio$trajet, na.rm = TRUE)   # affiche min et max\n\n\n5.2 Variance et Ecart-type\nL’ecart-type (standard deviation, sd) mesure la distance moyenne des valeurs par rapport a la moyenne. La variance est simplement l’ecart-type au carre.\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nL’ecart-type repond a : “en moyenne, de combien chaque valeur s’eloigne-t-elle de la moyenne ?” Un petit ecart-type = les donnees sont serrees autour de la moyenne. Un grand ecart-type = elles sont eparpillees. On prefere l’ecart-type a la variance car il est dans la meme unite que les donnees (des minutes, pas des “minutes au carre”).\n\n\n\nsd(reponses_socio$trajet, na.rm = TRUE)    # ecart-type\nvar(reponses_socio$trajet, na.rm = TRUE)   # variance = sd^2\n\n\n5.3 Quartiles et Intervalle Interquartile (IQR)\nLes quartiles decoupent les donnees triees en 4 parts egales :\n\nQ1 (1er quartile) : 25 % des valeurs sont en dessous\nQ2 : c’est la mediane (50 %)\nQ3 (3e quartile) : 75 % des valeurs sont en dessous\nIQR = Q3 - Q1 : l’intervalle qui contient les 50 % “du milieu”\n\nquantile(reponses_socio$trajet, na.rm = TRUE)   # min, Q1, mediane, Q3, max\nIQR(reponses_socio$trajet, na.rm = TRUE)         # Q3 - Q1\nL’IQR est la mesure de dispersion qui accompagne la mediane (toutes deux resistantes aux outliers). C’est exactement ce que dessine un boxplot.",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Module 5 : Statistiques Descriptives"
+    ]
+  },
+  {
+    "objectID": "06_Statistiques_Descriptives.html#lexploration-rapide-str-et-summary",
+    "href": "06_Statistiques_Descriptives.html#lexploration-rapide-str-et-summary",
+    "title": "Module 5 : Statistiques Descriptives",
+    "section": "6 L’Exploration Rapide : str() et summary()",
+    "text": "6 L’Exploration Rapide : str() et summary()\nLes deux premieres commandes a lancer apres avoir importe un jeu de donnees.\nstr(reponses_socio)      # structure : types des colonnes, apercu des valeurs\nsummary(reponses_socio)  # resume statistique de chaque colonne\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\n\nstr() = la fiche technique du tableau : combien de lignes, combien de colonnes, et de quel type est chacune (nombre ? texte ? facteur ?).\nsummary() = le bilan de sante : pour chaque colonne numerique il donne min, Q1, mediane, moyenne, Q3, max ; pour les colonnes texte/facteur, il compte les categories.\n\n\n\n\nsummary() sur une variable numerique affiche directement les 6 chiffres cles :\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.\n   2.00    8.00   15.00   17.34   24.00   55.00",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Module 5 : Statistiques Descriptives"
+    ]
+  },
+  {
+    "objectID": "06_Statistiques_Descriptives.html#tableaux-de-frequences",
+    "href": "06_Statistiques_Descriptives.html#tableaux-de-frequences",
+    "title": "Module 5 : Statistiques Descriptives",
+    "section": "7 Tableaux de Frequences",
+    "text": "7 Tableaux de Frequences\nPour une variable categorielle, on ne calcule pas de moyenne : on compte combien d’observations tombent dans chaque categorie.\n# Comptage simple (dplyr) -- la methode a privilegier\nreponses_socio %&gt;% count(genre)\nreponses_socio %&gt;% count(genre, sort = TRUE)   # trie du plus frequent au moins frequent\n\n# Equivalent en R de base\ntable(reponses_socio$genre)\n\n# Frequences en proportions / pourcentages\nreponses_socio %&gt;%\n  count(genre) %&gt;%\n  mutate(pourcentage = n / sum(n) * 100)\n\n7.1 Tableau Croise (Crosstab)\nPour croiser deux variables categorielles (ex : genre x branche d’etudes) :\n# Avec dplyr\nreponses_socio %&gt;% count(genre, branche)\n\n# Avec R de base : tableau a double entree\ntable(reponses_socio$genre, reponses_socio$branche)",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Module 5 : Statistiques Descriptives"
+    ]
+  },
+  {
+    "objectID": "06_Statistiques_Descriptives.html#ordonner-une-variable-categorielle-facteurs",
+    "href": "06_Statistiques_Descriptives.html#ordonner-une-variable-categorielle-facteurs",
+    "title": "Module 5 : Statistiques Descriptives",
+    "section": "8 Ordonner une Variable Categorielle (Facteurs)",
+    "text": "8 Ordonner une Variable Categorielle (Facteurs)\nPar defaut R classe les categories par ordre alphabetique. Pour imposer un ordre logique (ex : Femme, Homme, Autre, ou : Jamais &lt; Parfois &lt; Souvent &lt; Toujours), on convertit la variable en facteur avec des niveaux (levels) explicites.\nordre &lt;- c(\"Femme\", \"Homme\", \"Autre\")\n\nreponses_socio %&gt;%\n  mutate(genre = factor(genre, levels = ordre)) %&gt;%\n  ggplot(aes(x = genre, fill = genre)) +\n  geom_bar(show.legend = FALSE) +\n  labs(title = \"Repartition des genres\", x = \"Genre\", y = \"Frequence\") +\n  theme_minimal()\n\n\n\n\n\n\nTipEn simple\n\n\n\n\n\nUn facteur, c’est une variable categorielle a qui on a explique l’ordre des categories. Sans ca, R range “Toujours” avant “Jamais” simplement parce que T… non, J vient avant T : il les met dans l’ordre de l’alphabet, ce qui est absurde pour une echelle. En definissant levels, tu dis a R : “voici le bon ordre, respecte-le sur les graphiques et les tableaux”.",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Module 5 : Statistiques Descriptives"
+    ]
+  },
+  {
+    "objectID": "06_Statistiques_Descriptives.html#resumes-statistiques-par-groupe",
+    "href": "06_Statistiques_Descriptives.html#resumes-statistiques-par-groupe",
+    "title": "Module 5 : Statistiques Descriptives",
+    "section": "9 Resumes Statistiques par Groupe",
+    "text": "9 Resumes Statistiques par Groupe\nLa combinaison group_by() + summarize() (vue au Module 3) est l’outil central pour produire un tableau descriptif comparant des sous-groupes.\nreponses_socio %&gt;%\n  group_by(genre) %&gt;%\n  summarize(\n    n          = n(),\n    moyenne    = mean(note_ecole, na.rm = TRUE),\n    mediane    = median(note_ecole, na.rm = TRUE),\n    ecart_type = sd(note_ecole, na.rm = TRUE)\n  ) %&gt;%\n  ungroup()",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Module 5 : Statistiques Descriptives"
+    ]
+  },
+  {
+    "objectID": "06_Statistiques_Descriptives.html#exporter-un-jeu-de-donnees",
+    "href": "06_Statistiques_Descriptives.html#exporter-un-jeu-de-donnees",
+    "title": "Module 5 : Statistiques Descriptives",
+    "section": "10 Exporter un Jeu de Donnees",
+    "text": "10 Exporter un Jeu de Donnees\nL’oppose de read_csv() : sauvegarder un data frame dans un fichier CSV.\nwrite_csv(mon_df, file = \"~/Documents/R/resultats.csv\")",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Module 5 : Statistiques Descriptives"
+    ]
+  },
+  {
+    "objectID": "06_Statistiques_Descriptives.html#questions-probables-dexamen",
+    "href": "06_Statistiques_Descriptives.html#questions-probables-dexamen",
+    "title": "Module 5 : Statistiques Descriptives",
+    "section": "11 Questions Probables d’Examen",
+    "text": "11 Questions Probables d’Examen\n\n\n\n\n\n\nNote“Quelle mesure de tendance centrale utiliser pour la variable ‘genre’ ?”\n\n\n\n\n\nLe mode (la categorie la plus frequente). genre est une variable nominale : la moyenne et la mediane n’ont aucun sens. En R : count(df, genre, sort = TRUE).\n\n\n\n\n\n\n\n\n\nNote“Le salaire median d’une entreprise est 4’000 mais la moyenne est 8’000. Pourquoi ?”\n\n\n\n\n\nLa distribution est asymetrique : quelques tres hauts salaires (outliers) tirent la moyenne vers le haut, alors que la mediane reste au niveau du salarie typique. Dans ce cas, la mediane decrit mieux la realite.\n\n\n\n\n\n\n\n\n\nNote“Comment afficher les categories dans l’ordre Jamais &lt; Parfois &lt; Souvent &lt; Toujours ?”\n\n\n\n\n\nConvertir la variable en facteur avec des niveaux explicites : factor(x, levels = c(\"Jamais\", \"Parfois\", \"Souvent\", \"Toujours\")). Sans cela, R les classe par ordre alphabetique.\n\n\n\n\n\n\n\n\n\nNote“Quelle commande pour croiser ‘genre’ et ‘branche d’etudes’ ?”\n\n\n\n\n\nUn tableau croise : count(df, genre, branche) (dplyr) ou table(df$genre, df$branche) (R de base).\n\n\n\n\n\n\n\n\n\nNote“Deux groupes ont la meme moyenne. Sont-ils identiques ?”\n\n\n\n\n\nPas forcement : ils peuvent avoir des dispersions tres differentes. Il faut comparer aussi l’ecart-type (sd). C’est pourquoi on rapporte toujours une mesure de centre AVEC une mesure de dispersion.",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Module 5 : Statistiques Descriptives"
+    ]
+  },
+  {
+    "objectID": "06_Statistiques_Descriptives.html#recapitulatif-du-module",
+    "href": "06_Statistiques_Descriptives.html#recapitulatif-du-module",
+    "title": "Module 5 : Statistiques Descriptives",
+    "section": "12 Recapitulatif du Module",
+    "text": "12 Recapitulatif du Module\n\n\n\n\n\n\n\nQuestion\nOutil\n\n\n\n\nQuel est le type de chaque colonne ?\nstr()\n\n\nResume statistique global ?\nsummary()\n\n\nValeur la plus frequente (categorielle) ?\ncount(..., sort = TRUE)\n\n\nCentre d’une variable numerique ?\nmean(), median()\n\n\nDispersion ?\nsd(), var(), IQR(), range()\n\n\nQuartiles ?\nquantile()\n\n\nFrequences d’une categorie ?\ncount() / table()\n\n\nCroiser deux categories ?\ncount(v1, v2) / table(v1, v2)\n\n\nComparer des sous-groupes ?\ngroup_by() + summarize()\n\n\nImposer un ordre de categories ?\nfactor(x, levels = ...)",
+    "crumbs": [
+      "Accueil",
+      "Categorie 2 - Probleme Set 2",
+      "Module 5 : Statistiques Descriptives"
     ]
   }
 ]
