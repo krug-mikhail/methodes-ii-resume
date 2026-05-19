@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Examen blanc 2 — Méthodes II R II</title>
+<style>
+  :root{
+    --acc:#6d28d9; --acc2:#4c1d95; --vert:#15803d; --rouge:#b91c1c;
+    --fond:#eef0f6; --carte:#fff; --texte:#1f2937; --gris:#6b7280;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--fond);color:var(--texte);line-height:1.6;padding-bottom:84px;
+    -webkit-text-size-adjust:100%;
+  }
+  header{
+    background:linear-gradient(135deg,var(--acc),var(--acc2));
+    color:#fff;padding:34px 20px 28px;text-align:center;
+  }
+  header h1{font-size:1.55rem;margin-bottom:6px}
+  header p{opacity:.92;font-size:.95rem}
+  .wrap{max-width:780px;margin:0 auto;padding:20px 16px}
+  .intro{
+    background:var(--carte);border-radius:14px;padding:18px 20px;margin:18px 0;
+    box-shadow:0 2px 10px rgba(0,0,0,.06);font-size:.94rem;
+  }
+  .intro b{color:var(--acc2)}
+  .section-titre{
+    margin:34px 0 14px;padding-left:12px;border-left:5px solid var(--acc);
+    font-size:1.22rem;color:var(--acc2);font-weight:700;
+  }
+  .question{
+    background:var(--carte);border-radius:14px;padding:20px;margin:16px 0;
+    box-shadow:0 2px 10px rgba(0,0,0,.06);
+  }
+  .q-tag{
+    display:inline-block;font-size:.71rem;font-weight:700;letter-spacing:.04em;
+    text-transform:uppercase;padding:3px 9px;border-radius:20px;margin-bottom:10px;
+  }
+  .tag-code{background:#ede9fe;color:#5b21b6}
+  .tag-court{background:#fef3c7;color:#92400e}
+  .tag-qcm{background:#dbeafe;color:#1e40af}
+  .tag-interp{background:#fce7f3;color:#9d174d}
+  .q-text{font-weight:600;margin-bottom:12px}
+  .q-text code,.expl code,.q-text .inline,.modele code{
+    background:#eef0f6;padding:1px 6px;border-radius:5px;
+    font-family:"SF Mono",Menlo,Consolas,monospace;font-size:.87em;
+  }
+  textarea.rep,input.rep{
+    width:100%;border:2px solid #d1d5db;border-radius:9px;padding:10px 12px;
+    font-family:"SF Mono",Menlo,Consolas,monospace;font-size:.9rem;
+    resize:vertical;color:#0f172a;background:#fafafa;
+  }
+  textarea.rep:focus,input.rep:focus{outline:none;border-color:var(--acc)}
+  .options{list-style:none}
+  .options li{
+    border:2px solid #e5e7eb;border-radius:10px;padding:11px 14px;margin:8px 0;
+    cursor:pointer;transition:.15s;font-size:.95rem;
+  }
+  .options li:hover{border-color:var(--acc);background:#faf8ff}
+  .question.done .options li{cursor:default}
+  .question.done .options li:hover{background:transparent}
+  .options li.correct{border-color:var(--vert);background:#f0fdf4;font-weight:600}
+  .options li.correct::before{content:"\2713  ";color:var(--vert);font-weight:800}
+  .options li.wrong{border-color:var(--rouge);background:#fef2f2}
+  .options li.wrong::before{content:"\2717  ";color:var(--rouge);font-weight:800}
+  .btn{
+    border:none;border-radius:9px;padding:9px 18px;font-size:.9rem;
+    font-weight:600;cursor:pointer;margin-top:10px;
+  }
+  .btn-verif{background:var(--acc);color:#fff}
+  .btn-verif:hover{background:var(--acc2)}
+  .verdict{display:none;margin-top:12px;padding:10px 14px;border-radius:9px;
+    font-weight:600;font-size:.92rem}
+  .verdict.show{display:block}
+  .verdict.ok{background:#f0fdf4;color:var(--vert);border-left:4px solid var(--vert)}
+  .verdict.ko{background:#fef2f2;color:var(--rouge);border-left:4px solid var(--rouge)}
+  .modele{
+    display:none;margin-top:10px;background:#0f172a;color:#e2e8f0;
+    border-radius:10px;padding:13px 15px;overflow-x:auto;
+    font-family:"SF Mono",Menlo,Consolas,monospace;font-size:.85rem;line-height:1.55;
+    white-space:pre-wrap;
+  }
+  .modele.show{display:block}
+  .modele .lbl{color:#a78bfa;font-weight:700}
+  .modele .cm{color:#64748b}
+  .modele .fn{color:#7dd3fc}
+  .expl{
+    display:none;margin-top:10px;padding:12px 15px;border-radius:10px;
+    background:#f1f5f9;border-left:4px solid var(--acc);font-size:.91rem;
+  }
+  .expl.show{display:block}
+  .expl b{color:var(--acc2)}
+  .barre{position:fixed;bottom:0;left:0;right:0;background:#fff;
+    box-shadow:0 -2px 12px rgba(0,0,0,.12);padding:10px 16px;z-index:10}
+  .barre-in{max-width:780px;margin:0 auto;display:flex;align-items:center;
+    justify-content:space-between;gap:12px}
+  .progress{flex:1;height:9px;background:#e5e7eb;border-radius:6px;overflow:hidden}
+  .progress span{display:block;height:100%;width:0;background:var(--acc);transition:.3s}
+  .score{font-weight:700;color:var(--acc2);white-space:nowrap;font-size:.92rem}
+  .reset{background:none;border:1.5px solid #cbd5e1;color:var(--gris);
+    border-radius:8px;padding:6px 12px;font-size:.82rem;cursor:pointer}
+  .reset:hover{border-color:var(--acc);color:var(--acc)}
+  footer{text-align:center;color:var(--gris);font-size:.82rem;padding:24px 16px}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Examen blanc 2 — Niveau avancé</h1>
+  <p>Examen R II · Surtout du code à écrire · Correction automatique</p>
+</header>
+
+<div class="wrap">
+
+  <div class="intro">
+    <b>Mode d'emploi.</b> 24 questions <b>plus exigeantes</b> que le 1<sup>er</sup> examen blanc :
+    tu dois <b>écrire toi-même</b> le code R, des réponses courtes, etc. Tape ta réponse, puis
+    clique <b>Vérifier</b> — le système contrôle les éléments-clés et révèle la solution modèle.
+    <br><br>
+    La vérification du code est <b>tolérante</b> (espaces, guillemets, majuscules ignorés) mais
+    vérifie la <b>structure</b> : utilise donc <b>exactement les noms d'objets</b> indiqués dans
+    l'énoncé. Si ta réponse est juste mais formulée autrement, compare avec la solution.
+  </div>
+
+  <!-- ============ SECTION 1 ============ -->
+  <div class="section-titre">1 · Statistiques descriptives</div>
+
+  <div class="question" data-type="saisie" data-mode="tokens"
+       data-accept="sd(|reponses_socio$trajet|na.rm">
+    <span class="q-tag tag-code">Code · Q1</span>
+    <div class="q-text">Écris la commande qui calcule l'<b>écart-type</b> de la colonne <code>trajet</code> du data frame <code>reponses_socio</code>, en ignorant les valeurs manquantes.</div>
+    <textarea class="rep" rows="2" spellcheck="false" placeholder="ton code R..."></textarea>
+    <button class="btn btn-verif">Vérifier</button>
+    <div class="verdict"></div>
+    <div class="modele"><span class="lbl">Solution :</span>
+<span class="fn">sd</span>(reponses_socio$trajet, na.rm = <span class="fn">TRUE</span>)</div>
+    <div class="expl"><b>sd()</b> = écart-type. <code>na.rm = TRUE</code> est indispensable dès qu'il peut y avoir des NA, sinon le résultat serait <code>NA</code>.</div>
+  </div>
+
+  <div class="question" data-type="saisie" data-mode="tokens"
+       data-accept="table(|reponses_socio$genre|reponses_socio$suisse">
+    <span class="q-tag tag-code">Code · Q2</span>
+    <div class="q-text">Écris la commande (R de base) qui affiche un <b>tableau croisé</b> des variables <code>genre</code> et <code>suisse</code> du data frame <code>reponses_socio</code>.</div>
+    <textarea class="rep" rows="2" spellcheck="false" placeholder="ton code R..."></textarea>
+    <button class="btn btn-verif">Vérifier</button>
+    <div class="verdict"></div>
+    <div class="modele"><span class="lbl">Solution :</span>
+<span class="fn">table</span>(reponses_socio$genre, reponses_socio$suisse)</div>
+    <div class="expl"><code>table()</code> avec deux variables produit un tableau a double entrée (effectifs croisés). En dplyr : <code>count(reponses_socio, genre, suisse)</code>.</div>
+  </div>
+
+  <div class="question" data-type="saisie" data-mode="tokens"
+       data-accept="group_by(genre)|summari|n=n()|mean(note_uni">
+    <span class="q-tag tag-code">Code · Q3</span>
+    <div class="q-text">Écris une chaîne <code>dplyr</code> qui regroupe <code>reponses_socio</code> par <code>genre</code>, puis calcule l'effectif <code>n</code> et la moyenne de <code>note_uni</code> (appelle cette colonne <code>moy</code>).</div>
+    <textarea class="rep" rows="4" spellcheck="false" placeholder="ton code R..."></textarea>
+    <button class="btn btn-verif">Vérifier</button>
+    <div class="verdict"></div>
+    <div class="modele"><span class="lbl">Solution :</span>
+reponses_socio %>%
+  <span class="fn">group_by</span>(genre) %>%
+  <span class="fn">summarize</span>(n = <span class="fn">n</span>(), moy = <span class="fn">mean</span>(note_uni, na.rm = <span class="fn">TRUE</span>))</div>
+    <div class="expl">Schéma classique <b>group_by + summarize</b>. <code>n()</code> compte les observations de chaque groupe. <code>summarise()</code> (orthographe britannique) marche aussi.</div>
+  </div>
+
+  <div class="question" data-type="saisie" data-mode="any" data-accept="0.5|0,5">
+    <span class="q-tag tag-court">Réponse courte · Q4</span>
+    <div class="q-text">Pour la variable <code>note_ecole</code>, le 1<sup>er</sup> quartile vaut <b>Q1 = 4.5</b> et le 3<sup>e</sup> quartile <b>Q3 = 5.0</b>. Quelle est la valeur de l'<b>écart interquartile (IQR)</b> ?</div>
+    <input class="rep" spellcheck="false" placeholder="un nombre...">
+    <button class="btn btn-verif">Vérifier</button>
+    <div class="verdict"></div>
+    <div class="modele"><span class="lbl">Solution :</span> IQR = Q3 - Q1 = 5.0 - 4.5 = <b>0.5</b></div>
+    <div class="expl">L'<b>IQR</b> (intervalle interquartile) est la différence Q3 - Q1 : l'étendue des 50 % centraux des données. En R : <code>IQR(reponses_socio$note_ecole, na.rm = TRUE)</code>.</div>
+  </div>
+
+  <div class="question" data-type="saisie" data-mode="tokens"
+       data-accept="geom_histogram(|binwidth=10|fill=steelblue|trajet">
+    <span class="q-tag tag-code">Code · Q5</span>
+    <div class="q-text">Crée un <b>histogramme</b> <code>ggplot2</code> de la variable <code>trajet</code> de <code>reponses_socio</code>, avec une largeur d'intervalle de <b>10</b> et des barres remplies en <code>"steelblue"</code>.</div>
+    <textarea class="rep" rows="3" spellcheck="false" placeholder="ton code R..."></textarea>
+    <button class="btn btn-verif">Vérifier</button>
+    <div class="verdict"></div>
+    <div class="modele"><span class="lbl">Solution :</span>
+<span class="fn">ggplot</span>(reponses_socio, <span class="fn">aes</span>(x = trajet)) +
+  <span class="fn">geom_histogram</span>(binwidth = 10, fill = <span class="cm">"steelblue"</span>)</div>
+    <div class="expl">Pour une <b>surface</b> (barre), la couleur de remplissage est <code>fill</code> (et non <code>color</code>, qui ne colore que le contour). <code>binwidth</code> fixe la largeur des classes.</div>
+  </div>
+
+  <!-- ============ SECTION 2 ============ -->
+  <div class="section-titre">2 · Test t</div>
+
+  <div class="question" data-type="saisie" data-mode="tokens"
+       data-accept="t.test(|scores_qi|mu=100">
+    <span class="q-tag tag-code">Code · Q6</span>
+    <div class="q-text">Écris un <b>test t à un échantillon</b> qui vérifie si la moyenne de l'échantillon <code>scores_qi</code> diffère de <b>100</b>.</div>
+    <textarea class="rep" rows="2" spellcheck="false" placeholder="ton code R..."></textarea>
+    <button class="btn btn-verif">Vérifier</button>
+    <div class="verdict"></div>
+    <div class="modele"><span class="lbl">Solution :</span>
+<span class="fn">t.test</span>(scores_qi, mu = 100)</div>
+    <div class="expl">Le test t à un échantillon compare la moyenne observée à une valeur de référence donnée par l'argument <code>mu</code>.</div>
+  </div>
+
+  <div class="question" data-type="saisie" data-mode="any" data-accept="oui">
+    <span class="q-tag tag-interp">Interprétation · Q7</span>
+    <div class="q-text">Une sortie de test t affiche <span class="inline">t = 2.81, df = 49, p-value = 0.007</span>. Au seuil de 5 %, <b>rejette-t-on H0</b> ? (réponds par <i>oui</i> ou <i>non</i>)</div>
+    <input class="rep" spellcheck="false" placeholder="oui / non">
+    <button class="btn btn-verif">Vérifier</button>
+    <div class="verdict"></div>
+    <div class="modele"><span class="lbl">Solution :</span> Oui — on rejette H0.</div>
+    <div class="expl">p = 0.007 &lt; 0.05 (et même &lt; 0.01) → on <b>rejette H0</b> : la différence est statistiquement significative.</div>
+  </div>
+
+  <div class="question" data-type="saisie" data-mode="any" data-accept="29">
+    <span class="q-tag tag-court">Réponse courte · Q8</span>
+    <div class="q-text">Pour un test t <b>à un échantillon</b> réalisé sur <b>n = 30</b> observations, combien valent les degrés de liberté (<code>df</code>) ?</div>
+    <input class="rep" spellcheck="false" placeholder="un nombre...">
+    <button class="btn btn-verif">Vérifier</button>
+    <div class="verdict"></div>
+    <div class="modele"><span class="lbl">Solution :</span> df = n - 1 = 30 - 1 = <b>29</b></div>
+    <div class="expl">Pour un test t à un échantillon, les degrés de liberté valent <b>n - 1</b>.</div>
+  </div>
+
+  <div class="question" data-type="saisie" data-mode="tokens"
+       data-accept="t.test(|tailles_f|tailles_h">
+    <span class="q-tag tag-code">Code · Q9</span>
+    <div class="q-text">Écris un <b>test t à deux échantillons</b> comparant les moyennes de <code>tailles_f</code> et <code>tailles_h</code>.</div>
+    <textarea class="rep" rows="2" spellcheck="false" placeholder="ton code R..."></textarea>
+    <button class="btn btn-verif">Vérifier</button>
+    <div class="verdict"></div>
+    <div class="modele"><span class="lbl">Solution :</span>
+<span class="fn">t.test</span>(tailles_f, tailles_h)</div>
+    <div class="expl">R applique par défaut le <b>Welch Two Sample t-test</b> (ne suppose pas l'égalité des variances).</div>
+  </div>
+
+  <div class="question" data-type="saisie" data-mode="any" data-accept="oui">
+    <span class="q-tag tag-interp">Interprétation · Q10</span>
+    <div class="q-text">Un test t à deux échantillons donne un intervalle de confiance à 95 % de <span class="inline">[-20.3 ; -2.4]</span> pour la différence des moyennes. La différence est-elle <b>significative</b> ? (oui / non)</div>
+    <input class="rep" spellcheck="false" placeholder="oui / non">
+    <button class="btn btn-verif">Vérifier</button>
+    <div class="verdict"></div>
+    <div class="modele"><span class="lbl">Solution :</span> Oui — l'IC ne contient pas 0.</div>
+    <div class="expl">L'intervalle <b>ne contient pas 0</b> : « aucune différence » est donc exclu → différence <b>significative</b>. (Si l'IC contenait 0, ce serait non significatif.)</div>
+  </div>
+
+  <div class="question" data-type="saisie" data-mode="tokens"
+       data-accept="set.seed(123)|rnorm(50|mean=105|sd=15">
+    <span class="q-tag tag-code">Code · Q11</span>
+    <div class="q-text">Écris le code (2 lignes) qui simule <b>50 valeurs</b> suivant une loi normale de moyenne <b>105</b> et d'écart-type <b>15</b>, de façon <b>reproductible</b> (utilise la graine 123).</div>
+    <textarea class="rep" rows="3" spellcheck="false" placeholder="ton code R..."></textarea>
+    <button class="btn btn-verif">Vérifier</button>
+    <div class="verdict"></div>
+    <div class="modele"><span class="lbl">Solution :</span>
+<span class="fn">set.seed</span>(123)
+echantillon <- <span class="fn">rnorm</span>(50, mean = 105, sd = 15)</div>
+    <div class="expl"><code>set.seed()</code> fige le hasard (reproductibilité), <code>rnorm(n, mean, sd)</code> génère les valeurs.</div>
+  </div>
+
+  <!-- ============ SECTION 3 ============ -->
+  <div class="section-titre">3 · ANOVA</div>
+
+  <div class="question" data-type="saisie" data-mode="tokens"
+       data-accept="aov(|body_mass_g~species|data=penguins|mon_anova">
+    <span class="q-tag tag-code">Code · Q12</span>
+    <div class="q-text">Écris la commande qui réalise une <b>ANOVA</b> de <code>body_mass_g</code> selon <code>species</code> dans le data frame <code>penguins</code>, en stockant le résultat dans un objet nommé <code>mon_anova</code>.</div>
+    <textarea class="rep" rows="2" spellcheck="false" placeholder="ton code R..."></textarea>
+    <button class="btn btn-verif">Vérifier</button>
+    <div class="verdict"></div>
+    <div class="modele"><span class="lbl">Solution :</span>
+mon_anova <- <span class="fn">aov</span>(body_mass_g ~ species, data = penguins)</div>
+    <div class="expl">Syntaxe : <code>aov(variable_a_expliquer ~ variable_groupe, data = ...)</code>. On lit ensuite le résultat avec <code>summary(mon_anova)</code>.</div>
+  </div>
+
+  <div class="question" data-type="saisie" data-mode="tokens"
+       data-accept="tukeyhsd(|mon_anova">
+    <span class="q-tag tag-code">Code · Q13</span>
+    <div class="q-text">L'ANOVA <code>mon_anova</code> est significative. Écris la commande du <b>test post-hoc</b> qui indique quelles paires de groupes diffèrent.</div>
+    <textarea class="rep" rows="2" spellcheck="false" placeholder="ton code R..."></textarea>
+    <button class="btn btn-verif">Vérifier</button>
+    <div class="verdict"></div>
+    <div class="modele"><span class="lbl">Solution :</span>
+<span class="fn">TukeyHSD</span>(mon_anova)</div>
+    <div class="expl"><code>TukeyHSD()</code> compare chaque paire de groupes. On ne le lance qu'<b>après</b> une ANOVA significative.</div>
+  </div>
+
+  <div class="question" data-type="saisie" data-mode="any" data-accept="oui">
+    <span class="q-tag tag-interp">Interprétation · Q14</span>
+    <div class="q-text"><code>summary()</code> de l'ANOVA affiche <span class="inline">F = 594.8, Pr(&gt;F) &lt; 2e-16</span>. Au moins un groupe a-t-il une moyenne <b>significativement différente</b> ? (oui / non)</div>
+    <input class="rep" spellcheck="false" placeholder="oui / non">
+    <button class="btn btn-verif">Vérifier</button>
+    <div class="verdict"></div>
+    <div class="modele"><span class="lbl">Solution :</span> Oui — on rejette H0.</div>
+    <div class="expl"><code>Pr(&gt;F)</code> &lt; 2e-16 ≈ 0 &lt; 0.05 → on rejette H0. Au moins un groupe diffère (l'ANOVA ne dit pas lequel — il faut Tukey).</div>
+  </div>
+
+  <div class="question" data-type="qcm">
+    <span class="q-tag tag-qcm">QCM · Q15</span>
+    <div class="q-text">Une ANOVA sur <b>4 groupes</b> donne <span class="inline">p &lt; 0.001</span>. Que peut-on affirmer <b>avec certitude</b> ?</div>
+    <ul class="options">
+      <li data-correct="false">Les 4 groupes ont des moyennes toutes différentes deux à deux</li>
+      <li data-correct="true">Au moins un groupe a une moyenne différente des autres — sans savoir encore lesquels</li>
+      <li data-correct="false">Aucun groupe ne diffère des autres</li>
+      <li data-correct="false">Le groupe 1 a la moyenne la plus élevée</li>
+    </ul>
+    <div class="expl">Une ANOVA significative signifie qu'<b>au moins un</b> groupe diffère — pas que tous diffèrent, et pas lequel. Il faut un <b>test post-hoc (Tukey)</b> pour identifier les paires.</div>
+  </div>
+
+  <!-- ============ SECTION 4 ============ -->
+  <div class="section-titre">4 · Régression linéaire</div>
+
+  <div class="question" data-type="saisie" data-mode="tokens"
+       data-accept="lm(|mpg~wt|data=mtcars|modele1">
+    <span class="q-tag tag-code">Code · Q16</span>
+    <div class="q-text">Ajuste une <b>régression linéaire simple</b> de <code>mpg</code> (variable à expliquer) par <code>wt</code> dans <code>mtcars</code>, en stockant le modèle dans <code>modele1</code>.</div>
+    <textarea class="rep" rows="2" spellcheck="false" placeholder="ton code R..."></textarea>
+    <button class="btn btn-verif">Vérifier</button>
+    <div class="verdict"></div>
+    <div class="modele"><span class="lbl">Solution :</span>
+modele1 <- <span class="fn">lm</span>(mpg ~ wt, data = mtcars)</div>
+    <div class="expl">Syntaxe : <code>lm(Y ~ X, data = ...)</code>. Y est la variable à expliquer, X la variable explicative.</div>
+  </div>
+
+  <div class="question" data-type="saisie" data-mode="any"
+       data-accept="diminu|baisse|reduit|chute|descend|moins">
+    <span class="q-tag tag-interp">Interprétation · Q17</span>
+    <div class="q-text">Dans <code>summary(modele1)</code>, le coefficient (<i>Estimate</i>) de <code>wt</code> vaut <b>-5.34</b>. Quand le poids <code>wt</code> augmente, la consommation <code>mpg</code> ____ ? (un mot)</div>
+    <input class="rep" spellcheck="false" placeholder="un mot...">
+    <button class="btn btn-verif">Vérifier</button>
+    <div class="verdict"></div>
+    <div class="modele"><span class="lbl">Solution :</span> elle <b>diminue</b> (de 5,34 en moyenne par unité de poids).</div>
+    <div class="expl">Le coefficient est la <b>pente</b> : signe <b>négatif</b> → quand X augmente, Y <b>diminue</b>. Ici chaque unité de <code>wt</code> en plus retire 5,34 à <code>mpg</code>.</div>
+  </div>
+
+  <div class="question" data-type="saisie" data-mode="tokens"
+       data-accept="lm(|mpg~wt+hp|data=mtcars">
+    <span class="q-tag tag-code">Code · Q18</span>
+    <div class="q-text">Ajuste une <b>régression multiple</b> : <code>mpg</code> expliqué par <code>wt</code> <b>et</b> <code>hp</code>, dans <code>mtcars</code>.</div>
+    <textarea class="rep" rows="2" spellcheck="false" placeholder="ton code R..."></textarea>
+    <button class="btn btn-verif">Vérifier</button>
+    <div class="verdict"></div>
+    <div class="modele"><span class="lbl">Solution :</span>
+<span class="fn">lm</span>(mpg ~ wt + hp, data = mtcars)</div>
+    <div class="expl">On ajoute les variables explicatives avec <code>+</code>. Chaque coefficient s'interprète alors « toutes choses égales par ailleurs ».</div>
+  </div>
+
+  <div class="question" data-type="saisie" data-mode="any" data-accept="83">
+    <span class="q-tag tag-court">Réponse courte · Q19</span>
+    <div class="q-text">La sortie d'un modèle indique <span class="inline">Multiple R-squared : 0.83</span>. Quel <b>pourcentage</b> de la variance de la variable à expliquer le modèle capte-t-il ?</div>
+    <input class="rep" spellcheck="false" placeholder="un pourcentage...">
+    <button class="btn btn-verif">Vérifier</button>
+    <div class="verdict"></div>
+    <div class="modele"><span class="lbl">Solution :</span> <b>83 %</b></div>
+    <div class="expl">Le <b>R²</b> se lit directement en pourcentage de variance expliquée : 0.83 → 83 %. Les 17 % restants viennent de facteurs hors du modèle.</div>
+  </div>
+
+  <div class="question" data-type="saisie" data-mode="tokens"
+       data-accept="par(mfrow=c(2,2))|plot(modele1)">
+    <span class="q-tag tag-code">Code · Q20</span>
+    <div class="q-text">Écris le code (2 lignes) qui affiche les <b>4 graphiques de diagnostic</b> du modèle <code>modele1</code> dans une grille 2×2.</div>
+    <textarea class="rep" rows="3" spellcheck="false" placeholder="ton code R..."></textarea>
+    <button class="btn btn-verif">Vérifier</button>
+    <div class="verdict"></div>
+    <div class="modele"><span class="lbl">Solution :</span>
+<span class="fn">par</span>(mfrow = <span class="fn">c</span>(2, 2))
+<span class="fn">plot</span>(modele1)</div>
+    <div class="expl"><code>par(mfrow = c(2, 2))</code> divise la fenêtre en grille 2×2 ; <code>plot()</code> sur un modèle <code>lm</code> affiche alors les 4 graphiques de diagnostic.</div>
+  </div>
+
+  <div class="question" data-type="saisie" data-mode="tokens"
+       data-accept="lm(mpg~.|data=mtcars|step(">
+    <span class="q-tag tag-code">Code · Q21</span>
+    <div class="q-text">Régression par étapes : écris le code (2 lignes) qui crée le <b>modèle complet</b> (<code>mpg</code> expliqué par <b>toutes</b> les variables de <code>mtcars</code>) puis applique <code>step()</code> dessus.</div>
+    <textarea class="rep" rows="3" spellcheck="false" placeholder="ton code R..."></textarea>
+    <button class="btn btn-verif">Vérifier</button>
+    <div class="verdict"></div>
+    <div class="modele"><span class="lbl">Solution :</span>
+full_model <- <span class="fn">lm</span>(mpg ~ ., data = mtcars)
+stepwise_model <- <span class="fn">step</span>(full_model, direction = <span class="cm">"both"</span>)</div>
+    <div class="expl">Le <code>~ .</code> signifie « expliqué par toutes les autres variables ». <code>step()</code> retire/ajoute des variables pour minimiser l'<b>AIC</b>.</div>
+  </div>
+
+  <div class="question" data-type="qcm">
+    <span class="q-tag tag-qcm">QCM · Q22</span>
+    <div class="q-text">Modèle A : <span class="inline">R² = 0.75</span> avec <b>1</b> variable. Modèle B : <span class="inline">R² = 0.77</span> avec <b>8</b> variables. Lequel privilégier ?</div>
+    <ul class="options">
+      <li data-correct="false">Le modèle B, car son R² est plus élevé</li>
+      <li data-correct="true">Le modèle A : presque aussi explicatif avec 7 variables de moins (parcimonie)</li>
+      <li data-correct="false">Les deux sont strictement équivalents</li>
+      <li data-correct="false">On ne peut pas comparer deux modèles</li>
+    </ul>
+    <div class="expl">Ajouter des variables fait <b>toujours</b> monter le <code>Multiple R-squared</code>. Le gain de B (+0.02) pour 7 variables de plus est dérisoire. On préfère le modèle <b>parcimonieux</b> (A) — c'est ce que confirment le <b>R² ajusté</b> et le critère <b>AIC</b>.</div>
+  </div>
+
+  <!-- ============ SECTION 5 ============ -->
+  <div class="section-titre">5 · Présentation des résultats</div>
+
+  <div class="question" data-type="saisie" data-mode="any" data-accept="non">
+    <span class="q-tag tag-court">Réponse courte · Q23</span>
+    <div class="q-text">Une étude trouve une corrélation <span class="inline">r = .62</span> entre l'usage d'Instagram et l'anxiété. Cela <b>prouve-t-il</b> qu'Instagram <b>cause</b> l'anxiété ? (oui / non)</div>
+    <input class="rep" spellcheck="false" placeholder="oui / non">
+    <button class="btn btn-verif">Vérifier</button>
+    <div class="verdict"></div>
+    <div class="modele"><span class="lbl">Solution :</span> Non.</div>
+    <div class="expl"><b>Corrélation n'est pas causalité.</b> Un lien statistique, même fort, ne prouve jamais un lien de cause à effet (variable cachée, causalité inversée…).</div>
+  </div>
+
+  <div class="question" data-type="saisie" data-mode="any"
+       data-accept="associ|lie a|liee a|lien|correl">
+    <span class="q-tag tag-interp">Interprétation · Q24</span>
+    <div class="q-text">La phrase suivante d'une section Résultats est <b>incorrecte</b> : « <i>La corrélation r = .62 montre qu'Instagram cause de l'anxiété.</i> » Réécris-la <b>correctement</b> (vérification indicative — compare aussi avec le modèle).</div>
+    <textarea class="rep" rows="3" spellcheck="false" placeholder="ta phrase corrigée..."></textarea>
+    <button class="btn btn-verif">Vérifier</button>
+    <div class="verdict"></div>
+    <div class="modele"><span class="lbl">Modèle :</span>
+« L'usage d'Instagram est <span class="fn">associé</span> à un niveau d'anxiété plus élevé
+(r = .62). » — on parle d'<span class="fn">association</span>, jamais de cause.</div>
+    <div class="expl">Il faut remplacer le verbe de causalité (« cause », « montre que ») par un terme d'<b>association</b> : « est associé à », « est lié à », « est corrélé avec ». Une corrélation décrit un lien, pas une cause.</div>
+  </div>
+
+  <footer>
+    Examen blanc 2 · niveau avancé — Méthodes II R II · SP 2026<br>
+    Correction automatique tolérante · compare toujours avec la solution modèle.
+  </footer>
+
+</div>
+
+<div class="barre">
+  <div class="barre-in">
+    <button class="reset" onclick="location.reload()">Recommencer</button>
+    <div class="progress"><span id="bar"></span></div>
+    <div class="score">Score : <span id="score">0 / 24</span></div>
+  </div>
+</div>
+
+<script>
+  var questions = document.querySelectorAll('.question');
+  var total = questions.length;
+  var solved = 0;
+  document.getElementById('score').textContent = '0 / ' + total;
+
+  function norm(s){
+    return s.toLowerCase()
+            .normalize("NFD").replace(/[\u0300-\u036f]/g,"")
+            .replace(/["'`]/g,"")
+            .replace(/\s+/g,"")
+            .replace(/;+$/,"");
+  }
+
+  // --- QCM ---
+  document.querySelectorAll('.options li').forEach(function(opt){
+    opt.addEventListener('click', function(){
+      var q = this.closest('.question');
+      if(q.classList.contains('done')) return;
+      q.classList.add('done');
+      if(this.dataset.correct === 'true'){
+        this.classList.add('correct');
+        q.classList.add('solved'); solved++;
+      } else {
+        this.classList.add('wrong');
+        q.querySelector('.options li[data-correct="true"]').classList.add('correct');
+      }
+      q.querySelector('.expl').classList.add('show');
+      update();
+    });
+  });
+
+  // --- Saisie / code ---
+  document.querySelectorAll('.btn-verif').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var q = this.closest('.question');
+      var champ = q.querySelector('.rep');
+      var val = norm(champ.value);
+      var verdict = q.querySelector('.verdict');
+      if(val === ''){
+        verdict.className = 'verdict ko show';
+        verdict.textContent = 'Écris d\'abord une réponse.';
+        return;
+      }
+      var mode = q.dataset.mode;
+      var parts = q.dataset.accept.split('|').map(norm);
+      var ok = false;
+      if(mode === 'tokens'){
+        ok = parts.every(function(p){ return val.indexOf(p) !== -1; });
+      } else if(mode === 'any'){
+        ok = parts.some(function(p){ return val.indexOf(p) !== -1; });
+      }
+      if(ok){
+        verdict.className = 'verdict ok show';
+        verdict.textContent = '✓ Correct !';
+        if(!q.classList.contains('solved')){ q.classList.add('solved'); solved++; }
+      } else {
+        verdict.className = 'verdict ko show';
+        verdict.textContent = '✗ Pas tout à fait — compare avec la solution ci-dessous.';
+      }
+      q.querySelector('.modele').classList.add('show');
+      q.querySelector('.expl').classList.add('show');
+      update();
+    });
+  });
+
+  function update(){
+    document.getElementById('score').textContent = solved + ' / ' + total;
+    document.getElementById('bar').style.width = (solved / total * 100) + '%';
+  }
+</script>
+
+</body>
+</html>

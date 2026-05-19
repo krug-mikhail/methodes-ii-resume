@@ -32,8 +32,12 @@ website:
             text: Copier/Coller PS2
       - href: glossaire.qmd
         text: Glossaire
-      - href: examen_blanc_PS2.html
-        text: "Examen blanc"
+      - text: "Examens blancs"
+        menu:
+          - href: examen_blanc_PS2.html
+            text: "Examen blanc 1"
+          - href: examen_blanc_2.html
+            text: "Examen blanc 2 (avancé)"
   sidebar:
     style: docked
     search: true
