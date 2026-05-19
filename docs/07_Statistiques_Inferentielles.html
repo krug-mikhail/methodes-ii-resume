@@ -1022,6 +1022,15 @@ sample estimates:
     </div>
     <div id="tp-out" class="pv-mini-out"></div>
   </details>
+
+  <details open>
+    <summary>Convertisseur notation scientifique -&gt; decimale (et inverse)</summary>
+    <div class="pv-mini" style="grid-template-columns: 1fr auto;">
+      <div><label>Nombre (ex : <code>2.2e-16</code>, <code>1.3e-10</code>, <code>0.00007</code>)</label><input id="conv-in" type="text" placeholder="ex : 2.2e-16" /></div>
+      <button class="pv-go" id="conv-run">Convertir</button>
+    </div>
+    <div id="conv-out" class="pv-mini-out"></div>
+  </details>
 </div>
 
 <script>
@@ -1049,6 +1058,22 @@ sample estimates:
     if (p < 0.0001) return p.toExponential(2);
     return Number(p.toPrecision(4)).toString();
   }
+  function toDecimalStr(p){
+    if (p === 0) return '0';
+    var s = p.toString();
+    if (s.indexOf('e') === -1 && s.indexOf('E') === -1) return s;
+    var sci = p.toExponential();
+    var m = sci.match(/^(-?)(\d+(?:\.\d+)?)e([+-]?\d+)$/);
+    if (!m) return s;
+    var sign = m[1], mant = m[2], exp = parseInt(m[3], 10);
+    var dot = mant.indexOf('.');
+    var digits = mant.replace('.', '');
+    var intLen = (dot === -1) ? digits.length : dot;
+    var newDot = intLen + exp;
+    if (newDot <= 0) return sign + '0.' + '0'.repeat(-newDot) + digits;
+    if (newDot >= digits.length) return sign + digits + '0'.repeat(newDot - digits.length);
+    return sign + digits.substring(0, newDot) + '.' + digits.substring(newDot);
+  }
   function check(b){ return b ? 'OUI' : 'non'; }
 
   function runMain(){
@@ -1074,6 +1099,7 @@ sample estimates:
         'p ' + pTxt + ' ' + cmp + ' &nbsp;&rArr;&nbsp; ' + verdict +
       '</div>' +
       '<table class="pv-tbl"><tbody>' +
+        '<tr><th>Forme decimale</th><td><code>' + toDecimalStr(p) + '</code></td></tr>' +
         '<tr><th>Etoiles R</th><td><code>' + st.s + '</code> &nbsp; ' + st.txt + '</td></tr>' +
         '<tr><th>Seuils franchis (p &lt; ?)</th><td>' +
           '0.001 : <b>' + check(p<0.001) + '</b> &nbsp;|&nbsp; ' +
@@ -1165,6 +1191,21 @@ sample estimates:
   });
   document.getElementById('rp-run').addEventListener('click', runRP);
   document.getElementById('tp-run').addEventListener('click', runTP);
+
+  function runConv(){
+    var raw = (document.getElementById('conv-in').value || '').trim().replace(/,/g,'.').replace(/\s+/g,'');
+    var out = document.getElementById('conv-out');
+    if (raw === ''){ out.innerHTML = '<span style="color:#842029">Tape un nombre.</span>'; return; }
+    var v = Number(raw);
+    if (isNaN(v)){ out.innerHTML = '<span style="color:#842029">Nombre invalide.</span>'; return; }
+    var dec = toDecimalStr(v);
+    var sci = (v === 0) ? '0' : v.toExponential();
+    out.innerHTML =
+      'Forme decimale : <code>' + dec + '</code><br>' +
+      'Notation scientifique : <code>' + sci + '</code>';
+  }
+  document.getElementById('conv-run').addEventListener('click', runConv);
+  document.getElementById('conv-in').addEventListener('keydown', function(e){ if(e.key==='Enter') runConv(); });
 })();
 </script>
 </section>
