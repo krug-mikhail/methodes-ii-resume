@@ -38,6 +38,8 @@ website:
             text: "Examen blanc 1"
           - href: examen_blanc_2.html
             text: "Examen blanc 2 (avancé)"
+          - href: examen_blanc_3.html
+            text: "Examen blanc 3 (exécution R)"
   sidebar:
     style: docked
     search: true
