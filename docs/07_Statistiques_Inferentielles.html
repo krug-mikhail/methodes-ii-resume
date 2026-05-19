@@ -361,7 +361,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#test-post-hoc-tukey-hsd" id="toc-test-post-hoc-tukey-hsd" class="nav-link" data-scroll-target="#test-post-hoc-tukey-hsd"><span class="header-section-number">6.1</span> Test Post-Hoc : Tukey HSD</a></li>
   </ul></li>
-  <li><a href="#la-correlation" id="toc-la-correlation" class="nav-link" data-scroll-target="#la-correlation"><span class="header-section-number">7</span> La Correlation</a></li>
+  <li><a href="#la-correlation" id="toc-la-correlation" class="nav-link" data-scroll-target="#la-correlation"><span class="header-section-number">7</span> La Correlation</a>
+  <ul class="collapse">
+  <li><a href="#calculateur-de-p-value-examen" id="toc-calculateur-de-p-value-examen" class="nav-link" data-scroll-target="#calculateur-de-p-value-examen"><span class="header-section-number">7.1</span> Calculateur de p-value (examen)</a></li>
+  </ul></li>
   <li><a href="#correlation-nest-pas-causalite" id="toc-correlation-nest-pas-causalite" class="nav-link" data-scroll-target="#correlation-nest-pas-causalite"><span class="header-section-number">8</span> Correlation n’est PAS causalite</a></li>
   <li><a href="#la-regression-lineaire" id="toc-la-regression-lineaire" class="nav-link" data-scroll-target="#la-regression-lineaire"><span class="header-section-number">9</span> La Regression Lineaire</a>
   <ul class="collapse">
@@ -939,6 +942,232 @@ sample estimates:
    cor
 -0.868</code></pre>
 <p><code>cor = -0.868</code>, <code>p-value</code> minuscule -&gt; correlation negative forte et significative.</p>
+<section id="calculateur-de-p-value-examen" class="level3" data-number="7.1">
+<h3 data-number="7.1" class="anchored" data-anchor-id="calculateur-de-p-value-examen"><span class="header-section-number">7.1</span> Calculateur de p-value (examen)</h3>
+<p>Tape n’importe quelle p-value renvoyee par R (de <code>&lt; 2.2e-16</code> jusqu’a <code>0.06063</code> et au-dela). Le calculateur la compare au seuil alpha, te donne les etoiles de significativite et une <strong>phrase prete a coller</strong> sur ta copie. Deux helpers en dessous : <code>r + n -&gt; p</code> (corr. de Pearson) et <code>t + df -&gt; p</code> (t.test, regression).</p>
+<div id="pv-tool" class="pv-tool my-3">
+  <style>
+    .pv-tool { border: 1px solid #d0d7de; border-left: 4px solid #0d6efd; border-radius: 6px; padding: 1rem 1.1rem; background: #f8f9fb; }
+    .pv-tool h6 { margin: 0 0 .4rem 0; font-weight: 600; color: #0d6efd; }
+    .pv-tool .pv-grid { display: grid; grid-template-columns: 1fr 160px 110px; gap: .5rem; align-items: end; }
+    .pv-tool .pv-grid label { font-size: .8rem; color: #555; margin-bottom: .2rem; display: block; }
+    .pv-tool input, .pv-tool select { width: 100%; padding: .45rem .6rem; border: 1px solid #ced4da; border-radius: 4px; font-size: .95rem; background: #fff; }
+    .pv-tool button { padding: .45rem .8rem; border: 0; border-radius: 4px; font-size: .9rem; cursor: pointer; }
+    .pv-tool .pv-go { background: #0d6efd; color: #fff; font-weight: 600; }
+    .pv-tool .pv-go:hover { background: #0b5ed7; }
+    .pv-tool .pv-presets { margin-top: .55rem; display: flex; flex-wrap: wrap; gap: .3rem; align-items: center; }
+    .pv-tool .pv-presets span { font-size: .8rem; color: #666; margin-right: .2rem; }
+    .pv-tool .pv-presets button { background: #e9ecef; color: #333; font-size: .8rem; padding: .2rem .55rem; }
+    .pv-tool .pv-presets button:hover { background: #dde1e5; }
+    .pv-tool .pv-out { margin-top: .9rem; }
+    .pv-tool .pv-verdict { padding: .7rem .9rem; border-radius: 5px; font-size: 1.05rem; }
+    .pv-tool .pv-reject  { background: #d1e7dd; border-left: 4px solid #0f5132; color: #0f5132; }
+    .pv-tool .pv-keep    { background: #f8d7da; border-left: 4px solid #842029; color: #842029; }
+    .pv-tool .pv-warn    { background: #fff3cd; border-left: 4px solid #997404; color: #664d03; }
+    .pv-tool table.pv-tbl { width: 100%; margin-top: .55rem; font-size: .9rem; border-collapse: collapse; }
+    .pv-tool table.pv-tbl th, .pv-tool table.pv-tbl td { padding: .35rem .55rem; border-bottom: 1px solid #e1e4e8; text-align: left; vertical-align: top; }
+    .pv-tool table.pv-tbl th { width: 35%; color: #555; font-weight: 500; }
+    .pv-tool code { background: #eef0f3; padding: 1px 5px; border-radius: 3px; }
+    .pv-tool .pv-phrase { background: #fff; border: 1px dashed #0d6efd; padding: .55rem .7rem; border-radius: 4px; font-style: italic; }
+    .pv-tool details { margin-top: .8rem; border-top: 1px solid #e1e4e8; padding-top: .6rem; }
+    .pv-tool details summary { cursor: pointer; font-weight: 600; color: #495057; }
+    .pv-tool .pv-mini { display: grid; grid-template-columns: 1fr 1fr auto; gap: .4rem; margin-top: .5rem; align-items: end; }
+    .pv-tool .pv-mini-out { margin-top: .4rem; font-size: .9rem; }
+  </style>
+
+  <h6>Interprete une p-value</h6>
+  <div class="pv-grid">
+    <div>
+      <label>p-value (R-style accepte : <code>&lt; 2.2e-16</code>, <code>1.3e-10</code>, <code>0.06</code>)</label>
+      <input id="pv-input" type="text" placeholder="ex : 1.3e-10" />
+    </div>
+    <div>
+      <label>Seuil alpha</label>
+      <select id="pv-alpha">
+        <option value="0.05" selected>0.05 (standard)</option>
+        <option value="0.01">0.01</option>
+        <option value="0.001">0.001</option>
+        <option value="0.10">0.10</option>
+      </select>
+    </div>
+    <button class="pv-go" id="pv-run">Tester</button>
+  </div>
+  <div class="pv-presets">
+    <span>Raccourcis :</span>
+    <button class="pv-preset" data-v="< 2.2e-16">&lt; 2.2e-16</button>
+    <button class="pv-preset" data-v="1.3e-10">1.3e-10</button>
+    <button class="pv-preset" data-v="0.007">0.007</button>
+    <button class="pv-preset" data-v="0.03">0.03</button>
+    <button class="pv-preset" data-v="0.06063">0.06063</button>
+    <button class="pv-preset" data-v="0.1262">0.1262</button>
+  </div>
+  <div id="pv-output" class="pv-out"></div>
+
+  <details>
+    <summary>Helper 1 : r + n -&gt; p-value (corr. de Pearson)</summary>
+    <div class="pv-mini">
+      <div><label>r (coefficient)</label><input id="rp-r" type="number" step="0.001" min="-1" max="1" placeholder="ex : -0.868" /></div>
+      <div><label>n (taille echantillon)</label><input id="rp-n" type="number" min="3" step="1" placeholder="ex : 32" /></div>
+      <button class="pv-go" id="rp-run">Calculer</button>
+    </div>
+    <div id="rp-out" class="pv-mini-out"></div>
+  </details>
+
+  <details>
+    <summary>Helper 2 : t + df -&gt; p-value (t.test, regression)</summary>
+    <div class="pv-mini">
+      <div><label>t (statistique)</label><input id="tp-t" type="number" step="0.0001" placeholder="ex : -9.56" /></div>
+      <div><label>df (degres de liberte)</label><input id="tp-df" type="number" min="1" step="1" placeholder="ex : 30" /></div>
+      <button class="pv-go" id="tp-run">Calculer</button>
+    </div>
+    <div id="tp-out" class="pv-mini-out"></div>
+  </details>
+</div>
+
+<script>
+(function(){
+  function parsePV(s){
+    s = (s||'').trim().toLowerCase().replace(/\s+/g,'').replace(/,/g,'.');
+    var bound = '=';
+    if (s.indexOf('<') === 0) { bound = '<'; s = s.slice(1); }
+    else if (s.indexOf('>') === 0) { bound = '>'; s = s.slice(1); }
+    if (s === '') return null;
+    var v = Number(s);
+    if (isNaN(v)) return null;
+    if (v < 0 || v > 1) return {error:'Une p-value doit etre entre 0 et 1.'};
+    return {value:v, bound:bound};
+  }
+  function starsFor(p){
+    if (p < 0.001) return {s:'***', txt:'tres hautement significatif'};
+    if (p < 0.01)  return {s:'**',  txt:'hautement significatif'};
+    if (p < 0.05)  return {s:'*',   txt:'significatif'};
+    if (p < 0.1)   return {s:'.',   txt:'marginalement significatif (tendance)'};
+    return {s:'ns', txt:'non significatif'};
+  }
+  function fmtP(p){
+    if (p === 0) return '0';
+    if (p < 0.0001) return p.toExponential(2);
+    return Number(p.toPrecision(4)).toString();
+  }
+  function check(b){ return b ? 'OUI' : 'non'; }
+
+  function runMain(){
+    var raw = document.getElementById('pv-input').value;
+    var alpha = parseFloat(document.getElementById('pv-alpha').value);
+    var parsed = parsePV(raw);
+    var out = document.getElementById('pv-output');
+    if (!parsed){ out.innerHTML = '<div class="pv-verdict pv-warn">Entree invalide. Essaie <code>0.03</code>, <code>1.3e-10</code> ou <code>&lt; 2.2e-16</code>.</div>'; return; }
+    if (parsed.error){ out.innerHTML = '<div class="pv-verdict pv-warn">'+parsed.error+'</div>'; return; }
+    var p = parsed.value, b = parsed.bound;
+    var st = starsFor(p);
+    var reject = p < alpha;
+    var pTxt = (b==='<' ? '&lt; ' : '= ') + fmtP(p);
+    var cmp = reject ? '&lt; alpha = ' + alpha : '&ge; alpha = ' + alpha;
+    var verdict = reject
+      ? '<b>On REJETTE H0</b> (effet statistiquement significatif).'
+      : '<b>On NE REJETTE PAS H0</b> (pas de preuve suffisante d\'un effet).';
+    var phrase = reject
+      ? 'Avec p ' + pTxt + ' &lt; ' + alpha + ', on rejette H0 : l\'effet observe est statistiquement significatif (code R : <code>' + st.s + '</code>).'
+      : 'Avec p ' + pTxt + ' &ge; ' + alpha + ', on ne rejette pas H0 : pas de preuve suffisante d\'un effet (code R : <code>' + st.s + '</code>).';
+    out.innerHTML =
+      '<div class="pv-verdict ' + (reject?'pv-reject':'pv-keep') + '">' +
+        'p ' + pTxt + ' ' + cmp + ' &nbsp;&rArr;&nbsp; ' + verdict +
+      '</div>' +
+      '<table class="pv-tbl"><tbody>' +
+        '<tr><th>Etoiles R</th><td><code>' + st.s + '</code> &nbsp; ' + st.txt + '</td></tr>' +
+        '<tr><th>Seuils franchis (p &lt; ?)</th><td>' +
+          '0.001 : <b>' + check(p<0.001) + '</b> &nbsp;|&nbsp; ' +
+          '0.01 : <b>'  + check(p<0.01)  + '</b> &nbsp;|&nbsp; ' +
+          '0.05 : <b>'  + check(p<0.05)  + '</b> &nbsp;|&nbsp; ' +
+          '0.1 : <b>'   + check(p<0.1)   + '</b></td></tr>' +
+        '<tr><th>Phrase prete a copier</th><td><div class="pv-phrase">' + phrase + '</div></td></tr>' +
+      '</tbody></table>';
+  }
+
+  function logGamma(x){
+    var c = [76.18009172947146,-86.50532032941677,24.01409824083091,
+             -1.231739572450155,0.1208650973866179e-2,-0.5395239384953e-5];
+    var y=x, t=x+5.5;
+    t -= (x+0.5)*Math.log(t);
+    var ser=1.000000000190015;
+    for(var j=0;j<6;j++){ y+=1; ser += c[j]/y; }
+    return -t + Math.log(2.5066282746310005*ser/x);
+  }
+  function betacf(a,b,x){
+    var fpmin=1e-30, qab=a+b, qap=a+1, qam=a-1;
+    var c=1, d=1-qab*x/qap;
+    if(Math.abs(d)<fpmin) d=fpmin;
+    d=1/d; var h=d;
+    for(var m=1; m<=200; m++){
+      var m2=2*m;
+      var aa=m*(b-m)*x/((qam+m2)*(a+m2));
+      d=1+aa*d; if(Math.abs(d)<fpmin) d=fpmin;
+      c=1+aa/c; if(Math.abs(c)<fpmin) c=fpmin;
+      d=1/d; h*=d*c;
+      aa=-(a+m)*(qab+m)*x/((a+m2)*(qap+m2));
+      d=1+aa*d; if(Math.abs(d)<fpmin) d=fpmin;
+      c=1+aa/c; if(Math.abs(c)<fpmin) c=fpmin;
+      d=1/d; var del=d*c; h*=del;
+      if(Math.abs(del-1)<3e-10) break;
+    }
+    return h;
+  }
+  function ibeta(a,b,x){
+    if(x<=0) return 0;
+    if(x>=1) return 1;
+    var lbt = logGamma(a+b)-logGamma(a)-logGamma(b)+a*Math.log(x)+b*Math.log(1-x);
+    var bt = Math.exp(lbt);
+    if(x < (a+1)/(a+b+2)) return bt*betacf(a,b,x)/a;
+    return 1 - bt*betacf(b,a,1-x)/b;
+  }
+  function tToP(t, df){
+    if (!isFinite(t) || df<=0) return NaN;
+    var x = df/(df + t*t);
+    var p = ibeta(df/2, 0.5, x);
+    if (p < 2.2e-16) return 2.2e-16;
+    return p;
+  }
+
+  function runRP(){
+    var r = parseFloat(document.getElementById('rp-r').value);
+    var n = parseInt(document.getElementById('rp-n').value, 10);
+    var out = document.getElementById('rp-out');
+    if (isNaN(r) || isNaN(n)){ out.innerHTML = '<span style="color:#842029">Renseigne r et n.</span>'; return; }
+    if (r<=-1 || r>=1){ out.innerHTML = '<span style="color:#842029">r doit etre strictement entre -1 et 1.</span>'; return; }
+    if (n<3){ out.innerHTML = '<span style="color:#842029">n doit etre &gt;= 3.</span>'; return; }
+    var df = n-2;
+    var t = r*Math.sqrt(df/(1-r*r));
+    var p = tToP(t, df);
+    var pStr = (p<=2.2e-16) ? '&lt; 2.2e-16' : fmtP(p);
+    out.innerHTML = 't = <code>' + t.toFixed(3) + '</code>, df = <code>' + df + '</code>, p-value = <code>' + pStr + '</code> &nbsp; ' +
+      '<button class="pv-preset" data-v="'+(p<=2.2e-16?'< 2.2e-16':p)+'" onclick="document.getElementById(\'pv-input\').value=this.dataset.v;document.getElementById(\'pv-run\').click();">Interpreter ci-dessus</button>';
+  }
+
+  function runTP(){
+    var t = parseFloat(document.getElementById('tp-t').value);
+    var df = parseInt(document.getElementById('tp-df').value, 10);
+    var out = document.getElementById('tp-out');
+    if (isNaN(t) || isNaN(df)){ out.innerHTML = '<span style="color:#842029">Renseigne t et df.</span>'; return; }
+    if (df<1){ out.innerHTML = '<span style="color:#842029">df doit etre &gt;= 1.</span>'; return; }
+    var p = tToP(t, df);
+    var pStr = (p<=2.2e-16) ? '&lt; 2.2e-16' : fmtP(p);
+    out.innerHTML = 'p-value (bilateral) = <code>' + pStr + '</code> &nbsp; ' +
+      '<button class="pv-preset" data-v="'+(p<=2.2e-16?'< 2.2e-16':p)+'" onclick="document.getElementById(\'pv-input\').value=this.dataset.v;document.getElementById(\'pv-run\').click();">Interpreter ci-dessus</button>';
+  }
+
+  document.getElementById('pv-run').addEventListener('click', runMain);
+  document.getElementById('pv-input').addEventListener('keydown', function(e){ if(e.key==='Enter') runMain(); });
+  document.querySelectorAll('#pv-tool .pv-presets .pv-preset').forEach(function(b){
+    b.addEventListener('click', function(){
+      document.getElementById('pv-input').value = b.getAttribute('data-v');
+      runMain();
+    });
+  });
+  document.getElementById('rp-run').addEventListener('click', runRP);
+  document.getElementById('tp-run').addEventListener('click', runTP);
+})();
+</script>
+</section>
 </section>
 <section id="correlation-nest-pas-causalite" class="level2 callout-danger" data-number="8">
 <h2 data-number="8" class="anchored" data-anchor-id="correlation-nest-pas-causalite"><span class="header-section-number">8</span> Correlation n’est PAS causalite</h2>
