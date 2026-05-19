@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Examen blanc 4 — Synthèse corsée</title>
+<style>
+  :root{
+    --acc:#be123c; --acc2:#881337; --vert:#15803d; --rouge:#b91c1c;
+    --fond:#f3eef0; --carte:#fff; --texte:#1f2937; --gris:#6b7280;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--fond);color:var(--texte);line-height:1.6;padding-bottom:84px;
+    -webkit-text-size-adjust:100%;
+  }
+  header{background:linear-gradient(135deg,var(--acc),var(--acc2));
+    color:#fff;padding:34px 20px 28px;text-align:center}
+  header h1{font-size:1.5rem;margin-bottom:6px}
+  header p{opacity:.92;font-size:.95rem}
+  .wrap{max-width:780px;margin:0 auto;padding:20px 16px}
+  .intro{background:var(--carte);border-radius:14px;padding:18px 20px;margin:18px 0;
+    box-shadow:0 2px 10px rgba(0,0,0,.06);font-size:.94rem}
+  .intro b{color:var(--acc2)}
+  .section-titre{margin:34px 0 14px;padding-left:12px;border-left:5px solid var(--acc);
+    font-size:1.2rem;color:var(--acc2);font-weight:700}
+  .question{background:var(--carte);border-radius:14px;padding:20px;margin:16px 0;
+    box-shadow:0 2px 10px rgba(0,0,0,.06)}
+  .q-tag{display:inline-block;font-size:.71rem;font-weight:700;letter-spacing:.04em;
+    text-transform:uppercase;padding:3px 9px;border-radius:20px;margin-bottom:10px}
+  .tag-exec{background:#fee2e2;color:#991b1b}
+  .tag-code{background:#ede9fe;color:#5b21b6}
+  .tag-qcm{background:#dbeafe;color:#1e40af}
+  .tag-interp{background:#fef3c7;color:#92400e}
+  .q-text{font-weight:600;margin-bottom:12px}
+  .q-text code,.expl code,.modele code{background:#f3eef0;padding:1px 6px;border-radius:5px;
+    font-family:"SF Mono",Menlo,Consolas,monospace;font-size:.87em}
+  .ds{display:inline-block;background:#0f172a;color:#fda4af;font-weight:700;
+    padding:1px 8px;border-radius:5px;font-family:"SF Mono",Menlo,Consolas,monospace;font-size:.85em}
+  textarea.rep,input.rep{width:100%;border:2px solid #d1d5db;border-radius:9px;padding:10px 12px;
+    font-family:"SF Mono",Menlo,Consolas,monospace;font-size:.92rem;resize:vertical;
+    color:#0f172a;background:#fafafa}
+  textarea.rep:focus,input.rep:focus{outline:none;border-color:var(--acc)}
+  .options{list-style:none}
+  .options li{border:2px solid #e5e7eb;border-radius:10px;padding:11px 14px;margin:8px 0;
+    cursor:pointer;transition:.15s;font-size:.95rem}
+  .options li:hover{border-color:var(--acc);background:#fdf2f4}
+  .question.done .options li{cursor:default}
+  .question.done .options li:hover{background:transparent}
+  .options li.correct{border-color:var(--vert);background:#f0fdf4;font-weight:600}
+  .options li.correct::before{content:"\2713  ";color:var(--vert);font-weight:800}
+  .options li.wrong{border-color:var(--rouge);background:#fef2f2}
+  .options li.wrong::before{content:"\2717  ";color:var(--rouge);font-weight:800}
+  .btn{border:none;border-radius:9px;padding:9px 18px;font-size:.9rem;
+    font-weight:600;cursor:pointer;margin-top:10px;background:var(--acc);color:#fff}
+  .btn:hover{background:var(--acc2)}
+  .verdict{display:none;margin-top:12px;padding:10px 14px;border-radius:9px;
+    font-weight:600;font-size:.92rem}
+  .verdict.show{display:block}
+  .verdict.ok{background:#f0fdf4;color:var(--vert);border-left:4px solid var(--vert)}
+  .verdict.ko{background:#fef2f2;color:var(--rouge);border-left:4px solid var(--rouge)}
+  .modele{display:none;margin-top:10px;background:#0f172a;color:#e2e8f0;
+    border-radius:10px;padding:13px 15px;overflow-x:auto;
+    font-family:"SF Mono",Menlo,Consolas,monospace;font-size:.85rem;line-height:1.55;
+    white-space:pre-wrap}
+  .modele.show{display:block}
+  .modele .lbl{color:#fda4af;font-weight:700}
+  .modele .cm{color:#64748b}
+  .modele .fn{color:#7dd3fc}
+  .modele .res{color:#fcd34d;font-weight:700}
+  .expl{display:none;margin-top:10px;padding:12px 15px;border-radius:10px;
+    background:#f1f5f9;border-left:4px solid var(--acc);font-size:.91rem}
+  .expl.show{display:block}
+  .expl b{color:var(--acc2)}
+  .barre{position:fixed;bottom:0;left:0;right:0;background:#fff;
+    box-shadow:0 -2px 12px rgba(0,0,0,.12);padding:10px 16px;z-index:10}
+  .barre-in{max-width:780px;margin:0 auto;display:flex;align-items:center;
+    justify-content:space-between;gap:12px}
+  .progress{flex:1;height:9px;background:#e5e7eb;border-radius:6px;overflow:hidden}
+  .progress span{display:block;height:100%;width:0;background:var(--acc);transition:.3s}
+  .score{font-weight:700;color:var(--acc2);white-space:nowrap;font-size:.92rem}
+  .reset{background:none;border:1.5px solid #cbd5e1;color:var(--gris);
+    border-radius:8px;padding:6px 12px;font-size:.82rem;cursor:pointer}
+  .reset:hover{border-color:var(--acc);color:var(--acc)}
+  footer{text-align:center;color:var(--gris);font-size:.82rem;padding:24px 16px}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Examen blanc 4 — Synthèse corsée</h1>
+  <p>Tous les formats réunis · niveau le plus exigeant · 28 questions</p>
+</header>
+
+<div class="wrap">
+
+  <div class="intro">
+    <b>Le plus dur des quatre.</b> Cet examen mélange les <b>4 formats</b> :
+    🔴 <b>Exécute &amp; reporte</b> (lance le code dans RStudio, donne le résultat) ·
+    🟣 <b>Code à écrire</b> (verifié sur la structure) ·
+    🔵 <b>QCM</b> (avec des pièges !) ·
+    🟡 <b>Interprétation</b>.
+    <br><br>
+    Garde <b>RStudio ouvert</b>. Les jeux de données sont intégrés à R (sauf <code>library(tidyverse)</code>
+    pour les chaînes dplyr). Lis bien les énoncés — plusieurs questions contiennent des <b>pièges classiques</b>.
+  </div>
+
+  <!-- ===== SECTION 1 ===== -->
+  <div class="section-titre">1 · Descriptives &amp; manipulation</div>
+
+  <div class="question" data-type="saisie" data-mode="num" data-accept="0.70" data-tol="0.03">
+    <span class="q-tag tag-exec">Exécute &amp; reporte · Q1</span>
+    <div class="q-text">Jeu de données <span class="ds">airquality</span>. Calcule la corrélation entre <code>Ozone</code> et <code>Temp</code> — attention, <code>Ozone</code> a des NA, utilise les observations complètes. (2 décimales)</div>
+    <input class="rep" spellcheck="false" placeholder="le résultat...">
+    <button class="btn">Vérifier</button>
+    <div class="verdict"></div>
+    <div class="modele"><span class="lbl">Code :</span> <span class="fn">cor</span>(airquality$Ozone, airquality$Temp, use = <span class="cm">"complete.obs"</span>)
+<span class="lbl">Résultat :</span> <span class="res">0.6984</span>  (≈ 0.70)</div>
+    <div class="expl">Avec des NA, <code>cor()</code> renvoie <code>NA</code> par défaut. L'argument <code>use = "complete.obs"</code> ne garde que les lignes sans valeur manquante.</div>
+  </div>
+
+  <div class="question" data-type="saisie" data-mode="tokens"
+       data-accept="filter(month==7)|summari|mean(ozone|na.rm">
+    <span class="q-tag tag-code">Code à écrire · Q2</span>
+    <div class="q-text">Écris une chaîne <code>dplyr</code> qui : prend <span class="ds">airquality</span>, garde uniquement les lignes du mois 7 (<code>Month == 7</code>), puis calcule la <b>moyenne d'<code>Ozone</code></b> (en ignorant les NA).</div>
+    <textarea class="rep" rows="4" spellcheck="false" placeholder="ton code R..."></textarea>
+    <button class="btn">Vérifier</button>
+    <div class="verdict"></div>
+    <div class="modele"><span class="lbl">Solution :</span>
+airquality %>%
+  <span class="fn">filter</span>(Month == 7) %>%
+  <span class="fn">summarize</span>(moy = <span class="fn">mean</span>(Ozone, na.rm = <span class="fn">TRUE</span>))</div>
+    <div class="expl">Schéma <b>filter → summarize</b> : on restreint d'abord les lignes, puis on résume. <code>na.rm = TRUE</code> reste indispensable.</div>
+  </div>
+
+  <div class="question" data-type="saisie" data-mode="num" data-accept="59.1" data-tol="0.6">
+    <span class="q-tag tag-exec">Exécute &amp; reporte · Q3</span>
+    <div class="q-text">Exécute le code de la Q2 : quelle est la <b>moyenne d'<code>Ozone</code> au mois de juillet</b> (Month 7) ? (1 décimale)</div>
+    <input class="rep" spellcheck="false" placeholder="le résultat...">
+    <button class="btn">Vérifier</button>
+    <div class="verdict"></div>
+    <div class="modele"><span class="lbl">Résultat :</span> <span class="res">59.11538</span>  (≈ 59.1)</div>
+    <div class="expl">Juillet est un mois chaud → taux d'ozone élevé. À comparer : en mai (Month 5), la moyenne n'est que de ≈ 23.6.</div>
+  </div>
+
+  <div class="question" data-type="saisie" data-mode="num" data-accept="111" data-tol="1">
+    <span class="q-tag tag-exec">Exécute &amp; reporte · Q4</span>
+    <div class="q-text">Jeu de données <span class="ds">airquality</span>. Combien de lignes sont <b>complètes</b> (aucune valeur manquante sur aucune colonne) ?</div>
+    <input class="rep" spellcheck="false" placeholder="un nombre entier...">
+    <button class="btn">Vérifier</button>
+    <div class="verdict"></div>
+    <div class="modele"><span class="lbl">Code :</span> <span class="fn">sum</span>(<span class="fn">complete.cases</span>(airquality))
+<span class="lbl">ou (dplyr) :</span> airquality %>% <span class="fn">drop_na</span>() %>% <span class="fn">nrow</span>()
+<span class="lbl">Résultat :</span> <span class="res">111</span>  <span class="cm"># sur 153 lignes</span></div>
+    <div class="expl"><code>complete.cases()</code> renvoie TRUE pour les lignes sans aucun NA. 42 lignes sont donc incomplètes.</div>
+  </div>
+
+  <div class="question" data-type="qcm">
+    <span class="q-tag tag-qcm">QCM · Q5</span>
+    <div class="q-text">La commande <code>mean(airquality$Ozone)</code> renvoie <code>NA</code>. Pourquoi ?</div>
+    <ul class="options">
+      <li data-correct="false">Le jeu de données <code>airquality</code> n'existe pas</li>
+      <li data-correct="true">La colonne <code>Ozone</code> contient des NA — sans <code>na.rm = TRUE</code>, la moyenne est NA</li>
+      <li data-correct="false"><code>Ozone</code> est une variable textuelle</li>
+      <li data-correct="false">Il faut d'abord charger un paquet</li>
+    </ul>
+    <div class="expl">Dès qu'un seul <code>NA</code> est présent, <code>mean()</code> (comme <code>sd()</code>, <code>median()</code>…) renvoie <code>NA</code>. Solution : <code>mean(airquality$Ozone, na.rm = TRUE)</code>.</div>
+  </div>
+
+  <div class="question" data-type="saisie" data-mode="num" data-accept="26.66" data-tol="0.4">
+    <span class="q-tag tag-exec">Exécute &amp; reporte · Q6</span>
+    <div class="q-text">Jeu de données <span class="ds">mtcars</span>. Calcule la <b>moyenne de <code>mpg</code></b> uniquement pour les voitures à <b>4 cylindres</b> (<code>cyl == 4</code>). (2 décimales)</div>
+    <input class="rep" spellcheck="false" placeholder="le résultat...">
+    <button class="btn">Vérifier</button>
+    <div class="verdict"></div>
+    <div class="modele"><span class="lbl">Code :</span> <span class="fn">mean</span>(mtcars$mpg[mtcars$cyl == 4])
+<span class="lbl">Résultat :</span> <span class="res">26.66364</span>  (≈ 26.66)</div>
+    <div class="expl">Les 4-cylindres consomment bien moins : leur moyenne (≈ 26.7) est presque le double de celle des 8-cylindres (≈ 15.1).</div>
+  </div>
+
+  <!-- ===== SECTION 2 ===== -->
+  <div class="section-titre">2 · Test t</div>
+
+  <div class="question" data-type="saisie" data-mode="tokens"
+       data-accept="t.test(|ctrl|trt2">
+    <span class="q-tag tag-code">Code à écrire · Q7</span>
+    <div class="q-text">Jeu de données <span class="ds">PlantGrowth</span> (colonnes <code>weight</code> et <code>group</code>). Écris le code d'un <b>test t</b> comparant le <code>weight</code> des groupes <code>ctrl</code> et <code>trt2</code> uniquement.</div>
+    <textarea class="rep" rows="4" spellcheck="false" placeholder="ton code R..."></textarea>
+    <button class="btn">Vérifier</button>
+    <div class="verdict"></div>
+    <div class="modele"><span class="lbl">Solution (au choix) :</span>
+<span class="cm"># Approche 1 : deux vecteurs</span>
+ctrl <- PlantGrowth$weight[PlantGrowth$group == <span class="cm">"ctrl"</span>]
+trt2 <- PlantGrowth$weight[PlantGrowth$group == <span class="cm">"trt2"</span>]
+<span class="fn">t.test</span>(ctrl, trt2)
+
+<span class="cm"># Approche 2 : filtrer puis formule</span>
+PlantGrowth %>%
+  <span class="fn">filter</span>(group %in% <span class="fn">c</span>(<span class="cm">"ctrl"</span>, <span class="cm">"trt2"</span>)) %>%
+  <span class="fn">t.test</span>(weight ~ group, data = .)</div>
+    <div class="expl">Le test t ne compare que <b>2</b> groupes : il faut donc écarter <code>trt1</code>, soit en extrayant 2 vecteurs, soit en filtrant.</div>
+  </div>
+
+  <div class="question" data-type="saisie" data-mode="num" data-accept="0.048" data-tol="0.013">
+    <span class="q-tag tag-exec">Exécute &amp; reporte · Q8</span>
+    <div class="q-text">Exécute ce test t (<code>ctrl</code> vs <code>trt2</code> de <span class="ds">PlantGrowth</span>). Reporte la <b>p-value</b> (3 décimales).</div>
+    <input class="rep" spellcheck="false" placeholder="la p-value...">
+    <button class="btn">Vérifier</button>
+    <div class="verdict"></div>
+    <div class="modele"><span class="lbl">Résultat :</span> p-value = <span class="res">0.0479</span>  (≈ 0.048)</div>
+    <div class="expl">p ≈ 0.048 — juste en dessous de 0.05.</div>
+  </div>
+
+  <div class="question" data-type="saisie" data-mode="any" data-accept="oui">
+    <span class="q-tag tag-interp">Interprétation · Q9</span>
+    <div class="q-text">D'après la Q8 (p ≈ 0.048), la différence <code>ctrl</code> vs <code>trt2</code> est-elle significative au seuil de 5 % ? (oui / non)</div>
+    <input class="rep" spellcheck="false" placeholder="oui / non">
+    <button class="btn">Vérifier</button>
+    <div class="verdict"></div>
+    <div class="modele"><span class="lbl">Réponse :</span> Oui — mais de justesse.</div>
+    <div class="expl">0.048 &lt; 0.05 → on rejette H0. C'est significatif, mais « limite » : avec un seuil un peu plus strict ou un autre échantillon, la conclusion pourrait basculer.</div>
+  </div>
+
+  <div class="question" data-type="qcm">
+    <span class="q-tag tag-qcm">QCM · Q10 — piège</span>
+    <div class="q-text">Test A : <code>p = 0.04</code>. Test B : <code>p = 0.0001</code>. Que peut-on conclure ?</div>
+    <ul class="options">
+      <li data-correct="false">Le test B révèle un effet beaucoup plus grand que le test A</li>
+      <li data-correct="true">Les deux sont significatifs ; mais la p-value ne mesure PAS la taille de l'effet</li>
+      <li data-correct="false">Le test A n'est pas significatif</li>
+      <li data-correct="false">Le test B est forcément plus important en pratique</li>
+    </ul>
+    <div class="expl"><b>Piège classique.</b> Une p-value plus petite = preuve plus forte <i>contre H0</i>, pas un effet plus grand. La taille de l'effet se mesure autrement (différence de moyennes, coefficient, <code>r</code>…).</div>
+  </div>
+
+  <div class="question" data-type="qcm">
+    <span class="q-tag tag-qcm">QCM · Q11</span>
+    <div class="q-text">Dans quel cas utilise-t-on un test t <b>apparié</b> (<code>paired = TRUE</code>) ?</div>
+    <ul class="options">
+      <li data-correct="false">Quand on compare 3 groupes ou plus</li>
+      <li data-correct="true">Quand les deux mesures portent sur les mêmes individus (ex. avant / après)</li>
+      <li data-correct="false">Quand les variances des groupes sont égales</li>
+      <li data-correct="false">Quand l'échantillon dépasse 30 observations</li>
+    </ul>
+    <div class="expl">Le test apparié sert quand chaque individu est mesuré <b>deux fois</b> (avant/après un traitement). Sinon, on utilise le test t à deux échantillons indépendants.</div>
+  </div>
+
+  <!-- ===== SECTION 3 ===== -->
+  <div class="section-titre">3 · ANOVA</div>
+
+  <div class="question" data-type="saisie" data-mode="num" data-accept="119" data-tol="2">
+    <span class="q-tag tag-exec">Exécute &amp; reporte · Q12</span>
+    <div class="q-text">Jeu de données <span class="ds">iris</span>. Réalise une <b>ANOVA</b> de <code>Sepal.Length</code> selon <code>Species</code>. Reporte la valeur <b>F</b> (arrondie à l'entier).</div>
+    <input class="rep" spellcheck="false" placeholder="la valeur F...">
+    <button class="btn">Vérifier</button>
+    <div class="verdict"></div>
+    <div class="modele"><span class="lbl">Code :</span> <span class="fn">summary</span>(<span class="fn">aov</span>(Sepal.Length ~ Species, data = iris))
+<span class="lbl">Résultat :</span> F value = <span class="res">119.3</span>  (≈ 119)</div>
+    <div class="expl">F très élevé → forte séparation des espèces sur la longueur du sépale.</div>
+  </div>
+
+  <div class="question" data-type="saisie" data-mode="tokens"
+       data-accept="aov(|len~factor(dose)|toothgrowth">
+    <span class="q-tag tag-code">Code à écrire · Q13</span>
+    <div class="q-text">Jeu de données <span class="ds">ToothGrowth</span>. Écris le code d'une <b>ANOVA</b> de <code>len</code> selon la dose — la dose est numérique, il faut la traiter comme un <b>facteur</b>.</div>
+    <textarea class="rep" rows="3" spellcheck="false" placeholder="ton code R..."></textarea>
+    <button class="btn">Vérifier</button>
+    <div class="verdict"></div>
+    <div class="modele"><span class="lbl">Solution :</span>
+<span class="fn">summary</span>(<span class="fn">aov</span>(len ~ <span class="fn">factor</span>(dose), data = ToothGrowth))</div>
+    <div class="expl"><code>dose</code> contient les valeurs 0.5, 1, 2 (numériques). Pour une ANOVA, il faut la transformer en <b>facteur</b> (3 groupes) avec <code>factor(dose)</code>.</div>
+  </div>
+
+  <div class="question" data-type="saisie" data-mode="num" data-accept="67" data-tol="2">
+    <span class="q-tag tag-exec">Exécute &amp; reporte · Q14</span>
+    <div class="q-text">Exécute l'ANOVA de la Q13. Reporte la valeur <b>F</b> (arrondie à l'entier).</div>
+    <input class="rep" spellcheck="false" placeholder="la valeur F...">
+    <button class="btn">Vérifier</button>
+    <div class="verdict"></div>
+    <div class="modele"><span class="lbl">Résultat :</span> F value = <span class="res">67.42</span>  (≈ 67)</div>
+    <div class="expl">F élevé, p-value minuscule → la dose a un effet très net sur la croissance dentaire.</div>
+  </div>
+
+  <div class="question" data-type="qcm">
+    <span class="q-tag tag-qcm">QCM · Q15</span>
+    <div class="q-text">Une ANOVA sur 3 groupes est significative. Quelle est l'étape <b>logique suivante</b> ?</div>
+    <ul class="options">
+      <li data-correct="false">Refaire exactement la même ANOVA</li>
+      <li data-correct="true">Un test post-hoc (TukeyHSD) pour identifier quelles paires de groupes diffèrent</li>
+      <li data-correct="false">Une régression linéaire à la place</li>
+      <li data-correct="false">Rien, l'analyse est terminée</li>
+    </ul>
+    <div class="expl">L'ANOVA dit qu'<b>au moins un</b> groupe diffère, sans préciser lequel. Le <b>TukeyHSD</b> compare les paires pour le savoir.</div>
+  </div>
+
+  <div class="question" data-type="saisie" data-mode="any" data-accept="oui">
+    <span class="q-tag tag-interp">Interprétation · Q16</span>
+    <div class="q-text">L'ANOVA <code>len ~ factor(dose)</code> a une p-value <code>Pr(&gt;F)</code> proche de 0. La dose a-t-elle un effet significatif sur <code>len</code> ? (oui / non)</div>
+    <input class="rep" spellcheck="false" placeholder="oui / non">
+    <button class="btn">Vérifier</button>
+    <div class="verdict"></div>
+    <div class="modele"><span class="lbl">Réponse :</span> Oui.</div>
+    <div class="expl">p ≈ 0 ≪ 0.05 → on rejette H0 : au moins une dose produit une longueur moyenne différente.</div>
+  </div>
+
+  <!-- ===== SECTION 4 ===== -->
+  <div class="section-titre">4 · Régression linéaire</div>
+
+  <div class="question" data-type="saisie" data-mode="num" data-accept="-0.032" data-tol="0.007">
+    <span class="q-tag tag-exec">Exécute &amp; reporte · Q17</span>
+    <div class="q-text">Jeu de données <span class="ds">mtcars</span>. Ajuste la régression <b>multiple</b> <code>lm(mpg ~ wt + hp)</code>. Reporte le <b>coefficient de <code>hp</code></b> (3 décimales — attention au signe).</div>
+    <input class="rep" spellcheck="false" placeholder="le coefficient...">
+    <button class="btn">Vérifier</button>
+    <div class="verdict"></div>
+    <div class="modele"><span class="lbl">Code :</span> <span class="fn">summary</span>(<span class="fn">lm</span>(mpg ~ wt + hp, data = mtcars))
+<span class="lbl">Résultat :</span> coefficient de hp = <span class="res">-0.03177</span>  (≈ -0.032)</div>
+    <div class="expl">À <b>poids constant</b>, chaque cheval-vapeur supplémentaire fait baisser <code>mpg</code> de 0.032 en moyenne.</div>
+  </div>
+
+  <div class="question" data-type="saisie" data-mode="num" data-accept="0.83" data-tol="0.03">
+    <span class="q-tag tag-exec">Exécute &amp; reporte · Q18</span>
+    <div class="q-text">Même modèle <code>lm(mpg ~ wt + hp)</code>. Reporte le <b>Multiple R-squared</b> (2 décimales).</div>
+    <input class="rep" spellcheck="false" placeholder="le R-squared...">
+    <button class="btn">Vérifier</button>
+    <div class="verdict"></div>
+    <div class="modele"><span class="lbl">Résultat :</span> Multiple R-squared = <span class="res">0.8268</span>  (≈ 0.83)</div>
+    <div class="expl">Le modèle à 2 variables explique ≈ 83 % de la variance de <code>mpg</code> — mieux que <code>wt</code> seul (75 %).</div>
+  </div>
+
+  <div class="question" data-type="saisie" data-mode="any" data-accept="oui">
+    <span class="q-tag tag-interp">Interprétation · Q19</span>
+    <div class="q-text">Dans ce modèle, le coefficient de <code>hp</code> a une p-value <code>Pr(&gt;|t|) = 0.0015</code>. La puissance <code>hp</code> est-elle un prédicteur significatif ? (oui / non)</div>
+    <input class="rep" spellcheck="false" placeholder="oui / non">
+    <button class="btn">Vérifier</button>
+    <div class="verdict"></div>
+    <div class="modele"><span class="lbl">Réponse :</span> Oui.</div>
+    <div class="expl">0.0015 &lt; 0.05 → le coefficient de <code>hp</code> est significativement différent de 0 : <code>hp</code> apporte de l'information même une fois <code>wt</code> pris en compte.</div>
+  </div>
+
+  <div class="question" data-type="qcm">
+    <span class="q-tag tag-qcm">QCM · Q20</span>
+    <div class="q-text">Toujours dans <code>lm(mpg ~ wt + hp)</code>, le coefficient de <code>wt</code> vaut <b>-3.88</b>. Interprétation correcte ?</div>
+    <ul class="options">
+      <li data-correct="false"><code>mpg</code> vaut toujours -3.88</li>
+      <li data-correct="true">À <b>puissance (hp) constante</b>, +1 unité de poids fait baisser <code>mpg</code> de 3.88 en moyenne</li>
+      <li data-correct="false"><code>wt</code> explique 3.88 % de la variance</li>
+      <li data-correct="false">Le poids n'a pas d'effet significatif</li>
+    </ul>
+    <div class="expl">En régression <b>multiple</b>, chaque coefficient mesure l'effet de sa variable « toutes choses égales par ailleurs » — ici, à <code>hp</code> maintenu constant.</div>
+  </div>
+
+  <div class="question" data-type="saisie" data-mode="num" data-accept="-0.86" data-tol="0.06">
+    <span class="q-tag tag-exec">Exécute &amp; reporte · Q21</span>
+    <div class="q-text">Jeu de données <span class="ds">swiss</span>. Ajuste <code>lm(Fertility ~ Education)</code>. Reporte le <b>coefficient de <code>Education</code></b> (2 décimales — attention au signe).</div>
+    <input class="rep" spellcheck="false" placeholder="le coefficient...">
+    <button class="btn">Vérifier</button>
+    <div class="verdict"></div>
+    <div class="modele"><span class="lbl">Code :</span> <span class="fn">summary</span>(<span class="fn">lm</span>(Fertility ~ Education, data = swiss))
+<span class="lbl">Résultat :</span> coefficient de Education = <span class="res">-0.8624</span>  (≈ -0.86)</div>
+    <div class="expl">Coefficient négatif : dans ces données de 1888, plus l'éducation est élevée, plus la fécondité est basse.</div>
+  </div>
+
+  <div class="question" data-type="saisie" data-mode="tokens"
+       data-accept="lm(|volume~girth|data=trees|summary(">
+    <span class="q-tag tag-code">Code à écrire · Q22</span>
+    <div class="q-text">Jeu de données <span class="ds">trees</span>. Écris le code qui ajuste la régression de <code>Volume</code> par <code>Girth</code>, et qui en <b>affiche le résumé</b>.</div>
+    <textarea class="rep" rows="3" spellcheck="false" placeholder="ton code R..."></textarea>
+    <button class="btn">Vérifier</button>
+    <div class="verdict"></div>
+    <div class="modele"><span class="lbl">Solution :</span>
+modele <- <span class="fn">lm</span>(Volume ~ Girth, data = trees)
+<span class="fn">summary</span>(modele)
+<span class="cm"># ou en une ligne : summary(lm(Volume ~ Girth, data = trees))</span></div>
+    <div class="expl">Ici R² ≈ 0.94 : la circonférence explique à elle seule 94 % de la variation du volume.</div>
+  </div>
+
+  <div class="question" data-type="qcm">
+    <span class="q-tag tag-qcm">QCM · Q23</span>
+    <div class="q-text">Modèle simple : <code>R² = 0.60</code>. On ajoute 3 variables : <code>R² = 0.62</code>. Sur quoi se baser pour juger si l'ajout en valait la peine ?</div>
+    <ul class="options">
+      <li data-correct="false">Le R² simple : il a augmenté, donc on garde le gros modèle</li>
+      <li data-correct="true">Le R² <b>ajusté</b>, qui pénalise les variables superflues</li>
+      <li data-correct="false">La p-value de l'intercept</li>
+      <li data-correct="false">Le nombre de lignes du jeu de données</li>
+    </ul>
+    <div class="expl">Le <code>Multiple R-squared</code> <b>monte toujours</b> quand on ajoute des variables, même inutiles. Le <code>Adjusted R-squared</code> (et le critère AIC) corrigent ce biais.</div>
+  </div>
+
+  <!-- ===== SECTION 5 ===== -->
+  <div class="section-titre">5 · Interprétation &amp; pièges</div>
+
+  <div class="question" data-type="qcm">
+    <span class="q-tag tag-qcm">QCM · Q24 — piège</span>
+    <div class="q-text">Une section Résultats écrit : « <i>le test n'étant pas significatif (p = 0.21), nous avons prouvé qu'il n'y a aucun effet.</i> » Quelle est l'erreur ?</div>
+    <ul class="options">
+      <li data-correct="false">Aucune erreur, la phrase est correcte</li>
+      <li data-correct="true">« Non significatif » ne <b>prouve pas</b> l'absence d'effet — ça peut être un manque de puissance</li>
+      <li data-correct="false">p = 0.21 est en réalité significatif</li>
+      <li data-correct="false">Il fallait écrire « p = 21 % »</li>
+    </ul>
+    <div class="expl">Un test non significatif = « <b>pas assez de preuves</b> », et non « preuve qu'il n'y a rien ». L'effet peut exister mais l'échantillon être trop petit pour le détecter.</div>
+  </div>
+
+  <div class="question" data-type="saisie" data-mode="any" data-accept="negativ|negatif">
+    <span class="q-tag tag-interp">Interprétation · Q25</span>
+    <div class="q-text">Sur <span class="ds">swiss</span>, on trouve <code>cor(Fertility, Education) = -0.66</code>. Le lien entre fécondité et éducation est-il positif ou <b>négatif</b> ? (un mot)</div>
+    <input class="rep" spellcheck="false" placeholder="un mot...">
+    <button class="btn">Vérifier</button>
+    <div class="verdict"></div>
+    <div class="modele"><span class="lbl">Réponse :</span> Négatif.</div>
+    <div class="expl">Le <b>signe</b> de <code>r</code> donne la direction : ici négatif → quand l'éducation augmente, la fécondité tend à baisser. La valeur 0.66 indique une force moyenne-à-forte.</div>
+  </div>
+
+  <div class="question" data-type="qcm">
+    <span class="q-tag tag-qcm">QCM · Q26 — piège</span>
+    <div class="q-text">Chez des enfants, on mesure <code>r = 0.97</code> entre la <b>pointure</b> et le <b>niveau en lecture</b>. Conclusion correcte ?</div>
+    <ul class="options">
+      <li data-correct="false">Avoir de grands pieds rend meilleur en lecture</li>
+      <li data-correct="true">C'est une corrélation, très probablement due à une variable cachée (l'âge) — pas une causalité</li>
+      <li data-correct="false">Savoir lire fait grandir les pieds</li>
+      <li data-correct="false">Une corrélation de 0.97 est impossible</li>
+    </ul>
+    <div class="expl">Cas d'école de <b>variable cachée</b> : l'âge fait grandir les pieds <i>et</i> améliore la lecture. La corrélation est réelle, mais il n'y a aucun lien de cause à effet direct.</div>
+  </div>
+
+  <div class="question" data-type="qcm">
+    <span class="q-tag tag-qcm">QCM · Q27</span>
+    <div class="q-text">Quelle formulation rapporte <b>correctement</b> un test t dans une section Résultats ?</div>
+    <ul class="options">
+      <li data-correct="false">« Le test était clairement significatif. »</li>
+      <li data-correct="true">« Les groupes diffèrent significativement, t(45) = 3.12, p &lt; .001. »</li>
+      <li data-correct="false">« La statistique t était grande, donc c'est bon. »</li>
+      <li data-correct="false">« p valait beaucoup, donc significatif. »</li>
+    </ul>
+    <div class="expl">Notation standard (style APA) : la statistique <code>t</code> avec ses <b>degrés de liberté</b> entre parenthèses, puis la <b>p-value</b> — des chiffres précis, pas du vague.</div>
+  </div>
+
+  <div class="question" data-type="saisie" data-mode="any" data-accept="setosa">
+    <span class="q-tag tag-exec">Exécute &amp; reporte · Q28</span>
+    <div class="q-text">Jeu de données <span class="ds">iris</span>. En regroupant par <code>Species</code>, quelle espèce a la <b>plus grande largeur de sépale moyenne</b> (<code>Sepal.Width</code>) ? (nom de l'espèce ; <code>library(tidyverse)</code>)</div>
+    <input class="rep" spellcheck="false" placeholder="le nom de l'espèce...">
+    <button class="btn">Vérifier</button>
+    <div class="verdict"></div>
+    <div class="modele"><span class="lbl">Code :</span>
+iris %>%
+  <span class="fn">group_by</span>(Species) %>%
+  <span class="fn">summarize</span>(moy = <span class="fn">mean</span>(Sepal.Width)) %>%
+  <span class="fn">arrange</span>(<span class="fn">desc</span>(moy))
+<span class="lbl">Résultat :</span> <span class="res">setosa</span>  (≈ 3.43 — devant virginica 2.97 et versicolor 2.77)</div>
+    <div class="expl">Contre-intuitif : <code>setosa</code> est la plus petite espèce en longueur de pétale, mais celle qui a les sépales les plus larges.</div>
+  </div>
+
+  <footer>
+    Examen blanc 4 · synthèse corsée — Méthodes II R II · SP 2026<br>
+    Tous les résultats numériques calculés sur les vrais jeux de données R.
+  </footer>
+
+</div>
+
+<div class="barre">
+  <div class="barre-in">
+    <button class="reset" onclick="location.reload()">Recommencer</button>
+    <div class="progress"><span id="bar"></span></div>
+    <div class="score">Score : <span id="score">0 / 28</span></div>
+  </div>
+</div>
+
+<script>
+  var total = document.querySelectorAll('.question').length;
+  var solved = 0;
+  document.getElementById('score').textContent = '0 / ' + total;
+
+  function norm(s){
+    return s.toLowerCase()
+            .normalize("NFD").replace(/[\u0300-\u036f]/g,"")
+            .replace(/["'`]/g,"")
+            .replace(/\s+/g,"")
+            .replace(/;+$/,"");
+  }
+
+  document.querySelectorAll('.options li').forEach(function(opt){
+    opt.addEventListener('click', function(){
+      var q = this.closest('.question');
+      if(q.classList.contains('done')) return;
+      q.classList.add('done');
+      if(this.dataset.correct === 'true'){
+        this.classList.add('correct');
+        q.classList.add('solved'); solved++;
+      } else {
+        this.classList.add('wrong');
+        q.querySelector('.options li[data-correct="true"]').classList.add('correct');
+      }
+      q.querySelector('.expl').classList.add('show');
+      update();
+    });
+  });
+
+  document.querySelectorAll('.btn').forEach(function(btn){
+    if(btn.classList.contains('reset')) return;
+    btn.addEventListener('click', function(){
+      var q = this.closest('.question');
+      var raw = q.querySelector('.rep').value;
+      var verdict = q.querySelector('.verdict');
+      if(raw.trim() === ''){
+        verdict.className = 'verdict ko show';
+        verdict.textContent = 'Écris d\'abord une réponse.';
+        return;
+      }
+      var mode = q.dataset.mode, ok = false;
+      if(mode === 'num'){
+        var m = raw.replace(',', '.').match(/-?\d+\.?\d*/);
+        if(m){
+          var num = parseFloat(m[0]);
+          var exp = parseFloat(q.dataset.accept);
+          var tol = parseFloat(q.dataset.tol || '0');
+          ok = !isNaN(num) && Math.abs(num - exp) <= tol;
+        }
+      } else if(mode === 'tokens'){
+        var v1 = norm(raw);
+        ok = q.dataset.accept.split('|').map(norm).every(function(p){
+          return v1.indexOf(p) !== -1;
+        });
+      } else if(mode === 'any'){
+        var v2 = norm(raw);
+        ok = q.dataset.accept.split('|').map(norm).some(function(p){
+          return v2.indexOf(p) !== -1;
+        });
+      }
+      if(ok){
+        verdict.className = 'verdict ok show';
+        verdict.textContent = '✓ Correct !';
+        if(!q.classList.contains('solved')){ q.classList.add('solved'); solved++; }
+      } else {
+        verdict.className = 'verdict ko show';
+        verdict.textContent = '✗ Pas tout à fait — compare avec la solution.';
+      }
+      q.querySelector('.modele').classList.add('show');
+      q.querySelector('.expl').classList.add('show');
+      update();
+    });
+  });
+
+  function update(){
+    document.getElementById('score').textContent = solved + ' / ' + total;
+    document.getElementById('bar').style.width = (solved / total * 100) + '%';
+  }
+</script>
+
+</body>
+</html>

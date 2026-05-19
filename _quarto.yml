@@ -40,6 +40,8 @@ website:
             text: "Examen blanc 2 (avancé)"
           - href: examen_blanc_3.html
             text: "Examen blanc 3 (exécution R)"
+          - href: examen_blanc_4.html
+            text: "Examen blanc 4 (synthèse corsée)"
   sidebar:
     style: docked
     search: true
