@@ -1,0 +1,572 @@
+---
+title: "Examens Blancs : Questions & Reponses"
+---
+
+Cette page regroupe **les 110 questions** des 4 examens blancs avec leurs **reponses correctes**, classees par examen. Utilise la table des matieres a droite pour naviguer rapidement entre examens.
+
+::: {.callout-tip}
+## Conseil d'utilisation
+- Tente de repondre **avant** de regarder la solution (cache avec ta main si besoin).
+- Si tu rates une question, identifie le module concerne (les references sont entre crochets).
+- Les codes R fournis sont des **exemples canoniques** ; d'autres formulations equivalentes peuvent etre acceptees.
+:::
+
+## Examen blanc 1 (PS2) — Stats descriptives, t-test, ANOVA, regression, presentation
+
+**Couvre :** Statistiques descriptives, Test t, ANOVA, Regression lineaire, Presentation des resultats (36 questions).
+
+**Q1.** Quelle fonction affiche, pour chaque colonne d'un data frame, min, Q1, mediane, moyenne, Q3 et max ?
+→ **Reponse :** `summary()` — `str()` montre la structure, `head()` les 6 premieres lignes, `dim()` les dimensions.
+
+**Q2.** Pour la variable `genre` (Femme / Homme / Autre), quelle mesure de tendance centrale a du sens ?
+→ **Reponse :** **Le mode**. C'est une variable nominale : ni moyenne ni mediane ne s'appliquent.
+
+**Q3.** Code : moyenne de `note_ecole` dans `reponses_socio`, en ignorant les NA.
+→ **Reponse :**
+```r
+mean(reponses_socio$note_ecole, na.rm = TRUE)
+```
+
+**Q4.** Salaire median = 4'000, salaire moyen = 9'000. Conclusion ?
+→ **Reponse :** Distribution **asymetrique** : quelques tres hauts salaires tirent la moyenne vers le haut. La moyenne est sensible aux valeurs extremes.
+
+**Q5.** Que calcule `sd()` ?
+→ **Reponse :** **L'ecart-type** (standard deviation). La variance se calcule avec `var()`.
+
+**Q6.** Code : convertir `genre` en facteur ordonne Femme < Homme < Autre.
+→ **Reponse :**
+```r
+ordre <- c("Femme", "Homme", "Autre")
+reponses_socio$genre <- factor(reponses_socio$genre, levels = ordre)
+```
+
+**Q7.** `table(reponses_socio$permis)` renvoie N/A=1, Non=18, Oui=55. Qu'est-ce que c'est ?
+→ **Reponse :** Un **tableau de frequences** (effectifs par categorie). Pour des pourcentages : `prop.table()` ou `count() + mutate()`.
+
+**Q8.** Dans `summary()`, sous `note_ecole` on lit `NA's : 2`. Signification ?
+→ **Reponse :** **2 observations ont une valeur manquante** pour cette variable. NA = Not Available.
+
+**Q9.** Code ggplot2 : histogramme de `trajet` avec `binwidth = 10`.
+→ **Reponse :**
+```r
+ggplot(reponses_socio, aes(x = trajet)) +
+  geom_histogram(binwidth = 10)
+```
+
+**Q10.** Quelle fonction sauvegarde un data frame en CSV ?
+→ **Reponse :** `write.csv()` (ou `write_csv()` du tidyverse). `read.csv()` fait l'inverse.
+
+**Q11.** A quoi sert le test t ?
+→ **Reponse :** A **comparer des moyennes** (test t de Student).
+
+**Q12.** Que teste `t.test(scores_qi, mu = 100)` ?
+→ **Reponse :** Si la moyenne de `scores_qi` **differe significativement de 100** (test t a un echantillon).
+
+**Q13.** Test t affiche `p-value = 0.1262`. Au seuil 5%, conclusion ?
+→ **Reponse :** **On ne rejette pas H0** : la difference n'est pas significative (0.1262 >= 0.05).
+
+**Q14.** Meme test avec n plus grand donne `p-value = 0.007`. Conclusion ?
+→ **Reponse :** **On rejette H0** : la difference est significative (0.007 < 0.05). C'est la **puissance statistique** : plus n est grand, plus on detecte les petits effets.
+
+**Q15.** Que signifie H0 (hypothese nulle) ?
+→ **Reponse :** **Il n'y a aucun effet, aucune difference** (tout est du au hasard). C'est l'hypothese qu'on cherche a rejeter.
+
+**Q16.** Code : test t comparant deux echantillons independants `tailles_f` et `tailles_h`.
+→ **Reponse :**
+```r
+t.test(tailles_f, tailles_h)
+# variante : t.test(taille ~ genre, data = mon_df)
+```
+
+**Q17.** Laquelle de ces conditions n'est **PAS** requise pour un test t ?
+→ **Reponse :** **Memes effectifs dans les deux groupes** — non requis. Conditions reelles : variable continue, observations independantes, normalite approximative, homoscedasticite (variances comparables).
+
+**Q18.** A quoi sert `set.seed(123)` avant `rnorm()` ?
+→ **Reponse :** A **garantir la reproductibilite** des nombres aleatoires : meme graine -> memes valeurs simulees.
+
+**Q19.** Test t contre `mu=100` donne IC 95% = [98.6 ; 110.4]. Cela indique :
+→ **Reponse :** La difference avec 100 **n'est PAS significative** — l'IC contient 100.
+
+**Q20.** Code : simuler 30 valeurs N(7.9, 2), reproductible.
+→ **Reponse :**
+```r
+set.seed(123)
+echantillon <- rnorm(30, mean = 7.9, sd = 2)
+```
+
+**Q21.** Pour comparer les moyennes de **3 especes** de manchots, quel test ?
+→ **Reponse :** Une **ANOVA**. Le test t ne compare que 2 moyennes.
+
+**Q22.** Code : ANOVA de `flipper_length_mm` selon `species` dans `penguins`.
+→ **Reponse :**
+```r
+anova1 <- aov(flipper_length_mm ~ species, data = penguins)
+summary(anova1)
+```
+
+**Q23.** `summary()` ANOVA affiche `Pr(>F) <2e-16 ***`. Conclusion ?
+→ **Reponse :** **Au moins un groupe** a une moyenne significativement differente (p ≈ 0 < 0.05). L'ANOVA ne dit pas lequel.
+
+**Q24.** Apres une ANOVA significative, quel test indique **quelles paires** de groupes different ?
+→ **Reponse :** Le **test post-hoc de Tukey** : `TukeyHSD(anova1)`.
+
+**Q25.** Pourquoi preferer une ANOVA a plusieurs tests t deux a deux ?
+→ **Reponse :** Enchainer les tests t **gonfle le risque d'erreur de type I** (faux positifs). L'ANOVA fait un seul test global et controle ce risque.
+
+**Q26.** Code : regression lineaire de `mpg` par `wt` dans `mtcars`, afficher le resume.
+→ **Reponse :**
+```r
+modele1 <- lm(mpg ~ wt, data = mtcars)
+summary(modele1)
+```
+
+**Q27.** `Estimate` de `wt` = -5.34. Interpretation ?
+→ **Reponse :** Chaque unite de poids en plus fait **baisser** `mpg` de 5.34 en moyenne. Signe negatif = pente negative.
+
+**Q28.** `Multiple R-squared : 0.7528`. Signification ?
+→ **Reponse :** Le modele explique environ **75 % de la variance** de `mpg`.
+
+**Q29.** Que fait `lm(mpg ~ wt + hp, data = mtcars)` ?
+→ **Reponse :** Une **regression lineaire multiple** : `mpg` explique par `wt` ET `hp`. Chaque coefficient s'interprete « toutes choses egales par ailleurs ».
+
+**Q30.** R affiche `***` a cote du coefficient de `wt`. Signification ?
+→ **Reponse :** **p < 0.001** : le predicteur est tres hautement significatif. Codes : `***` p<0.001, `**` p<0.01, `*` p<0.05, `.` p<0.1.
+
+**Q31.** Que produit `plot(modele1)` apres un `lm()` ?
+→ **Reponse :** **4 graphiques de diagnostic** (Residuals vs Fitted, Q-Q, Scale-Location, Residuals vs Leverage).
+
+**Q32.** Dans `lm(y ~ x)`, comment s'appelle `y` ?
+→ **Reponse :** La **variable a expliquer** (dependante). `x` = variable explicative. Le tilde `~` se lit « expliquee par ».
+
+**Q33.** Erreur dans : « l'hypothese est confirmee, p = 0.5 ».
+→ **Reponse :** p = 0.5 est **tres superieur a 0.05** → le resultat est **NON significatif**, l'affirmation est contradictoire.
+
+**Q34.** Erreur dans : « r = .62 montre qu'Instagram **cause** de l'anxiete. »
+→ **Reponse :** **Correlation n'est pas causalite**. Formulation correcte : « est associe a ».
+
+**Q35.** Comment rapporter correctement une moyenne ?
+→ **Reponse :** Avec son **ecart-type (SD) et l'echelle**. Ex : « M = 3.76, SD = 0.68, sur une echelle de 1 a 5 ».
+
+**Q36.** Que designent M et SD ?
+→ **Reponse :** **M** = moyenne (Mean), **SD** = ecart-type (Standard Deviation). Notation standard APA.
+
+## Examen blanc 2 — Niveau avance (code a ecrire)
+
+**Couvre :** Stats descriptives, Test t, ANOVA, Regression, Presentation (24 questions, surtout du code).
+
+**Q1.** Code : ecart-type de `trajet` dans `reponses_socio`, NA ignores.
+→ **Reponse :**
+```r
+sd(reponses_socio$trajet, na.rm = TRUE)
+```
+
+**Q2.** Code (R base) : tableau croise de `genre` et `suisse`.
+→ **Reponse :**
+```r
+table(reponses_socio$genre, reponses_socio$suisse)
+# ou en dplyr : count(reponses_socio, genre, suisse)
+```
+
+**Q3.** Chaine dplyr : grouper par `genre`, calculer `n` et moyenne de `note_uni` (colonne `moy`).
+→ **Reponse :**
+```r
+reponses_socio %>%
+  group_by(genre) %>%
+  summarize(n = n(), moy = mean(note_uni, na.rm = TRUE))
+```
+
+**Q4.** Q1 = 4.5, Q3 = 5.0. IQR ?
+→ **Reponse :** IQR = Q3 - Q1 = **0.5**
+
+**Q5.** Code : histogramme ggplot2 de `trajet`, `binwidth=10`, barres `"steelblue"`.
+→ **Reponse :**
+```r
+ggplot(reponses_socio, aes(x = trajet)) +
+  geom_histogram(binwidth = 10, fill = "steelblue")
+```
+
+**Q6.** Code : test t a un echantillon, `scores_qi` vs 100.
+→ **Reponse :**
+```r
+t.test(scores_qi, mu = 100)
+```
+
+**Q7.** `t = 2.81, df = 49, p-value = 0.007`. Rejette-t-on H0 au seuil 5% ?
+→ **Reponse :** **Oui** — on rejette H0 (0.007 < 0.05).
+
+**Q8.** Test t a un echantillon sur n = 30. Df ?
+→ **Reponse :** df = n - 1 = **29**.
+
+**Q9.** Code : test t comparant `tailles_f` et `tailles_h`.
+→ **Reponse :**
+```r
+t.test(tailles_f, tailles_h)
+```
+
+**Q10.** IC 95% pour la difference = [-20.3 ; -2.4]. Significative ?
+→ **Reponse :** **Oui** — l'IC ne contient pas 0.
+
+**Q11.** Code : simuler 50 valeurs N(105, 15), reproductible (graine 123).
+→ **Reponse :**
+```r
+set.seed(123)
+echantillon <- rnorm(50, mean = 105, sd = 15)
+```
+
+**Q12.** Code : ANOVA de `body_mass_g` selon `species` dans `penguins`, dans `mon_anova`.
+→ **Reponse :**
+```r
+mon_anova <- aov(body_mass_g ~ species, data = penguins)
+```
+
+**Q13.** ANOVA significative. Code du post-hoc Tukey.
+→ **Reponse :**
+```r
+TukeyHSD(mon_anova)
+```
+
+**Q14.** ANOVA : `F = 594.8, Pr(>F) < 2e-16`. Au moins un groupe differe ?
+→ **Reponse :** **Oui** — on rejette H0.
+
+**Q15.** ANOVA sur 4 groupes, p < 0.001. Que peut-on affirmer ?
+→ **Reponse :** **Au moins un groupe** differe — **sans savoir lesquels**. Test post-hoc (Tukey) requis.
+
+**Q16.** Code : regression simple `mpg ~ wt`, dans `modele1`.
+→ **Reponse :**
+```r
+modele1 <- lm(mpg ~ wt, data = mtcars)
+```
+
+**Q17.** Coef de `wt` = -5.34. Quand `wt` augmente, `mpg` ___ ?
+→ **Reponse :** **Diminue** (baisse, descend, chute) — de 5.34 en moyenne par unite de poids.
+
+**Q18.** Code : regression multiple `mpg ~ wt + hp`.
+→ **Reponse :**
+```r
+lm(mpg ~ wt + hp, data = mtcars)
+```
+
+**Q19.** `Multiple R-squared : 0.83`. Pourcentage de variance ?
+→ **Reponse :** **83 %**.
+
+**Q20.** Code : 4 graphiques de diagnostic en grille 2x2.
+→ **Reponse :**
+```r
+par(mfrow = c(2, 2))
+plot(modele1)
+```
+
+**Q21.** Code : regression `step()` a partir du modele complet `mpg ~ .`.
+→ **Reponse :**
+```r
+full_model <- lm(mpg ~ ., data = mtcars)
+stepwise_model <- step(full_model, direction = "both")
+```
+
+**Q22.** Modele A : R² = 0.75 avec 1 var. Modele B : R² = 0.77 avec 8 vars. Lequel ?
+→ **Reponse :** **Le modele A** (parcimonie). Le R² monte toujours avec plus de variables ; R² **ajuste** et AIC corrigent ce biais.
+
+**Q23.** r = .62 entre Instagram et anxiete. Cela prouve une cause ?
+→ **Reponse :** **Non**. Correlation n'est pas causalite.
+
+**Q24.** Reecris correctement : « r = .62 montre qu'Instagram cause de l'anxiete. »
+→ **Reponse :** « L'usage d'Instagram est **associe a** un niveau d'anxiete plus eleve (r = .62). » On parle d'**association**, jamais de cause.
+
+## Examen blanc 3 — Execution dans R (jeux de donnees integres)
+
+**Couvre :** Stats descriptives, Correlations, t-test & ANOVA, Regression, Regrouper & comparer (22 questions). **Tu executes le code et reportes le resultat.**
+
+**Q1.** `airquality` : moyenne de `Temp` (1 decimale).
+→ **Reponse :**
+```r
+mean(airquality$Temp)
+# 77.88235 -> 77.9
+```
+
+**Q2.** `airquality` : moyenne d'`Ozone`, attention NA (1 decimale).
+→ **Reponse :**
+```r
+mean(airquality$Ozone, na.rm = TRUE)
+# 42.12931 -> 42.1
+```
+
+**Q3.** `airquality` : nombre de NA dans `Ozone` ?
+→ **Reponse :**
+```r
+sum(is.na(airquality$Ozone))
+# 37
+```
+
+**Q4.** `trees` : mediane de `Height` ?
+→ **Reponse :**
+```r
+median(trees$Height)
+# 76
+```
+
+**Q5.** `mtcars` : ecart-type de `mpg` (2 decimales).
+→ **Reponse :**
+```r
+sd(mtcars$mpg)
+# 6.026948 -> 6.03
+```
+
+**Q6.** `iris` : moyenne de `Sepal.Length` pour `setosa` uniquement (2 decimales).
+→ **Reponse :**
+```r
+mean(iris$Sepal.Length[iris$Species == "setosa"])
+# 5.006 -> 5.01
+```
+
+**Q7.** `mtcars` : combien de voitures ont `mpg > 25` ?
+→ **Reponse :**
+```r
+sum(mtcars$mpg > 25)
+# 6
+```
+
+**Q8.** `chickwts` : combien de types d'aliment (`feed`) ?
+→ **Reponse :**
+```r
+length(unique(chickwts$feed))
+# ou : n_distinct(chickwts$feed)
+# 6
+```
+
+**Q9.** `swiss` : mediane de `Agriculture` ?
+→ **Reponse :**
+```r
+median(swiss$Agriculture)
+# 54.1
+```
+
+**Q10.** `trees` : correlation `Girth` ~ `Volume` (2 decimales).
+→ **Reponse :**
+```r
+cor(trees$Girth, trees$Volume)
+# 0.9671 -> 0.97
+```
+
+**Q11.** `iris` : correlation `Petal.Length` ~ `Petal.Width` (2 decimales).
+→ **Reponse :**
+```r
+cor(iris$Petal.Length, iris$Petal.Width)
+# 0.9629 -> 0.96
+```
+
+**Q12.** `mtcars` : correlation `wt` ~ `mpg` (2 decimales, attention au signe).
+→ **Reponse :**
+```r
+cor(mtcars$wt, mtcars$mpg)
+# -0.8677 -> -0.87
+```
+
+**Q13.** `cars` : correlation `speed` ~ `dist` (2 decimales).
+→ **Reponse :**
+```r
+cor(cars$speed, cars$dist)
+# 0.8069 -> 0.81
+```
+
+**Q14.** `ToothGrowth` : test t `len ~ supp` (OJ vs VC), p-value (2 decimales).
+→ **Reponse :**
+```r
+t.test(len ~ supp, data = ToothGrowth)
+# p-value = 0.06063 -> 0.06
+```
+
+**Q15.** Q14 : difference OJ vs VC significative au seuil 5% ?
+→ **Reponse :** **Non** — p ≈ 0.061 > 0.05 (de justesse).
+
+**Q16.** `PlantGrowth` : ANOVA `weight ~ group`, valeur F (1 decimale).
+→ **Reponse :**
+```r
+summary(aov(weight ~ group, data = PlantGrowth))
+# F = 4.846 -> 4.85
+```
+
+**Q17.** Q16 : `Pr(>F) = 0.0159`. Au moins un groupe differe ?
+→ **Reponse :** **Oui** — p = 0.0159 < 0.05.
+
+**Q18.** `mtcars` : `lm(mpg ~ hp)`, coefficient de `hp` (3 decimales, signe).
+→ **Reponse :**
+```r
+summary(lm(mpg ~ hp, data = mtcars))
+# coefficient hp = -0.06823 -> -0.068
+```
+
+**Q19.** Meme regression `lm(mpg ~ hp)` : Multiple R-squared (2 decimales).
+→ **Reponse :** **0.6024 -> 0.60**.
+
+**Q20.** `cars` : `lm(dist ~ speed)`, coefficient de `speed` (2 decimales).
+→ **Reponse :**
+```r
+summary(lm(dist ~ speed, data = cars))
+# coefficient speed = 3.9324 -> 3.93
+```
+
+**Q21.** `chickwts` : quel `feed` donne le poids moyen le plus eleve ?
+→ **Reponse :**
+```r
+chickwts %>%
+  group_by(feed) %>%
+  summarize(moy = mean(weight)) %>%
+  arrange(desc(moy))
+# sunflower (≈ 328.9 g)
+```
+
+**Q22.** `InsectSprays` : quel `spray` est le plus efficace (compte le plus faible) ?
+→ **Reponse :**
+```r
+InsectSprays %>%
+  group_by(spray) %>%
+  summarize(moy = mean(count)) %>%
+  arrange(moy)
+# spray C (≈ 2.08)
+```
+
+## Examen blanc 4 — Synthese corsee (le plus dur)
+
+**Couvre :** Tous formats reunis, niveau le plus exigeant (28 questions). **Pieges et interpretations fines.**
+
+**Q1.** `airquality` : correlation `Ozone ~ Temp`, observations completes (2 decimales).
+→ **Reponse :**
+```r
+cor(airquality$Ozone, airquality$Temp, use = "complete.obs")
+# variante dplyr (sans 'use=') :
+airquality %>%
+  filter(!is.na(Ozone)) %>%
+  summarize(r = cor(Ozone, Temp))
+# 0.6984 -> 0.70
+```
+
+**Q2.** Code dplyr : `airquality`, garder `Month == 7`, moyenne d'`Ozone` (NA ignores).
+→ **Reponse :**
+```r
+airquality %>%
+  filter(Month == 7) %>%
+  summarize(moy = mean(Ozone, na.rm = TRUE))
+```
+
+**Q3.** Execute Q2 : moyenne d'`Ozone` en juillet (1 decimale).
+→ **Reponse :** **59.11538 -> 59.1**.
+
+**Q4.** `airquality` : combien de lignes sont completes (aucun NA) ?
+→ **Reponse :**
+```r
+airquality %>% drop_na() %>% nrow()
+# ou : sum(complete.cases(airquality))
+# 111 (sur 153)
+```
+
+**Q5.** Pourquoi `mean(airquality$Ozone)` renvoie NA ?
+→ **Reponse :** La colonne `Ozone` contient des NA. **Sans `na.rm = TRUE`**, la moyenne est NA. Solution : `mean(airquality$Ozone, na.rm = TRUE)`.
+
+**Q6.** `mtcars` : moyenne de `mpg` pour les 4 cylindres (`cyl == 4`) (2 decimales).
+→ **Reponse :**
+```r
+mean(mtcars$mpg[mtcars$cyl == 4])
+# 26.66364 -> 26.66
+```
+
+**Q7.** Code : test t `weight` entre `ctrl` et `trt2` uniquement (`PlantGrowth`).
+→ **Reponse :**
+```r
+ctrl <- PlantGrowth$weight[PlantGrowth$group == "ctrl"]
+trt2 <- PlantGrowth$weight[PlantGrowth$group == "trt2"]
+t.test(ctrl, trt2)
+
+# variante dplyr :
+PlantGrowth %>%
+  filter(group %in% c("ctrl", "trt2")) %>%
+  t.test(weight ~ group, data = .)
+```
+
+**Q8.** Execute Q7 : p-value (3 decimales).
+→ **Reponse :** **0.0479 -> 0.048**.
+
+**Q9.** Q8 : difference ctrl vs trt2 significative au seuil 5% ?
+→ **Reponse :** **Oui** — mais de justesse (0.048 < 0.05).
+
+**Q10. (Piege)** Test A : p = 0.04. Test B : p = 0.0001. Conclusion ?
+→ **Reponse :** **Les deux sont significatifs** ; mais la p-value **ne mesure PAS la taille de l'effet**. Plus petite p = preuve plus forte contre H0, pas effet plus grand.
+
+**Q11.** Quand utilise-t-on un test t **apparie** (`paired = TRUE`) ?
+→ **Reponse :** Quand les deux mesures portent sur les **memes individus** (ex. avant/apres).
+
+**Q12.** `iris` : ANOVA `Sepal.Length ~ Species`, valeur F (entier).
+→ **Reponse :**
+```r
+summary(aov(Sepal.Length ~ Species, data = iris))
+# F = 119.3 -> 119
+```
+
+**Q13.** Code : ANOVA `len ~ dose` dans `ToothGrowth`, `dose` traite **comme facteur**.
+→ **Reponse :**
+```r
+summary(aov(len ~ factor(dose), data = ToothGrowth))
+```
+
+**Q14.** Execute Q13 : valeur F (entier).
+→ **Reponse :** **67.42 -> 67**.
+
+**Q15.** ANOVA 3 groupes significative. Etape suivante ?
+→ **Reponse :** **Post-hoc Tukey** (`TukeyHSD()`) pour identifier les paires qui different.
+
+**Q16.** ANOVA `len ~ factor(dose)` : `Pr(>F)` proche de 0. Effet de la dose ?
+→ **Reponse :** **Oui** — p ≈ 0 << 0.05.
+
+**Q17.** `mtcars` : `lm(mpg ~ wt + hp)`, coef de `hp` (3 decimales, signe).
+→ **Reponse :**
+```r
+summary(lm(mpg ~ wt + hp, data = mtcars))
+# coef hp = -0.03177 -> -0.032
+```
+
+**Q18.** Meme modele : Multiple R-squared (2 decimales).
+→ **Reponse :** **0.8268 -> 0.83**.
+
+**Q19.** Coef de `hp` a `Pr(>|t|) = 0.0015`. Predicteur significatif ?
+→ **Reponse :** **Oui** — 0.0015 < 0.05.
+
+**Q20.** `lm(mpg ~ wt + hp)`, coef `wt = -3.88`. Interpretation ?
+→ **Reponse :** **A puissance constante** (`hp` constant), +1 unite de poids fait baisser `mpg` de 3.88 en moyenne. En regression multiple : « toutes choses egales par ailleurs ».
+
+**Q21.** `swiss` : `lm(Fertility ~ Education)`, coef d'`Education` (2 decimales, signe).
+→ **Reponse :**
+```r
+summary(lm(Fertility ~ Education, data = swiss))
+# coef Education = -0.8624 -> -0.86
+```
+
+**Q22.** `trees` : code complet pour `Volume ~ Girth` avec resume.
+→ **Reponse :**
+```r
+modele <- lm(Volume ~ Girth, data = trees)
+summary(modele)
+```
+
+**Q23.** Simple R² = 0.60. Avec 3 vars ajoutees R² = 0.62. Sur quoi se baser ?
+→ **Reponse :** Le **R² ajuste**, qui penalise les variables superflues. Le Multiple R² monte toujours ; Adjusted R² et AIC corrigent.
+
+**Q24. (Piege)** « Test non significatif (p = 0.21), nous avons prouve qu'il n'y a aucun effet. »
+→ **Reponse :** **Non significatif ne prouve PAS l'absence d'effet** — ca peut etre un manque de puissance (echantillon trop petit). Pas assez de preuves ≠ preuve qu'il n'y a rien.
+
+**Q25.** `swiss` : `cor(Fertility, Education) = -0.66`. Lien positif ou negatif ?
+→ **Reponse :** **Negatif**. Quand l'education augmente, la fecondite tend a baisser.
+
+**Q26. (Piege)** Chez enfants, r = 0.97 entre pointure et niveau en lecture. Conclusion ?
+→ **Reponse :** **Variable cachee** (l'**age**) — pas une causalite. L'age fait grandir les pieds ET ameliore la lecture. Cas d'ecole de la correlation fallacieuse.
+
+**Q27.** Formulation correcte pour rapporter un test t (style APA) ?
+→ **Reponse :** « Les groupes different significativement, **t(45) = 3.12, p < .001** » — statistique t avec ddl entre parentheses, puis p-value.
+
+**Q28.** `iris` : groupe par `Species`, quelle espece a la plus grande `Sepal.Width` moyenne ?
+→ **Reponse :**
+```r
+iris %>%
+  group_by(Species) %>%
+  summarize(moy = mean(Sepal.Width)) %>%
+  arrange(desc(moy))
+# setosa (≈ 3.43, devant virginica 2.97 et versicolor 2.77)
+```

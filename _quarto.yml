@@ -42,6 +42,8 @@ website:
             text: "Examen blanc 3 (exécution R)"
           - href: examen_blanc_4.html
             text: "Examen blanc 4 (synthèse corsée)"
+          - href: 10_Examens_Blancs_QR.qmd
+            text: "Q&R des 4 examens"
   sidebar:
     style: docked
     search: true
@@ -60,6 +62,9 @@ website:
           - 07_Statistiques_Inferentielles.qmd
           - 08_Communication_Resultats.qmd
           - 09_Copier_Coller_PS2.qmd
+      - section: "Categorie 3 - Examens Blancs (Q&R)"
+        contents:
+          - 10_Examens_Blancs_QR.qmd
       - glossaire.qmd
 
 execute:

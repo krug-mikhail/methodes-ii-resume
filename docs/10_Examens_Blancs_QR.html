@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Module 7 : Communication des Resultats – Methodes II &amp; R</title>
+<title>Examens Blancs : Questions &amp; Reponses – Methodes II &amp; R</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -22,6 +22,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -187,7 +222,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./06_Statistiques_Descriptives.html">Categorie 2 - Probleme Set 2</a></li><li class="breadcrumb-item"><a href="./08_Communication_Resultats.html">Module 7 : Communication des Resultats</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./06_Statistiques_Descriptives.html">Categorie 2 - Probleme Set 2</a></li><li class="breadcrumb-item"><a href="./09_Copier_Coller_PS2.html">Commandes Rapides PS2 - Copier/Coller</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -277,7 +312,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08_Communication_Resultats.html" class="sidebar-item-text sidebar-link active">
+  <a href="./08_Communication_Resultats.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Module 7 : Communication des Resultats</span></a>
   </div>
 </li>
@@ -300,14 +335,14 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
           <li class="sidebar-item">
   <div class="sidebar-item-container">
-  <a href="./10_Examens_Blancs_QR.html" class="sidebar-item-text sidebar-link">
+  <a href="./10_Examens_Blancs_QR.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Examens Blancs : Questions &amp; Reponses</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
+  <div class="sidebar-item-container">
   <a href="./glossaire.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Glossaire - Dictionnaire des Termes</span></a>
   </div>
@@ -320,44 +355,21 @@ ul.task-list li input[type="checkbox"] {
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
-   
+
   <ul>
-  <li><a href="#la-structure-dune-section-resultats" id="toc-la-structure-dune-section-resultats" class="nav-link active" data-scroll-target="#la-structure-dune-section-resultats"><span class="header-section-number">1</span> La Structure d’une Section “Resultats”</a></li>
-  <li><a href="#les-conventions-de-notation" id="toc-les-conventions-de-notation" class="nav-link" data-scroll-target="#les-conventions-de-notation"><span class="header-section-number">2</span> Les Conventions de Notation</a></li>
-  <li><a href="#rapporter-chaque-type-de-test" id="toc-rapporter-chaque-type-de-test" class="nav-link" data-scroll-target="#rapporter-chaque-type-de-test"><span class="header-section-number">3</span> Rapporter Chaque Type de Test</a>
-  <ul class="collapse">
-  <li><a href="#rapporter-des-statistiques-descriptives" id="toc-rapporter-des-statistiques-descriptives" class="nav-link" data-scroll-target="#rapporter-des-statistiques-descriptives"><span class="header-section-number">3.1</span> Rapporter des Statistiques Descriptives</a></li>
-  <li><a href="#rapporter-un-test-t" id="toc-rapporter-un-test-t" class="nav-link" data-scroll-target="#rapporter-un-test-t"><span class="header-section-number">3.2</span> Rapporter un Test t</a></li>
-  <li><a href="#rapporter-une-anova" id="toc-rapporter-une-anova" class="nav-link" data-scroll-target="#rapporter-une-anova"><span class="header-section-number">3.3</span> Rapporter une ANOVA</a></li>
-  <li><a href="#rapporter-une-correlation" id="toc-rapporter-une-correlation" class="nav-link" data-scroll-target="#rapporter-une-correlation"><span class="header-section-number">3.4</span> Rapporter une Correlation</a></li>
-  <li><a href="#rapporter-une-regression" id="toc-rapporter-une-regression" class="nav-link" data-scroll-target="#rapporter-une-regression"><span class="header-section-number">3.5</span> Rapporter une Regression</a></li>
-  </ul></li>
-  <li><a href="#les-tableaux-de-resultats" id="toc-les-tableaux-de-resultats" class="nav-link" data-scroll-target="#les-tableaux-de-resultats"><span class="header-section-number">4</span> Les Tableaux de Resultats</a></li>
-  <li><a href="#tableau-incomplet" id="toc-tableau-incomplet" class="nav-link" data-scroll-target="#tableau-incomplet"><span class="header-section-number">5</span> Tableau incomplet</a></li>
-  <li><a href="#exercice-type-la-chasse-aux-erreurs" id="toc-exercice-type-la-chasse-aux-erreurs" class="nav-link" data-scroll-target="#exercice-type-la-chasse-aux-erreurs"><span class="header-section-number">6</span> Exercice Type : la Chasse aux Erreurs</a>
-  <ul class="collapse">
-  <li><a href="#erreur-1-la-p-value-mal-ecrite-ou-impossible" id="toc-erreur-1-la-p-value-mal-ecrite-ou-impossible" class="nav-link" data-scroll-target="#erreur-1-la-p-value-mal-ecrite-ou-impossible"><span class="header-section-number">6.1</span> Erreur 1 — La p-value mal ecrite ou impossible</a></li>
-  </ul></li>
-  <li><a href="#p-0.5-alors-quon-annonce-un-effet-significatif" id="toc-p-0.5-alors-quon-annonce-un-effet-significatif" class="nav-link" data-scroll-target="#p-0.5-alors-quon-annonce-un-effet-significatif"><span class="header-section-number">7</span> “p = 0.5” alors qu’on annonce un effet significatif</a></li>
-  <li><a href="#erreur-2-confondre-correlation-et-causalite" id="toc-erreur-2-confondre-correlation-et-causalite" class="nav-link" data-scroll-target="#erreur-2-confondre-correlation-et-causalite"><span class="header-section-number">7.1</span> Erreur 2 — Confondre correlation et causalite</a></li>
-  <li><a href="#r-.62-montre-quinstagram-est-un-facteur-de-risque" id="toc-r-.62-montre-quinstagram-est-un-facteur-de-risque" class="nav-link" data-scroll-target="#r-.62-montre-quinstagram-est-un-facteur-de-risque"><span class="header-section-number">8</span> “r = .62 montre qu’Instagram est un facteur de risque”</a></li>
-  <li><a href="#erreur-3-sur-interpreter-un-resultat-non-significatif-ou-minuscule" id="toc-erreur-3-sur-interpreter-un-resultat-non-significatif-ou-minuscule" class="nav-link" data-scroll-target="#erreur-3-sur-interpreter-un-resultat-non-significatif-ou-minuscule"><span class="header-section-number">8.1</span> Erreur 3 — Sur-interpreter un resultat non significatif ou minuscule</a></li>
-  <li><a href="#les-utilisateurs-sont-plus-sociaux-m-2.42-vs-m-2.40" id="toc-les-utilisateurs-sont-plus-sociaux-m-2.42-vs-m-2.40" class="nav-link" data-scroll-target="#les-utilisateurs-sont-plus-sociaux-m-2.42-vs-m-2.40"><span class="header-section-number">9</span> “Les utilisateurs sont plus sociaux : M = 2.42 vs M = 2.40”</a></li>
-  <li><a href="#erreur-4-affirmer-plus-que-ce-que-le-test-permet" id="toc-erreur-4-affirmer-plus-que-ce-que-le-test-permet" class="nav-link" data-scroll-target="#erreur-4-affirmer-plus-que-ce-que-le-test-permet"><span class="header-section-number">9.1</span> Erreur 4 — Affirmer plus que ce que le test permet</a></li>
-  <li><a href="#ces-resultats-confirment-definitivement-la-theorie" id="toc-ces-resultats-confirment-definitivement-la-theorie" class="nav-link" data-scroll-target="#ces-resultats-confirment-definitivement-la-theorie"><span class="header-section-number">10</span> “Ces resultats confirment definitivement la theorie”</a></li>
-  <li><a href="#erreur-5-oublier-le-contexte-sd-n-echelle" id="toc-erreur-5-oublier-le-contexte-sd-n-echelle" class="nav-link" data-scroll-target="#erreur-5-oublier-le-contexte-sd-n-echelle"><span class="header-section-number">10.1</span> Erreur 5 — Oublier le contexte (SD, n, echelle)</a></li>
-  <li><a href="#la-moyenne-est-3.8-et-puis" id="toc-la-moyenne-est-3.8-et-puis" class="nav-link" data-scroll-target="#la-moyenne-est-3.8-et-puis"><span class="header-section-number">11</span> “La moyenne est 3.8” – et puis ?</a></li>
-  <li><a href="#questions-probables-dexamen" id="toc-questions-probables-dexamen" class="nav-link" data-scroll-target="#questions-probables-dexamen"><span class="header-section-number">12</span> Questions Probables d’Examen</a></li>
-  <li><a href="#recapitulatif-du-module" id="toc-recapitulatif-du-module" class="nav-link" data-scroll-target="#recapitulatif-du-module"><span class="header-section-number">13</span> Recapitulatif du Module</a></li>
+  <li><a href="#examen-blanc-1-ps2" id="toc-examen-blanc-1-ps2" class="nav-link active" data-scroll-target="#examen-blanc-1-ps2"><span class="header-section-number">1</span> Examen blanc 1 (PS2) — 36 questions</a></li>
+  <li><a href="#examen-blanc-2-avance" id="toc-examen-blanc-2-avance" class="nav-link" data-scroll-target="#examen-blanc-2-avance"><span class="header-section-number">2</span> Examen blanc 2 (avance) — 24 questions</a></li>
+  <li><a href="#examen-blanc-3-execution" id="toc-examen-blanc-3-execution" class="nav-link" data-scroll-target="#examen-blanc-3-execution"><span class="header-section-number">3</span> Examen blanc 3 (execution R) — 22 questions</a></li>
+  <li><a href="#examen-blanc-4-synthese" id="toc-examen-blanc-4-synthese" class="nav-link" data-scroll-target="#examen-blanc-4-synthese"><span class="header-section-number">4</span> Examen blanc 4 (synthese corsee) — 28 questions</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./06_Statistiques_Descriptives.html">Categorie 2 - Probleme Set 2</a></li><li class="breadcrumb-item"><a href="./08_Communication_Resultats.html">Module 7 : Communication des Resultats</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10_Examens_Blancs_QR.html">Categorie 3 - Examens Blancs (Q&amp;R)</a></li><li class="breadcrumb-item"><a href="./10_Examens_Blancs_QR.html">Examens Blancs : Questions &amp; Reponses</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Module 7 : Communication des Resultats</h1>
+<h1 class="title">Examens Blancs : Questions &amp; Reponses</h1>
 </div>
 
 
@@ -374,364 +386,198 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Produire des analyses ne suffit pas : il faut savoir les <strong>presenter clairement et honnetement</strong>. Ce module couvre la redaction d’une section “Resultats” et, surtout, la <strong>detection des erreurs d’interpretation</strong> – un type d’exercice classique a l’examen.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>En simple
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Communiquer des resultats, c’est comme <strong>rendre un plat en cuisine</strong> : peu importe le travail en coulisses, ce qui compte c’est l’assiette finale. Le lecteur ne voit pas ton code R ; il voit ta phrase “M = 3.76, SD = 0.68”. Si cette phrase est fausse ou mal interpretee, tout le reste ne sert a rien.</p>
-</div>
-</div>
-</div>
-<section id="la-structure-dune-section-resultats" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="la-structure-dune-section-resultats"><span class="header-section-number">1</span> La Structure d’une Section “Resultats”</h2>
-<p>Une section Resultats suit toujours la meme logique :</p>
-<ol type="1">
-<li><strong>Description de l’echantillon</strong> : qui a participe (n, age moyen, repartition genre…).</li>
-<li><strong>Statistiques descriptives</strong> : les moyennes/frequences des variables cles, souvent dans un tableau.</li>
-<li><strong>Tests d’hypotheses</strong> : pour chaque hypothese, rappeler H1, citer le test utilise, donner le resultat chiffre, conclure.</li>
-<li><strong>Analyses complementaires</strong> : correlations, tests additionnels.</li>
-</ol>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>Decrire, pas interpreter (pas encore)
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>La section <strong>Resultats</strong> rapporte les faits chiffres de maniere neutre. L’<strong>interpretation</strong> large, le lien avec la theorie et les implications vont dans la section <strong>Discussion</strong>. Ne pas melanger : dans les Resultats, on ecrit “les utilisateurs ont un score plus eleve” – pas “ce qui prouve que les reseaux sociaux sont benefiques”.</p>
-</div>
-</div>
-</section>
-<section id="les-conventions-de-notation" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="les-conventions-de-notation"><span class="header-section-number">2</span> Les Conventions de Notation</h2>
-<p>Les statistiques se rapportent avec des <strong>symboles standardises</strong> (style APA), en italique dans un vrai rapport.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Symbole</th>
-<th>Signification</th>
-<th>Exemple</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>n</strong></td>
-<td>Taille de l’echantillon (ou d’un sous-groupe)</td>
-<td>n = 74</td>
-</tr>
-<tr class="even">
-<td><strong>M</strong></td>
-<td>Moyenne (Mean)</td>
-<td>M = 3.76</td>
-</tr>
-<tr class="odd">
-<td><strong>SD</strong></td>
-<td>Ecart-type (Standard Deviation)</td>
-<td>SD = 0.68</td>
-</tr>
-<tr class="even">
-<td><strong>%</strong></td>
-<td>Pourcentage</td>
-<td>78 % des eleves</td>
-</tr>
-<tr class="odd">
-<td><strong>t</strong></td>
-<td>Statistique du test t (avec ses df)</td>
-<td>t(58) = 2.54</td>
-</tr>
-<tr class="even">
-<td><strong>F</strong></td>
-<td>Statistique de l’ANOVA (avec ses df)</td>
-<td>F(2, 339) = 594.8</td>
-</tr>
-<tr class="odd">
-<td><strong>r</strong></td>
-<td>Coefficient de correlation</td>
-<td>r = .62</td>
-</tr>
-<tr class="even">
-<td><strong>b</strong></td>
-<td>Coefficient de regression (pente)</td>
-<td>b = 0.28</td>
-</tr>
-<tr class="odd">
-<td><strong>SE</strong></td>
-<td>Erreur standard (Standard Error)</td>
-<td>SE = 0.11</td>
-</tr>
-<tr class="even">
-<td><strong>p</strong></td>
-<td>p-value</td>
-<td>p = .03 ou p &lt; .001</td>
-</tr>
-<tr class="odd">
-<td><strong>R²</strong></td>
-<td>Part de variance expliquee</td>
-<td>R² = .75</td>
-</tr>
-</tbody>
-</table>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>En simple
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Ces symboles sont un <strong>langage international</strong>. Comme les panneaux routiers se comprennent dans tous les pays, “M = 3.76, SD = 0.68” se lit de la meme facon dans n’importe quel article scientifique du monde. Les apprendre, c’est apprendre l’alphabet du rapport de recherche.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="rapporter-chaque-type-de-test" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="rapporter-chaque-type-de-test"><span class="header-section-number">3</span> Rapporter Chaque Type de Test</h2>
-<section id="rapporter-des-statistiques-descriptives" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="rapporter-des-statistiques-descriptives"><span class="header-section-number">3.1</span> Rapporter des Statistiques Descriptives</h3>
-<blockquote class="blockquote">
-<p>Le score moyen de pensee critique est eleve (M = 3.76, SD = 0.68, sur une echelle de 1 a 5). 78 % des eleves declarent etre actifs sur au moins une plateforme.</p>
-</blockquote>
-<p>Toujours accompagner une moyenne de son <strong>SD</strong>, et preciser l’<strong>echelle</strong> (de 1 a 5, en minutes…).</p>
-</section>
-<section id="rapporter-un-test-t" class="level3" data-number="3.2">
-<h3 data-number="3.2" class="anchored" data-anchor-id="rapporter-un-test-t"><span class="header-section-number">3.2</span> Rapporter un Test t</h3>
-<blockquote class="blockquote">
-<p>Les eleves actifs sur Instagram sont en moyenne plus sociables (M = 3.8, SD = 0.5) que les non-utilisateurs (M = 3.4, SD = 0.6) ; cette difference est significative, t(45) = 3.12, p &lt; .001.</p>
-</blockquote>
-<p>On donne : les <strong>deux moyennes</strong> comparees (avec SD), puis <code>t(df) = valeur, p = valeur</code>.</p>
-</section>
-<section id="rapporter-une-anova" class="level3" data-number="3.3">
-<h3 data-number="3.3" class="anchored" data-anchor-id="rapporter-une-anova"><span class="header-section-number">3.3</span> Rapporter une ANOVA</h3>
-<blockquote class="blockquote">
-<p>La longueur des nageoires differe significativement entre les trois especes, F(2, 339) = 594.8, p &lt; .001. Le test post-hoc de Tukey indique que les trois especes different deux a deux (tous les p &lt; .001).</p>
-</blockquote>
-</section>
-<section id="rapporter-une-correlation" class="level3" data-number="3.4">
-<h3 data-number="3.4" class="anchored" data-anchor-id="rapporter-une-correlation"><span class="header-section-number">3.4</span> Rapporter une Correlation</h3>
-<blockquote class="blockquote">
-<p>L’usage d’Instagram et le score d’anxiete sont positivement correles, r = .62, p &lt; .05.</p>
-</blockquote>
-</section>
-<section id="rapporter-une-regression" class="level3" data-number="3.5">
-<h3 data-number="3.5" class="anchored" data-anchor-id="rapporter-une-regression"><span class="header-section-number">3.5</span> Rapporter une Regression</h3>
-<blockquote class="blockquote">
-<p>Une regression lineaire montre un effet significatif de la frequence d’exposition sur la pensee critique, b = 0.28, SE = 0.11, t(58) = 2.54, p = .013. Le modele explique 18 % de la variance (R² = .18).</p>
-</blockquote>
-</section>
-</section>
-<section id="les-tableaux-de-resultats" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="les-tableaux-de-resultats"><span class="header-section-number">4</span> Les Tableaux de Resultats</h2>
-<p>Un tableau evite de noyer le lecteur sous les chiffres. Regles d’or :</p>
-<ul>
-<li>Un <strong>titre numerote</strong> (“Tableau 1 : …”) au-dessus.</li>
-<li>Des <strong>en-tetes de colonnes clairs</strong> avec les unites ou echelles.</li>
-<li>Les memes <strong>decimales partout</strong> (en general 2).</li>
-<li>Une <strong>note de bas de tableau</strong> pour les abreviations si besoin.</li>
-</ul>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Groupe</th>
-<th>Age (annees)</th>
-<th>Usage Instagram (1-5)</th>
-<th>Sociabilite (1-5)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Filles</td>
-<td>16.4</td>
-<td>4.3</td>
-<td>3.6</td>
-</tr>
-<tr class="even">
-<td>Garcons</td>
-<td>16.7</td>
-<td>3.1</td>
-<td>3.4</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="tableau-incomplet" class="level2 callout-danger" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="tableau-incomplet"><span class="header-section-number">5</span> Tableau incomplet</h2>
-<p>Un piege classique : un tableau avec des <strong>cases vides</strong>. Si la valeur “Sociabilite des garcons” manque, le tableau est inexploitable. Verifie toujours que <strong>toutes les cellules sont remplies</strong> et que chaque ligne/colonne a une etiquette.</p>
-</section>
-<section id="exercice-type-la-chasse-aux-erreurs" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="exercice-type-la-chasse-aux-erreurs"><span class="header-section-number">6</span> Exercice Type : la Chasse aux Erreurs</h2>
-<p>L’exercice du 12 mai consiste a <strong>relire une section Resultats et reperer ses erreurs</strong>. Voici les fautes les plus frequentes – a connaitre absolument.</p>
-<section id="erreur-1-la-p-value-mal-ecrite-ou-impossible" class="level3" data-number="6.1">
-<h3 data-number="6.1" class="anchored" data-anchor-id="erreur-1-la-p-value-mal-ecrite-ou-impossible"><span class="header-section-number">6.1</span> Erreur 1 — La p-value mal ecrite ou impossible</h3>
-</section>
-</section>
-<section id="p-0.5-alors-quon-annonce-un-effet-significatif" class="level2 callout-danger" data-number="7">
-<h2 data-number="7" class="anchored" data-anchor-id="p-0.5-alors-quon-annonce-un-effet-significatif"><span class="header-section-number">7</span> “p = 0.5” alors qu’on annonce un effet significatif</h2>
-<p>Une p-value de <strong>0.5</strong> (50 %) est tres <strong>au-dessus</strong> du seuil 0.05 : le resultat serait <strong>non significatif</strong>. Si le texte dit “l’hypothese est confirmee, p = 0.5”, il y a une contradiction – c’est probablement une faute de frappe pour <code>p = .05</code> ou <code>p &lt; .05</code>. Une p-value se situe toujours entre 0 et 1, et “significatif” exige p &lt; 0.05.</p>
-</section>
-<section id="erreur-2-confondre-correlation-et-causalite" class="level3" data-number="7.1">
-<h3 data-number="7.1" class="anchored" data-anchor-id="erreur-2-confondre-correlation-et-causalite"><span class="header-section-number">7.1</span> Erreur 2 — Confondre correlation et causalite</h3>
-</section>
-<section id="r-.62-montre-quinstagram-est-un-facteur-de-risque" class="level2 callout-danger" data-number="8">
-<h2 data-number="8" class="anchored" data-anchor-id="r-.62-montre-quinstagram-est-un-facteur-de-risque"><span class="header-section-number">8</span> “r = .62 montre qu’Instagram est un facteur de risque”</h2>
-<p>Une correlation, meme forte, ne demontre <strong>jamais</strong> un lien de cause a effet. Ecrire “l’usage d’Instagram constitue un facteur de risque” a partir d’un simple <code>r</code> est une <strong>sur-interpretation</strong>. Formulation correcte : “l’usage d’Instagram est associe a…” (association, pas causalite).</p>
-</section>
-<section id="erreur-3-sur-interpreter-un-resultat-non-significatif-ou-minuscule" class="level3" data-number="8.1">
-<h3 data-number="8.1" class="anchored" data-anchor-id="erreur-3-sur-interpreter-un-resultat-non-significatif-ou-minuscule"><span class="header-section-number">8.1</span> Erreur 3 — Sur-interpreter un resultat non significatif ou minuscule</h3>
-</section>
-<section id="les-utilisateurs-sont-plus-sociaux-m-2.42-vs-m-2.40" class="level2 callout-danger" data-number="9">
-<h2 data-number="9" class="anchored" data-anchor-id="les-utilisateurs-sont-plus-sociaux-m-2.42-vs-m-2.40"><span class="header-section-number">9</span> “Les utilisateurs sont plus sociaux : M = 2.42 vs M = 2.40”</h2>
-<p>Un ecart de <strong>0.02 point</strong> est negligeable, meme si le test ressort significatif. Et inversement : conclure “les reseaux favorisent les competences sociales” sur une difference aussi minime est abusif. Significatif n’est pas synonyme d’important : toujours regarder la <strong>taille</strong> de l’ecart, pas seulement la p-value.</p>
-</section>
-<section id="erreur-4-affirmer-plus-que-ce-que-le-test-permet" class="level3" data-number="9.1">
-<h3 data-number="9.1" class="anchored" data-anchor-id="erreur-4-affirmer-plus-que-ce-que-le-test-permet"><span class="header-section-number">9.1</span> Erreur 4 — Affirmer plus que ce que le test permet</h3>
-</section>
-<section id="ces-resultats-confirment-definitivement-la-theorie" class="level2 callout-danger" data-number="10">
-<h2 data-number="10" class="anchored" data-anchor-id="ces-resultats-confirment-definitivement-la-theorie"><span class="header-section-number">10</span> “Ces resultats confirment definitivement la theorie”</h2>
-<p>Un test statistique ne <strong>prouve</strong> ni ne <strong>confirme definitivement</strong> rien. Il apporte un degre de soutien (ou non) a une hypothese, sur un echantillon donne. Vocabulaire prudent attendu : “les resultats vont dans le sens de l’hypothese”, “suggerent que”, “sont compatibles avec”.</p>
-</section>
-<section id="erreur-5-oublier-le-contexte-sd-n-echelle" class="level3" data-number="10.1">
-<h3 data-number="10.1" class="anchored" data-anchor-id="erreur-5-oublier-le-contexte-sd-n-echelle"><span class="header-section-number">10.1</span> Erreur 5 — Oublier le contexte (SD, n, echelle)</h3>
-</section>
-<section id="la-moyenne-est-3.8-et-puis" class="level2 callout-danger" data-number="11">
-<h2 data-number="11" class="anchored" data-anchor-id="la-moyenne-est-3.8-et-puis"><span class="header-section-number">11</span> “La moyenne est 3.8” – et puis ?</h2>
-<p>Une moyenne seule est ininterpretable. 3.8 sur une echelle de 1 a 5 est eleve ; 3.8 sur une echelle de 1 a 100 est tres bas. Toujours preciser l’<strong>echelle</strong>, accompagner du <strong>SD</strong>, et rappeler le <strong>n</strong>.</p>
-</section>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>En simple : la grille de relecture
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Pour chaque phrase d’une section Resultats, pose-toi 4 questions :</p>
-<ol type="1">
-<li>La p-value est-elle coherente avec la conclusion (significatif &lt;-&gt; p &lt; 0.05) ?</li>
-<li>Le mot “cause / prouve / rend” est-il utilise alors qu’on n’a qu’une correlation ?</li>
-<li>L’ecart est-il vraiment important, ou juste “significatif” sur le papier ?</li>
-<li>Manque-t-il un chiffre (SD, n, echelle, une case de tableau) ?</li>
-</ol>
-</div>
-</div>
-</div>
-<section id="questions-probables-dexamen" class="level2" data-number="12">
-<h2 data-number="12" class="anchored" data-anchor-id="questions-probables-dexamen"><span class="header-section-number">12</span> Questions Probables d’Examen</h2>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>“Reperez trois erreurs dans cette section Resultats.”
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Cherche en priorite : (1) une p-value incoherente avec la conclusion, (2) un glissement correlation -&gt; causalite, (3) une conclusion trop forte ou un ecart minuscule presente comme important, (4) un chiffre manquant (SD, n, case de tableau vide).</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>“Rediger une phrase rapportant ce test t.”
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Modele : “Le groupe A (M = …, SD = …) differe significativement du groupe B (M = …, SD = …), t(df) = …, p = …”. Donner les deux moyennes, les deux SD, t avec ses df, et la p-value.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>“Cette conclusion est-elle justifiee : ‘l’etude prouve que X cause Y’ ?”
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Presque toujours non. Verifier : s’agit-il d’une correlation (alors pas de causalite) ? Le mot “prouve” est trop fort (un test soutient, ne prouve pas). Reformuler en “est associe a” / “suggere que”.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="recapitulatif-du-module" class="level2" data-number="13">
-<h2 data-number="13" class="anchored" data-anchor-id="recapitulatif-du-module"><span class="header-section-number">13</span> Recapitulatif du Module</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Point cle</th>
-<th>A retenir</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Structure</td>
-<td>Echantillon -&gt; descriptifs -&gt; tests d’hypotheses -&gt; analyses complementaires</td>
-</tr>
-<tr class="even">
-<td>Notation</td>
-<td>M, SD, n, %, t(df), F(df1,df2), r, b, SE, p, R²</td>
-</tr>
-<tr class="odd">
-<td>Une moyenne</td>
-<td>Toujours avec son SD et son echelle</td>
-</tr>
-<tr class="even">
-<td>Resultats vs Discussion</td>
-<td>Resultats = faits chiffres ; Discussion = interpretation</td>
-</tr>
-<tr class="odd">
-<td>Correlation</td>
-<td>“associe a”, jamais “cause”</td>
-</tr>
-<tr class="even">
-<td>Vocabulaire</td>
-<td>“suggere”, “va dans le sens de” – jamais “prouve definitivement”</td>
-</tr>
-<tr class="odd">
-<td>Significatif</td>
-<td>N’est pas synonyme d’important : regarder la taille de l’effet</td>
-</tr>
-</tbody>
-</table>
+<style>
+.eb-intro { background: #fff3cd; border-left: 4px solid #997404; padding: .8rem 1rem; border-radius: 5px; margin: .8rem 0 1.5rem 0; }
+.eb-section { margin-bottom: 2.5rem; }
+.eb-section .eb-desc { font-style: italic; color: #555; margin-bottom: 1rem; }
+.eb-q { margin: .9rem 0; padding: .55rem .85rem .65rem .9rem; border-left: 3px solid #0d6efd; background: #fafbfd; border-radius: 0 4px 4px 0; }
+.eb-q .eb-question { margin: 0 0 .25rem 0; }
+.eb-q .eb-answer { background: #eaf3ff; padding: .45rem .7rem; border-radius: 4px; margin-top: .35rem; }
+.eb-q .eb-answer strong { color: #0a4a90; }
+.eb-q pre { background: #1e293b; color: #e2e8f0; padding: .65rem .9rem; border-radius: 4px; overflow-x: auto; font-size: .85rem; margin: .45rem 0 0 0; line-height: 1.45; }
+.eb-q code { background: #eef0f3; padding: 1px 5px; border-radius: 3px; font-size: .92em; }
+.eb-q pre code { background: transparent; padding: 0; color: inherit; }
+.eb-trap { background: #ffe5e5 !important; border-left-color: #c92a2a !important; }
+.eb-trap .eb-answer { background: #ffd0d0; }
+</style>
 
+<p>Cette page regroupe les <strong>110 questions</strong> des 4 examens blancs avec leurs <strong>reponses correctes</strong>, classees par examen. Utilise la table des matieres a droite pour naviguer rapidement entre examens. Tu peux aussi faire <kbd>Cmd+F</kbd> / <kbd>Ctrl+F</kbd> pour chercher un mot-cle.</p>
 
-</section>
+<div class="eb-intro">
+  <strong>Conseil d'utilisation :</strong> tente de repondre <em>avant</em> de regarder la solution. Les codes R fournis sont des exemples canoniques — d'autres formulations equivalentes peuvent etre acceptees.
+</div>
+
+<div id="eb-app"></div>
+
+<script>
+const examsData = [
+  {
+    id: "examen-blanc-1-ps2", num: "1",
+    title: "Examen blanc 1 (PS2) — Stats descriptives, t-test, ANOVA, regression, presentation",
+    desc: "Couvre : statistiques descriptives, test t, ANOVA, regression lineaire, presentation des resultats (36 questions).",
+    qa: [
+      {q: "Quelle fonction affiche, pour chaque colonne d'un data frame, min, Q1, mediane, moyenne, Q3 et max ?", a: "<code>summary()</code> — <code>str()</code> montre la structure, <code>head()</code> les 6 premieres lignes, <code>dim()</code> les dimensions."},
+      {q: "Pour la variable <code>genre</code> (Femme / Homme / Autre), quelle mesure de tendance centrale a du sens ?", a: "<b>Le mode.</b> C'est une variable nominale : ni moyenne ni mediane ne s'appliquent."},
+      {q: "Code : moyenne de <code>note_ecole</code> dans <code>reponses_socio</code>, en ignorant les NA.", a: "", code: "mean(reponses_socio$note_ecole, na.rm = TRUE)"},
+      {q: "Salaire median = 4'000, salaire moyen = 9'000. Conclusion ?", a: "Distribution <b>asymetrique</b> : quelques tres hauts salaires tirent la moyenne vers le haut. La moyenne est sensible aux valeurs extremes."},
+      {q: "Que calcule <code>sd()</code> ?", a: "<b>L'ecart-type</b> (standard deviation). La variance se calcule avec <code>var()</code>."},
+      {q: "Code : convertir <code>genre</code> en facteur ordonne Femme &lt; Homme &lt; Autre.", a: "", code: "ordre <- c(\"Femme\", \"Homme\", \"Autre\")\nreponses_socio$genre <- factor(reponses_socio$genre, levels = ordre)"},
+      {q: "<code>table(reponses_socio$permis)</code> renvoie N/A=1, Non=18, Oui=55. Qu'est-ce que c'est ?", a: "Un <b>tableau de frequences</b> (effectifs par categorie). Pour des pourcentages : <code>prop.table()</code> ou <code>count() + mutate()</code>."},
+      {q: "Dans <code>summary()</code>, sous <code>note_ecole</code> on lit <code>NA's : 2</code>. Signification ?", a: "<b>2 observations ont une valeur manquante</b> pour cette variable. NA = Not Available."},
+      {q: "Code ggplot2 : histogramme de <code>trajet</code> avec <code>binwidth = 10</code>.", a: "", code: "ggplot(reponses_socio, aes(x = trajet)) +\n  geom_histogram(binwidth = 10)"},
+      {q: "Quelle fonction sauvegarde un data frame en CSV ?", a: "<code>write.csv()</code> (ou <code>write_csv()</code> du tidyverse). <code>read.csv()</code> fait l'inverse."},
+      {q: "A quoi sert le test t ?", a: "A <b>comparer des moyennes</b> (test t de Student)."},
+      {q: "Que teste <code>t.test(scores_qi, mu = 100)</code> ?", a: "Si la moyenne de <code>scores_qi</code> <b>differe significativement de 100</b> (test t a un echantillon)."},
+      {q: "Test t affiche <code>p-value = 0.1262</code>. Au seuil 5%, conclusion ?", a: "<b>On ne rejette pas H0</b> : la difference n'est pas significative (0.1262 &ge; 0.05)."},
+      {q: "Meme test avec n plus grand donne <code>p-value = 0.007</code>. Conclusion ?", a: "<b>On rejette H0</b> : la difference est significative (0.007 &lt; 0.05). C'est la <b>puissance statistique</b> : plus n est grand, plus on detecte les petits effets."},
+      {q: "Que signifie H0 (hypothese nulle) ?", a: "<b>Il n'y a aucun effet, aucune difference</b> (tout est du au hasard). C'est l'hypothese qu'on cherche a rejeter."},
+      {q: "Code : test t comparant deux echantillons independants <code>tailles_f</code> et <code>tailles_h</code>.", a: "", code: "t.test(tailles_f, tailles_h)\n# variante : t.test(taille ~ genre, data = mon_df)"},
+      {q: "Laquelle de ces conditions n'est <b>PAS</b> requise pour un test t ?", a: "<b>Memes effectifs dans les deux groupes</b> — non requis. Conditions reelles : variable continue, observations independantes, normalite approximative, homoscedasticite (variances comparables)."},
+      {q: "A quoi sert <code>set.seed(123)</code> avant <code>rnorm()</code> ?", a: "A <b>garantir la reproductibilite</b> des nombres aleatoires : meme graine &rarr; memes valeurs simulees."},
+      {q: "Test t contre <code>mu=100</code> donne IC 95% = [98.6 ; 110.4]. Cela indique :", a: "La difference avec 100 <b>n'est PAS significative</b> — l'IC contient 100."},
+      {q: "Code : simuler 30 valeurs N(7.9, 2), reproductible.", a: "", code: "set.seed(123)\nechantillon <- rnorm(30, mean = 7.9, sd = 2)"},
+      {q: "Pour comparer les moyennes de <b>3 especes</b> de manchots, quel test ?", a: "Une <b>ANOVA</b>. Le test t ne compare que 2 moyennes."},
+      {q: "Code : ANOVA de <code>flipper_length_mm</code> selon <code>species</code> dans <code>penguins</code>.", a: "", code: "anova1 <- aov(flipper_length_mm ~ species, data = penguins)\nsummary(anova1)"},
+      {q: "<code>summary()</code> ANOVA affiche <code>Pr(&gt;F) &lt;2e-16 ***</code>. Conclusion ?", a: "<b>Au moins un groupe</b> a une moyenne significativement differente (p &asymp; 0 &lt; 0.05). L'ANOVA ne dit pas lequel."},
+      {q: "Apres une ANOVA significative, quel test indique <b>quelles paires</b> de groupes different ?", a: "Le <b>test post-hoc de Tukey</b> : <code>TukeyHSD(anova1)</code>."},
+      {q: "Pourquoi preferer une ANOVA a plusieurs tests t deux a deux ?", a: "Enchainer les tests t <b>gonfle le risque d'erreur de type I</b> (faux positifs). L'ANOVA fait un seul test global et controle ce risque."},
+      {q: "Code : regression lineaire de <code>mpg</code> par <code>wt</code> dans <code>mtcars</code>, afficher le resume.", a: "", code: "modele1 <- lm(mpg ~ wt, data = mtcars)\nsummary(modele1)"},
+      {q: "<code>Estimate</code> de <code>wt</code> = -5.34. Interpretation ?", a: "Chaque unite de poids en plus fait <b>baisser</b> <code>mpg</code> de 5.34 en moyenne. Signe negatif = pente negative."},
+      {q: "<code>Multiple R-squared : 0.7528</code>. Signification ?", a: "Le modele explique environ <b>75 % de la variance</b> de <code>mpg</code>."},
+      {q: "Que fait <code>lm(mpg ~ wt + hp, data = mtcars)</code> ?", a: "Une <b>regression lineaire multiple</b> : <code>mpg</code> explique par <code>wt</code> ET <code>hp</code>. Chaque coefficient s'interprete &laquo; toutes choses egales par ailleurs &raquo;."},
+      {q: "R affiche <code>***</code> a cote du coefficient de <code>wt</code>. Signification ?", a: "<b>p &lt; 0.001</b> : le predicteur est tres hautement significatif. Codes : <code>***</code> p&lt;0.001, <code>**</code> p&lt;0.01, <code>*</code> p&lt;0.05, <code>.</code> p&lt;0.1."},
+      {q: "Que produit <code>plot(modele1)</code> apres un <code>lm()</code> ?", a: "<b>4 graphiques de diagnostic</b> (Residuals vs Fitted, Q-Q, Scale-Location, Residuals vs Leverage)."},
+      {q: "Dans <code>lm(y ~ x)</code>, comment s'appelle <code>y</code> ?", a: "La <b>variable a expliquer</b> (dependante). <code>x</code> = variable explicative. Le tilde <code>~</code> se lit &laquo; expliquee par &raquo;."},
+      {q: "Erreur dans : &laquo; l'hypothese est confirmee, p = 0.5 &raquo;.", a: "p = 0.5 est <b>tres superieur a 0.05</b> &rarr; le resultat est <b>NON significatif</b>, l'affirmation est contradictoire."},
+      {q: "Erreur dans : &laquo; r = .62 montre qu'Instagram <b>cause</b> de l'anxiete. &raquo;", a: "<b>Correlation n'est pas causalite</b>. Formulation correcte : &laquo; est associe a &raquo;."},
+      {q: "Comment rapporter correctement une moyenne ?", a: "Avec son <b>ecart-type (SD) et l'echelle</b>. Ex : &laquo; M = 3.76, SD = 0.68, sur une echelle de 1 a 5 &raquo;."},
+      {q: "Que designent M et SD ?", a: "<b>M</b> = moyenne (Mean), <b>SD</b> = ecart-type (Standard Deviation). Notation standard APA."}
+    ]
+  },
+  {
+    id: "examen-blanc-2-avance", num: "2",
+    title: "Examen blanc 2 — Niveau avance (code a ecrire)",
+    desc: "Couvre : stats descriptives, test t, ANOVA, regression, presentation (24 questions, surtout du code).",
+    qa: [
+      {q: "Code : ecart-type de <code>trajet</code> dans <code>reponses_socio</code>, NA ignores.", a: "", code: "sd(reponses_socio$trajet, na.rm = TRUE)"},
+      {q: "Code (R base) : tableau croise de <code>genre</code> et <code>suisse</code>.", a: "", code: "table(reponses_socio$genre, reponses_socio$suisse)\n# ou en dplyr : count(reponses_socio, genre, suisse)"},
+      {q: "Chaine dplyr : grouper par <code>genre</code>, calculer <code>n</code> et moyenne de <code>note_uni</code> (colonne <code>moy</code>).", a: "", code: "reponses_socio %>%\n  group_by(genre) %>%\n  summarize(n = n(), moy = mean(note_uni, na.rm = TRUE))"},
+      {q: "Q1 = 4.5, Q3 = 5.0. IQR ?", a: "IQR = Q3 - Q1 = <b>0.5</b>."},
+      {q: "Code : histogramme ggplot2 de <code>trajet</code>, <code>binwidth=10</code>, barres <code>\"steelblue\"</code>.", a: "", code: "ggplot(reponses_socio, aes(x = trajet)) +\n  geom_histogram(binwidth = 10, fill = \"steelblue\")"},
+      {q: "Code : test t a un echantillon, <code>scores_qi</code> vs 100.", a: "", code: "t.test(scores_qi, mu = 100)"},
+      {q: "<code>t = 2.81, df = 49, p-value = 0.007</code>. Rejette-t-on H0 au seuil 5% ?", a: "<b>Oui</b> — on rejette H0 (0.007 &lt; 0.05)."},
+      {q: "Test t a un echantillon sur n = 30. Df ?", a: "df = n - 1 = <b>29</b>."},
+      {q: "Code : test t comparant <code>tailles_f</code> et <code>tailles_h</code>.", a: "", code: "t.test(tailles_f, tailles_h)"},
+      {q: "IC 95% pour la difference = [-20.3 ; -2.4]. Significative ?", a: "<b>Oui</b> — l'IC ne contient pas 0."},
+      {q: "Code : simuler 50 valeurs N(105, 15), reproductible (graine 123).", a: "", code: "set.seed(123)\nechantillon <- rnorm(50, mean = 105, sd = 15)"},
+      {q: "Code : ANOVA de <code>body_mass_g</code> selon <code>species</code> dans <code>penguins</code>, dans <code>mon_anova</code>.", a: "", code: "mon_anova <- aov(body_mass_g ~ species, data = penguins)"},
+      {q: "ANOVA significative. Code du post-hoc Tukey.", a: "", code: "TukeyHSD(mon_anova)"},
+      {q: "ANOVA : <code>F = 594.8, Pr(&gt;F) &lt; 2e-16</code>. Au moins un groupe differe ?", a: "<b>Oui</b> — on rejette H0."},
+      {q: "ANOVA sur 4 groupes, p &lt; 0.001. Que peut-on affirmer ?", a: "<b>Au moins un groupe</b> differe — <b>sans savoir lesquels</b>. Test post-hoc (Tukey) requis."},
+      {q: "Code : regression simple <code>mpg ~ wt</code>, dans <code>modele1</code>.", a: "", code: "modele1 <- lm(mpg ~ wt, data = mtcars)"},
+      {q: "Coef de <code>wt</code> = -5.34. Quand <code>wt</code> augmente, <code>mpg</code> ___ ?", a: "<b>Diminue</b> (baisse, descend, chute) — de 5.34 en moyenne par unite de poids."},
+      {q: "Code : regression multiple <code>mpg ~ wt + hp</code>.", a: "", code: "lm(mpg ~ wt + hp, data = mtcars)"},
+      {q: "<code>Multiple R-squared : 0.83</code>. Pourcentage de variance ?", a: "<b>83 %</b>."},
+      {q: "Code : 4 graphiques de diagnostic en grille 2x2.", a: "", code: "par(mfrow = c(2, 2))\nplot(modele1)"},
+      {q: "Code : regression <code>step()</code> a partir du modele complet <code>mpg ~ .</code>", a: "", code: "full_model <- lm(mpg ~ ., data = mtcars)\nstepwise_model <- step(full_model, direction = \"both\")"},
+      {q: "Modele A : R² = 0.75 avec 1 var. Modele B : R² = 0.77 avec 8 vars. Lequel ?", a: "<b>Le modele A</b> (parcimonie). Le R² monte toujours avec plus de variables ; R² <b>ajuste</b> et AIC corrigent ce biais."},
+      {q: "r = .62 entre Instagram et anxiete. Cela prouve une cause ?", a: "<b>Non</b>. Correlation n'est pas causalite."},
+      {q: "Reecris correctement : &laquo; r = .62 montre qu'Instagram cause de l'anxiete. &raquo;", a: "&laquo; L'usage d'Instagram est <b>associe a</b> un niveau d'anxiete plus eleve (r = .62). &raquo; On parle d'<b>association</b>, jamais de cause."}
+    ]
+  },
+  {
+    id: "examen-blanc-3-execution", num: "3",
+    title: "Examen blanc 3 — Execution dans R (jeux de donnees integres)",
+    desc: "Couvre : stats descriptives, correlations, t-test &amp; ANOVA, regression, regrouper &amp; comparer (22 questions). Tu executes le code et reportes le resultat.",
+    qa: [
+      {q: "<code>airquality</code> : moyenne de <code>Temp</code> (1 decimale).", a: "<b>77.9</b>", code: "mean(airquality$Temp)  # 77.88235 -> 77.9"},
+      {q: "<code>airquality</code> : moyenne d'<code>Ozone</code>, attention NA (1 decimale).", a: "<b>42.1</b>", code: "mean(airquality$Ozone, na.rm = TRUE)  # 42.12931 -> 42.1"},
+      {q: "<code>airquality</code> : nombre de NA dans <code>Ozone</code> ?", a: "<b>37</b>", code: "sum(is.na(airquality$Ozone))  # 37"},
+      {q: "<code>trees</code> : mediane de <code>Height</code> ?", a: "<b>76</b>", code: "median(trees$Height)  # 76"},
+      {q: "<code>mtcars</code> : ecart-type de <code>mpg</code> (2 decimales).", a: "<b>6.03</b>", code: "sd(mtcars$mpg)  # 6.026948 -> 6.03"},
+      {q: "<code>iris</code> : moyenne de <code>Sepal.Length</code> pour <code>setosa</code> uniquement (2 decimales).", a: "<b>5.01</b>", code: "mean(iris$Sepal.Length[iris$Species == \"setosa\"])\n# 5.006 -> 5.01"},
+      {q: "<code>mtcars</code> : combien de voitures ont <code>mpg &gt; 25</code> ?", a: "<b>6</b>", code: "sum(mtcars$mpg > 25)  # 6"},
+      {q: "<code>chickwts</code> : combien de types d'aliment (<code>feed</code>) ?", a: "<b>6</b>", code: "length(unique(chickwts$feed))  # 6\n# ou : n_distinct(chickwts$feed)"},
+      {q: "<code>swiss</code> : mediane de <code>Agriculture</code> ?", a: "<b>54.1</b>", code: "median(swiss$Agriculture)  # 54.1"},
+      {q: "<code>trees</code> : correlation <code>Girth ~ Volume</code> (2 decimales).", a: "<b>0.97</b>", code: "cor(trees$Girth, trees$Volume)  # 0.9671 -> 0.97"},
+      {q: "<code>iris</code> : correlation <code>Petal.Length ~ Petal.Width</code> (2 decimales).", a: "<b>0.96</b>", code: "cor(iris$Petal.Length, iris$Petal.Width)  # 0.9629 -> 0.96"},
+      {q: "<code>mtcars</code> : correlation <code>wt ~ mpg</code> (2 decimales, attention au signe).", a: "<b>-0.87</b>", code: "cor(mtcars$wt, mtcars$mpg)  # -0.8677 -> -0.87"},
+      {q: "<code>cars</code> : correlation <code>speed ~ dist</code> (2 decimales).", a: "<b>0.81</b>", code: "cor(cars$speed, cars$dist)  # 0.8069 -> 0.81"},
+      {q: "<code>ToothGrowth</code> : test t <code>len ~ supp</code> (OJ vs VC), p-value (2 decimales).", a: "<b>0.06</b> (0.06063)", code: "t.test(len ~ supp, data = ToothGrowth)  # p = 0.06063"},
+      {q: "Q14 : difference OJ vs VC significative au seuil 5% ?", a: "<b>Non</b> — p &asymp; 0.061 &gt; 0.05 (de justesse)."},
+      {q: "<code>PlantGrowth</code> : ANOVA <code>weight ~ group</code>, valeur F (1 decimale).", a: "<b>4.85</b>", code: "summary(aov(weight ~ group, data = PlantGrowth))  # F = 4.846"},
+      {q: "Q16 : <code>Pr(&gt;F) = 0.0159</code>. Au moins un groupe differe ?", a: "<b>Oui</b> — p = 0.0159 &lt; 0.05."},
+      {q: "<code>mtcars</code> : <code>lm(mpg ~ hp)</code>, coefficient de <code>hp</code> (3 decimales, signe).", a: "<b>-0.068</b>", code: "summary(lm(mpg ~ hp, data = mtcars))  # coef hp = -0.06823"},
+      {q: "Meme regression : Multiple R-squared (2 decimales).", a: "<b>0.60</b> (0.6024)"},
+      {q: "<code>cars</code> : <code>lm(dist ~ speed)</code>, coefficient de <code>speed</code> (2 decimales).", a: "<b>3.93</b>", code: "summary(lm(dist ~ speed, data = cars))  # coef speed = 3.9324"},
+      {q: "<code>chickwts</code> : quel <code>feed</code> donne le poids moyen le plus eleve ?", a: "<b>sunflower</b> (&asymp; 328.9 g)", code: "chickwts %>%\n  group_by(feed) %>%\n  summarize(moy = mean(weight)) %>%\n  arrange(desc(moy))"},
+      {q: "<code>InsectSprays</code> : quel <code>spray</code> est le plus efficace (compte le plus faible) ?", a: "<b>spray C</b> (&asymp; 2.08)", code: "InsectSprays %>%\n  group_by(spray) %>%\n  summarize(moy = mean(count)) %>%\n  arrange(moy)"}
+    ]
+  },
+  {
+    id: "examen-blanc-4-synthese", num: "4",
+    title: "Examen blanc 4 — Synthese corsee (le plus dur)",
+    desc: "Couvre : tous formats reunis, niveau le plus exigeant (28 questions). Pieges et interpretations fines.",
+    qa: [
+      {q: "<code>airquality</code> : correlation <code>Ozone ~ Temp</code>, observations completes (2 decimales).", a: "<b>0.70</b> (0.6984)", code: "cor(airquality$Ozone, airquality$Temp, use = \"complete.obs\")\n# variante dplyr (sans 'use=') :\nairquality %>%\n  filter(!is.na(Ozone)) %>%\n  summarize(r = cor(Ozone, Temp))"},
+      {q: "Code dplyr : <code>airquality</code>, garder <code>Month == 7</code>, moyenne d'<code>Ozone</code> (NA ignores).", a: "", code: "airquality %>%\n  filter(Month == 7) %>%\n  summarize(moy = mean(Ozone, na.rm = TRUE))"},
+      {q: "Execute Q2 : moyenne d'<code>Ozone</code> en juillet (1 decimale).", a: "<b>59.1</b> (59.11538)"},
+      {q: "<code>airquality</code> : combien de lignes sont completes (aucun NA) ?", a: "<b>111</b> (sur 153)", code: "airquality %>% drop_na() %>% nrow()\n# ou : sum(complete.cases(airquality))"},
+      {q: "Pourquoi <code>mean(airquality$Ozone)</code> renvoie NA ?", a: "La colonne <code>Ozone</code> contient des NA. <b>Sans <code>na.rm = TRUE</code></b>, la moyenne est NA. Solution : <code>mean(airquality$Ozone, na.rm = TRUE)</code>."},
+      {q: "<code>mtcars</code> : moyenne de <code>mpg</code> pour les 4 cylindres (<code>cyl == 4</code>) (2 decimales).", a: "<b>26.66</b>", code: "mean(mtcars$mpg[mtcars$cyl == 4])  # 26.66364"},
+      {q: "Code : test t <code>weight</code> entre <code>ctrl</code> et <code>trt2</code> uniquement (<code>PlantGrowth</code>).", a: "", code: "ctrl <- PlantGrowth$weight[PlantGrowth$group == \"ctrl\"]\ntrt2 <- PlantGrowth$weight[PlantGrowth$group == \"trt2\"]\nt.test(ctrl, trt2)\n\n# variante dplyr :\nPlantGrowth %>%\n  filter(group %in% c(\"ctrl\", \"trt2\")) %>%\n  t.test(weight ~ group, data = .)"},
+      {q: "Execute Q7 : p-value (3 decimales).", a: "<b>0.048</b> (0.0479)"},
+      {q: "Q8 : difference ctrl vs trt2 significative au seuil 5% ?", a: "<b>Oui</b> — mais de justesse (0.048 &lt; 0.05)."},
+      {q: "(PIEGE) Test A : p = 0.04. Test B : p = 0.0001. Conclusion ?", a: "<b>Les deux sont significatifs</b> ; mais la p-value <b>ne mesure PAS la taille de l'effet</b>. Plus petite p = preuve plus forte contre H0, pas effet plus grand.", trap: true},
+      {q: "Quand utilise-t-on un test t <b>apparie</b> (<code>paired = TRUE</code>) ?", a: "Quand les deux mesures portent sur les <b>memes individus</b> (ex. avant/apres)."},
+      {q: "<code>iris</code> : ANOVA <code>Sepal.Length ~ Species</code>, valeur F (entier).", a: "<b>119</b> (119.3)", code: "summary(aov(Sepal.Length ~ Species, data = iris))"},
+      {q: "Code : ANOVA <code>len ~ dose</code> dans <code>ToothGrowth</code>, <code>dose</code> traite <b>comme facteur</b>.", a: "", code: "summary(aov(len ~ factor(dose), data = ToothGrowth))"},
+      {q: "Execute Q13 : valeur F (entier).", a: "<b>67</b> (67.42)"},
+      {q: "ANOVA 3 groupes significative. Etape suivante ?", a: "<b>Post-hoc Tukey</b> (<code>TukeyHSD()</code>) pour identifier les paires qui different."},
+      {q: "ANOVA <code>len ~ factor(dose)</code> : <code>Pr(&gt;F)</code> proche de 0. Effet de la dose ?", a: "<b>Oui</b> — p &asymp; 0 &lt;&lt; 0.05."},
+      {q: "<code>mtcars</code> : <code>lm(mpg ~ wt + hp)</code>, coef de <code>hp</code> (3 decimales, signe).", a: "<b>-0.032</b>", code: "summary(lm(mpg ~ wt + hp, data = mtcars))\n# coef hp = -0.03177"},
+      {q: "Meme modele : Multiple R-squared (2 decimales).", a: "<b>0.83</b> (0.8268)"},
+      {q: "Coef de <code>hp</code> a <code>Pr(&gt;|t|) = 0.0015</code>. Predicteur significatif ?", a: "<b>Oui</b> — 0.0015 &lt; 0.05."},
+      {q: "<code>lm(mpg ~ wt + hp)</code>, coef <code>wt = -3.88</code>. Interpretation ?", a: "<b>A puissance constante</b> (<code>hp</code> constant), +1 unite de poids fait baisser <code>mpg</code> de 3.88 en moyenne. En regression multiple : &laquo; toutes choses egales par ailleurs &raquo;."},
+      {q: "<code>swiss</code> : <code>lm(Fertility ~ Education)</code>, coef d'<code>Education</code> (2 decimales, signe).", a: "<b>-0.86</b>", code: "summary(lm(Fertility ~ Education, data = swiss))\n# coef Education = -0.8624"},
+      {q: "<code>trees</code> : code complet pour <code>Volume ~ Girth</code> avec resume.", a: "", code: "modele <- lm(Volume ~ Girth, data = trees)\nsummary(modele)"},
+      {q: "Simple R² = 0.60. Avec 3 vars ajoutees R² = 0.62. Sur quoi se baser ?", a: "Le <b>R² ajuste</b>, qui penalise les variables superflues. Le Multiple R² monte toujours ; Adjusted R² et AIC corrigent."},
+      {q: "(PIEGE) &laquo; Test non significatif (p = 0.21), nous avons prouve qu'il n'y a aucun effet. &raquo;", a: "<b>Non significatif ne prouve PAS l'absence d'effet</b> — ca peut etre un manque de puissance (echantillon trop petit). Pas assez de preuves &ne; preuve qu'il n'y a rien.", trap: true},
+      {q: "<code>swiss</code> : <code>cor(Fertility, Education) = -0.66</code>. Lien positif ou negatif ?", a: "<b>Negatif</b>. Quand l'education augmente, la fecondite tend a baisser."},
+      {q: "(PIEGE) Chez enfants, r = 0.97 entre pointure et niveau en lecture. Conclusion ?", a: "<b>Variable cachee</b> (l'<b>age</b>) — pas une causalite. L'age fait grandir les pieds ET ameliore la lecture. Cas d'ecole de la correlation fallacieuse.", trap: true},
+      {q: "Formulation correcte pour rapporter un test t (style APA) ?", a: "&laquo; Les groupes different significativement, <b>t(45) = 3.12, p &lt; .001</b> &raquo; — statistique t avec ddl entre parentheses, puis p-value."},
+      {q: "<code>iris</code> : groupe par <code>Species</code>, quelle espece a la plus grande <code>Sepal.Width</code> moyenne ?", a: "<b>setosa</b> (&asymp; 3.43, devant virginica 2.97 et versicolor 2.77)", code: "iris %>%\n  group_by(Species) %>%\n  summarize(moy = mean(Sepal.Width)) %>%\n  arrange(desc(moy))"}
+    ]
+  }
+];
+
+function escapeHtml(s) {
+  return s; // content is already HTML-safe
+}
+
+function renderExams() {
+  const root = document.getElementById('eb-app');
+  let html = '';
+  examsData.forEach(ex => {
+    html += '<section id="' + ex.id + '" class="level2 eb-section" data-number="' + ex.num + '">';
+    html += '<h2 data-number="' + ex.num + '" class="anchored" data-anchor-id="' + ex.id + '"><span class="header-section-number">' + ex.num + '</span> ' + ex.title + '</h2>';
+    html += '<p class="eb-desc">' + ex.desc + '</p>';
+    ex.qa.forEach((item, i) => {
+      const trapCls = item.trap ? ' eb-trap' : '';
+      html += '<div class="eb-q' + trapCls + '">';
+      html += '<p class="eb-question"><b>Q' + (i+1) + '.</b> ' + item.q + '</p>';
+      html += '<div class="eb-answer"><strong>Reponse :</strong> ' + (item.a || '') + '</div>';
+      if (item.code) {
+        html += '<pre><code class="r">' + item.code.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</code></pre>';
+      }
+      html += '</div>';
+    });
+    html += '</section>';
+  });
+  root.innerHTML = html;
+}
+renderExams();
+</script>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
